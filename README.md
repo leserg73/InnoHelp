@@ -1,4 +1,4 @@
-![ISPP Logo](https://leserg73.github.io/InnoHelp/images/innka.png)
+![ISPP Logo](/docs/images/innka.png)
 
 Документация Inno Setup
 -----------------------
