@@ -1,9 +1,9 @@
 ![ISPP Logo](/docs/ispphelp/images/innka.png)
 
-# Документация Inno Setup
+Документация Inno Setup
 -----------------------
 
-- [Руководство пользователя (в работе)](/docs/ishelp/index.htm)
-- [Препроцессор Inno Setup (ISPP)](/docs/ispphelp/index.htm)
+- [Руководство пользователя (в работе)](https://leserg73.github.io/InnoHelp//ishelp/index.htm)
+- [Препроцессор Inno Setup (ISPP)](https://leserg73.github.io/InnoHelp/ispphelp/index.htm)
 
 -----------------------
