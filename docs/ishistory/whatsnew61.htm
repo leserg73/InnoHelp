@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 6</title>
+    <style type="text/css">
+    body         { font: small verdana, arial, sans-serif; color: black; background-color: white }
+    a:link       { color: #264b99; background-color: white }
+    a:active     { color: #7799dd; background-color: white }
+    a:visited    { color: #5e85d7; background-color: white }
+    tt           { font: small "courier new", monospace }
+    li           { margin-top: 0.15em; margin-bottom: 0.15em }
+    div.bluehead { text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold }
+    .date        { font-size: x-small; font-weight: bold }
+    .head1       { font-size: xx-large }
+    .head2       { font-size: large }
+    .ver         { font-size: large; font-weight: bold }
+</style> </head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
+      <span class="head2">История версий</span></div>
+    <p>Авторское право © 1997-2020 <a href="https://jrsoftware.org/">Jordan
+        Russell</a>. Все права защищены.<br />
+      Долевое авторское право © 2000-2020 Martijn Laan. Все права защищены.<br />
+      Условия распространения и использования смотрите в <a href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
+      на рассылку о новых выпусках Inno Setup.<br />
+      <b>Если вы были подписаны на рассылку до октября 2019, пожалуйста,
+        сделайте это снова.</b></p>
+    <p><a name="6.1.0"></a><span class="ver">6.1.0-beta </span><span class="date">(2020-09-13)</span></p>
+    <p><span class="head2">Пользовательские шрифты</span></p>
+    <p>Теперь поддерживаются пользовательские шрифты, если программа установки
+      запускается на системе Windows 10 версии 1803 и выше:</p>
+    <ul>
+      <li>Параметр <tt>FontInstall</tt> в секции [Files] может теперь
+        использоваться в <a href="https://jrsoftware.org/ishelp/index.php?topic=admininstallmode">не
+          административных установках</a>. Для успешной установки шритфа
+        требуется Windows 10 версии 1803 или выше.</li>
+      <li>Константа <tt>{fonts}</tt> была переименована в <tt>{commonfonts}</tt>.
+        Устаревшее имя всё ещё поддерживается, но рекомендуется обновить ваши
+        сценарии на использование новых имен, иначе компилятор выдаст
+        предупреждение.</li>
+      <li>Добавлена новая константа <tt>{userfonts}</tt>. Только Windows 10
+        версии 1803 или выше поддерживает <tt>{userfonts}</tt>. Каталог тот же,
+        что и <tt>{localappdata}\Microsoft\Windows\Fonts</tt>.</li>
+      <li>Добавлена новая константа <tt>{autofonts}</tt>, которая автоматически
+        сопоставляется с <tt>{commonfonts}</tt>. Если установка выполняется в
+        режиме не административной установки, то она сопоставляется с константой
+        <tt>{userfonts}</tt>. Рекомендуется обновить ваши сценарии на
+        использование <tt>{autofonts}</tt>, чтобы избежать ошибок в будущем.</li>
+      <li>Обновлены все примеры сценариев на использование константы <tt>{autofonts}</tt>
+        вместо <tt>{fonts}</tt>.</li>
+      <li>Изменения в Pascal Scripting: функция <tt>UnregisterFont</tt>
+        получила дополнительный параметр.</li>
+    </ul>
+    <p><span class="head2">Обновления IDE компилятора</span></p>
+    <p>В IDE компилятора сделаны следующие изменения:</p>
+    <ul>
+      <li>Если сценарий использует функциональность препроцессора Inno Setup
+        (ISPP), то теперь в редакторе автоматически будет <a href="https://i.imgur.com/IVI2nk3.png">показана
+          вкладка препроцессора</a>, где вы сможете проверить результат его
+        работы. Эта функция может быть отключена в настройках редактора.</li>
+      <li>Теперь редактор поддерживает автоматическое открытие файлов (до 10) <tt>#include</tt>
+        в дополнительных вкладках, что позволяет <a href="https://i.imgur.com/iDrhOSs.png">редактировать
+          и отлаживать</a> их наряду с основным файлом сценария. Также в меню <i>Файл</i>
+        появился новый пункт <i>Сохранить всё</i>, с помощью которого могут быть
+        сохранены изменения во всех открытых файлах. Список файлов <tt>#include</tt>
+        обновляется после открытия основного сценария и после каждой компиляции
+        проекта. Эта функция может быть отключена в настройках редактора.</li>
+      <li>Если файлы, включенные директивой <tt>#include</tt>, были изменены с
+        момента последней компиляции, перед запуском инсталлятора компиляция
+        сценария будет выполнена заново. Эта функция также работает, когда опция
+        автоматического открытия файлов <tt>#include</tt> отключена.</li>
+      <li>В меню <i>Вид</i> добавлены новые пункты <i>Следующая вкладка</i> и
+        <i>Предыдущая вкладка</i>.</li>
+      <li>В справку добавлена новая глава, поясняющая <a href="https://jrsoftware.org/ishelp/index.php?topic=scriptdebug">встроенные
+          элементы отладчика</a> в меню <i>Выполнить</i>, которые можно
+        использовать для отладки сценария в секции [Code].</li>
+      <li><a href="https://i.imgur.com/wHoJ3FG.png">Улучшена подсветка</a>
+        пользовательских сообщений в секциях [CustomMessages] и [Messages].</li>
+      <li>В меню "<i>Инструменты</i>" добавлен новый пункт меню <a href="https://i.imgur.com/c9wGM3M.png">Вставить
+          MsgBox</a> для создания и вставки вызова <tt>MsgBox</tt> или <tt>TaskDialogMsgBox</tt>
+        в секции [Code].</li>
+      <li>В меню <i>Run</i> добавлен новый пункт <i>Шаг до выхода</i>, с
+        помощью которого работа программы установки будет выполнена до конца
+        текущей функции и приостановлена на следующей строке.</li>
+      <li>В диалоге приветствия добавлена кнопка <a href="https://jrsoftware.org/isdonate.php">Donate</a>
+        (<i>Помощь</i>) для поддержки Inno Setup и кнопка <a href="https://jrsoftware.org/ismail.php">Subscribe</a>
+        (<i>Подписка</i>) для подписки на рассылку по электронной почте о выходе
+        новых выпусков Inno Setup.</li>
+      <li>Диалог "Параметры запуска" теперь отображает список последних
+        используемых параметров.</li>
+    </ul>
+    <p><span class="head2">Встроенная поддержка загрузки для [Code]</span></p>
+    <p>Код Pascal Scripting теперь поддерживает загрузку файлов и проверку хэшей
+      SHA-256:</p>
+    <ul>
+      <li>Добавлена новая функция <tt>DownloadTemporaryFile</tt> для загрузки
+        файлов без использования сторонних инструментов:
+        <ul>
+          <li>Поддерживаются протоколы HTTPS (требуются не просроченные или
+            самоподписанные сертификаты) и HTTP.</li>
+          <li>Автоматическая поддержка перенаправлений и параметров
+            прокси-сервера.</li>
+          <li>Безопасное использование в отличии от сторонних инструментов.</li>
+          <li>Поддерживается проверка SHA-256 хэшей загружаемых файлов.</li>
+          <li>Поддерживается базовая аутентификация.</li>
+        </ul>
+      </li>
+      <li>Добавлена новая функция <tt>CreateDownloadPage</tt>, которая
+        позволяет отобразить <a href="https://i.imgur.com/deliPb8.png">процесс
+          загрузки</a> для пользователя. Смотрите пример сценария в файле <i><a
+
+            href="https://jrsoftware.github.io/issrc/Examples/CodeDownloadFiles.iss">CodeDownloadFiles.iss</a></i>.</li>
+      <li>Добавлена новая функция <tt>DownloadTemporaryFileSize</tt> для
+        получения размера файла без его загрузки.</li>
+      <li>Добавлены новые функции <tt>GetSHA256OfFile</tt>, <tt>GetSHA256OfString</tt>
+        и <tt>GetSHA256OfUnicodeString</tt> для вычисления SHA-256 хэшей.</li>
+      <li><b>Изменение в поведении по умолчанию:</b> программа установки больше
+        не отключается пока выполняется <tt>PrepareToInstall</tt>. Теперь
+        отключается только кнопка "Отмена".</li>
+    </ul>
+    <p><span class="head2">Обновления Inno Setup Preprocessor (ISPP)</span></p>
+    <p>ISPP теперь использует 64-разрядные целые числа и имеет новые функции,
+      которые упрощают сравнение номеров версий:</p>
+    <ul>
+      <li>Тип <tt><b>int</b></tt> теперь является 64-разрядным целым числом со
+        знаком. </li>
+      <li>Функция <tt>FileSize</tt> теперь поддерживает 64-разрядные размеры
+        файлов.</li>
+      <li>Добавлены новые функции <tt>GetPackedVersion</tt>, <tt>PackVersionNumbers</tt>,
+        <tt>PackVersionComponents</tt>, <tt>ComparePackedVersion</tt>, <tt>SamePackedVersion</tt>,
+        <tt>UnpackVersionNumbers</tt>, <tt>UnpackVersionComponents</tt> и <tt>VersionToStr</tt>.</li>
+      <li>Функции <tt>GetFileVersion</tt> и <tt>ParseVersion</tt> были
+        переименованы в <tt>GetVersionNumbersString</tt> и <tt>GetVersionComponents</tt>
+        соответственно. Старые имена функций всё ещё поддерживаются, но
+        рекомендуется обновить сценарии на использование новых, иначе компилятор
+        выдаст предупреждение.</li>
+    </ul>
+    <p>Аналогичные изменения были сделаны и в Pascal Scripting:</p>
+    <ul>
+      <li>Добавлена новая функция <tt>FileSize64</tt>.</li>
+      <li>Добавлены новые функции <tt>GetPackedVersion</tt>, <tt>PackVersionNumbers</tt>,
+        <tt>PackVersionComponents</tt>, <tt>ComparePackedVersion</tt>, <tt>SamePackedVersion</tt>,
+        <tt>UnpackVersionNumbers</tt>, <tt>UnpackVersionComponents</tt>, <tt>GetVersionComponents</tt>
+        и <tt>VersionToStr</tt>. Таким образом, ISPP и [Code] поддерживают один
+        и тот же список функций, связанных с обработкой версий.</li>
+    </ul>
+    <p><span class="head2">Другие изменения</span></p>
+    <ul>
+      <li><i>Исправление:</i> Inno Setup 6.0.5 не поддерживает Windows Vista.</li>
+      <li><b>Изменения в поведении по умолчанию:</b> директива <tt>MinVersion</tt>
+        в секции [Setup] по умолчанию теперь имеет значение <tt>6.1sp1</tt>, что
+        не позволяет программе установки работать в Windows Vista или Windows 7
+        и Windows Server 2008 R2 без установленного обновления. Допускается для
+        параметра <tt>MinVersion</tt> указать значение <tt>6.0</tt>, чтобы
+        активировать работу программы установки на системах с Windows Vista, но
+        использовать его крайне не рекомендуется. Это связано с тем, что Windows
+        Vista не поддерживает некоторые меры безопасности, принятые в программе
+        установки для защиты от потенциального вектора атаки при помощи
+        предварительной загрузки библиотек DLL. Установка для <tt>MinVersion</tt>
+        значения ниже <tt>6.1</tt> снижает уровень безопасности инсталлятора
+        для всех версий Windows.</li>
+      <li>Из обозначения версии Inno Setup убран символ "(u)", так как версия
+        Unicode уже долгое время является единственной версией.</li>
+      <li>Для секций [Run] и [UninstallRun] добавлен новый флаг: <tt>dontlogparameters</tt>.
+        Если флаг указан, то параметры командной строки программы не будут
+        включены в файл журнала.</li>
+      <li>Если секция [UninstallRun] содержит записи без параметра <tt>RunOnceId</tt>,
+        компилятор выдаст предупреждение. Использование <tt>RunOnceId</tt>
+        гарантирует, что в процессе деинсталляции запись в секции [UninstallRun]
+        будет выполнена только один раз. Чтобы отключить предупреждение,
+        используйте в секции [Setup] новый параметр <tt>MissingRunOnceIdsWarning</tt>.</li>
+      <li>В секции [Icons] добавлен новый параметр: <tt>AppUserModelToastActivatorCLSID</tt>.
+        Определяет для ярлыка свойство Toast Activator CLSID пользовательской
+        модели приложения в Windows 10. В более ранних версия Windows не
+        учитывается.</li>
+      <li>Запросы программы установки на выполнение замены или сохранения
+        существующих файлов стали более удобными для пользователя:
+        <ul>
+          <li>Программа установки теперь отображает <a href="https://i.imgur.com/AnF6qo8.png">более
+              дружелюбный диалог</a> для замены или сохранения существующих
+            файлов, если указан флаг <tt>confirmoverwrite</tt>.</li>
+          <li>Программа установки теперь отображает <a href="https://i.imgur.com/VBDuZ7U.png">более
+              дружелюбный диалог</a> для сохранения или замены существующих
+            файлов, если указан флаг <tt>promptifolder</tt>.</li>
+        </ul>
+      </li>
+      <li>Изменения в консольной версии компилятора (ISCC): предупреждения и
+        ошибки <a href="https://i.imgur.com/9VvbFGJ.png">выделяются другим
+          цветом</a>.</li>
+      <li>Изменения в Pascal Scripting:
+        <ul>
+          <li>Добавлена новая функция <tt>CalculateButtonWidth</tt> для класса
+            <tt>TSetupForm</tt>.</li>
+          <li>Параметры <tt>ACaption</tt> и <tt>ADescription</tt> различных
+            функций вида <tt>Create...Page</tt> теперь поддерживают сообщения
+            программы установки, в которых содержатся короткие имена, подобно <tt>[name]</tt>.</li>
+          <li><i>Исправлено:</i> функция <tt>WizardSelectComponents</tt> теперь
+            выполняет обновление размеров компонентов и необходимого дискового
+            пространства, если пользователь изменяет текущий выбор.</li>
+        </ul>
+      </li>
+      <li>Изменения в ISPP:
+        <ul>
+          <li>Использование <tt>#pragma verboselevel</tt> теперь автоматически
+            включает подробный режим.</li>
+          <li>Добавлены новые функции <tt>Message</tt>, <tt>Warning</tt> и <tt>Error</tt>.</li>
+          <li>В ISPP добавлена подсветка предупреждений.</li>
+        </ul>
+      </li>
+      <li>Различные исправления в документации.</li>
+      <li>Незначительные улучшения.</li>
+    </ul>
+    <p>Разработка в <a target="_blank" href="https://github.com/jrsoftware/issrc">GitHub</a>:
+      Благодарим Gavin Lambert и Sergii Leonov за развитие Inno Setup.</p>
+    <p>В этой версии произошли следующие изменения в сообщениях: (<a href="https://github.com/jrsoftware/issrc/commit/9e03ea4de5b8639937d2c4024ec8582a7e63b048">Смотрите
+        различия в файле Default.isl</a>).</p>
+    <ul>
+      <li><b>Новые сообщения:</b>
+        <ul>
+          <li>DownloadingLabel, ButtonStopDownload, StopDownload,
+            ErrorDownloadAborted, ErrorDownloadFailed, ErrorDownloadSizeFailed,
+            ErrorFileHash1, ErrorFileHash2, ErrorProgress, ErrorFileSize.</li>
+          <li>ExistingFileNewerSelectAction, ExistingFileNewer2,
+            ExistingFileNewerOverwriteExisting, ExistingFileNewerKeepExisting,
+            ExistingFileNewerOverwriteOrKeepAll.</li>
+          <li>FileExistsSelectAction, FileExists2, FileExistsOverwriteExisting,
+            FileExistsKeepExisting, FileExistsOverwriteOrKeepAll.</li>
+        </ul>
+      </li>
+      <li><b>Обязательные сообщения (ранее могли отсутствовать):</b>
+        <ul>
+          <li>ComponentsDiskSpaceGBLabel, DiskSpaceGBLabel,
+            PrepareToInstallNeedsRestart.</li>
+        </ul>
+      </li>
+      <li><b>Удалённые сообщения:</b>
+        <ul>
+          <li>ExistingFileNewer, FileExists.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Примечание: в настоящий момент ещё не все официальные переводы были
+      обновлены.
+      <!-- Demoted the official <a href="https://raw.github.com/jrsoftware/issrc/main/Files/Languages/Unofficial/German.isl">German</a>, <a href="https://raw.github.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Nepali.islu">Nepali</a>, <a href="https://raw.github.com/jrsoftware/issrc/main/Files/Languages/Unofficial/SerbianCyrillic.isl">Serbian (Cyrillic)</a> and <a href="https://raw.github.com/jrsoftware/issrc/main/Files/Languages/Unofficial/SerbianLatin.isl">Serbian (Latin)</a> translations to unofficial because of a no longer available maintainer. To send updates yourself, see <a href="http://news.jrsoftware.org/read/article.php?id=2514&amp;group=jrsoftware.innosetup.translations#2514">this post</a> for what needs updating and use <a href="https://jrsoftware.org/files/istrans/send2.php">this form</a> to send updates (or use <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>). See the <a href="https://jrsoftware.org/files/istrans/">Inno Setup Translations</a> page for more information. -->
+    </p>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm">История версий
+        Inno Setup 6.0</a></p>
+  </body>
+</html>

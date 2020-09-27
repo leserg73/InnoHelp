@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 6</title>
+    <style type="text/css">
+    body         { font: small verdana, arial, sans-serif; color: black; background-color: white }
+    a:link       { color: #264b99; background-color: white }
+    a:active     { color: #7799dd; background-color: white }
+    a:visited    { color: #5e85d7; background-color: white }
+    tt           { font: small "courier new", monospace }
+    li           { margin-top: 0.15em; margin-bottom: 0.15em }
+    div.bluehead { text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold }
+    .date        { font-size: x-small; font-weight: bold }
+    .head1       { font-size: xx-large }
+    .head2       { font-size: large }
+    .ver         { font-size: large; font-weight: bold }
+</style> </head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
+      <span class="head2">История версий</span></div>
+    <p>Copyright © 1997-2020 <a href="https://jrsoftware.org/">Jordan Russell</a>.
+      Все права защищены.<br />
+      Portions Copyright © 2000-2020 Martijn Laan. Все права защищены.<br />
+      Условия распространения и использования смотрите в <a href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> Тогда <a href="https://jrsoftware.org/ismail.php">нажмите
+        здесь</a>, чтобы подписаться на рассылку о новых выпусках Inno Setup.<br />
+      <b>Если вы были подписаны на рассылку до октября 2019, пожалуйста,
+        сделайте это снова.</b></p>
+    <p><a name="6.0.5"></a><span class="ver">6.0.5 </span><span class="date">(2020-05-21)</span></p>
+    <ul>
+      <li>Изменения, защищающие программы установки от потенциальных атак
+        предварительной загрузки DLL.</li>
+      <li>Изменения в IDE компилятора: добавлен пункт меню <a href="https://jrsoftware.org/ismail.php">Список
+          рассылки Inno Setup</a> в разделе "Справка".</li>
+      <li>Inno Setup может быть установлен при помощи нового <a href="https://github.com/microsoft/winget-cli">диспетчера
+          пакетов Windows</a>.</li>
+      <li>Незначительные улучшения.</li>
+    </ul>
+    <p><a name="6.0.4"></a><span class="ver">6.0.4 </span><span class="date">(2020-03-12)</span></p>
+    <ul>
+      <li>Секция [Setup]: параметрам <tt>LicenseFile</tt>, <tt>InfoBeforeFile</tt>
+        и <tt>InfoAfterFile</tt> добавлена поддержка объектов OLE, таких как
+        изображения, в файлах RTF.</li>
+      <li>Добавлена новая константа: <tt>{usersavedgames}</tt>.</li>
+      <li>Изменения в IDE компилятора:
+        <ul>
+          <li>Увеличен диалог приветствия и его размеры теперь могут быть
+            изменены.</li>
+          <li>Добавлена поддержка тёмной темы элементам прокрутки (на новых
+            версиях Windows) и набору нижних вкладок.</li>
+        </ul>
+      </li>
+      <li>Изменения для механизм Restart Manager:
+        <ul>
+          <li>Программа установки теперь игнорирует попытки сценария
+            зарегистрировать сам инсталлятор с помощью механизма Restart Manager
+            для проверки использования.</li>
+          <li>Если в секции [Setup] параметром <tt>CloseApplicationsFilter</tt>
+            были исключены все файлы, программа установки больше не будет
+            вызывать функцию RmGetList механизма Restart Manager с запросом
+            проверки 0 файлов.</li>
+          <li>/LOG: теперь регистрирует количество файлов, которые программа
+            установки запросила для проверки функцией RmGetList.</li>
+          <li>Добавлен новый параметр командной строки /LOGCLOSEAPPLICATIONS.
+            Указывает программе установки вести дополнительную регистрацию
+            закрываемых приложений с целью отладки.</li>
+          <li><i>Исправлено:</i> параметр <tt>CloseApplicationsFilter</tt> в
+            секции [Setup] не принимался во внимание при проверке записей
+            [InstallDelete].</li>
+        </ul>
+      </li>
+      <li>Условия издателя Windows AppLocker теперь поддерживаются программой
+        установки до уровня имени файла включительно.</li>
+      <li>Изменения в Pascal Scripting: добавлена новая функция <tt>IsDotNetInstalled</tt>,
+        основанная на коде <a href="http://www.kynosarges.de/DotNetVersion.html">Cristoph
+          Nahr</a>.</li>
+      <li>Изменения в Inno Setup Preprocessor (ISPP): добавлена новая функция <tt>UpperCase</tt>.</li>
+      <li><i>Исправлено:</i> атрибуты события для функций событий удаления
+        теперь действительно работают.</li>
+      <li>Незначительные улучшения и дополнения в документации.</li>
+      <li>Включён протокол HTTPS для <a href="https://jrsoftware.org/">jrsoftware.org</a>.</li>
+    </ul>
+    <p><a name="6.0.3"></a><span class="ver">6.0.3 </span><span class="date">(2019-10-11)</span></p>
+    <ul>
+      <li>/LOG: теперь регистрирует режим совместимости Windows, если он был
+        активирован пользователем.</li>
+      <li>Добавлен новый параметр в секции [Setup]: <tt>SignToolRunMinimized</tt>.</li>
+      <li>Параметр <tt>UsePreviousLanguage</tt> в секции [Setup] теперь имеет
+        эффект, если диалог "Выбор языка" не отображается, например, когда
+        программа установки запущена в тихом режиме.</li>
+      <li>Чекбоксы, отображаемые списками, теперь выглядят лучше на системах с
+        высоким DPI.</li>
+      <li>Изменения в IDE компилятора:
+        <ul>
+          <li>Добавлена поддержка темной темы для панели инструментов.</li>
+          <li>При приостановке на точке останова в секции [Code] на новой
+            вкладке "Стек отладочных вызовов" теперь будут показаны сообщения
+            стека.</li>
+          <li>На вкладках "Компилятор" и "Отладка" теперь поддерживается
+            множественный выбор, а также сочетания клавиш <i>Ctrl+C</i>
+            ("Копировать") и <i>Ctrl+A </i>("Выделить все"). Теперь копируется
+            только выделенная строка вместо всех строк.</li>
+        </ul>
+      </li>
+      <li>Изменения в Inno Setup Preprocessor (ISPP):
+        <ul>
+          <li>Переменные массива, объявленные с помощью <tt>#dim</tt>, теперь <span
+              lang="ru" class="tlid-translation translation"><span title="" class="">могут
+                быть инициализированы напрямую, например, </span></span><tt>#dim
+              MyArray[3] {1, 2, 3}</tt>.</li>
+          <li><span lang="ru" class="tlid-translation translation"><span title=""
+                class="">Добавлена новая предопределенная переменная: </span></span><tt>Tab</tt>.</li>
+        </ul>
+      </li>
+      <li>Изменения в Pascal Scripting: добавлены новые функции <tt>Set8087CW</tt>
+        и <tt>Get8087CW</tt>.</li>
+      <li>Изменения и дополнения в сообщениях: (<a href="https://github.com/jrsoftware/issrc/commit/dfdf02aef168be458b64e77afb20ae53a5b4f2ec">Смотрите
+          различия в файле Default.isl</a>)
+        <ul>
+          <li>PrepareToInstallNeedsRestart: это сообщение используется на
+            странице подготовки к установке, если требуется перезагрузка. Если в
+            переводе этого сообщения нет, то программа установки будет
+            использовать FinishedRestartLabel и FinishedRestartMessage, как и
+            раньше.</li>
+          <li>ComponentsDiskSpaceGBLabel и DiskSpaceGBLabel: эти сообщения
+            используются программой установки для отображения дискового
+            пространства от 1000.0 Мб и выше в гигабайтах (Гб) вместо мегабайтов
+            (Мб). Если в переводе этих сообщений нет, то вместо них будут
+            использоваться ComponentsDiskSpaceMBLabel и DiskSpaceMBLabel, как и
+            ранее.</li>
+        </ul>
+      </li>
+      <li>Добавлен официальный перевод на Словацкий язык.</li>
+      <li>Незначительные улучшения и косметические исправления.</li>
+    </ul>
+    <p>Вклады через <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>:
+      Благодарим Vizit0r за содействие.</p>
+    <p><a name="6.0.2"></a><span class="ver">6.0.2 </span><span class="date">(2019-04-26)</span></p>
+    <ul>
+      <li>Добавлена новая константа: <tt>{sysnative}</tt>.</li>
+      <li>Изменения в Pascal Scripting:
+        <ul>
+          <li>Добавлены новые функции <tt>WizardSelectComponents</tt> и <tt>WizardSelectTasks</tt>.</li>
+          <li>Функции <tt>IsComponentSelected</tt> и <tt>IsTaskSelected</tt>
+            соответственно переименованы в <tt>WizardIsComponentSelected</tt> и
+            <tt>WizardIsTaskSelected</tt>. Устаревшие функции все ещё
+            поддерживаются, но рекомендуется обновить ваши сценарии на
+            использование новых. Компилятор выдаст предупреждение, если вы этого
+            не сделаете.</li>
+        </ul>
+      </li>
+      <li>Незначительные косметические исправления.</li>
+    </ul>
+    <p><a name="6.0.1"></a><span class="ver">6.0.1-beta </span><span class="date">(2019-03-07)</span></p>
+    <ul>
+      <li><i>Исправлено:</i> в версии 6.0.0 невозможно было использовать
+        параметр <tt>InfoAfterFile</tt> в секции [Setup].</li>
+      <li>Изменения в Pascal Scripting:
+        <ul>
+          <li><i>Исправлено:</i> свойство <tt>Anchors</tt> добавлено всем
+            элементам управления для обеспечения полной поддержки <tt>WizardResizable</tt>
+            и <tt>WizardSizePercent</tt>.</li>
+          <li>Обновлен пример сценария <i>AllPagesExample.iss</i> с
+            использованием всех функций <tt>Create...Page</tt>.</li>
+          <li>Многострочный элемент управления Edit, создаваемый функцией <tt>CreateOutputMsgMemoPage</tt>,
+            теперь выглядит более современно.</li>
+        </ul>
+      </li>
+      <li>Добавлен официальный перевод на Немецкий язык.</li>
+      <li>Официальные переводы на <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/Greek.isl">Греческий</a>,
+        <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/Hungarian.isl">Венгерский</a>
+        и <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/ScottishGaelic.isl">Шотландский</a>
+        языки переведены в разряд неофициальных из-за отсутствия поддержки.
+        Чтобы самостоятельно отправить обновление, посмотрите <a href="https://jrsoftware.org/files/istrans/send.php">это
+          сообщение</a> и используйте <a href="https://jrsoftware.org/files/istrans/send2.php">эту
+          форму</a> (или портал <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>).
+        Дополнительную информацию вы найдете на странице <a href="https://jrsoftware.org/files/istrans/">Inno
+          Setup Translations</a>.</li>
+      <li>Другие улучшения документации.</li>
+    </ul>
+    <p><a name="6.0.0"></a><span class="ver">6.0.0-beta </span><span class="date">(2019-02-11)</span></p>
+    <p>Inno Setup 6 содержит большое количество изменений:</p>
+    <p><span class="head2">Административный и не административный режим
+        установки</span></p>
+    <p>Внесён ряд существенных изменений в функциональность административного и
+      не административного режима установки:</p>
+    <ul>
+      <li>Добавлены новые константы с приставкой "auto" для автоматического
+        сопоставления с "общей" формой. Если установка выполняется в режиме без
+        административной установки, то они сопоставляются с "пользовательской"
+        формой. Во избежание ошибок настоятельно рекомендуется обновить ваши
+        сценарии на использование констант с приставкой "auto" для максимальной
+        эффективности ваших инсталляторов. Перечень добавленных констант "auto"
+        следующий: <tt>{autoappdata}</tt>, <tt>{autocf}</tt>, <tt>{autocf32}</tt>,
+        <tt>{autocf64}</tt>, <tt>{autodesktop}</tt>, <tt>{autodocs}</tt>, <tt>{autopf}</tt>,
+        <tt>{autopf32}</tt>, <tt>{autopf64}</tt>, <tt>{autoprograms}</tt>, <tt>{autostartmenu}</tt><tt>,
+          {autostartup}</tt> и <tt>{autotemplates}</tt>.</li>
+      <li>Обновлены все примеры сценариев на использование <tt>{autopf}</tt>
+        вместо <tt>{pf}</tt> и т.д.</li>
+      <li><b><b>Изменения в поведении по умолчанию</b>:</b> константы папок
+        общего доступа с приставкой "common" больше не сопоставляются с формой
+        "user", если установка выполняется в режиме без прав администратора.
+        Вместо этого они возвращают запрошенный общий каталог. Перечень
+        затронутых констант "common" следующий: <tt>{commonappdata}</tt>, <tt>{commondesktop}</tt>,
+        <tt>{commondocs}</tt>, <tt>{commonprograms}</tt>, <tt>{commonstartmenu}</tt><tt>,
+          {commonstartup}</tt> и <tt>{commontemplates}</tt>.</li>
+      <li>Константы <tt>{pf}</tt> и <tt>{cf}</tt> были переименованы в <tt>{commonpf}</tt>
+        и <tt>{commoncf}</tt> соответственно. Также <tt>{pf32}</tt>
+        переименована в <tt>{commonpf32}</tt> и т.д. Устаревшие имена всё ещё
+        поддерживаются, но рекомендуется обновить ваши сценарии на использование
+        новых имен, иначе компилятор выдаст предупреждение. </li>
+      <li>Константа <tt>{commonfavorites}</tt> была удалена: такого каталога в
+        Windows больше не существует.</li>
+      <li>Константы <tt>{userpf}</tt>, <tt>{usercf}</tt> и <tt>{username}</tt>,
+        а также параметр <tt>AlwaysUsePersonalGroup</tt> секции [Setup], теперь
+        могут корректно вызывать предупреждения <a href="https://jrsoftware.org/files/is5-whatsnew.htm#useduserareaswarnings">об
+          используемых областях пользователя</a>.</li>
+      <li>Изменения в Pascal Scripting: удалена функция <tt>GetShellFolder</tt>.
+        Используйте <tt>ExpandConstant</tt> вместо неё.</li>
+    </ul>
+    <ul>
+      <li>В секции [Registry] добавлено новое <tt>корневое</tt> значение <tt>HKA</tt>.
+        Оно эквивалентно <tt>HKLM</tt> в режиме административной установки и <tt>HKCU</tt>
+        в противном случае. Также поддерживаются константы <tt>{reg:...}</tt> и
+        <tt>HKA32</tt>/<tt>HKA64</tt>. Примечание: <tt>HKA</tt> (подобно <tt>HKCU</tt>)
+        следует использовать для настроек, совместимых с перемещаемыми
+        профилями.</li>
+      <li>Использовать в секции [Registry] <tt>корневое</tt> значение <tt>HKCR</tt>
+        больше не рекомендуется. Вместо него используйте <tt>HKA</tt> с
+        параметром <tt>Subkey</tt> со значением "Software\Classes".</li>
+      <li>Изменения в Pascal Scripting: добавлены константы <tt>HKA</tt> и <tt>HKEY_AUTO</tt>.
+        Также поддерживаются константы <tt>HKA32</tt>, <tt>HKA64</tt>, <tt>HKEY_AUTO_32</tt>
+        и <tt>HKEY_AUTO_64</tt>.</li>
+    </ul>
+    <ul>
+      <li>Помощник создания сценариев теперь предлагает возможность выбора
+        административного режима установки или не административного и выводит
+        сценарии, которые работают в обоих режимах.</li>
+      <li>Изменения в Pascal Scripting: добавлена новая функция <tt>IsAdminInstallMode</tt>.</li>
+      <li>Добавлен раздел <a href="https://jrsoftware.org/ishelp/index.php?topic=admininstallmode">Не
+          административный режим установки</a> в файле справки.</li>
+    </ul>
+    <p><span class="head2">Переопределяемый режим установки</span></p>
+    <p>Как только вы полностью обновите ваши сценарии для поддержания как
+      административного, так и не административного режима установки (например,
+      используя новый константы "auto" и <tt>корневое</tt> значения <tt>HKA</tt>
+      в секции [Registry]), тогда вы сможете сделать следующее:</p>
+    <ul>
+      <li>Добавить в секции [Setup] параметр <tt>PrivilegesRequiredOverridesAllowed</tt>
+        и установить для него одно или несколько значений, которые позволят
+        конечному пользователю переопределить заданный по умолчанию параметр <tt>PrivilegesRequired</tt>.
+        Поддерживаются следующие значения переопределения: <tt>commandline</tt>
+        и <tt>dialog</tt>.</li>
+      <ul>
+        <li><tt>commandline</tt> активирует в программе установки поддержку двух
+          дополнительных параметров командной строки, которые позволяют
+          переопределить заданный сценарием параметр <tt>PrivilegesRequired</tt>:
+          /ALLUSERS и /CURRENTUSER.</li>
+        <li><tt>dialog</tt> активирует в программе установки отображение
+          подавляемого диалога с выбором предпочитаемого режима установки на
+          основе заданного в сценарии параметра <tt>PrivilegesRequired</tt> (<a
+            href="https://i.imgur.com/up287vq.png">например</a>, если <tt>PrivilegesRequired</tt>
+          имеет значение <tt>admin</tt>). Значение <tt>dialog</tt>
+          автоматически активирует <tt>commandline</tt> и при использовании
+          одного из параметров командной строки программа установки не будет
+          выдавать запрос.</li>
+      </ul>
+      <li>Добавить в секции [Setup] параметр <tt>UsePreviousPrivileges</tt>.
+        Если параметру задано значение <tt>yes</tt> (используется по умолчанию)
+        и для <tt>PrivilegesRequiredOverridesAllowed</tt> указано <tt>dialog</tt>,
+        то при запуске программа установки произведёт в реестре поиск
+        установленной версии <a href="https://jrsoftware.org/ishelp/index.php?topic=sameappnotes">такого
+          же приложения</a> и режима, в котором оно было установлено, и далее
+        будет использовать этот режим установки без вопросов к пользователю.</li>
+    </ul>
+    <ul>
+      <li>Помощник создания сценариев теперь предлагает задать параметры
+        переопределения: <tt>commandline</tt> и <tt>dialog</tt>.</li>
+      <li>Собственный сценарий установки Inno Setup теперь также поддерживает
+        возможность переопределения режима установки по выбору пользователя.</li>
+    </ul>
+    <p><span class="head2">Параллельные установки</span></p>
+    <p>Улучшена поддержка <a href="https://jrsoftware.org/ishelp/index.php?topic=sidebyside">параллельных</a>
+      установок:</p>
+    <ul>
+      <li>Два отдельных запуска установки, которые не используют один и тот же
+        режим, административный или не административный, больше не считаются <a
+          href="https://jrsoftware.org/ishelp/index.php?topic=sameappnotes">одним
+          и тем же приложением</a>. Это означает, что вы можете выполнять <a href="https://jrsoftware.org/ishelp/index.php?topic=sidebyside">параллельную</a>
+        установку в этих режимах, даже если инсталляторы имеют одинаковое
+        значение параметра <tt>AppId</tt> (или если <tt>AppId</tt> не задан, то
+        одно и то же значение <tt>AppName</tt>), без каких-либо побочных
+        эффектов, которые наблюдались в предыдущих версиях Inno Setup.</li>
+      <li><b>Изменения в поведении по умолчанию:</b> чтобы избежать дублирования
+        записей в апплете "<i>Удаление или добавление программы</i>" Панели
+        управления Windows в течении <a href="https://jrsoftware.org/ishelp/index.php?topic=sidebyside">параллельной</a>
+        установки, программа установки автоматически пометит новую запись
+        текстом вида "Текущий пользователь" или "64-бит", когда это будет
+        необходимо. </li>
+      <li>Добавлен раздел <a href="https://jrsoftware.org/ishelp/index.php?topic=sidebyside">Параллельная
+          установка</a> в файле справки.</li>
+    </ul>
+    <p><span class="head2">Изменяемый размер окна установки</span></p>
+    <p>Окно мастера установки теперь имеет изменяемый размер:</p>
+    <ul>
+      <li>В секции [Setup] добавлен новый параметр: <tt>WizardResizable</tt>.
+        Если параметру установлено значение <tt>yes</tt>, то пользователь
+        сможет изменить размер главного окна установки.</li>
+      <li>В секции [Setup] добавлен новый параметр: <tt>WizardSizePercent</tt>.
+        Этот параметр позволяет увеличить исходный размер окна
+        установки/удаления без изменения размера шрифта.</li>
+      <li>Изменения в Pascal Scripting:
+        <ul>
+          <li>Добавлено новое свойство <tt>Anchors</tt> для всех элементов
+            управления, а также свойство <tt>KeepSizeY</tt> для <tt>TSetupForm</tt>,
+            которые обеспечивают полную поддержку параметров <tt>WizardResizable</tt>
+            и <tt>WizardSizePercent</tt> для всех пользовательских элементов
+            управления, страниц и форм <tt>TSetupForm</tt>. В качестве примера
+            смотрите пример сценария <i>CodeClasses.iss</i>. В этом примере
+            показаны также другие изменения, сделанные в <tt>TSetupForm</tt>.</li>
+          <li>Добавлено новое свойство <tt>Constraints</tt> в класс <tt>TForm</tt>.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><span class="head2">Новый современный стиль мастера установки</span></p>
+    <p>Окно мастера установки теперь выглядит более современно:</p>
+    <ul>
+      <li>В секции [Setup] добавлен новый параметр: <tt>WizardStyle</tt>. Если
+        параметр имеет значение <tt>modern</tt>, программа установки/удаления
+        будет иметь более современный вид и по умолчанию для параметра <tt>WizardResizable
+          будет установлено значение </tt><tt><tt>yes</tt>, а для параметра </tt><tt>WizardSizePercent</tt>
+        значение <tt>120,120</tt>.</li>
+      <li><b>Изменения в поведении по умолчанию:</b> ранние версии Inno Setup
+        также поддерживали параметр <tt>WizardStyle</tt> и, если в ваших
+        сценариях всё ещё используется <tt>WizardStyle=modern</tt> (этот
+        параметр был оставлен для обратной совместимости, но на самом деле
+        ничего не делал) и вы не хотите иметь обновленный современный вид, тогда
+        вам следует удалить эту запись или изменить её на <tt>WizardStyle=classic</tt>.</li>
+      <li>Обновлены все примеры сценариев с использованием параметра <tt>WizardStyle=modern</tt>.</li>
+      <li>Изменения в Pascal Scripting: добавлено новое свойство <tt>SurfaceColor</tt>
+        для класса <tt>TWizardPage</tt>.</li>
+    </ul>
+    <p>Несколько элементов теперь всегда выглядят более современно, независимо
+      от параметра <tt>WizardStyle</tt>:</p>
+    <ul>
+      <li>Внешний вид диалога "<i>Выбор языка установки</i>" приведен в
+        соответствие с диалогами и сообщениями Windows 10 (<a href="https://i.imgur.com/4xWv5tw.png">пример</a>).</li>
+      <li>Некоторые элементы интерфейса сделаны плоскими для придания
+        элегантности и строгости.</li>
+    </ul>
+    <p><span class="head2">Обновления IDE компилятора</span></p>
+    <p>Внешний вид IDE компилятора:</p>
+    <ul>
+      <li>Обновлены все значки панели инструментов и интерфейс IDE компилятора
+        сделан плоским для придания ему более современного вида.</li>
+      <li>Интерфейс IDE компилятора теперь поддерживает три темы: Светлая (<a href="https://i.imgur.com/NVhZ0ml.png">пример</a>),
+        Тёмную (<a href="https://i.imgur.com/J4LMPAa.png">пример</a>) и
+        Классическую (<a href="https://i.imgur.com/x513SpW.png">пример</a>). По
+        умолчанию используется новая тема Светлая. Если программа запущена на
+        Windows 10, в которой установлен темный режим, то по умолчанию будет
+        использоваться Тёмная тема. Активная тема может быть изменена в
+        настройках компилятора.</li>
+      <li>Интерфейс IDE компилятора теперь использует режим адаптации к
+        мониторам с высокой плотностью пикселей (точек на дюйм, DPI) и позволяет
+        использовать шрифт "Segoe UI" для своих элементов интерфейса.</li>
+      <li>Вкладка "Компиляция" получила отключаемую в настройках опцию цветовой
+        подсветки строк сообщений компилятора.</li>
+      <li>Вкладка "Отладка" теперь использует выделенный текст для любых записей
+        ввода, таких как '-- File entry --'.</li>
+      <li>Функция "<i>Связать файлы .iss с этим компилятором</i>" теперь может
+        выполнить ассоциацию для текущего пользователя вместо сообщения об
+        ошибке, если отсутствуют права администратора.</li>
+      <li>Опция "<i>Разрешить операцию отмены после сохранения</i>" и "<i>Показывать
+          границы табуляции</i>" теперь включены по умолчанию для всех новых
+        установок.</li>
+      <li>Окно "<span style="font-style: italic;">Конфигурация цифровой подписи</span>"
+        теперь шире и его размер может быть изменён.</li>
+    </ul>
+    <p><span class="head2">Другие изменения</span></p>
+    <ul>
+      <li><b>Изменения в требованиях к операционной системе:</b> Windows 2000,
+        XP и Server 2003 больше не поддерживаются. Windows Vista является
+        минимальной версией поддерживаемой операционной системы.</li>
+      <li><b>Изменения в поведении по умолчанию:</b> начиная с Inno Setup 6
+        доступной будет только одна версия: Unicode Inno Setup. Unicode Inno
+        Setup выпускается уже в течении 9 лет, и если вы ещё не начали её
+        использование, то ознакомьтесь с разделом справки <a href="https://jrsoftware.org/ishelp/index.php?topic=unicode">Unicode
+          Inno Setup</a>. По сути, если вы не используете секцию [Code] для
+        вызова различных DLL со строковыми параметрами, вам не нужно вносить
+        какие-либо изменения в ваши сценарии.</li>
+    </ul>
+    <ul>
+      <li>Добавлена поддержка 64-бит режима в Windows 10 для архитектуры ARM,
+        которую можно использовать для установки двоичных файлов ARM64. Смотрите
+        пример сценария <i>64BitThreeArch.iss</i>, который показывает
+        возможность установки программы, созданную для трех различных архитектур
+        (x86, x64, ARM64), с использованием одного инсталлятора.</li>
+    </ul>
+    <ul>
+      <li>Диалоги программы установки "Прервать/Повторить/Пропустить" заменены
+        на диалоги задач. Такие диалоги гораздо удобнее и практичнее по
+        сравнению с обычными диалогами, которые используют простые окна
+        сообщений (внешний вид: <a href="https://i.imgur.com/NfbJAsS.png">диалог
+          задач</a> против <a href="https://i.imgur.com/n7wh2UC.png">окно
+          сообщения</a>).</li>
+      <li>В секции [Setup] добавлен новый параметр <tt>VersionInfoOriginalFileName</tt>,
+        который позволяет задать исходное имя файла.</li>
+      <li>Параметр <tt>Permissions</tt>, поддерживаемый записями секций
+        [Files], [Dirs] и [Registry], теперь позволяет предоставлять разрешение
+        группе "Гости", учётной записи локальной службы, учётной записи сетевой
+        службы и владельцу-создателю.</li>
+      <li>Добавлено новое специальное сообщение <i>HelpTextNote</i>, которое
+        можно использовать для указания особого текста. При компиляции сценария
+        этот текст добавляется в список параметров командной строки, который
+        отображается при передаче программе установки параметра /HELP. По
+        умолчанию это сообщение содержит пустую строку, поэтому, если вы хотите
+        его задействовать, обязательно укажите желаемое значение, которое по
+        умолчанию будет использовано для всех языков.</li>
+      <li>Компилятор теперь поддерживает файлы .isl в кодировке UTF-8 без
+        специального расширения. Но переводчики все равно всегда должны
+        указывать соответствующий <tt>LanguageCodePage</tt>, когда это
+        возможно.</li>
+      <li>Теперь компилятор будет выдавать ошибку, если в команде Sign Tool
+        отсутствует последовательность $f.</li>
+      <li><em>Исправлено</em>: компилятор теперь проверяет параметры <tt>OutputBaseFileName</tt>
+        и <tt>OutputManifestFile</tt> на наличие некорректных символов, даже
+        если для <tt>Output</tt> указано значение <tt>no</tt>.</li>
+      <li>/LOG: теперь регистрирует некоторую дополнительную информацию о работе
+        Restart Manager.</li>
+    </ul>
+    <ul>
+      <li>Изменения в Pascal Scripting:
+        <ul>
+          <li>Добавлены атрибуты события, которые дают возможность нескольких
+            реализаций одной и той же функции. Особенно это полезно и при
+            использовании подключаемых сценариев, где уже существует функция,
+            объявленная в основном сценарии. Функция события поможет избежать
+            конфликтов и переделки сценария. Более подробную информацию смотрите
+            в справке, а пример использования в файле <i>CodeExample1.iss</i>.</li>
+          <li>Добавлены новые функции <tt>TaskDialogMsgBox</tt> и <tt>SuppressibleTaskDialogMsgBox</tt>,
+            которые показывают сообщение, используя диалог задач (<a href="https://i.imgur.com/hU4RQP2.png">пример</a>).
+            Более подробную информацию смотрите в справке, а пример
+            использования в файле <i>CodeClasses.iss</i>.</li>
+          <li>Добавлена новая функция <tt>CreateCallback</tt>, которая
+            позволяет выполнять прямое обращение из функций DLL (подобно
+            функциям Windows API) к функциям сценария. Смотрите файл справки и
+            пример сценария <i>CodeDll.iss</i>.</li>
+          <li>В секции [Setup] для параметров <tt>ChangesAssociations</tt> и <tt>ChangesEnvironment</tt>
+            теперь может быть установлено логическое выражение, которое может
+            содержать обращения к функциям проверки.</li>
+          <li>Многие свойства, которые не поддерживались при наведении мышки из
+            IDE компилятора, теперь работают.</li>
+          <li>Поведение объектов <tt>MainForm</tt>, <tt>WizardForm</tt>  и <tt>UninstallProgressForm</tt>
+            больше не создает внутренней ошибки, если вы пытаетесь получить к
+            ним доступ до создания форм. Чтобы получить старое поведение,
+            используйте новые функции <tt>GetMainForm</tt>, <tt>GetWizardForm</tt>
+            и <tt>GetUninstallProgressForm</tt>.</li>
+          <li>Классу <tt>TPanel</tt> добавлено свойство <tt>BevelKind</tt>, а
+            классу <tt>TRichEditViewer</tt> свойства <tt>BevelKind</tt> и <tt>BorderStyle</tt>,
+            которые позволяют активировать плоский стиль интерфейса для этих
+            элементов. Смотрите пример в файле <i>CodeClasses.iss</i>.</li>
+          <li>Добавлены новые функции <tt>SameStr</tt> и <tt>SameText</tt>.</li>
+          <li>Функция <tt>IsAdminLoggedOn</tt> переименована в <tt>IsAdmin</tt>.
+            Устаревшее имя всё ещё поддерживается, но рекомендуется обновить
+            ваши сценарии на использование нового имени, иначе компилятор выдаст
+            предупреждение. Также рассмотрите возможность использования <tt>IsAdminInstallMode</tt>.</li>
+          <li>Удалён класс <tt>TAlphaBitmap</tt>. Его функциональность теперь
+            предоставляется непосредственно классом <tt>TBitmap</tt>.</li>
+          <li><em>Исправлено</em>: в Windows 10 на архитектуре ARM функция <tt>IsWin64</tt>
+            теперь корректно возвращает значение <tt>True</tt>, а функция <tt>ProcessorArchitecture</tt>
+            – значение <tt>paARM64</tt>.</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Изменения в Inno Setup Preprocessor (ISPP):
+        <ul>
+          <li>Inno Setup Preprocessor теперь устанавливается всегда.</li>
+          <li><span lang="ru" class="tlid-translation translation"><span title=""
+                class="">Добавлена новая предопределенная переменная:</span></span>
+            <tt>NewLine</tt>.</li>
+          <li>Добавлены новые функции: <tt>IsWin64</tt>, <tt>SameStr</tt> и <tt>SameText</tt>.</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Добавлен новый пример сценария <i>AllPagesExample.iss</i>,
+        демонстрирующий все страницы, которые потенциально могут быть
+        использованы в мастере установки.</li>
+      <li>Вся документация, относящаяся к группе Power Users (<span style="font-style: italic;">Опытные
+          пользователи</span>), удалена: эта группа больше не является
+        специальной в Windows.</li>
+      <li>Другие улучшения документации и примеров.</li>
+      <li>Добавлен официальный перевод на Исландский язык.</li>
+      <li>Среда разработки Inno Setup обновлена с Delphi 2009 на Delphi 10.3
+        Rio. Это изменение увеличивает размер программы установки, но уменьшает
+        время разработки, тестирования и развертывания. Это также упрощает
+        компиляцию Inno Setup, используя бесплатную Delphi <span style="font-style: italic;">Community
+          Edition</span>.</li>
+      <li>Незначительные исправления.</li>
+    </ul>
+    <p>Вклады через <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>:
+      Благодарим jogo-, Martin Prikryl, dscharrer, Kleuter, Gavin Lambert,
+      Stef&#225;n &#214;rvar Sigmundsson, DRON, Kevin Puetz и Sherlock Software за
+      содействие.</p>
+    <p>Изменения и дополнения в сообщениях: (<a href="https://github.com/jrsoftware/issrc/commit/1d6d6869b225c73cde4d3e0541b87264c36f3954">Смотрите
+        различия в файле Default.isl</a>)</p>
+    <ul>
+      <li><b>Новые сообщения:</b> AbortRetryIgnoreSelectAction,
+        AbortRetryIgnoreRetry, AbortRetryIgnoreIgnore, AbortRetryIgnoreCancel,
+        ExistingFileReadOnly2, ExistingFileReadOnlyRetry,
+        ExistingFileReadOnlyKeepExisting,
+        FileAbortRetryIgnoreIgnoreNotRecommended,
+        FileAbortRetryIgnoreSkipNotRecommended, PrivilegesRequiredOverrideTitle,
+        PrivilegesRequiredOverrideInstruction, PrivilegesRequiredOverrideText1,
+        PrivilegesRequiredOverrideText2, PrivilegesRequiredOverrideAllUsers,
+        PrivilegesRequiredOverrideAllUsersRecommended,
+        PrivilegesRequiredOverrideCurrentUser,
+        PrivilegesRequiredOverrideCurrentUserRecommended,
+        UninstallDisplayNameMark, UninstallDisplayNameMarks,
+        UninstallDisplayNameMark32Bit, UninstallDisplayNameMark64Bit,
+        UninstallDisplayNameMarkAllUsers, UninstallDisplayNameCurrentUser.</li>
+      <li><b>Изменённое сообщение:</b> SelectLanguageLabel.</li>
+      <li><b>Удалённые сообщения:</b> EntryAbortRetryIgnore,
+        ExistingFileReadOnly, ExistingFileReadOnlyAbortRetryIgnore,
+        FileAbortRetryIgnore, FileAbortRetryIgnore2, MissingWOW64APIs.</li>
+    </ul>
+    <p>Примечание: на данный момент не все официальные переводы были обновлены.
+      Официальные переводы на <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/German.isl">Немецкий</a>,
+      <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/Nepali.islu">Непальский</a>,
+      <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/SerbianCyrillic.isl">Сербский
+        (Cyrillic)</a> и <a href="https://raw.github.com/jrsoftware/issrc/master/Files/Languages/Unofficial/SerbianLatin.isl">Сербский
+        (Latin)</a> языки переведены в разряд неофициальных из-за отсутствия
+      поддержки. Чтобы самостоятельно отправить обновление, посмотрите <a href="https://jrsoftware.org/files/istrans/send.php">это
+        сообщение</a> и используйте <a href="https://jrsoftware.org/files/istrans/send2.php">эту
+        форму</a> (или портал <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>).
+      Дополнительную информацию вы найдете на странице <a href="https://jrsoftware.org/files/istrans/">Inno
+        Setup Translations</a>. </p>
+    <p><a href="https://jrsoftware.org/files/is5-whatsnew.htm">История версий
+        Inno Setup 5.6</a></p>
+  </body>
+</html>
