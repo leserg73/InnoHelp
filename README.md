@@ -1,0 +1,2 @@
+# InnoHelp
+Документация Inno Setup
