@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <title>Inno Setup Preprocessor: GetVersionNumbersString</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: GetVersionNumbersString</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Прототип функции</h2>
+      <p><tt><b>str</b> GetVersionNumbersString(<b>str</b> Filename)<br />
+        </tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение версии файла. В качестве аргумента функция принимает имя
+        файла, для которого необходимо определить версию. Формат строки с версией представляет собой
+        четыре десятичных числа, разделённых точками (<tt>0.0.0.0</tt>). Если указанный файл не
+        содержит действительной информации о версии, то функция возвращает пустую строку.</p>
+      <p>Ещё имеется функция <a href="topic_getstringfileinfo.htm">GetStringFileInfo</a>, которая
+        также позволяет получить информацию о версии файла (если в качестве второго аргумента
+        использовать <span style="font-style: italic; color: #7b7b00;">FileVersion</span> или <span
+          style="font-style: italic; color: #7b7b00;">ProductVersion</span>). Разница между этими
+        двумя функциями заключается в том, что <tt>GetVersionNumbersString</tt> получает данные о
+        версии из блока ресурсов, а <tt>GetStringFileInfo</tt> извлекает строку из определённого
+        языкового блока.</p>
+    </div>
+  </body>
+</html>

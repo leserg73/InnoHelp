@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: #emit</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: #emit</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Синтаксис</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><i>emit-directive:</i>
+            </td>
+            <td class="cellright"> (<b>emit</b> | <b>=</b>) &lt;expr&gt; </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет чтение значения объявленной ранее переменной.</p>
+      <p>Если директива используется встроенным методом, то имя директивы <tt style="font-weight: bold; color: #990000;">emit</tt>
+        для выражения <tt>expr</tt> можно не указывать.</p>
+      <br />
+      <h2 class="heading">Примеры</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwa">[Files]</span>
+<span class="hl slc">; В указанном выражении вместо переменной MyDestDir подставляется её значение.</span>
+<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: {'</span> <span
+class="hl opt">+</span> MyDestDir <span class="hl opt">+</span> <span class="hl str">'}'</span>
+
+<span class="hl slc">; Для параметра DestDir выполняется подстановка значения из переменной MyDestDir</span>
+<span class="hl slc">; (имя директивы emit не указано, т.к. она используется встроенным методом).</span>
+<span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl str">"file2.ext"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+class="hl kwc">{{#MyDestDir}}</span>
+
+<span class="hl slc">; Выполняется чтение текущего значения пользовательской функции</span>
+<span class="hl kwf">#emit</span> GenerateVisualCppFilesEntries
+
+<span class="hl kwa">[Code]</span> 
+<span class="hl kwd">const</span>
+<span class="hl slc">; Директива emit используется встроенным методом, поэтому её имя не указано.</span>
+<span class="hl slc">; Выполняется чтение значения вызываемой функции SetupSetting().</span>
+AppName <span class="hl opt">=</span> <span class="hl str">'{#<a href="topic_setupsetting.htm">SetupSetting</a>("AppName")}'</span><span
+class="hl opt">;</span>
+</pre> </div>
+      <br />
+      <br />
+      <h2 class="heading">См. также</h2>
+      <p><tt><a class="new" href="topic_expr.htm">expr</a></tt>.</p>
+    </div>
+  </body>
+</html>

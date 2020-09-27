@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <title>Inno Setup Preprocessor: Functions</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script src="../js/topic.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: Поддерживаеме функции</h1>
+    <div class="topicbody">
+      <p><b>ISPP</b> содержит ряд встроенных функций, которые можно использовать
+        для выполнения каких-либо операций во время компиляции и/или изменения
+        сценария. Например, сначала при помощи функции ISPP <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>
+        получим версию исполняемого файла программы, а затем полученное значение
+        подставим в параметр <a href="../../topic_setup_appvername.htm" target="_blank"
+          title="Параметр AppVerName">AppVerName</a><img src="../images/extlink.png"
+          alt=" [внешняя ссылка]" /> в секции [Setup], используя директиву ISPP
+        <tt><a class="new" href="topic_emit.htm">emit</a></tt>:</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
+<span class="hl slc">; которое вернёт функция GetVersionNumbersString() (получение версии ЕХЕ-файла).</span>
+<span class="hl kwf">#define</span> MyAppVer <span class="hl kwd">GetVersionNumbersString</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+class="hl opt">) +</span> <span class="hl str">"MyProg.exe"</span><span class="hl opt">)</span>
+
+<span class="hl slc">; Раздел параметров инсталляции</span>
+<span class="hl kwa">[Setup]</span>
+<span class="hl slc">; Используем значение переменной MyAppVer в определении директивы AppVerName.</span>
+<span class="hl kwb">AppVerName</span><span class="hl opt">=</span>MyProg version <span
+class="hl kwc">{#MyAppVer}</span>
+</pre> </div>
+      <br />
+      <h2 class="heading">Синтаксис прототипов функций</h2>
+      <p>Прототипы функций представлены, как типом возвращаемых функцией данных,
+        именем самой функции и, в круглых скобках, её формальными аргументами.</p>
+      <p>Ключевые слова <tt><b>int</b></tt>, <tt><b>str</b></tt>, <tt><b>any</b></tt>,
+        и <tt><b>void</b></tt> используются для обозначения следующих типов
+        данных соответственно: целочисленный (64-разрядный со знаком),
+        строковый, любой и нулевой (так называемый пустой, <i>void</i>). Если в
+        качестве возвращаемого результата функции указан нулевой тип данных,
+        значит функция не возвращает никакого значения.</p>
+      <p>Вопросительный знак (<tt>?</tt>) в определении типов аргументов функции
+        обозначает, что этот аргумент является необязательным.</p>
+      <br />
+      <h2 class="heading">Доступные функции</h2>
+      <ul>
+        <li><a href="topic_getstringfileinfo.htm">GetStringFileInfo</a></li>
+        <li><a href="topic_int.htm">Int</a></li>
+        <li><a href="topic_str.htm">Str</a></li>
+        <li><a href="topic_fileexists.htm">FileExists</a></li>
+        <li><a href="topic_direxists.htm">DirExists</a></li>
+        <li><a href="topic_forcedirectories.htm">ForceDirectories</a></li>
+        <li><a href="topic_filesize.htm">FileSize</a></li>
+        <li><a href="topic_readini.htm">ReadIni</a></li>
+        <li><a href="topic_writeini.htm">WriteIni</a></li>
+        <li><a href="topic_readreg.htm">ReadReg</a></li>
+        <li><a href="topic_exec.htm">Exec</a></li>
+        <li><a href="topic_copy.htm">Copy</a></li>
+        <li><a href="topic_pos.htm">Pos</a></li>
+        <li><a href="topic_rpos.htm">RPos</a></li>
+        <li><a href="topic_len.htm">Len</a></li>
+        <li><a href="topic_savetofile.htm">SaveToFile</a></li>
+        <li><a href="topic_find.htm">Find</a></li>
+        <li><a href="topic_setupsetting.htm">SetupSetting</a></li>
+        <li><a href="topic_setsetupsetting.htm">SetSetupSetting</a></li>
+        <li><a href="topic_lowercase.htm">LowerCase</a></li>
+        <li><a href="topic_uppercase.htm">UpperCase</a></li>
+        <li><a href="topic_entrycount.htm">EntryCount</a></li>
+        <li><a href="topic_getenv.htm">GetEnv</a></li>
+        <li><a href="topic_deletefile.htm">DeleteFile</a></li>
+        <li><a href="topic_deletefilenow.htm">DeleteFileNow</a></li>
+        <li><a href="topic_copyfile.htm">CopyFile</a></li>
+        <li><a href="topic_findfirst.htm">FindFirst</a></li>
+        <li><a href="topic_findnext.htm">FindNext</a></li>
+        <li><a href="topic_findclose.htm">FindClose</a></li>
+        <li><a href="topic_findgetfilename.htm">FindGetFileName</a></li>
+        <li><a href="topic_fileopen.htm">FileOpen</a></li>
+        <li><a href="topic_fileread.htm">FileRead</a></li>
+        <li><a href="topic_filereset.htm">FileReset</a></li>
+        <li><a href="topic_fileeof.htm">FileEof</a></li>
+        <li><a href="topic_fileclose.htm">FileClose</a></li>
+        <li><a href="topic_getdatetimestring.htm">GetDateTimeString</a></li>
+        <li><a href="topic_getfiledatetimestring.htm">GetFileDateTimeString</a></li>
+        <li><a href="topic_getmd5ofstring.htm">GetMD5OfString</a></li>
+        <li><a href="topic_getmd5ofunicodestring.htm">GetMD5OfUnicodeString</a></li>
+        <li><a href="topic_getmd5offile.htm">GetMD5OfFile</a></li>
+        <li><a href="topic_getsha1ofstring.htm">GetSHA1OfString</a></li>
+        <li><a href="topic_getsha1ofunicodestring.htm">GetSHA1OfUnicodeString</a></li>
+        <li><a href="topic_getsha1offile.htm">GetSHA1OfFile</a></li>
+        <li><a href="topic_trim.htm">Trim</a></li>
+        <li><a href="topic_stringchange.htm">StringChange</a></li>
+        <li><a href="topic_iswin64.htm">IsWin64</a></li>
+        <li><a href="topic_defined.htm">Defined</a></li>
+        <li><a href="topic_typeof.htm">TypeOf</a></li>
+        <li><a href="topic_dimof.htm">DimOf</a></li>
+        <li><a href="topic_getversionnumbers.htm">GetVersionNumbers</a></li>
+        <li><a href="topic_getversioncomponents.htm">GetVersionComponents</a></li>
+        <li><a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a></li>
+        <li><a href="topic_getpackedversion.htm">GetPackedVersion</a></li>
+        <li><a href="topic_packversionnumbers.htm">PackVersionNumbers</a></li>
+        <li><a href="topic_packversioncomponents.htm">PackVersionComponents</a></li>
+        <li><a href="topic_comparepackedversion.htm">ComparePackedVersion</a></li>
+        <li><a href="topic_samepackedversion.htm">SamePackedVersion</a></li>
+        <li><a href="topic_unpackversionnumbers.htm">UnpackVersionNumbers</a></li>
+        <li><a href="topic_unpackversioncomponents.htm">UnpackVersionComponents</a></li>
+        <li><a href="topic_versiontostr.htm">VersionToStr</a></li>
+        <li><a href="topic_encodever.htm">EncodeVer</a></li>
+        <li><a href="topic_decodever.htm">DecodeVer</a></li>
+        <li><a href="topic_findsection.htm">FindSection</a></li>
+        <li><a href="topic_findsectionend.htm">FindSectionEnd</a></li>
+        <li><a href="topic_findcode.htm">FindCode</a></li>
+        <li><a href="topic_extractfilepath.htm">ExtractFilePath</a></li>
+        <li><a href="topic_extractfiledir.htm">ExtractFileDir</a></li>
+        <li><a href="topic_extractfileext.htm">ExtractFileExt</a></li>
+        <li><a href="topic_extractfilename.htm">ExtractFileName</a></li>
+        <li><a href="topic_changefileext.htm">ChangeFileExt</a></li>
+        <li><a href="topic_removefileext.htm">RemoveFileExt</a></li>
+        <li><a href="topic_addbackslash.htm">AddBackslash</a></li>
+        <li><a href="topic_removebackslash.htm">RemoveBackslash</a></li>
+        <li><a href="topic_delete.htm">Delete</a></li>
+        <li><a href="topic_insert2.htm">Insert</a></li>
+        <li><a href="topic_yesno.htm">YesNo</a></li>
+        <li><a href="topic_power.htm">Power</a></li>
+        <li><a href="topic_min.htm">Min</a></li>
+        <li><a href="topic_max.htm">Max</a></li>
+        <li><a href="topic_sametext.htm">SameText</a></li>
+        <li><a href="topic_samestr.htm">SameStr</a></li>
+        <li><a href="topic_message.htm">Message</a></li>
+        <li><a href="topic_warning.htm">Warning</a></li>
+        <li><a href="topic_error2.htm">Error</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="IE=8" http-equiv="X-UA-Compatible">
+  <title>Оглавление Inno Setup Preprocessor</title>
+  <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+  <link href="../css/contents.css" rel="stylesheet" type="text/css">
+  <script src="../js/contents.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+  <!--
+  function init_ispp_contents()
+  {
+  init_contents(2);
+  init_contents(3);
+  init_contents(4);
+  searchTabBaseUrl = "https://jrsoftware.org/ispphelp/";
+  }
+  -->
+  </script>
+</head>
+<body onload="init_ispp_contents();">
+  <div id="tabbar">
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <div style="width: 4px"></div>
+        </td>
+        <td class="selectedtab" id="tab-contents" onmousedown=
+        "select_tab('contents');"><a href=
+        "javascript:select_tab('contents');">Содержание</a></td>
+        <td class="unselectedtab" id="tab-index" onmousedown=
+        "select_tab('index');"><a href=
+        "javascript:select_tab('index');">Индекс</a></td>
+        <td class="unselectedtab" id="tab-search" onmousedown=
+        "select_tab('search');"><a href=
+        "javascript:select_tab('search');">Поиск</a></td>
+        <td style="width: 100%">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <div style="padding: 4px 2px 2px 2px">
+    <div id="tabbody-contents">
+      <table>
+        <tr id="nodecaption_1">
+          <td><img alt="&gt;&nbsp;" id="nodeimg_1" onclick="toggle_node(1);"
+          src="../images/contentsheadopen.png"></td>
+          <td><a href="javascript:toggle_node(1);">Inno Setup
+          Preprocessor</a></td>
+        </tr>
+        <tr id="nodecontent_1">
+          <td></td>
+          <td>
+            <table>
+              <tr>
+                <td><img alt="" src="../images/cicon17.png"></td>
+                <td><a href="topic_isppoverview.htm" target=
+                "bodyframe">Введение</a></td>
+              </tr>
+              <tr>
+                <td><img alt="" src="../images/cicon11.png"></td>
+                <td><a href="topic_expressions.htm" target=
+                "bodyframe">Синтаксис выражений</a></td>
+              </tr>
+              <tr>
+                <td><img alt="" src="../images/cicon11.png"></td>
+                <td><a href="topic_predefinedvars.htm" target=
+                "bodyframe">Встроенные переменные</a></td>
+              </tr>
+              <tr>
+                <td><img alt="" src="../images/cicon11.png"></td>
+                <td><a href="topic_visibility.htm" target="bodyframe">Область
+                видимости переменных</a></td>
+              </tr>
+              <tr>
+                <td><img alt="" src="../images/cicon11.png"></td>
+                <td><a href="topic_linespan.htm" target="bodyframe">Разделение
+                строк</a></td>
+              </tr>
+              <tr id="nodecaption_2">
+                <td><img alt="&gt;&nbsp;" id="nodeimg_2" onclick=
+                "toggle_node(2);" src="../images/contentsheadopen.png"></td>
+                <td><a href="javascript:toggle_node(2);">Поддерживаемые
+                директивы</a></td>
+              </tr>
+              <tr id="nodecontent_2">
+                <td></td>
+                <td>
+                  <table>
+                    <tr>
+                      <td><img alt="" src="../images/cicon12.png"></td>
+                      <td><a href="topic_directives.htm" target=
+                      "bodyframe">Общие положения</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_append.htm" target=
+                      "bodyframe">#append</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_define.htm" target=
+                      "bodyframe">#define</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_dim.htm" target="bodyframe">#dim,
+                      #redim</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_emit.htm" target=
+                      "bodyframe">#emit</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_error.htm" target=
+                      "bodyframe">#error</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_expr.htm" target=
+                      "bodyframe">#expr</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_file.htm" target=
+                      "bodyframe">#file</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_for.htm" target=
+                      "bodyframe">#for</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_if.htm" target="bodyframe">#if, #elif,
+                      #else, #endif</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_ifdef.htm" target="bodyframe">#ifdef,
+                      #ifndef, #ifexist, #ifnexist</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_include.htm" target=
+                      "bodyframe">#include</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_insert.htm" target=
+                      "bodyframe">#insert</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_pragma.htm" target=
+                      "bodyframe">#pragma</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_sub.htm" target="bodyframe">#sub,
+                      #endsub</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_undef.htm" target=
+                      "bodyframe">#undef</a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr id="nodecaption_3">
+                <td><img alt="&gt;&nbsp;" id="nodeimg_3" onclick=
+                "toggle_node(3);" src="../images/contentsheadopen.png"></td>
+                <td><a href="javascript:toggle_node(3);">Поддерживаемые
+                функции</a></td>
+              </tr>
+              <tr id="nodecontent_3">
+                <td></td>
+                <td>
+                  <table>
+                    <tr>
+                      <td><img alt="" src="../images/cicon12.png"></td>
+                      <td><a href="topic_funcs.htm" target="bodyframe">Общие
+                      положения</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_addbackslash.htm" target=
+                      "bodyframe">AddBackslash</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_changefileext.htm" target=
+                      "bodyframe">ChangeFileExt</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_comparepackedversion.htm" target=
+                      "bodyframe">ComparePackedVersion</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_copy.htm" target=
+                      "bodyframe">Copy</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_copyfile.htm" target=
+                      "bodyframe">CopyFile</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_decodever.htm" target=
+                      "bodyframe">DecodeVer</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_defined.htm" target=
+                      "bodyframe">Defined</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_delete.htm" target=
+                      "bodyframe">Delete</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_deletefile.htm" target=
+                      "bodyframe">DeleteFile</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_deletefilenow.htm" target=
+                      "bodyframe">DeleteFileNow</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_dimof.htm" target=
+                      "bodyframe">DimOf</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_direxists.htm" target=
+                      "bodyframe">DirExists</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_encodever.htm" target=
+                      "bodyframe">EncodeVer</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_entrycount.htm" target=
+                      "bodyframe">EntryCount</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_error2.htm" target=
+                      "bodyframe">Error</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_exec.htm" target=
+                      "bodyframe">Exec</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_extractfiledir.htm" target=
+                      "bodyframe">ExtractFileDir</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_extractfileext.htm" target=
+                      "bodyframe">ExtractFileExt</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_extractfilename.htm" target=
+                      "bodyframe">ExtractFileName</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_extractfilepath.htm" target=
+                      "bodyframe">ExtractFilePath</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_fileclose.htm" target=
+                      "bodyframe">FileClose</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_fileeof.htm" target=
+                      "bodyframe">FileEof</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_fileexists.htm" target=
+                      "bodyframe">FileExists</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_fileopen.htm" target=
+                      "bodyframe">FileOpen</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_fileread.htm" target=
+                      "bodyframe">FileRead</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_filereset.htm" target=
+                      "bodyframe">FileReset</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_filesize.htm" target=
+                      "bodyframe">FileSize</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_find.htm" target=
+                      "bodyframe">Find</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findclose.htm" target=
+                      "bodyframe">FindClose</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findcode.htm" target=
+                      "bodyframe">FindCode</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findfirst.htm" target=
+                      "bodyframe">FindFirst</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findgetfilename.htm" target=
+                      "bodyframe">FindGetFileName</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findnext.htm" target=
+                      "bodyframe">FindNext</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findsection.htm" target=
+                      "bodyframe">FindSection</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_findsectionend.htm" target=
+                      "bodyframe">FindSectionEnd</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_forcedirectories.htm" target=
+                      "bodyframe">ForceDirectories</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getdatetimestring.htm" target=
+                      "bodyframe">GetDateTimeString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getenv.htm" target=
+                      "bodyframe">GetEnv</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getfiledatetimestring.htm" target=
+                      "bodyframe">GetFileDateTimeString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getmd5offile.htm" target=
+                      "bodyframe">GetMD5OfFile</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getmd5ofstring.htm" target=
+                      "bodyframe">GetMD5OfString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getmd5ofunicodestring.htm" target=
+                      "bodyframe">GetMD5OfUnicodeString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getpackedversion.htm" target=
+                      "bodyframe">GetPackedVersion</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getsha1offile.htm" target=
+                      "bodyframe">GetSHA1OfFile</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getsha1ofstring.htm" target=
+                      "bodyframe">GetSHA1OfString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getsha1ofunicodestring.htm" target=
+                      "bodyframe">GetSHA1OfUnicodeString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getstringfileinfo.htm" target=
+                      "bodyframe">GetStringFileInfo</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getversioncomponents.htm" target=
+                      "bodyframe">GetVersionComponents</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getversionnumbers.htm" target=
+                      "bodyframe">GetVersionNumbers</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_getversionnumbersstring.htm" target=
+                      "bodyframe">GetVersionNumbersString</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_insert2.htm" target=
+                      "bodyframe">Insert</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_int.htm" target=
+                      "bodyframe">Int</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_iswin64.htm" target=
+                      "bodyframe">IsWin64</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_len.htm" target=
+                      "bodyframe">Len</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_lowercase.htm" target=
+                      "bodyframe">LowerCase</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_max.htm" target=
+                      "bodyframe">Max</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_message.htm" target=
+                      "bodyframe">Message</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_min.htm" target=
+                      "bodyframe">Min</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_packversioncomponents.htm" target=
+                      "bodyframe">PackVersionComponents</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_packversionnumbers.htm" target=
+                      "bodyframe">PackVersionNumbers</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_pos.htm" target=
+                      "bodyframe">Pos</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_power.htm" target=
+                      "bodyframe">Power</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_readini.htm" target=
+                      "bodyframe">ReadIni</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_readreg.htm" target=
+                      "bodyframe">ReadReg</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_removebackslash.htm" target=
+                      "bodyframe">RemoveBackslash</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_removefileext.htm" target=
+                      "bodyframe">RemoveFileExt</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_rpos.htm" target=
+                      "bodyframe">RPos</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_samepackedversion.htm" target=
+                      "bodyframe">SamePackedVersion</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_samestr.htm" target=
+                      "bodyframe">SameStr</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_sametext.htm" target=
+                      "bodyframe">SameText</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_savetofile.htm" target=
+                      "bodyframe">SaveToFile</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_setsetupsetting.htm" target=
+                      "bodyframe">SetSetupSetting</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_setupsetting.htm" target=
+                      "bodyframe">SetupSetting</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_str.htm" target=
+                      "bodyframe">Str</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_stringchange.htm" target=
+                      "bodyframe">StringChange</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_trim.htm" target=
+                      "bodyframe">Trim</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_typeof.htm" target=
+                      "bodyframe">TypeOf</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_unpackversioncomponents.htm" target=
+                      "bodyframe">UnpackVersionComponents</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_unpackversionnumbers.htm" target=
+                      "bodyframe">UnpackVersionNumbers</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_uppercase.htm" target=
+                      "bodyframe">UpperCase</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_versiontostr.htm" target=
+                      "bodyframe">VersionToStr</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_warning.htm" target=
+                      "bodyframe">Warning</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_writeini.htm" target=
+                      "bodyframe">WriteIni</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_yesno.htm" target=
+                      "bodyframe">YesNo</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_macros.htm" target=
+                      "bodyframe">Пользовательские функции</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_find-flags.htm" target=
+                      "bodyframe">Флаги функции Find</a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr id="nodecaption_4">
+                <td><img alt="&gt;&nbsp;" id="nodeimg_4" onclick=
+                "toggle_node(4);" src="../images/contentsheadopen.png"></td>
+                <td><a href="javascript:toggle_node(4);">Приложение</a></td>
+              </tr>
+              <tr id="nodecontent_4">
+                <td></td>
+                <td>
+                  <table>
+                    <tr>
+                      <td><img alt="" src="../images/cicon35.png"></td>
+                      <td><a href="topic_example.htm" target="bodyframe">Пример
+                      сценария</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon39.png"></td>
+                      <td><a href="topic_builtinsiss.htm" target=
+                      "bodyframe">Сценарий ISPPBuiltins.iss</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_isppcc.htm" target=
+                      "bodyframe">Компиляция в командной строке</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_translation.htm" target=
+                      "bodyframe">Вывод препроцессора</a></td>
+                    </tr>
+                    <tr>
+                      <td><img alt="" src="../images/cicon11.png"></td>
+                      <td><a href="topic_current-translation.htm" target=
+                      "bodyframe">Текущий вывод препроцессора</a></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="tabbody-index" style="display: none">
+      <div style="margin-top: 1em; text-align: center; color: GrayText">
+        Ожидайте...
+      </div>
+    </div>
+    <div id="tabbody-search" style="display: none; padding: 4px">
+      <div style="margin-bottom: 0.5em">
+        Что найти:
+      </div>
+      <div id="searchcont">
+        <div style="margin-top: 1em; text-align: center; color: GrayText">
+          Функция поиска в разработке...
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: Find flags</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script src="../js/topic.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: Флаги функции Find</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Описание</h2>
+      <p>Обязательно должен быть указан один из следующих четырех флагов:</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_MATCH</tt> (0) – строка должна иметь
+        полное соответствие искомой строке;</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_BEGINS</tt> (1) – строка должна
+        начинаться искомой строкой;</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_ENDS</tt> (2) – строка должна
+        заканчиваться искомой строкой;</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_CONTAINS</tt> (3) – строка должна
+        содержать строку поиска (этот флаг объединяет все три предыдущих).</p>
+      <p>Любой из следующих флагов может быть скомбинирован с предыдущими с помощью логической
+        операции "ИЛИ" (<tt> <b>|</b> </tt>):</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_CASESENSITIVE</tt> (4) – сравнение
+        должно выполняться с учётом регистра символов;</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_AND</tt> (0) – добавляет к предыдущему
+        критерию поиска ещё один обязательный критерий (например, для пары аргументов в функции <tt>Find</tt>);</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_OR</tt> (8) – добавляет к предыдущему
+        критерию поиска ещё один критерий, если предыдущий не был выполнен;</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_NOT</tt> (16) – добавляет критерий
+        поиска, который не должен быть выполнен.</p>
+      <p>Флаги <tt style="font-weight: bold; color: #663300;">FIND_AND</tt> и <tt style="font-weight: bold; color: #663300;">FIND_OR</tt>
+        являются взаимоисключающими. Если указаны оба, то приоритет имеет флаг <tt style="font-weight: bold; color: #663300;">FIND_OR</tt>.</p>
+      <p>Специальные флаги:</p>
+      <p><tt style="font-weight: bold; color: #663300;">FIND_TRIM</tt> (32) – при выполнении поиска
+        исключает из строк начальные и конечные пробелы, т.е. этот флаг выполняется первым и только
+        потом все остальные. Его необходимо указать в третьем аргументе функции <tt style="font-style: italic;">Find</tt>.</p>
+    </div>
+  </body>
+</html>

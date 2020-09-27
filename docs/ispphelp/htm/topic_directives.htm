@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <title>Inno Setup Preprocessor: Directives</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <script src="../js/topic.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: Поддерживаемые директивы</h1>
+    <div class="topicbody">
+      <p>В <b>ISPP</b> директивы могут быть использованы двумя методами: <i>простым</i>
+        и <i>встроенным</i>.</p>
+      <p><i>Простой метод</i> заключается в том, что строка с директивой
+        начинается с символа "решётки" (<tt style="color: #990000;">#</tt>).
+        Например, установим переменную с именем <tt>MyAppName</tt> и присвоим ей
+        значение <tt><i>"My Program"</i></tt>:</p>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#define</span> MyAppName <span class="hl str">"My Program"</span>
+</pre> </div>
+      <p><i>Встроенный метод</i> позволяет подключить директиву, которая была
+        установлена ранее. В этом случае директива записывается между начальными
+        символами <tt style="font-weight: bold; color: #993399;">{#</tt>
+        (открывающая фигурная скобка плюс решётка) и завершающим символом <tt style="font-weight: bold; color: #993399;">}</tt>
+        (закрывающая фигурная скобка). Например, присвоим параметру <tt style="color: #3333ff;">AppName</tt>
+        значение ранее установленной переменной <tt>MyAppName</tt> (см. пример
+        выше):</p>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">AppName</span><span class="hl opt">=</span><span class="hl kwc">{#MyAppName}</span>
+</pre> </div>
+      <p>При выполнении сценария вместо выражения <tt>{#MyAppName}</tt> будет
+        подставлено значение <tt><i>"My Program"</i></tt> из переменной <tt>MyAppName</tt>.
+        Таким образом, параметру <tt><span style="color: #3333ff;">AppName</span></tt>
+        будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
+      <p>Как видно из приведенного выше примера, не обязательно указывать имя
+        директивы <tt><a class="new" href="topic_emit.htm">emit</a></tt>, если
+        она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
+        является сокращенной записью <tt>{#emit MyAppName}</tt>.</p>
+      <h2 class="heading">Синтаксис директив</h2>
+      <p>При описании директив используются следующие условные обозначения:</p>
+      <table>
+        <tbody>
+          <tr>
+            <td class="cellleft" style="background-color: #eeeeee;"><tt>()</tt>
+            </td>
+            <td class="cellright">Группа объектов.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt>[]</tt> </td>
+            <td class="cellright" style="background-color: #f8f8f8;">Вспомогательный
+              объект или группа объектов.</td>
+          </tr>
+          <tr>
+            <td class="cellleft" style="background-color: #eeeeee;"><tt>|</tt> </td>
+            <td class="cellright">Взаимоисключающие объекты.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt>...</tt> </td>
+            <td class="cellright" style="background-color: #f8f8f8;">Предыдущий
+              объект или группа объектов, которые могут быть повторены.</td>
+          </tr>
+          <tr>
+            <td class="cellleft" style="background-color: #eeeeee;"><tt><b>token</b></tt>
+            </td>
+            <td class="cellright">Зарезервированное слово или символ(ы).
+              Является терминальным объектом и должен вводиться так, как
+              представлен, без каких-либо изменений или модификаций.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt>&lt;token&gt;</tt> </td>
+            <td class="cellright" style="background-color: #f8f8f8;">Нетерминальный
+              объект. Может представлять собой выражение, формулу, имя
+              идентификатора, переменную.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <h2 class="heading">Доступные директивы</h2>
+      <ul>
+        <li><a class="new" href="topic_append.htm">#append</a></li>
+        <li><a class="new" href="topic_define.htm">#define</a></li>
+        <li><a class="new" href="topic_dim.htm">#dim, #redim</a></li>
+        <li><a class="new" href="topic_emit.htm">#emit</a></li>
+        <li><a class="new" href="topic_error.htm">#error</a></li>
+        <li><a class="new" href="topic_expr.htm">#expr</a></li>
+        <li><a class="new" href="topic_file.htm">#file</a></li>
+        <li><a class="new" href="topic_for.htm">#for</a></li>
+        <li><a class="new" href="topic_if.htm">#if, #elif, #else, #endif</a></li>
+        <li><a class="new" href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist,
+            #ifnexist</a></li>
+        <li><a class="new" href="topic_include.htm">#include</a></li>
+        <li><a class="new" href="topic_insert.htm">#insert</a></li>
+        <li><a class="new" href="topic_pragma.htm">#pragma</a></li>
+        <li><a class="new" href="topic_sub.htm">#sub, #endsub</a></li>
+        <li><a class="new" href="topic_undef.htm">#undef</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

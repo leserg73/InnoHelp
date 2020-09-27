@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: GetDateTimeString</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: GetDateTimeString</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Прототип функции</h2>
+      <p><tt><b>str</b> GetDateTimeString(<b>str</b>, <b>str</b>, <b>str</b>)<br />
+        </tt></p>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение текущей даты и времени в указанном
+        формате.</p>
+      <p><i>Первый</i> аргумент определяет формат строки. <i>Второй</i> и <i>третий</i>
+        аргументы устанавливают разделители для составляющих даты <tt>DateSeparator</tt>
+        и времени <tt>TimeSeparator</tt>.</p>
+      <p>Поддерживаются следующие спецификаторы формата:</p>
+      <table>
+        <tbody>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>d</b></td>
+            <td class="cellright">Номер дня без начального нуля (1-31).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>dd</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Номер дня с
+              начальным нулем (01-31).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>ddd</b></td>
+            <td class="cellright">Сокращенное название дня недели (Sun-Sat).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>dddd</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Полное
+              название дня недели (Sunday-Saturday).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>ddddd</b></td>
+            <td class="cellright">Системная дата в сокращенном формате.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>dddddd</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Системная
+              дата в полном формате.</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>m</b></td>
+            <td class="cellright">Номер месяца без начального нуля (1-12). Если
+              спецификатор <b>m</b> следует сразу за спецификаторами <b>h</b>
+              или <b>hh</b>, то вместо месяца будут выведены минуты.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>mm</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Номер
+              месяца с начальным нулем (01-12). Если спецификатор <b>m</b>
+              следует сразу за спецификаторами <b>h</b> или <b>hh</b>, то
+              вместо месяца будут выведены минуты.</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>mmm</b></td>
+            <td class="cellright">Сокращенное название месяца (Jan-Dec).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>mmmm</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Полное
+              название месяца (January-December).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>yy</b></td>
+            <td class="cellright">Двузначное число года (00-99).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>yyyy</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Четырехзначное
+              число года (0000-9999).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>h</b></td>
+            <td class="cellright">Время часов без начального нуля (0-23).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>hh</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Время часов
+              с начальным нулем (00-23).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>n</b></td>
+            <td class="cellright">Время минут без начального нуля (0-59).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>nn</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Время минут
+              с начальным нулем (00-59).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>s</b></td>
+            <td class="cellright">Время секунд без начального нуля (0-59).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>ss</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Время
+              секунд с начальным нулем (00-59).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>t</b></td>
+            <td class="cellright">Системное время в сокращенном формате.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>tt</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Системное
+              время в полном формате.</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>am/pm</b></td>
+            <td class="cellright">Установка 12-часового формата времени для
+              указания часов (<b>h</b> или <span style="font-weight: bold;">hh</span>)
+              и вывод сокращений: <span style="font-weight: bold;">am</span> -
+              до полудня, <b>pm</b> - после полудня. Этот спецификатор является
+              регистрозависимым. В зависимости от заданного регистра
+              спецификатора, в соответствующем регистре будет выведен результат
+              (<b>am/pm</b>, <b>AM/PM</b> или <b>am/PM</b> и наоборот).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>a/p</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Установка
+              12-часового формата времени для указания часов (<b>h</b> или <b>hh</b>)
+              и вывод сокращений: <b>a</b> - до полудня, <b>p</b> - после
+              полудня. Этот спецификатор является регистрозависимым. В
+              зависимости от заданного регистра спецификатора, в соответствующем
+              регистре будет выведен результат (<b>a/p</b>, <b>A/P</b> или <b>a/P</b>
+              и наоборот).</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>/</b></td>
+            <td class="cellright">Установка символа разделителя для составляющих
+              даты (DateSeparator). Если DateSeparator не указан (пустой), то
+              будет использован разделитель системной даты.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>:</b></td>
+            <td style="background-color: #f8f8f8;" class="cellright">Установка
+              символа разделителя для составляющих времени (TimeSeparator). Если
+              TimeSeparator не указан (пустой), то будет использован разделитель
+              системного времени.</td>
+          </tr>
+          <tr>
+            <td style="background-color: #eeeeee;" class="cellleft"><b>'xx'/"xx"</b></td>
+            <td class="cellright">Символы, заключенные в одинарные или двойные
+              кавычки, выводятся как есть, без учета условий форматирования
+              спецификаторов.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Все спецификаторы могут быть записаны в любом регистре, как прописными,
+        так и строчными символами.</p>
+      <br />
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#define</span> MyDateTimeString <span
+class="hl kwd">GetDateTimeString</span><span class="hl opt">(</span><span class="hl str">'ddddd'</span><span
+class="hl opt">,</span> <span class="hl str">''</span><span class="hl opt">,</span> <span
+class="hl str">''</span><span class="hl opt">);</span>
+<span class="hl kwf">#define</span> MyDateTimeString <span class="hl kwd">GetDateTimeString</span><span
+class="hl opt">(</span><span class="hl str">'ddddd tt'</span><span class="hl opt">,</span> <span
+class="hl str">''</span><span class="hl opt">,</span> <span class="hl str">''</span><span
+class="hl opt">);</span>
+<span class="hl kwf">#define</span> MyDateTimeString <span class="hl kwd">GetDateTimeString</span><span
+class="hl opt">(</span><span class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span
+class="hl str">'-'</span><span class="hl opt">,</span> <span class="hl str">':'</span><span
+class="hl opt">);</span>
+</pre> </div>
+      <br />
+    </div>
+  </body>
+</html>

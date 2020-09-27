@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: User Defined Macros</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script src="../js/topic.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: Пользовательские функции</h1>
+    <div class="topicbody">
+      <p>В сценариях вы можете объявить и использовать пользовательские функции.</p>
+      <p>Объявление <b>пользовательской функции</b> состоит из списка
+        формальных параметров и выражений, которые в совокупности представляют
+        собой последовательность определённых операций, записанных
+        пользователем. Результат всех этих операций вычисляется при каждом
+        обращении к данной функции. Имена параметров, определённые в выражении
+        функции, обрабатываются как обычные переменные.</p>
+      <p>Формальный синтаксис объявления пользовательских функций обеспечивается
+        директивой <tt><a class="new" href="topic_define.htm">define</a></tt>.
+        В файле <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>
+        вы найдете множество примеров этих функций.</p>
+      <p>Пожалуйста, обратите внимание, что при записи между именем функции и
+        круглой открывающей скобкой не должно быть пробела.</p>
+      <p>Фактические параметры, объявленные в качестве ссылок, должны быть
+        изменяемыми <b>l</b>-<i>значениями</i> (другими словами, это значение,
+        полученное при помощи одного или нескольких аргументов операции). Если
+        выражение функции изменяет параметр передаваемый по ссылке, то
+        переменная, которая передается в качестве этого параметра, также
+        изменяется. По значению параметров можно также изменить выражение
+        функции (используя операторы присваивания), но это изменение не влияет
+        на значение переменной, которая передается в качестве параметра.</p>
+      <p>Хотя пользовательская функция может содержать только одно выражение, но
+        операторы последовательной оценки (comma), операторы присваивания
+        (простые и сложные), а также условные операторы (<tt>?:</tt>) могут
+        использоваться для построения более сложных функций.</p>
+      <br />
+      <h2 class="heading">Локальный массив</h2>
+      <p>В выражении функции допускается использовать дополнительный массив с
+        именем <tt>Local</tt>. Его элементы могут быть задействованы в качестве
+        временного хранения данных и повторного использования промежуточных
+        значений выражения. Этот массив <tt>Local</tt> принадлежит только той
+        функции, в которой он был вызван, и его данные недоступны за пределами
+        самой функции, включая их сохранение.</p>
+      <p><br />
+      </p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
+class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
+class="hl opt">)</span> <span class="hl com">/* объявление пользовательской функции */</span> \
+Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
+class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
+class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
+class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
+class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
+class="hl opt">)) -</span> <span class="hl num">1</span><span class="hl opt">),</span> \
+S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
+class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
+class="hl opt">] +</span> <span class="hl num">1</span><span class="hl opt">),</span> \
+Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">]</span>
+</pre> </div>
+      <br />
+    </div>
+  </body>
+</html>

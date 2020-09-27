@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: #define</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: #define</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Синтаксис</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft">
+              <i>define-directive:</i></td>
+            <td class="cellright">&lt;variable-definition&gt; </td>
+          </tr>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><br />
+            </td>
+            <td class="cellright"> &lt;macro-definition&gt; </td>
+          </tr>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><br />
+            </td>
+            <td class="cellright"> &lt;default-visibility-set&gt; </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px;" class="cellleft"><i>variable-definition:</i>
+            </td>
+            <td style="background-color: #f8f8f8;" class="cellright"> (<b>define</b>
+              | <b>:</b>) [<b>private</b> | <b>protected</b> | <b>public</b>]
+              &lt;ident&gt; [<b>[</b> &lt;expr&gt; <b>]</b>] [[<b>=</b>]
+              &lt;expr&gt;] </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><i>macro-definition:</i>
+            </td>
+            <td class="cellright"> (<b>define</b> | <b>:</b>) [<b>private</b> |
+              <b>protected</b> | <b>public</b>] &lt;ident&gt; <b>(</b>
+              [&lt;formal-macro-args&gt;] <b>)</b> &lt;expr&gt; </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px;" class="cellleft"><i>default-visibility-set:</i>
+            </td>
+            <td style="background-color: #f8f8f8;" class="cellright"> (<b>define</b>
+              | <b>:</b>) <b>private</b> | <b>protected</b> | <b>public</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><i>formal-macro-args:</i>
+            </td>
+            <td class="cellright"> &lt;formal-macro-arg&gt; [<b>,</b>
+              &lt;formal-macro-arg&gt;]... </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px;" class="cellleft"><i>formal-macro-arg:</i>
+            </td>
+            <td style="background-color: #f8f8f8;" class="cellright">
+              &lt;by-val-arg&gt; | &lt;by-ref-arg&gt; </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><i>by-val-arg:</i>
+            </td>
+            <td class="cellright"> [&lt;type-id&gt;] &lt;ident&gt; [<b>=</b>
+              &lt;expr&gt;] </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px;" class="cellleft"><i>by-ref-arg:</i> </td>
+            <td style="background-color: #f8f8f8;" class="cellright">
+              [&lt;type-id&gt;] <b>*</b> &lt;ident&gt; </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td style="width: 130px; background-color: #eeeeee;" class="cellleft"><i>type-id:</i>
+            </td>
+            <td class="cellright"> <b>any</b> | <b>int</b> | <b>str</b> | <b>func</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Первый элемент синтаксического выражения ("variable-definition")
+        определяет переменную с именем <tt style="font-style: italic;">ident</tt>
+        (сокр. от <i>identifier</i> - идентификатор), или принимает значение
+        элемента массива с именем <tt style="font-style: italic;">ident</tt>.
+        Область видимости переменной задаётся одним из ключевых слов  <tt style="font-style: italic;">public</tt>,
+        <i> <tt>protected</tt></i> или <tt style="font-style: italic;">private</tt>,
+        в противном случае <a class="new1" href="topic_visibility.htm">область
+          видимости</a> переменной принимается по умолчанию.</p>
+      <p>Второй элемент синтаксического выражения ("macro-definition")
+        определяет <a href="topic_macros.htm">пользовательскую функцию</a> с
+        именем <tt style="font-style: italic;">ident</tt>. При записи
+        пользовательской функции не должно быть пробела между именем функции и
+        открывающей круглой скобкой, иначе инструкция будет обработана как
+        объявление переменной.</p>
+      <p>Третий элемент синтаксического выражения ("default-visibility-set")
+        устанавливает <a class="new1" href="topic_visibility.htm">область
+          видимости</a> по умолчанию для всех последующих переменных и
+        пользовательских функций в данном файле сценария. Если область видимости
+        не объявляется, то по умолчанию принимается область видимости <tt style="font-style: italic;">private</tt>.</p>
+      <br />
+      <h2 class="heading">Примеры</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppName</span>
+<span class="hl slc">; и присваиваем ей значение "My Program".</span>
+<span class="hl kwf">#define</span> MyAppName "My Program"
+
+<span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
+<span class="hl slc">; которое вернёт функция GetFileVersion() (получение версии файла MyProg.exe).</span>
+<span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a><span
+class="hl opt">(</span>"MyProg<span class="hl opt">.</span>exe"<span class="hl opt">)</span>
+
+<span class="hl slc">; Объявляем массив с именем MyArray и</span>
+<span class="hl slc">; индексу массива 0 присваиваем значение 15.</span>
+<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">0</span><span
+class="hl opt">]</span> <span class="hl num">15</span>
+
+<span class="hl slc">; Объявляем переменную со значением арифметического действия - умножение.</span>
+<span class="hl slc">; А и В целочисленный тип данных.</span>
+<span class="hl kwf">#define</span> Multiply<span class="hl opt">(</span><span class="hl kwd">int</span> A<span
+class="hl opt">,</span> <span class="hl kwd">int</span> B <span class="hl opt">=</span> <span
+class="hl num">10</span><span class="hl opt">)</span> A <span class="hl opt">*</span> B
+</pre> </div>
+      <br />
+      <h2 class="heading">См. также</h2>
+      <p><tt><a class="new" href="topic_dim.htm">dim</a></tt>, <tt><a class="new"
+            href="topic_undef.htm">undef</a></tt>, <a class="new1" href="topic_visibility.htm">область
+          видимости переменных</a>.</p>
+      <p><a href="topic_macros.htm">Пользовательские функции</a>.</p>
+    </div>
+  </body>
+</html>

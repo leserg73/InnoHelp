@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <title>Inno Setup Preprocessor: SetSetupSetting</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: SetSetupSetting</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Прототип функции</h2>
+      <p><tt><b>void</b> SetSetupSetting(<b>str</b> 1, <b>str</b> 2)<br />
+        </tt></p>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание или изменение в секции <span style="font-weight: bold; color: #000099;">[Setup]</span>
+        директивы с заданным ключом (<i>первый аргумент</i>) и его значением (<i>второй аргумент</i>).</p>
+      <p>Если секция <span style="font-weight: bold; color: #000099;">[Setup]</span> в данных <a href="topic_current-translation.htm"
+          class="new1">текущего вывода препроцессора</a> отсутствует (в случае, если вызов этой
+        функции был выполнен до объявления данной секции в сценарии), то такой заголовок (как и сама
+        директива) будет создан автоматически.</p>
+      <p>Пожалуйста, при использовании функции <tt>SetSetupSetting</tt> будьте предельно осторожны.
+        Не допускается её применение, когда директивы передаются <b>ISPP</b> <i>встроенным методом</i>
+        (т.е. после использования директивы <tt><a href="topic_insert.htm" class="new">#insert</a></tt>).
+        </p> </div>
+  </body>
+</html>

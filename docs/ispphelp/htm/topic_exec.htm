@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Inno Setup Preprocessor: Exec</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script src="../js/topic.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: Exec</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Прототип функции</h2>
+      <p><tt><b>int</b> Exec(<b>str</b> 1, <b>str</b>? 2, <b>str</b>? 3, <b>int</b>? 4, <b>int</b>?
+          5)<br />
+        </tt></p>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет запуск указанного исполняемого файла.</p>
+      <p><i>Первый аргумент</i> определяет имя файла, который необходимо запустить.</p>
+      <p><i>Второй аргумент</i> может быть использован для указания параметров командной строки,
+        которые необходимо передать исполняемому файлу.</p>
+      <p><i>Третий аргумент</i> может быть использован для указания рабочего каталога, в котором
+        выполняется запуск указанного файла.</p>
+      <p><i>Четвёртый аргумент</i> используется для указания статуса запущенного процесса. Если не
+        требуется ожидать завершение работы запущенного процесса, то значение аргумента должно быть
+        установлено в ноль (0). По умолчанию принято ненулевое значение.</p>
+      <p><i>Пятый аргумент</i> является флагом (<tt>SW_*</tt>), который характеризует режим вывода
+        графической оболочки (GUI) запускаемого процесса. Каждому флагу соответствует определенные
+        константы, которые объявлены в файле <a href="topic_builtinsiss.htm" class="new1">ISPPBuiltins.iss</a>.
+        По умолчанию, для запуска всех GUI процессов, принимается флаг <b>SW_SHOWNORMAL</b> (т.е.
+        1) - инициализация окна и вывод его на экран.</p>
+      <p>Если четвертый аргумент не указан, или имеет <u>ненулевое</u> значение, то функция
+        возвращает код завершения запущенного процесса. Если для аргумента было задано нулевое
+        значение, то результат функции указывает на характер запуска указанного процесса:
+        неудача (функция вернёт ноль) или успех (функция вернёт отличное от нуля значение).</p>
+    </div>
+  </body>
+</html>
