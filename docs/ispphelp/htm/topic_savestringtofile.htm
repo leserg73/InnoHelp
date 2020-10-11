@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <title>Inno Setup Preprocessor: SaveStringToFile</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Inno Setup Preprocessor: SaveStringToFile</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Прототип функции</h2>
+      <p><tt><b>int</b> SaveStringToFile(<b>str</b> Filename, <b>str</b> S, <b>int</b>?
+          Append, <b>int</b>? UTF8)<br />
+        </tt></p>
+      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет запись заданной строки в указанный файл. Если параметр <tt>Append</tt>
+        имеет значение <tt>True</tt> или опущен, а указанный файл уже
+        существует, строка будет добавлена вместо перезаписи. Если параметр <tt>UTF8</tt>
+        имеет значение <tt>True</tt> или опущен, строка будет записана в
+        кодировке UTF8 вместо ASCII. В случае успеха функция возвращает значение
+        <tt>True</tt>, иначе <tt>False</tt>.</p>
+      <p>Эта функция автоматически не записывает разрыв строки до и после
+        заданной строки. Если параметр <tt>Append</tt> имеет значение <tt>True</tt>
+        или опущен, а существующий файл не содержит в конце разрыв строки,
+        функция просто дополнит последнюю строку в файле. Во избежание этого
+        вставить символы разрыва строки (используя <tt><a href="topic_predefinedvars.htm">NewLine</a></tt>)
+        до и/или после заданной строки.</p>
+      <br />
+      <h2 class="heading">Пример</h2>
+      <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveStringToFile</span><span
+class="hl opt">(</span><span class="hl str">'c:\filename.txt'</span><span class="hl opt">,</span> NewLine <span
+class="hl opt">+</span> <span class="hl str">'the string'</span> <span class="hl opt">+</span> NewLine<span
+class="hl opt">)</span>
+</pre> </div>
+  </body>
+</html>
