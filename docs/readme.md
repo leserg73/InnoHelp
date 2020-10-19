@@ -7,5 +7,5 @@
 
 ### История версий
 
-- [6.0 - 6.5](https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm)
+- [6.0 - 6.0.5](https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm)
 - [6.1-beta](https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm)
