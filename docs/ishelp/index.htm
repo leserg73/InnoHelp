@@ -1,1 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta content="IE=8" http-equiv="X-UA-Compatible">
+  <title>Справка Inno Setup 6</title>
+  <script type="text/javascript">
+  <!--
 
+  var contentsFrameLoaded = false;
+  var bodyFrameLoaded = false;
+
+  // When this page is first loaded, trigger_sync_contents() isn't called
+  // until both contentsframe.onload and bodyframe.onload have fired
+  // (order does not matter). After that, trigger_sync_contents() is
+  // called whenever further onload events come in on either frame (as
+  // a result of refreshing, clicking a link, or clicking Back/Forward).
+
+  function trigger_sync_contents()
+  {
+    window.frames["contentsframe"].sync_contents();
+  }
+
+  function bodyframe_loaded()
+  {
+    bodyFrameLoaded = true;
+    if (contentsFrameLoaded) trigger_sync_contents();
+  }
+
+  function contentsframe_loaded()
+  {
+    contentsFrameLoaded = true;
+    if (bodyFrameLoaded) trigger_sync_contents();
+  }
+
+  -->
+  </script>
+</head>
+<frameset cols="272, *">
+  <frame name="contentsframe" onload="contentsframe_loaded();" src=
+  "htm/contents.htm">
+  <frame name="bodyframe" onload="bodyframe_loaded();" src=
+  "htm/topic_whatisinnosetup.htm">
+  <noframes>
+    <body>
+      <p>Ваш браузер не поддерживает фреймы.</p>
+      <p><a href="htm/contents.htm">Перейти к оглавлению справки</a></p>
+    </body>
+  </noframes>
+</frameset>
+</html>
