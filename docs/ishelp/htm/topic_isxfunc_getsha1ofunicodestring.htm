@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: GetSHA1OfUnicodeString</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: GetSHA1OfUnicodeString</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function GetSHA1OfUnicodeString(const S: String): String;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает строковое значение хеш-суммы SHA-1 для
+        указанной строки в кодировке Unicode.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  SHA1: String;
+<span class="hl kwb">begin</span>
+  SHA1 := GetSHA1OfUnicodeString(<span class="hl str">'Test'</span>);
+  <span class="hl slc">// SHA1 = '9ab696a37604d665dc97134dbee44cfe70451b1a'</span>
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: IncrementSharedCount</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: IncrementSharedCount</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>procedure IncrementSharedCount(const Is64Bit: Boolean; const
+          Filename: String; const AlreadyExisted: Boolean);</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Увеличивает или создаёт счётчик ссылок для указанного
+        файла в следующем разделе реестра:</div>
+      <br />
+      <div class="null" style="margin-left: 20px;">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SharedDLLs</div>
+      <br />
+      <div class="absaz">64-разрядные версии Windows имеют два раздельных ключа
+        SharedDLLs: один для 64-разрядных файлов, а другой для 32-разрядных
+        файлов. Если функция <tt>Is64Bit</tt> вернёт значение <tt>True</tt>,
+        будет обновлен 64-разрядный ключ SharedDLLs, в противном случае будет
+        обновлен 32-разрядный ключ SharedDLLs. Установка этого параметра должна
+        соответствовать разрядности файла; например, если 32-разрядный файл DLL
+        размещён в 32-разрядном системном каталоге, то необходимо указать
+        значение <tt>False</tt>. Можно также применить функцию <tt>Is64BitInstallMode</tt>,
+        тогда для определения нужного раздела реестра будет использован текущий
+        режим установки.</div>
+      <br />
+      <div class="absaz">Если файл уже существует, передайте в параметре <i>AlreadyExisted</i>
+        значение <tt>True</tt>. В этом случае начальный счётчик ссылок для
+        файла будет равен 2, если это значение в реестре для этого файла ещё не
+        существует. (Такое поведение соответствует требованиям Microsoft).</div>
+      <br />
+      <div class="absaz">Если раздел реестра не может быть открыт для записи,
+        будет вызвано исключение.</div>
+      <br />
+    </div>
+  </body>
+</html>

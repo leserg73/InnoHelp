@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: GetExceptionMessage</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: GetExceptionMessage</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function GetExceptionMessage: String;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает сообщение, связанное с текущим исключением.
+        Эта функция должна вызываться только из блока обработки исключений <tt>except</tt>
+        или другой функции, вызываемой из блока <tt>except</tt>.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Сообщения исключений обычно не заканчиваются точкой.
+        Обработайте результат функцией <tt>AddPeriod</tt>, чтобы добавить
+        точку.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  I: Integer;
+<span class="hl kwb">begin</span>
+  I := <span class="hl num">1</span>;
+  <span class="hl kwb">try</span>
+    <span class="hl slc">// Следующая строка вызовет исключение "Деление на ноль"</span>
+    I := I <span class="hl kwb">div</span> <span class="hl num">0</span>;
+  <span class="hl kwb">except</span>
+    <span class="hl slc">// Перехватываем исключение, обрабатываем и продолжаем работу</span>
+    MsgBox(<span class="hl str">'Исключение: '</span> + AddPeriod(GetExceptionMessage), <span
+class="hl kwe">mbError</span>, <span class="hl kwe">MB_OK</span>);
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

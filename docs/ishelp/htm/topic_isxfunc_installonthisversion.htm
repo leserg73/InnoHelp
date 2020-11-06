@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: InstallOnThisVersion</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: InstallOnThisVersion</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function InstallOnThisVersion(const MinVersion, OnlyBelowVersion:
+          String): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает значение <tt>True</tt>, если файл с
+        указанными параметрами <i>MinVersion</i> и <i>OnlyBelowVersion</i>
+        должен быть установлен. Если указан недопустимая строка версии, будет
+        вызвано исключение.</div>
+      <br />
+      <div class="absaz">Эта функция устарела и оставлена исключительно для
+        обратной совместимости сценариев. В новых сценариях вместо неё
+        рекомендуется использовать функцию <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
+        или <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">В предыдущих версиях Inno Setup (до версии 5.5.0
+        включительно) эта функция возвращала <tt>irInstall</tt>, а не
+        логическое значение <tt>True</tt>. Теперь же <tt>irInstall</tt>
+        определяется как псевдоним для <tt>True</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl slc">// Устаревший способ, больше не используется</span>
+<span class="hl kwb">function</span> IsWindows8OrLater: Boolean;
+<span class="hl kwb">begin</span>
+  Result := InstallOnThisVersion(<span class="hl str">'0,6.2'</span>, <span class="hl str">'0,0'</span>);
+<span class="hl kwb">end</span>;
+
+<span class="hl slc">// Новый способ (рекомендуется)</span>
+<span class="hl kwb">function</span> IsWindows8OrLater: Boolean;
+<span class="hl kwb">begin</span>
+  Result := (GetWindowsVersion &gt;= <span class="hl num">$06020000</span>);
+<span class="hl kwb">end</span>;</pre>
+      <div><b>См. также:</b></div>
+      <p><a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
+        <br />
+        <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>
+      </p>
+    </div>
+  </body>
+</html>

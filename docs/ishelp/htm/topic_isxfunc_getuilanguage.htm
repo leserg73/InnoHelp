@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: GetUILanguage</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: GetUILanguage</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function GetUILanguage: Integer;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает идентификатор языка (LANGID)
+        пользовательского интерфейса для текущего пользователя. Идентификатор
+        языка может быть либо языком самой ОС Windows, либо языком пакета
+        локализации (MUI), выбранного в региональных настройках на панели
+        управления Windows. В случае ошибки функция вернёт значение 0
+        (маловероятно).</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
+          target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">Список
+          национальных идентификаторов и языковых групп в MSDN</a><img src="../images/extlink.png"
+          alt=" [внешняя ссылка]" />.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  <span class="hl kwb">if</span> GetUILanguage = <span class="hl num">$0409</span> <span
+class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl slc">// Язык интерфейса  - Английский (США)</span>
+  <span class="hl kwb">end</span>;
+
+  <span class="hl slc">// Можно использовать "and $3FF" для получения основных идентификаторов языка</span>
+  <span class="hl kwb">if</span> GetUILanguage <span class="hl kwb">and</span> <span
+class="hl num">$3FF</span> = <span class="hl num">$09</span> <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl slc">// Соответствует любому варианту английского</span>
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>
