@@ -23,21 +23,33 @@ INPUT {
 	background-color: ButtonFace;
 	color: WindowText;
 	padding-top: 4px;
+	padding-bottom: 4px;
 	cursor: default;
 	-moz-user-select: none;
+	position: fixed;  
+	top: 0;  
+	z-index: 100;
+	width: 100%;
 }
 #tabbar TD {
 	padding: 0;
 	font-weight: bold;
 }
 #tabbar TD.selectedtab {
-	background-color: Window;
+	background-color: #8DCCFD;
 	padding: 2px 6px 3px 6px;
-	border-bottom: none;
+	border-left: 1px solid #1C6EA4;
+	border-top: 1px solid #1C6EA4;
+	border-right: 1px solid #1C6EA4;
+	border-radius: 6px 6px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
 }
 #tabbar TD.unselectedtab {
 	padding: 3px 7px 2px 7px;
 	cursor: pointer;
+	border-bottom: 1px solid #1C6EA4;
 }
 #tabbar A {
 	background-color: transparent;
@@ -52,7 +64,11 @@ INPUT {
 	color: #0078D4;
 }
 
-
+#tabbody-contents {
+	padding: 4px 2px;
+	/* white-space: nowrap; */
+	margin-top: 28px;
+}
 #tabbody-contents A {
 	/* Using inline-block because otherwise, second line of wrapped text
 	   doesn't line up with first, and on IE6, the focus rect doesn't extend
@@ -96,11 +112,11 @@ INPUT {
 	padding-right: 2px;
 }
 
-
 #tabbody-index {
 	padding: 4px 2px;
 	white-space: nowrap;
 	-moz-user-select: none;
+	margin-top: 28px;
 }
 #tabbody-index A {
 	display: inline-block;
@@ -124,7 +140,11 @@ INPUT {
 	outline-color: WindowText;   /* needed for focus rect to appear on Firefox (3.5) */
 }
 
-
+#tabbody-search {
+	/* padding: 4px 2px; */
+	/* white-space: nowrap; */
+	margin-top: 28px;
+}
 #searchcont .gsc-control {
 	font: small Arial, sans-serif;   /* 10pt */
 	width: 100%;

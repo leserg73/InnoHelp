@@ -156,9 +156,14 @@ li.compact {
 	border-bottom: 1px solid ThreeDDarkShadow;
 	font-size: 120%;
 	font-weight: bold;
+	position: fixed;  
+	top: 0;  
+	z-index: 100;
+	width: 100%;
 }
 .topicbody {
 	padding: 15px 15px 5px 10px;
+	margin-top: 30px;
 }
 .topicbody_w {
 	font-size: 12px;
