@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: CallDLLProc</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: CallDLLProc</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function CallDLLProc(const DLLHandle: Longint; const ProcName:
+          String; const Param1, Param2: Longint; var Result: Longint): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет вызов указанной функции из библиотеки DLL,
+        определённой с помощью дескриптора DLL, который вернула функция LoadDLL.
+        Возвращает значение <tt>True</tt>, если вызов процедуры был успешный, в
+        противном случае <tt>False</tt>.</div>
+      <br />
+      <div class="absaz">Функция должна использовать стандартное соглашение о
+        вызовах, принимать два 4-байтных целочисленных параметра и возвращать
+        4-байтный целочисленный результат.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Эта функция устарела. Смотрите раздел <a href="topic_scriptdll.htm">Использование
+          DLL</a>.</div>
+      <br />
+    </div>
+  </body>
+</html>

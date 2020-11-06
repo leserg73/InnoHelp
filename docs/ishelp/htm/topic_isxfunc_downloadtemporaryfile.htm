@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: DownloadTemporaryFile</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: DownloadTemporaryFile</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function DownloadTemporaryFile(const Url, FileName,
+          RequiredSHA256OfFile: String; const OnDownloadProgress:
+          TOnDownloadProgress): Int64;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет загрузку файла по указанному URL-адресу во
+        временный каталог. Для определения расположения временного каталога
+        используйте <tt>ExpandConstant('{tmp}')</tt>.</div>
+      <br />
+      <div class="absaz">Если указано значение параметра <i>RequiredSHA256OfFile</i>,
+        будет выполнено его сравнение с хеш-суммой SHA-256 загруженного файла и
+        вызвано исключение, если они не совпадают.</div>
+      <br />
+      <div class="absaz">В случае ошибки будет вызвано исключение. Иначе функция
+        вернёт размер загруженных данных. Если указано значение <i>RequiredSHA256OfFile</i>
+        и файл уже был загружен, функция вернёт значение 0.</div>
+      <br />
+      <div class="absaz">Поддерживается протокол HTTPS (но без просроченных или
+        самоподписанных сертификатов), а также HTTP. Перенаправления выполняются
+        автоматически и применяются автоматические настройки прокси. Безопасно
+        использовать для различных сервисов.</div>
+      <br />
+      <div class="absaz">Для обычной аутентификации используйте специальный
+        формат URL: http://username:password@example.com/ </div>
+      <br />
+      <div class="absaz">Для параметра <tt>OnDownloadProgress</tt> укажите
+        функцию, которая будет передавать информацию о ходе загрузки, или <tt>nil</tt>,
+        если в этом нет необходимости.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Класс TOnDownloadProgress представлен следующей
+        функцией:</div>
+      <br />
+      <div class="null" style="margin-left: 20px; text-indent: 0.0em;"><tt>TOnDownloadProgress
+          = function(const Url, FileName: string; const Progress, ProgressMax:
+          Int64): Boolean;</tt></div>
+      <br />
+      <div class="absaz">Параметр <i>ProgressMax</i> будет равен 0, если
+        размер файла по-прежнему неизвестен. Функция возвращает значение <tt>True</tt>,
+        которое позволяет продолжить загрузку, иначе – <tt>False</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">function</span> OnDownloadProgress(<span class="hl kwb">const</span> Url, Filename: string; <span
+class="hl kwb">const</span> Progress, ProgressMax: Int64): Boolean;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if</span> ProgressMax &lt;&gt; <span class="hl num">0</span> <span
+class="hl kwb">then</span>
+    Log(Format(<span class="hl str">'  %d из %d байт.'</span>, [Progress, ProgressMax]))
+  <span class="hl kwb">else</span>
+    Log(Format(<span class="hl str">'  %d байт.'</span>, [Progress]));
+  Result := True;
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">function</span> <span class="hl kwd">InitializeSetup</span>: Boolean;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">try</span>
+    DownloadTemporaryFile(<span class="hl str">'https://jrsoftware.org/download.php/is.exe'</span>,
+                          <span class="hl str">'innosetup-latest.exe'</span>,
+                          <span class="hl str">''</span>,
+                          @OnDownloadProgress);
+    DownloadTemporaryFile(<span class="hl str">'https://jrsoftware.org/download.php/iscrypt.dll'</span>,
+                          <span class="hl str">'ISCrypt.dll'</span>,
+                          <span class="hl str">'2f6294f9aa09f59a574b5dcd33be54e16b39377984f3d5658cda44950fa0f8fc'</span>,
+                          @OnDownloadProgress);
+    Result := True;
+  <span class="hl kwb">except</span>
+    Log(GetExceptionMessage);
+    Result := False;
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+        <br />
+        <div class="absaz">Также смотрите в файле <i>CodeDownloadFiles.iss</i>
+          другой пример с использованием <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>.</div>
+        <br />
+        <div><b>См. также:</b></div>
+        <p><a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a>
+          <br />
+          <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>
+          <br />
+          <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

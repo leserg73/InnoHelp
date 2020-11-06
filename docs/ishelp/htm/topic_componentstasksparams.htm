@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Параметры секций [Components] и [Tasks]</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Параметры секций [Components] и [Tasks]</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Существует два необязательных <a href="topic_params.htm">параметра</a>,
+        поддерживаемых всеми секциями, записи которых содержат перечисляемые
+        параметры, кроме секций <tt>[Types]</tt>, <tt>[Components]</tt> и <tt>[Tasks]</tt>.
+        Вот эти параметры:</div>
+      <br />
+      <dl>
+        <dt class="paramlist"><b><a name="Components">Components</a></b></dt>
+        <dd class="paramlist">
+          <p>Разделённый пробелами список с именами компонентов, указывающий
+            программе установки, к каким компонентам относится запись. Если
+            пользователь выберет компонент из этого списка, запись будет
+            обработана (например, установится файл).</p>
+          <p>Запись без параметра <tt>Components</tt> обрабатывается всегда,
+            пока другие параметры этого не отменят. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">Components</span>: main
+<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">Components</span>: help
+<span class="hl kwb">Source</span>: "README.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Tasks">Tasks</a></b></dt>
+        <dd class="paramlist">
+          <p>Разделённый пробелами список с именами задач, указывающий программе
+            установки, к какой задаче относится запись. Если пользователь
+            выберет задачу из этого списка, то запись будет обработана
+            (например, установится файл).</p>
+          <p>Запись без параметра <tt>Tasks</tt> обрабатывается всегда, пока
+            другие параметры этого не отменят. </p>
+          <p>Обратите внимание, что флажок "<i>Не создавать папку в меню «Пуск»</i>"
+            на странице мастера "<i>Выберите папку в меню «Пуск»</i>" не влияет
+            на записи секции <tt>[Icons]</tt>, имеющих параметры <tt>Tasks</tt>,
+            поскольку они имеют свои собственные флажки. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwa">[Icons]</span>
+<span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\My Program"; <span
+class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.exe"; <span
+class="hl kwb">Components</span>: main; <span class="hl kwb">Tasks</span>: startmenu
+<span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\My Program Help"; <span
+class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.chm"; <span
+class="hl kwb">Components</span>: help; <span class="hl kwb">Tasks</span>: startmenu
+<span class="hl kwb">Name</span>: "<span class="hl kwc">{commondesktop}</span>\My Program"; <span
+class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.exe"; <span
+class="hl kwb">Components</span>: main; <span class="hl kwb">Tasks</span>: desktopicon</pre>
+          </div>
+        </dd>
+      </dl>
+      <p><br />
+      </p>
+      <div class="absaz">Помимо разделённых пробелами списков, в качестве
+        параметров <tt>Components</tt> и <tt>Tasks</tt> также можно
+        использовать логические выражения. Поддерживаются операторы <tt>not</tt>,
+        <tt>and</tt> и <tt>or</tt>. Например:</div>
+      <pre class="indent examplebox"><span class="hl kwa">[Components]</span>
+<span class="hl kwb">Name</span>: a; <span class="hl kwb">Description</span>: a
+<span class="hl kwb">Name</span>: b; <span class="hl kwb">Description</span>: b
+
+<span class="hl kwa">[Tasks]</span>
+<span class="hl kwb">Name</span>: p; <span class="hl kwb">Description</span>: a <span
+class="hl kwd">or</span> b; <span class="hl kwb">Components</span>: a <span class="hl kwd">or</span> b
+<span class="hl kwb">Name</span>: q; <span class="hl kwb">Description</span>: a <span
+class="hl kwd">and</span> b; <span class="hl kwb">Components</span>: a <span class="hl kwd">and</span> b
+<span class="hl kwb">Name</span>: r; <span class="hl kwb">Description</span>: <span
+class="hl kwd">not</span> a <span class="hl kwd">or</span> b; <span class="hl kwb">Components</span>: <span
+class="hl kwd">not</span> a <span class="hl kwd">or</span> b
+<span class="hl kwb">Name</span>: s; <span class="hl kwb">Description</span>: <span
+class="hl kwd">not</span> (a <span class="hl kwd">or</span> b); <span class="hl kwb">Components</span>: <span
+class="hl kwd">not</span> (a <span class="hl kwd">or</span> b)
+<span class="hl kwb">Name</span>: t; <span class="hl kwb">Description</span>: a <span
+class="hl kwd">or</span> b - old style; <span class="hl kwb">Components</span>: a b</pre>
+    </div>
+  </body>
+</html>

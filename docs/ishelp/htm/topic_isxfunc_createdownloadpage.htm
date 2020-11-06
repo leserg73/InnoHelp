@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: CreateDownloadPage</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: CreateDownloadPage</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function CreateDownloadPage(const ACaption, ADescription: String;
+          const OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет создание страницы мастера, которая позволяет
+        загружать файлы и показывает прогресс загрузки.</div>
+      <br />
+      <div class="absaz">Для параметра <tt>OnDownloadProgress</tt> укажите
+        функцию, которая будет передавать информацию о ходе загрузки, или <tt>nil</tt>,
+        если в этом нет необходимости.</div>
+      <br />
+      <div class="absaz">В отличии от других типов страниц мастера установки,
+        страницы с индикатором выполнения не отображаются как часть обычной
+        последовательности страниц (обратите внимание, что параметр <tt>AfterID</tt>
+        отсутствует) Страницу с индикатором выполнения можно отобразить только
+        программно, путём вызова метода <tt>Show</tt>.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Вызов метода <tt>Show</tt> активирует и отображает
+        страницу. Завершив с ней работу, сделайте вызов метода <tt>Hide</tt>,
+        чтобы вернуться на предыдущую страницу.</div>
+      <br />
+      <div class="absaz">Всегда указывайте вызов <tt>Hide</tt> внутри раздела <tt>finally</tt>
+        конструкции <tt>try..finally</tt>, как показано в примере <i>CodeDownloadFiles.iss</i>.
+        Отсутствие вызова <tt>Hide</tt> приведёт к тому, что мастер установки
+        навсегда застрянет на странице выполнения.</div>
+      <br />
+      <div class="absaz">Чтобы добавить новый файл для загрузки, используйте
+        вызов метода <tt>Add</tt>. А перед добавлением первого файла всегда
+        используйте вызов метода <tt>Clear</tt>.</div>
+      <br />
+      <div class="absaz">Чтобы начать загрузку, используйте вызов метода <tt>Download</tt>.
+        В случае ошибки будет вызвано исключение. Иначе <tt>Download</tt>
+        вернёт количество загруженных байт.</div>
+      <br />
+      <div class="absaz">В описании функции <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+        вы найдете дополнительные сведения по классу <tt>TOnDownloadProgress</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <br />
+      <div class="absaz">Смотрите пример в файле <i>CodeDownloadFiles.iss</i>.</div>
+      <br />
+      <div><b>См. также:</b></div>
+      <p><a href="topic_scriptclasses.htm#TDownloadWizardPage">TDownloadWizardPage</a>
+        <br />
+        <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+        <br />
+        <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>
+      </p>
+    </div>
+  </body>
+</html>

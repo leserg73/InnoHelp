@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: Exec</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: Exec</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function Exec(const Filename, Params, WorkingDir: String; const
+          ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer):
+          Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет запуск указанного исполняемого (.exe) или
+        пакетного (.bat) файла, используя те же учётные данные, что и программа
+        установки/удаления. Параметр <i>Wait</i> определяет немедленный возврат
+        функции или ожидание завершения запущенного процесса или его
+        бездействия. Возвращает значение <tt>True</tt>, если указанный файл был
+        успешно запущен, в противном случае <tt>False</tt>.</div>
+      <br />
+      <div class="absaz">Если функция вернула <tt>True</tt>, а для параметра <i>Wait</i>
+        задано значение <tt>ewWaitUntilTerminated</tt>, тогда параметр <i>ResultCode</i>
+        возвращает код выхода запущенного процесса.</div>
+      <br />
+      <div class="absaz">Если функция вернула <tt>False</tt>, то значение
+        параметра <i>ResultCode</i> указывает на возникшую ошибку. Используйте
+        <tt>SysErrorMessage(ResultCode)</tt> для получения описания ошибки.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz"><i>TExecWait</i> может принимать следующие значения:</div>
+      <br />
+      <p><tt></tt></p>
+      <div class="null" style="margin-left: 20px;"><tt>TExecWait = (ewNoWait,
+          ewWaitUntilTerminated, ewWaitUntilIdle);</tt></div>
+      <br />
+      <div class="absaz">Используйте функцию <a href="topic_isxfunc_shellexec.htm">ShellExec</a>,
+        если требуется запустить файл отличный от исполняемого или пакетного.</div>
+      <br />
+      <div class="absaz">Не заключайте значение параметра <i>Filename</i> в
+        кавычки: функция добавит их автоматически.</div>
+      <br />
+      <div class="absaz">Параметр <i>WorkingDir</i> может быть пустой строкой.
+        В этом случае функция попытается получить рабочий каталог из параметра <i>Filename</i>
+        и использовать его в качестве текущего каталога процесса. Если в <i>Filename</i>
+        не указано имя пути, то будет использован каталог по умолчанию.</div>
+      <br />
+      <div class="absaz">Если в одной строке содержится имя файла и параметры
+        его запуска (например, командная строка, полученная из ключа <tt>UninstallString</tt>
+        в реестре), нет необходимости в их разделении: просто передайте <tt>'&gt;'</tt>
+        в параметре <i>Filename</i>, а всю командную строку в параметре <i>Params</i>.
+        (Обратите внимание, что в этом случае поддержка файлов .bat и .cmd
+        отключается; просто указанная командная строка передается в <tt>CreateProcess</tt>
+        без какой-либо обработки.)</div>
+      <br />
+      <div class="absaz">По умолчанию, когда программа установки/удаления
+        выполняется в <a href="topic_32vs64bitinstalls.htm">64-разрядном режиме
+          установки</a>, при вызове <tt>CreateProcess</tt> эта функция
+        отключает перенаправление файловой системы в WOW64. Это можно
+        переопределить, вызвав функцию <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  ResultCode: Integer;
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Запускаем Блокнот и ожидаем завершения его работы</span>
+  <span class="hl kwb">if</span> Exec(ExpandConstant(<span class="hl str">'</span><span
+class="hl kwc">{win}</span><span class="hl str"></span><span class="hl esc">\n</span><span
+class="hl str">otepad.exe'</span>), <span class="hl str">''</span>, <span class="hl str">''</span>, <span
+class="hl kwe">SW_SHOW</span>,
+     ewWaitUntilTerminated, ResultCode) <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl slc">// выполняем какие-либо действия в случае успеха</span>
+    <span class="hl slc">// параметр ResultCode содержит код выхода</span>
+  <span class="hl kwb">end</span>
+  <span class="hl kwb">else begin</span>
+    <span class="hl slc">// выполняем какие-либо действия в случае неудачи</span>
+    <span class="hl slc">// параметр ResultCode содержит код выхода</span>
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+      <div><b>См. также:</b></div>
+      <p><a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>
+      </p>
+    </div>
+  </body>
+</html>

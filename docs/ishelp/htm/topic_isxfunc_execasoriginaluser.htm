@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: ExecAsOriginalUser</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: ExecAsOriginalUser</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function ExecAsOriginalUser(const Filename, Params, WorkingDir:
+          String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode:
+          Integer): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет запуск указанного исполняемого (.exe) или
+        пакетного (.bat) файла c использованием учётных данных пользователя
+        (обычно не повышенных), который запустил программу установки. Для
+        получения дополнительной информации смотрите функцию <a href="topic_isxfunc_exec.htm">Exec</a>
+        и флаг <tt>runasoriginaluser</tt> в секции <tt>[Run]</tt>.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Эта функция не поддерживается во время деинсталляции.</div>
+      <br />
+      <div class="absaz">В очень необычных случаях отказа (например, если
+        первоначальный процесс установки неожиданно прекратится) эта функция
+        может вызвать исключение вместо того, чтобы просто вернуть значение <tt>False</tt>.</div>
+      <br />
+    </div>
+  </body>
+</html>

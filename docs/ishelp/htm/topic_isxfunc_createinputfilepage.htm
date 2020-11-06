@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: CreateInputFilePage</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: CreateInputFilePage</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function CreateInputFilePage(const AfterID: Integer; const
+          ACaption, ADescription, ASubCaption: String): TInputFileWizardPage;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет создание страницы мастера, которая содержит
+        поля ввода и кнопки для выбора файлов.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Для создания на странице полей выбора файла,
+        используйте вызов метода <tt>Add</tt>. Свойство <tt>Values</tt>
+        используйте для получения/установки значений элементов управления.</div>
+      <br />
+      <div class="absaz">К примеру, фильтр файлов: 'Text files (*.txt)|*.txt|All
+        files (*.*)|*.*'</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  Page: TInputFileWizardPage;
+  NotepadLocation: String;
+
+...
+
+<span class="hl slc">// Создаём страницу</span>
+Page := CreateInputFilePage(<span class="hl kwe">wpWelcome</span>,
+  <span class="hl str">'Выбор места Блокнота'</span>, <span class="hl str">'Где находится Блокнот?'</span>,
+  <span class="hl str">'Выберите расположение Блокнота, затем нажмите "Далее".'</span>);
+
+<span class="hl slc">// Добавляем элемент</span>
+Page.Add(<span class="hl str">'Расположение файла notepad.exe:'</span>, <span class="hl slc">// заголовок</span>
+  <span class="hl str">'Исполняемые файлы|*.exe|Все файлы|*.*'</span>,  <span class="hl slc">// фильтры</span>
+  <span class="hl str">'.exe'</span>);                                  <span class="hl slc">// расширение по умолчанию</span>
+
+<span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
+Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
+class="hl kwc">{win}</span><span class="hl str">\notepad.exe'</span>);
+
+...
+
+<span class="hl slc">// Считываем значение в переменную</span>
+NotepadLocation := Page.Values[<span class="hl num">0</span>];</pre>
+      <br />
+      <div class="absaz">См. другой пример в файле <i>AllPagesExample.iss</i>.</div>
+      <br />
+      <div><b>См. также:</b></div>
+      <p><a href="topic_scriptclasses.htm#TInputFileWizardPage">TInputFileWizardPage</a>
+      </p>
+    </div>
+  </body>
+</html>

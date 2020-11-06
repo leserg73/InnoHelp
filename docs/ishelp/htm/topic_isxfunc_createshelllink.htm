@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: CreateShellLink</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: CreateShellLink</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function CreateShellLink(const Filename, Description, ShortcutTo,
+          Parameters, WorkingDir, IconFilename: String; const IconIndex,
+          ShowCmd: Integer): String;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет создание ссылки на файл или папку. Возвращает
+        результирующее имя файла ссылки, которое может отличаться от <i>Filename</i>,
+        если оно было создано с расширением .pif вместо .lnk. В случае ошибки
+        будет создано исключение.</div>
+      <br />
+      <p><b>Параметры:</b><br />
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td class="cellleft"><i>Filename</i></td>
+            <td class="cellright">Имя файла создаваемого ярлыка.<br />
+              Требуется указывать полный путь, включая расширение ".lnk".</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>Description</i></td>
+            <td class="cellright">Описание ярлыка.<br />
+              Будет показано в виде всплывающей подсказки при наведении курсора
+              мышки на значок в Windows 2000/XP и других поддерживаемых ОС.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>ShortcutTo</i></td>
+            <td class="cellright">Целевой файл для создания ярлыка.<br />
+              Требуется указывать полный путь к файлу.<br />
+              Строка пути будет заключена в двойные кавычки автоматически.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>Parameters</i></td>
+            <td class="cellright">Параметры командной строки для передачи
+              целевому файлу.<br />
+              Параметры, включающие пробелы, должны быть заключены в двойные
+              кавычки. Например, <tt>ExpandConstant('"{app}\foo"').</tt></td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>WorkingDir</i></td>
+            <td class="cellright">Рабочий каталог целевого файла.<br />
+              Требуется указывать абсолютный путь к этому каталогу.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>IconFilename</i></td>
+            <td class="cellright">Путь к файлу значка, который будет использован
+              для ярлыка.<br />
+              Если параметр оставить пустым, то по умолчанию будет использован
+              значок целевого файла.</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>IconIndex</i></td>
+            <td class="cellright">Индекс значка (начиная с нуля).</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><i>ShowCmd</i></td>
+            <td class="cellright">Одна из констант SW_*.</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Скорее всего при деинсталляции возникнет необходимость
+        удалить созданный ярлык. Тогда просто добавьте запись в секцию <tt>UninstallDelete</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox">CreateShellLink(
+  ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+class="hl str">\config\Open licence database.lnk'</span>),
+  <span class="hl str">'Открыть базу данных лицензий SQLite'</span>,
+  ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+class="hl str">\config\sqlite.exe'</span>),
+  ExpandConstant(<span class="hl str">'"</span><span class="hl kwc">{app}</span><span
+class="hl str">\config\licences.db"'</span>),
+  ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+class="hl str">\config'</span>),
+  <span class="hl str">''</span>,
+  <span class="hl num">0</span>,
+  <span class="hl kwe">SW_SHOWNORMAL</span>);</pre>
+    </div>
+  </body>
+</html>

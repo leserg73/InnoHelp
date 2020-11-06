@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: DelTree</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: DelTree</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function DelTree(const Path: String; const IsDir, DeleteFiles,
+          DeleteSubdirsAlso: Boolean): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет удаление указанного каталога, если для
+        параметра <i>IsDir</i> установлено значение <tt>True</tt>, или удаляет
+        файлы/каталоги, соответствующих маске, если для параметра <i>IsDir</i>
+        установлено значение <tt>False</tt>. Возвращает значение <tt>True</tt>,
+        если всё было успешно удалено.</div>
+      <br />
+      <div class="absaz">Если для параметра <i>DeleteFiles</i> установлено
+        значение <tt>True</tt>, то будут удалены все файлы в указанном каталоге
+        при условии, что параметр <i>IsDir</i> также установлен в <tt>True</tt>.
+        Если же параметр <i>IsDir</i> установлен в <tt>False</tt>, то будут
+        удалены файлы, соответствующие маске (включая файлы с атрибутами '<i>скрытый</i>',
+        '<i>системный</i>' и '<i>только для чтения</i>').</div>
+      <br />
+      <div class="absaz">Если оба параметра <i>DeleteFiles</i> и <i>DeleteSubdirsAlso</i>
+        установлены в <tt>True</tt>, то вместе файлами также будут удалены и
+        подкаталоги (со всем содержимым).</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Эта функция удалит каталоги, которые являются точками
+        повторной обработки, но не будет рекурсивно удалять файлы/каталоги
+        внутри них.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  <span class="hl slc">// Удаление каталога C:\Test со всем содержимым, включая подкаталоги</span>
+  DelTree(<span class="hl str">'C:\Test'</span>, True, True, True);
+
+  <span class="hl slc">// Удаление файлов в соответствии с маской C:\Test\*.tmp</span>
+  DelTree(<span class="hl str">'C:\Test\*.tmp'</span>, False, True, False);
+
+  <span class="hl slc">// Удаление всех файлов и подкаталогов внутри C:\Test</span>
+  <span class="hl slc">// кроме самого каталога</span>
+  DelTree(<span class="hl str">'C:\Test\*'</span>, False, True, True);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Ограничения в 64-разрядном режиме</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Ограничения в 64-разрядном режиме</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Поскольку Inno Setup является 32-разрядным приложением,
+        необходимо принимать во внимание некоторые ограничения при использовании
+        его 64-разрядных функций установки:</div>
+      <br />
+      <ul>
+        <li>Путь System32, возвращаемый константой <tt>{sys}</tt>, не всегда
+          соответствует 64-разрядному каталогу System. Когда программа
+          установки/удаления работает в 64-разрядном режиме, она ссылается на
+          64-разрядный каталог System, если используется в секциях <tt>[Dirs]</tt>,
+          <tt>[Files]</tt>, <tt>[InstallDelete]</tt>, <tt>[Run]</tt>, <tt>[UninstallDelete]</tt>
+          и <tt>[UninstallRun]</tt>. Это связано с тем, что программа установки
+          временно отключает <a href="http://msdn.microsoft.com/en-us/library/aa384187.aspx"
+            target="_blank" title="http://msdn.microsoft.com/en-us/library/aa384187.aspx">перенаправление
+            файловой системы WOW64</a><img src="../images/extlink.png" alt=" [external link]" />
+          при доступе к файлам и папкам из этих секций. Где-нибудь в другом
+          месте System32 и <tt>{sys}</tt> ссылается на 32-разрядный каталог
+          System, как это обычно и происходит в 32-разрядном процессе. </li>
+        <li>
+          <p>В секции <tt>[Code]</tt>, когда программа установки/удаления
+            работает в 64-разрядном режиме, функции, которые обращаются к
+            файлам, отключают перенаправление файловой системы WOW64 (если не
+            было сделано переопределение вызовом <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>).
+            Однако здесь есть некоторые исключения. Функции, приведенные ниже,
+            никогда не отключают перенаправление файловой системы, т.е. с
+            помощью них нельзя передать (или получить) имя файла, который
+            находится в 64-разрядном системном каталоге: </p>
+          <table>
+            <tbody>
+              <tr>
+                <td class="cellleft"><tt>*Ini*</tt></td>
+                <td class="cellright">(все функции, которые обрабатывают файлы
+                  INI)</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>BrowseForFolder</tt></td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>CreateShellLink</tt></td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>GetOpenFileName</tt></td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>LoadDLL</tt></td>
+                <td class="cellright">(см. следующий пункт)</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>ModifyPifFile</tt></td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>SetCurrentDir</tt></td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>ShellExec</tt></td>
+                <td class="cellright">(вместо неё используйте <tt>Exec</tt>) </td>
+              </tr>
+              <tr>
+                <td class="cellleft"><tt>UnregisterFont</tt></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Кроме того, ни один VCL класс не способен отключить перенаправление
+            файловой системы. Например, вы не можете использовать метод <tt>LoadFromFile</tt>
+            класса <tt>TBitmap</tt>, чтобы загрузить файл растровой графики из
+            64-разрядного системного каталога. </p>
+        </li>
+        <li>Вы не можете загружать/использовать 64-разрядные динамические
+          библиотеки (DLL) в секции <tt>[Code]</tt>, так как Windows не
+          разрешает 32-разрядным процессам загружать 64-разрядные DLL (и
+          наоборот). Однако 32-разрядный процесс может запускать 64-разрядные
+          исполняемые файлы. Для этого используйте функцию <tt>Exec</tt> или
+          секцию <tt>[Run]</tt>. </li>
+      </ul>
+    </div>
+  </body>
+</html>
