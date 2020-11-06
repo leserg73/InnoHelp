@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ArchitecturesAllowed</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ArchitecturesAllowed</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Одно или несколько из следующих значений,
+                разделённых пробелами: <br />
+                <tt>x86</tt> <br />
+                <tt>x64</tt> <br />
+                <tt>arm64</tt> <br />
+                <tt>ia64</tt> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><i>(пустое)</i> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет архитектуру процессора, на которой
+        разрешается запуск программы установки. Если директива не указана или
+        является пустой, запуск программы установки разрешается на всех
+        поддерживаемых архитектурах, способных выполнять 32-разрядный код
+        установки (включая тот, который она не распознает). Иначе, если
+        пользовательская архитектура не будет соответствовать одной из
+        указанной, программа установки выдаст сообщение об ошибке и завершит
+        свою работу.</div>
+      <br />
+      <div class="absaz">Если все двоичные файлы вашего приложения являются
+        32-разрядными и выполняются в пользовательском режиме, не следует
+        изменять значение этой директивы по умолчанию (в частности, не следует
+        указывать значение <tt>x86</tt>), поскольку такие файлы без проблем
+        работают в 64-разрядной Windows через эмулятор WOW64.</div>
+      <br />
+      <div class="absaz">Если выполняется установка каких-либо 32-разрядных
+        драйверов устройств, для этой директивы необходимо указать значение <tt>x86</tt>,
+        т.к. 32-разрядные драйвера устройств не могут нормально работать в
+        64-разрядной Windows.</div>
+      <br />
+      <div class="absaz">Если двоичные файлы вашего приложения созданы для
+        архитектуры x64, ARM64 или Itanium, то для директивы необходимо указать
+        значение <tt>x64</tt>, <tt>arm64</tt> или <tt>ia64</tt>
+        соответственно.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a></p>
+    </div>
+  </body>
+</html>

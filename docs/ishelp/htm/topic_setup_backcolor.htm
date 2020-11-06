@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: BackColor, BackColor2</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: BackColor, BackColor2</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Цвет в формате <tt>$<i>bbggrr</i></tt>, где
+                <tt>rr</tt>, <tt>gg</tt>, <tt>bb</tt> – двузначные значения
+                интенсивности (в шестнадцатеричном формате) для красного,
+                зелёного и синего компонентов цвета соответственно. Или одно из
+                следующих предопределённых названий цветов: clBlack, clMaroon,
+                clGreen, clOlive, clNavy, clPurple, clTeal, clGray, clSilver,
+                clRed, clLime, clYellow, clBlue, clFuchsia, clAqua, clWhite. </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>clBlue</tt> для <tt>BackColor</tt>,<br />
+                <tt>clBlack</tt> для <tt>BackColor2</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Обе директивы определяют цвета для градиентной заливки
+        фонового окна установки. Директива <tt>BackColor</tt> устанавливает
+        первый цвет градиента, используемого сверху (или слева, если <tt>BackColorDirection=lefttoright</tt>).
+        Директива <tt>BackColor2</tt> устанавливает второй цвет градиента,
+        используемого внизу (или справа).</div>
+      <br />
+      <div class="absaz">Директива <tt>BackColor2</tt> не учитывается, если <tt>BackSolid=yes</tt>.</div>
+      <br />
+      <div class="examplebox">
+        <div class="exampleheader">Примеры:</div>
+        <pre class="nomargin"><span class="hl kwb">BackColor</span>=clBlue
+<span class="hl kwb">BackColor2</span>=clBlack
+
+<span class="hl kwb">BackColor</span>=<span class="hl num">$FF0000</span>
+<span class="hl kwb">BackColor2</span>=<span class="hl num">$000000</span></pre>
+      </div>
+    </div>
+  </body>
+</html>

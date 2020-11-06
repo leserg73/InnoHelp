@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: CloseApplicationsFilter</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: CloseApplicationsFilter</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Список файловых шаблонов, разделённых
+                запятыми </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>*.exe,*.dll,*.chm</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Эта директива выполняет ограничение записей секций <tt>[Files]</tt>
+        и <tt>[InstallDelete]</tt>, которые программа установки будет проверять
+        на предмет использования. Будут проверены только те файлы, которые
+        соответствуют одному из указанных шаблонов.</div>
+      <br />
+      <div class="absaz">Установка значения <tt>*.*</tt> может обеспечить
+        лучшую проверку за счёт скорости.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_closeapplications.htm">CloseApplications</a><br />
+        <a href="topic_setup_restartapplications.htm">RestartApplications</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: CompressionThreads</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: CompressionThreads</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>auto</tt><br />
+                <tt>1</tt><br />
+                <tt>2</tt> (или выше)</div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>auto</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Эта директива управляет включением механизма
+        многопоточного поиска соответствий для алгоритмов сжатия LZMA и LZMA2.
+        Поддержка многопоточности позволяет ускорить процесс сжатия на 50% и
+        более в системах с многоядерными процессорами и на 20% и более в
+        системах с процессорами Intel с поддержкой технологии Hyper-Threading.</div>
+      <br />
+      <div class="absaz">Значение <tt>auto</tt> (по умолчанию) включает
+        механизм многопоточного поиска соответствий для всех уровней сжатия, за
+        исключением <tt>fast</tt>, который его не поддерживает.</div>
+      <br />
+      <div class="absaz">Значение <tt>1</tt> отключает механизм многопоточного
+        поиска соответствий.</div>
+      <br />
+      <div class="absaz">Значения <tt>2</tt> и выше в настоящий момент
+        эквивалентны <tt>auto</tt>.</div>
+      <br />
+      <div class="absaz">Следует отметить, что для компрессора LZMA2 этот
+        параметр управляет только использованием механизма многопоточного поиска
+        соответствий. Чтобы включить поддержку параллельного сжатия нескольких
+        частей больших файлов, укажите параметр <a href="topic_setup_lzmanumblockthreads.htm">LZMANumBlockThreads</a>.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_lzmanumblockthreads.htm">LZMANumBlockThreads</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: LanguageDetectionMethod</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: LanguageDetectionMethod</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>uilanguage</tt>, <tt>locale</tt>, <tt>none</tt>
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>uilanguage</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">При значении <tt>uilanguage</tt> программа установки
+        определит язык, который она будет использовать по умолчанию, путём
+        проверки пользовательского "UI language" (вызовом функции
+        GetUserDefaultUILanguage() или чтением реестра в Windows, где эта
+        функция не поддерживается). Такой метод рекомендован корпорацией
+        Microsoft. "UI language" (<i>язык пользовательского интерфейса</i>) –
+        это язык, используемый Windows в диалоговых окнах. Таким образом, в
+        английском издании Windows, языком по умолчанию будет Английский, а в
+        немецком издании Windows – Немецкий язык. В многоязычном издании Windows
+        языком по умолчанию будет текущий, выбранный пользователем.</div>
+      <br />
+      <div class="absaz">При значении <tt>locale</tt> программа установки
+        определит язык, который она будет использовать по умолчанию, путём
+        вызова функции <tt>GetUserDefaultLangID()</tt>. Эта функция возвращает
+        значение параметра "Your locale", заданного в апплете Панели управления
+        "Региональные стандарты". Однако следует отметить, что параметр "Your
+        locale" не влияет на языки, только на формат "чисел, денежной единицы,
+        времени и даты".</div>
+      <br />
+      <div class="absaz">При значении <tt>none</tt> программа установки по
+        умолчанию будет использовать язык, который указан первым в секции <tt>[Languages]</tt>.</div>
+      <br />
+    </div>
+  </body>
+</html>

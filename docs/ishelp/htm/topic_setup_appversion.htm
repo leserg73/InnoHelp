@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: AppVersion</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: AppVersion</h1>
+    <div class="topicbody">
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Эта директива определяет номер версии устанавливаемого
+        приложения. Значение может содержать константы и используется в
+        формировании значения директивы <a href="topic_setup_appvername.htm">AppVerName</a>,
+        а также добавляется в сведения о приложении для поля "Версия" в апплете
+        Панели управления "<i>Удаление или изменение программы</i>". К тому же,
+        используется для установки значений для ключей <tt>MajorVersion</tt> и
+        <tt>MinorVersion</tt> в разделе реестра "Uninstall", когда это возможно.</div>
+      <br />
+      <div class="absaz">Эта директива является обязательной и не может быть
+        пустой, если параметр <a href="topic_setup_appvername.htm">AppVerName</a>
+        не используется.</div>
+      <br />
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">AppVersion</span>=<span class="hl num">1.5</span></pre>
+      </div>
+    </div>
+  </body>
+</html>

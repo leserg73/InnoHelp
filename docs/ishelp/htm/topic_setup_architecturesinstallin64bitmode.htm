@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ArchitecturesInstallIn64BitMode</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ArchitecturesInstallIn64BitMode</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Одно или несколько из следующих значений,
+                разделённых пробелами: <br />
+                <tt>x64</tt> <br />
+                <tt>arm64</tt> <br />
+                <tt>ia64</tt> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><i>(пустое)</i> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет 64-разрядную архитектуру процессора, на
+        которой должна работать программа установки в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+          режиме установки</a>. Если директива не указана или является пустой,
+        программа установки всегда будет работать в <a href="topic_32vs64bitinstalls.htm">32-разрядном
+          режиме установки</a>.</div>
+      <br />
+      <div class="absaz">Обычно нет никакой необходимости изменять значение этой
+        директивы по умолчанию, если только приложение не содержит 64-разрядные
+        двоичные файлы.</div>
+      <br />
+      <div class="absaz">Прежде чем использовать эту директиву, ознакомьтесь с
+        разделом "<a href="topic_64bitlimitations.htm">Ограничения в
+          64-разрядном режиме</a>".</div>
+      <br />
+      <div class="absaz">Если ваше приложение работает только на 64-разрядных
+        архитектурах процессора, следует в директиве <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
+        указать такое же самое значение, как и для этой директивы, чтобы
+        предотвратить работу программы установки на 32-разрядных Windows.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></p>
+    </div>
+  </body>
+</html>

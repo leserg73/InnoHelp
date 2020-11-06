@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: Сценарные константы</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: Сценарные константы</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Код Pascal-сценария может содержать несколько функций,
+        которые вызываются программой установки для определения значения
+        сценарной константы <tt>{code:...}</tt>. Функция, вызываемая
+        посредством сценарной константы, должна иметь один строковый параметр,
+        именуемый <tt>Param</tt>, и возвращать <tt>String</tt> (<i>строковый</i>)
+        или <tt>Boolean</tt> (<i>логический</i>) тип данных в зависимости от
+        места использования.</div>
+      <br />
+      <div class="absaz">Синтаксис константы <tt>{code:...}</tt> следующий: <tt>{code:<i>FunctionName</i>|<i>Param</i>}</tt></div>
+      <br />
+      <ul>
+        <li><i>FunctionName</i> — определяет имя функции.</li>
+        <li><i>Param</i> — определяет строковый параметр, передаваемый функции.
+          Если <i>Param</i> не указывается, будет передана пустая строка.</li>
+        <li>Если необходимо заключить внутри константы запятую, вертикальную
+          черту ("|") или закрывающую фигурную скобку ("}"), следует
+          использовать экранирование при помощи "%-кодирования". Это означает,
+          что вместо символа записывается его двузначный код в шестнадцатеричном
+          формате с приставкой "%". Так символ запятой нужно заменить на
+          escape-код "%2c", вертикальную черту — "%7c", а закрывающую скобку —
+          "%7d". Если нужно заключить реальный символ "%", используйте
+          escape-код "%25".</li>
+        <li><i>Param</i> может содержать константы. Обратите внимание, что в
+          этом случае <i>не</i> нужно экранировать закрывающую фигурную скобку
+          константы, как описано выше, это необходимо делать при использовании
+          закрывающей скобки в другом месте.</li>
+      </ul>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{code:MyConst}</span>\My Program</pre>
+      </div>
+      <br />
+      <div class="absaz">Ниже представлен пример секции <tt>[Code]</tt> c
+        функцией <tt>MyConst</tt>, используемой в примере выше.</div>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">function</span> MyConst(Param: String): String;
+<span class="hl kwb">begin</span>
+  Result := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
+class="hl str">'</span>);
+<span class="hl kwb">end</span>;</pre>
+      <div class="absaz">Если функция, указанная в константе <tt>{code:...}</tt>,
+        не включена в секцию <tt>[Code]</tt>, она должна быть одной из <a href="topic_scriptfunctions.htm">поддерживаемых
+          функций</a>. Например:</div>
+      <pre class="indent examplebox"><span class="hl kwa">[INI]</span>
+<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyIni.ini"; <span
+class="hl kwb">Section</span>: "MySettings"; <span class="hl kwb">Key</span>: "ShortApp"; <span
+class="hl kwb">String</span>: "<span class="hl kwc">{code:GetShortName|{app}}</span>"</pre>
+      <p><br />
+        <b>См. также:</b><br />
+        <a href="topic_consts.htm">Константы</a>
+      </p>
+    </div>
+  </body>
+</html>

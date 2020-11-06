@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: DiskSliceSize</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: DiskSliceSize</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">от <tt>262144</tt> до <tt>2100000000</tt>,
+                или <tt>max</tt> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>max</tt> (2100000000)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет максимальное количество байт на сегмент
+        диска (файл SETUP-*.BIN). Обычно это значение должно быть равно общему
+        количеству байтов, доступных на дисковом носителе, делённому на значение
+        директивы <tt>SlicesPerDisk</tt> секции <tt>[Setup]</tt>, которая по
+        умолчанию имеет значение 1.</div>
+      <br />
+      <div class="absaz">Эта директива не учитывается, если не включено
+        разделение данных на диски при помощи <tt>DiskSpanning</tt> в секции <tt>[Setup]</tt>.</div>
+      <br />
+      <div class="absaz">Чтобы оптимально заполнить DVD диск размером 4,7 Гб,
+        используйте:</div>
+      <br />
+      <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
+class="hl num">3</span>
+<span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1566000000</span></pre>
+      <br />
+      <div class="absaz">Чтобы оптимально заполнить DVD диск размером 8,5 Гб
+        (двухслойный), используйте:</div>
+      <br />
+      <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
+class="hl num">5</span>
+<span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1708200000</span></pre>
+      <br />
+      <div class="absaz">Чтобы оптимально заполнить CD диск размером 700 Мб
+        (80-минут), используйте:</div>
+      <br />
+      <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
+class="hl num">1</span>
+<span class="hl kwb">DiskSliceSize</span>=<span class="hl num">736000000</span></pre>
+      <br />
+      <div class="absaz">Чтобы оптимально заполнить дискету размером 1,44 Мб,
+        используйте:</div>
+      <br />
+      <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
+class="hl num">1</span>
+<span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1457664</span></pre>
+    </div>
+  </body>
+</html>

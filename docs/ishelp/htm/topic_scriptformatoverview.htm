@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Формат сценария</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Формат сценария</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Сценарии Inno Setup разделён на <i>секции</i>. Каждая
+        секция управляет отдельным аспектом установки. Секция начинается с
+        указания её имени, которое заключается в квадратные скобки <tt>[]</tt>.
+        Внутри каждой секции может быть любое количество <i>записей</i>.</div>
+      <br />
+      <div class="absaz">Существует два основных типа секций: <tt>[Setup]</tt>
+        – содержит имена и значения директив (в формате <tt>Директива=Значение</tt>),
+        и <tt>[Files]</tt> – содержит записи со списком <a href="topic_params.htm">параметров</a>.</div>
+      <p>Например:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">AppName</span>=My Program
+
+<span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"</pre>
+      <div class="absaz">Обратите внимание, что в сценарии можно указать
+        несколько секций с одним и тем же именем.</div>
+      <br />
+      <div class="absaz">В тексте сценария можно размещать "комментарии"
+        (которые игнорируются компилятором), поместив точку с запятой в начале
+        строки. Например:</div>
+      <pre class="indent examplebox"><span class="hl slc">; This is a comment. I could put reminders to myself here...</span></pre>
+      <div class="absaz">Поддерживается C-подобная директива <a name="include"><tt>#include</tt></a>,
+        которая позволяет вставить в сценарий строки из указанного файла в
+        позицию директивы <tt>#include</tt>. Её синтаксис следующий:</div>
+      <pre class="indent examplebox"><span class="hl kwf">#include</span> <span
+class="hl str">"filename.txt"</span></pre>
+      <div class="absaz">Если имя файла не содержит полного пути, компилятор
+        будет искать указанный файл в том же каталоге, что и файл сценария,
+        который содержит директиву <tt>#include</tt>. В имени файла можно
+        указать приставку "<tt>compiler:</tt>", тогда поиск файла будет выполнен
+        в каталоге компилятора.</div>
+      <br />
+      <div class="absaz">Также поддерживается директива <a name="preproc"><tt>#preproc</tt></a>,
+        которая определяет использование встроенного препроцессора,
+        поддерживающего только вышеуказанную директиву <tt>#include</tt>, или
+        же использование препроцессора Inno Setup (ISPP), который поддерживает
+        множество других директив. Её синтаксис следующий:</div>
+      <pre class="indent examplebox"><span class="hl kwf">#preproc</span> builtin
+<span class="hl kwf">#preproc</span> ispp</pre>
+      <div class="absaz">По умолчанию сценарии используют ISPP, если он
+        доступен, а файлы .isl используют встроенный препроцессор.</div>
+      <br />
+      <p>
+        <b>См. также:</b><br />
+        <a href="topic_params.htm">Параметры в секциях</a><br />
+        <a href="topic_consts.htm">Константы</a><br />
+        <a href="topic_commonparams.htm">Общие параметры</a><br />
+        <a href="topic_componentstasksparams.htm">Параметры секций [Components]
+          и [Tasks]</a><br />
+        <a href="topic_setupsection.htm">Секция [Setup]</a><br />
+        <a href="topic_typessection.htm">Секция [Types]</a><br />
+        <a href="topic_componentssection.htm">Секция [Components]</a><br />
+        <a href="topic_taskssection.htm">Секция [Tasks]</a><br />
+        <a href="topic_dirssection.htm">Секция [Dirs]</a><br />
+        <a href="topic_filessection.htm">Секция [Files]</a><br />
+        <a href="topic_iconssection.htm">Секция [Icons]</a><br />
+        <a href="topic_inisection.htm">Секция [INI]</a><br />
+        <a href="topic_installdeletesection.htm">Секция [InstallDelete]</a><br />
+        <a href="topic_languagessection.htm">Секция [Languages]</a><br />
+        <a href="topic_messagessection.htm">Секция [Messages]</a><br />
+        <a href="topic_custommessagessection.htm">Секция [CustomMessages]</a><br />
+        <a href="topic_langoptionssection.htm">Секция [LangOptions]</a><br />
+        <a href="topic_registrysection.htm">Секция [Registry]</a><br />
+        <a href="topic_runsection.htm">Секция [Run]</a><br />
+        <a href="topic_uninstalldeletesection.htm">Секция [UninstallDelete]</a><br />
+        <a href="topic_runsection.htm">Секция [UninstallRun]</a><br />
+        <a href="topic_scriptintro.htm">Pascal Scripting: Введение</a><br />
+        <a href="topic_compformshortcuts.htm">Клавиатурные команды IDE
+          компилятора</a>
+      </p>
+    </div>
+  </body>
+</html>

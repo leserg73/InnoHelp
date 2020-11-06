@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: Использование COM-объектов</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: Использование COM-объектов</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Pascal-код сценария может обращаться к методам и
+        свойствам COM (также известным как OLE или ActiveX) посредством
+        поддержки объектов автоматизации COM. Это позволяет получить доступ,
+        например, к стандартным COM-серверам Windows, пользовательским
+        COM-серверам, DLL-библиотекам Visual Basic ActiveX и сборкам .NET,
+        используя технологию COM Interop.</div>
+      <br />
+      <dl>
+        <dt><b>Интерфейс <span style="color: #990000;">IDispatch</span></b></dt>
+        <dd>
+          <p>Существует две поддерживаемые функции для инициализации объектов
+            автоматизации COM на базе интерфейса IDispatch: <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
+            и <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>.
+          </p>
+          <p>Функция <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
+            используется для создания нового COM-объекта с указанным именем
+            класса. В случае успеха возвращает переменную типа <tt>Variant</tt>,
+            иначе вызывает исключение. </p>
+          <p>Функция <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>
+            используется для подключения к существующему COM-объекту с указанным
+            именем класса. В случае успеха возвращает переменную типа <tt>Variant</tt>,
+            иначе вызывает исключение. Для некоторых программ такой результат
+            можно использовать в качестве признака их выполнения (работает или
+            нет). </p>
+          <p>Значение, возвращаемое функцией <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
+            или <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>
+            затем можно использовать для доступа к свойствам и методам
+            COM-объекта. Доступ осуществляется посредством "позднего
+            связывания", который означает, что вызов запрашиваемых методов или
+            свойств невозможен до момента выполнения программы установки. </p>
+          <p>Для получения доступа к свойству или методу, имя которого является
+            зарезервированным словом, используйте функцию <a href="topic_isxfunc_idispatchinvoke.htm">IDispatchInvoke</a>.
+          </p>
+          <p>В качестве примера обратитесь к файлу сценария "<i>CodeAutomation.iss</i>",
+            который находится в папке "Examples" каталога установки Inno Setup.
+            В нём рассматривается использование объектов автоматизации COM на
+            базе интерфейса IDispatch.</p>
+          <p>Если используется .NET COM-объект и его загрузка не удаётся,
+            начиная с Inno Setup 5.5.9, попробуйте в сценарии перед созданием
+            COM-объекта поместить следующую строку: <tt>LoadDLL(ExpandConstant('{sys}\mscoree.dll'),
+              ErrorCode);</tt> и добавьте переменную <tt>ErrorCode</tt> с типом
+            <tt>Integer</tt>. </p>
+        </dd>
+        <dt><b>Интерфейс <span style="color: #990000;">IUnknown</span></b></dt>
+        <dd>
+          <p>Если интерфейс IDispatch не реализуется объектом, то можно
+            воспользоваться интерфейсом IUnknown.</p>
+          <p>Для инициализации объектов автоматизации COM на базе интерфейса
+            IUnknown используйте функцию <a href="topic_isxfunc_createcomobject.htm">CreateComObject</a>.
+          </p>
+          <p>Значение, возвращаемое функцией <a href="topic_isxfunc_createcomobject.htm">CreateComObject</a>,
+            можно использовать для доступа к методам COM-объекта после
+            приведения к желаемому интерфейсу. Доступ осуществляется посредством
+            "раннего связывания", который означает, что необходимый интерфейс
+            должен быть определён ещё в сценарии, т.е. до компиляции, в отличии
+            от интерфейса IDispatch. </p>
+          <p>Используйте функцию <a href="topic_isxfunc_stringtoguid.htm">StringToGUID</a>
+            для преобразования строкового значения GUID в "реальный" GUID. А
+            функцию <a href="topic_isxfunc_olecheck.htm">OleCheck</a> для
+            проверки возвращаемых значений вызываемых методов.</p>
+          <p>Если вы копируете определение интерфейса из существующего исходного
+            кода Delphi, удалите скобки вокруг строки с интерфейсом GUID. Также
+            удалите все соглашения о вызовах, поскольку Inno Setup принимает
+            только "stdcall". Если интерфейс содержит какие-либо функции,
+            которые вы не собираетесь использовать, замените их фиктивными,
+            чтобы избежать необходимости объявления каких-либо специальных
+            типов, задействованных ими.</p>
+          <p>В качестве примера обратитесь к файлу сценария "<i>CodeAutomation2.iss</i>",
+            который находится в папке "Examples" каталога установки Inno Setup.
+            В нём рассматривается использование объектов автоматизации COM на
+            базе интерфейса IUnknown.</p>
+        </dd>
+        <dt><b>Общие положения</b></dt>
+        <dd>
+          <p>СОМ-объекты освобождаются автоматически, когда выходят из области
+            видимости. Не существует никаких функций для их "уничтожения" или
+            "освобождения".</p>
+          <p>Если библиотека автоматизации COM извлекается во временный каталог,
+            а затем, после использования, нуждается в удалении, убедитесь, что к
+            этим библиотекам нет больше ссылок, затем вызовите функцию <a href="topic_isxfunc_cofreeunusedlibraries.htm">CoFreeUnusedLibraries</a>.
+            Эта функция попытается выгрузить библиотеку, чтобы её можно было
+            безопасно удалить. </p>
+        </dd>
+      </dl>
+    </div>
+  </body>
+</html>

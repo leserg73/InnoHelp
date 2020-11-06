@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Registry]</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Registry]</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Эта секция является необязательной и определяет
+        какие-либо ключи/значения реестра Windows, которые программа установки
+        должна создать, изменить или удалить на системе пользователя.</div>
+      <br />
+      <div class="absaz">По умолчанию ключи и значения реестра, созданные
+        программой установки, не удаляются во время деинсталляции приложения.
+        Если необходимо, чтобы деинсталлятор выполнял их удаление, используйте
+        флаг <tt>uninsdelete*</tt>, который описывается ниже.</div>
+      <br />
+      <div class="absaz">Ниже представлен пример секции <tt>[Registry]</tt>.</div>
+      <pre class="indent examplebox"><span class="hl kwa">[Registry]</span>
+<span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span>; <span class="hl kwb">Subkey</span>: "Software\My Company"; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">uninsdeletekeyifempty</span>
+<span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span>; <span class="hl kwb">Subkey</span>: "Software\My Company\My Program"; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">uninsdeletekey</span>
+<span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span>; <span class="hl kwb">Subkey</span>: "Software\My Company\My Program\Settings"; <span
+class="hl kwb">ValueType</span>: string; <span class="hl kwb">ValueName</span>: "InstallPath"; <span
+class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
+      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
+      <br />
+      <dl>
+        <dt class="paramlist"><b><a name="Root">Root</a></b>  <i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Определяет имя корневого раздела реестра. Допустимые значения:</p>
+          <div class="indent">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="cellleft"><tt>HKCU</tt></td>
+                  <td class="cellright">(HKEY_CURRENT_USER)</td>
+                </tr>
+                <tr>
+                  <td class="cellleft"><tt>HKLM</tt></td>
+                  <td class="cellright">(HKEY_LOCAL_MACHINE)</td>
+                </tr>
+                <tr>
+                  <td class="cellleft"><tt>HKCR</tt></td>
+                  <td class="cellright">(HKEY_CLASSES_ROOT)</td>
+                </tr>
+                <tr>
+                  <td class="cellleft"><tt>HKU</tt></td>
+                  <td class="cellright">(HKEY_USERS)</td>
+                </tr>
+                <tr>
+                  <td class="cellleft"><tt>HKCC</tt></td>
+                  <td class="cellright">(HKEY_CURRENT_CONFIG)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Ещё одно специальное значение:</p>
+          <div class="indent">
+            <table>
+              <tbody>
+                <tr>
+                  <td class="cellleft"><tt>HKA</tt></td>
+                  <td class="cellright">(в <a href="topic_admininstallmode.htm">режиме
+                      административной установки</a> равен HKLM, иначе HKCU) </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Значения <tt>HKCU</tt> и <tt>HKA</tt> следует использовать только
+            для настроек, совместимых с перемещаемыми профилями.</p>
+          <p>Использовать <tt>HKCR</tt> не рекомендуется. Вместо него
+            используйте <tt>HKA</tt> с параметром <tt>Subkey</tt> и значением
+            "Software\Classes". </p>
+          <p>Значения (включая <tt>HKA</tt>) могут иметь суффикс <tt>32</tt>
+            или <tt>64</tt>. Имена разделов с суффиксом <tt>32</tt> (например,
+            <tt>HKLM32</tt>) сопоставляются с 32-разрядным представлением
+            реестра; имена разделов с суффиксом <tt>64</tt> (например, <tt>HKLM64</tt>)
+            сопоставляются с 64-разрядным представлением реестра. </p>
+          <p>Имя раздела с суффиксом <tt>64</tt> можно использовать только при
+            работе программы установки в 64-разрядной системе Windows, иначе
+            произойдёт ошибка. При создании инсталлятора, поддерживающего обе
+            архитектуры, 32-бит и 64-бит, ошибки можно избежать, добавив
+            параметр <tt>Check: IsWin64</tt>, который приведет к тому, что при
+            работе в 32-разрядной системе Windows данная запись будет пропущена.
+          </p>
+          <p>Имя раздела без суффикса (например, <tt>HKLM</tt>) эквивалентно
+            значению с суффиксом <tt>32</tt> (например, <tt>HKLM32</tt>), пока
+            инсталлятор не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+              режиме установки</a>, иначе эквивалентно значению с суффиксом <tt>64</tt>
+            (например, <tt>HKLM64</tt>). </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span></pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Subkey">Subkey</a></b>  <i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Определяет имя подраздела реестра; может содержать константы.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Subkey</span>: "Software\My Company\My Program"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="ValueType">ValueType</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет тип данных значения. Поддерживаются следующие типы
+            данных:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>none</tt></span></td>
+                <td class="cellright">(по умолчанию) параметр реестра <i>без</i>
+                  значения.<br />
+                  В этом случае параметр <tt>ValueData</tt> игнорируется.</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>string</tt></span></td>
+                <td class="cellright">строковое значение (REG_SZ).</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>expandsz</tt></span></td>
+                <td class="cellright">расширяемое строковое значение
+                  (REG_EXPAND_SZ).</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>multisz</tt></span></td>
+                <td class="cellright">многостроковое значение (REG_MULTI_SZ).</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>dword</tt></span></td>
+                <td class="cellright">32-разрядное числовое значение
+                  (REG_DWORD).</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>qword</tt></span></td>
+                <td class="cellright">64-разрядное числовое значение
+                  (REG_QWORD).</td>
+              </tr>
+              <tr>
+                <td class="cellleft"><span style="font-weight: bold;"><tt>binary</tt></span></td>
+                <td class="cellright">двоичное значение (REG_BINARY).</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">ValueType</span>: string</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="ValueName">ValueName</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет имя параметра; может содержать константы. Если имя
+            является пустой строкой, будет использоваться параметр с именем
+            "Default".</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">ValueName</span>: "Version"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="ValueData">ValueData</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет значение параметра. Если параметр <tt>ValueType</tt>
+            имеет значение <tt>string</tt>, <tt>expandsz</tt> или <tt>multisz</tt>,
+            то строка может содержать константы. Если типом данных является <tt>dword</tt>
+            или <tt>qword</tt>, это значение может быть десятичным целым числом
+            (например, "123"), шестнадцатеричным целым числом (например, "$7B")
+            или константой, которая преобразуется в целое число. Если тип данных
+            <tt>binary</tt>, то значение представляет собой последовательность
+            шестнадцатеричных байтов в формате: "00 ff 12 34". Если же тип
+            данных <tt>none</tt>, этот параметр игнорируется. </p>
+          <p>Если типом данных является <tt>string</tt>, <tt>expandsz</tt> или
+            <tt>multisz</tt>, в этом параметре можно использовать специальную
+            константу с именем <tt>{olddata}</tt>. Константа <tt>{olddata}</tt>
+            заменяется предыдущими данными значения реестра, что удобно
+            использовать в случае необходимости дополнить существующее значение
+            новыми данными, например, <tt>{olddata};{app}</tt>. Если значение
+            не существует или не является строковым типом данных, константа <tt>{olddata}</tt>
+            автоматически удаляется. Также она будет автоматически удалена, если
+            создаваемое значение относится к типу <tt>multisz</tt>, но
+            существующее значение не является многострочным (т.е. это REG_SZ или
+            REG_EXPAND_SZ), и наоборот. </p>
+          <p>При значении с типом данных <tt>multisz</tt> в этом параметре
+            можно использовать специальную константу с именем <tt>{break}</tt>
+            для вставки разрыва строк (нулей). </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">ValueData</span>: "<span
+class="hl num">1.0</span>"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Permissions">Permissions</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет дополнительные разрешения для получения доступа в раздел
+            реестра, защищенного ACL (списки управления доступом). Не
+            рекомендуется использовать этот параметр, если вы не знакомы с ACL
+            или почему их следует изменять, поскольку его неправильное
+            использование может негативно повлиять на безопасность системы.</p>
+          <p>Чтобы этот параметр имел эффект, текущий пользователь должен иметь
+            возможность изменять разрешения для раздела реестра. Если эти
+            условия не выполняются, сообщение об ошибке не выводится, и
+            разрешения не устанавливаются.</p>
+          <p>Этот параметр следует использовать <i>только</i> для частных
+            разделов реестра вашего приложения. Никогда не изменяйте ACL для
+            раздела верхнего уровня, подобно HKEY_LOCAL_MACHINE\SOFTWARE, иначе
+            безопасность пользовательских систем будет нарушена. </p>
+          <p>Указанные разрешения устанавливаются независимо от того,
+            существовал ли раздел реестра ранее. Разрешения не устанавливаются,
+            если параметр <tt>ValueType</tt> имеет значение <tt>none</tt> и
+            используется флаг <tt>deletekey</tt> или <tt>deletevalue</tt>. </p>
+          <p>В версиях Windows для архитектуры Itanium этот параметр работает
+            только с 32-разрядными разделами реестра. (В 64-разрядных версиях
+            Windows такого ограничений нет.)</p>
+          <p>Параметр может содержать один или более значений, разделённых
+            пробелами, в следующем формате:</p>
+          <div class="indent">
+            <p><tt><a href="topic_usergroupids.htm">&lt;идентификатор
+                  пользователя или группы&gt;</a>-&lt;тип доступа&gt;</tt></p>
+          </div>
+          <p>Для секции <tt>[Registry]</tt> поддерживаются следующие типы
+            доступа:</p>
+          <dl>
+            <dt class="flaglist"><a name="full">full</a></dt>
+            <dd>
+              <p>Предоставляет разрешение "Полный доступ", аналогичное типу <tt>modify</tt>
+                (см. ниже), но дополнительно позволяет указанному
+                пользователю/группе стать владельцем раздела реестра и изменить
+                его разрешения. Используется редко; как правило <tt>modify</tt>
+                вполне достаточно. </p>
+            </dd>
+            <dt class="flaglist"><a name="modify">modify</a></dt>
+            <dd>
+              <p>Предоставляет разрешение "Модификация", которое позволяет
+                указанному пользователю/группе читать, создавать, изменять и
+                удалять значения и подразделы реестра.</p>
+            </dd>
+            <dt class="flaglist"><a name="read">read</a></dt>
+            <dd>
+              <p>Предоставляет разрешение "Чтение", которое позволяет указанному
+                пользователю/группе читать значения и подразделы реестра.</p>
+            </dd>
+          </dl>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Permissions</span>: users-modify</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dd class="paramlist">
+          <p>Этот параметр представляет собой набор дополнительных опций.
+            Допускается использовать несколько опций, разделяя их пробелами.
+            Поддерживаются следующие опции:</p>
+          <dl>
+            <dt class="flaglist"><a name="createvalueifdoesntexist">createvalueifdoesntexist</a></dt>
+            <dd>
+              <p>Если указан этот флаг, программа установки создаст параметр <i>только</i>
+                тогда, когда параметра с таким же именем ещё не существует. Этот
+                флаг не работает, если тип данных <tt>none</tt> или указан флаг
+                <tt>deletevalue</tt>. </p>
+            </dd>
+            <dt class="flaglist"><a name="deletekey">deletekey</a></dt>
+            <dd>
+              <p>Если указан этот флаг, программа установки сначала попытается
+                удалить весь раздел реестра, если он существует, включая все
+                параметры и подразделы в нём. Затем, если параметр <tt>ValueType</tt>
+                не имеет значения <tt>none</tt>, будет создан новый раздел и
+                параметр. </p>
+              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+                если параметр <tt>Subkey</tt> является пустым или содержит
+                только символы обратной косой черты. </p>
+            </dd>
+            <dt class="flaglist"><a name="deletevalue">deletevalue</a></dt>
+            <dd>
+              <p>Если указан этот флаг, программа установки сначала попытается
+                удалить параметр, если он существует. Затем, если параметр <tt>ValueType</tt>
+                не имеет значения <tt>none</tt>, будет создан новый раздел,
+                если он ещё не существует, а после новый параметр. </p>
+            </dd>
+            <dt class="flaglist"><a name="dontcreatekey">dontcreatekey</a></dt>
+            <dd>
+              <p>Если указан этот флаг, программа установки не будет пытаться
+                создать раздел или какой-либо параметр, если раздел в системе
+                пользователя уже отсутствует. Никаких сообщений об ошибках
+                показано не будет, если раздел не существует.</p>
+              <p>Как правило, этот флаг используется в сочетании с флагом <tt>uninsdeletekey</tt>
+                для удаления разделов в процессе деинсталляции, но не их
+                создания во время установки. </p>
+            </dd>
+            <dt class="flaglist"><a name="noerror">noerror</a></dt>
+            <dd>
+              <p>Этот флаг отключает сообщение об ошибке, если программе
+                установке по каким-либо причинам не удаётся создать раздел или
+                параметр.</p>
+            </dd>
+            <dt class="flaglist"><a name="preservestringtype">preservestringtype</a></dt>
+            <dd>
+              <p>Применяется только в том случае, если параметр <tt>ValueType</tt>
+                имеет значение <tt>string</tt> или <tt>expandsz</tt>. Если
+                указан этот флаг и параметр ещё не существует или существует, но
+                его значение не является строковым (REG_SZ или REG_EXPAND_SZ),
+                он будет создан с типом данных, указанным в параметре <tt>ValueType</tt>.
+                Если же параметр существует и является строковым, он будет
+                заменён значением с тем же типом данных, что и предыдущее
+                значение. </p>
+            </dd>
+            <dt class="flaglist"><a name="uninsclearvalue">uninsclearvalue</a></dt>
+            <dd>
+              <p>После деинсталляции программы, устанавливает для данных
+                параметра пустую строку (тип REG_SZ). Этот флаг нельзя
+                использовать вместе с флагом <tt>uninsdeletekey</tt>. </p>
+            </dd>
+            <dt class="flaglist"><a name="uninsdeletekey">uninsdeletekey</a></dt>
+            <dd>
+              <p>После деинсталляции программы, выполняет удаление всего
+                раздела, включая все параметры и подразделы в нём. Очевидно, что
+                использовать его для разделов реестра, к которым обращается
+                Windows, довольно безрассудно. Рекомендуется использовать этот
+                флаг только для частных разделов реестра вашего приложения.</p>
+              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+                если параметр <tt>Subkey</tt> является пустым или содержит
+                только символы обратной косой черты. </p>
+            </dd>
+            <dt class="flaglist"><a name="uninsdeletekeyifempty">uninsdeletekeyifempty</a></dt>
+            <dd>
+              <p>После деинсталляции программы выполняет удаление раздела
+                реестра, если в нём больше не осталось никаких параметров или
+                подразделов. Этот флаг нельзя использовать вместе с флагом <tt>uninsdeletevalue.</tt>
+              </p>
+              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+                если параметр <tt>Subkey</tt> является пустым или содержит
+                только символы обратной косой черты. </p>
+            </dd>
+            <dt class="flaglist"><a name="uninsdeletevalue">uninsdeletevalue</a></dt>
+            <dd>
+              <p>После деинсталляции программы выполняет удаление параметра.
+                Этот флаг нельзя использовать вместе с флагом <tt>uninsdeletekeyifempty.</tt>
+              </p>
+              <p><b>ВНИМАНИЕ:</b> в ранних версиях Inno Setup (до версии 1.1)
+                этот флаг можно использовать типом данных <tt>none</tt> и он
+                будет работать как флаг "удалить раздел, если он пуст". Этот
+                метод больше не поддерживается. Теперь для этого необходимо
+                использовать флаг <tt>uninsdeletekeyifempty</tt>.</p>
+            </dd>
+          </dl>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Flags</span>: <span class="hl kwe">uninsdeletevalue</span></pre>
+          </div>
+        </dd>
+      </dl>
+      <p><b><a href="topic_componentstasksparams.htm">Параметры секций
+            [Components] и [Tasks]</a></b></p>
+      <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
+    </div>
+  </body>
+</html>

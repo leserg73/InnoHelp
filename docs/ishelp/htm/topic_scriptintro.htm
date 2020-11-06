@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: Введение</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: Введение</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Поддержка сценариями Inno Setup языка Pascal
+        (современный Delphi – язык программирования, подобный Паскаль)
+        предоставляет множество дополнительных возможностей по созданию,
+        настройке и управлению программой установки или удаления во время
+        выполнения. Вот некоторые примеры:</div>
+      <br />
+      <ul>
+        <li>Поддержка прерывания запуска программы установки или удаления при
+          определённых условиях.</li>
+        <li>Поддержка добавления дополнительных страниц мастера в программу
+          установки во время выполнения.</li>
+        <li>Поддержка извлечения и использования функций DLL непосредственно в
+          коде сценария до, в течении или после установки.</li>
+        <li>Поддержка сценарных констант, которые имеют те же возможности, что и
+          обычные константы, но являются более функциональными: считывать данные
+          из реестра, INI-файлов, командной строки и многое другое.</li>
+        <li>Поддержка удаления типов, компонентов и/или задач во время
+          выполнения при определённых условиях.</li>
+        <li>Поддержка условной установки записей <tt>[Files]</tt>, <tt>[Registry]</tt>,
+          <tt>[Run]</tt> и т.д. в соответствии с определёнными условиями. </li>
+        <li>Поддержка множества функций из языка Pascal: практически всё, что
+          делает/может Inno Setup и больше.</li>
+      </ul>
+      <br />
+      <div class="absaz">Также доступен <a href="topic_scriptdebug.htm">встроенный
+          отладчик</a>, позволяющий выполнить отладку сценария: выявить ошибки,
+        изучить значения локальных переменных функций или процедур,
+        проанализировать стек вызовов и т.д. и т.п.</div>
+      <br />
+      <div class="absaz">Сценарным интерпретатором языка Pascal, используемого
+        Inno Setup, является компонент RemObjects Pascal Script, разработанный
+        Carlo Kok. Также как и Inno Setup, RemObjects Pascal Script находится в
+        свободном доступе и поставляется с исходным кодом. Дополнительную
+        информацию смотрите по ссылке <a href="http://www.remobjects.com/ps" target="_blank"
+          title="http://www.remobjects.com/ps">http://www.remobjects.com/ps</a><img
+          src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
+      <br />
+      <div class="absaz">Примечание: Pascal-интерпретатор работает исключительно
+        во время выполнения и не имеет никакой функциональности при компиляции.</div>
+      <br />
+      <p>
+        <b>См. также:</b><br />
+        <a href="topic_scriptcreating.htm">Создание секции [Code]</a><br />
+        <a href="topic_scriptevents.htm">Функции событий</a><br />
+        <a href="topic_scriptconstants.htm">Сценарные константы</a><br />
+        <a href="topic_scriptcheck.htm">Параметр "Check"</a><br />
+        <a href="topic_scriptinstall.htm">Параметры "BeforeInstall" и
+          "AfterInstall"</a><br />
+        <a href="topic_scriptuninstall.htm">Код деинсталляции</a><br />
+        <a href="topic_scriptexamples.htm">Примеры</a><br />
+        <a href="topic_scriptfunctions.htm">Справочник поддерживаемых функций</a><br />
+        <a href="topic_scriptclasses.htm">Справочник поддерживаемых классов</a><br />
+        <a href="topic_scriptpages.htm">Использование дополнительных страниц
+          мастера</a><br />
+        <a href="topic_scriptdll.htm">Использование DLL и .NET сборок</a><br />
+        <a href="topic_scriptautomation.htm">Использование COM-объектов</a><br />
+        <a href="topic_scriptdebug.htm">Отладка</a>
+      </p>
+    </div>
+  </body>
+</html>

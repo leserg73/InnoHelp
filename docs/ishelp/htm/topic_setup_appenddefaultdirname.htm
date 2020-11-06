@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: AppendDefaultDirName</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: AppendDefaultDirName</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
+                  или <tt>no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>yes</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">По умолчанию, когда пользователь выберет папку в
+        диалоговом окне, который отображается при нажатии кнопки <i>Обзор...</i>
+        на странице "<i>Выбор папки установки</i>", программа установки
+        автоматически добавит в новый путь имя папки из директивы <tt>DefaultDirName</tt>.
+        Например, если директива <tt>DefaultDirName</tt> имеет значение <tt>{autopf}\My
+          Program</tt> и пользователь выберет каталог "Z:\", новый путь
+        установки программы будет "Z:\My Program".</div>
+      <br />
+      <div class="absaz">Установка для этой директивы значения <tt>no</tt>
+        отключает добавление папки из параметра <tt>DefaultGroupName</tt> в
+        новый путь. Кроме того, в диалоговом окне выбора папки появится кнопка <i>Создать
+          папку</i>.</div>
+      <br />
+    </div>
+  </body>
+</html>

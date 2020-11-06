@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Languages]</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Languages]</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Inno Setup поддерживает многоязычную установку. Секция
+        <tt>[Languages]</tt> определяет языки, доступные программе установки.</div>
+      <br />
+      <div class="absaz">Программа установки определяет язык по умолчанию,
+        используемый для сообщений, в следующем порядке:</div>
+      <br />
+      <ol>
+        <li>Выполняется поиск языка, указанного в директиве <tt>LanguageID</tt>
+          (обычно в секции <tt>[LangOptions]</tt> языкового файла .isl),
+          который совпадает с идентификаторами основного и дополнительного языка
+          пользовательского интерфейса текущего пользователя или локали (зависит
+          от значения в директиве <a href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).
+          </li>
+        <li>Если совпадений не найдено, выполняется поиск совпадений только с
+          идентификатором основного языка. Если два и более доступных языков
+          имеют один и тот же идентификатор основного языка, то выбирается язык,
+          который в секции <tt>[Languages]</tt> указан первым.<br />
+          Исключение: для языка Simplified Chinese этот этап пропускается, если
+          текущим языком пользовательского интерфейса или локали является язык
+          Traditional Chinese и наоборот (зависит от значения в параметре <a href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).</li>
+        <li>Если ничего не найдено, по умолчанию принимается язык, который в
+          секции <tt>[Languages]</tt> указан первым.</li>
+      </ol>
+      <br />
+      <div class="absaz">Если директива <a href="topic_setup_showlanguagedialog.htm">ShowLanguageDialog</a>
+        в секции <tt>[Setup]</tt> имеет значение <tt>yes</tt> (используется по
+        умолчанию), будет показан диалог "<i>Выбор языка</i>", в котором
+        пользователь сможет переопределить язык программы установки. Для
+        получения дополнительной информации обратитесь к разделу справки "<a href="topic_langoptionssection.htm">Секция
+          [LangOptions]</a>".</div>
+      <br />
+      <div class="absaz">Ниже приведен пример секции <tt>[Languages]</tt>, в
+        котором указываются два языка: Английский (English), базирующийся на
+        файле Default.isl, и Нидерландский (Dutch), базирующийся на переводе
+        третьих лиц.</div>
+      <pre class="indent examplebox"><span class="hl kwa">[Languages]</span>
+<span class="hl kwb">Name</span>: "en"; <span class="hl kwb">MessagesFile</span>: "<span
+class="hl kwc">compiler</span>:Default.isl"
+<span class="hl kwb">Name</span>: "nl"; <span class="hl kwb">MessagesFile</span>: "<span
+class="hl kwc">compiler</span>:Languages\Dutch.isl"</pre>
+      <dl>
+        <dt class="paramlist"><b><a name="Name">Name</a></b>  <i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Внутреннее имя языка, которое может быть каким угодно. Это имя
+            можно использовать в качестве приставки для параметров секции <tt>[LangOptions]</tt>
+            или <tt>[Messages]</tt>, чтобы связать эти параметры с конкретным
+            языком. Константа <tt>{language}</tt> возвращает внутреннее имя
+            выбранного языка.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Name</span>: "en"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="MessagesFile">MessagesFile</a></b>  <i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Определяет имя (имена) файла(-ов) .isl для чтения сообщений по
+            умолчанию. При сборке инсталлятора эти файлы должны находиться в <a
+              href="topic_sourcedirectorynotes.htm">исходном каталоге</a>
+            сценария, в противном случае к этим файлам следует указать полный
+            путь или путь с приставкой "<tt>compiler:</tt>", тогда компилятор
+            будет искать их в собственном каталоге. </p>
+          <p>Каждый файл сообщений должен содержать <a href="topic_langoptionssection.htm">секцию
+              [LangOptions]</a>, <a href="topic_messagessection.htm">секцию
+              [Messages]</a> и <a href="topic_custommessagessection.htm">секцию
+              [CustomMessages].</a> </p>
+          <p>Если задано несколько файлов, то они считываются по порядку, сверху
+            вниз, причём последний файл переопределяет языковые параметры или
+            сообщения всех предыдущих файлов. Любые языковые параметры или
+            сообщения в основном сценарии переопределяют параметры из файлов
+            сообщений.</p>
+          <p>Если используется файл в кодировке Unicode, то она должна быть
+            UTF-8 с маркером BOM.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Примеры:</div>
+            <pre class="nomargin"><span class="hl kwb">MessagesFile</span>: "<span
+class="hl kwc">compiler</span>:Dutch.isl"
+<span class="hl kwb">MessagesFile</span>: "<span class="hl kwc">compiler</span>:Default.isl,<span
+class="hl kwc">compiler</span>:MyMessages.isl"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="LicenseFile">LicenseFile</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет файл лицензионного соглашения в формате .txt или .rtf
+            (текст с разметкой), который будет показан перед выбором папки
+            установки приложения. При сборке инсталлятора файл документа должен
+            находиться <a href="topic_sourcedirectorynotes.htm">исходном
+              каталоге</a> сценария, в противном случае к этому файлу необходимо
+            указать полный путь или путь с приставкой "<tt>compiler:</tt>",
+            тогда компилятор будет искать его в собственном каталоге. </p>
+          <p>Если используется файл .txt в кодировке Unicode, то она должна быть
+            UTF-8 или UTF-16LE с маркером BOM.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">LicenseFile</span>: "license-Dutch.txt"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="InfoBeforeFile">InfoBeforeFile</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет файл дополнительного документа "readme" в формате .txt
+            или .rtf (текст с разметкой), который будет показан перед выбором
+            папки установки приложения. При сборке инсталлятора файл документа
+            должен находиться <a href="topic_sourcedirectorynotes.htm">исходном
+              каталоге</a> сценария, в противном случае к этому файлу необходимо
+            указать полный путь или путь с приставкой "<tt>compiler:</tt>",
+            тогда компилятор будет искать его в собственном каталоге. </p>
+          <p>Если используется файл .txt в кодировке Unicode, то она должна быть
+            UTF-8 или UTF-16LE с маркером BOM.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">InfoBeforeFile</span>: "infobefore-Dutch.txt"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="InfoAfterFile">InfoAfterFile</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет файл дополнительного документа "readme" в формате .txt
+            или .rtf (текст с разметкой), который будет показан в случае
+            успешной установки. При сборке инсталлятора файл документа должен
+            находиться <a href="topic_sourcedirectorynotes.htm">исходном
+              каталоге</a> сценария, в противном случае необходимо указать
+            полный путь к файлу или путь с приставкой "<tt>compiler:</tt>",
+            тогда компилятор будет искать его в собственном каталоге. </p>
+          <p>Эта директива отличается от файлов с флагом <tt>isreadme</tt> тем,
+            что текст документа отображается на странице мастера, а не в
+            Блокноте Windows. </p>
+          <p>Если используется файл .txt в кодировке Unicode, то она должна быть
+            UTF-8 или UTF-16LE с маркером BOM.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">InfoAfterFile</span>: "infoafter-Dutch.txt"</pre>
+          </div>
+        </dd>
+      </dl>
+    </div>
+  </body>
+</html>
