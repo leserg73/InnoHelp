@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: StringChangeEx</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: StringChangeEx</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function StringChangeEx(var S: String; const FromStr, ToStr:
+          String; const SupportDBCS: Boolean): Integer;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет в строке <i>S</i> замену всех вхождений <i>FromStr</i>
+        на <i>ToStr</i>. Если для параметра <i>SupportDBCS</i> установлено
+        значение <tt>True</tt> (рекомендуется для сохранения двоичной
+        последовательности), двухбайтовые символы в строке <i>S</i> будут
+        распознаны и обработаны корректно. В противном случае функция работает в
+        однобайтовом режиме. Возвращает количество найденных вхождений и
+        выполненных замен.</div>
+      <br />
+      <div><b>Примечание:</b></div>
+      <br />
+      <div class="absaz">Если обрабатываемые строки содержат пути или имена
+        файлов, обязательно передайте значение <tt>True</tt> в параметре <i>SupportDBCS</i>.
+        В противном случае пути с китайскими, японскими или корейскими символами
+        могут быть повреждены.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  S: String;
+<span class="hl kwb">begin</span>
+  S := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{commonappdata}</span><span
+class="hl str">'</span>);
+  <span class="hl slc">// S = 'C:\Documents and Settings\All Users\Application Data'</span>
+
+  StringChangeEx(S, <span class="hl str">'\'</span>, <span class="hl str">'/'</span>, True);
+  <span class="hl slc">// S = 'C:/Documents and Settings/All Users/Application Data'</span>
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

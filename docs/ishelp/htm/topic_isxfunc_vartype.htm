@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: VarType</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: VarType</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function VarType(const V: Variant): TVarType;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает код, соответствующий определенному типу
+        данных заданной переменной <tt>Variant</tt>.</div>
+      <br />
+      <div class="absaz">Младшие 12 бит кода (устанавливаются битовой маской <tt>varTypeMask</tt>)
+        определяют тип данных переменной <i>Variant</i>. Если переменная
+        является массивом, то устанавливается бит <tt>varArray</tt>. Если
+        переменная является ссылкой на значение указанного типа, а не
+        фактическим значением, то устанавливается бит <tt>varByRef</tt>.</div>
+      <br />
+      <div class="absaz">Список соответствий кода различным типам данных:</div>
+      <pre class="indent"><span class="hl kwb">const</span>
+  varEmpty    = <span class="hl num">$0000</span>;
+  varNull     = <span class="hl num">$0001</span>;
+  varSmallint = <span class="hl num">$0002</span>;
+  varInteger  = <span class="hl num">$0003</span>;
+  varSingle   = <span class="hl num">$0004</span>;
+  varDouble   = <span class="hl num">$0005</span>;
+  varCurrency = <span class="hl num">$0006</span>;
+  varDate     = <span class="hl num">$0007</span>;
+  varOleStr   = <span class="hl num">$0008</span>;
+  varDispatch = <span class="hl num">$0009</span>;
+  varError    = <span class="hl num">$000A</span>;
+  varBoolean  = <span class="hl num">$000B</span>;
+  varVariant  = <span class="hl num">$000C</span>;
+  varUnknown  = <span class="hl num">$000D</span>;
+  varByte     = <span class="hl num">$0011</span>;
+  varString   = <span class="hl num">$0100</span>;
+  varTypeMask = <span class="hl num">$0FFF</span>;
+  varArray    = <span class="hl num">$2000</span>;
+  varByRef    = <span class="hl num">$4000</span>;</pre>
+    </div>
+  </body>
+</html>

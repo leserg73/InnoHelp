@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: WizardSelectComponents</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: WizardSelectComponents</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>procedure WizardSelectComponents(const Components: String);</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет выбор указанных в списке компонентов,
+        разделённых запятыми.</div>
+      <br />
+      <div class="absaz">Если имя компонента начинается символом "*", также
+        будут выбраны все дочерние компоненты (за исключением тех, которые имеют
+        флаг <tt>dontinheritcheck</tt>). Если же имя компонента начинается
+        символом "!", то его выбор будет отменён.</div>
+      <br />
+      <div class="absaz">Функция <tt>WizardSelectComponents</tt> не изменяет
+        состояние компонентов, которых нет в списке. Также эта функция не может
+        изменить состояние тех компонентов, которые содержат флаг <tt>fixed</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  WizardSelectComponents(<span class="hl str">'!helpfiles'</span>);
+  <span class="hl slc">// выбор компонента 'helpfiles' отменён</span>
+<span class="hl kwb">end</span>;</pre>
+      <div><b>См. также:</b></div>
+      <p><a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a>
+        <br />
+        <a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a>
+      </p>
+    </div>
+  </body>
+</html>
