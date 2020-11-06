@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: LZMANumBlockThreads</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: LZMANumBlockThreads</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">от <tt>1</tt> до <tt>32</tt> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>1</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">При сжатии большого количества данных компрессор LZMA2
+        имеет возможность разделить данные на отдельные "блоки" и сжимать их
+        параллельно с помощью дополнительных потоков (при условии достаточной
+        мощности процессора). Эта директива определяет количество используемых
+        потоков, то есть максимальное количество блоков, которые компрессор
+        LZMA2 может сжимать параллельно.</div>
+      <br />
+      <div class="absaz">Объём память, необходимый для сжатия при использовании
+        нескольких потоков, приблизительно равен:</div>
+      <br />
+      <div class="indent">
+        <p>LZMANumBlockThreads * (<a href="topic_setup_compression.htm">Объём
+            памяти</a> + (<a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a>
+          * 2))</p>
+      </div>
+      <br />
+      <div class="absaz">Поскольку LZMA2 (и LZMA) по умолчанию использует два
+        потока для поиска совпадений (см. <a href="topic_setup_compressionthreads.htm">CompressionThreads</a>),
+        в идеале для каждого потока должно быть доступно два ядра процессора.
+        Таким образом, чтобы увидеть максимальную выгоду от значения <tt>2</tt>,
+        необходимы четыре ядра.</div>
+      <br />
+      <div class="absaz">Разделение данных на несколько блоков может снизить
+        степень сжатия, так как компрессор не сможет найти совпадений между
+        блоками. Использование большого <a href="topic_setup_lzmablocksize.htm">размера
+          блока</a> может помочь уменьшить эту проблему.</div>
+      <br />
+      <div class="absaz">Если при включении нескольких потоков в сочетании с
+        уровнем сжатия, использующим большой размер словаря (такой как <tt>ultra64</tt>)
+        будет получена ошибка "Out of memory" (Нехватка памяти), необходимо
+        использовать директиву <a href="topic_setup_lzmauseseparateprocess.htm">LZMAUseSeparateProcess</a>.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a></p>
+    </div>
+  </body>
+</html>

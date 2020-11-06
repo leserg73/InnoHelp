@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: TimeStampsInUTC</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: TimeStampsInUTC</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
+                  или <tt>no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>no</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">По умолчанию отметки времени файлов секции <tt>[Files]</tt>,
+        для которых не указан флаг <tt>external</tt>, сохраняются и
+        восстанавливаются в виде локального времени. Это означает, что если
+        определённый файл во время компиляции получил отметку 01:00 по местному
+        времени, он будет извлечён программой установки с отметкой 01:00 по
+        местному времени, независимо от настроек часового пояса пользователя или
+        действия DST.</div>
+      <br />
+      <div class="absaz">Если директива <tt>TimeStampsInUTC</tt> имеет значение
+        <tt>yes</tt>, отметка времени будет сохранена и восстановлена в формате
+        UTC — собственном формате времени Win32 и NTFS. В этом режиме файл с
+        отметкой времени 01:00 по местному времени в Нью-Йорке будет иметь
+        отметку времени 06:00 по местному времени при установке в Лондоне.</div>
+      <br />
+    </div>
+  </body>
+</html>

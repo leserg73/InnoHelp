@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: SlicesPerDisk</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: SlicesPerDisk</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">от <tt>1</tt> до <tt>26</tt> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>1</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет количество файлов SETUP-*.BIN, создаваемых
+        для каждого диска. При значении 1 (по умолчанию) файлы будут именоваться
+        в формате SETUP-<i>x</i>.BIN, где <i>x</i> – это номер диска. Если
+        значение больше 1, файлы будут именоваться в формате SETUP-<i>xy</i>.BIN,
+        где <i>x</i> – номер диска, а <i>y</i> – уникальная буква.</div>
+      <br />
+      <div class="absaz">Одна из причин, по которой может потребоваться
+        увеличить значение по умолчанию, заключается в том, что размер дискового
+        носителя превышает 2100000000 байт — верхний предел директивы <tt>DiskSliceSize</tt>
+        секции <tt>[Setup]</tt>. Если, к примеру, объём дисковых накопителей
+        составляет 3000000000 байт, можно преодолеть ограничение в 2100000000
+        байт, указав для <tt>SlicesPerDisk</tt> значение <tt>2</tt>, а для <tt>DiskSliceSize</tt>
+        значение <tt>1500000000</tt> (или чуть меньше из-за служебных данных
+        файловой системы).</div>
+      <br />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Прочие замечания</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Прочие замечания</h1>
+    <div class="topicbody">
+      <ul>
+        <li>
+          <p>Чтобы упростить обновление вашего приложения в автоматическом
+            режиме, сначала сделайте так, чтобы ваша программа каким-то образом
+            выявляла новую версию соответствующей программы установки и
+            выполняла её загрузку. Затем, при включенной функции автоматического
+            обновления, самостоятельно запускала загруженный файл установки,
+            используя, например, следующие параметры командной строки:</p>
+          <pre class="indent examplebox">/SP- /silent /noicons "/dir=expand:{autopf}\My Program"
+</pre>
+          <p>После запуска программы установки постарайтесь обеспечить как можно
+            более быстрое завершение работы вашего приложения. Обратите
+            внимание, что в случае возникновения проблем с обновлением файлов
+            вашего приложения, программа установки имеет функцию автоматического
+            повторения.</p>
+          <p>При желании можете использовать флаги <tt>skipifsilent</tt> и <tt>skipifnotsilent</tt>,
+            а также сделать так, чтобы ваше приложение получило параметр
+            "/updated", например, для уведомления пользователя об успешном
+            завершении обновления. </p>
+        </li>
+        <li>
+          <p>Программы установки, сделанные в Inno Setup, поддерживают
+            дополнительный параметр командной строки /PORTABLE=1, который
+            включает портативный режим установки. В этом режиме не создается
+            программа удаления и в панели управления "Установка и удаление
+            программ" не добавляется запись о этой установке. Например:</p>
+          <pre class="indent examplebox">/portable=1 /silent /currentuser
+</pre>
+        </li>
+        <li>Резервная копия домашней страницы Inno Setup может быть найдена по
+          адресу <a href="https://www.innosetup.nl/" target="_blank" title="https://www.innosetup.nl/">www.innosetup.nl</a><img
+            src="../images/extlink.png" alt=" [external link]" />. В настоящее
+          время веб-сайт на этом домене не активен, но в случае возникновения
+          чрезвычайной ситуации он будет активирован. </li>
+      </ul>
+    </div>
+  </body>
+</html>

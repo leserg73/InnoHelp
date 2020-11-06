@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: SignTool</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: SignTool</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Имя или перечень параметров, разделённых
+                пробелами </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет имя и параметры инструмента цифровой
+        подписи, который используется для подписи:</div>
+      <br />
+      <ul>
+        <li class="compact">программы установки (инсталлятор)</li>
+        <li class="compact">программы удаления (деинсталлятор), если <a href="topic_setup_signeduninstaller.htm">SignedUninstaller</a>=<tt>yes</tt>
+        </li>
+        <li class="compact">исходных файлов в секции <a href="topic_filessection.htm">[Files]</a>,
+          если используется флаг <tt>sign</tt> или <tt>signonce</tt> </li>
+      </ul>
+      <br />
+      <div class="absaz">Когда инсталлятор содержит действительную цифровую
+        подпись, тогда при его запуске пользователь не получит предупреждение о
+        неизвестном издателе.</div>
+      <br />
+      <div class="absaz">Имя и параметры инструмента цифровой подписи должны
+        быть указаны в IDE компилятора (меню <i>Инструменты | Настройка
+          цифровой подписи...</i>) или в <a href="topic_compilercmdline.htm">командной
+          строке компилятора</a> (при помощи ключа "/S"), иначе произойдёт
+        ошибка.</div>
+      <br />
+      <div class="absaz">В параметра и командах инструмента цифровой подписи
+        можно использовать следующие специальные указатели:</div>
+      <br />
+      <p>    <tt>$f</tt> (<i>обязательный</i>) — заменяется заключённым в
+        кавычки файлом, который должен быть подписан.</p>
+      <p>    <tt>$p</tt> — заменяется параметрами инструмента цифровой подписи.</p>
+      <p>    <tt>$q</tt> — заменяется кавычкой; может использоваться для
+        экранирования ключей командной строки, содержащих кавычки.</p>
+      <p>    <tt>$$</tt> — заменяется на один символ <tt>$</tt>.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <br />
+        <div class="absaz">Предположим, в IDE компилятора определены следующие
+          параметры цифровой подписи:</div>
+        <br />
+        <pre class="nomargin">mystandard=signtool.exe sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f
+mycustom=signtool.exe $p
+byparam=$p
+</pre>
+        <br />
+        <div class="absaz">тогда в сценарии может быть использован один
+          следующих вариантов:</div>
+        <br />
+        <pre class="nomargin"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">SignTool</span>=mystandard
+
+<span class="hl kwa">[Setup]</span>
+<span class="hl kwb">SignTool</span>=mycustom sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f
+
+<span class="hl kwa">[Setup]</span>
+<span class="hl kwb">SignTool</span>=byparam signtool.exe sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f</pre>
+        <br />
+        <div class="absaz">В секции <tt>[Setup]</tt> может быть указано
+          несколько параметров SignTool, которые буду выполнены в порядке их
+          следования. Это можно использовать для двойной подписи (SHA1 &amp;
+          SHA256) инсталлятора и деинсталлятора:</div>
+        <br />
+        <pre class="nomargin"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">SignTool</span>=mycustom sign /a /n $qMy Common Name$q /fd sha1 /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f
+<span class="hl slc">; параметр /as в следующей строке SignTool необходим для последней версии signtool.exe и сертфиката SHA256 (SHA-2)</span>
+<span class="hl kwb">SignTool</span>=mycustom sign /a /n $qMy Common Name$q /as /fd sha256 /td sha256 /tr http://timestamp.comodoca.com/rfc3161 /d $qMy Program$q $f</pre>
+        <br />
+        <div class="absaz">Примечание: из соображений безопасности для любых
+          параметров, передаваемых посредством <tt>$p</tt>, следует давать
+          уникальное имя, а не копировать <tt>byparam</tt> из этого или других
+          примеров. Подумайте, что произойдёт, если подключить к сценарию файл
+          стороннего производителя, в котором сказано:</div>
+        <br />
+        <pre class="nomargin"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">SignTool</span>=byparam format c: </pre>
+      </div>
+      <br />
+      <div class="absaz">Дальнейшая информация о создании цифровых сертификатов
+        и использовании инструментов подписи выходит за рамки данной
+        документации.</div>
+      <br />
+      <div class="absaz"><i>Примечание:</i> если используется инструмент
+        цифровой подписи и программа установки содержит большой объём данных,
+        рекомендуется задействовать <a href="topic_setup_diskspanning.htm">разделение
+          на диски</a> и указать для директивы <a href="topic_setup_diskslicesize.htm">DiskSliceSize</a>
+        значение <tt>max</tt>. Если этого не сделать, при запуске программы
+        установки может возникнуть длительная задержка, вызванная проверкой
+        цифровой подписи. На практике не должно быть снижения безопасности от
+        разделения данных установки на диски: все файлы, извлечённые из
+        неподписанных файлов .bin, проходят проверку хеша SHA-1 (при условии,
+        что в сценарии не используется флаг <tt>dontverifychecksum</tt>). Хеши
+        SHA-1 этих файлов (вместе со всеми другими метаданными) хранятся внутри
+        исполняемого файла установки, который защищён цифровой подписью.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_signtoolminimumtimebetween.htm">SignToolMinimumTimeBetween</a><br />
+        <a href="topic_setup_signtoolretrycount.htm">SignToolRetryCount</a><br />
+        <a href="topic_setup_signtoolrunminimized.htm">SignToolRunMinimized</a></p>
+    </div>
+  </body>
+</html>

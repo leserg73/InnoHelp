@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: UsePreviousPrivileges</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: UsePreviousPrivileges</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
+                  или <tt>no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>yes</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">При значении <tt>yes</tt> программа установки во время
+        своего запуска выполнит в реестре поиск информации об установке <a href="topic_sameappnotes.htm">того
+          же приложения</a> в одном из двух режимов и, если таковая будет
+        найдена, использует предыдущий режим установки без запроса к
+        пользователю.</div>
+      <br />
+      <div class="absaz">Если <tt>PrivilegesRequiredOverridesAllowed</tt> не
+        имеет значение <tt>dialog</tt>, эта директива не учитывается.</div>
+      <br />
+      <div class="absaz">Директива <tt>UsePreviousPrivileges</tt> должна иметь
+        значение <tt>no</tt>, если <tt>AppId</tt> содержит константы, и <tt>PrivilegesRequiredOverridesAllowed</tt>
+        равна <tt>dialog</tt>.</div>
+      <br />
+      <p><b>См. также:</b><br />
+        <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a></p>
+    </div>
+  </body>
+</html>

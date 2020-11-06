@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Коды выхода программы установки</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Коды выхода программы установки</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Начиная с Inno Setup 3.0.3, программа установки может
+        возвращать один из следующих кодов выхода:</div>
+      <br />
+      <table>
+        <tbody>
+          <tr>
+            <td class="cellleft"><b>0</b></td>
+            <td class="cellright">
+              <p>Установка успешно завершена или был использован параметр
+                командной строки /HELP или /?.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>1</b></td>
+            <td class="cellright">
+              <p>Произошла ошибка инициализации.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>2</b></td>
+            <td class="cellright">
+              <p>Пользователь нажал кнопку "Отмена" до начала фактического
+                процесса установки или выбрал "Нет" в окне сообщения "Данная
+                программа установит...".</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>3</b></td>
+            <td class="cellright">
+              <p>Произошла фатальная ошибка при переходе к следующему этапу
+                установки (например, при переходе с этапа подготовки к этапу
+                фактической установки). Это крайне редкая ошибка, которая может
+                произойти только с случае нехватки памяти или системных
+                ресурсов.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>4</b></td>
+            <td class="cellright">
+              <p>Произошла фатальная ошибка во время фактической установки.</p>
+              <p><i>Примечание:</i> это не относится к ошибкам, которые вызывают
+                появление сообщения с кнопками "Прервать-Повторить-Прервать".
+                Если пользователь в таком сообщении выберет "<i>Прервать</i>",
+                программа установки вернёт код выхода 5.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>5</b></td>
+            <td class="cellright">
+              <p>Пользователь нажал кнопку "Отмена" во время фактического
+                процесса установки или выбрал "<i>Прервать</i>" в сообщении с
+                кнопками "Прервать-Повторить-Пропустить". </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>6</b></td>
+            <td class="cellright">
+              <p>Работа программы установки была принудительно прервана
+                отладчиком (например, в IDE компилятора было использовано <i>Выполнить
+                  | Прервать</i>).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>7</b></td>
+            <td class="cellright">
+              <p>На этапе <a href="topic_wizardpages.htm"><i>Подготовка к
+                    установке</i></a> было выявлено, что программа установки не
+                может продолжить инсталляцию. <i>(Впервые появилось в Inno
+                  Setup 5.4.1.)</i> </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="cellleft"><b>8</b></td>
+            <td class="cellright">
+              <p>На этапе <a href="topic_wizardpages.htm"><i>Подготовка к
+                    установке</i></a> было выявлено, что программа установки не
+                может продолжить инсталляцию, и для устранения проблемы
+                необходимо перезапустить систему. <i>(Впервые появилось в Inno
+                  Setup 5.4.1.)</i> </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="absaz">Перед возвратом кода выхода 1, 3, 4, 7 или 8 обычно
+        отображается сообщение об ошибке, в котором описывается проблема.</div>
+      <br />
+      <div class="absaz">Будущие версии Inno Setup могут возвращать
+        дополнительные коды выхода, поэтому в приложениях, выполняющих их
+        проверку, должна быть предусмотрена корректная обработка неожиданных
+        кодов выхода. Любой ненулевой код выхода указывает на то, что работа
+        программа установки не была завершена успешно.</div>
+      <br />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Setup]</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Setup]</h1>
+    <div class="topicbody">
+      <br />
+      <div class="absaz">Эта секция содержит глобальные директивы, которые
+        используются как программой установки, так и программой удаления.
+        Определённые директивы этой секции необходимы для создания любого
+        инсталлятора. Ниже приведен пример секции <tt>[Setup]</tt>:</div>
+      <pre class="indent examplebox"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">AppName</span>=My Program
+<span class="hl kwb">AppVersion</span>=<span class="hl num">1.5</span>
+<span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{autopf}</span>\My Program
+<span class="hl kwb">DefaultGroupName</span>=My Program</pre>
+      <div class="absaz">По умолчанию все начальные и конечные пробелы в
+        значении директивы будут удалены. Этого можно избежать, если заключить
+        значение параметра в двойные кавычки (<tt>"</tt>).</div>
+      <br />
+      <div class="absaz">В секции <tt>[Setup]</tt> поддерживаются следующие
+        директивы:</div>
+      <p>(выделенные <b>жирным</b> шрифтом — являются обязательными)</p>
+      <h2 class="heading">Директивы компиляции</h2>
+      <ul>
+        <li class="compact"><a href="topic_setup_aslrcompatible.htm">ASLRCompatible</a></li>
+        <li class="compact"><a href="topic_setup_compression.htm">Compression</a></li>
+        <li class="compact"><a href="topic_setup_compressionthreads.htm">CompressionThreads</a></li>
+        <li class="compact"><a href="topic_setup_depcompatible.htm">DEPCompatible</a></li>
+        <li class="compact"><a href="topic_setup_diskclustersize.htm">DiskClusterSize</a></li>
+        <li class="compact"><a href="topic_setup_diskslicesize.htm">DiskSliceSize</a></li>
+        <li class="compact"><a href="topic_setup_diskspanning.htm">DiskSpanning</a></li>
+        <li class="compact"><a href="topic_setup_encryption.htm">Encryption</a></li>
+        <li class="compact"><a href="topic_setup_internalcompresslevel.htm">InternalCompressLevel</a></li>
+        <li class="compact"><a href="topic_setup_lzmaalgorithm.htm">LZMAAlgorithm</a></li>
+        <li class="compact"><a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a></li>
+        <li class="compact"><a href="topic_setup_lzmadictionarysize.htm">LZMADictionarySize</a></li>
+        <li class="compact"><a href="topic_setup_lzmamatchfinder.htm">LZMAMatchFinder</a></li>
+        <li class="compact"><a href="topic_setup_lzmanumblockthreads.htm">LZMANumBlockThreads</a></li>
+        <li class="compact"><a href="topic_setup_lzmanumfastbytes.htm">LZMANumFastBytes</a></li>
+        <li class="compact"><a href="topic_setup_lzmauseseparateprocess.htm">LZMAUseSeparateProcess</a></li>
+        <li class="compact"><a href="topic_setup_mergeduplicatefiles.htm">MergeDuplicateFiles</a></li>
+        <li class="compact"><a href="topic_setup_missingrunonceidswarning.htm">MissingRunOnceIdsWarning</a></li>
+        <li class="compact"><a href="topic_setup_output.htm">Output</a></li>
+        <li class="compact"><a href="topic_setup_outputbasefilename.htm">OutputBaseFilename</a></li>
+        <li class="compact"><a href="topic_setup_outputdir.htm">OutputDir</a></li>
+        <li class="compact"><a href="topic_setup_outputmanifestfile.htm">OutputManifestFile</a></li>
+        <li class="compact"><a href="topic_setup_reservebytes.htm">ReserveBytes</a></li>
+        <li class="compact"><a href="topic_setup_signeduninstaller.htm">SignedUninstaller</a></li>
+        <li class="compact"><a href="topic_setup_signeduninstallerdir.htm">SignedUninstallerDir</a></li>
+        <li class="compact"><a href="topic_setup_signtool.htm">SignTool</a></li>
+        <li class="compact"><a href="topic_setup_signtoolminimumtimebetween.htm">SignToolMinimumTimeBetween</a></li>
+        <li class="compact"><a href="topic_setup_signtoolretrycount.htm">SignToolRetryCount</a></li>
+        <li class="compact"><a href="topic_setup_signtoolretrydelay.htm">SignToolRetryDelay</a></li>
+        <li class="compact"><a href="topic_setup_signtoolrunminimized.htm">SignToolRunMinimized</a></li>
+        <li class="compact"><a href="topic_setup_slicesperdisk.htm">SlicesPerDisk</a></li>
+        <li class="compact"><a href="topic_setup_solidcompression.htm">SolidCompression</a></li>
+        <li class="compact"><a href="topic_setup_sourcedir.htm">SourceDir</a></li>
+        <li class="compact"><a href="topic_setup_terminalservicesaware.htm">TerminalServicesAware</a></li>
+        <li class="compact"><a href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a></li>
+        <li class="compact"><a href="topic_setup_usesetupldr.htm">UseSetupLdr</a></li>
+        <li class="compact"><a href="topic_setup_versioninfocompany.htm">VersionInfoCompany</a></li>
+        <li class="compact"><a href="topic_setup_versioninfocopyright.htm">VersionInfoCopyright</a></li>
+        <li class="compact"><a href="topic_setup_versioninfodescription.htm">VersionInfoDescription</a></li>
+        <li class="compact"><a href="topic_setup_versioninfooriginalfilename.htm">VersionInfoOriginalFileName</a></li>
+        <li class="compact"><a href="topic_setup_versioninfoproductname.htm">VersionInfoProductName</a></li>
+        <li class="compact"><a href="topic_setup_versioninfoproducttextversion.htm">VersionInfoProductTextVersion</a></li>
+        <li class="compact"><a href="topic_setup_versioninfoproductversion.htm">VersionInfoProductVersion</a></li>
+        <li class="compact"><a href="topic_setup_versioninfotextversion.htm">VersionInfoTextVersion</a></li>
+        <li class="compact"><a href="topic_setup_versioninfoversion.htm">VersionInfoVersion</a></li>
+      </ul>
+      <br />
+      <h2 class="heading">Директивы установки</h2>
+      <div class="absaz"><b>Функционал:</b> эти директивы влияют на работу
+        программы установки или же сохраняются и используются программой
+        удаления позднее.</div>
+      <br />
+      <ul>
+        <li class="compact"><a href="topic_setup_allowcancelduringinstall.htm">AllowCancelDuringInstall</a></li>
+        <li class="compact"><a href="topic_setup_allownetworkdrive.htm">AllowNetworkDrive</a></li>
+        <li class="compact"><a href="topic_setup_allownoicons.htm">AllowNoIcons</a></li>
+        <li class="compact"><a href="topic_setup_allowrootdirectory.htm">AllowRootDirectory</a></li>
+        <li class="compact"><a href="topic_setup_allowuncpath.htm">AllowUNCPath</a></li>
+        <li class="compact"><a href="topic_setup_alwaysrestart.htm">AlwaysRestart</a></li>
+        <li class="compact"><a href="topic_setup_alwaysshowcomponentslist.htm">AlwaysShowComponentsList</a></li>
+        <li class="compact"><a href="topic_setup_alwaysshowdironreadypage.htm">AlwaysShowDirOnReadyPage</a></li>
+        <li class="compact"><a href="topic_setup_alwaysshowgrouponreadypage.htm">AlwaysShowGroupOnReadyPage</a></li>
+        <li class="compact"><a href="topic_setup_alwaysusepersonalgroup.htm">AlwaysUsePersonalGroup</a></li>
+        <li class="compact"><a href="topic_setup_appenddefaultdirname.htm">AppendDefaultDirName</a></li>
+        <li class="compact"><a href="topic_setup_appenddefaultgroupname.htm">AppendDefaultGroupName</a></li>
+        <li class="compact"><a href="topic_setup_appcomments.htm">AppComments</a></li>
+        <li class="compact"><a href="topic_setup_appcontact.htm">AppContact</a></li>
+        <li class="compact"><a href="topic_setup_appid.htm">AppId</a></li>
+        <li class="compact"><a href="topic_setup_appmodifypath.htm">AppModifyPath</a></li>
+        <li class="compact"><a href="topic_setup_appmutex.htm">AppMutex</a></li>
+        <li class="compact"><a href="topic_setup_appname.htm"><b>AppName</b></a></li>
+        <li class="compact"><a href="topic_setup_apppublisher.htm">AppPublisher</a></li>
+        <li class="compact"><a href="topic_setup_apppublisherurl.htm">AppPublisherURL</a></li>
+        <li class="compact"><a href="topic_setup_appreadmefile.htm">AppReadmeFile</a></li>
+        <li class="compact"><a href="topic_setup_appsupportphone.htm">AppSupportPhone</a></li>
+        <li class="compact"><a href="topic_setup_appsupporturl.htm">AppSupportURL</a></li>
+        <li class="compact"><a href="topic_setup_appupdatesurl.htm">AppUpdatesURL</a></li>
+        <li class="compact"><a href="topic_setup_appvername.htm">AppVerName</a></li>
+        <li class="compact"><a href="topic_setup_appversion.htm"><b>AppVersion</b></a></li>
+        <li class="compact"><a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></li>
+        <li class="compact"><a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a></li>
+        <li class="compact"><a href="topic_setup_changesassociations.htm">ChangesAssociations</a></li>
+        <li class="compact"><a href="topic_setup_changesenvironment.htm">ChangesEnvironment</a></li>
+        <li class="compact"><a href="topic_setup_closeapplications.htm">CloseApplications</a></li>
+        <li class="compact"><a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a></li>
+        <li class="compact"><a href="topic_setup_createappdir.htm">CreateAppDir</a></li>
+        <li class="compact"><a href="topic_setup_createuninstallregkey.htm">CreateUninstallRegKey</a></li>
+        <li class="compact"><a href="topic_setup_defaultdialogfontname.htm">DefaultDialogFontName</a></li>
+        <li class="compact"><a href="topic_setup_defaultdirname.htm">DefaultDirName</a></li>
+        <li class="compact"><a href="topic_setup_defaultgroupname.htm">DefaultGroupName</a></li>
+        <li class="compact"><a href="topic_setup_defaultuserinfoname.htm">DefaultUserInfoName</a></li>
+        <li class="compact"><a href="topic_setup_defaultuserinfoorg.htm">DefaultUserInfoOrg</a></li>
+        <li class="compact"><a href="topic_setup_defaultuserinfoserial.htm">DefaultUserInfoSerial</a></li>
+        <li class="compact"><a href="topic_setup_direxistswarning.htm">DirExistsWarning</a></li>
+        <li class="compact"><a href="topic_setup_disabledirpage.htm">DisableDirPage</a></li>
+        <li class="compact"><a href="topic_setup_disablefinishedpage.htm">DisableFinishedPage</a></li>
+        <li class="compact"><a href="topic_setup_disableprogramgrouppage.htm">DisableProgramGroupPage</a></li>
+        <li class="compact"><a href="topic_setup_disablereadymemo.htm">DisableReadyMemo</a></li>
+        <li class="compact"><a href="topic_setup_disablereadypage.htm">DisableReadyPage</a></li>
+        <li class="compact"><a href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a></li>
+        <li class="compact"><a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a></li>
+        <li class="compact"><a href="topic_setup_enabledirdoesntexistwarning.htm">EnableDirDoesntExistWarning</a></li>
+        <li class="compact"><a href="topic_setup_extradiskspacerequired.htm">ExtraDiskSpaceRequired</a></li>
+        <li class="compact"><a href="topic_setup_infoafterfile.htm">InfoAfterFile</a></li>
+        <li class="compact"><a href="topic_setup_infobeforefile.htm">InfoBeforeFile</a></li>
+        <li class="compact"><a href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a></li>
+        <li class="compact"><a href="topic_setup_licensefile.htm">LicenseFile</a></li>
+        <li class="compact"><a href="topic_setup_minversion.htm">MinVersion</a></li>
+        <li class="compact"><a href="topic_setup_onlybelowversion.htm">OnlyBelowVersion</a></li>
+        <li class="compact"><a href="topic_setup_password.htm">Password</a></li>
+        <li class="compact"><a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a></li>
+        <li class="compact"><a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a></li>
+        <li class="compact"><a href="topic_setup_restartapplications.htm">RestartApplications</a></li>
+        <li class="compact"><a href="topic_setup_restartifneededbyrun.htm">RestartIfNeededByRun</a></li>
+        <li class="compact"><a href="topic_setup_setuplogging.htm">SetupLogging</a></li>
+        <li class="compact"><a href="topic_setup_setupmutex.htm">SetupMutex</a></li>
+        <li class="compact"><a href="topic_setup_showlanguagedialog.htm">ShowLanguageDialog</a></li>
+        <li class="compact"><a href="topic_setup_timestamprounding.htm">TimeStampRounding</a></li>
+        <li class="compact"><a href="topic_setup_timestampsinutc.htm">TimeStampsInUTC</a></li>
+        <li class="compact"><a href="topic_setup_touchdate.htm">TouchDate</a></li>
+        <li class="compact"><a href="topic_setup_touchtime.htm">TouchTime</a></li>
+        <li class="compact"><a href="topic_setup_uninstallable.htm">Uninstallable</a></li>
+        <li class="compact"><a href="topic_setup_uninstalldisplayicon.htm">UninstallDisplayIcon</a></li>
+        <li class="compact"><a href="topic_setup_uninstalldisplayname.htm">UninstallDisplayName</a></li>
+        <li class="compact"><a href="topic_setup_uninstalldisplaysize.htm">UninstallDisplaySize</a></li>
+        <li class="compact"><a href="topic_setup_uninstallfilesdir.htm">UninstallFilesDir</a></li>
+        <li class="compact"><a href="topic_setup_uninstalllogmode.htm">UninstallLogMode</a></li>
+        <li class="compact"><a href="topic_setup_uninstallrestartcomputer.htm">UninstallRestartComputer</a></li>
+        <li class="compact"><a href="topic_setup_updateuninstalllogappname.htm">UpdateUninstallLogAppName</a></li>
+        <li class="compact"><a href="topic_setup_usepreviousappdir.htm">UsePreviousAppDir</a></li>
+        <li class="compact"><a href="topic_setup_usepreviousgroup.htm">UsePreviousGroup</a></li>
+        <li class="compact"><a href="topic_setup_usepreviouslanguage.htm">UsePreviousLanguage</a></li>
+        <li class="compact"><a href="topic_setup_usepreviousprivileges.htm">UsePreviousPrivigeles</a></li>
+        <li class="compact"><a href="topic_setup_useprevioussetuptype.htm">UsePreviousSetupType</a></li>
+        <li class="compact"><a href="topic_setup_useprevioustasks.htm">UsePreviousTasks</a></li>
+        <li class="compact"><a href="topic_setup_useprevioususerinfo.htm">UsePreviousUserInfo</a></li>
+        <li class="compact"><a href="topic_setup_userinfopage.htm">UserInfoPage</a></li>
+      </ul>
+      <br />
+      <div class="absaz"><b>Оформление:</b> эти директивы влияют только на
+        внешний вид программы установки.</div>
+      <br />
+      <ul>
+        <li class="compact"><a href="topic_setup_appcopyright.htm">AppCopyright</a></li>
+        <li class="compact"><a href="topic_setup_backcolor.htm">BackColor</a></li>
+        <li class="compact"><a href="topic_setup_backcolor.htm">BackColor2</a></li>
+        <li class="compact"><a href="topic_setup_backcolordirection.htm">BackColorDirection</a></li>
+        <li class="compact"><a href="topic_setup_backsolid.htm">BackSolid</a></li>
+        <li class="compact"><a href="topic_setup_flatcomponentslist.htm">FlatComponentsList</a></li>
+        <li class="compact"><a href="topic_setup_setupiconfile.htm">SetupIconFile</a></li>
+        <li class="compact"><a href="topic_setup_showcomponentsizes.htm">ShowComponentSizes</a></li>
+        <li class="compact"><a href="topic_setup_showtaskstreelines.htm">ShowTasksTreeLines</a></li>
+        <li class="compact"><a href="topic_setup_windowshowcaption.htm">WindowShowCaption</a></li>
+        <li class="compact"><a href="topic_setup_windowstartmaximized.htm">WindowStartMaximized</a></li>
+        <li class="compact"><a href="topic_setup_windowresizable.htm">WindowResizable</a></li>
+        <li class="compact"><a href="topic_setup_windowvisible.htm">WindowVisible</a></li>
+        <li class="compact"><a href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a></li>
+        <li class="compact"><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a></li>
+        <li class="compact"><a href="topic_setup_wizardimagestretch.htm">WizardImageStretch</a></li>
+        <li class="compact"><a href="topic_setup_wizardresizable.htm">WizardResizable</a></li>
+        <li class="compact"><a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></li>
+        <li class="compact"><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a></li>
+        <li class="compact"><a href="topic_setup_wizardstyle.htm">WizardStyle</a></li>
+      </ul>
+      <br />
+      <h2 class="heading">Устаревшие директивы</h2>
+      <div class="absaz">Эти директивы уже устарели и не должны больше
+        использоваться в новых сценариях.</div>
+      <br />
+      <ul>
+        <li class="compact"><a href="topic_setup_alwayscreateuninstallicon.htm">AlwaysCreateUninstallIcon</a></li>
+        <li class="compact"><a href="topic_setup_disableappenddir.htm">DisableAppendDir</a></li>
+        <li class="compact"><a href="topic_setup_dontmergeduplicatefiles.htm">DontMergeDuplicateFiles</a></li>
+        <li class="compact"><a href="topic_setup_messagesfile.htm">MessagesFile</a></li>
+        <li class="compact"><a href="topic_setup_uninstalliconfile.htm">UninstallIconFile</a></li>
+        <li class="compact"><a href="topic_setup_uninstalliconname.htm">UninstallIconName</a></li>
+        <li class="compact"><a href="topic_setup_uninstallstyle.htm">UninstallStyle</a></li>
+        <li class="compact"><a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a></li>
+        <li class="compact"><a href="topic_setup_wizardsmallimagebackcolor.htm">WizardSmallImageBackColor</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

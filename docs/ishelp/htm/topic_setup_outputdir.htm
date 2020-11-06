@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: OutputDir</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: OutputDir</h1>
+    <div class="topicbody">
+      <br />
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt>Output</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Определяет для сценария каталог "вывода", в котором
+        компилятор будет создавать файлы установки SETUP.*. По умолчанию вывод
+        осуществляется в папку с именем "Output", которая создаётся в одном
+        каталоге с файлом сценария.</div>
+      <br />
+      <div class="absaz">Если <tt>OutputDir</tt> не содержит полного пути, то
+        он будет создан относительно пути в параметре <tt>SourceDir</tt>. Если
+        же имя пути содержит приставку "userdocs:", то вывод будет выполнен
+        относительно папки "Мои документы" для текущего пользователя, который
+        вошёл в систему. Установка в директиве <tt>OutputDir</tt> значения <tt>.</tt>
+        приведёт к выводу файлов установки в исходный каталог сценария.</div>
+      <br />
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">OutputDir</span>=c:\output</pre>
+      </div>
+    </div>
+  </body>
+</html>
