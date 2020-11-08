@@ -161,6 +161,10 @@ a.new2:link, a.new2:visited, a.new2:active {
 a.highlighted {
 	background-color: #ffff00;
 	color: black;
+	padding-top: 40px;
+	margin-top: -40px;
+	-webkit-background-clip: content-box;
+	background-clip: content-box;
 }
 .small {
 	/* what we want is an 8pt font. 8pt/10pt = 80%, but on firefox that
