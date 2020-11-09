@@ -1,4 +1,4 @@
-pageinfo = [[0,0,0,0,null],
+﻿pageinfo = [[0,0,0,0,null],
 	[0,0,0,0,null],
 	[0,0,0,0,null],
 	[0,0,0,0,null],

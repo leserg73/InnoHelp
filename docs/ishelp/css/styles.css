@@ -58,6 +58,29 @@ p {
 	border-radius: 0px 0px 15px 0px;
 	text-align: left;
 }
+.sintax {
+	background-color: #dfce62;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	-webkit-border-radius: 15px 0px 0px 0px;
+	-moz-border-radius: 15px 0px 0px 0px;
+	border-radius: 15px 0px 0px 0px;
+	text-align: left;
+}
+.sintax1 {
+	background-color: #fff9d5;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	-webkit-border-radius: 0px 0px 15px 0px;
+	-moz-border-radius: 0px 0px 15px 0px;
+	border-radius: 0px 0px 15px 0px;
+	text-align: left;
+}
 .func {
 	background-color: #d9e9f8;
 	font-weight: bold;
@@ -179,6 +202,9 @@ a.highlighted {
 .notopmargin {
 	margin-top: 0;
 }
+.notopmarginX {
+	margin-top: -10px;
+}
 .indent {
 	margin-left: 2em;
 }
@@ -191,10 +217,10 @@ pre.hl {
 	margin-left: 10px;
 }
 .hl.num {
-  color: #800000;
+	color: #800000;
 }
 .hl.esc {
-  color: #000000;
+	color: #000000;
 }
 .hl.str {
 	color: #800000;
