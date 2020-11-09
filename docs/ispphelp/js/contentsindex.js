@@ -1,5 +1,4 @@
-﻿var contentsIndexData = 
-[
+﻿var contentsIndexData = [
 "expr:#!",
 "define:#:",
 "include:#+",
