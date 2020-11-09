@@ -9,6 +9,11 @@
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Параметры командной строки инсталлятора</h1>
@@ -20,7 +25,7 @@
         пользователями или другими программами, вызывающими программу установки.</div>
       <br />
       <dl>
-        <dt><b><span style="color: #663300;"><a name="HELP">/HELP</a></span>, <span
+        <dt><b><span style="color: #663300;"><a name="HELP">/HELP</a></span>, <span
               style="color: #663300;"><a name="HELP2">/?</a></span></b></dt>
         <dd>
           <p>Выводит справочную информацию по параметрам командной строки.
@@ -87,7 +92,7 @@
         </dd>
         <dt><b><a name="ALLUSERS"><span style="color: #663300;">/ALLUSERS</span></a></b></dt>
         <dd>
-          <p>Предписывает программе установки выполнить инсталляцию в режиме <a
+          <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">административной установки</a>.
             Действует только в том случае, если в секции <tt>[Setup]</tt>
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
@@ -95,7 +100,7 @@
         </dd>
         <dt><b><a name="CURRENTUSER"><span style="color: #663300;">/CURRENTUSER</span></a></b></dt>
         <dd>
-          <p>Предписывает программе установки выполнить инсталляцию в режиме <a
+          <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">не административной установки</a>.
             Действует только в том случае, если в секции <tt>[Setup]</tt>
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
