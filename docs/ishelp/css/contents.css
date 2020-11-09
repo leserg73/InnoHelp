@@ -23,7 +23,7 @@ INPUT {
 	background-color: ButtonFace;
 	color: WindowText;
 	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-bottom: 2px;
 	cursor: default;
 	-moz-user-select: none;
 	position: fixed;  
@@ -41,6 +41,7 @@ INPUT {
 	border-left: 1px solid #1C6EA4;
 	border-top: 1px solid #1C6EA4;
 	border-right: 1px solid #1C6EA4;
+	border-bottom: 2px solid #f4f4f4;
 	border-radius: 6px 6px 0px 0px;
 	-webkit-border-radius: 5px 5px 0px 0px;
 	-moz-border-radius: 5px 5px 0px 0px;

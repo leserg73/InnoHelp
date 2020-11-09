@@ -302,30 +302,4 @@ function init_search_tab()
 {
 	if (searchTabInited) return;
 	searchTabInited = true;
-
-	var script = document.createElement("script");
-	script.src = "http://www.google.com/jsapi?callback=google_loader_callback";
-	script.type = "text/javascript";
-	document.getElementsByTagName("head")[0].appendChild(script);
-}
-
-function google_loader_callback()
-{
-	google.load("search", "1", {"callback" : google_searchapi_callback});
-}
-
-function google_searchapi_callback() {
-	var drawOptions = new google.search.DrawOptions();
-	drawOptions.setDrawMode(google.search.SearchControl.DRAW_MODE_TABBED);
-
-	var webSearch = new google.search.WebSearch();
-	webSearch.setSiteRestriction(searchTabBaseUrl);
-	webSearch.setUserDefinedLabel("Results");
-
-	var searchControl = new google.search.SearchControl();
-	searchControl.setLinkTarget("bodyframe");
-	searchControl.setResultSetSize(google.search.Search.LARGE_RESULTSET);
-	searchControl.addSearcher(webSearch);
-	searchControl.setNoResultsString("No results");
-	searchControl.draw(document.getElementById("searchcont"), drawOptions);
 }

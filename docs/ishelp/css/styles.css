@@ -290,8 +290,9 @@ li.compact {
 dt.paramlist {
 	margin-bottom: 0.6em;
 	color: darkblue; /* #0000ff; */
-	border-left: 7px dotted darkblue; /* #4b8ed1;*/
+	border-left: 7px solid darkblue; /* #4b8ed1;*/
 	padding-left: 5px;
+	margin-left: 5px;
 }
 dd.paramlist {
 	/* give a little extra spacing between items */
@@ -357,4 +358,7 @@ tr.setuphdrtr3 {
 }
 li {  
 	margin-left: 10px;
+}
+.highlight {
+	background: #FFFF40;
 }

@@ -7,271 +7,279 @@
 <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
 <link rel="stylesheet" type="text/css" href="../css/contents.css" />
 <script type="text/javascript" src="../js/contents.js"></script>
+	<script language="JavaScript" src="../js/settings.js"></script>
+	<script language="JavaScript" src="../js/search.js"></script>
+	<!-- You can change the fonts, text colors, and styles of your search results with the CSS below -->
+	<style type="text/css">
+		iframe { left:0; top:0; width:100%; height:100%; border:none; background:#ffffff; }
+		#searchframe { position:absolute; left:0; top:32px; right:0; bottom:0; }
+	</style>		    
 </head>
 <body onload="init_contents(0);">
 
 <div id="tabbar">
-<table cellspacing="0">
-<tr>
-<td><div style="width: 4px"></div></td>
-<td id="tab-contents" class="selectedtab" onmousedown="select_tab('contents');"><a href="javascript:select_tab('contents');">Содержание</a></td>
-<td id="tab-index" class="unselectedtab" onmousedown="select_tab('index');"><a href="javascript:select_tab('index');">Индекс</a></td>
-<td id="tab-search" class="unselectedtab" onmousedown="select_tab('search');"><a href="javascript:select_tab('search');">Поиск</a></td>
-<td style="width: 100%">&nbsp;</td>
-</tr>
-</table>
+  <table cellspacing="0">
+    <tr>
+      <td><div style="width: 4px"></div></td>
+      <td id="tab-contents" class="selectedtab" onmousedown="select_tab('contents');" style="padding-left: 10px; padding-right: 10px;"><a href="javascript:select_tab('contents');">Содержание</a></td>
+      <td id="tab-index" class="unselectedtab" onmousedown="select_tab('index');" style="padding-left: 10px; padding-right: 10px;"><a href="javascript:select_tab('index');">Индекс</a></td>
+      <td id="tab-search" class="unselectedtab" onmousedown="select_tab('search');" style="padding-left: 10px; padding-right: 10px;"><a href="javascript:select_tab('search');">Поиск</a></td>
+      <td style="width: 100%">&nbsp;</td>
+    </tr>
+  </table>
 </div>
 
 <div style="padding: 4px 2px 2px 2px">
 
 <div id="tabbody-contents">
 <table>
-<tr><td><img src="../images/cicon17.png" alt="" /></td><td><a href="topic_whatisinnosetup.htm" target="bodyframe">Что такое Inno Setup?</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_creatinginstallations.htm" target="bodyframe">Создание инсталляторов</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptformatoverview.htm" target="bodyframe">Формат сценариев</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_params.htm" target="bodyframe">Параметры в секциях</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_consts.htm" target="bodyframe">Константы</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_commonparams.htm" target="bodyframe">Общие параметры</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_componentstasksparams.htm" target="bodyframe">Параметры секций [Components] и [Tasks]</a></td></tr>
-<tr id="nodecaption_1"><td><img id="nodeimg_1" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(1);" /></td><td><a href="javascript:toggle_node(1);">Секции сценария установки</a></td></tr>
-<tr id="nodecontent_1"><td></td><td>
-<table>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupsection.htm" target="bodyframe">[Setup] section</a></td></tr>
-<tr id="nodecaption_2"><td><img id="nodeimg_2" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(2);" /></td><td><a href="javascript:toggle_node(2);">Директивы секции [Setup]</a></td></tr>
-<tr id="nodecontent_2"><td></td><td>
-<table>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowcancelduringinstall.htm" target="bodyframe">AllowCancelDuringInstall</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allownetworkdrive.htm" target="bodyframe">AllowNetworkDrive</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allownoicons.htm" target="bodyframe">AllowNoIcons</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowrootdirectory.htm" target="bodyframe">AllowRootDirectory</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowuncpath.htm" target="bodyframe">AllowUNCPath</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwayscreateuninstallicon.htm" target="bodyframe">AlwaysCreateUninstallIcon</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysrestart.htm" target="bodyframe">AlwaysRestart</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowcomponentslist.htm" target="bodyframe">AlwaysShowComponentsList</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowdironreadypage.htm" target="bodyframe">AlwaysShowDirOnReadyPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowgrouponreadypage.htm" target="bodyframe">AlwaysShowGroupOnReadyPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysusepersonalgroup.htm" target="bodyframe">AlwaysUsePersonalGroup</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcomments.htm" target="bodyframe">AppComments</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcontact.htm" target="bodyframe">AppContact</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcopyright.htm" target="bodyframe">AppCopyright</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appenddefaultdirname.htm" target="bodyframe">AppendDefaultDirName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appenddefaultgroupname.htm" target="bodyframe">AppendDefaultGroupName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appid.htm" target="bodyframe">AppId</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appmodifypath.htm" target="bodyframe">AppModifyPath</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appmutex.htm" target="bodyframe">AppMutex</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appname.htm" target="bodyframe">AppName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_apppublisher.htm" target="bodyframe">AppPublisher</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_apppublisherurl.htm" target="bodyframe">AppPublisherURL</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appreadmefile.htm" target="bodyframe">AppReadmeFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appsupportphone.htm" target="bodyframe">AppSupportPhone</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appsupporturl.htm" target="bodyframe">AppSupportURL</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appupdatesurl.htm" target="bodyframe">AppUpdatesURL</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appvername.htm" target="bodyframe">AppVerName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appversion.htm" target="bodyframe">AppVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_architecturesallowed.htm" target="bodyframe">ArchitecturesAllowed</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_architecturesinstallin64bitmode.htm" target="bodyframe">ArchitecturesInstallIn64BitMode</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_aslrcompatible.htm" target="bodyframe">ASLRCompatible</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backcolor.htm" target="bodyframe">BackColor</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backcolordirection.htm" target="bodyframe">BackColorDirection</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backsolid.htm" target="bodyframe">BackSolid</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_changesassociations.htm" target="bodyframe">ChangesAssociations</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_changesenvironment.htm" target="bodyframe">ChangesEnvironment</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_closeapplications.htm" target="bodyframe">CloseApplications</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_closeapplicationsfilter.htm" target="bodyframe">CloseApplicationsFilter</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_compression.htm" target="bodyframe">Compression</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_compressionthreads.htm" target="bodyframe">CompressionThreads</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_createappdir.htm" target="bodyframe">CreateAppDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_createuninstallregkey.htm" target="bodyframe">CreateUninstallRegKey</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultdialogfontname.htm" target="bodyframe">DefaultDialogFontName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultdirname.htm" target="bodyframe">DefaultDirName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultgroupname.htm" target="bodyframe">DefaultGroupName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoname.htm" target="bodyframe">DefaultUserInfoName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoorg.htm" target="bodyframe">DefaultUserInfoOrg</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoserial.htm" target="bodyframe">DefaultUserInfoSerial</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_depcompatible.htm" target="bodyframe">DEPCompatible</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_direxistswarning.htm" target="bodyframe">DirExistsWarning</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disableappenddir.htm" target="bodyframe">DisableAppendDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disabledirpage.htm" target="bodyframe">DisableDirPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablefinishedpage.htm" target="bodyframe">DisableFinishedPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disableprogramgrouppage.htm" target="bodyframe">DisableProgramGroupPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablereadymemo.htm" target="bodyframe">DisableReadyMemo</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablereadypage.htm" target="bodyframe">DisableReadyPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablestartupprompt.htm" target="bodyframe">DisableStartupPrompt</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablewelcomepage.htm" target="bodyframe">DisableWelcomePage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskclustersize.htm" target="bodyframe">DiskClusterSize</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskslicesize.htm" target="bodyframe">DiskSliceSize</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskspanning.htm" target="bodyframe">DiskSpanning</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_dontmergeduplicatefiles.htm" target="bodyframe">DontMergeDuplicateFiles</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_enabledirdoesntexistwarning.htm" target="bodyframe">EnableDirDoesntExistWarning</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_encryption.htm" target="bodyframe">Encryption</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_extradiskspacerequired.htm" target="bodyframe">ExtraDiskSpaceRequired</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_flatcomponentslist.htm" target="bodyframe">FlatComponentsList</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_infoafterfile.htm" target="bodyframe">InfoAfterFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_infobeforefile.htm" target="bodyframe">InfoBeforeFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_internalcompresslevel.htm" target="bodyframe">InternalCompressLevel</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_languagedetectionmethod.htm" target="bodyframe">LanguageDetectionMethod</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_licensefile.htm" target="bodyframe">LicenseFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmaalgorithm.htm" target="bodyframe">LZMAAlgorithm</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmablocksize.htm" target="bodyframe">LZMABlockSize</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmadictionarysize.htm" target="bodyframe">LZMADictionarySize</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmamatchfinder.htm" target="bodyframe">LZMAMatchFinder</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmanumblockthreads.htm" target="bodyframe">LZMANumBlockThreads</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmanumfastbytes.htm" target="bodyframe">LZMANumFastBytes</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmauseseparateprocess.htm" target="bodyframe">LZMAUseSeparateProcess</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_mergeduplicatefiles.htm" target="bodyframe">MergeDuplicateFiles</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_messagesfile.htm" target="bodyframe">MessagesFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_minversion.htm" target="bodyframe">MinVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_missingrunonceidswarning.htm" target="bodyframe">MissingRunOnceIdsWarning</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_onlybelowversion.htm" target="bodyframe">OnlyBelowVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_output.htm" target="bodyframe">Output</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputbasefilename.htm" target="bodyframe">OutputBaseFilename</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputdir.htm" target="bodyframe">OutputDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputmanifestfile.htm" target="bodyframe">OutputManifestFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_password.htm" target="bodyframe">Password</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_privilegesrequired.htm" target="bodyframe">PrivilegesRequired</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_privilegesrequiredoverridesallowed.htm" target="bodyframe">PrivilegesRequiredOverridesAllowed</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_reservebytes.htm" target="bodyframe">ReserveBytes</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_restartapplications.htm" target="bodyframe">RestartApplications</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_restartifneededbyrun.htm" target="bodyframe">RestartIfNeededByRun</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setupiconfile.htm" target="bodyframe">SetupIconFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setuplogging.htm" target="bodyframe">SetupLogging</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setupmutex.htm" target="bodyframe">SetupMutex</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showcomponentsizes.htm" target="bodyframe">ShowComponentSizes</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showlanguagedialog.htm" target="bodyframe">ShowLanguageDialog</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showtaskstreelines.htm" target="bodyframe">ShowTasksTreeLines</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signeduninstaller.htm" target="bodyframe">SignedUninstaller</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signeduninstallerdir.htm" target="bodyframe">SignedUninstallerDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtool.htm" target="bodyframe">SignTool</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolminimumtimebetween.htm" target="bodyframe">SignToolMinimumTimeBetween</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolretrycount.htm" target="bodyframe">SignToolRetryCount</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolretrydelay.htm" target="bodyframe">SignToolRetryDelay</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolrunminimized.htm" target="bodyframe">SignToolRunMinimized</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_slicesperdisk.htm" target="bodyframe">SlicesPerDisk</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_solidcompression.htm" target="bodyframe">SolidCompression</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_sourcedir.htm" target="bodyframe">SourceDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_terminalservicesaware.htm" target="bodyframe">TerminalServicesAware</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_timestamprounding.htm" target="bodyframe">TimeStampRounding</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_timestampsinutc.htm" target="bodyframe">TimeStampsInUTC</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_touchdate.htm" target="bodyframe">TouchDate</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_touchtime.htm" target="bodyframe">TouchTime</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallable.htm" target="bodyframe">Uninstallable</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplayicon.htm" target="bodyframe">UninstallDisplayIcon</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplayname.htm" target="bodyframe">UninstallDisplayName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplaysize.htm" target="bodyframe">UninstallDisplaySize</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallfilesdir.htm" target="bodyframe">UninstallFilesDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalliconfile.htm" target="bodyframe">UninstallIconFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalliconname.htm" target="bodyframe">UninstallIconName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalllogmode.htm" target="bodyframe">UninstallLogMode</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallrestartcomputer.htm" target="bodyframe">UninstallRestartComputer</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallstyle.htm" target="bodyframe">UninstallStyle</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_updateuninstalllogappname.htm" target="bodyframe">UpdateUninstallLogAppName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useduserareaswarning.htm" target="bodyframe">UsedUserAreasWarning</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousappdir.htm" target="bodyframe">UsePreviousAppDir</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousgroup.htm" target="bodyframe">UsePreviousGroup</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviouslanguage.htm" target="bodyframe">UsePreviousLanguage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousprivileges.htm" target="bodyframe">UsePreviousPrivileges</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioussetuptype.htm" target="bodyframe">UsePreviousSetupType</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioustasks.htm" target="bodyframe">UsePreviousTasks</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioususerinfo.htm" target="bodyframe">UsePreviousUserInfo</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_userinfopage.htm" target="bodyframe">UserInfoPage</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usesetupldr.htm" target="bodyframe">UseSetupLdr</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfocompany.htm" target="bodyframe">VersionInfoCompany</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfocopyright.htm" target="bodyframe">VersionInfoCopyright</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfodescription.htm" target="bodyframe">VersionInfoDescription</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfooriginalfilename.htm" target="bodyframe">VersionInfoOriginalFileName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproductname.htm" target="bodyframe">VersionInfoProductName</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproducttextversion.htm" target="bodyframe">VersionInfoProductTextVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproductversion.htm" target="bodyframe">VersionInfoProductVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfotextversion.htm" target="bodyframe">VersionInfoTextVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoversion.htm" target="bodyframe">VersionInfoVersion</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowresizable.htm" target="bodyframe">WindowResizable</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowshowcaption.htm" target="bodyframe">WindowShowCaption</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowstartmaximized.htm" target="bodyframe">WindowStartMaximized</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowvisible.htm" target="bodyframe">WindowVisible</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagealphaformat.htm" target="bodyframe">WizardImageAlphaFormat</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagebackcolor.htm" target="bodyframe">WizardImageBackColor</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagefile.htm" target="bodyframe">WizardImageFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagestretch.htm" target="bodyframe">WizardImageStretch</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardresizable.htm" target="bodyframe">WizardResizable</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsizepercent.htm" target="bodyframe">WizardSizePercent</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsmallimagebackcolor.htm" target="bodyframe">WizardSmallImageBackColor</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsmallimagefile.htm" target="bodyframe">WizardSmallImageFile</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardstyle.htm" target="bodyframe">WizardStyle</a></td></tr>
-</table>
-</td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_typessection.htm" target="bodyframe">Секция [Types]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_componentssection.htm" target="bodyframe">Секция [Components]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_taskssection.htm" target="bodyframe">Секция [Tasks]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_dirssection.htm" target="bodyframe">Секция [Dirs]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_filessection.htm" target="bodyframe">Секция [Files]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_iconssection.htm" target="bodyframe">Секция [Icons]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_inisection.htm" target="bodyframe">Секция [INI]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_installdeletesection.htm" target="bodyframe">Секция [InstallDelete]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_languagessection.htm" target="bodyframe">Секция [Languages]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_messagessection.htm" target="bodyframe">Секция [Messages]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_custommessagessection.htm" target="bodyframe">Секция [CustomMessages]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_langoptionssection.htm" target="bodyframe">Секция [LangOptions]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_registrysection.htm" target="bodyframe">Секция [Registry]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_runsection.htm" target="bodyframe">Секция [Run]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstalldeletesection.htm" target="bodyframe">Секция [UninstallDelete]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_runsection.htm" target="bodyframe">Секция [UninstallRun]</a></td></tr>
-</table>
-</td></tr>
-<tr id="nodecaption_3"><td><img id="nodeimg_3" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(3);" /></td><td><a href="javascript:toggle_node(3);">Сценарии на языке Pascal</a></td></tr>
-<tr id="nodecontent_3"><td></td><td>
-<table>
-<tr><td><img src="../images/cicon12.png" alt="" /></td><td><a href="topic_scriptintro.htm" target="bodyframe">Введение</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptcreating.htm" target="bodyframe">Создание секции [Code]</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptevents.htm" target="bodyframe">Функции событий</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptconstants.htm" target="bodyframe">Сценарные константы</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptcheck.htm" target="bodyframe">Параметр "Check"</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptinstall.htm" target="bodyframe">Параметры "BeforeInstall" и "AfterInstall"</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptuninstall.htm" target="bodyframe">Код деинсталляции</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptexamples.htm" target="bodyframe">Примеры</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptfunctions.htm" target="bodyframe">Поддерживаемые функции</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptclasses.htm" target="bodyframe">Поддерживаемые классы</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptpages.htm" target="bodyframe">Использование дополнительных страниц мастера</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptdll.htm" target="bodyframe">Использование DLL и .NET сборок</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptautomation.htm" target="bodyframe">Использование COM-объектов</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptdebug.htm" target="bodyframe">Отладка</a></td></tr>
-</table>
-</td></tr>
-<tr id="nodecaption_4"><td><img id="nodeimg_4" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(4);" /></td><td><a href="javascript:toggle_node(4);">Прочая информация</a></td></tr>
-<tr id="nodecontent_4"><td></td><td>
-<table>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_donate.htm" target="bodyframe">Поддержка Inno Setup</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_unicode.htm" target="bodyframe">Unicode Inno Setup</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_admininstallmode.htm" target="bodyframe">Режим не административной установки</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_32vs64bitinstalls.htm" target="bodyframe">64-разрядный режим установки</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_64bitlimitations.htm" target="bodyframe">Ограничения в 64-разрядном режиме</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_wizardpages.htm" target="bodyframe">Страницы мастера</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_installorder.htm" target="bodyframe">Порядок установки</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_unsafefiles.htm" target="bodyframe">Небезопасные файлы</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_compilercmdline.htm" target="bodyframe">Командная строка компилятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupcmdline.htm" target="bodyframe">Параметры командной строки инсталлятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstcmdline.htm" target="bodyframe">Параметры командной строки деинсталлятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupexitcodes.htm" target="bodyframe">Коды выхода инсталлятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstexitcodes.htm" target="bodyframe">Коды выхода деинсталлятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_compformshortcuts.htm" target="bodyframe">Клавиатурные команды IDE компилятора</a></td></tr>
-<tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_technotes.htm" target="bodyframe">Прочие замечания</a></td></tr>
-<tr><td><img src="../images/cicon35.png" alt="" /></td><td><a href="topic_examples.htm" target="bodyframe">Примеры сценариев</a></td></tr>
-<tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_faq.htm" target="bodyframe">Часто задаваемые вопросы</a></td></tr>
-<tr><td><img src="../images/cicon40.png" alt="" /></td><td><a href="topic_credits.htm" target="bodyframe">Авторы</a></td></tr>
-</table>
-</td></tr>
+  <tr><td><img src="../images/cicon17.png" alt="" /></td><td><a href="topic_whatisinnosetup.htm" target="bodyframe">Что такое Inno Setup?</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_creatinginstallations.htm" target="bodyframe">Создание инсталляторов</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptformatoverview.htm" target="bodyframe">Формат сценариев</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_params.htm" target="bodyframe">Параметры в секциях</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_consts.htm" target="bodyframe">Константы</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_commonparams.htm" target="bodyframe">Общие параметры</a></td></tr>
+  <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_componentstasksparams.htm" target="bodyframe">Параметры секций [Components] и [Tasks]</a></td></tr>
+  <tr id="nodecaption_1"><td><img id="nodeimg_1" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(1);" /></td><td><a href="javascript:toggle_node(1);">Секции сценария установки</a></td></tr>
+  <tr id="nodecontent_1"><td></td><td>
+    <table>
+      <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupsection.htm" target="bodyframe">[Setup] section</a></td></tr>
+      <tr id="nodecaption_2"><td><img id="nodeimg_2" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(2);" /></td><td><a href="javascript:toggle_node(2);">Директивы секции [Setup]</a></td></tr>
+      <tr id="nodecontent_2"><td></td><td>
+    <table>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowcancelduringinstall.htm" target="bodyframe">AllowCancelDuringInstall</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allownetworkdrive.htm" target="bodyframe">AllowNetworkDrive</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allownoicons.htm" target="bodyframe">AllowNoIcons</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowrootdirectory.htm" target="bodyframe">AllowRootDirectory</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_allowuncpath.htm" target="bodyframe">AllowUNCPath</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwayscreateuninstallicon.htm" target="bodyframe">AlwaysCreateUninstallIcon</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysrestart.htm" target="bodyframe">AlwaysRestart</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowcomponentslist.htm" target="bodyframe">AlwaysShowComponentsList</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowdironreadypage.htm" target="bodyframe">AlwaysShowDirOnReadyPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysshowgrouponreadypage.htm" target="bodyframe">AlwaysShowGroupOnReadyPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_alwaysusepersonalgroup.htm" target="bodyframe">AlwaysUsePersonalGroup</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcomments.htm" target="bodyframe">AppComments</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcontact.htm" target="bodyframe">AppContact</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appcopyright.htm" target="bodyframe">AppCopyright</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appenddefaultdirname.htm" target="bodyframe">AppendDefaultDirName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appenddefaultgroupname.htm" target="bodyframe">AppendDefaultGroupName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appid.htm" target="bodyframe">AppId</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appmodifypath.htm" target="bodyframe">AppModifyPath</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appmutex.htm" target="bodyframe">AppMutex</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appname.htm" target="bodyframe">AppName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_apppublisher.htm" target="bodyframe">AppPublisher</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_apppublisherurl.htm" target="bodyframe">AppPublisherURL</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appreadmefile.htm" target="bodyframe">AppReadmeFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appsupportphone.htm" target="bodyframe">AppSupportPhone</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appsupporturl.htm" target="bodyframe">AppSupportURL</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appupdatesurl.htm" target="bodyframe">AppUpdatesURL</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appvername.htm" target="bodyframe">AppVerName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_appversion.htm" target="bodyframe">AppVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_architecturesallowed.htm" target="bodyframe">ArchitecturesAllowed</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_architecturesinstallin64bitmode.htm" target="bodyframe">ArchitecturesInstallIn64BitMode</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_aslrcompatible.htm" target="bodyframe">ASLRCompatible</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backcolor.htm" target="bodyframe">BackColor</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backcolordirection.htm" target="bodyframe">BackColorDirection</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_backsolid.htm" target="bodyframe">BackSolid</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_changesassociations.htm" target="bodyframe">ChangesAssociations</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_changesenvironment.htm" target="bodyframe">ChangesEnvironment</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_closeapplications.htm" target="bodyframe">CloseApplications</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_closeapplicationsfilter.htm" target="bodyframe">CloseApplicationsFilter</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_compression.htm" target="bodyframe">Compression</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_compressionthreads.htm" target="bodyframe">CompressionThreads</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_createappdir.htm" target="bodyframe">CreateAppDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_createuninstallregkey.htm" target="bodyframe">CreateUninstallRegKey</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultdialogfontname.htm" target="bodyframe">DefaultDialogFontName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultdirname.htm" target="bodyframe">DefaultDirName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultgroupname.htm" target="bodyframe">DefaultGroupName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoname.htm" target="bodyframe">DefaultUserInfoName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoorg.htm" target="bodyframe">DefaultUserInfoOrg</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_defaultuserinfoserial.htm" target="bodyframe">DefaultUserInfoSerial</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_depcompatible.htm" target="bodyframe">DEPCompatible</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_direxistswarning.htm" target="bodyframe">DirExistsWarning</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disableappenddir.htm" target="bodyframe">DisableAppendDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disabledirpage.htm" target="bodyframe">DisableDirPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablefinishedpage.htm" target="bodyframe">DisableFinishedPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disableprogramgrouppage.htm" target="bodyframe">DisableProgramGroupPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablereadymemo.htm" target="bodyframe">DisableReadyMemo</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablereadypage.htm" target="bodyframe">DisableReadyPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablestartupprompt.htm" target="bodyframe">DisableStartupPrompt</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_disablewelcomepage.htm" target="bodyframe">DisableWelcomePage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskclustersize.htm" target="bodyframe">DiskClusterSize</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskslicesize.htm" target="bodyframe">DiskSliceSize</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_diskspanning.htm" target="bodyframe">DiskSpanning</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_dontmergeduplicatefiles.htm" target="bodyframe">DontMergeDuplicateFiles</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_enabledirdoesntexistwarning.htm" target="bodyframe">EnableDirDoesntExistWarning</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_encryption.htm" target="bodyframe">Encryption</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_extradiskspacerequired.htm" target="bodyframe">ExtraDiskSpaceRequired</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_flatcomponentslist.htm" target="bodyframe">FlatComponentsList</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_infoafterfile.htm" target="bodyframe">InfoAfterFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_infobeforefile.htm" target="bodyframe">InfoBeforeFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_internalcompresslevel.htm" target="bodyframe">InternalCompressLevel</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_languagedetectionmethod.htm" target="bodyframe">LanguageDetectionMethod</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_licensefile.htm" target="bodyframe">LicenseFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmaalgorithm.htm" target="bodyframe">LZMAAlgorithm</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmablocksize.htm" target="bodyframe">LZMABlockSize</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmadictionarysize.htm" target="bodyframe">LZMADictionarySize</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmamatchfinder.htm" target="bodyframe">LZMAMatchFinder</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmanumblockthreads.htm" target="bodyframe">LZMANumBlockThreads</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmanumfastbytes.htm" target="bodyframe">LZMANumFastBytes</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_lzmauseseparateprocess.htm" target="bodyframe">LZMAUseSeparateProcess</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_mergeduplicatefiles.htm" target="bodyframe">MergeDuplicateFiles</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_messagesfile.htm" target="bodyframe">MessagesFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_minversion.htm" target="bodyframe">MinVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_missingrunonceidswarning.htm" target="bodyframe">MissingRunOnceIdsWarning</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_onlybelowversion.htm" target="bodyframe">OnlyBelowVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_output.htm" target="bodyframe">Output</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputbasefilename.htm" target="bodyframe">OutputBaseFilename</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputdir.htm" target="bodyframe">OutputDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_outputmanifestfile.htm" target="bodyframe">OutputManifestFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_password.htm" target="bodyframe">Password</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_privilegesrequired.htm" target="bodyframe">PrivilegesRequired</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_privilegesrequiredoverridesallowed.htm" target="bodyframe">PrivilegesRequiredOverridesAllowed</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_reservebytes.htm" target="bodyframe">ReserveBytes</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_restartapplications.htm" target="bodyframe">RestartApplications</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_restartifneededbyrun.htm" target="bodyframe">RestartIfNeededByRun</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setupiconfile.htm" target="bodyframe">SetupIconFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setuplogging.htm" target="bodyframe">SetupLogging</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_setupmutex.htm" target="bodyframe">SetupMutex</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showcomponentsizes.htm" target="bodyframe">ShowComponentSizes</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showlanguagedialog.htm" target="bodyframe">ShowLanguageDialog</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_showtaskstreelines.htm" target="bodyframe">ShowTasksTreeLines</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signeduninstaller.htm" target="bodyframe">SignedUninstaller</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signeduninstallerdir.htm" target="bodyframe">SignedUninstallerDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtool.htm" target="bodyframe">SignTool</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolminimumtimebetween.htm" target="bodyframe">SignToolMinimumTimeBetween</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolretrycount.htm" target="bodyframe">SignToolRetryCount</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolretrydelay.htm" target="bodyframe">SignToolRetryDelay</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_signtoolrunminimized.htm" target="bodyframe">SignToolRunMinimized</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_slicesperdisk.htm" target="bodyframe">SlicesPerDisk</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_solidcompression.htm" target="bodyframe">SolidCompression</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_sourcedir.htm" target="bodyframe">SourceDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_terminalservicesaware.htm" target="bodyframe">TerminalServicesAware</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_timestamprounding.htm" target="bodyframe">TimeStampRounding</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_timestampsinutc.htm" target="bodyframe">TimeStampsInUTC</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_touchdate.htm" target="bodyframe">TouchDate</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_touchtime.htm" target="bodyframe">TouchTime</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallable.htm" target="bodyframe">Uninstallable</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplayicon.htm" target="bodyframe">UninstallDisplayIcon</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplayname.htm" target="bodyframe">UninstallDisplayName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalldisplaysize.htm" target="bodyframe">UninstallDisplaySize</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallfilesdir.htm" target="bodyframe">UninstallFilesDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalliconfile.htm" target="bodyframe">UninstallIconFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalliconname.htm" target="bodyframe">UninstallIconName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstalllogmode.htm" target="bodyframe">UninstallLogMode</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallrestartcomputer.htm" target="bodyframe">UninstallRestartComputer</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_uninstallstyle.htm" target="bodyframe">UninstallStyle</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_updateuninstalllogappname.htm" target="bodyframe">UpdateUninstallLogAppName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useduserareaswarning.htm" target="bodyframe">UsedUserAreasWarning</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousappdir.htm" target="bodyframe">UsePreviousAppDir</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousgroup.htm" target="bodyframe">UsePreviousGroup</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviouslanguage.htm" target="bodyframe">UsePreviousLanguage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usepreviousprivileges.htm" target="bodyframe">UsePreviousPrivileges</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioussetuptype.htm" target="bodyframe">UsePreviousSetupType</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioustasks.htm" target="bodyframe">UsePreviousTasks</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_useprevioususerinfo.htm" target="bodyframe">UsePreviousUserInfo</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_userinfopage.htm" target="bodyframe">UserInfoPage</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_usesetupldr.htm" target="bodyframe">UseSetupLdr</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfocompany.htm" target="bodyframe">VersionInfoCompany</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfocopyright.htm" target="bodyframe">VersionInfoCopyright</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfodescription.htm" target="bodyframe">VersionInfoDescription</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfooriginalfilename.htm" target="bodyframe">VersionInfoOriginalFileName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproductname.htm" target="bodyframe">VersionInfoProductName</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproducttextversion.htm" target="bodyframe">VersionInfoProductTextVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoproductversion.htm" target="bodyframe">VersionInfoProductVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfotextversion.htm" target="bodyframe">VersionInfoTextVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_versioninfoversion.htm" target="bodyframe">VersionInfoVersion</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowresizable.htm" target="bodyframe">WindowResizable</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowshowcaption.htm" target="bodyframe">WindowShowCaption</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowstartmaximized.htm" target="bodyframe">WindowStartMaximized</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_windowvisible.htm" target="bodyframe">WindowVisible</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagealphaformat.htm" target="bodyframe">WizardImageAlphaFormat</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagebackcolor.htm" target="bodyframe">WizardImageBackColor</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagefile.htm" target="bodyframe">WizardImageFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardimagestretch.htm" target="bodyframe">WizardImageStretch</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardresizable.htm" target="bodyframe">WizardResizable</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsizepercent.htm" target="bodyframe">WizardSizePercent</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsmallimagebackcolor.htm" target="bodyframe">WizardSmallImageBackColor</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardsmallimagefile.htm" target="bodyframe">WizardSmallImageFile</a></td></tr>
+      <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_setup_wizardstyle.htm" target="bodyframe">WizardStyle</a></td></tr>
+    </table>
+    </td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_typessection.htm" target="bodyframe">Секция [Types]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_componentssection.htm" target="bodyframe">Секция [Components]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_taskssection.htm" target="bodyframe">Секция [Tasks]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_dirssection.htm" target="bodyframe">Секция [Dirs]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_filessection.htm" target="bodyframe">Секция [Files]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_iconssection.htm" target="bodyframe">Секция [Icons]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_inisection.htm" target="bodyframe">Секция [INI]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_installdeletesection.htm" target="bodyframe">Секция [InstallDelete]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_languagessection.htm" target="bodyframe">Секция [Languages]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_messagessection.htm" target="bodyframe">Секция [Messages]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_custommessagessection.htm" target="bodyframe">Секция [CustomMessages]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_langoptionssection.htm" target="bodyframe">Секция [LangOptions]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_registrysection.htm" target="bodyframe">Секция [Registry]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_runsection.htm" target="bodyframe">Секция [Run]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstalldeletesection.htm" target="bodyframe">Секция [UninstallDelete]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_runsection.htm" target="bodyframe">Секция [UninstallRun]</a></td></tr>
+  </table>
+  </td></tr>
+    <tr id="nodecaption_3"><td><img id="nodeimg_3" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(3);" /></td><td><a href="javascript:toggle_node(3);">Сценарии на языке Pascal</a></td></tr>
+    <tr id="nodecontent_3"><td></td><td>
+  <table>
+    <tr><td><img src="../images/cicon12.png" alt="" /></td><td><a href="topic_scriptintro.htm" target="bodyframe">Введение</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptcreating.htm" target="bodyframe">Создание секции [Code]</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptevents.htm" target="bodyframe">Функции событий</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptconstants.htm" target="bodyframe">Сценарные константы</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptcheck.htm" target="bodyframe">Параметр "Check"</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptinstall.htm" target="bodyframe">Параметры "BeforeInstall" и "AfterInstall"</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptuninstall.htm" target="bodyframe">Код деинсталляции</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptexamples.htm" target="bodyframe">Примеры</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptfunctions.htm" target="bodyframe">Поддерживаемые функции</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptclasses.htm" target="bodyframe">Поддерживаемые классы</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptpages.htm" target="bodyframe">Использование дополнительных страниц мастера</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptdll.htm" target="bodyframe">Использование DLL и .NET сборок</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptautomation.htm" target="bodyframe">Использование COM-объектов</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_scriptdebug.htm" target="bodyframe">Отладка</a></td></tr>
+  </table>
+  </td></tr>
+    <tr id="nodecaption_4"><td><img id="nodeimg_4" src="../images/contentsheadopen.png" alt="&gt;&nbsp;" onclick="toggle_node(4);" /></td><td><a href="javascript:toggle_node(4);">Прочая информация</a></td></tr>
+    <tr id="nodecontent_4"><td></td><td>
+  <table>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_donate.htm" target="bodyframe">Поддержка Inno Setup</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_unicode.htm" target="bodyframe">Unicode Inno Setup</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_admininstallmode.htm" target="bodyframe">Режим не административной установки</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_32vs64bitinstalls.htm" target="bodyframe">64-разрядный режим установки</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_64bitlimitations.htm" target="bodyframe">Ограничения в 64-разрядном режиме</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_wizardpages.htm" target="bodyframe">Страницы мастера</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_installorder.htm" target="bodyframe">Порядок установки</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_unsafefiles.htm" target="bodyframe">Небезопасные файлы</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_compilercmdline.htm" target="bodyframe">Командная строка компилятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupcmdline.htm" target="bodyframe">Параметры командной строки инсталлятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstcmdline.htm" target="bodyframe">Параметры командной строки деинсталлятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_setupexitcodes.htm" target="bodyframe">Коды выхода инсталлятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_uninstexitcodes.htm" target="bodyframe">Коды выхода деинсталлятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_compformshortcuts.htm" target="bodyframe">Клавиатурные команды IDE компилятора</a></td></tr>
+    <tr><td><img src="../images/cicon11.png" alt="" /></td><td><a href="topic_technotes.htm" target="bodyframe">Прочие замечания</a></td></tr>
+    <tr><td><img src="../images/cicon35.png" alt="" /></td><td><a href="topic_examples.htm" target="bodyframe">Примеры сценариев</a></td></tr>
+    <tr><td><img src="../images/contentstopic.png" alt="" /></td><td><a href="topic_faq.htm" target="bodyframe">Часто задаваемые вопросы</a></td></tr>
+    <tr><td><img src="../images/cicon40.png" alt="" /></td><td><a href="topic_credits.htm" target="bodyframe">Авторы</a></td></tr>
+  </table>
+  </td></tr>
 </table>
 </div>
 
 <div id="tabbody-index" style="display: none">
-<div style="margin-top: 1em; text-align: center; color: GrayText">Ожидайте...</div>
+  <div style="margin-top: 1em; text-align: center; color: GrayText">Ожидайте...</div>
 </div>
 
 <div id="tabbody-search" style="display: none; padding: 4px">
-<div style="margin-bottom: 0.5em">Что найти:</div>
-<div id="searchcont"><div style="margin-top: 1em; text-align: center; color: GrayText">Функция поиска в разработке...</div></div>
+  <div id="searchframe" style="overflow-y: hidden;"> 
+    <iframe id="hmnavigation" src="contents_search.htm" seamless="seamless" title="Поиск" frameborder="0">
+    Ваш браузер не поддерживает плавающие фреймы!
+    </iframe>
+  </div>
 </div>
-
 </div>
-
 </body>
 </html>
