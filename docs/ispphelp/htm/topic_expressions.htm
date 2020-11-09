@@ -1,13 +1,19 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Expression Syntax</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: Синтаксис выражений</h1>
@@ -46,7 +52,7 @@
           часть выражения снова в кавычках (например, цитата), то символы этих
           кавычек необходимо экранировать (это зависит от текущего состояния
           параметра  "<i>Pascal</i>-стиль строковых литералов" для
-          синтаксического анализа строк сценария, см. директиву <tt><a class="new"
+          синтаксического анализа строк сценария, см. директиву <tt><a class="new"
               href="topic_pragma.htm">pragma</a></tt>). </li>
       </ul>
       <br />
@@ -78,7 +84,7 @@
           / </span>) и звездочку (<span style="white-space: nowrap; font-weight: bold; color: #006600;">
           * </span>) можно внедрить комментарий в выражение:</p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl slc">/* это комментарий */</span> + Var2 <span
+        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl slc">/* это комментарий */</span> + Var2 <span
 class="hl slc">/* и это тоже комментарий */</span>
 </pre> </div>
       <p>Комментарии могут быть размещены в конце выражения с использованием
@@ -86,30 +92,30 @@ class="hl slc">/* и это тоже комментарий */</span>
         или двойной косой черты (<span style="white-space: nowrap;"> <strong style="color: #006600;">//</strong> </span>).
         Например:</p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
 class="hl slc">; это комментарий</span>
-<span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+<span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
 class="hl slc">// это тоже комментарий</span> 
 </pre> </div>
       <p>Если текст комментария очень большой, то используя символ разделения
         строк — обратная косая черта (<span style="white-space: nowrap;"> <b>\</b>
         </span>) —  его можно разбить на несколько строк. Например:</p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
 class="hl slc">; здесь находится текст</span> \
 <span class="hl slc">очень длинного комментария :)</span>
 </pre> </div>
       <p>Комментарии также можно разместить в любом месте с начала строки,
-        используя двойную косую черту (<span style="white-space: nowrap;"> <strong
+        используя двойную косую черту (<span style="white-space: nowrap;"> <strong
             style="color: #006600;">//</strong> </span>). Например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Это комментарий</span>
 </pre> </div>
-      <p>Все комментарии, показанные выше, не включаются в данные <a href="topic_translation.htm"
+      <p>Все комментарии, показанные выше, не включаются в данные <a href="topic_translation.htm"
           class="new1">вывода препроцессора</a>, в отличие от комментариев (не
         ISPP), использующих точку с запятой в начале строки. Например:</p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+        <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
 class="hl slc">; этого комментария на выходе препроцессора НЕ будет</span>
 <span class="hl slc">// Этого комментария тоже НЕ будет</span>
 <span class="hl slc">; А вот этот комментарий БУДЕТ</span>
@@ -120,21 +126,21 @@ class="hl slc">; этого комментария на выходе препр�
         вызове функций, определённых пользователем. Например, выполним
         объявление функции <tt>MyFunction</tt>:</p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#define</span> MyFunction<span class="hl opt">(</span><span
-class="hl kwd">int</span> A <span class="hl opt">=</span> <span class="hl num">2</span><span
-class="hl opt">,</span> <span class="hl kwd">int</span> B <span class="hl opt">=</span> <span
+        <pre class="hl"><span class="hl kwf">#define</span> MyFunction<span class="hl opt">(</span><span
+class="hl kwd">int</span> A <span class="hl opt">=</span> <span class="hl num">2</span><span
+class="hl opt">,</span> <span class="hl kwd">int</span> B <span class="hl opt">=</span> <span
 class="hl num">2</span><span class="hl opt">)</span> A <span class="hl opt">+</span> B
 </pre> </div>
       <p>Теперь выполним вызов этой функции и укажем имена аргументов:<br />
       </p>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>A <span
-class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">,</span> B <span
+        <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>A <span
+class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">,</span> B <span
 class="hl opt">=</span> <span class="hl num">10</span><span class="hl opt">)</span>
-<span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
+<span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
 class="hl opt">=</span> <span class="hl num">3</span><span class="hl opt">)</span>
-<span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
-class="hl opt">=</span> <span class="hl num">10</span><span class="hl opt">,</span> A <span
+<span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
+class="hl opt">=</span> <span class="hl num">10</span><span class="hl opt">,</span> A <span
 class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">)</span>
 </pre> </div>
       <br />
@@ -147,8 +153,8 @@ class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">)</spa
           скобки:<br />
           <br />
           <div class="examplebox">
-            <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span>MyVar <span
-class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
+            <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span>MyVar <span
+class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
 class="hl num">10</span><span class="hl opt">)</span>
 </pre> </div>
           <br />
@@ -162,9 +168,9 @@ class="hl num">10</span><span class="hl opt">)</span>
           Например:<br />
           <br />
           <div class="examplebox">
-            <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span><span
-class="hl kwd">SaveToFile</span><span class="hl opt">(</span><span class="hl str">"script.txt"</span><span
-class="hl opt">),</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
+            <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span><span
+class="hl kwd">SaveToFile</span><span class="hl opt">(</span><span class="hl str">"script.txt"</span><span
+class="hl opt">),</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
 class="hl num">10</span><span class="hl opt">)</span>
 </pre> </div>
           <br />

@@ -1,25 +1,31 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Find</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: Find</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Прототип функции</h2>
-      <p><tt><b>int</b> Find(<b>int</b> 1, <b>str</b> 2, <b>int</b>? 3, <b>str</b>? 4, <b>int</b>?
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX"><tt><b>int</b> Find(<b>int</b> 1, <b>str</b> 2, <b>int</b>? 3, <b>str</b>? 4, <b>int</b>?
           5, <b>str</b>? 6, <b>int</b>? 7)<br />
         </tt></p>
       <br />
       <h2 class="heading">Описание</h2>
-      <p>Функция <tt>Find</tt> предназначена для использования совместно с директивой <tt><a class="new"
-            href="topic_insert.htm">insert</a></tt>. Возвращает индекс строки в данных <a class="new1"
+      <p>Функция <tt>Find</tt> предназначена для использования совместно с директивой <tt><a class="new"
+            href="topic_insert.htm">insert</a></tt>. Возвращает индекс строки в данных <a class="new1"
           href="topic_translation.htm">вывода препроцессора</a> в зависимости от указанных критериев
         поиска.</p>
       <p><i>Первый аргумент</i> определяет индекс строки, с которой необходимо начать поиск. Обычно
@@ -33,7 +39,7 @@
         подстрока, то по умолчанию считается, что используются флаги <tt style="font-weight: bold; color: #663300;">FIND_MATCH
           | FIND_AND</tt> (т.е. равны 0).</p>
       <p>Значения для третьего, пятого и седьмого аргументов функции <tt>Find</tt> объявлены в файле
-        <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>. См. раздел <a class="new1"
+        <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>. См. раздел <a class="new1"
           href="topic_find-flags.htm">Флаги функции Find</a> с описанием значений каждого флага. </p>
       <br />
       <h2 class="heading">См. также</h2>

@@ -1,19 +1,25 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: GetVersionNumbersString</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: GetVersionNumbersString</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Прототип функции</h2>
-      <p><tt><b>str</b> GetVersionNumbersString(<b>str</b> Filename)<br />
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX"><tt><b>str</b> GetVersionNumbersString(<b>str</b> Filename)<br />
         </tt></p>
       <br />
       <h2 class="heading">Описание</h2>
@@ -23,7 +29,7 @@
         содержит действительной информации о версии, то функция возвращает пустую строку.</p>
       <p>Ещё имеется функция <a href="topic_getstringfileinfo.htm">GetStringFileInfo</a>, которая
         также позволяет получить информацию о версии файла (если в качестве второго аргумента
-        использовать <span style="font-style: italic; color: #7b7b00;">FileVersion</span> или <span
+        использовать <span style="font-style: italic; color: #7b7b00;">FileVersion</span> или <span
           style="font-style: italic; color: #7b7b00;">ProductVersion</span>). Разница между этими
         двумя функциями заключается в том, что <tt>GetVersionNumbersString</tt> получает данные о
         версии из блока ресурсов, а <tt>GetStringFileInfo</tt> извлекает строку из определённого

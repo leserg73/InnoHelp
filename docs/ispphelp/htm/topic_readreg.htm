@@ -1,26 +1,32 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: ReadReg</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: ReadReg</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Прототип функции</h2>
-      <p><tt><b>any</b> ReadReg(<b>int</b> 1, <b>str</b> 2, <b>str</b>? 3, <b>any</b>? 4)<br />
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX"><tt><b>any</b> ReadReg(<b>int</b> 1, <b>str</b> 2, <b>str</b>? 3, <b>any</b>? 4)<br />
         </tt></p>
       <br />
       <h2 class="heading">Описание</h2>
       <p>Выполняет чтение значения из указанного ключа реестра Windows (32-бит или 64-бит). <i>Первый
           аргумент</i> должен быть именем раздела реестра, например, <span style="color: #663333;">HKEY_LOCAL_MACHINE
           (32-бит)</span> или <span style="color: #663333;">HKEY_LOCAL_MACHINE_64 (64-бит)</span>.
-        Константы, используемые этим параметром, объявлены в файле <a href="topic_builtinsiss.htm"
+        Константы, используемые этим параметром, объявлены в файле <a href="topic_builtinsiss.htm"
           class="new1">ISPPBuiltins.iss</a>. <i>Второй аргумент</i> – это имя подраздела реестра. <i>Третий
           аргумент</i> является ключом реестра, значение которого необходимо получить. Последний
         аргумент (<i>4</i>) является необязательным и может быть использован для установки значения,

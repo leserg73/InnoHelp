@@ -1,19 +1,25 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: FindFirst</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
-    <script src="../js/topic.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: FindFirst</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Прототип функции</h2>
-      <p><tt><b>int</b> FindFirst(<b>str</b>, <b>int</b>)<br />
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX"><tt><b>int</b> FindFirst(<b>str</b>, <b>int</b>)<br />
         </tt></p>
       <br />
       <h2 class="heading">Описание</h2>
@@ -33,52 +39,44 @@
       <table>
         <tbody>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt style="font-weight: bold;">faReadOnly</tt>
-            </td>
+            <td class="cellleft"><tt style="font-weight: bold;">faReadOnly</tt></td>
             <td class="cellright">файлы только для чтения</td>
             <td class="cellright">0x00000001</td>
           </tr>
-          <tr>
-            <td class="cellleft"><tt style="font-weight: bold;">faHidden</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">скрытые
-              файлы</td>
-            <td class="cellright" style="background-color: #f8f8f8;">0x00000002</td>
+          <tr style="background-color: #eeeeee;">
+            <td class="cellleft"><tt style="font-weight: bold;">faHidden</tt></td>
+            <td class="cellright">скрытые файлы</td>
+            <td class="cellright">0x00000002</td>
           </tr>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt style="font-weight: bold;">faSysFile</tt>
-            </td>
+            <td class="cellleft"><tt style="font-weight: bold;">faSysFile</tt></td>
             <td class="cellright">системные файлы</td>
             <td class="cellright">0x00000004</td>
           </tr>
-          <tr>
-            <td class="cellleft"><tt style="font-weight: bold;">faVolumeID</tt>
-            </td>
-            <td class="cellright" style="background-color: #f8f8f8;">файлы
-              ID-тома</td>
-            <td class="cellright" style="background-color: #f8f8f8;">0x00000008</td>
+          <tr style="background-color: #eeeeee;">
+            <td class="cellleft"><tt style="font-weight: bold;">faVolumeID</tt></td>
+            <td class="cellright">файлы ID-тома</td>
+            <td class="cellright">0x00000008</td>
           </tr>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt style="font-weight: bold;">faDirectory</tt>
-            </td>
+            <td class="cellleft"><tt style="font-weight: bold;">faDirectory</tt></td>
             <td class="cellright">файлы каталога</td>
             <td class="cellright">0x00000010</td>
           </tr>
-          <tr>
-            <td class="cellleft"><tt style="font-weight: bold;">faArchive</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">архивные
-              файлы</td>
-            <td class="cellright" style="background-color: #f8f8f8;">0x00000020</td>
+          <tr style="background-color: #eeeeee;">
+            <td class="cellleft"><tt style="font-weight: bold;">faArchive</tt></td>
+            <td class="cellright">архивные файлы</td>
+            <td class="cellright">0x00000020</td>
           </tr>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt style="font-weight: bold;">faSymLink</tt>
-            </td>
+            <td class="cellleft"><tt style="font-weight: bold;">faSymLink</tt></td>
             <td class="cellright">файлы символьных ссылок</td>
             <td class="cellright">0x00000040</td>
           </tr>
-          <tr>
-            <td class="cellleft"><tt style="font-weight: bold;">faAnyFile</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">любые файлы</td>
-            <td class="cellright" style="background-color: #f8f8f8;">0x0000003F</td>
+          <tr style="background-color: #eeeeee;">
+            <td class="cellleft"><tt style="font-weight: bold;">faAnyFile</tt></td>
+            <td class="cellright">любые файлы</td>
+            <td class="cellright">0x0000003F</td>
           </tr>
         </tbody>
       </table>
@@ -95,36 +93,36 @@
 <span class="hl kwf">#define</span> Mask <span class="hl str">"*.pas"</span>
 
 <span class="hl kwf">#sub</span> ProcessFoundFile
-  <span class="hl kwf">#define</span> FileName <span class="hl kwd">FindGetFileName</span><span
+  <span class="hl kwf">#define</span> FileName <span class="hl kwd">FindGetFileName</span><span
 class="hl opt">(</span>FindHandle<span class="hl opt">)</span>
-  <span class="hl kwf">#if</span> <span class="hl kwd">LowerCase</span><span class="hl opt">(</span><span
-class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
-class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">4</span><span
+  <span class="hl kwf">#if</span> <span class="hl kwd">LowerCase</span><span class="hl opt">(</span><span
+class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
+class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">4</span><span
 class="hl opt">)) ==</span> <span class="hl str">"ispp"</span>
-    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>\ispp
   <span class="hl kwf">#else</span>
-    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
   <span class="hl kwf">#endif</span>
 <span class="hl kwf">#endsub</span>
 
-<span class="hl kwf">#for</span> {FindHandle <span class="hl opt">=</span> FindResult <span
-class="hl opt">=</span> <span class="hl kwd">FindFirst</span><span class="hl opt">(</span>Mask<span
-class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">);</span> FindResult<span
+<span class="hl kwf">#for</span> {FindHandle <span class="hl opt">=</span> FindResult <span
+class="hl opt">=</span> <span class="hl kwd">FindFirst</span><span class="hl opt">(</span>Mask<span
+class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">);</span> FindResult<span
 class="hl opt">;</span> \
-      FindResult <span class="hl opt">=</span> <span class="hl kwd">FindNext</span><span
+      FindResult <span class="hl opt">=</span> <span class="hl kwd">FindNext</span><span
 class="hl opt">(</span>FindHandle<span class="hl opt">)</span>} ProcessFoundFile
 <span class="hl kwf">#if</span> FindHandle
-  <span class="hl kwf">#expr</span> <span class="hl kwd">FindClose</span><span class="hl opt">(</span>FindHandle<span
+  <span class="hl kwf">#expr</span> <span class="hl kwd">FindClose</span><span class="hl opt">(</span>FindHandle<span
 class="hl opt">)</span>
 <span class="hl kwf">#endif</span>
 </pre> </div>
       <br />
       <h2 class="heading">См. также</h2>
-      <p><tt><a href="topic_define.htm" class="new">define</a></tt>, <tt><a href="topic_sub.htm"
+      <p><tt><a href="topic_define.htm" class="new">define</a></tt>, <tt><a href="topic_sub.htm"
             class="new">sub</a></tt>, <tt><a href="topic_if.htm" class="new">if</a></tt>.</p>
     </div>
   </body>

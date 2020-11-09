@@ -1,32 +1,39 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #expr</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
-    <script src="../js/topic.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: #expr</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Синтаксис</h2>
+      <h2 class="heading sintax">Синтаксис</h2>
+      <div  class="sintax1 notopmarginX">
       <table>
         <tbody>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><i>expr-directive:</i>
+            <td class="cellleft" style="width: 120px;"><i>expr-directive:</i>
             </td>
-            <td class="cellright"> (<b>expr</b> | <b>!</b>) &lt;expr&gt; </td>
+            <td class="cellright">(<b>expr</b> | <b>!</b>) &lt;expr&gt; </td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
       <br />
       <h2 class="heading">Описание</h2>
       <p>Выполняет указанное выражение, игнорируя полученный результат. Эта
         директива подобна директиве <tt><a href="topic_emit.htm" class="new">emit</a></tt>
-        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
+        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
           class="new1">выход препроцессора</a>.</p>
       <p>Эта директива предназначена для использования с теми функциями, которые
         производят побочные эффекты и не возвращают какие-либо существенные
@@ -34,14 +41,14 @@
       <br />
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
 class="hl opt">) + (</span><span class="hl str">"Preprocessed.iss"</span><span class="hl opt">),</span> \
-      <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
-class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
+      <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
+class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
 class="hl opt">,</span> \
-      <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
-class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
+      <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
+class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
 class="hl str">"Preprocessed.iss"</span><span class="hl opt">)</span>
 </pre> </div>
       <br />

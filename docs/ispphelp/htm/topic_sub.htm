@@ -1,46 +1,53 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #sub, #endsub</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
-    <script src="../js/topic.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: #sub, #endsub</h1>
     <div class="topicbody">
-      <h2 class="heading notopmargin">Синтаксис</h2>
+      <h2 class="heading sintax">Синтаксис</h2>
+      <div class="sintax1 notopmarginX">
       <table>
         <tbody>
           <tr>
-            <td class="cellleft" style="width: 110px; background-color: #eeeeee;"><i>sub-directive:</i>
+            <td class="cellleft" style="width: 120px;"><i>sub-directive:</i>
             </td>
-            <td class="cellright"> <b>sub</b> &lt;ident&gt; </td>
+            <td class="cellright"><b>sub</b> &lt;ident&gt; </td>
           </tr>
         </tbody>
       </table>
       <table>
         <tbody>
           <tr>
-            <td class="cellleft" style="width: 110px;"><i>endsub-directive:</i>
+            <td class="cellleft" style="width: 120px;"><i>endsub-directive:</i>
             </td>
-            <td style="background-color: #f8f8f8;" class="cellright"> <b>endsub</b>
+            <td class="cellright"><b>endsub</b>
             </td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
       <br />
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt style="font-weight: bold; color: #990000;">sub</tt> и <tt
+      <p>Директивы <tt style="font-weight: bold; color: #990000;">sub</tt> и <tt
           style="font-weight: bold; color: #990000;">endsub</tt> используются
         для объявления пользовательских процедур, которые являются частью
         сценария и могут быть включены единожды или несколько раз. Вызов
         процедуры может быть осуществлен как непосредственно из внешнего файла,
         так и из выражений. Только обратите внимание, настоятельно не
-        рекомендуется вызывать процедуры, которые выдают несколько строк на <a
+        рекомендуется вызывать процедуры, которые выдают несколько строк на <a
           class="new1" href="topic_translation.htm">выход препроцессора</a> из
         составных выражений или директив.</p>
       <p>Вызов процедуры выполняется простым указанием её идентификатора, с
@@ -52,15 +59,15 @@
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#sub</span> AddFile
-  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span
-class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> <span
+  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span
+class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> <span
 class="hl num">1</span><span class="hl opt">) ==</span> <span class="hl str">"A"</span>
-    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>\A
   <span class="hl kwf">#else</span>
-    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
   <span class="hl kwf">#endif</span>
 <span class="hl kwf">#endsub</span>
@@ -70,7 +77,7 @@ class="hl kwc">{app}</span>
       <p><a href="topic_findfirst.htm">FindFirst</a>, <a href="topic_fileread.htm">FileRead</a>.</p>
       <br />
       <h2 class="heading">См. также</h2>
-      <p><a class="new1" href="topic_macros.htm">Пользовательские функции</a>, <tt><a
+      <p><a class="new1" href="topic_macros.htm">Пользовательские функции</a>, <tt><a
             class="new" href="topic_if.htm">if</a></tt>, <tt><a class="new" href="topic_emit.htm">emit</a></tt>.
       </p>
     </div>

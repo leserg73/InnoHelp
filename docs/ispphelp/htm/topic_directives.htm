@@ -1,13 +1,19 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
-    <meta name="description" content="Перевод на русский: Сергей Леонов (aka Leserg)" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Directives</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link type="text/css" href="../css/styles.css" rel="stylesheet" />
-    <script src="../js/topic.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: Поддерживаемые директивы</h1>
@@ -25,7 +31,7 @@
         установлена ранее. В этом случае директива записывается между начальными
         символами <tt style="font-weight: bold; color: #993399;">{#</tt>
         (открывающая фигурная скобка плюс решётка) и завершающим символом <tt style="font-weight: bold; color: #993399;">}</tt>
-        (закрывающая фигурная скобка). Например, присвоим параметру <tt style="color: #3333ff;">AppName</tt>
+        (закрывающая фигурная скобка). Например, присвоим директиве IS <tt style="color: #3333ff;">AppName</tt>
         значение ранее установленной переменной <tt>MyAppName</tt> (см. пример
         выше):</p>
       <div class="examplebox">
@@ -34,7 +40,7 @@
 </pre> </div>
       <p>При выполнении сценария вместо выражения <tt>{#MyAppName}</tt> будет
         подставлено значение <tt><i>"My Program"</i></tt> из переменной <tt>MyAppName</tt>.
-        Таким образом, параметру <tt><span style="color: #3333ff;">AppName</span></tt>
+        Таким образом, директиве IS <tt><span style="color: #3333ff;">AppName</span></tt>
         будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
       <p>Как видно из приведенного выше примера, не обязательно указывать имя
         директивы <tt><a class="new" href="topic_emit.htm">emit</a></tt>, если
@@ -45,34 +51,34 @@
       <table>
         <tbody>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt>()</tt>
+            <td class="cellleft"><tt>()</tt>
             </td>
             <td class="cellright">Группа объектов.</td>
           </tr>
-          <tr>
+          <tr style="background-color: #eeeeee;">
             <td class="cellleft"><tt>[]</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">Вспомогательный
+            <td class="cellright">Вспомогательный
               объект или группа объектов.</td>
           </tr>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt>|</tt> </td>
+            <td class="cellleft"><tt>|</tt> </td>
             <td class="cellright">Взаимоисключающие объекты.</td>
           </tr>
-          <tr>
+          <tr style="background-color: #eeeeee;">
             <td class="cellleft"><tt>...</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">Предыдущий
+            <td class="cellright">Предыдущий
               объект или группа объектов, которые могут быть повторены.</td>
           </tr>
           <tr>
-            <td class="cellleft" style="background-color: #eeeeee;"><tt><b>token</b></tt>
+            <td class="cellleft"><tt><b>token</b></tt>
             </td>
             <td class="cellright">Зарезервированное слово или символ(ы).
               Является терминальным объектом и должен вводиться так, как
               представлен, без каких-либо изменений или модификаций.</td>
           </tr>
-          <tr>
+          <tr style="background-color: #eeeeee;">
             <td class="cellleft"><tt>&lt;token&gt;</tt> </td>
-            <td class="cellright" style="background-color: #f8f8f8;">Нетерминальный
+            <td class="cellright">Нетерминальный
               объект. Может представлять собой выражение, формулу, имя
               идентификатора, переменную.</td>
           </tr>
@@ -90,8 +96,7 @@
         <li><a class="new" href="topic_file.htm">#file</a></li>
         <li><a class="new" href="topic_for.htm">#for</a></li>
         <li><a class="new" href="topic_if.htm">#if, #elif, #else, #endif</a></li>
-        <li><a class="new" href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist,
-            #ifnexist</a></li>
+        <li><a class="new" href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist, #ifnexist</a></li>
         <li><a class="new" href="topic_include.htm">#include</a></li>
         <li><a class="new" href="topic_insert.htm">#insert</a></li>
         <li><a class="new" href="topic_pragma.htm">#pragma</a></li>

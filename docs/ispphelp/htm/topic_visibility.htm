@@ -1,13 +1,19 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
-    <meta content="IE=8" http-equiv="X-UA-Compatible" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Visibility of Identifiers</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
   </head>
   <body>
     <h1 class="topicheading">Inno Setup Preprocessor: Область видимости
@@ -28,15 +34,15 @@
         Посмотрите на следующие примеры:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">; Объявляем общедоступную переменную с именем MyVar и присваиваем ей значение 12</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">public</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">public</span> MyVar <span
 class="hl num">12</span>
 
 <span class="hl slc">; Объявляем защищенную переменную с именем MyVar и присваиваем ей значение 13</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">protected</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">protected</span> MyVar <span
 class="hl num">13</span>
 
 <span class="hl slc">; Объявляем закрытую переменную с именем MyVar и присваиваем ей значение 14</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">private</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">private</span> MyVar <span
 class="hl num">14</span>
 </pre> </div>
       <p>В приведенном выше примере, ни одно из последующих объявлений
@@ -47,7 +53,7 @@ class="hl num">14</span>
         доступны из любого места после того, как были объявлены.</p>
       <p><b>Защищенные</b> (<i>protected</i>) – это переменные, которые доступны
         только в том файле, в котором они были объявлены, а также во всех
-        файлах, подключенных при помощи директивы <tt><a href="topic_include.htm"
+        файлах, подключенных при помощи директивы <tt><a href="topic_include.htm"
             class="new">include</a></tt> или <tt><a href="topic_file.htm" class="new">file</a></tt>.
         В большинстве случаев защищенные переменные можно воспринимать как
         общедоступные, определение которых автоматически отменяется после
@@ -79,7 +85,7 @@ class="hl num">14</span>
         (<i>private</i>) переменной.</p>
       <p>В каждом файле можно задать область видимости переменных по умолчанию,
         которая будет использована для тех переменных, у которых она явно не
-        указана. Это делается при помощи директивы <tt><a href="topic_define.htm"
+        указана. Это делается при помощи директивы <tt><a href="topic_define.htm"
             class="new">define</a></tt>, например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> <span class="hl kwd">protected</span>
