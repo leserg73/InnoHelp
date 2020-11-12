@@ -39,14 +39,14 @@
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Files]</span>
 <span class="hl slc">; В указанном выражении вместо переменной MyDestDir подставляется её значение.</span>
-<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: {'</span> <span
-class="hl opt">+</span> MyDestDir <span class="hl opt">+</span> <span class="hl str">'}'</span>
+<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: '</span> <span
+class="hl opt">+</span> MyDestDir
 
 <span class="hl slc">; Для параметра DestDir выполняется подстановка значения из переменной MyDestDir</span>
 <span class="hl slc">; (имя директивы emit не указано, т.к. она используется встроенным методом).</span>
 <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl str">"file2.ext"</span><span
 class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-class="hl kwc">{{#MyDestDir}}</span>
+class="hl kwc">{#MyDestDir}</span>
 
 <span class="hl slc">; Выполняется чтение текущего значения пользовательской функции</span>
 <span class="hl kwf">#emit</span> GenerateVisualCppFilesEntries
