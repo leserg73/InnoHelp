@@ -10,6 +10,7 @@
 
   var contentsFrameLoaded = false;
   var bodyFrameLoaded = false;
+  var footerFrameLoaded = false;
 
   // When this page is first loaded, trigger_sync_contents() isn't called
   // until both contentsframe.onload and bodyframe.onload have fired
@@ -34,9 +35,15 @@
     if (bodyFrameLoaded) trigger_sync_contents();
   }
 
+  function contentsfooter_loaded()
+  {
+    footerFrameLoaded = true;
+  }
+
   -->
   </script>
 </head>
+<frameset rows="*, 26">
 <frameset cols="286, *">
   <frame name="contentsframe" onload="contentsframe_loaded();" src=
   "htm/contents.htm">
@@ -48,5 +55,10 @@
       <p><a href="htm/contents.htm">Перейти к оглавлению справки</a></p>
     </body>
   </noframes>
+</frameset>
+  <frameset>
+    <frame name="footerframe" onload="contentsfooter_loaded();" src=
+  "htm/contents_footer.htm" scrolling="no" noresize>
+  </frameset>
 </frameset>
 </html>
