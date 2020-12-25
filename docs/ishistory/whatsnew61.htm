@@ -29,11 +29,27 @@
       на рассылку о новых выпусках Inno Setup.</p>
     <p><a name="6.1.3"></a><span class="ver">6.1.3-dev </span><span class="date">(?)</span></p>
     <ul>
-      <li>Изменения в Pascal Scripting: Добавлены новые свойства <tt>ItemFontStyle</tt> и <tt>SubItemFontStyle</tt> для класса <tt>TNewCheckListBox</tt>. 
-        Применение этих свойств смотрите в примере сценария <i><a href="https://jrsoftware.github.io/issrc/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
-      <li>Изменения в компиляторе Inno: <i>Исправление:</i> Список автозавершения для функций события показывал некоторые процедуры в виде функций.</li>
+      <li>Изменения в компиляторе Inno:
+      <ul>
+        <li><i>Исправление:</i> Список автозавершения для функций события показывал
+          некоторые процедуры в виде функций.</li>
+      </ul>
+      </li>
+      <li>Изменения в Pascal Scripting:
+      <ul>
+        <li>Добавлены новые свойства <tt>ItemFontStyle</tt> и <tt>SubItemFontStyle</tt>
+         для класса <tt>TNewCheckListBox</tt>. Применение этих свойств смотрите в
+         примере сценария <i><a href="https://jrsoftware.github.io/issrc/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+        <li>Добавлены новые функции <tt>IsMsiProductInstalled</tt> и <tt>StrToVersion</tt>.</li>
+        <li>Добавлено новое свойство <tt>AbortedByUser</tt> для класса <tt>TDownloadWizardPage</tt>.</li>
+        <li><i>Исправление:</i> Индикатор прогресса на странице <tt>CreateDownloadPage</tt>
+         теперь поддерживает файлы размером более 2 Гб.</li>
+      </ul>
+      </li>
+      <li>Изменения в ISPP: Добавлена новая функция <tt>StrToVersion</tt>.</li>
+      <li>Незначительные исправления.</li>
     </ul>
-    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: Благодарим <b>Sergii Leonov</b> за вклад в развитие Inno Setup.</p>
+    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: Благодарим <b>Sergii Leonov</b> и <b>Dom Gries</b> за вклад в развитие Inno Setup.</p>
     <p><a name="6.1.2"></a><span class="ver">6.1.2 </span><span class="date">(2020-11-15)</span></p>
     <ul>
       <li>Изменения в компиляторе Inno: В меню "<i>Файл</i>"
