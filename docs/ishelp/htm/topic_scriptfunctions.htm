@@ -145,6 +145,8 @@
           MinVersion, OnlyBelowVersion: String): Boolean;</tt><br />
         <tt>function <a href="topic_isxfunc_isdotnetinstalled.htm">IsDotNetInstalled</a>(const
           MinVersion: TDotNetVersion; const MinServicePack: Cardinal): Boolean;</tt><br />
+        <tt>function <a href="topic_isxfunc_ismsiproductinstalled.htm">IsMsiProductInstalled</a>(const
+          UpgradeCode: String; const PackedMinVersion: Int64): Boolean;</tt><br />
         <br />
         <tt>function <a href="topic_isxfunc_getenv.htm">GetEnv</a>(const
           EnvVar: String): String;</tt><br />
@@ -537,6 +539,8 @@
         <br />
         <tt>function <a href="topic_isxfunc_versiontostr.htm">VersionToStr</a>(const
           Version: Int64): String; </tt><br />
+        <tt>function <a href="topic_isxfunc_strtoversion.htm">StrToVersion</a>(const
+          Version: String; var Version: Int64): Boolean;</tt><br />
       </p>
       <p>
         <br />

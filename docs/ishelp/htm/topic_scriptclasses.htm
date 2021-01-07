@@ -704,10 +704,12 @@
           read write;<br />
             property ItemCaption[Index: Integer]: String; read write;<br />
             property ItemEnabled[Index: Integer]: Boolean; read write;<br />
+            property ItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>; read write;<br />
             property ItemLevel[Index: Integer]: Byte; read;<br />
             property ItemObject[Index: Integer]: <a href="#TObject">TObject</a>;
           read write;<br />
             property ItemSubItem[Index: Integer]: String; read write;<br />
+            property SubItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>; read write;<br />
             property Flat: Boolean; read write;<br />
             property MinItemHeight: Integer; read write;<br />
             property Offset: Integer; read write;<br />
@@ -958,6 +960,7 @@
           <br />
           <a name="TDownloadWizardPage">TDownloadWizardPage</a> = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
             property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
+            property AbortedByUser: Boolean; read;<br />
             procedure Add(const Url, BaseName, RequiredSHA256OfFile: String);<br />
             procedure Clear;<br />
             function Download: Int64;<br />

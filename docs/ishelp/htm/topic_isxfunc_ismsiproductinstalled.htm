@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: IsMsiProductInstalled</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: IsMsiProductInstalled</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function IsMsiProductInstalled(const UpgradeCode: String; const PackedMinVersion: Int64): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Возвращает значение <tt>True</tt>, если продукт MSI с
+        указанными значениями <i>UpgradeCode</i> и <i>PackedMinVersion</i> установлен.</div>
+      <br />
+      <div class="absaz">Если установлено несколько продуктов с указанным <i>UpgradeCode</i>,
+        то проверяется версия только первого продукта, возвращаемого системой.</div>
+      <br />
+      <div class="absaz">В случае ошибки будет вызвано исключение.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span class="hl kwd">InitializeSetup</span>: Boolean;
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Возвращает True, если библиотека Visual C++ 2013 Redistributable (x64) установлена.</span>
+  Result := IsMsiProductInstalled(<span class="hl str">&#39;{20400CF0-DE7C-327E-9AE4-F0F38D9085F8}&#39;</span>, PackVersionComponents(<span class="hl num">12</span>, <span class="hl num">0</span>, <span class="hl num">0</span>, <span class="hl num">0</span>));
+  <span class="hl slc">// В противном случае выводим сообщение об ошибке.</span>
+  <span class="hl kwb">if not</span> Result <span class="hl kwb">then</span>
+    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), [<span class="hl str">&#39;Visual C++ 2013 Redistributable (x64)&#39;</span>, <span class="hl str">&#39;12.0&#39;</span>]), <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span class="hl kwe">IDOK</span>);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>
