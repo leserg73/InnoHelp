@@ -155,6 +155,7 @@
 "pragma:spansymbol",
 "str:Str",
 "stringchange:StringChange",
+"strtoversion:StrToVersion",
 "expressions:Syntax",
 "sub:sub",
 "predefinedvars:Tab",
