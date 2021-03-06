@@ -958,6 +958,11 @@
             procedure Show;<br />
           end;<br />
           <br />
+          <a name="TOutputMarqueeProgressWizardPage">TOutputMarqueeProgressWizardPage</a> =
+          class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
+            procedure Animate;<br />
+          end;<br />
+          <br />
           <a name="TDownloadWizardPage">TDownloadWizardPage</a> = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
             property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
             property AbortedByUser: Boolean; read;<br />
@@ -1173,7 +1178,10 @@
             property CancelButton: <a href="#TNewButton">TNewButton</a>; read;<br />
           end;<br />
         </tt></p>
-      <p><b>См. также:</b><br />
+      <p>
+        <br />
+          <b>См. также:</b><br />
+        <br />
         <tt>function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const
           AfterID: Integer; const ACaption, ADescription, ASubCaption: String):
           TInputQueryWizardPage;</tt><br />
@@ -1194,6 +1202,8 @@
           const AMsg: AnsiString): TOutputMsgMemoWizardPage;</tt><br />
         <tt>function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const
           ACaption, ADescription: String): TOutputProgressWizardPage;</tt><br />
+        <tt>function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const
+          ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;</tt><br/>
         <tt>function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const
           AfterID: Integer; const ACaption, ADescription: String): TWizardPage;</tt><br />
         <tt>function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>:
