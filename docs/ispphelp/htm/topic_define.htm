@@ -149,10 +149,14 @@
 <span class="hl slc">; и присваиваем ей значение "My Program".</span>
 <span class="hl kwf">#define</span> MyAppName "My Program"
 
+<span class="hl slc">; Объявляем переменную с именем MyAppExe</span>
+<span class="hl slc">; и формируем имя исполняемого файла.</span>
+<span class="hl kwf">#define</span> MyAppExe MyAppName + ".exe"
+
 <span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
-<span class="hl slc">; которое вернёт функция GetFileVersion() (получение версии файла MyProg.exe).</span>
+<span class="hl slc">; которое вернёт функция GetFileVersion() (получение версии файла MyAppExe).</span>
 <span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a><span
-class="hl opt">(</span>"MyProg<span class="hl opt">.</span>exe"<span class="hl opt">)</span>
+class="hl opt">(MyAppExe)</span>
 
 <span class="hl slc">; Объявляем массив с именем MyArray и</span>
 <span class="hl slc">; индексу массива 0 присваиваем значение 15.</span>
