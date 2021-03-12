@@ -19,7 +19,7 @@
     <h1 class="topicheading">Формат сценария</h1>
     <div class="topicbody">
       <br />
-      <div class="absaz">Сценарии Inno Setup разделён на <i>секции</i>. Каждая
+      <div class="absaz">Сценарии Inno Setup структурно разделёны на <i>секции</i>. Каждая
         секция управляет отдельным аспектом установки. Секция начинается с
         указания её имени, которое заключается в квадратные скобки <tt>[]</tt>.
         Внутри каждой секции может быть любое количество <i>записей</i>.</div>
@@ -40,7 +40,7 @@ class="hl kwc">{app}</span>"</pre>
       <div class="absaz">В тексте сценария можно размещать "комментарии"
         (которые игнорируются компилятором), поместив точку с запятой в начале
         строки. Например:</div>
-      <pre class="indent examplebox"><span class="hl slc">; This is a comment. I could put reminders to myself here...</span></pre>
+      <pre class="indent examplebox"><span class="hl slc">; Это комментарий. Здесь можно дать пояснение команде или коду...</span></pre>
       <div class="absaz">Поддерживается C-подобная директива <a name="include"><tt>#include</tt></a>,
         которая позволяет вставить в сценарий строки из указанного файла в
         позицию директивы <tt>#include</tt>. Её синтаксис следующий:</div>
@@ -60,7 +60,11 @@ class="hl str">"filename.txt"</span></pre>
       <pre class="indent examplebox"><span class="hl kwf">#preproc</span> builtin
 <span class="hl kwf">#preproc</span> ispp</pre>
       <div class="absaz">По умолчанию сценарии используют ISPP, если он
-        доступен, а файлы .isl используют встроенный препроцессор.</div>
+        доступен, а файлы .isl использует встроенный препроцессор.</div>
+      <br />
+      <div class="absaz">Если используется Unicode, то файлы сценариев обязательно
+        должны быть в кодировке <b>UTF-8&nbsp;с&nbsp;BOM</b> (кодировка UTF-8 
+        <u>без</u>&nbsp;BOM обрабатывается компилятором и препроцессором как ANSI).</div>
       <br />
       <p>
         <b>См. также:</b><br />
