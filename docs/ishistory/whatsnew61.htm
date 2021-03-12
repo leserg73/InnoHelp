@@ -20,18 +20,33 @@
   <body>
     <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
       <span class="head2">История версий</span></div>
-    <p>Авторские права © 1997-2020 <a href="https://jrsoftware.org/">Jordan
-        Russell</a>. Все права защищены.<br />
-      Смежные авторские права © 2000-2020 Martijn Laan. Все права защищены.<br />
-      Условия распространения и использования смотрите в <a href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
+    <p>Авторские права © 1997-2021 <a href="https://jrsoftware.org/">Jordan
+       Russell</a>. Все права защищены.<br />
+       Смежные авторские права © 2000-2021 Martijn Laan. Все права защищены.<br />
+       Условия распространения и использования смотрите в <a
+       href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
     </p>
-    <p><b>Хотите получать уведомления об обновлениях?</b> <a href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
-      на рассылку о новых выпусках Inno Setup.</p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a
+       href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
+       на рассылку о новых выпусках Inno Setup.</p>
     <p><a name="6.1.3"></a><span class="ver">6.1.3-dev </span><span class="date">(?)</span></p>
+    <ul>
+      <li>Пакет установки QuickStart был удалён из-за отсутствия дополнений и загрузок.</li>
+      <li>Стандартный пакет установки Inno Setup теперь в автоматическом режиме всегда
+          будет пытаться загрузить модуль шифрования (файл ISCrypt.dll), если он не найден
+          (подобно тому, как это ранее делал пакет установки QuickStart). Чтобы отключить
+          эту функцию, используйте параметр командной строки /NODOWNLOAD=1.</li>
+    </ul>
+    </p>
+    <p>
     <ul>
       <li>Ссылки в документах RTF, отображаемых директивами <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> в секции  [Setup], теперь
           выполняются от имени исходного пользователя, если это возможно.</li>
+      <li>В секции [Setup] добавлены новые директивы <tt>MissingMessagesWarning</tt>
+          и <tt>NotRecognizedMessagesWarning</tt>, которые позволяют отключить
+          предупреждения компилятора об отсутствующих или неизвестных сообщениях
+          в языковых файлах.</li>
       <li>Параметр /LOG: Теперь действия деинсталлятора в файле отчёта регистрируются
           более подробно.</li>
       <li>Изменения в компиляторе Inno:
