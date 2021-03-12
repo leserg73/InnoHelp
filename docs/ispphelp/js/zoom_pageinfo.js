@@ -111,6 +111,7 @@
 	[0,0,0,0,null],
 	[0,0,0,0,null],
 	[0,0,0,0,null],
+	[0,0,0,0,null],
 	[0,0,0,0,null]];
 pagedata = [ ["../htm/topic_addbackslash.htm","Inno Setup Preprocessor: AddBackslash","Inno Setup Preprocessor: AddBackslash Прототип функции str AddBackslash(str S) Описание Выполняет добавление к строке символа \"\\\" (обратная косая ...",""],
 ["../htm/topic_append.htm","Inno Setup Preprocessor: #append","Inno Setup Preprocessor: #append Синтаксис append-directive: append Описание Выполняет сброс позиции (если она была предварительно изменена директ...",""],
@@ -213,8 +214,9 @@ pagedata = [ ["../htm/topic_addbackslash.htm","Inno Setup Preprocessor: AddBacks
 ["../htm/topic_setupsetting.htm","Inno Setup Preprocessor: SetupSetting","Inno Setup Preprocessor: SetupSetting Прототип функции str SetupSetting(str) Описание Выполняет синтаксический анализ секции [Setup] в данных теку...",""],
 ["../htm/topic_str.htm","Inno Setup Preprocessor: Str","Inno Setup Preprocessor: Str Прототип функции str Str(any) Описание Выполняет преобразование заданного выражения в строку (строковый тип данных). ...",""],
 ["../htm/topic_stringchange.htm","Inno Setup Preprocessor: StringChange","Inno Setup Preprocessor: StringChange Прототип функции str StringChange(str, str, str) Описание Возвращает копию строки (первый аргумент), в котор...",""],
+["../htm/topic_strtoversion.htm","Inno Setup Preprocessor: StrToVersion","Inno Setup Preprocessor: StrToVersion Прототип функции int StrToVersion(str Version) Описание Возвращает упакованную версию строкового значения, з...",""],
 ["../htm/topic_sub.htm","Inno Setup Preprocessor: #sub, #endsub","Inno Setup Preprocessor: #sub, #endsub Синтаксис sub-directive: sub endsub-directive: endsub Описание Директивы sub и endsub используются для объя...",""],
-["../htm/topic_translation.htm","Inno Setup Preprocessor: Preprocessor output","Inno Setup Preprocessor: Вывод препроцессора Вывод препроцессора – это предварительно обработанный кода сценария для последующей передаче его комп...",""],
+["../htm/topic_translation.htm","Inno Setup Preprocessor: Preprocessor output","Inno Setup Preprocessor: Вывод препроцессора Вывод препроцессора – это предварительно обработанный кода сценария, который передаётся компилятору I...",""],
 ["../htm/topic_trim.htm","Inno Setup Preprocessor: Trim","Inno Setup Preprocessor: Trim Прототип функции str Trim(str) Описание Возвращает копию заданной строки без начальных и конечных пробелов. ",""],
 ["../htm/topic_typeof.htm","Inno Setup Preprocessor: TypeOf","Inno Setup Preprocessor: TypeOf Прототип функции int TypeOf( ) int TypeOf Описание Возвращает одну из предопределённых констант TypeOf , объявленн...",""],
 ["../htm/topic_undef.htm","Inno Setup Preprocessor: #undef","Inno Setup Preprocessor: #undef Синтаксис undef-directive: (undef &#124; x) [private &#124; protected &#124; public] Описание Выполняет отмену (удаление) объявле...",""],

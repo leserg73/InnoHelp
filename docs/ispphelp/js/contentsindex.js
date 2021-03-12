@@ -148,6 +148,7 @@
 "samepackedversion:SamePackedVersion",
 "samestr:SameStr",
 "sametext:SameText",
+"savestringtofile:SaveStringToFile",
 "savetofile:SaveToFile",
 "setsetupsetting:SetSetupSetting",
 "setupsetting:SetupSetting",
