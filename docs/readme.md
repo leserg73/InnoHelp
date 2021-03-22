@@ -9,3 +9,7 @@
 
 - [6.0.0 - 6.0.5](https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm)
 - [6.1.0 - 6.1.3(?)](https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm)
+
+-----------------------
+
+Справка в формате [CHM](https://github.com/leserg73/InnoHelp/releases) для различных версий Inno Setup.
