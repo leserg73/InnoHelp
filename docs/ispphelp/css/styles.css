@@ -1,6 +1,6 @@
 /*
   Inno Setup
-  Copyright (C) 1997-2010 Jordan Russell
+  Copyright (C) 1997-2021 Jordan Russell
   Portions by Martijn Laan
   For conditions of distribution and use, see LICENSE.TXT.
 
@@ -274,9 +274,9 @@ li.compact {
 .topicheading {
 	background: ButtonFace;
 	color: WindowText;
-	padding: 5px 8px;
+	padding: 6px 8px;
 	margin: 0;
-	border-bottom: 1px solid ThreeDDarkShadow;
+	border-bottom: 1px solid #d0d0d0;
 	font-size: 120%;
 	font-weight: bold;
 	position: fixed;  
