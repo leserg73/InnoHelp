@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Pascal Scripting: InitializeBitmapImageFromIcon</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Pascal Scripting: InitializeBitmapImageFromIcon</h1>
+    <div class="topicbody">
+      <br />
+      <div class="prototip"><b>Прототип:</b></div>
+      <p class="prototip1"><tt>function InitializeBitmapImageFromIcon(const BitmapImage: TBitmapImage; 
+        const IconFilename: String; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;</tt></p>
+      <div><b>Описание:</b></div>
+      <br />
+      <div class="absaz">Выполняет инициализацию растрового изображения из указанного
+        файла значка, используя заданный цвет фона для прозрачных частей изображения.</div>
+      <br />
+      <div class="absaz">Растровое изображение уже должно быть масштабировано и тогда
+        функция загрузит наиболее подходящий под указанные размеры значок. После загрузки
+        функция установит размеры растрового изображения согласно размерам значка.</div>
+      <br />
+      <div class="absaz">Все значения в массиве должны быть отсортированы от наименьшего
+        размера к наибольшему.</div>
+      <br />
+      <div class="absaz">Функция возвращает значение <tt>True</tt>, если значок может
+        быть успешно загружен, в противном случае — <tt>False</tt>.</div>
+      <br />
+      <div><b>Пример:</b></div>
+      <pre class="indent examplebox"><span class="hl kwb">procedure</span> <span class="hl kwd">InitializeWizard</span>;
+<span class="hl kwb">var</span>
+  Page: TWizardPage;
+  BitmapImage: TBitmapImage;
+<span class="hl kwb">begin</span>
+  Page := CreateCustomPage(<span class="hl kwe">wpWelcome</span>, <span class="hl str">"Test"</span>, <span class="hl str">"Test"</span>);
+
+  BitmapImage := TBitmapImage.Create(Page);
+  
+  <span class="hl kwb">with</span> BitmapImage <span class="hl kwb">do begin</span>
+    Width := ScaleX(<span class="hl num">32</span>);
+    Height := ScaleY(<span class="hl num">32</span>);
+    Parent := Page.Surface;
+  <span class="hl kwb">end</span>;
+
+  InitializeBitmapImageFromIcon(BitmapImage, <span class="hl str">"MyProg.ico"</span>, Page.SurfaceColor, [<span class="hl num">32</span>, <span class="hl num">48</span>, <span class="hl num">64</span>]);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

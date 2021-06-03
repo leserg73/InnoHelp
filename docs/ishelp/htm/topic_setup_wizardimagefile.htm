@@ -26,7 +26,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>compiler:WIZMODERNIMAGE.BMP</tt> </div>
+              <div class="margined"><i>(пустое)</i></div>
             </td>
           </tr>
         </tbody>
@@ -83,6 +83,13 @@
           </tr>
         </tbody>
       </table>
+      <div class="absaz">Если эта директива не указана или имеет пустое значение,
+        то будут использоваться встроенные изображения мастера установки,
+        поддерживающие несколько настроек DPI.</div>
+      <br />
+      <div class="absaz">Чтобы вновь использовать старое изображение мастера
+        установки, укажите директиву со значением <tt>compiler:WizClassicImage.bmp</tt>.</div>
+      <br />
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">WizardImageFile</span>=myimage.bmp,myimage2.bmp</pre>
