@@ -4,4 +4,4 @@
 + Inno Setup (ISetup.chm)
 + Inno Setup Preprocessor (ISPP.chm)
 
-2020 (c) Sergii Leonov a.k.a. Leserg.
+2020-2021 (c) Sergii Leonov a.k.a. Leserg.
