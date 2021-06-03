@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 6</title>
+    <style type="text/css">
+    body         { font: small verdana, arial, sans-serif; color: black; background-color: white }
+    a:link       { color: #264b99; background-color: white }
+    a:active     { color: #7799dd; background-color: white }
+    a:visited    { color: #5e85d7; background-color: white }
+    tt           { font: small "courier new", monospace }
+    li           { margin-top: 0.15em; margin-bottom: 0.15em }
+    div.bluehead { text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold }
+    .date        { font-size: x-small; font-weight: bold }
+    .head1       { font-size: xx-large }
+    .head2       { font-size: large }
+    .ver         { font-size: large; font-weight: bold }
+</style> </head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
+      <span class="head2">История версий</span></div>
+    <p>Авторские права © 1997-2021 <a href="https://jrsoftware.org/">Jordan
+       Russell</a>. Все права защищены.<br />
+       Смежные авторские права © 2000-2021 Martijn Laan. Все права защищены.<br />
+       Условия распространения и использования смотрите в <a
+       href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a
+       href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
+       на рассылку о новых выпусках Inno Setup.</p>
+    <p><a name="6.2.0"></a><span class="ver">6.2.0 </span><span class="date">(2021-06-03)</span></p>
+    <p><span class="head2">Модернизация графики</span></p>
+    <ul>
+      <li>Обновлены все значки панели инструментов IDE компилятора, а также изображения
+          мастера помощи при создании нового сценария.</li>
+      <li>Обновлен значок приложения по умолчанию, который используется программой
+          установки и удаления, если в секции [Setup] не указана директива <tt>SetupIconFile</tt>.
+          Чтобы снова использовать старый значок, укажите директиву <tt>SetupIconFile</tt> со
+          значением <tt>compiler:SetupClassicIcon.ico</tt>.</li>
+      <li>Директивы <tt>WizardImageFile</tt> и <tt>WizardSmallImageFile</tt> в секции
+          [Setup] теперь по умолчанию имеют пустое значение, что заставляет программу
+          установки использовать встроенные изображения мастера. Чтобы снова использовать
+          старые изображения мастера, укажите директивам <tt>WizardImageFile</tt> и
+          <tt>WizardSmallImageFile</tt> значения <tt>compiler:WizClassicImage.bmp</tt>
+          и <tt>compiler:WizClassicSmallImage.bmp</tt> соответственно.</li>
+      <li>Обновлено малое изображение по умолчаниию, используемое мастером деинсталляции,
+          если в секции [Setup] не указана директива <tt>SetupIconFile</tt>. Ранее по
+          умолчанию использовался значок приложения программы установки.</li>
+      <li>Обновлены значки "Папка", "Группа" и "Остановить", которые используются
+          программой установки на страницах "<i>Выбор папки установки</i>",
+          "<i>Выбор папки в меню «Пуск»</i>" и "<i>Подготовка к установке</i>".</li>
+      <li>Обновлен значок диска, используемый программой установки в диалоге
+          "<i>Необходимо вставить следующий диск</i>".</li>
+      <li>Изменения в Pascal Scripting: добавлена новая функция <tt>InitializeBitmapImageFromIcon</tt>.</li>
+    </ul>
+    <p>Все обновленные значки и изображения содержат форматы более высокого разрешения
+       (которые не были доступны ранее) и при высоких настройках масштабирования (DPI)
+       будут выбраны автоматически. Сюда также входят форматы высокого разрешения
+       для значка в диалоге <i>Выбор языка установки</i> программы установки и малого
+       изображения программы удаления, если директива <tt>SetupIconFile</tt> не указана.</p>
+    <p>Примеры скриншотов:</p>
+    <ul>
+      <li>Страницы "<a href="https://jrsoftware.org/images/is-welcome-org.png">Выбор папки установки</a>"
+          и "<a href="https://jrsoftware.org/images/is-finished-org.png">Установка завершена</a>"
+          мастера установки при масштабировании 100% DPI.</li>
+      <li>Страницы "<a href="https://jrsoftware.org/images/is-welcome-org-175.png">Выбор папки установки</a>"
+          и "<a href="https://jrsoftware.org/images/is-finished-org-175.png">Установка завершена</a>"
+          мастера установки при масштабировании 175% DPI.</li>
+      <li><a href="https://jrsoftware.org/images/is-ide-org.png">Светлая</a> и
+          <a href="https://jrsoftware.org/images/is-ide-dark-org.png">Тёмная</a> темы IDE
+          компилятора при масштабировании 100% DPI.</li>
+    </ul>
+    <p>Для сравнения скриншоты *предыдущей* версии:</p>
+    <ul>
+      <li>Страницы "<a href="https://jrsoftware.org/images/is-welcome-org-175-old.png">Выбор папки установки</a>"
+          и "<a href="https://jrsoftware.org/images/is-finished-org-175-old.png">Установка завершена</a>"
+          мастера установки в версии 6.1.2 при масштабировании 175% DPI.</li>
+    </ul>
+    <p><span class="head2">Другие изменения</span></p>
+    <ul>
+      <li>Ссылки в документах RTF, отображаемых директивами <tt>LicenseFile</tt>,
+          <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> в секции  [Setup], теперь
+          выполняются от имени исходного пользователя, если это возможно.</li>
+      <li>В секции [Setup] добавлены новые директивы <tt>MissingMessagesWarning</tt>
+          и <tt>NotRecognizedMessagesWarning</tt>, которые позволяют отключить
+          предупреждения компилятора об отсутствующих или неизвестных сообщениях
+          в языковых файлах.</li>
+      <li>Параметр /LOG: Теперь действия деинсталлятора в файле отчёта регистрируются
+          более подробно.</li>
+      <li>Константа <tt>{localappdata}</tt> теперь может корректно инициировать
+          <a href="https://leserg73.github.io/InnoHelp/ishelp/htm/topic_setup_useduserareaswarning.htm">предупреждение
+          об использовании пользовательских областей</a>.</li>
+      <li>Изменения в компиляторе Inno:
+      <ul>
+        <li><i>Исправление:</i> Список автозавершения для функций события показывал
+            некоторые процедуры в виде функций.</li>
+      </ul>
+      </li>
+      <li>Изменения в Pascal Scripting:
+      <ul>
+        <li>Добавлена новая функция <tt>CreateOutputMarqueeProgressPage</tt> для отображения
+            непрерывного (стиль Marquee) индикатора выполнения. Пример использования функции смотрите в сценарии
+            <i><a href="https://jrsoftware.github.io/issrc/Examples/AllPagesExample.iss">AllPagesExample.iss</a></i>.</li>
+        <li>Добавлены новые свойства <tt>ItemFontStyle</tt> и <tt>SubItemFontStyle</tt>
+            для класса <tt>TNewCheckListBox</tt>. Применение этих свойств смотрите в
+            примере сценария <i><a href="https://jrsoftware.github.io/issrc/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+        <li>Добавлены новые функции <tt>IsMsiProductInstalled</tt> и <tt>StrToVersion</tt>.</li>
+        <li>Добавлено новое свойство <tt>AbortedByUser</tt> для класса <tt>TDownloadWizardPage</tt>.</li>
+        <li><i>Исправление:</i> Индикатор прогресса на странице <tt>CreateDownloadPage</tt>
+            теперь поддерживает файлы размером более 2 Гб.</li>
+        <li>Функции <tt>ParamCount</tt> и <tt>ParamStr</tt> больше не позволяют использовать
+            недокументированные внутренние параметры командной строки, применяемые программой
+            установки и удаления.</li>
+        <li>Встроенный онлайн загрузчик позволяет загружать файлы с неизвестными размерами
+            (в случае, если сервер не передаёт такую информацию), а функция проверки хеша
+            теперь не зависит от регистра символов.</li>
+      </ul>
+      </li>
+      <li>Изменения в ISPP: Добавлена новая функция <tt>StrToVersion</tt>.</li>
+      <li>Добавлен официальный перевод на Болгарский язык.</li>
+      <li>Обновление документации (исправления и уточнения).</li>
+      <li>Незначительные исправления.</li>
+    </ul>
+    <p><span class="head2">Обновление Inno Setup FAQ</span></p>
+    <ul>
+      <li>Содержание документа <a href="https://jrsoftware.org/isfaq.php">Inno Setup FAQ</a>
+          теперь доступно на портале <a href="https://github.com/jrsoftware/isfaq/blob/main/isfaq.html">GitHub</a>,
+          где любой желающий может предложить свои вопросы, ответы и решения.</li>
+      <li>В документ Inno Setup FAQ были добавлены обновленные версии статей,
+          взятых из базы знаний Inno Setup, которая теперь на сайте недоступна.</li>
+    </ul>
+    <p><span class="head2">Удаление QuickStart Pack</span></p>
+    <ul>
+      <li>Пакет установки QuickStart был удалён из-за отсутствия дополнений.</li>
+      <li>Теперь стандартный пакет установки Inno Setup будет предлагать выполнить загрузку
+          библиотеки шифрования (файл ISCrypt.dll), если она отсутствует (подобно тому, как
+          это ранее делал пакет установки QuickStart).</li>
+    </ul>
+    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: Благодарим
+       <b>Sergii Leonov</b> и <b>Dom Gries</b> за оказанное содействие в развитии Inno Setup.</p>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm">История
+       версий Inno Setup 6.1</a></p>
+  </body>
+</html>
