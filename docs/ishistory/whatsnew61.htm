@@ -29,67 +29,6 @@
     <p><b>Хотите получать уведомления об обновлениях?</b> <a
        href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
        на рассылку о новых выпусках Inno Setup.</p>
-    <p><a name="6.1.3"></a><span class="ver">6.1.3-dev </span><span class="date">(?)</span></p>
-    <ul>
-      <li>Пакет установки QuickStart был удалён из-за отсутствия дополнений.</li>
-      <li>Стандартный пакет установки Inno Setup будет теперь предлагать выполнить загрузку
-          библиотеки шифрования (файл ISCrypt.dll), если она не найдена (подобно тому, как
-          это ранее делал пакет установки QuickStart).</li>
-    </ul>
-    </p>
-    <p>
-    <ul>
-      <li>Содержание документа <a href="https://jrsoftware.org/isfaq.php">Inno Setup FAQ</a>
-          теперь доступно на портале <a href="https://github.com/jrsoftware/isfaq/blob/main/isfaq.html">GitHub</a>,
-          где вы можете предлагать свои вопросы, ответы и решения.</li>
-      <li>В документ Inno Setup FAQ были добавлены обновленные версии статей,
-          взятых из базы знаний Inno Setup, которая теперь на сайте недоступна.</li>
-    </ul>
-    </p>
-    <p>
-    <ul>
-      <li>Ссылки в документах RTF, отображаемых директивами <tt>LicenseFile</tt>,
-          <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> в секции  [Setup], теперь
-          выполняются от имени исходного пользователя, если это возможно.</li>
-      <li>В секции [Setup] добавлены новые директивы <tt>MissingMessagesWarning</tt>
-          и <tt>NotRecognizedMessagesWarning</tt>, которые позволяют отключить
-          предупреждения компилятора об отсутствующих или неизвестных сообщениях
-          в языковых файлах.</li>
-      <li>Параметр /LOG: Теперь действия деинсталлятора в файле отчёта регистрируются
-          более подробно.</li>
-      <li>Изменения в компиляторе Inno:
-      <ul>
-        <li><i>Исправление:</i> Список автозавершения для функций события показывал
-            некоторые процедуры в виде функций.</li>
-      </ul>
-      </li>
-      <li>Изменения в Pascal Scripting:
-      <ul>
-        <li>Добавлена новая функция <tt>CreateMarqueeProgressWizardPage</tt> для отображения
-            непрерывного (стиль Marquee) индикатора выполнения. Пример использования функции смотрите в сценарии
-            <i><a href="https://jrsoftware.github.io/issrc/Examples/AllPagesExample.iss">AllPagesExample.iss</a></i>.</li>
-        <li>Добавлены новые свойства <tt>ItemFontStyle</tt> и <tt>SubItemFontStyle</tt>
-            для класса <tt>TNewCheckListBox</tt>. Применение этих свойств смотрите в
-            примере сценария <i><a href="https://jrsoftware.github.io/issrc/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
-        <li>Добавлены новые функции <tt>IsMsiProductInstalled</tt> и <tt>StrToVersion</tt>.</li>
-        <li>Добавлено новое свойство <tt>AbortedByUser</tt> для класса <tt>TDownloadWizardPage</tt>.</li>
-        <li><i>Исправление:</i> Индикатор прогресса на странице <tt>CreateDownloadPage</tt>
-            теперь поддерживает файлы размером более 2 Гб.</li>
-        <li>Функции <tt>ParamCount</tt> и <tt>ParamStr</tt> больше не позволяют использовать
-            недокументированные внутренние параметры командной строки, применяемые программой
-            установки и удаления.</li>
-        <li>Встроенный онлайн загрузчик позволяет загружать файлы с неизвестными размерами
-            (в случае, если сервер не передаёт такую информацию), а функция проверки хеша
-            теперь не зависит от регистра символов.</li>
-      </ul>
-      </li>
-      <li>Изменения в ISPP: Добавлена новая функция <tt>StrToVersion</tt>.</li>
-      <li>Добавлен официальный перевод на Болгарский язык.</li>
-      <li>Обновление документации (исправления и уточнения).</li>
-      <li>Незначительные исправления.</li>
-    </ul>
-    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: Благодарим
-       <b>Sergii Leonov</b> и <b>Dom Gries</b> за оказанное содействие в развитии Inno Setup.</p>
     <p><a name="6.1.2"></a><span class="ver">6.1.2 </span><span class="date">(2020-11-15)</span></p>
     <ul>
       <li>Изменения в компиляторе Inno: В меню "<i>Файл</i>"
