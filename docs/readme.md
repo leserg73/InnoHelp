@@ -9,7 +9,7 @@
 
 - [6.0.0 - 6.0.5](https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm)
 - [6.1.0 - 6.1.2](https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm)
-- [6.2.0](https://leserg73.github.io/InnoHelp/ishistory/whatsnew62.htm)
+- [6.2.0 - 6.2.1](https://leserg73.github.io/InnoHelp/ishistory/whatsnew62.htm)
 
 -----------------------
 
