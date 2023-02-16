@@ -967,6 +967,7 @@
             property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
             property AbortedByUser: Boolean; read;<br />
             procedure Add(const Url, BaseName, RequiredSHA256OfFile: String);<br />
+            procedure AddEx(const Url, BaseName, RequiredSHA256OfFile, UserName, Password: String);<br />
             procedure Clear;<br />
             function Download: Int64;<br />
           end;<br />

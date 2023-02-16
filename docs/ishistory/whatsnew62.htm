@@ -20,15 +20,27 @@
   <body>
     <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
       <span class="head2">История версий</span></div>
-    <p>Авторские права © 1997-2022 <a href="https://jrsoftware.org/">Jordan
+    <p>Авторские права © 1997-2023 <a href="https://jrsoftware.org/">Jordan
        Russell</a>. Все права защищены.<br />
-       Смежные авторские права © 2000-2022 Martijn Laan. Все права защищены.<br />
+       Смежные авторские права © 2000-2023 Martijn Laan. Все права защищены.<br />
        Условия распространения и использования смотрите в <a
        href="https://jrsoftware.org/files/is/license.txt">LICENSE.TXT</a>.
     </p>
     <p><b>Хотите получать уведомления об обновлениях?</b> <a
        href="https://jrsoftware.org/ismail.php">Подпишитесь</a>
        на рассылку о новых выпусках Inno Setup.</p>
+    <p><a name="6.2.2"></a><span class="ver">6.2.2 </span><span class="date">(2023-02-15)</span></p>
+    <ul>
+      <li>Сделаны изменения по усилению защиты от потенциальных атак с предварительной
+          загрузкой DLL (автор Johannes Schindelin из команды Git for Windows).</li>
+      <li>Изменения в Pascal Scripting: улучшена поддержка загрузки с использованием
+          обычной аутентификации (автор Christian Beck).</li>
+      <ul>
+        <li>Добавлена новая функция <tt>AddEx</tt> для класса <tt>TDownloadWizardPage</tt>.</li>
+        <li>Добавлена новая функция <tt>SetDownloadCredentials</tt>.</li>
+      </ul>
+      <li>Добавлен официальный перевод на Венгерский язык.</li>
+    </ul>
     <p><a name="6.2.1"></a><span class="ver">6.2.1 </span><span class="date">(2022-04-14)</span></p>
     <ul>
       <li>Сделаны изменения по усилению защиты от потенциальных атак с предварительной
@@ -95,14 +107,14 @@
           и <tt>NotRecognizedMessagesWarning</tt>, которые позволяют отключить
           предупреждения компилятора об отсутствующих или неизвестных сообщениях
           в языковых файлах.</li>
-      <li>Параметр /LOG: Теперь действия деинсталлятора в файле отчёта регистрируются
+      <li>Параметр /LOG: теперь действия деинсталлятора в файле отчёта регистрируются
           более подробно.</li>
       <li>Константа <tt>{localappdata}</tt> теперь может корректно инициировать
           <a href="https://leserg73.github.io/InnoHelp/ishelp/htm/topic_setup_useduserareaswarning.htm">предупреждение
           об использовании пользовательских областей</a>.</li>
       <li>Изменения в компиляторе Inno:
       <ul>
-        <li><i>Исправление:</i> Список автозавершения для функций события показывал
+        <li><i>Исправление:</i> список автозавершения для функций события показывал
             некоторые процедуры в виде функций.</li>
       </ul>
       </li>
@@ -126,7 +138,7 @@
             теперь не зависит от регистра символов.</li>
       </ul>
       </li>
-      <li>Изменения в ISPP: Добавлена новая функция <tt>StrToVersion</tt>.</li>
+      <li>Изменения в ISPP: добавлена новая функция <tt>StrToVersion</tt>.</li>
       <li>Добавлен официальный перевод на Болгарский язык.</li>
       <li>Обновление документации (исправления и уточнения).</li>
       <li>Незначительные исправления.</li>
@@ -146,7 +158,7 @@
           библиотеки шифрования (файл ISCrypt.dll), если она отсутствует (подобно тому, как
           это ранее делал пакет установки QuickStart).</li>
     </ul>
-    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: Благодарим
+    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>: благодарим
        <b>Sergii Leonov</b> и <b>Dom Gries</b> за оказанное содействие в развитии Inno Setup.</p>
     <p><a href="https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm">История
        версий Inno Setup 6.1</a></p>
