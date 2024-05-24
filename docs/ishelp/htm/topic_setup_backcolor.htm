@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: BackColor, BackColor2</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: BackColor, BackColor2</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined">Цвет в формате <tt>$<i>bbggrr</i></tt>, где
-                <tt>rr</tt>, <tt>gg</tt>, <tt>bb</tt> – двузначные значения
+              <div class="margined">Цвет в формате <tt class="nill">$<i>bbggrr</i></tt>, где
+                <tt class="nill">rr</tt>, <tt class="nill">gg</tt>, <tt class="nill">bb</tt> – двузначные значения
                 интенсивности (в шестнадцатеричном формате) для красного,
                 зелёного и синего компонентов цвета соответственно. Или одно из
                 следующих предопределённых названий цветов: clBlack, clMaroon,
@@ -40,23 +39,19 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>clBlue</tt> для <tt>BackColor</tt>,<br />
-                <tt>clBlack</tt> для <tt>BackColor2</tt> </div>
+              <div class="margined"><tt class="nill">clBlue</tt> для <tt class="nill">BackColor</tt>,<br />
+                <tt class="nill">clBlack</tt> для <tt class="nill">BackColor2</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Обе директивы определяют цвета для градиентной заливки
+      <h2 class="heading">Описание</h2>
+      <p>Обе директивы определяют цвета для градиентной заливки
         фонового окна установки. Директива <tt>BackColor</tt> устанавливает
         первый цвет градиента, используемого сверху (или слева, если <tt>BackColorDirection=lefttoright</tt>).
         Директива <tt>BackColor2</tt> устанавливает второй цвет градиента,
-        используемого внизу (или справа).</div>
-      <br />
-      <div class="absaz">Директива <tt>BackColor2</tt> не учитывается, если <tt>BackSolid=yes</tt>.</div>
-      <br />
+        используемого внизу (или справа).</p>
+      <p>Директива <tt>BackColor2</tt> не учитывается, если <tt>BackSolid=yes</tt>.</p>
       <div class="examplebox">
         <div class="exampleheader">Примеры:</div>
         <pre class="nomargin"><span class="hl kwb">BackColor</span>=clBlue

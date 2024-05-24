@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Command Line Compiler Execution</title>
@@ -16,93 +16,98 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Inno Setup Preprocessor: Компиляция в командной строке</h1>
+    <h1 class="topicheading">Inno Setup Preprocessor: Компиляция в командной
+      строке</h1>
     <div class="topicbody">
-      <p>Если <b>Inno Setup Preprocessor</b> установлен, то консольная версия компилятора (файл <i>ISCC.exe</i>)
-        автоматически предоставляет дополнительные параметры для управления процессом
-        предварительной обработки сценариев <i>Inno Setup</i>.</p>
-      <p>Использование: <tt style="font-weight: bold; color: #000099;">iscc [параметры]
-          scriptfile.iss</tt></p>
-      <p>Или посредством стандартного ввода: <tt style="font-weight: bold; color: #000099;">iscc
+      <p>Если <b>Inno Setup Preprocessor</b> установлен, то консольная версия
+        компилятора (файл <i>ISCC.exe</i>) автоматически предоставляет
+        дополнительные параметры для управления процессом предварительной
+        обработки сценариев <i>Inno Setup</i>.</p>
+      <p>Использование: <tt class="nill" style="font-weight: bold; color: #000099;">iscc
+          [параметры] scriptfile.iss</tt></p>
+      <p>Или посредством стандартного ввода: <tt class="nill" style="font-weight: bold; color: #000099;">iscc
           [параметры] -</tt></p>
       <p>где параметры могут быть следующие:</p>
       <table>
         <tbody>
           <tr>
-            <td class="cellleft"><tt>/O(+|-)</tt> </td>
-            <td class="cellright">Включает (+) или отключает (-) параметр вывода (замещает в
-              сценарии команду <i>Output</i>) </td>
+            <td class="cellleft"><tt class="nill">/O(+|-)</tt> </td>
+            <td class="cellright">Включает (+) или отключает (-) параметр вывода
+              (замещает в сценарии команду <i>Output</i>)</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/O&lt;path&gt;</tt> </td>
-            <td class="cellright">Устанавливает путь вывода файла
-              (замещает в сценарии команду <i>OutputDir</i>) </td>
+            <td class="cellleft"><tt class="nill">/O&lt;path&gt;</tt></td>
+            <td class="cellright">Устанавливает путь вывода файла (замещает в
+              сценарии команду <i>OutputDir</i>)</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/F&lt;filename&gt;</tt> </td>
-            <td class="cellright">Устанавливает выходное имя файла (замещает в сценарии команду <i>OutputBaseFilename</i>)
-            </td>
+            <td class="cellleft"><tt class="nill">/F&lt;filename&gt;</tt></td>
+            <td class="cellright">Устанавливает выходное имя файла (замещает в
+              сценарии команду <i>OutputBaseFilename</i>)</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/S&lt;name&gt;=&lt;command&gt;</tt> </td>
-            <td class="cellright">Устанавливает цифровую подпись
-              с указанным именем и параметрами </td>
+            <td class="cellleft"><tt class="nill">/S&lt;name&gt;=&lt;command&gt;</tt></td>
+            <td class="cellright">Устанавливает цифровую подпись с указанным
+              именем и параметрами</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/Q</tt> </td>
-            <td class="cellright">Тихая компиляция (будут показаны только сообщения об ошибках) </td>
+            <td class="cellleft"><tt class="nill">/Q</tt></td>
+            <td class="cellright">Тихая компиляция (будут показаны только
+              сообщения об ошибках)</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/Qp</tt> </td>
-            <td class="cellright">Тихая компиляция с отображением
-              прогресса выполнения </td>
+            <td class="cellleft"><tt class="nill">/Qp</tt> </td>
+            <td class="cellright">Тихая компиляция с отображением прогресса
+              выполнения</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/D&lt;name&gt;[=&lt;value&gt;]</tt>
-            </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#define</span>
-                public &lt;name&gt; &lt;value&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/D&lt;name&gt;[=&lt;value&gt;]</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#define</span>
+                public &lt;name&gt; &lt;value&gt;</tt></td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/$&lt;letter&gt;(+|-)</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                option -&lt;letter&gt;(+|-)</tt> </td>
+            <td class="cellleft"><tt class="nill">/$&lt;letter&gt;(+|-)</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                option -&lt;letter&gt;(+|-)</tt></td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/P&lt;letter&gt;(+|-)</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                parseroption -&lt;letter&gt;(+|-)</tt> </td>
+            <td class="cellleft"><tt class="nill">/P&lt;letter&gt;(+|-)</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                parseroption -&lt;letter&gt;(+|-)</tt></td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/I&lt;paths&gt;</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                include -&lt;paths&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/I&lt;paths&gt;</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                include -&lt;paths&gt;</tt></td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/J&lt;filename&gt;</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#include</span>
-                -&lt;filename&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/J&lt;filename&gt;</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#include</span>
+                -&lt;filename&gt;</tt></td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/{#&lt;string&gt;</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                inlinestart -&lt;string&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/{#&lt;string&gt;</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                inlinestart -&lt;string&gt;</tt></td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>/}&lt;string&gt;</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                inlineend -&lt;string&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/}&lt;string&gt;</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                inlineend -&lt;string&gt;</tt></td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>/V&lt;number&gt;</tt> </td>
-            <td class="cellright">Эмулирует <tt><span style="font-weight: bold; color: #990000;">#pragma</span>
-                verboselevel -&lt;number&gt;</tt> </td>
+            <td class="cellleft"><tt class="nill">/V&lt;number&gt;</tt></td>
+            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+                verboselevel -&lt;number&gt;</tt></td>
           </tr>
         </tbody>
       </table>
-      <p style="text-align: left;"><br /><b>Пример</b>:<br /><br />  <tt style="font-weight: bold; color: #000099;">iscc
-          /$c- /Pu+ "/DLicenseFile=Trial License.txt" /Ic:\inc;d:\inc /Jdefines.iss
-          "c:\isetup\samples\my script.iss"</tt> </p>
+      <p style="text-align: left;"><br />
+        <b>Пример</b>:<br />
+        <br />
+        <tt class="nill" style="font-weight: bold; color: #000099;">iscc /$c- /Pu+
+          "/DLicenseFile=Trial License.txt" /Ic:\inc;d:\inc /Jdefines.iss
+          "c:\isetup\samples\my script.iss"</tt></p>
     </div>
   </body>
 </html>

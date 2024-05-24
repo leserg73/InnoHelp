@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: GetFileDateTimeString</title>
@@ -19,28 +19,24 @@
     <h1 class="topicheading">Inno Setup Preprocessor: GetFileDateTimeString</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX"><tt><b>str</b> GetFileDateTimeString(<b>str</b>, <b>str</b>, <b>str</b>,
-          <b>str</b>)<br />
-        </tt></p>
-      <br />
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> GetFileDateTimeString(<b>str</b>,
+          <b>str</b>, <b>str</b>, <b>str</b>)</tt></p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает строковое значение даты и времени для заданного файла.</p>
-      <p><i>Первый аргумент</i> является именем файла (вместе с расширением). <i>Второй
-          аргумент</i> определяет формат даты и времени. <i>Третий и четвертый
-          аргументы</i> устанавливают символ разделителя для компонентов даты (<tt>DateSeparator</tt>)
+      <p><i>Первый параметр</i> является именем файла (вместе с расширением). <i>Второй
+          параметр</i> определяет формат даты и времени. <i>Третий и четвертый
+          параметры</i> устанавливают символ разделителя для компонентов даты (<tt>DateSeparator</tt>)
         и времени (<tt>TimeSeparator</tt>) соответственно. Спецификаторы формата
         даты и времени подробно изложены в разделе <a href="topic_getdatetimestring.htm">GetDateTimeString</a>.</p>
-      <br />
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Объявляем переменную MyFileDatetimeString и присваиваем ей строковое значение</span>
 <span class="hl slc">// даты и времени файла myfile.txt, которое вернёт функция GetFileDateTimeString.</span>
-<span class="hl kwf">#define</span> MyFileDateTimeString <span class="hl kwd">GetFileDateTimeString</span><span
-class="hl opt">(</span><span class="hl str">'myfile.txt'</span><span class="hl opt">,</span> <span
-class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span class="hl str">'-'</span><span
+<span class="hl kwf">#define</span> MyFileDateTimeString <span class="hl kwd">GetFileDateTimeString</span><span
+class="hl opt">(</span><span class="hl str">'myfile.txt'</span><span class="hl opt">,</span> <span
+class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span class="hl str">'-'</span><span
 class="hl opt">,</span> <span class="hl str">':'</span><span class="hl opt">);</span>
 </pre> </div>
-      <br />
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: SignedUninstallerDir</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: SignedUninstallerDir</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -32,25 +31,20 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Определяет каталог, в котором должны быть созданы файлы
+      <h2 class="heading">Описание</h2>
+      <p>Определяет каталог, в котором должны быть созданы файлы
         <a href="topic_setup_signeduninstaller.htm">подписанного деинсталлятора</a>.
         По умолчанию такие файлы сохраняются в <a href="topic_setup_outputdir.htm">каталоге
-          вывода</a>.</div>
-      <br />
-      <div class="absaz">Разные файлы сценариев могут использовать в директиве <tt>SignedUninstallerDir</tt>
+          вывода</a>.</p>
+      <p>Разные файлы сценариев могут использовать в директиве <tt>SignedUninstallerDir</tt>
         одно и то же значение. Если используется общий каталог для создания
         файлов подписанного деинсталлятора, нет необходимости в повторном
         подписывании деинсталлятора при компиляции сценариев с различным
-        значением <tt>OutputDir</tt>.</div>
-      <br />
-      <div class="absaz">Если <tt>SignedUninstallerDir</tt> не содержит полного
+        значением <tt>OutputDir</tt>.</p>
+      <p>Если <tt>SignedUninstallerDir</tt> не содержит полного
         пути, то он будет создан относительно пути в директиве <tt>SourceDir</tt>.
         Установка в директиве <tt>SignedUninstallerDir</tt> значения <tt>.</tt>
-        приведёт к выводу файлов деинсталлятора в исходный каталог сценария.</div>
-      <br />
+        приведёт к выводу файлов деинсталлятора в исходный каталог сценария.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">SignedUninstallerDir</span>=c:\signeduninstallers</pre>

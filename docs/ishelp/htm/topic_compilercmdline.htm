@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Командная строка компилятора</title>
@@ -29,11 +29,10 @@
             <p>iscc <i>[параметры]</i> - </p>
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
-              iscc "c:\isetup\samples\my script.iss"</div>
+              iscc "c:\isetup\samples\my script.iss"<br /><br /></div>
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
-          <br />
           <div class="null">Допустимые параметры:<br />
             <br />
                "<b>/O-</b>" — отключает вывод (переопределяет значение директивы
@@ -63,7 +62,7 @@
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
               iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p
-              "c:\isetup\samples\my script.iss"</div>
+              "c:\isetup\samples\my script.iss"<br /><br /></div>
           </div>
           <br />
           <div class="null">ISCC возвращает один из следующих кодов выхода:<br />
@@ -83,7 +82,7 @@
             <p>compil32 /cc <i>&lt;имя сценария&gt;</i> </p>
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
-              compil32 /cc "c:\isetup\samples\my script.iss"</div>
+              compil32 /cc "c:\isetup\samples\my script.iss"<br /><br /></div>
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
@@ -107,7 +106,7 @@
                 сценария&gt;</i> </p>
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
-              compil32 /wizard "MyProg Script Wizard" "c:\temp.iss"</div>
+              compil32 /wizard "MyProg Script Wizard" "c:\temp.iss"<br /><br /></div>
           </div>
           <p>Обратите внимание, если имена файлов и название мастера содержит
             пробелы, то они должны заключаться в кавычки.</p>

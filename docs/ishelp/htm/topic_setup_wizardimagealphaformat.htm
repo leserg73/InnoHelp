@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: WizardImageAlphaFormat</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: WizardImageAlphaFormat</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,7 +25,7 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>none</tt>, <tt>defined</tt>, <tt>premultiplied</tt>
+              <div class="margined"><tt class="nill">none</tt>, <tt class="nill">defined</tt>, <tt class="nill">premultiplied</tt>
               </div>
             </td>
           </tr>
@@ -35,29 +34,23 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>none</tt> </div>
+              <div class="margined"><tt class="nill">none</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Значение <tt>none</tt> указывает на то, что любое
-        изображение мастера с глубиной цвета 32-бит не имеет альфа-канал.</div>
-      <br />
-      <div class="absaz">Значение <tt>premultiplied</tt> указывает на то, что
+      <h2 class="heading">Описание</h2>
+      <p>Значение <tt>none</tt> указывает на то, что любое
+        изображение мастера с глубиной цвета 32-бит не имеет альфа-канал.</p>
+      <p>Значение <tt>premultiplied</tt> указывает на то, что
         любое изображение мастера с глубиной цвета 32-бит имеет альфа-канал, а
         значения красного, зелёного и синего каналов "предомножены" на его
-        значение ([r, g, b, a]=[R·A, G·A, B·A, A]).</div>
-      <br />
-      <div class="absaz">Значение <tt>defined</tt>, указывает на то, что любое
+        значение ([r, g, b, a]=[R·A, G·A, B·A, A]).</p>
+      <p>Значение <tt>defined</tt>, указывает на то, что любое
         изображение мастера с глубиной цвета 32-бит имеет альфа-канал, но
-        значения каналов имеют обычное представление ([R,G,B,A]).</div>
-      <br />
-      <div class="absaz">Эта директива не имеет никакого эффекта, если файл
-        изображения не имеет глубину цвета 32-бит.</div>
-      <br />
+        значения каналов имеют обычное представление ([R,G,B,A]).</p>
+      <p>Эта директива не имеет никакого эффекта, если файл
+        изображения не имеет глубину цвета 32-бит.</p>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #expr</title>
@@ -19,41 +19,38 @@
     <h1 class="topicheading">Inno Setup Preprocessor: #expr</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>expr-directive:</i>
-            </td>
-            <td class="cellright">(<b>expr</b> | <b>!</b>) &lt;expr&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>expr-directive:</i></td>
+              <td class="cellright">(<b>expr</b> | <b>!</b>) &lt;expr&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
       <p>Выполняет указанное выражение, игнорируя полученный результат. Эта
-        директива подобна директиве <tt><a href="topic_emit.htm" class="new">emit</a></tt>
-        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
+        директива подобна директиве <tt class="nill"><a href="topic_emit.htm" class="new">emit</a></tt>
+        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
           class="new1">выход препроцессора</a>.</p>
       <p>Эта директива предназначена для использования с теми функциями, которые
         производят побочные эффекты и не возвращают какие-либо существенные
         значения.</p>
-      <br />
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
 class="hl opt">) + (</span><span class="hl str">"Preprocessed.iss"</span><span class="hl opt">),</span> \
-      <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
-class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
+          <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
+class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
 class="hl opt">,</span> \
-      <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
-class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
+          <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
+class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
 class="hl str">"Preprocessed.iss"</span><span class="hl opt">)</span>
 </pre> </div>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a href="topic_emit.htm" class="new">emit</a></tt>. </p>
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a href="topic_emit.htm" class="new">emit</a></tt>. </p>
     </div>
   </body>
 </html>

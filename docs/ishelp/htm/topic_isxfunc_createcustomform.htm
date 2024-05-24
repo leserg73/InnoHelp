@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: CreateCustomForm</title>
@@ -18,39 +18,30 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: CreateCustomForm</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function CreateCustomForm: TSetupForm;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет создание формы. По умолчанию форма является
-        пустой; вам необходимо создать собственные элементы управления и
-        поместить их на форму (установив свойства <tt>Parent</tt> в экземпляр <a
-          href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>,
-        возвращаемого этой функцией).</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Вместо прямого создания экземпляров <a href="topic_scriptclasses.htm#TForm">TForm</a>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateCustomForm: TSetupForm;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание формы. По умолчанию форма является пустой, поэтому
+        вам нужно будет ещё создать собственные элементы управления и поместить
+        их на форму (установив свойство <tt>Parent</tt> в экземпляр <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>,
+        возвращаемого этой функцией).</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Вместо прямого создания экземпляров <a href="topic_scriptclasses.htm#TForm">TForm</a>
         или <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>
-        необходимо использовать эту функцию. Она автоматически выполнит
-        инициализацию шрифта и других свойств созданной формы, подобно другим
-        диалогам инсталлятора.</div>
-      <br />
-      <div class="absaz">Секция <tt>[LangOptions]</tt>, а также директивы <tt>DialogFontName</tt>
-        и <tt>DialogFontSize</tt> определяют шрифт, используемый формой, и, по
+        рекомендуется использовать именно эту функцию. Она автоматически
+        выполнит инициализацию шрифта и других свойств созданной формы, подобно
+        другим диалогам программы установки.</p>
+      <p>Секция <tt>[LangOptions]</tt>, а также директивы <tt>DialogFontName</tt>
+        и <tt>DialogFontSize</tt>, определяют шрифт, используемый формой, и, по
         умолчанию, шрифт дочерних элементов управления, размещённых на этой
-        форме.</div>
-      <br />
-      <div><b>Пример:</b></div>
-      <br />
-      <div class="absaz">Смотрите файл <i>CodeClasses.iss</i>.</div>
-      <br />
-      <div><b>См. также:</b></div>
-      <p><a href="topic_scriptclasses.htm#TForm">TForm</a>
-        <br />
-        <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>
-      </p>
+        форме.</p>
+      <h2 class="heading">Пример</h2>
+      <p>Смотрите файл <i>CodeClasses.iss</i> из папки "Examples" в каталоге
+        установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TForm">TForm</a> <br />
+        <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a> </p>
     </div>
   </body>
 </html>

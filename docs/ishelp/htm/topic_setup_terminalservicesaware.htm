@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: TerminalServicesAware</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: TerminalServicesAware</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
-                  или <tt>no</tt></a> </div>
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -35,30 +34,25 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>yes</tt> </div>
+              <div class="margined"><tt class="nill">yes</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Указывает компилятору о необходимости установки флага
+      <h2 class="heading">Описание</h2>
+      <p>Указывает компилятору о необходимости установки флага
         "Terminal Services aware" (Поддержка сервер терминалов) в заголовок
         образа программы установки и удаления. Эта функция появилась в версии
         5.1.7 и по умолчанию имеет значение <tt>yes</tt>; предыдущие версии
-        этот флаг никогда не устанавливали.</div>
-      <br />
-      <div class="absaz">Самое главное, что флаг "Terminal Services aware"
+        этот флаг никогда не устанавливали.</p>
+      <p>Самое главное, что флаг "Terminal Services aware"
         влияет на поведение константы {win} (и функции <a href="topic_isxfunc_getwindir.htm">GetWinDir</a>)
-        на серверах с установленными службами терминалов в режиме приложения.</div>
-      <br />
-      <div class="absaz">Если флаг установлен, константа {win} будет
+        на серверах с установленными службами терминалов в режиме приложения.</p>
+      <p>Если флаг установлен, константа {win} будет
         последовательно возвращать реальный системный каталог Windows, обычно
         "C:\WINDOWS", даже на системах, в которых не установлены службы
-        терминалов.</div>
-      <br />
-      <div class="absaz">Если флаг не установлен, Windows будет запускать
+        терминалов.</p>
+      <p>Если флаг не установлен, Windows будет запускать
         программу в режиме совместимости, где константа {win} может вернуть либо
         настоящий каталог Windows, либо пользовательский каталог Windows,
         который находится по пути "C:\Documents and Settings\&lt;user
@@ -70,16 +64,14 @@
         себя так, как если бы был установлен флаг "Terminal Services aware".
         Иначе программа рассматривается как устаревшее приложение и получает
         частный каталог Windows (даже если пользователь, запускающий программу,
-        имеет права администратора).</div>
-      <br />
-      <div class="absaz">Поскольку поведение, возникающее в результате установки
+        имеет права администратора).</p>
+      <p>Поскольку поведение, возникающее в результате установки
         для <tt>TerminalServicesAware</tt> значения <tt>no</tt>, является
         противоречивым и трудно прогнозируемым, рекомендуется всегда
         использовать значение по умолчанию <tt>yes</tt>. Значение <tt>no</tt>
         допускается применять только в качестве временной меры для поиска и
         исправления проблем в системах со службами терминалов после очередного
-        обновления Inno Setup.</div>
-      <br />
+        обновления Inno Setup.</p>
     </div>
   </body>
 </html>

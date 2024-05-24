@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Общие параметры</title>
@@ -18,21 +18,20 @@
   <body>
     <h1 class="topicheading">Общие параметры</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Существует три необязательных <a href="topic_params.htm">параметра</a>,
+      <p>Существует три необязательных <a href="topic_params.htm">параметра</a>,
         поддерживаемых всеми секциями, записи которых содержат перечисляемые
-        параметры. Вот они:</div>
-      <br />
+        параметры. Вот они:</p>
       <dl>
         <dt class="paramlist"><b><a name="Languages">Languages</a></b></dt>
-        <dd class="paramlist">
+        <dd>
           <p>Список поддерживаемых языков, разделенных пробелами, которые
             указывают программе установки, к каким языкам относится запись. Если
             конечный пользователь выберет язык из этого списка, то такая запись
             будет обработана (например, выполнится установка файла).</p>
           <p>Запись без параметра <tt>Languages</tt> обрабатывается всегда,
             пока другие параметры этого не отменят. </p>
-          <p>Помимо списков также можно использовать логические выражения.
+          <p>Помимо списков, разделённых пробелами, также можно использовать
+            логические выражения, содержащих названия языков.
             Смотрите раздел справки "<a href="topic_componentstasksparams.htm">Параметры
               секций [Components] и [Tasks]</a>" с примерами логических
             выражений. </p>
@@ -42,9 +41,9 @@
           </div>
         </dd>
         <dt class="paramlist"><b><a name="MinVersion">MinVersion</a></b></dt>
-        <dd class="paramlist">
+        <dd>
           <p>Определяет минимальную <a href="topic_winvernotes.htm">версию
-              Windows</a> для обработки записи. Если использовать значение "0",
+              Windows</a> для обработки записи. Если использовать значение <tt>0</tt>,
             то эта запись никогда не будет обработана. Значение также может
             содержать <a href="topic_buildnumnotes.htm">номер сборки и версию
               пакета обновления</a>. Переопределяет любое значение директивы <tt>MinVersion</tt>
@@ -53,12 +52,12 @@
             пока другие параметры этого не отменят. </p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin"><span class="hl kwb">MinVersion</span>: <span
+            <pre class="nomargin"><span class="hl kwb">MinVersion</span>: <span
 class="hl num">6.2</span></pre>
           </div>
         </dd>
         <dt class="paramlist"><b><a name="OnlyBelowVersion">OnlyBelowVersion</a></b></dt>
-        <dd class="paramlist">
+        <dd>
           <p>Является противоположностью параметра <tt>MinVersion</tt>.
             Указывает минимальную <a href="topic_winvernotes.htm">версию
               Windows</a>, при которой запись <i>не</i> будет обработана.
@@ -66,16 +65,19 @@ class="hl num">6.2</span></pre>
             запустил программу установки по управлением Windows 7, то эта запись
             <i>будет</i> обработана, но при запуске на системе Windows 8 (версия
             6.2) или выше, эта запись обработана <i>не</i> будет. Установка
-            значения "0" снимает какие-либо ограничения на версию. Значение
+            значения <tt>0</tt> снимает какие-либо ограничения на версию. Значение
             также может содержать <a href="topic_buildnumnotes.htm">номер
               сборки и версию пакета обновления</a>. Переопределяет любое
             значение директивы <tt>OnlyBelowVersion</tt> в секции <tt>[Setup]</tt>.
           </p>
+          <p>Если значение <tt>0</tt> не используется, следует указывать значение
+            больше, чем <tt>6.1</tt>, иначе запись не будет обработана.
+            (ОС Windows Vista/Server 2008 больше не поддерживаются.)</p>
           <p>Запись без параметра <tt>OnlyBelowVersion</tt> обрабатывается
             всегда, пока другие параметры этого не отменят. </p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin"><span class="hl kwb">OnlyBelowVersion</span>: <span
+            <pre class="nomargin"><span class="hl kwb">OnlyBelowVersion</span>: <span
 class="hl num">6.2</span></pre>
           </div>
         </dd>

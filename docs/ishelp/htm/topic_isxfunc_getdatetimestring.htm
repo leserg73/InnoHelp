@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Клавиатурные команды компилятора</title>
+    <title>Pascal Scripting: GetDateTimeString</title>
     <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
@@ -18,15 +18,17 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: GetDateTimeString</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function GetDateTimeString(const DateTimeFormat: String; const
-          DateSeparator, TimeSeparator: Char): String;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Возвращает строковое значение текущей даты и времени в
-        указанном формате. Поддерживаются следующие спецификаторы формата:</div>
-      <br />
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetDateTimeString(const DateTimeFormat: String; const DateSeparator,
+          TimeSeparator: Char): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение текущей даты и времени в указанном
+        формате. В параметре <tt>DateTimeFormat</tt> указывается желаемый
+        формат даты/времени в виде спецификатора (см. ниже). В параметрах <tt>DateSeparator</tt>
+        и <tt>TimeSeparator</tt> передаются соответственно символы разделения
+        элементов даты и времени.</p>
+      <p>Поддерживаются следующие спецификаторы формата:</p>
       <table>
         <tbody>
           <tr>
@@ -120,8 +122,8 @@
           <tr>
             <td class="cellleft"><span style="font-weight: bold;">am/pm</span></td>
             <td class="cellright">Установка 12-часового формата времени для
-              указания часов (<span style="font-weight: bold;">h</span> или <span
-                style="font-weight: bold;">hh</span>) и вывод сокращений: <span
+              указания часов (<span style="font-weight: bold;">h</span> или <span
+                style="font-weight: bold;">hh</span>) и вывод сокращений: <span
                 style="font-weight: bold;">am</span> - до полудня, <span style="font-weight: bold;">pm</span>
               - после полудня. Этот спецификатор является регистрозависимым. В
               зависимости от заданного регистра спецификатора, в соответствующем
@@ -132,8 +134,8 @@
           <tr style="background-color: #eeeeee;">
             <td class="cellleft"><span style="font-weight: bold;">a/p</span></td>
             <td class="cellright">Установка 12-часового формата времени для
-              указания часов (<span style="font-weight: bold;">h</span> или <span
-                style="font-weight: bold;">hh</span>) и вывод сокращений: <span
+              указания часов (<span style="font-weight: bold;">h</span> или <span
+                style="font-weight: bold;">hh</span>) и вывод сокращений: <span
                 style="font-weight: bold;">a</span> - до полудня, <span style="font-weight: bold;">p</span>
               - после полудня. Этот спецификатор является регистрозависимым. В
               зависимости от заданного регистра спецификатора, в соответствующем
@@ -162,16 +164,14 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div class="absaz">Спецификаторы формата могут быть записаны как в верхнем
-        регистре, так и в нижнем регистре — оба дают одинаковый результат.</div>
-      <br />
-      <div><b>Пример:</b></div>
-      <pre class="indent examplebox">GetDateTimeString(<span class="hl str">'ddddd'</span>, <span
+      <p>Спецификаторы формата могут быть записаны как в верхнем регистре, так и
+        в нижнем регистре — оба дают одинаковый результат.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox">GetDateTimeString(<span class="hl str">'ddddd'</span>, <span
 class="hl kwf">#0</span>, <span class="hl kwf">#0</span>);
-GetDateTimeString(<span class="hl str">'ddddd tt'</span>, <span class="hl kwf">#0</span>, <span
+GetDateTimeString(<span class="hl str">'ddddd tt'</span>, <span class="hl kwf">#0</span>, <span
 class="hl kwf">#0</span>);
-GetDateTimeString(<span class="hl str">'dd/mm/yyyy hh:nn:ss'</span>, <span class="hl str">'-'</span>, <span
+GetDateTimeString(<span class="hl str">'dd/mm/yyyy hh:nn:ss'</span>, <span class="hl str">'-'</span>, <span
 class="hl str">':'</span>);</pre>
     </div>
   </body>

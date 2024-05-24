@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Files]</title>
@@ -18,26 +18,20 @@
   <body>
     <h1 class="topicheading">Секция [Files]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Эта секция является необязательной и определяет любые
+      <p>Эта секция является необязательной и определяет любые
         файлы, которые программа установки должна установить в системе
-        пользователя.</div>
-      <br />
-      <div class="absaz">Пример секции <tt>[Files]</tt>:</div>
+        пользователя.</p>
+      <p>Пример секции <tt>[Files]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "CTL3DV2.DLL"; <span class="hl kwb">DestDir</span>: "<span
-class="hl kwc">{sys}</span>"; <span class="hl kwb">Flags</span>: <span class="hl kwe">onlyifdoesntexist uninsneveruninstall</span>
 <span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"
 <span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"
 <span class="hl kwb">Source</span>: "README.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Flags</span>: <span class="hl kwe">isreadme</span></pre>
-      <div class="absaz">Обязательно ознакомьтесь с <i>Замечаниями</i> в конце
-        этого раздела.</div>
-      <br />
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+      <p>Обязательно ознакомьтесь с <i>Замечаниями</i> в конце
+        этого раздела.</p>
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Source">Source</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">
@@ -128,21 +122,6 @@ class="hl kwb">Flags</span>: <span class="hl kwe">recursesubdirs</span></pre>
             <pre class="nomargin"><span class="hl kwb">ExternalSize</span>: <span
 class="hl num">1048576</span>; <span class="hl kwb">Flags</span>: <span class="hl kwe">external</span></pre>
           </div>
-        </dd>
-        <dt class="paramlist"><b><a name="CopyMode">CopyMode</a></b></dt>
-        <dd class="paramlist">
-          <p>Во всех новых сценариях использовать этот параметр не нужно. Он
-            устарел и, начиная с Inno Setup 3.0.5, заменён флагами:</p>
-          <p>
-            <tt>CopyMode: normal -&gt; Flags: promptifolder</tt><br />
-            <tt>CopyMode: alwaysskipifsameorolder -&gt; </tt>не имеет флага<br />
-            <tt>CopyMode: onlyifdoesntexist -&gt; Flags: onlyifdoesntexist</tt><br />
-            <tt>CopyMode: alwaysoverwrite -&gt; Flags: ignoreversion</tt><br />
-            <tt>CopyMode: dontcopy -&gt; Flags: dontcopy</tt>
-          </p>
-          <p>Теперь по умолчанию принят режим <tt>CopyMode:
-              alwaysskipifsameorolder</tt>. (Ранее по умолчанию использовался
-            режим <tt>CopyMode: normal</tt>.) </p>
         </dd>
         <dt class="paramlist"><b><a name="Attribs">Attribs</a></b></dt>
         <dd class="paramlist">
@@ -490,12 +469,10 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 отменена только тогда, когда счётчик ссылок общего доступа
                 достигнет нуля. </p>
               <p>В <a href="topic_32vs64bitinstalls.htm">64-разрядном режиме
-                  установки</a> и запуске на 64-разрядной редакции Windows
+                установки</a> и запуске на х64-совместимой редакции Windows
                 регистрация библиотеки типов будет выполнена 64-разрядным
                 процессом. Это можно переопределить, указав флаг <tt>32bit</tt>.
               </p>
-              <p>Регистрация библиотеки типов в 64-разрядной архитектуре Itanium
-                не поддерживается.</p>
               <p>Для получения дополнительных сведений см. <i>замечания</i> в
                 конце страницы. </p>
             </dd>
@@ -517,7 +494,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 MoveFileEx или созданием записи в WININIT.INI). В случае
                 возникновения такой ситуации, по окончании установки
                 пользователю будет предложено перезагрузить компьютер.</p>
-              <p><b>ПРИМЕЧАНИЕ:</b> Если пользователь не имеет прав
+              <p><b>ПРИМЕЧАНИЕ:</b> если пользователь не имеет прав
                 администратора, этот флаг не учитывается. Поэтому при его
                 использовании рекомендуется для директивы <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>
                 в секции <tt>[Setup]</tt> оставить значение <tt>admin</tt>.</p>
@@ -576,6 +553,11 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 исходных файлов прежде, чем они будут добавлены в пакет
                 установки. Не учитывается, если параметр <a href="topic_setup_signtool.htm">SignTool</a>
                 в секции <tt>[Setup]</tt> не установлен. </p>
+            </dd>
+            <dt class="flaglist"><a name="signcheck">signcheck</a></dt>
+            <dd>
+              <p>Этот флаг указывает компилятору проверить наличие цифровой подписи
+                в исходных файлах перед их добавлением в пакет установки.</p>
             </dd>
             <dt class="flaglist"><a name="signonce">signonce</a></dt>
             <dd>
@@ -680,11 +662,9 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             [Components] и [Tasks]</a></b></p>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
       <h2 class="heading">Замечания:</h2>
-      <br />
-      <div class="absaz">Если файл в системе пользователя уже существует, по
+      <p>Если файл в системе пользователя уже существует, по
         умолчанию его замена будет выполнена в соответствии со следующими
-        правилами:</div>
-      <br />
+        правилами:</p>
       <ol>
         <li>Если существующий файл имеет более старую версию, чем
           устанавливаемый файл (в соответствии с информацией о версии файлов),
@@ -698,29 +678,24 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
         <li>Если существующий файл не имеет информации о версии, он будет
           заменён.</li>
       </ol>
-      <br />
-      <div class="absaz">Некоторые флаги, такие как <tt>onlyifdoesntexist</tt>,
+      <p>Некоторые флаги, такие как <tt>onlyifdoesntexist</tt>,
         <tt>ignoreversion</tt> и <tt>promptifolder</tt>, изменяют
-        вышеупомянутые правила.</div>
-      <br />
-      <div class="absaz">Если программа установки не может заменить существующий
+        вышеупомянутые правила.</p>
+      <p>Если программа установки не может заменить существующий
         файл, поскольку он используется другим процессом, она предпримет до 4
         дополнительных попыток замены (с интервалом в одну секунду). Если все
-        попытки окажутся неудачными, будет показано сообщение об ошибке.</div>
-      <br />
-      <div class="absaz">Все файлы с флагами <tt>regserver</tt> или <tt>regtypelib</tt>
+        попытки окажутся неудачными, будет показано сообщение об ошибке.</p>
+      <p>Все файлы с флагами <tt>regserver</tt> или <tt>regtypelib</tt>
         программа установки регистрирует на последнем этапе инсталляции. Однако,
         если в секции <tt>[Setup]</tt> для директивы <tt>AlwaysRestart</tt>
         задано значение <tt>yes</tt>, или если имеются файлы с флагом <tt>restartreplace</tt>,
         все эти файлы будут зарегистрированы при следующей перезагрузке системы
         (путём создания соответствующих записей в ключе <i>RunOnce</i> реестра
-        Windows).</div>
-      <br />
-      <div class="absaz">При удалении файлов с расширением .HLP (файлы помощи
+        Windows).</p>
+      <p>При удалении файлов с расширением .HLP (файлы помощи
         Windows), автоматически удаляются все связанные с ними файлы .GID и
         .FTS. Аналогично с файлами .CHM (файлы справки HTML) – при их удалении
-        также автоматически удаляются связанные файлы .CHW (файлы индексации).</div>
-      <br />
+        также автоматически удаляются связанные файлы .CHW (файлы индексации).</p>
     </div>
   </body>
 </html>

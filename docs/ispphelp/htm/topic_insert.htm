@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #insert</title>
@@ -19,20 +19,19 @@
     <h1 class="topicheading">Inno Setup Preprocessor: #insert</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>insert-directive:</i>
-            </td>
-            <td class="cellright"><b>insert</b> &lt;expr&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>insert-directive:</i></td>
+              <td class="cellright"><b>insert</b> &lt;expr&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
       <p>Выполняет вставку указанного выражения (<b>expr</b>). По умолчанию
-        каждая обработанная строка сценария добавляется в конец данных <a class="new1"
+        каждая обработанная строка сценария добавляется в конец данных <a class="new1"
           href="topic_translation.htm">вывода препроцессора</a>, формируя таким
         образом определённую последовательность команд, которые будут переданы
         компилятору. Используя директиву <tt style="font-weight: bold; color: #990000;">insert</tt>,
@@ -48,33 +47,31 @@
           препроцессора</a>. Таким образом, каждая новая строка будет добавлена
         после строк, вставленных предыдущей командой.</p>
       <p>Не рекомендуется использовать директиву совместно с функциями
-        компоновки сценариев (например, <tt><a href="topic_setsetupsetting.htm">SetSetupSetting</a></tt>),
+        компоновки сценариев (например, <tt class="nill"><a href="topic_setsetupsetting.htm">SetSetupSetting</a></tt>),
         которые самостоятельно позволяют вставить строку. Они смещают часть
         кода, но не обновляют значение счетчика вставки. Это может привести к
         другой точке возврата в коде сценария, нарушив его алгоритм.</p>
       <p>Чтобы получить необходимое значение (выражение) для директивы <tt style="font-weight: bold; color: #990000;">insert</tt>,
-        можно использовать функцию <tt><a href="topic_find.htm">Find</a></tt>.</p>
-      <br />
+        можно использовать функцию <tt class="nill"><a href="topic_find.htm">Find</a></tt>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Вставка строки, идущей после секции [Icons].</span>
-<span class="hl kwf">#insert</span> <span class="hl kwd">FindSectionEnd</span><span
+<span class="hl kwf">#insert</span> <span class="hl kwd">FindSectionEnd</span><span
 class="hl opt">(</span><span class="hl str">"Icons"</span><span class="hl opt">)</span>
 
 <span class="hl slc">// Вставка 2 строки, идущей после объявления секции [Setup].</span>
-<span class="hl kwf">#insert</span> <span class="hl kwd">FindSection</span><span
-class="hl opt">(</span><span class="hl str">"Setup"</span><span class="hl opt">) +</span> <span
+<span class="hl kwf">#insert</span> <span class="hl kwd">FindSection</span><span
+class="hl opt">(</span><span class="hl str">"Setup"</span><span class="hl opt">) +</span> <span
 class="hl num">1</span>
 
 <span class="hl slc">// Вставка строк, которые содержат подстроку "somefile.ext"</span>
 <span class="hl slc">// (поиск необходимых строк выполняет функция Find).</span>
-<span class="hl kwf">#insert</span> <span class="hl kwd">Find</span><span class="hl opt">(</span><span
-class="hl num">0</span><span class="hl opt">,</span> <span class="hl str">"somefile.ext"</span><span
+<span class="hl kwf">#insert</span> <span class="hl kwd">Find</span><span class="hl opt">(</span><span
+class="hl num">0</span><span class="hl opt">,</span> <span class="hl str">"somefile.ext"</span><span
 class="hl opt">,</span> <span class="hl kwe">FIND_CONTAINS</span><span class="hl opt">)</span>
 </pre> </div>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a class="new" href="topic_append.htm">append</a></tt>. </p>
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a class="new" href="topic_append.htm">append</a></tt>. </p>
     </div>
   </body>
 </html>

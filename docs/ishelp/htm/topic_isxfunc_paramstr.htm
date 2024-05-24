@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: ParamStr</title>
@@ -18,24 +18,19 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: ParamStr</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function ParamStr(Index: Integer): String;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">По заданному индексу <i>Index</i> возвращает один из параметров
-        командной строки, переданных программе установки или удаления, за исключением
-        недокументированных внутренних параметров, используемых ими.</div>
-      <br />
-      <div class="absaz">Параметр с индексом 0 — это полное имя файла, с которого была
-        запущена программа установки или удаления.</div>
-      <br />
-      <div class="absaz">Если индекс недействительный, функция вернёт пустую строку.</div>
-      <br />
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_paramcount.htm">ParamCount</a><br />
-         <a href="topic_isxfunc_getcmdtail.htm">GetCmdTail</a>
-      </p>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ParamStr(Index: Integer): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>По указанному индексу <tt>Index</tt> возвращает один из параметров
+        командной строки, переданных программе установки или удаления, за
+        исключением недокументированных внутренних параметров, используемых ими.</p>
+      <p>Параметр с индексом 0 — это полное имя файла, с которого была запущена
+        программа установки или удаления.</p>
+      <p>Если индекс недействительный, функция вернёт пустую строку.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_paramcount.htm">ParamCount</a><br />
+        <a href="topic_isxfunc_getcmdtail.htm">GetCmdTail</a> </p>
     </div>
   </body>
 </html>

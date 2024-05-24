@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Параметры командной строки инсталлятора</title>
@@ -18,25 +18,25 @@
   <body>
     <h1 class="topicheading">Параметры командной строки инсталлятора</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Программа установки принимает дополнительные параметры
+      <p>Программа установки принимает дополнительные параметры
         командной строки, которые могут пригодиться при автоматизации процесса
         установки приложений и использованы системными администраторами,
-        пользователями или другими программами, вызывающими программу установки.</div>
-      <br />
+        пользователями или другими программами, вызывающими программу установки.</p>
+      <p>Смотрите также раздел "<a href="topic_uninstcmdline.htm">Параметры
+        командной строки деинсталлятора</a>".</p>
       <dl>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="HELP">/HELP</a></span>, <span
               style="color: #663300;"><a name="HELP2">/?</a></span></b></dt>
         <dd>
           <p>Выводит справочную информацию по параметрам командной строки.
             Игнорируется, если директива <tt>UseSetupLdr</tt> в секции <tt>[Setup]</tt>
-            имеет значение <tt>no</tt>.<br /><br /></p>
+            имеет значение <tt>no</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="SP-">/SP-</a></span></b></dt>
         <dd>
           <p>Отключает сообщение "<i>Данная программа установит.., продолжить?</i>"
             при запуске программы установки. Игнорируется, если директива <tt>DisableStartupPrompt</tt>
-            в секции <tt>[Setup]</tt> имеет значение <tt>yes</tt>.<br /><br /></p>
+            в секции <tt>[Setup]</tt> имеет значение <tt>yes</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="SILENT">/SILENT</a></span>,
             <span style="color: #663300;"><a name="VERYSILENT">/VERYSILENT</a></span></b></dt>
@@ -53,7 +53,7 @@
             выполняется в тихом режиме и команда <tt>/NORESTART</tt> не
             использовалась, будет показано сообщение "<i>Произвести перезагрузку
               сейчас?</i>". При очень тихой установке перезагрузка будет
-            выполнена автоматически, без уведомления.<br /><br /></p>
+            выполнена автоматически, без уведомления.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="SUPPRESSMSGBOXES">/SUPPRESSMSGBOXES</a></span></b></dt>
         <dd>
@@ -87,8 +87,8 @@
               прочитает параметры командной строки.</li>
             <li class="compact">Любой диалог задач или окно сообщения,
               показываемых при помощи функций <tt>TaskDialogMsgBox</tt> и <tt>MsgBox</tt>
-              в секции <tt>[Code]</tt>. </li>
-          </ul><br />
+              в секции <tt>[Code]</tt>.</li>
+          </ul>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="ALLUSERS">/ALLUSERS</a></span></b></dt>
         <dd>
@@ -96,7 +96,7 @@
               href="topic_admininstallmode.htm">административной установки</a>.
             Действует только в том случае, если в секции <tt>[Setup]</tt>
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
-            со значением <tt>commandline</tt>.<br /><br /></p>
+            со значением <tt>commandline</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="CURRENTUSER">/CURRENTUSER</a></span></b></dt>
         <dd>
@@ -104,7 +104,7 @@
               href="topic_admininstallmode.htm">не административной установки</a>.
             Действует только в том случае, если в секции <tt>[Setup]</tt>
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
-            со значением <tt>commandline</tt>.<br /><br /></p>
+            со значением <tt>commandline</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="LOG">/LOG</a></span></b></dt>
         <dd>
@@ -121,7 +121,7 @@
           <p>Информация, содержащаяся в файле отчёта, носит технический характер
             и адресуется в первую очередь опытным пользователям и специалистам.
             Формат файла не предназначен для машинного анализа и может быть
-            изменён без предварительного уведомления.<br /><br /></p>
+            изменён без предварительного уведомления.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="LOG2">/LOG=</a></span>"<i>filename</i>"</b></dt>
         <dd>
@@ -129,20 +129,20 @@
             позволяет указать путь и имя файла, которые будут использованы при
             создании отчёта. Если файл с таким именем уже существует, он будет
             перезаписан. Если же файл не может быть создан, программа установки
-            будет прервана с сообщением об ошибке.<br /><br /></p>
+            будет прервана с сообщением об ошибке.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NOCANCEL">/NOCANCEL</a></span></b></dt>
         <dd>
           <p>Предотвращает отмену процесса установки путём отключения кнопки
             "Отмена" и игнорируя нажатия по кнопке "Закрыть". Целесообразно
-            использовать вместе с командой <tt>/SILENT</tt> или <tt>/VERYSILENT</tt>.<br /><br /></p>
+            использовать вместе с командой <tt>/SILENT</tt> или <tt>/VERYSILENT</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NORESTART">/NORESTART</a></span></b></dt>
         <dd>
           <p>Предотвращает перезагрузку системы после успешного завершения
             установки или после сбоя на этапе <i>Подготовка к установке</i>,
             требующего перезагрузки. Обычно используется вместе с командой <tt>/SILENT</tt>
-            или <tt>/VERYSILENT</tt>.<br /><br /></p>
+            или <tt>/VERYSILENT</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="RESTARTEXITCODE">/RESTARTEXITCODE=</a></span><i>exit
               code</i></b></dt>
@@ -152,58 +152,58 @@
             необходимо перезапустить систему. (В противном случае, по умолчанию,
             код выхода будет равен 0.) Обычно используется вместе с командой <tt>/NORESTART</tt>.
             См. также: <a href="topic_setupexitcodes.htm">Коды выхода программы
-              установки</a>.<br /><br /></p>
+              установки</a>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="CLOSEAPPLICATIONS">/CLOSEAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Предписывает программе установки по возможности закрыть приложения,
-            которые используют файлы, нуждающиеся в обновлении.<br /><br /></p>
+            которые используют файлы, нуждающиеся в обновлении.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NOCLOSEAPPLICATIONS">/NOCLOSEAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Запрещает программе установки закрывать приложения, которые
             используют файлы, нуждающиеся в обновлении. Если также используется
-            команда <tt>/CLOSEAPPLICATIONS</tt>, этот параметр не учитывается.<br /><br /></p>
+            команда <tt>/CLOSEAPPLICATIONS</tt>, этот параметр не учитывается.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="FORCECLOSEAPPLICATIONS">/FORCECLOSEAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Предписывает программе установки принудительно закрывать
-            приложения.<br /><br /></p>
+            приложения.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NOFORCECLOSEAPPLICATIONS">/NOFORCECLOSEAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Запрещает программе установки принудительно закрывать приложения.
             Если также используется команда <tt>/FORCECLOSEAPPLICATIONS</tt>,
-            этот параметр не учитывается.<br /><br /></p>
+            этот параметр не учитывается.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="LOGCLOSEAPPLICATIONS">/LOGCLOSEAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Предписывает программе установки при закрытии приложений создавать
-            дополнительный отчёт в целях отладки.<br /><br /></p>
+            дополнительный отчёт в целях отладки.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="RESTARTAPPLICATIONS">/RESTARTAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Предписывает программе установки перезапустить приложения, если это
-            возможно.<br /><br /></p>
+            возможно.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NORESTARTAPPLICATIONS">/NORESTARTAPPLICATIONS</a></span></b></dt>
         <dd>
           <p>Запрещает программе установки перезапускать приложения. Если также
             используется команда <tt>/RESTARTAPPLICATIONS</tt>, этот параметр
-            не учитывается.<br /><br /></p>
+            не учитывается.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="LOADINF">/LOADINF=</a></span>"<i>filename</i>"</b></dt>
         <dd>
           <p>Предписывает программе установки загрузить настройки инсталляции из
             указанного файла. Этот файл может быть создан при помощи команды <tt>/SAVEINF=</tt>,
             описанной ниже.</p>
-          <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.<br /><br /></p>
+          <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="SAVEINF">/SAVEINF=</a></span>"<i>filename</i>"</b></dt>
         <dd>
           <p>Предписывает программе установки сохранить настройки инсталляции в
             указанный файл.</p>
-          <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.<br /><br /></p>
+          <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="LANG">/LANG=</a></span><i>language</i></b></dt>
         <dd>
@@ -211,7 +211,7 @@
             необходимо указать внутренне имя языка, заданного в записях секции <tt>[Languages]</tt>.
           </p>
           <p>При использовании действительного значения параметра <tt>/LANG</tt>,
-            диалог "<i>Выбор языка</i>" показан не будет.<br /><br /></p>
+            диалог "<i>Выбор языка</i>" показан не будет.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="DIR">/DIR=</a></span>"<i>x</i>:\<i>dirname</i>"</b></dt>
         <dd>
@@ -220,7 +220,7 @@
             указывать полный путь. Может содержать приставку "expand:", которая
             указывает программе установки заменить любые константы в имени на
             соответствующие им значения. Например: <tt>/DIR=expand:{autopf}\My
-              Program</tt>.<br /><br /></p>
+              Program</tt>.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="GROUP">/GROUP=</a></span>"<i>folder
               name</i>"</b></dt>
@@ -229,13 +229,13 @@
             предлагается на странице "<i>Выбор папки в меню «Пуск»</i>". Может
             содержать приставку "expand:" (см. описание команды <tt>/DIR=</tt>).
             Если директива <tt>DisableProgramGroupPage</tt> в секции <tt>[Setup]</tt>
-            имеет значение <tt>yes</tt>, эта команда не учитывается.<br /><br /></p>
+            имеет значение <tt>yes</tt>, эта команда не учитывается.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="NOICONS">/NOICONS</a></span></b></dt>
         <dd>
           <p>Предписывает программе установки изначально отметить опцию "<i>Не
               создавать папку в меню «Пуск»</i>" на странице мастера "<i>Выбор
-              папки в меню «Пуск»</i>".<br /><br /></p>
+              папки в меню «Пуск»</i>".</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="TYPE">/TYPE=</a></span><i>type
               name</i></b></dt>
@@ -243,7 +243,7 @@
           <p>Переопределяет заданный по умолчанию <a href="topic_typessection.htm">тип
               установки</a>. </p>
           <p>Если указанный тип существует и не является пользовательским, любой
-            параметр <tt>/COMPONENTS</tt> будет проигнорирован.<br /><br /></p>
+            параметр <tt>/COMPONENTS</tt> будет проигнорирован.</p>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="COMPONENTS">/COMPONENTS=</a></span>"<i>разделённый
               запятыми перечень компонентов</i>"</b></dt>
@@ -263,13 +263,13 @@
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех компонентов и выбираются только "help" и
-            "plugins":<br /><br />
-            <tt>/COMPONENTS="help,plugins"</tt></div><br />
+            "plugins":
+            <tt>/COMPONENTS="help,plugins"</tt><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех компонентов и выбирается родительский со всеми
-            дочерними компонентами за исключением одного:<br /><br />
-            <tt>/COMPONENTS="*parent,!parent\child"</tt></div><br /><br />
+            дочерними компонентами за исключением одного:
+            <tt>/COMPONENTS="*parent,!parent\child"</tt><br /><br /></div>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="TASKS">/TASKS=</a></span>"<i>разделённый
               запятыми перечень задач</i>"</b></dt>
@@ -287,13 +287,13 @@
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех задач и выбираются только "desktopicon" и
-            "fileassoc":<br /><br />
-            <tt>/TASKS="desktopicon,fileassoc"</tt></div><br />
+            "fileassoc":
+            <tt>/TASKS="desktopicon,fileassoc"</tt><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех задач и выбирается родительская со всеми
-            дочерними задачами за исключением одной:<br /><br />
-            <tt>/TASKS="*parent,!parent\child"</tt></div><br /><br />
+            дочерними задачами за исключением одной:
+            <tt>/TASKS="*parent,!parent\child"</tt><br /><br /></div>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="MERGETASKS">/MERGETASKS=</a></span>"<i>разделённый
               запятыми перечень задач</i>"</b></dt>
@@ -307,20 +307,20 @@
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Сохраняются выбранные по умолчанию задачи, но дополнительно ещё
-            выбираются "desktopicon" и "fileassoc":<br /><br />
-            <tt>/MERGETASKS="desktopicon,fileassoc"</tt></div><br />
+            выбираются "desktopicon" и "fileassoc":
+            <tt>/MERGETASKS="desktopicon,fileassoc"</tt><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Сохраняются выбранные по умолчанию задачи, но выбор задачи
-            "desktopicon" отменяется:<br /><br />
-            <tt>/MERGETASKS="!desktopicon"</tt></div><br /><br />
+            "desktopicon" отменяется:
+            <tt>/MERGETASKS="!desktopicon"</tt><br /><br /></div>
         </dd>
         <dt class="cmdline"><b><span style="color: #663300;"><a name="PASSWORD">/PASSWORD=</a></span><i>password</i></b></dt>
         <dd>
           <p>Определяет пароль для использования в установке. Если в секции <tt>[Setup]</tt>
             параметр <tt>Password</tt> не указан, этот параметр командной
             строки не учитывается. </p>
-          <p>Если указан неверный пароль, этот параметр также не учитывается.<br /><br /></p>
+          <p>Если указан неверный пароль, этот параметр также не учитывается.</p>
         </dd>
       </dl>
     </div>

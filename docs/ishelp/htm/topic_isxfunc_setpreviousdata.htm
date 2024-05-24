@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: SetPreviousData</title>
@@ -18,17 +18,46 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: SetPreviousData</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function SetPreviousData(const PreviousDataKey: Integer; const
-          ValueName, ValueData: String): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Устанавливает значение, которое может быть
-        восстановлено позже при помощи функции <tt>GetPreviousData</tt>.
-        Используйте вызов <tt>SetPreviousData</tt> в событии функции <tt>RegisterPreviousData</tt>
-        для каждого параметра.</div>
-      <br />
-    </div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          SetPreviousData(const PreviousDataKey: Integer; const ValueName,
+          ValueData: String): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Устанавливает значение, которое позже может быть восстановлено при
+        помощи функции <tt>GetPreviousData</tt>. Используйте вызов <tt>SetPreviousData</tt>
+        в событии функции <tt>RegisterPreviousData</tt> для каждого параметра.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  UserPage: TInputQueryWizardPage;
+
+<span class="hl kwb">procedure</span> <span class="hl kwd">InitializeWizard</span>;
+<span class="hl kwb">begin</span>
+  UserPage := <span class="hl kwg">CreateInputQueryPage</span>(<span class="hl kwe">wpWelcome</span>, <span
+class="hl str">'Caption'</span>, <span class="hl str">'Description'</span>, <span
+class="hl str">''</span>);
+  UserPage.<span class="hl kwd">Add</span>(<span class="hl str">'Service name:'</span>, <span
+class="hl kwg">False</span>);
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">procedure</span> <span class="hl kwd">RegisterPreviousData</span>(PreviousDataKey: <span
+class="hl kwg">Integer</span>);
+<span class="hl kwb">begin</span>
+  <span class="hl kwg">SetPreviousData</span>(PreviousDataKey, <span class="hl str">'ServiceName'</span>, UserPage.Values[<span
+class="hl num">0</span>]);
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">function</span> <span class="hl kwd">InitializeUninstall</span>: <span
+class="hl kwg">Boolean</span>;
+<span class="hl kwb">var</span>
+  ServiceName: String;
+<span class="hl kwb">begin</span>
+  ServiceName := <span class="hl kwg">GetPreviousData</span>(<span class="hl str">'ServiceName'</span>, <span
+class="hl str">''</span>);
+  <span class="hl kwb">if</span> ServiceName &lt;&gt; <span class="hl str">''</span> <span
+class="hl kwb">then</span>
+    <span class="hl kwg">MsgBox</span>(<span class="hl str">'The value entered before: '</span> + ServiceName, <span
+class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;
+</pre> </div>
   </body>
 </html>

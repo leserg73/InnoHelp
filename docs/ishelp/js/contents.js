@@ -1,13 +1,11 @@
 ﻿/*
   Inno Setup
-  Copyright (C) 1997-2020 Jordan Russell
+  Copyright (C) 1997-2024 Jordan Russell
   Portions by Martijn Laan
   For conditions of distribution and use, see LICENSE.TXT.
 
   JavaScript code used by contents.htm
 */
-
-var searchTabBaseUrl = "https://jrsoftware.org/ishelp/";
 
 function get_absolute_top(obj)
 {
@@ -61,15 +59,7 @@ function ensure_elements_visible(elementTop, elementBottom)
 	yTop -= viewportScrollTop;
 	yBottom -= viewportScrollTop;
 
-	var clientHeight;
-	if (typeof window.innerHeight != "undefined") {
-		// Opera 9.01 compatibility: document.documentElement.clientHeight
-		// returns the page content height, not the client area height,
-		// so we have to use this instead.
-		clientHeight = window.innerHeight;
-	} else {
-		clientHeight = get_viewport_element().clientHeight;
-	}
+	var clientHeight = get_viewport_element().clientHeight;
 
 	if (yTop < 0) {
 		// Scroll up to make the top of elementTop visible

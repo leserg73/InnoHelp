@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: CloseApplications</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: CloseApplications</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>force</tt>, <a href="topic_yesnonotes.htm"><tt>yes</tt>
-                  или <tt>no</tt></a> </div>
+              <div class="margined"><tt class="nill">force</tt>, <a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -35,40 +34,34 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>yes</tt> </div>
+              <div class="margined"><tt class="nill">yes</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">При значении <tt>yes</tt> или <tt>force</tt> и работе
+      <h2 class="heading">Описание</h2>
+      <p>При значении <tt>yes</tt> или <tt>force</tt> и работе
         инсталлятора в обычном режиме, программа установки приостановит свою
         работу на странице "<i>Подготовка к установке</i>", если обнаружит, что
         файлы секции <tt>[Files]</tt> или <tt>[InstallDelete]</tt>,
         нуждающиеся в замене/обновлении, используются другими приложениями. При
         этом будет показан список таких приложений, а также выдан запрос о
         необходимости автоматического закрытия приложений и возможности их
-        перезапуска после завершения установки.</div>
-      <br />
-      <div class="absaz">При значении <tt>yes</tt> или <tt>force</tt> и работе
+        перезапуска после завершения установки.</p>
+      <p>При значении <tt>yes</tt> или <tt>force</tt> и работе
         инсталлятора в тихом режиме, программа установки всегда будет закрывать
         и перезапускать такие приложения, если через командную строку не будут
-        переданы параметры отмены.</div>
-      <br />
-      <div class="absaz">При значении <tt>force</tt>, программа установки
+        переданы параметры отмены.</p>
+      <p>При значении <tt>force</tt>, программа установки
         принудительно закроет приложения, если через командную строку не будут
         переданы параметры отмены. Используйте это значение с осторожностью,
-        т.к. пользователь может потерять несохранённые данные своей работы.</div>
-      <br />
-      <div class="absaz">Примечание: для обнаружения, закрытия и перезапуска
+        т.к. пользователь может потерять несохранённые данные своей работы.</p>
+      <p>Примечание: для обнаружения, закрытия и перезапуска
         приложений программа установки использует функции API Windows механизма <a
         href="https://docs.microsoft.com/en-us/windows/win32/rstmgr/about-restart-manager">Restart
-        Manager</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
-      <br />
-      <p><b>См. также:</b><br />
-        <a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a><br />
+        Manager</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a><br />
         <a href="topic_scriptevents.htm#RegisterExtraCloseApplicationsResources">RegisterExtraCloseApplicationsResources</a><br />
         <a href="topic_setup_restartapplications.htm">RestartApplications</a><br />
         <a href="topic_setup_appmutex.htm">AppMutex</a></p>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: InstallOnThisVersion</title>
@@ -18,30 +18,23 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: InstallOnThisVersion</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function InstallOnThisVersion(const MinVersion, OnlyBelowVersion:
-          String): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Возвращает значение <tt>True</tt>, если файл с
-        указанными параметрами <i>MinVersion</i> и <i>OnlyBelowVersion</i>
-        должен быть установлен. Если указан недопустимая строка версии, будет
-        вызвано исключение.</div>
-      <br />
-      <div class="absaz">Эта функция устарела и оставлена исключительно для
-        обратной совместимости сценариев. В новых сценариях вместо неё
-        рекомендуется использовать функцию <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
-        или <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">В предыдущих версиях Inno Setup (до версии 5.5.0
-        включительно) эта функция возвращала <tt>irInstall</tt>, а не
-        логическое значение <tt>True</tt>. Теперь же <tt>irInstall</tt>
-        определяется как псевдоним для <tt>True</tt>.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          InstallOnThisVersion(const MinVersion, OnlyBelowVersion: String):
+          Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает значение <tt>True</tt>, если файл с указанными параметрами
+        <tt>MinVersion</tt> и <tt>OnlyBelowVersion</tt> должен быть установлен.
+        Если указан недопустимая строка версии, будет вызвано исключение.</p>
+      <p>Эта функция устарела и оставлена исключительно для обратной
+        совместимости сценариев. В новых сценариях вместо неё рекомендуется
+        использовать функцию <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
+        или <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>В предыдущих версиях Inno Setup (до версии 5.5.0 включительно) эта
+        функция возвращала <tt>irInstall</tt>, а не логическое значение <tt>True</tt>.
+        Теперь же <tt>irInstall</tt> определяется как псевдоним для <tt>True</tt>.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl slc">// Устаревший способ, больше не используется</span>
 <span class="hl kwb">function</span> IsWindows8OrLater: Boolean;
 <span class="hl kwb">begin</span>
@@ -53,8 +46,8 @@
 <span class="hl kwb">begin</span>
   Result := (GetWindowsVersion &gt;= <span class="hl num">$06020000</span>);
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>
         <br />
         <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>
       </p>

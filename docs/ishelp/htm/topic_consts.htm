@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Константы</title>
@@ -18,51 +18,46 @@
   <body>
     <h1 class="topicheading">Константы</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Во многих записях сценария широко можно использовать <i>константы</i>.
+      <p>Во многих записях сценария широко можно использовать <i>константы</i>.
         Это предопределённые строки, заключённые в фигурные скобки <tt>{ }</tt>.
         Программа установки или удаления преобразует константы в их литеральные
         значения в зависимости от выбора пользователя и конфигурации системы.
         Например, константа <tt>{win}</tt> на большинстве систем будет
-        преобразовываться в "C:\WINDOWS".</div>
-      <br />
-      <div class="absaz">Символ открывающей фигурной скобки "{" рассматривается
+        преобразовываться в "C:\WINDOWS".</p>
+      <p>Символ открывающей фигурной скобки "{" рассматривается
         как начало константы. Если необходимо в месте применения константы
         использовать фактический символ "{", введите его дважды "{{". При этом
-        дублировать символ закрывающей скобки "}" не нужно.</div>
-      <br />
-      <div class="absaz">Если за константой следует символ обратной косой черты
+        дублировать символ закрывающей скобки "}" не нужно.</p>
+      <p>Если за константой следует символ обратной косой черты
         ("\"), а само значение константы уже заканчивается обратной косой
         чертой, то программа установки или удаления его автоматически удалит.
         Таким образом, если значение определённой константы равно "C:\", то
         запись <tt>{<i>constantname</i>}\file</tt> будет преобразована в
         "C:\file", а не в "C:\\file". Если необходимо это предотвратить,
         заключите символ обратной косой черты в фигурные скобки <tt>{ }</tt>,
-        например, <tt>{app}{\}</tt>.</div>
-      <br />
-      <div class="absaz">Ниже приведен список поддерживаемых констант.</div>
-      <br />
+        например, <tt>{app}{\}</tt>.</p>
+      <p>Ниже приведен список поддерживаемых констант.</p>
       <h2 class="heading">Константы каталогов</h2>
       <dl>
         <dt class="const"><b><a name="app">{app}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог приложения, которую пользователь выбирает на странице
-            мастера "<i>Выбор папки установки</i>".<br />
-            Например: если в сценарии используется запись <tt>{app}\MYPROG.EXE</tt>,
+            мастера "<i>Выбор папки установки</i>".</p>
+          <p>Например: если в сценарии используется запись <tt>{app}\MYPROG.EXE</tt>,
             а в качестве каталога приложения пользователь выбрал "C:\MYPROG", то
             программа установки преобразует её в "C:\MYPROG\MYPROG.EXE". </p>
         </dd>
         <dt class="const"><b><a name="win">{win}</a></b></dt>
-        <dd class="paramlist1">
-          <p>Каталог операционной системы Windows.<br />
-            Например: если в сценарии используется запись <tt>{win}\MYPROG.INI</tt>,
+        <dd>
+          <p>Каталог операционной системы Windows.</p>
+          <p>Например: если в сценарии используется запись <tt>{win}\MYPROG.INI</tt>,
             а каталогом ОС Windows является "C:\WINDOWS", то программа установки
             или удаления преобразует её в "C:\WINDOWS\MYPROG.INI".</p>
         </dd>
         <dt class="const"><b><a name="sys">{sys}</a></b></dt>
-        <dd class="paramlist1">
-          <p>Системный каталог System32.<br />
-            Например: если в сценарии используется запись <tt>{sys}\CTL3D32.DLL</tt>,
+        <dd>
+          <p>Системный каталог System32.</p>
+          <p>Например: если в сценарии используется запись <tt>{sys}\CTL3D32.DLL</tt>,
             а системным каталогом ОС Windows является "C:\WINDOWS\SYSTEM", то
             программа установки или удаления преобразует её в
             "C:\WINDOWS\SYSTEM\CTL3D32.DLL".</p>
@@ -74,13 +69,13 @@
               режима установки</a>.) </p>
         </dd>
         <dt class="const"><b><a name="sysnative">{sysnative}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>На 64-разрядных Windows каталог, возвращаемый этой константой,
             содержит 64-разрядные системные файлы. На 32-разрядных Windows —
             32-разрядные системные файлы.</p>
         </dd>
         <dt class="const"><b><a name="syswow64">{syswow64}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Системный каталог SysWOW64 на 64-разрядных Windows, обычно
             "C:\WINDOWS\SysWOW64". Фактически в этом каталоге находятся
             32-разрядные системные файлы. На 32-разрядных Windows каталога
@@ -96,41 +91,41 @@
             флагу <tt>sharedfile</tt>.) </p>
         </dd>
         <dt class="const"><b><a name="src">{src}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог, в котором находятся файлы программы установки.<br />
             Например: если в сценарии используется запись <tt>{src}\MYPROG.EXE</tt>
             и пользователь выполняет установку из "D:\Soft", то программа
             установки преобразует её в "D:\Soft\MYPROG.EXE".</p>
         </dd>
         <dt class="const"><b><a name="sd">{sd}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Системный диск, на котором установлена операционная система
             Windows. Обычно диск "C:". Эта константа эквивалентна переменной
             среды <i>SystemDrive</i>. </p>
         </dd>
         <dt class="const"><b><a name="commonpf">{commonpf}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог Program Files, в который обычно выполняется установка
             приложений. Константа <tt>{commonpf}</tt> эквивалентна константе <tt>{commonpf32}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
               режиме</a>, иначе эквивалентна константе <tt>{commonpf64}</tt>. </p>
         </dd>
         <dt class="const"><b><a name="commonpf32">{commonpf32}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>32-разрядный каталог Program Files, предназначенный для установки
             32-разрядных приложений. Обычно это путь "C:\Program Files" на
             32-разрядных Windows и "C:\Program Files (x86)" на 64-разрядных
             Windows.</p>
         </dd>
         <dt class="const"><b><a name="commonpf64">{commonpf64}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>64-разрядный каталог Program Files, предназначенный для установки
             64-разрядных приложений. Обычно это путь "C:\Program Files".
             Константа действительна только на 64-разрядных Windows. При попытке
             её использования на 32-разрядных Windows будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="commoncf">{commoncf}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог Common Files, в который обычно выполняется установка
             системных файлов приложений. Константа <tt>{commoncf}</tt>
             эквивалентна константе <tt>{commoncf32}</tt>, если установка не
@@ -138,14 +133,14 @@
               режиме</a>, иначе эквивалентна константе <tt>{commoncf64}</tt>. </p>
         </dd>
         <dt class="const"><b><a name="commoncf32">{commoncf32}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>32-разрядный каталог Common Files, предназначенный для установки
             32-разрядных системных файлов приложений. Обычно это путь
             "C:\Program Files\Common Files" на 32-разрядных Windows и
             "C:\Program Files (x86)\Common Files" на 64-разрядных Windows.</p>
         </dd>
         <dt class="const"><b><a name="commoncf64">{commoncf64}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>64-разрядный каталог Common Files, предназначенный для установки
             64-разрядных системных файлов приложений. Обычно это путь
             "C:\Program Files\Common Files". Константа действительна только на
@@ -153,7 +148,7 @@
             Windows будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="tmp">{tmp}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Временный каталог, используемый программой установки или удаления.
             Константа <i>не</i> является значением переменной окружения TEMP
             пользователя. Это подкаталог во временном каталоге пользователя,
@@ -165,23 +160,23 @@
             быть выполнены в секции [Run], но не нужны после установки. </p>
         </dd>
         <dt class="const"><b><a name="commonfonts">{commonfonts}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог шрифтов. Обычно называется "Fonts" и находится в каталоге
             Windows.</p>
         </dd>
         <dt class="const"><b><a name="dao">{dao}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Каталог DAO. Константа эквивалентна записи <tt>{commoncf}\Microsoft
               Shared\DAO</tt>. </p>
         </dd>
         <dt class="const"><b><a name="dotnet11">{dotnet11}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки 32-разрядной .NET Framework версии 1.1.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 1.1, будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="dotnet20">{dotnet20}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки .NET Framework версии 2.0-3.5. Константа
             <tt>{dotnet20}</tt> эквивалентна константе <tt>{dotnet2032}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
@@ -190,21 +185,21 @@
             нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="dotnet2032">{dotnet2032}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки 32-разрядной .NET Framework версии
             2.0-3.5.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="dotnet2064">{dotnet2064}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки 64-разрядной .NET Framework версии
             2.0-3.5. Константа действительна только на 64-разрядных Windows.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="dotnet40">{dotnet40}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки .NET Framework версии 4.0 и выше.
             Константа <tt>{dotnet40}</tt> эквивалентна константе <tt>{dotnet4032}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
@@ -215,37 +210,33 @@
           </p>
         </dd>
         <dt class="const"><b><a name="dotnet4032">{dotnet4032}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки 32-разрядной .NET Framework версии 4.0 и
             выше.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
         </dd>
         <dt class="const"><b><a name="dotnet4064">{dotnet4064}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Корневой каталог установки 64-разрядной .NET Framework версии 4.0 и
             выше. Константа действительна только на 64-разрядных Windows.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
         </dd>
       </dl>
-      <br />
       <h2 class="heading">Константы специальных папок</h2>
-      <div class="absaz">Inno Setup поддерживает другой набор констант каталога,
+      <p>Inno Setup поддерживает другой набор констант каталога,
         именуемый <i>константы специальных папок</i>. Их можно использовать так
-        же, как и другие константы каталога.</div>
-      <br />
-      <div class="absaz">Константы "common" относятся к профилю <i>Все
-          пользователи</i>.</div>
-      <br />
-      <div class="absaz">Константы "user" относятся к профилю пользователя,
+        же, как и другие константы каталога.</p>
+      <p>Константы "common" относятся к профилю <i>Все
+          пользователи</i>.</p>
+      <p>Константы "user" относятся к профилю пользователя,
         который запускает программу установки. Часто этот пользователь является
         не тем пользователем, который вошёл в систему, поэтому используйте
-        константы "user" с осторожностью.</div>
-      <br />
+        константы "user" с осторожностью.</p>
       <dl>
         <dt class="const"><b><a name="group">{group}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке в меню «Пуск», которую пользователь выбрал на странице
             мастера "<i>Выберите папку в меню «Пуск»</i>". Если инсталлятор
             работает в <a href="topic_admininstallmode.htm">режиме не
@@ -253,16 +244,16 @@
             пользователя, иначе — в профиле <i>Все пользователи</i>. </p>
         </dd>
         <dt class="const"><b><a name="localappdata">{localappdata}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к локальной (без роуминга) папке "Application Data" текущего пользователя.</p>
         </dd>
         <dt class="const"><b><a name="userappdata">{userappdata}</a></b>
           <span style="color: black;">и</span> <b><a name="commonappdata">{commonappdata}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Application Data".</p>
         </dd>
         <dt class="const"><b><a name="usercf">{usercf}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Common Files" текущего пользователя. Константа <tt>{usercf}</tt>
             поддерживается только в Windows 7 и более поздних версиях. При
             использовании в предыдущих версиях Windows она будет преобразована в
@@ -270,28 +261,28 @@
         </dd>
         <dt class="const"><b><a name="userdesktop">{userdesktop}</a></b>
           <span style="color: black;">и</span> <b><a name="commondesktop">{commondesktop}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Рабочий стол".</p>
         </dd>
         <dt class="const"><b><a name="userdocs">{userdocs}</a></b>
           <span style="color: black;">и</span> <b><a name="commondocs">{commondocs}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Мои документы".</p>
         </dd>
         <dt class="const"><b><a name="userfavorites">{userfavorites}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Избранное" текущего пользователя. (Общей папки
             "Избранное" не существует.)</p>
         </dd>
         <dt class="const"><b><a name="userfonts">{userfonts}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Fonts" текущего пользователя. Только Windows 10
             версии 1803 и выше поддерживает константу <tt>{userfonts}</tt>.
             Соответствует каталогу <tt>{localappdata}\Microsoft\Windows\Fonts</tt>.
           </p>
         </dd>
         <dt class="const"><b><a name="userpf">{userpf}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Program Files" текущего пользователя. Константа <tt>{userpf}</tt>
             поддерживается только в Windows 7 и более поздних версиях. При
             использовании в предыдущих версиях Windows она будет преобразована в
@@ -299,44 +290,42 @@
         </dd>
         <dt class="const"><b><a name="userprograms">{userprograms}</a></b>
           <span style="color: black;">и</span> <b><a name="commonprograms">{commonprograms}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Программы" в меню «Пуск».</p>
         </dd>
         <dt class="const"><b><a name="usersavedgames">{usersavedgames}</a></b></dt>
-        <dd class="paramlist1">
-          <p>Путь к папке "Сохранения игр" (Saved Games) текущего пользователя.</p>
+        <dd>
+          <p>Путь к папке "Сохранения игр" (Saved Games) текущего пользователя.
+             (Общей папки "Сохранения игр" не существует.)</p>
         </dd>
         <dt class="const"><b><a name="usersendto">{usersendto}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Отправить" текущего пользователя. (Общей папки
             "Отправить" не существует.)</p>
         </dd>
         <dt class="const"><b><a name="userstartmenu">{userstartmenu}</a></b>
           <span style="color: black;">и</span> <b><a name="commonstartmenu">{commonstartmenu}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке верхнего уровня меню «Пуск».</p>
         </dd>
         <dt class="const"><b><a name="userstartup">{userstartup}</a></b>
           <span style="color: black;">и</span> <b><a name="commonstartup">{commonstartup}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Автозагрузка" в меню «Пуск».</p>
         </dd>
         <dt class="const"><b><a name="usertemplates">{usertemplates}</a></b>
           <span style="color: black;">и</span> <b><a name="commontemplates">{commontemplates}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке "Шаблоны".</p>
         </dd>
       </dl>
-      <br />
       <h2 class="heading">Константы "auto"</h2>
-      <div class="absaz">Помимо констант "common" и "user", Inno Setup также
+      <p>Помимо констант "common" и "user", Inno Setup также
         поддерживает константы "auto". Если инсталлятор работает в <a href="topic_admininstallmode.htm">режиме
           не административной установки</a>, константы "auto" сопоставляются
-        формой "user", иначе — с формой "common".</div>
-      <br />
-      <div class="absaz">Если это возможно, рекомендуется всегда использовать
-        константы "auto", чтобы предотвратить появление ошибок.</div>
-      <br />
+        формой "user", иначе — с формой "common".</p>
+      <p>Если это возможно, рекомендуется всегда использовать
+        константы "auto", чтобы предотвратить появление ошибок.</p>
       <div class="indent">
         <table>
           <tbody>
@@ -347,86 +336,84 @@
               <td class="cellright"><u>Не административный</u></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autoappdata">autoappdata</a></tt></td>
-              <td class="cellright"><tt>commonappdata</tt></td>
-              <td class="cellright"><tt>userappdata</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autoappdata">autoappdata</a></tt></td>
+              <td class="cellright"><tt class="nill">commonappdata</tt></td>
+              <td class="cellright"><tt class="nill">userappdata</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autocf">autocf</a></tt></td>
-              <td class="cellright"><tt>commoncf</tt></td>
-              <td class="cellright"><tt>usercf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autocf">autocf</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autocf32">autocf32</a></tt></td>
-              <td class="cellright"><tt>commoncf32</tt></td>
-              <td class="cellright"><tt>usercf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autocf32">autocf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf32</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autocf64">autocf64</a></tt></td>
-              <td class="cellright"><tt>commoncf64</tt></td>
-              <td class="cellright"><tt>usercf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autocf64">autocf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf64</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autodesktop">autodesktop</a></tt></td>
-              <td class="cellright"><tt>commondesktop</tt></td>
-              <td class="cellright"><tt>userdesktop</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autodesktop">autodesktop</a></tt></td>
+              <td class="cellright"><tt class="nill">commondesktop</tt></td>
+              <td class="cellright"><tt class="nill">userdesktop</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autodocs">autodocs</a></tt></td>
-              <td class="cellright"><tt>commondocs</tt></td>
-              <td class="cellright"><tt>userdocs</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autodocs">autodocs</a></tt></td>
+              <td class="cellright"><tt class="nill">commondocs</tt></td>
+              <td class="cellright"><tt class="nill">userdocs</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autofonts">autofonts</a></tt></td>
-              <td class="cellright"><tt>commonfonts</tt></td>
-              <td class="cellright"><tt>userfonts</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autofonts">autofonts</a></tt></td>
+              <td class="cellright"><tt class="nill">commonfonts</tt></td>
+              <td class="cellright"><tt class="nill">userfonts</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autopf">autopf</a></tt></td>
-              <td class="cellright"><tt>commonpf</tt></td>
-              <td class="cellright"><tt>userpf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autopf">autopf</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autopf32">autopf32</a></tt></td>
-              <td class="cellright"><tt>commonpf32</tt></td>
-              <td class="cellright"><tt>userpf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autopf32">autopf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf32</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autopf64">autopf64</a></tt></td>
-              <td class="cellright"><tt>commonpf64</tt></td>
-              <td class="cellright"><tt>userpf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autopf64">autopf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf64</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autoprograms">autoprograms</a></tt></td>
-              <td class="cellright"><tt>commonprograms</tt></td>
-              <td class="cellright"><tt>userprograms</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autoprograms">autoprograms</a></tt></td>
+              <td class="cellright"><tt class="nill">commonprograms</tt></td>
+              <td class="cellright"><tt class="nill">userprograms</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autostartmenu">autostartmenu</a></tt></td>
-              <td class="cellright"><tt>commonstartmenu</tt></td>
-              <td class="cellright"><tt>userstartmenu</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autostartmenu">autostartmenu</a></tt></td>
+              <td class="cellright"><tt class="nill">commonstartmenu</tt></td>
+              <td class="cellright"><tt class="nill">userstartmenu</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="autostartup">autostartup</a></tt></td>
-              <td class="cellright"><tt>commonstartup</tt></td>
-              <td class="cellright"><tt>userstartup</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autostartup">autostartup</a></tt></td>
+              <td class="cellright"><tt class="nill">commonstartup</tt></td>
+              <td class="cellright"><tt class="nill">userstartup</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="autotemplates">autotemplates</a></tt></td>
-              <td class="cellright"><tt>commontemplates</tt></td>
-              <td class="cellright"><tt>usertemplates</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="autotemplates">autotemplates</a></tt></td>
+              <td class="cellright"><tt class="nill">commontemplates</tt></td>
+              <td class="cellright"><tt class="nill">usertemplates</tt></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <br />
       <h2 class="heading">Переименованные константы</h2>
-      <div class="absaz">Начиная с Inno Setup 6 некоторые константы каталогов и
+      <p>Начиная с Inno Setup 6 некоторые константы каталогов и
         специальных папок получили новые имена. В сценариях старые имена все ещё
         поддерживаются, но рекомендуется их обновить на новые (или применить
         форму "auto"), иначе компилятор выдаст предупреждение, если этого не
-        сделать.</div>
-      <br />
+        сделать.</p>
       <div class="indent">
         <table>
           <tbody>
@@ -435,50 +422,49 @@
               <td class="cellright"><u>Новое имя</u></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="cf">cf</a></tt></td>
-              <td class="cellright"><tt>commoncf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="cf">cf</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="cf32">cf32</a></tt></td>
-              <td class="cellright"><tt>commoncf32</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="cf32">cf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf32</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="cf64">cf64</a></tt></td>
-              <td class="cellright"><tt>commoncf64</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="cf64">cf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf64</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="fonts">fonts</a></tt></td>
-              <td class="cellright"><tt>commonfonts</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="fonts">fonts</a></tt></td>
+              <td class="cellright"><tt class="nill">commonfonts</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="pf">pf</a></tt></td>
-              <td class="cellright"><tt>commonpf</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="pf">pf</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="pf32">pf32</a></tt></td>
-              <td class="cellright"><tt>commonpf32</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="pf32">pf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf32</tt></td>
             </tr>
             <tr style="background-color: #eeeeee;">
-              <td class="cellleft"><tt><a name="pf64">pf64</a></tt></td>
-              <td class="cellright"><tt>commonpf64</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="pf64">pf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf64</tt></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt><a name="sendto">sendto</a></tt></td>
-              <td class="cellright"><tt>usersendto</tt></td>
+              <td class="cellleft"><tt class="nill"><a name="sendto">sendto</a></tt></td>
+              <td class="cellright"><tt class="nill">usersendto</tt></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <br />
       <h2 class="heading">Прочие константы</h2>
       <dl>
         <dt class="const"><b><a name="bs">{\}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Символ обратной косой черты. В начале этой главы описано различие в
             использовании между <tt>{\}</tt> и <tt>\</tt>. </p>
         </dd>
         <dt class="const"><b><a name="name">{%<i>NAME</i>|<i>DefaultValue</i>}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Выполняет вставку значения переменной среды.</p>
           <ul>
             <li><i>NAME</i> определяет имя используемой переменной среды</li>
@@ -506,19 +492,19 @@
           </div>
         </dd>
         <dt class="const"><b><a name="cmd">{cmd}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Полный путь к стандартному системному интерпретатору команд. Обычно
             это <i>Windows\System32\</i>cmd.exe. Обратите внимание, что
             переменная среды COMSPEC не используется при расширении этой
             константы. </p>
         </dd>
         <dt class="const"><b><a name="computername">{computername}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Имя компьютера, на котором запущена программа установки или
             удаления (возвращается функцией <i>GetComputerName</i>). </p>
         </dd>
         <dt class="const"><b><a name="drive">{drive:<i>Path</i>}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Извлекает и возвращает букву диска и двоеточие (например, "C:") по
             указанному пути. В случае, если путь является сетевым, возвращает
             имя сервера и общего ресурса (например, "\\SERVER\SHARE").</p>
@@ -546,25 +532,25 @@
           </div>
         </dd>
         <dt class="const"><b><a name="groupname">{groupname}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Путь к папке в меню «Пуск», которую пользователь выбрал на странице
             мастера "<i>Выберите папку в меню «Пуск»</i>". Эта константа
             отличается от константы <tt>{group}</tt> тем, что содержит только
             имя папки, а не путь к ней. </p>
         </dd>
         <dt class="const"><b><a name="hwnd">{hwnd}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p><i>(Специального назначения)</i> преобразует фоновое окно программы
             установки в дескриптор окна.</p>
         </dd>
         <dt class="const"><b><a name="wizardhwnd">{wizardhwnd}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p><i>(Специального назначения)</i> преобразует окно мастера программы
             установки в дескриптор окна. Дескриптор равен "0", если в момент
             трансляции дескриптор окна недоступен.</p>
         </dd>
         <dt class="const"><b><a name="ini">{ini:<i>Filename</i>,<i>Section</i>,<i>Key</i>|<i>DefaultValue</i>}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Выполняет вставку значения из файла INI.</p>
           <ul>
             <li><i>Filename</i> определяет имя INI-файла.</li>
@@ -592,14 +578,14 @@
           </div>
         </dd>
         <dt class="const"><b><a name="language">{language}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Внутреннее имя выбранного языка. Более подробную информацию
             смотрите в описании секции <a href="topic_languagessection.htm">[Languages]</a>.
           </p>
         </dd>
         <dt class="const"><b><a name="cm">{cm:<i>MessageName</i>}</a></b><br />
           <b>{cm:<i>MessageName</i>,<i>Arguments</i>}</b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Выполняет вставку значения пользовательского сообщения на основе
             активного языка.</p>
           <ul>
@@ -629,7 +615,7 @@
             Inno Setup", если активным языком является английский (English).</p>
         </dd>
         <dt class="const"><b><a name="reg">{reg:HK<i>xx</i>\<i>SubkeyName</i>,<i>ValueName</i>|<i>DefaultValue</i>}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Выполняет вставку значения реестра.</p>
           <ul>
             <li>HK<i>xx</i> определяет корневой раздел реестра. Действительные
@@ -662,7 +648,7 @@
           </div>
         </dd>
         <dt class="const"><b><a name="param">{param:<i>ParamName</i>|<i>DefaultValue</i>}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Выполняет вставку значения параметра командной строки.</p>
           <ul>
             <li><i>ParamName</i> определяет имя параметра командной строки.</li>
@@ -691,11 +677,11 @@
               Program"</tt> преобразуется в <tt>c:\My Program</tt>. </p>
         </dd>
         <dt class="const"><b><a name="srcexe">{srcexe}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Полный путь к файлу программы установки, например, "C:\SETUP.EXE".</p>
         </dd>
         <dt class="const"><b><a name="uninstallexe">{uninstallexe}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Полный путь к файлу программы удаления, извлечённого из программы
             установки, например, "C:\Program Files\My Program\unins000.exe". Эта
             константа чаще всего используется в секции <tt>[Icons]</tt> для
@@ -705,14 +691,14 @@
         </dd>
         <dt class="const"><b><a name="sysuserinfoname">{sysuserinfoname}</a></b><br />
           <b><a name="sysuserinfoorg">{sysuserinfoorg}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Соответственно имя и организация, на которые зарегистрирована
             Windows. Эта информация считывается из реестра.</p>
         </dd>
         <dt class="const"><b><a name="userinfoname">{userinfoname}</a></b><br />
           <b><a name="userinfoorg">{userinfoorg}</a></b><br />
           <b><a name="userinfoserial">{userinfoserial}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Соответственно имя, организация и серийный номер, которые
             пользователь ввёл на странице мастера "<i>Информация о пользователе</i>"
             (эту страница может быть включена директивой <tt>UserInfoPage</tt>).
@@ -721,12 +707,12 @@
             использования. </p>
         </dd>
         <dt class="const"><b><a name="username">{username}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Имя пользователя, выполняющего программу установки или удаления
             (возвращается функцией <i>GetUserName</i>). </p>
         </dd>
         <dt class="const"><b><a name="log">{log}</a></b></dt>
-        <dd class="paramlist1">
+        <dd>
           <p>Имя файла отчёта или пустая строка, если <a href="topic_setup_setuplogging.htm">создание
               файла журнала</a> не включено. </p>
         </dd>

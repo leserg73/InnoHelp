@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: ProcessorArchitecture</title>
@@ -18,98 +18,43 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: ProcessorArchitecture</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function ProcessorArchitecture: TSetupProcessorArchitecture;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Возвращает архитектуру процессора текущей системы.</div>
-      <br />
-      <div class="absaz">TSetupProcessorArchitecture определяется как:</div>
-      <p><tt></tt></p>
-      <div class="null" style="margin-left: 20px;"><tt>TSetupProcessorArchitecture
-          = (paUnknown, paX86, paX64, paIA64, paARM64);</tt></div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">На 32-бит версии Windows эта функция никогда не вернёт
-        64-бит архитектуру процессора. Следовательно, вы не сможете её
-        использовать для обнаружения 64-бит процессора AMD на 32-бит версии
-        Windows; функция просто вернёт значение <tt>paX86</tt>.</div>
-      <br />
-      <div class="absaz">Если программой установки/удаления не удалось
-        определить архитектуру процессора, то функция возвращает значение <tt>paUnknown</tt>.
-        Можно предположить, что "неизвестная" архитектура, по крайней мере,
-        способна выполнить 32-бит код или же программа установки/удаления вообще
-        не будет работать.</div>
-      <br />
-      <div class="absaz">Если функция возвращает значение <tt>paIA64</tt>, но
-        директива <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>
-        со значением <tt>ia64</tt> <i>не</i> включена в секцию <tt>[Setup]</tt>,
-        то нельзя полагать, что <i>Inno Setup</i> будут доступны все 64-бит
-        функции, например, константа <tt>{pf64}</tt>. Эти функции работают
-        только тогда, когда функция <a href="topic_isxfunc_iswin64.htm">IsWin64</a>
-        возвращает значение <tt>True</tt>, и, как указано в документации, может
-        не вернуть <tt>True</tt> на старых версиях Windows для Itanium, в
-        которых отсутствует поддержка некоторых функций API, необходимых <i>Inno
-          Setup</i>.</div>
-      <br />
-      <div class="absaz">Следовательно, вместо:</div>
-      <pre class="indent examplebox">  <span class="hl kwb">if</span> ProcessorArchitecture = paIA64 <span
-class="hl kwb">then</span>
-    <span class="hl slc">// выполнить определённую задачу установки для Itanium,</span>
-    <span class="hl slc">// включая расширение константы {autopf64}</span></pre>
-      <br />
-      <div class="absaz">нужно дополнительно проверить, что функция <tt>IsWin64</tt>
-        возвращает значение <tt>True</tt>:</div>
-      <pre class="indent examplebox">  <span class="hl kwb">if</span> ProcessorArchitecture = paIA64 <span
-class="hl kwb">then</span>
-  <span class="hl kwb">begin</span>
-    <span class="hl kwb">if</span> IsWin64 <span class="hl kwb">then</span>
-      <span class="hl slc">// выполнить определённую задачу установки для Itanium,</span>
-      <span class="hl slc">// включая расширение константы {autopf64}</span>
-    <span class="hl kwb">else</span>
-      <span class="hl slc">// невозможно использовать особенности 64-бит;</span>
-      <span class="hl slc">// показать сообщение об ошибке;</span>
-      <span class="hl slc">// прервать установку;</span>
-      <span class="hl slc">// попробовать ещё какой-нибудь вариант и т.д.</span>
-  <span class="hl kwb">end</span>;</pre>
-      <br />
-      <div class="absaz">Если в секции <tt>[Setup]</tt> <i>включена</i>
-        директива <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>
-        со значением <tt>ia64</tt>, тогда нет необходимости выполнять проверку
-        <tt>IsWin64</tt>, т.к. программа установки сделает это самостоятельно.
-        Тогда в случае получения <tt>False</tt> будет выдано сообщение об
-        ошибке (<tt>MissingWOW64APIs</tt>).</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ProcessorArchitecture: TSetupProcessorArchitecture;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает архитектуру установленной системы Windows.</p>
+      <p>Класс <code>TSetupProcessorArchitecture</code> представлен следующими
+        перечисляемыми типами:</p>
+      <pre class="indent">TSetupProcessorArchitecture = (paUnknown, paX86, paX64, paArm32, paArm64);</pre>
+      <h2 class="heading">Комментарии</h2>
+      <p>Если программе установки/удаления не удалось определить установленной
+        системы, то функция возвращает значение <tt>paUnknown</tt>. Можно
+        предположить, что "неизвестная" архитектура, по крайней мере, способна
+        выполнить 32-бит код или же программа установки/удаления вообще не будет
+        работать.</p>
+      <p><tt>paArm32</tt> не является возможным возвращаемым значением этой
+        функции, поскольку ни одна версия Windows для 32-разрядных процессоров
+        Arm не могла запускать двоичные файлы x86. (Эмулятор x86 был впервые
+        представлен в Arm64 Windows).</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   S: String;
 <span class="hl kwb">begin</span>
   <span class="hl kwb">case</span> ProcessorArchitecture <span class="hl kwb">of</span>
     paX86: S := <span class="hl str">'x86'</span>;
     paX64: S := <span class="hl str">'x64'</span>;
-    paIA64: S := <span class="hl str">'Itanium'</span>;
-    paARM64: S := <span class="hl str">'ARM64'</span>;
+    paArm64: S := <span class="hl str">'Arm64'</span>;
   <span class="hl kwb">else</span>
     S := <span class="hl str">'Неизвестно'</span>;
   <span class="hl kwb">end</span>;
-  MsgBox(<span class="hl str">'Архитектура вашего процессора: '</span> + S, <span
-class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+  MsgBox(<span class="hl str">'Архитектура Windows: '</span> + S, <span class="hl kwe">mbInformation</span>, <span
+
+class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_isx86.htm">IsX86</a>
-        <br />
-        <a href="topic_isxfunc_isx64.htm">IsX64</a>
-        <br />
-        <a href="topic_isxfunc_isia64.htm">IsIA64</a>
-        <br />
-        <a href="topic_isxfunc_isarm64.htm">IsARM64</a>
-        <br />
-        <a href="topic_isxfunc_iswin64.htm">IsWin64</a>
-        <br />
-        <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>
-      </p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isarchidentifier.htm">Сопоставление
+          идентификаторов архитектуры подобно IsX64Compatible</a> <br />
+        <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a> </p>
     </div>
   </body>
 </html>

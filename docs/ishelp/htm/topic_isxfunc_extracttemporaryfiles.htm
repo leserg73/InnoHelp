@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: ExtractTemporaryFiles</title>
@@ -18,44 +18,37 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: ExtractTemporaryFiles</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function ExtractTemporaryFiles(const Pattern: String): Integer;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Извлекает файлы, соответствующие указанной маске <i>Pattern</i>,
-        из секции <tt>[Files]</tt> во временный каталог. Возвращает количество
-        извлечённых файлов. Для определения расположения временного каталога
-        используйте <tt>ExpandConstant('{tmp}')</tt>.</div>
-      <br />
-      <div class="absaz">При закрытии программы установки все извлечённые файлы
-        автоматически удаляются.</div>
-      <br />
-      <div class="absaz">Если файлы не извлечены, не найдены или найдены, но не
-        были обработаны из-за наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
-        будет вызвано исключение.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Используйте <tt>Flags: dontcopy</tt> в секции <tt>[Files]</tt>,
-        чтобы указать программе установки пропустить данный файл на этапе
-        копирования файлов.</div>
-      <br />
-      <div class="absaz">Если включено непрерывное (<i>solid</i>) сжатие,
-        обязательно перечислите все временные файлы в самом начале секции <tt>[Files]</tt>.
-        Для того чтобы получить доступ к произвольному файлу в архиве с
-        непрерывным сжатием, программа установки должна сначала распаковать все
-        предыдущие файлы (во временный буфер в памяти). Это может привести к
-        значительной задержке в работе инсталлятора, если в секции <tt>[Files]</tt>
-        перед временно используемыми файлами находится множество других файлов.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ExtractTemporaryFiles(const Pattern: String): Integer;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Извлекает файлы, согласно указанной маске <tt>Pattern</tt>, из секции
+        <tt>[Files]</tt> во временный каталог. Возвращает количество извлечённых
+        файлов. Для определения расположения временного каталога используйте <tt>ExpandConstant('{tmp}')</tt>.</p>
+      <p>При закрытии программы установки все извлечённые файлы автоматически
+        удаляются.</p>
+      <p>Если файлы не извлечены, не найдены или найдены, но не были обработаны
+        из-за наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
+        будет вызвано исключение.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Используйте <tt>Flags: dontcopy</tt> в секции <tt>[Files]</tt>, чтобы
+        указать программе установки пропустить данный файл на этапе копирования
+        файлов.</p>
+      <p>Если включено непрерывное (<i>solid</i>) сжатие, обязательно
+        перечислите все временные файлы в самом начале секции <tt>[Files]</tt>.
+        Причиной этого является то, что для получения доступа к произвольному
+        файлу в архиве с непрерывным сжатием, программа установки должна сначала
+        распаковать все предыдущие файлы (во временный буфер в памяти). Это
+        может привести к значительной задержке в работе инсталлятора, если в
+        секции <tt>[Files]</tt> перед временно используемыми файлами находится
+        множество других файлов.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
+<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
 class="hl kwe">dontcopy</span>
-<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"
-<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"
 
 <span class="hl kwa">[Code]</span>
@@ -65,9 +58,9 @@ class="hl kwc">{app}</span>"
   ResultCode: Integer;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
 class="hl str">\Readme.txt'</span>);
-  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
+  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
 class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     MsgBox(S, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
@@ -75,18 +68,18 @@ class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span c
 
   <span class="hl slc">// Извлекаем все файлы MyProg и запускаем её.</span>
   <span class="hl slc">// Заметьте, константа {app} не расширяется.</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
 class="hl str">\MyProg.*'</span>);
-  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
-class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span
-class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span
+  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
+class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span
+class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span
 class="hl str">''</span>,
     <span class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode);
 
   Result := True;
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
       </p>
     </div>
   </body>

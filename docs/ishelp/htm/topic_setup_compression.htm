@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: Compression</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: Compression</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,27 +25,27 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>zip</tt><br />
-                <tt>zip/1</tt> до <tt>zip/9</tt><br />
-                <tt>bzip</tt><br />
-                <tt>bzip/1</tt> до <tt>bzip/9</tt><br />
-                <tt>lzma</tt><br />
-                <tt>lzma/fast</tt><br />
-                <tt>lzma/normal</tt><br />
-                <tt>lzma/max</tt><br />
-                <tt>lzma/ultra</tt>   (перед использованием ознакомьтесь с
+              <div class="margined"><tt class="nill">zip</tt><br />
+                <tt class="nill">zip/1</tt> до <tt class="nill">zip/9</tt><br />
+                <tt class="nill">bzip</tt><br />
+                <tt class="nill">bzip/1</tt> до <tt class="nill">bzip/9</tt><br />
+                <tt class="nill">lzma</tt><br />
+                <tt class="nill">lzma/fast</tt><br />
+                <tt class="nill">lzma/normal</tt><br />
+                <tt class="nill">lzma/max</tt><br />
+                <tt class="nill">lzma/ultra</tt>   (перед использованием ознакомьтесь с
                 требованиями к памяти)<br />
-                <tt>lzma/ultra64</tt>   (перед использованием ознакомьтесь с
+                <tt class="nill">lzma/ultra64</tt>   (перед использованием ознакомьтесь с
                 требованиями к памяти)<br />
-                <tt>lzma2</tt><br />
-                <tt>lzma2/fast</tt><br />
-                <tt>lzma2/normal</tt><br />
-                <tt>lzma2/max</tt><br />
-                <tt>lzma2/ultra</tt>   (перед использованием ознакомьтесь с
+                <tt class="nill">lzma2</tt><br />
+                <tt class="nill">lzma2/fast</tt><br />
+                <tt class="nill">lzma2/normal</tt><br />
+                <tt class="nill">lzma2/max</tt><br />
+                <tt class="nill">lzma2/ultra</tt>   (перед использованием ознакомьтесь с
                 требованиями к памяти)<br />
-                <tt>lzma2/ultra64</tt>   (перед использованием ознакомьтесь с
+                <tt class="nill">lzma2/ultra64</tt>   (перед использованием ознакомьтесь с
                 требованиями к памяти)<br />
-                <tt>none</tt> </div>
+                <tt class="nill">none</tt> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -54,20 +53,17 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>lzma2/max</tt> </div>
+              <div class="margined"><tt class="nill">lzma2/max</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива определяет метод сжатия файлов и, при
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива определяет метод сжатия файлов и, при
         необходимости, уровень сжатия. Более высокие уровни позволяют добиться
         наилучшего сжатия, но на это уходит больше времени и может потребоваться
-        больше оперативной памяти для выполнения операций сжатия/распаковки.</div>
-      <br />
-      <div class="absaz">Значение <tt>zip</tt> определяет метод сжатия,
+        больше оперативной памяти для выполнения операций сжатия/распаковки.</p>
+      <p>Значение <tt>zip</tt> определяет метод сжатия,
         используемый архиваторами ZIP (алгоритм "Deflate"). Он является быстрым
         как для сжатия, так и для распаковки, а также предъявляет очень низкие
         требования к оперативной памяти (менее 1 Мб для сжатия и распаковки с
@@ -75,17 +71,15 @@
         сравнению с другими поддерживаемыми методами. Единственное достоинство
         метода <tt>zip</tt>: он не увеличивает размер несжимаемых данных
         (например, когда файлы уже сжаты), как и метод <tt>lzma2</tt>. Если
-        уровень сжатия не указан, по умолчанию используется 7.</div>
-      <br />
-      <div class="absaz">Значение <tt>bzip</tt> определяет метод сжатия,
+        уровень сжатия не указан, по умолчанию используется 7.</p>
+      <p>Значение <tt>bzip</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.bzip.org/" target="_blank"
           title="http://www.bzip.org/">bzip2</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.
         В большинстве случаев степень сжатия у него лучше, чем у <tt>zip</tt>,
         но для сжатия и распаковки ему необходимо затратить больше времени. При
         распаковке требует до 4 Мб оперативной памяти, а при сжатии – до 8 Мб.
-        Если уровень сжатия не указан, по умолчанию используется 9.</div>
-      <br />
-      <div class="absaz">Значение <tt>lzma</tt> определяет метод сжатия,
+        Если уровень сжатия не указан, по умолчанию используется 9.</p>
+      <p>Значение <tt>lzma</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.7-zip.org/" target="_blank"
           title="http://www.7-zip.org/">7-Zip LZMA</a><img src="../images/extlink.png"
           alt=" [внешняя ссылка]" />. Обычно степень сжатия у него намного
@@ -94,8 +88,7 @@
         потреблять <i>намного</i> больше памяти. В следующей таблице приведены
         приблизительные требования к оперативной памяти для каждого из
         поддерживаемых уровней сжатия <tt>lzma</tt>. Если уровень сжатия не
-        указан, по умолчанию используется <tt>max</tt>.</div>
-      <br />
+        указан, по умолчанию используется <tt>max</tt>.</p>
       <div class="indent">
         <table>
           <tbody>
@@ -157,8 +150,7 @@
           </tbody>
         </table>
       </div>
-      <br />
-      <div class="absaz">Значение <tt>lzma2</tt> определяет метод сжатия,
+      <p>Значение <tt>lzma2</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.7-zip.org/" target="_blank"
           title="http://www.7-zip.org/">7-Zip LZMA2</a><img src="../images/extlink.png"
           alt=" [внешняя ссылка]" />. Метод LZMA2 является модифицированной
@@ -169,13 +161,11 @@
         сжатия, правда с возможным снижением коэффициента сжатия (смотрите <a href="topic_setup_lzmanumblockthreads.htm">LZMANumBlockThreads</a>).
         Как и LZMA, предъявляет <i>высокие</i> требования к объёму оперативной
         памяти (см. таблицу выше). Если уровень сжатия не указан, то по
-        умолчанию используется <tt>max</tt>.</div>
-      <br />
-      <div class="absaz">Значение <tt>none</tt> указывает, что сжатие не
-        используется.</div>
-      <br />
-      <p><b>См. также:</b><br />
-        <a href="topic_setup_solidcompression.htm">SolidCompression</a><br />
+        умолчанию используется <tt>max</tt>.</p>
+      <p>Значение <tt>none</tt> указывает, что сжатие не
+        используется.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_solidcompression.htm">SolidCompression</a><br />
         <a href="topic_setup_lzmaalgorithm.htm">LZMAAlgorithm</a><br />
         <a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a><br />
         <a href="topic_setup_lzmadictionarysize.htm">LZMADictionarySize</a><br />

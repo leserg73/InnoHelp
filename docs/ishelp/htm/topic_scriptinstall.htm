@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Параметры "BeforeInstall" и "AfterInstall"</title>
@@ -19,12 +19,10 @@
     <h1 class="topicheading">Pascal Scripting: Параметры "BeforeInstall" и
       "AfterInstall"</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Существует два необязательных <a href="topic_params.htm">параметра</a>,
+      <p>Существует два необязательных <a href="topic_params.htm">параметра</a>,
         поддерживаемые всеми секциями, записи которых представляют собой набор
         параметров, за исключением секций <tt>[Languages]</tt>, <tt>[Types]</tt>,
-        <tt>[Components]</tt> и <tt>[Tasks]</tt>. Этими параметрами являются:</div>
-      <br />
+        <tt>[Components]</tt> и <tt>[Tasks]</tt>. Этими параметрами являются:</p>
       <dl>
         <dt class="paramlist"><b><a name="BeforeInstall">BeforeInstall</a></b></dt>
         <dd class="paramlist">
@@ -89,24 +87,20 @@ class="hl str">'After MYPROG.CHM Install'</span>)</pre>
           </div>
         </dd>
       </dl>
-      <br />
-      <div class="absaz">Все функции <tt>BeforeInstall</tt> и <tt>AfterInstall</tt>
-        не должны иметь возвращаемого значения.</div>
-      <br />
-      <div class="absaz">Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
+      <p>Все функции <tt>BeforeInstall</tt> и <tt>AfterInstall</tt>
+        не должны иметь возвращаемого значения.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
         не будет вызвана, если программа установки уже определила, что запись не
-        должна быть обработана.</div>
-      <br />
-      <div class="absaz">Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
+        должна быть обработана.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
         в записях секции <tt>[Files]</tt> с использованием маски файлов, но без флага
         <tt>external</tt>, вызывается один раз для каждого файла, который соответствует
         маске, а не один раз для каждой записи. Используйте <tt>CurrentFileName</tt>,
-        чтобы проверить, для какого именно файла вызывается функция.</div>
-      <br />
-      <div class="absaz">Ниже приведен пример секции <tt>[Code]</tt>, в котором
+        чтобы проверить, для какого именно файла вызывается функция.</p>
+      <p>Ниже приведен пример секции <tt>[Code]</tt>, в котором
         используются функции, указанные выше. Функции <tt>CurrentFileName</tt>
         и <tt>Log</tt> являются <a href="topic_scriptfunctions.htm">поддерживаемыми
-          функциями</a>, и поэтому не включены в эту секцию <tt>[Code]</tt>.</div>
+          функциями</a>, и поэтому не включены в эту секцию <tt>[Code]</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
 <span class="hl kwb">procedure</span> MyBeforeInstall();
 <span class="hl kwb">begin</span>

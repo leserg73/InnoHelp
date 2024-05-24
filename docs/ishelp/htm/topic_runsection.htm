@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секции [Run] и [UninstallRun]</title>
@@ -18,30 +18,26 @@
   <body>
     <h1 class="topicheading">Секции [Run] и [UninstallRun]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Секция <tt>[Run]</tt> является необязательной и
+      <p>Секция <tt>[Run]</tt> является необязательной и
         определяет любое количество программ, которые необходимо выполнить после
         успешной установки, но прежде, чем будет показан завершающий диалог
         установки. Секция <tt>[UninstallRun]</tt> также является
         необязательной, и определяет программы, которые следует выполнить на
         первом этапе <i>деинсталляции</i>. В обеих секциях используется
-        одинаковый синтаксис, за исключением небольших различий, указанных ниже.</div>
-      <br />
-      <div class="absaz">Программы запускаются в порядке, в котором они указаны
+        одинаковый синтаксис, за исключением небольших различий, указанных ниже.</p>
+      <p>Программы запускаются в порядке, в котором они указаны
         в сценарии. По умолчанию, при обработке записей секции <tt>[Run]</tt>/<tt>[UninstallRun]</tt>,
         программа установки/удаления будет ожидать завершения работы запущенной
         программы, прежде чем перейти к запуску следующей программы, если только
-        не используются флаги <tt>nowait</tt>, <tt>shellexec</tt> или <tt>waituntilidle</tt>.</div>
-      <br />
-      <div class="absaz">Обратите внимание, что по умолчанию, если программа,
+        не используются флаги <tt>nowait</tt>, <tt>shellexec</tt> или <tt>waituntilidle</tt>.</p>
+      <p>Обратите внимание, что по умолчанию, если программа,
         выполняемая в секции <tt>[Run]</tt>, ставит в очередь файлы для замены
         при следующей перезагрузке (путём вызова MoveFileEx или изменением
         wininit.ini), программа установки обнаружит это и предложит пользователю
         перезагрузить компьютер по окончанию установки. Если такая
         функциональность вам не нужна, укажите для директивы <a href="topic_setup_restartifneededbyrun.htm">RestartIfNeededByRun</a>
-        значение <tt>no</tt>.</div>
-      <br />
-      <div class="absaz">Ниже представлен пример секции <tt>[Run]</tt>.</div>
+        значение <tt>no</tt>.</p>
+      <p>Ниже представлен пример секции <tt>[Run]</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Run]</span>
 <span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\INIT.EXE"; <span
 class="hl kwb">Parameters</span>: "/x"
@@ -51,8 +47,7 @@ class="hl kwe">postinstall shellexec skipifsilent</span>
 <span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MYPROG.EXE"; <span
 class="hl kwb">Description</span>: "Запуск приложения"; <span class="hl kwb">Flags</span>: <span
 class="hl kwe">postinstall nowait skipifsilent unchecked</span></pre>
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Filename">Filename</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">
@@ -189,6 +184,13 @@ class="hl kwc">{app}</span>"</pre>
             <dd>
               <p>Если указан этот флаг, окно мастера установки будет скрыто при
                 выполнения программы.</p>
+            </dd>
+            <dt class="flaglist"><a name="logoutput">logoutput</a></dt>
+            <dd>
+              <p>Если указан этот флаг, выходные данные программы будут включены
+                в файл журнала.</p>
+              <p>Этот флаг нельзя использовать вместе с флагами <tt>nowait</tt>,
+                <tt>runasoriginaluser</tt>, <tt>shellexec</tt> и <tt>waituntilidle</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="nowait">nowait</a></dt>
             <dd>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: Encryption</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: Encryption</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
-                  или <tt>no</tt></a> </div>
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -35,36 +34,30 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>no</tt> </div>
+              <div class="margined"><tt class="nill">no</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">При установке значения <tt>yes</tt> файлы инсталлятора
+      <h2 class="heading">Описание</h2>
+      <p>При установке значения <tt>yes</tt> файлы инсталлятора
         (указанные в секции <tt>[Files]</tt>) будут зашифрованы алгоритмом
         ARCFOUR с использованием 160-разрядного ключа, полученного из значения
-        параметра <a href="topic_setup_password.htm">Password</a> в секции <tt>[Setup]</tt>.</div>
-      <br />
-      <div class="absaz">Из-за наличия в некоторых странах законов о правилах
+        параметра <a href="topic_setup_password.htm">Password</a> в секции <tt>[Setup]</tt>.</p>
+      <p>Из-за наличия в некоторых странах законов о правилах
         использования шифрования, библиотека шифрования не включена в основной
         пакет установки Inno Setup, а загружается им отдельно во время установки.
         Дополнительную информацию по данному вопросу смотрите на странице <a 
         href="https://jrsoftware.org/isdl.php" target="_blank" title="https://jrsoftware.org/isdl.php">Inno
-          Setup Downloads</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
-      <br />
-      <div class="absaz">Если при включенном шифровании в секции <tt>[Code]</tt>
+        Setup Downloads</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+      <p>Если при включенном шифровании в секции <tt>[Code]</tt>
         используется вызов функции <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
         прежде, чем пользователь введёт корректный пароль, работа этой функции
         будет завершаться ошибкой, пока в секции <tt>[Files]</tt> для данного
-        файла не будет указан флаг <tt>noencryption</tt>.</div>
-      <br />
-      <div class="absaz">Ключ, используемый для шифрования, является
+        файла не будет указан флаг <tt>noencryption</tt>.</p>
+      <p>Ключ, используемый для шифрования, является
         160-разрядным хешем SHA-1 случайного 64-разрядного модификатора, включая
-        значение директивы <a href="topic_setup_password.htm">Password</a>.</div>
-      <br />
+        значение директивы <a href="topic_setup_password.htm">Password</a>.</p>
     </div>
   </body>
 </html>

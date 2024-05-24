@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>64-разрядный режим установки</title>
@@ -18,20 +18,16 @@
   <body>
     <h1 class="topicheading">64-разрядный режим установки</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Установка может выполняться в одном из двух режимов:
+      <p>Установка может выполняться в одном из двух режимов:
         32-разрядном или 64-разрядном. 64-разрядный режим установки будет
         выбран, если пользователь использует 64-разрядную версию Windows и
         архитектура процессора системы включена в значение директивы <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>
         секции <tt>[Setup]</tt>. В противном случае используется 32-разрядный
-        режим установки.</div>
-      <br />
-      <div class="absaz">Чем же различаются эти два режима работы? Главное
+        режим установки.</p>
+      <p>Чем же различаются эти два режима работы? Главное
         различие состоит в значениях констант, которые используются по
-        умолчанию.</div>
-      <br />
-      <div class="absaz">В 32-разрядном режиме установки:</div>
-      <br />
+        умолчанию.</p>
+      <h2 class="heading">В 32-разрядном режиме установки:</h2>
       <ul>
         <li>Путь System32, возвращаемый константой <tt>{sys}</tt>, по умолчанию
           ссылается на 32-разрядный каталог System. </li>
@@ -54,9 +50,7 @@
           обновляет ключ "SharedDLLs" в 32-разрядном представлении реестра. </li>
         <li>Ключи деинсталляции создаются в 32-разрядном представлении реестра.</li>
       </ul>
-      <br />
-      <div class="absaz">В 64-разрядном режиме установки:</div>
-      <br />
+      <h2 class="heading">В 64-разрядном режиме установки:</h2>
       <ul>
         <li>Путь System32, возвращаемый константой <tt>{sys}</tt>, по умолчанию
           ссылается на 64-разрядный каталог System, если используется в секциях
@@ -64,7 +58,7 @@
           <tt>[UninstallDelete]</tt> и <tt>[UninstallRun]</tt>. Это связано с
           тем, что программа установки/удаления временно отключает <a href="http://msdn.microsoft.com/en-us/library/aa384187.aspx"
             target="_blank" title="http://msdn.microsoft.com/en-us/library/aa384187.aspx">перенаправление
-            файловой системы WOW64</a><img src="../images/extlink.png" alt=" [external link]" />
+            файловой системы WOW64</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />
           при доступе к файлам и папкам из этих секций. Где-нибудь в другом
           месте System32 и <tt>{sys}</tt> ссылается на 32-разрядный каталог
           System, как это обычно и происходит в 32-разрядном процессе. </li>

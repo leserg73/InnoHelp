@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: GetVersionNumbers</title>
@@ -18,17 +18,38 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: GetVersionNumbers</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function GetVersionNumbers(const Filename: String; var VersionMS,
-          VersionLS: Cardinal): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет чтение номеров версии указанного файла. В
-        случае успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt>.</div>
-      <br />
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_packversionnumbers.htm">PackVersionNumbers</a>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetVersionNumbers(const Filename: String; var VersionMS, VersionLS:
+          Cardinal): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет чтение номеров версии файла, указанного в параметре <tt>Filename</tt>.
+        В случае успеха функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.
+        Полученные значения номеров версии передаются в параметрах <tt>VersionMS</tt>
+        и <tt>VersionLS</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+class="hl kwd">MyGetVersionNumbersString</span>(<span class="hl kwb">const Filename</span>: <span
+class="hl kwb">String</span>; <span class="hl kwb">var</span> Version: <span class="hl kwb">String</span>): <span
+class="hl kwg">Boolean</span>;
+<span class="hl kwb">var</span>
+  MS, LS: <span class="hl kwg">Cardinal</span>;
+  Major, Minor, Rev, Build: <span class="hl kwg">Cardinal</span>;
+<span class="hl kwb">begin</span>
+  Result := <span class="hl kwg">GetVersionNumbers</span>(<span class="hl kwb">Filename</span>, MS, LS);
+
+  <span class="hl kwb">if</span> Result <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    Major := MS <span class="hl kwb">shr</span> <span class="hl num">16</span>;
+    Minor := MS <span class="hl kwb">and</span> <span class="hl num">$FFFF</span>;
+    Rev := LS <span class="hl kwb">shr</span> <span class="hl num">16</span>;
+    Build := LS <span class="hl kwb">and</span> <span class="hl num">$FFFF</span>;
+    Version := <span class="hl kwg">Format</span>(<span class="hl sng">'%d.%d.%d'</span>, [Major, Minor, Rev]);
+  <span class="hl kwb">end</span>
+<span class="hl kwb">end</span>;
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_packversionnumbers.htm">PackVersionNumbers</a>
       </p>
     </div>
   </body>

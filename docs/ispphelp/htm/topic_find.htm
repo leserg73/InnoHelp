@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Find</title>
@@ -19,31 +19,33 @@
     <h1 class="topicheading">Inno Setup Preprocessor: Find</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX"><tt><b>int</b> Find(<b>int</b> 1, <b>str</b> 2, <b>int</b>? 3, <b>str</b>? 4, <b>int</b>?
-          5, <b>str</b>? 6, <b>int</b>? 7)<br />
-        </tt></p>
-      <br />
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>int</b> Find(<b>int</b> 1, <b>str</b>
+          2, <b>int</b>? 3, <b>str</b>? 4, <b>int</b>? 5, <b>str</b>? 6, <b>int</b>?
+          7)</tt></p>
       <h2 class="heading">Описание</h2>
-      <p>Функция <tt>Find</tt> предназначена для использования совместно с директивой <tt><a class="new"
-            href="topic_insert.htm">insert</a></tt>. Возвращает индекс строки в данных <a class="new1"
-          href="topic_translation.htm">вывода препроцессора</a> в зависимости от указанных критериев
-        поиска.</p>
-      <p><i>Первый аргумент</i> определяет индекс строки, с которой необходимо начать поиск. Обычно
-        используется значение ноль (0).</p>
-      <p><i>Второй, четвертый и шестой аргументы</i> определяют подстроку поиска в пределах каждой
-        из строк. Второй аргумент является обязательным. Четвертый и шестой могут быть опущены.</p>
-      <p><i>Третий, пятый и седьмой аргументы</i> определяют критерии поиска, которые задаются
-        специальными флагами. Третий аргумент относится ко второму аргументу с подстрокой.
-        Соответственно пятый параметр к четвертому и седьмой - к шестому.</p>
-      <p>Если любой из аргументов критерия поиска (флагов)  не указан, но определена соответствующая
-        подстрока, то по умолчанию считается, что используются флаги <tt style="font-weight: bold; color: #663300;">FIND_MATCH
+      <p>Функция <tt>Find</tt> предназначена для использования совместно с
+        директивой <tt class="nill"><a class="new" href="topic_insert.htm">insert</a></tt>.
+        Возвращает индекс строки в данных <a class="new1" href="topic_translation.htm">вывода
+          препроцессора</a> в зависимости от указанных критериев поиска.</p>
+      <p><i>Первый параметр</i> определяет индекс строки, с которой необходимо
+        начать поиск. Обычно используется значение ноль (0).</p>
+      <p><i>Второй, четвертый и шестой параметры</i> определяют подстроку поиска
+        в пределах каждой из строк. Второй параметр является обязательным.
+        Четвертый и шестой могут быть опущены.</p>
+      <p><i>Третий, пятый и седьмой параметры</i> определяют критерии поиска,
+        которые задаются специальными флагами. Третий параметр относится ко
+        второму параметру с подстрокой. Соответственно пятый параметр к
+        четвертому и седьмой — к шестому.</p>
+      <p>Если любой из параметров критерия поиска (флагов) не указан, но
+        определена соответствующая подстрока, то по умолчанию считается, что
+        используются флаги <tt style="font-weight: bold; color: #663300;">FIND_MATCH
           | FIND_AND</tt> (т.е. равны 0).</p>
-      <p>Значения для третьего, пятого и седьмого аргументов функции <tt>Find</tt> объявлены в файле
-        <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>. См. раздел <a class="new1"
-          href="topic_find-flags.htm">Флаги функции Find</a> с описанием значений каждого флага. </p>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a class="new" href="topic_insert.htm">insert</a></tt>.</p>
+      <p>Значения для третьего, пятого и седьмого параметров функции <tt>Find</tt>
+        объявлены в файле <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>.
+        См. раздел <a class="new1" href="topic_find-flags.htm">Флаги функции
+          Find</a> с описанием значений каждого флага. </p>
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a class="new" href="topic_insert.htm">insert</a></tt>.</p>
       <ul>
         <li><a class="new1" href="topic_find-flags.htm">Флаги функции Find</a></li>
       </ul>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #for</title>
@@ -19,56 +19,53 @@
     <h1 class="topicheading">Inno Setup Preprocessor: #for</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>for-directive:</i>
-            </td>
-            <td class="cellright"> <b>for</b> <b> </b> <b>{</b> &lt;expr1&gt;
-              <b>;</b> &lt;expr2&gt; <b>;</b> &lt;expr3&gt; <b>}</b>
-              &lt;expr4&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>for-directive:</i></td>
+              <td class="cellright"> <b>for</b> <b>{</b>
+                &lt;expr1&gt; <b>;</b> &lt;expr2&gt; <b>;</b> &lt;expr3&gt; <b>}</b>
+                &lt;expr4&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
       <p>Используется для создания многократного выполнения какого-либо участка
-        кода, т.е. организации циклов. Директива <tt>for</tt> состоит из
-        четырёх выражений. <i>Первое выражение</i> (<tt>expr1</tt>) - это
-        переменная, которая отвечает за истинность условия. <i>Второе выражение</i>
-        (<tt>expr2</tt>) является условием, которое отвечает за продолжение
-        цикла. <i>Третье выражение</i> (<tt>expr3</tt>) определяет значение
-        переменной в выражении <tt>expr1</tt>. <i>Четвёртое выражение</i> (<tt>expr4</tt>)
-        является телом цикла, т.е. здесь указывается код, который подлежит
-        многократному выполнению.</p>
-      <p>Логика работы директивы <tt>for</tt> выглядит следующим образом:</p>
-      <p>  1. Выполняется объявление или инициализация переменной (выражение
-        &lt;exp1&gt;).</p>
-      <p>  2. Выполняется проверка условия (выражение &lt;exp2&gt;). Если это 0,
-        то осуществляется выход из цикла.</p>
-      <p>  3. Выполняются операции, определённые в теле цикла (выражение
-        &lt;exp4&gt;).</p>
-      <p>  4. Устанавливается значение переменной-счетчика (выражение
+        кода, т.е. организации циклов. Директива <tt style="font-weight: bold; color: #990000;">for</tt>
+        состоит из четырёх выражений. <i>Первое выражение</i> (<tt>expr1</tt>)
+        — это переменная, которая отвечает за истинность условия. <i>Второе
+          выражение</i> (<tt>expr2</tt>) является условием, которое отвечает за
+        продолжение цикла. <i>Третье выражение</i> (<tt>expr3</tt>) определяет
+        значение переменной в выражении <tt>expr1</tt>. <i>Четвёртое выражение</i>
+        (<tt>expr4</tt>) является телом цикла, т.е. здесь указывается код,
+        который подлежит многократному выполнению.</p>
+      <p>Логика работы директивы <tt style="font-weight: bold; color: #990000;">for</tt>
+        выглядит следующим образом:</p>
+      <p>&nbsp;&nbsp;1. Выполняется объявление или инициализация переменной
+        (выражение &lt;exp1&gt;).</p>
+      <p>&nbsp;&nbsp;2. Выполняется проверка условия (выражение &lt;exp2&gt;).
+        Если это 0, то осуществляется выход из цикла.</p>
+      <p>&nbsp;&nbsp;3. Выполняются операции, определённые в теле цикла
+        (выражение &lt;exp4&gt;).</p>
+      <p>&nbsp;&nbsp;4. Устанавливается значение переменной-счетчика (выражение
         &lt;exp3&gt;).</p>
-      <p>  5. Процесс повторяется с шага 2.</p>
-      <br />
+      <p>&nbsp;&nbsp;5. Процесс повторяется с шага 2.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Вызов пользовательской процедуры AddFile 200 раз</span>
 <span class="hl slc">// Объявляем переменную i с начальным значением 200</span>
 <span class="hl slc">// Сравниваем значение переменной i с 0</span>
 <span class="hl slc">// Уменьшаем значение переменной i на единицу после каждой итерации</span>
-<span class="hl kwf">#for</span> {i <span class="hl opt">=</span> <span class="hl num">200</span><span
-class="hl opt">;</span> i <span class="hl opt">&gt;</span> <span class="hl num">0</span><span
+<span class="hl kwf">#for</span> {i <span class="hl opt">=</span> <span class="hl num">200</span><span
+class="hl opt">;</span> i <span class="hl opt">&gt;</span> <span class="hl num">0</span><span
 class="hl opt">;</span> i<span class="hl opt">--</span>} AddFile
 </pre> </div>
-      <br />
       <h2 class="heading">Другие примеры</h2>
       <p><a href="topic_findfirst.htm">FindFirst</a>, <a href="topic_fileread.htm">FileRead</a>.</p>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a href="topic_sub.htm" class="new">sub</a></tt>, <tt><a href="topic_include.htm"
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a href="topic_sub.htm" class="new">sub</a></tt>, <tt class="nill"><a href="topic_include.htm"
             class="new">include</a></tt>.</p>
     </div>
   </body>

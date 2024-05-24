@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Icons]</title>
@@ -18,20 +18,17 @@
   <body>
     <h1 class="topicheading">Секция [Icons]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Это секция является необязательной и определяет любые
+      <p>Это секция является необязательной и определяет любые
         ярлыки, которые программа установки создаст в меню «Пуск» или в других
-        местах, например, на Рабочем столе и т.д.</div>
-      <br />
-      <div class="absaz">Пример секции <tt>[Icons]</tt>:</div>
+        местах, например, на Рабочем столе и т.д.</p>
+      <p>Пример секции <tt>[Icons]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Icons]</span>
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\My Program"; <span
 class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MYPROG.EXE"; <span
 class="hl kwb">WorkingDir</span>: "<span class="hl kwc">{app}</span>"
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\Uninstall My Program"; <span
 class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pre>
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Name">Name</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">
@@ -209,22 +206,6 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
                 кроме того, предотвращает автоматическое закрепление нового
                 ярлыка на начальном экране Windows 8 (и выше). В более ранних
                 версиях Windows не учитывается.</p>
-            </dd>
-            <dt class="flaglist"><a name="foldershortcut">foldershortcut</a></dt>
-            <dd>
-              <p>Создает специальный тип ярлыка под названием "Ярлык папки".
-                Обычно при наличии ярлыка на папку в меню «Пуск» при щелчке по
-                элементу открывается отдельное окно проводника, в котором
-                отображается содержимое целевой папки. Напротив, "ярлык папки"
-                будет отображать содержимое целевой папки в виде подменю вместо
-                открытия отдельного окна.</p>
-              <p>В настоящий момент этот флаг при работе в Windows 7 (или выше)
-                не учитывается, так как ярлык папки не оказывает на меню «Пуск»
-                больше никакого влияния. Неизвестно, является ли это ошибкой в
-                Windows 7 или просто удалённой функцией.</p>
-              <p>При использовании этого флага в параметре <tt>Filename</tt>
-                должно быть указано имя папки, а не файла. В противном случае
-                будет создан неработающий ярлык. </p>
             </dd>
             <dt class="flaglist"><a name="preventpinning">preventpinning</a></dt>
             <dd>

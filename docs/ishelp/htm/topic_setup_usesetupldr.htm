@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: UseSetupLdr</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: UseSetupLdr</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
-                  или <tt>no</tt></a> </div>
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -35,38 +34,33 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>yes</tt> </div>
+              <div class="margined"><tt class="nill">yes</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива сообщает компилятору о типе создаваемой
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива сообщает компилятору о типе создаваемой
         программы установки. Если указано значение <tt>yes</tt>, то все данные
         установки компилируются в один файл EXE. При значении <tt>no</tt> все
         данные установки компилируются как минимум в три файла: setup.exe,
         setup-0.bin и setup-1.bin. <b>Возможная</b> причина, по которой следует
         использовать значение <tt>no</tt>, является отладка программы
-        установки.</div>
-      <br />
-      <div class="absaz"><i>Замечание:</i> Не используйте <tt>UseSetupLdr=no</tt>
+        установки.</p>
+      <p><i>Замечание:</i> Не используйте <tt>UseSetupLdr=no</tt>
         в установках с разделением данных (<tt>DiskSpanning=yes</tt>). Когда
         параметр <tt>UseSetupLdr</tt> имеет значение <tt>yes</tt>, программа
         установки копируется и запускается из пользовательского каталога TEMP.
         Этого не происходит, если параметр <tt>UseSetupLdr</tt> имеет значение
         <tt>no</tt>, и может привести к ошибкам, когда Windows попытается найти
         файл setup.exe там, где его нет (например, в приводе находится другой
-        диск).</div>
-      <br />
-      <div class="absaz"><i>Замечание:</i> Не используйте <tt>UseSetupLdr=no</tt>
+        диск).</p>
+      <p><i>Замечание:</i> Не используйте <tt>UseSetupLdr=no</tt>
         на больших инсталляторах. Это приведёт к задержкам во время запуска при
         проверке цифровой подписи. Вместо этого используйте разделение на диски.
         Дополнительную информацию смотрите в разделе <a href="topic_setup_signtool.htm">SignTool</a>.
         Также цифровая подпись программы установки с <tt>UseSetupLdr=no</tt>
-        приведёт к недействительной цифровой подписи программы удаления.</div>
-      <br />
+        приведёт к недействительной цифровой подписи программы удаления.</p>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: ShellExec</title>
@@ -18,58 +18,50 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: ShellExec</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function ShellExec(const Verb, Filename, Params, WorkingDir:
-          String; const ShowCmd: Integer; const Wait: TExecWait; var ErrorCode:
-          Integer): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Открывает указанный файл или выполняет другое действие,
-        заданное параметром <i>Verb</i>, используя те же учетные данные, что и
-        программа установки/удаления. Параметр <i>Filename</i> может содержать
-        исполняемый файл, документ, папку или ссылку с адресом URL. Если
-        параметр <i>Verb</i> содержит пустую строку, то по умолчанию будет
-        использовано действие, связанное с данным типом файла (как правило
-        "open"). Параметр <i>Wait</i> определяет работу функции: завершить
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ShellExec(const Verb, Filename, Params, WorkingDir: String; const
+          ShowCmd: Integer; const Wait: TExecWait; var ErrorCode: Integer):
+          Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Открывает указанный файл или выполняет другое действие, заданное
+        параметром <tt>Verb</tt>, используя те же учетные данные, что и
+        программа установки/удаления. Параметр <tt>Filename</tt> может
+        содержать исполняемый файл, документ, папку или ссылку с адресом URL.
+        Если параметр <tt>Verb</tt> содержит пустую строку, то по умолчанию
+        будет использовано действие, связанное с данным типом файла (как правило
+        "open"). Параметр <tt>Wait</tt> определяет работу функции: завершить
         немедленно, ожидать завершения запущенного процесса или его простоя.
-        Возвращает значение <tt>True</tt>, если заданный файл был успешно
-        открыт, иначе <tt>False</tt>. Если функция вернёт <tt>False</tt>, то
-        параметр <i>ErrorCode</i> будет содержать код возникшей ошибки.
+        Функция возвращает значение <tt>True</tt>, если заданный файл был
+        успешно открыт, иначе — <tt>False</tt>. Если функция вернёт <tt>False</tt>,
+        то параметр <tt>ErrorCode</tt> будет содержать код возникшей ошибки.
         Используйте вызов <tt>SysErrorMessage(ErrorCode)</tt>, чтобы получить
-        описание ошибки.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz"><i>TExecWait</i> может принимать следующие значения:</div>
-      <p><tt></tt></p>
-      <div class="null" style="margin-left: 20px;"><tt>TExecWait = (ewNoWait,
-          ewWaitUntilTerminated, ewWaitUntilIdle);</tt></div>
-      <br />
-      <div class="absaz">Обратите внимание, что передача параметром <i>Wait</i>
-        значения отличного от <tt>ewNoWait</tt>, не будет иметь никакого
-        эффекта, если в результате выполнения функции не будет создан новый
-        процесс (например, когда файл уже открыт запущенным экземпляром
-        программы, связанной с данным типом файлов).</div>
-      <br />
-      <div class="absaz">Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+        описание ошибки.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Класс <code>TExecWait</code> представлен следующими значениями:</p>
+      <pre class="indent">TExecWait = (ewNoWait, ewWaitUntilTerminated, ewWaitUntilIdle);</pre>
+      <p>Обратите внимание, что передача параметром <tt>Wait</tt> значения
+        отличного от <tt>ewNoWait</tt>, не будет иметь никакого эффекта, если в
+        результате выполнения функции не будет создан новый процесс (например,
+        когда файл уже открыт запущенным экземпляром программы, связанной с
+        данным типом файлов).</p>
+      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок на MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
-      <br />
-      <div><b>Пример:</b></div>
+          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   ErrorCode: Integer;
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if not</span> ShellExec(<span class="hl str">''</span>, ExpandConstant(<span
+  <span class="hl kwb">if not</span> ShellExec(<span class="hl str">''</span>, ExpandConstant(<span
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\filename.rtf'</span>),
-     <span class="hl str">''</span>, <span class="hl str">''</span>, <span class="hl kwe">SW_SHOW</span>, ewNoWait, ErrorCode) <span
+     <span class="hl str">''</span>, <span class="hl str">''</span>, <span class="hl kwe">SW_SHOW</span>, ewNoWait, ErrorCode) <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// если нужно, обработайте результат в случае ошибки</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>
       </p>
     </div>
   </body>

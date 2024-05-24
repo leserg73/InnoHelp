@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: GetWindowsVersionEx</title>
@@ -18,15 +18,12 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: GetWindowsVersionEx</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>procedure GetWindowsVersionEx(var Version: TWindowsVersion);</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Возвращает расширенную информацию о версии Windows в
-        виде структуры.</div>
-      <br />
-      <div class="absaz">Объявление структуры <tt>TWindowsVersion</tt>:</div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          GetWindowsVersionEx(var Version: TWindowsVersion);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает расширенную информацию о версии Windows в виде структуры.</p>
+      <p>Объявление структуры <tt>TWindowsVersion</tt>:</p>
       <pre class="indent">  TWindowsVersion = record
     Major: Cardinal;             // Номер старшей версии
     Minor: Cardinal;             // Номер младшей версии
@@ -38,21 +35,16 @@
     SuiteMask: Word;             // Установленные компоненты продукта (см. ниже)
   end;
 </pre>
-      <br />
-      <div class="absaz">Поле <tt>ProductType</tt> может принимать одно из
-        следующих значений:</div>
+      <p>Поле <tt>ProductType</tt> может принимать одно из следующих значений:</p>
       <pre class="indent">  VER_NT_WORKSTATION
   VER_NT_DOMAIN_CONTROLLER
   VER_NT_SERVER
 </pre>
-      <br />
-      <div class="absaz">Также может быть равно нулю, если тип продукта не был
-        определён (что маловероятно). Значение <tt>VER_NT_WORKSTATION</tt>
-        указывает на не серверную редакцию системы Windows (например, <i>Рабочая
-          станция</i>, <i>Профессиональная</i> или <i>Домашняя</i>).</div>
-      <br />
-      <div class="absaz">Поле <tt>SuiteMask</tt> может быть комбинацией
-        следующих значений:</div>
+      <p>Также может быть равно нулю, если тип продукта не был определён (что
+        маловероятно). Значение <tt>VER_NT_WORKSTATION</tt> указывает на не
+        серверную редакцию системы Windows (например, <i>Рабочая станция</i>, <i>Профессиональная</i>
+        или <i>Домашняя</i>).</p>
+      <p>Поле <tt>SuiteMask</tt> может быть комбинацией следующих значений:</p>
       <pre class="indent">  VER_SUITE_BACKOFFICE
   VER_SUITE_BLADE
   VER_SUITE_DATACENTER
@@ -64,20 +56,15 @@
   VER_SUITE_SMALLBUSINESS_RESTRICTED
   VER_SUITE_TERMINAL
 </pre>
-      <br />
-      <div class="absaz">Например, значение <tt>VER_SUITE_PERSONAL</tt>
-        указывает на <i>Домашнюю</i> редакцию системы Windows XP, а значение <tt>VER_SUITE_BLADE</tt>
-        говорит о <i>Веб</i> редакции системы Windows Server 2003.</div>
-      <br />
-      <div><b>Пример:</b></div>
-      <br />
-      <div class="absaz">Следующий пример демонстрирует, как можно запретить
-        установку на некоторых выпусках Windows и проверить уровень пакета
-        обновления для нескольких версий операционной системы. (Ни одну из этих
-        проверок невозможно выполнить с помощью директивы <tt>MinVersion</tt> в
-        секции <tt>[Setup]</tt>.)</div>
-      <br />
-      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+      <p>Например, значение <tt>VER_SUITE_PERSONAL</tt> указывает на <i>Домашнюю</i>
+        редакцию системы Windows XP, а значение <tt>VER_SUITE_BLADE</tt>
+        говорит о <i>Веб</i> редакции системы Windows Server 2003.</p>
+      <h2 class="heading">Пример</h2>
+      <p>Следующий пример демонстрирует, как можно запретить установку на
+        некоторых выпусках Windows и проверить уровень пакета обновления для
+        нескольких версий операционной системы. (Ни одну из этих проверок
+        невозможно выполнить с помощью директивы <tt>MinVersion</tt> в секции <tt>[Setup]</tt>.)</p>
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
 class="hl kwd">InitializeSetup</span>: Boolean;
 <span class="hl kwb">var</span>
   Version: TWindowsVersion;
@@ -86,22 +73,22 @@ class="hl kwd">InitializeSetup</span>: Boolean;
   GetWindowsVersionEx(Version);
 
   <span class="hl slc">// Запрещаем установку на Windows редакции Home</span>
-  <span class="hl kwb">if</span> Version.SuiteMask <span class="hl kwb">and</span> VER_SUITE_PERSONAL &lt;&gt; <span
+  <span class="hl kwb">if</span> Version.SuiteMask <span class="hl kwb">and</span> VER_SUITE_PERSONAL &lt;&gt; <span
 class="hl num">0</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     SuppressibleMsgBox(<span class="hl str">'Эта программа не поддерживает Windows Home.'</span>,
-      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
+      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
 class="hl kwe">IDOK</span>);
     Result := False;
     Exit;
   <span class="hl kwb">end</span>;
 
   <span class="hl slc">// Запрещаем установку на контроллерах домена</span>
-  <span class="hl kwb">if</span> Version.ProductType = VER_NT_DOMAIN_CONTROLLER <span
+  <span class="hl kwb">if</span> Version.ProductType = VER_NT_DOMAIN_CONTROLLER <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     SuppressibleMsgBox(<span class="hl str">'Эта программа не поддерживает контроллеры домена.'</span>,
-      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
+      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
 class="hl kwe">IDOK</span>);
     Result := False;
     Exit;

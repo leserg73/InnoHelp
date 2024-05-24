@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: UnregisterServer</title>
@@ -18,19 +18,17 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: UnregisterServer</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function UnregisterServer(const Is64Bit: Boolean; const Filename:
-          String; const FailCriticalErrors: Boolean): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет отмену регистрации DLL/OCX с указанным именем
-        файла. В случае успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt>.
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          UnregisterServer(const Is64Bit: Boolean; const Filename: String; const
+          FailCriticalErrors: Boolean): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет отмену регистрации DLL/OCX с указанным именем файла <tt>Filename</tt>.
+        В случае успеха функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.
         На 64-бит системах, при условии что функция <tt>Is64Bit</tt> вернула <tt>True</tt>,
-        файл DLL/OCX будет загружен как 64-бит образ и разрегистрирован в 64-бит
-        процессе. Если параметр <i>FailCriticalErrors</i> установлен в <tt>True</tt>,
-        то система не покажет ни одного сообщения об ошибке.</div>
-      <br />
+        файл DLL/OCX будет загружен как 64-бит и отменена его регистрация в
+        64-бит процессе. Если параметр <tt>FailCriticalErrors</tt> установлен в
+        <tt>True</tt>, то система не покажет ни одного сообщения об ошибке.</p>
     </div>
   </body>
 </html>

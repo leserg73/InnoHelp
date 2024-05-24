@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #undef</title>
@@ -19,35 +19,32 @@
     <h1 class="topicheading">Inno Setup Preprocessor: #undef</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>undef-directive:</i>
-            </td>
-            <td class="cellright">(<b>undef</b> | <b>x</b>) [<b>private</b> |
-              <b>protected</b> | <b>public</b>] &lt;ident&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>undef-directive:</i></td>
+              <td class="cellright">(<b>undef</b> | <b>x</b>) [<b>private</b> |
+                <b>protected</b> | <b>public</b>] &lt;ident&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
       <p>Выполняет отмену (удаление) объявленной переменной или пользовательской
         функции. Если <a class="new1" href="topic_visibility.htm">область
           видимости переменной</a> (<tt style="color: #0018a8;"><i>public</i></tt>,
         <tt style="color: #0018a8;"><i>protected</i></tt>, или <tt style="color: #0018a8;"><i>private</i></tt>)
-        не указана, то <b>ISPP</b> сначала удалит переменную "<tt><i>private</i></tt>",
-        затем "<tt><i>protected</i></tt>" и, наконец, "<tt><i>public</i></tt>".</p>
-      <br />
+        не указана, то <b>ISPP</b> сначала удалит переменную "<tt class="nill"><i>private</i></tt>",
+        затем "<tt class="nill"><i>protected</i></tt>" и, наконец, "<tt class="nill"><i>public</i></tt>".</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#undef</span> MyVar
 <span class="hl kwf">#undef</span> MyFunction
 <span class="hl kwf">#undef</span> <span class="hl kwd">public</span> MyVar
 </pre> </div>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a class="new" href="topic_define.htm">define</a></tt>, <tt><a class="new"
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a class="new" href="topic_define.htm">define</a></tt>, <tt class="nill"><a class="new"
             href="topic_dim.htm">dim</a></tt>, <a class="new1" href="topic_visibility.htm">область
           видимости переменных</a>.</p>
     </div>

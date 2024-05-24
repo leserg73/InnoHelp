@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: RegWriteDWordValue</title>
@@ -18,16 +18,14 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: RegWriteDWordValue</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function RegWriteDWordValue(const RootKey: Integer; const
-          SubKeyName, ValueName: String; const Data: Cardinal): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Записывает в реестр указанное значение типа REG_DWORD.
-        В случае успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt>.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          RegWriteDWordValue(const RootKey: Integer; const SubKeyName,
+          ValueName: String; const Data: Cardinal): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Записывает в реестр указанное значение с типом REG_DWORD. В случае
+        успеха функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   RegWriteDWordValue(<span class="hl kwe">HKEY_AUTO</span>, <span class="hl str">'Software\My Company\My Program'</span>,
     <span class="hl str">'ShowToolbar'</span>, <span class="hl num">1</span>);

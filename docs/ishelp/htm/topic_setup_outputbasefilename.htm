@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: OutputBaseFilename</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: OutputBaseFilename</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -26,24 +25,20 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>mysetup</tt> </div>
+              <div class="margined"><tt class="nill">mysetup</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива позволяет указать другое имя для
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива позволяет указать другое имя для
         конечного файла программы установки, чтобы после компиляции его не
-        приходилось переименовывать вручную.</div>
-      <br />
-      <div class="absaz">Не рекомендуется использовать значение <tt>setup</tt>:
+        приходилось переименовывать вручную.</p>
+      <p>Не рекомендуется использовать значение <tt>setup</tt>:
         все исполняемые файлы с именем "setup.exe" проверяются системой
         совместимости приложений Windows, которая подгружает дополнительные
         файлы библиотек, такие как version.dll. Загрузка этих файлов является
-        небезопасной и может быть взломана.</div>
-      <br />
+        небезопасной и может быть взломана.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">OutputBaseFilename</span>=MyProg100</pre>

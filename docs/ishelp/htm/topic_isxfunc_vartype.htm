@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: VarType</title>
@@ -18,21 +18,18 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: VarType</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function VarType(const V: Variant): TVarType;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Возвращает код, соответствующий определенному типу
-        данных заданной переменной <tt>Variant</tt>.</div>
-      <br />
-      <div class="absaz">Младшие 12 бит кода (устанавливаются битовой маской <tt>varTypeMask</tt>)
-        определяют тип данных переменной <i>Variant</i>. Если переменная
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function VarType(const
+          V: Variant): TVarType;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает код, соответствующий определенному типу данных, заданной
+        переменной <tt>Variant</tt>.</p>
+      <p>Младшие 12 бит кода (устанавливаются битовой маской <tt>varTypeMask</tt>)
+        определяют тип данных переменной <tt>Variant</tt>. Если переменная
         является массивом, то устанавливается бит <tt>varArray</tt>. Если
         переменная является ссылкой на значение указанного типа, а не
-        фактическим значением, то устанавливается бит <tt>varByRef</tt>.</div>
-      <br />
-      <div class="absaz">Список соответствий кода различным типам данных:</div>
+        фактическим значением, то устанавливается бит <tt>varByRef</tt>.</p>
+      <p>Список соответствий кода различным типам данных:</p>
       <pre class="indent"><span class="hl kwb">const</span>
   varEmpty    = <span class="hl num">$0000</span>;
   varNull     = <span class="hl num">$0001</span>;

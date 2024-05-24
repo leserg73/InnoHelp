@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Параметр "Check"</title>
@@ -18,11 +18,9 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: Параметр "Check"</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Существует один необязательный <a href="topic_params.htm">параметр</a>,
+      <p>Существует один необязательный <a href="topic_params.htm">параметр</a>,
         поддерживаемый всеми секциями, записи которых представляют собой набор
-        параметров. Этим параметром является:</div>
-      <br />
+        параметров. Этим параметром является:</p>
       <dl>
         <dt class="paramlist"><b><a name="Check">Check</a></b></dt>
         <dd class="paramlist">
@@ -58,32 +56,27 @@ class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'
           </div>
         </dd>
       </dl>
-      <br />
-      <div class="absaz">Все проверочные функции должны возвращать значение типа
+      <p>Все проверочные функции должны возвращать значение типа
         <tt>Boolean</tt> (<i>логический</i>). Если проверочная функция (или
         логическое выражение) возвращает значение <tt>True</tt>, запись будет
-        обработана, иначе пропущена.</div>
-      <br />
-      <div class="absaz">Программа установки может вызывать каждую проверочную
+        обработана, иначе пропущена.</p>
+      <p>Программа установки может вызывать каждую проверочную
         функцию несколько раз, даже если существует только одна запись,
         использующая проверку. Если функция выполняет длинный фрагмент кода, её
         можно оптимизировать, выполнив код только один раз и сохранив результат
-        в глобальную переменную.</div>
-      <br />
-      <div class="absaz">Проверочная функция не вызывается, если программа
-        установки уже определила, что запись не нуждается в обработке.</div>
-      <br />
-      <div class="absaz">Для записей секции <tt>[Files]</tt> с использованием
+        в глобальную переменную.</p>
+      <p>Проверочная функция не вызывается, если программа
+        установки уже определила, что запись не нуждается в обработке.</p>
+      <p>Для записей секции <tt>[Files]</tt> с использованием
         символов подстановки (<i>маски файлов</i>), но без флага <tt>external</tt>,
         проверочная функция будет вызвана один раз для каждого файла, который
         соответствует маске, а не один раз для каждой записи. Используйте
         функцию <tt>CurrentFileName</tt> для проверки имени файла,
-        обрабатываемого в текущий момент.</div>
-      <br />
-      <div class="absaz">Ниже представлен пример секции <tt>[Code]</tt> с
+        обрабатываемого в текущий момент.</p>
+      <p>Ниже представлен пример секции <tt>[Code]</tt> с
         проверочной функцией, используемой в примере выше. Функция <tt>DirExists</tt>
         является <a href="topic_scriptfunctions.htm">поддерживаемой</a> и
-        поэтому сюда не включена.</div>
+        поэтому сюда не включена.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
 <span class="hl kwb">var</span>
   MyProgChecked: Boolean;

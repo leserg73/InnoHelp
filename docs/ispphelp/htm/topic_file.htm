@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #file</title>
@@ -19,22 +19,22 @@
     <h1 class="topicheading">Inno Setup Preprocessor: #file</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>file-directive:</i>
-            </td>
-            <td class="cellright"><b>file</b> &lt;expr&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>file-directive:</i></td>
+              <td class="cellright"><b>file</b> &lt;expr&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет замену указанного файла временным, содержащего <a href="topic_translation.htm"
-        class="new1">выходные данные препроцессора</a>. Если используется
-        файл Unicode, то он обязательно должен быть в кодировке UTF-8 с BOM.
-        По окончании компиляции временный файл автоматически удаляется.</p>
+      <p>Выполняет замену указанного файла временным, содержащего <a href="topic_translation.htm"
+          class="new1">выходные данные препроцессора</a>. Если используется файл
+        Unicode, то он обязательно должен быть в кодировке UTF-8 (с или без
+        маркера BOM). По окончании компиляции временный файл автоматически
+        удаляется.</p>
       <p>Включенный этой директивой файл используется для создания новой копии
         препроцессора, которому передаются все объявленные идентификаторы. В
         некоторых случаях подмена файла позволяет изменить некоторые параметры,
@@ -45,16 +45,14 @@
         укажите также параметр <span style="font-weight: bold; color: blue;">DestName</span>,
         иначе файл не будет установлен с оригинальным именем.</p>
       <p>Эта директива может использоваться только встроенным методом.</p>
-      <br />
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Setup]</span>
-<span class="hl kwb">LicenseFile</span><span class="hl opt">=</span><span class="hl kwc">{</span><span
+<span class="hl kwb">LicenseFile</span><span class="hl opt">=</span><span class="hl kwc">{</span><span
 class="hl kwf">#file</span> <span class="hl str">"mylic.txt"</span><span class="hl kwc">}</span>
 </pre> </div>
-      <br />
-      <h2 class="heading">См. также</h2>
-      <p><tt><a href="topic_include.htm" class="new">include</a></tt>.</p>
+      <h2 class="heading">См. также:</h2>
+      <p><tt class="nill"><a href="topic_include.htm" class="new">include</a></tt>.</p>
     </div>
   </body>
 </html>

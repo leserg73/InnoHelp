@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [UninstallDelete]</title>
@@ -18,21 +18,18 @@
   <body>
     <h1 class="topicheading">Секция [UninstallDelete]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Эта секция является необязательной и определяет любые
+      <p>Эта секция является необязательной и определяет любые
         файлы или папки, которые должен удалить деинсталлятор, кроме тех, что
         были созданы/установлены с помощью записей в секции <tt>[Files]</tt>
         или <tt>[Dirs]</tt>. Наиболее частое использование этой секции —
         удаление файлов INI, создаваемых приложением. Все записи, указанные в
         этой секции, программа удаления обрабатывает на последнем этапе
-        деинсталляции.</div>
-      <br />
-      <div class="absaz">Пример секции <tt>[UninstallDelete]</tt>:</div>
+        деинсталляции.</p>
+      <p>Пример секции <tt>[UninstallDelete]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[UninstallDelete]</span>
 <span class="hl kwb">Type</span>: <span class="hl kwe">files</span>; <span class="hl kwb">Name</span>: "<span
 class="hl kwc">{win}</span>\MYPROG.INI"</pre>
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Type">Type</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">

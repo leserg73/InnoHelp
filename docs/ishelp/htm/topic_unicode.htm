@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Unicode Inno Setup</title>
@@ -18,28 +18,24 @@
   <body>
     <h1 class="topicheading">Unicode Inno Setup</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">До появления Inno Setup 6 существовали две версии Inno
+      <p>До появления Inno Setup 6 существовали две версии Inno
         Setup: ANSI и Unicode. Начиная с Inno Setup 6 в разработке осталась
-        только Unicode версия Inno Setup.</div>
-      <br />
-      <div class="absaz">Главными особенностями Unicode версии Inno Setup
+        только Unicode версия Inno Setup.</p>
+      <p>Главными особенностями Unicode версии Inno Setup
         являются поддержка любого языка на любой системе независимо от системной
         кодовой страницы, а также поддержка файлов с именами в кодировке
-        Unicode.</div>
-      <br />
-      <div class="absaz">Если вы не знаете, какую версию установили, запустите
+        Unicode.</p>
+      <p>Если вы не знаете, какую версию установили, запустите
         IDE компилятора и посмотрите на заголовок окна. Если после номера версии
         стоит метка "(a)", значит используется ANSI версия Inno Setup. В
-        противном случае используется Unicode версия Inno Setup.</div>
-      <br />
-      <div class="absaz">По большей части обе версии используются одинаково и
+        противном случае используется Unicode версия Inno Setup.</p>
+      <p>По большей части обе версии используются одинаково и
         любые различия между ними отмечены в файле справки. Однако ниже
-        приведены основные различия:</div>
-      <br />
+        приведены основные различия:</p>
       <ul>
         <li>Unicode версия Inno Setup поддерживает в файлах .iss и .isl
-          кодировку UTF-8 (но не UTF-16).</li>
+          кодировку UTF-8. Начиная с Inno Setup 6.3 маркер BOM больше не является
+          обязательным. Кодировка UTF-16 не поддерживается.</li>
         <li>Любые существующие языковые .isl файлы в кодировке ANSI во время
           компиляции автоматически преобразуются с использованием языкового
           параметра <tt>LanguageCodePage</tt>. </li>
@@ -47,9 +43,10 @@
           существующих ANSI .iss сценариях должны быть вручную преобразованы в
           кодировку Unicode, если язык использует особое значение <tt>LanguageCodePage</tt>.
         </li>
-        <li>Unicode версия Inno Setup поддерживает в .txt файлах для <tt>LicenseFile</tt>,
+        <li>Unicode версия Inno Setup поддерживает в файлах .txt для <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> кодировку UTF-8 и
-          UTF-16LE. </li>
+          UTF-16LE. Начиная с Inno Setup 6.3 маркер BOM больше не является
+          обязательным.</li>
         <li>Любой язык простых текстовых файлов в кодировке ANSI для <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> или <tt>InfoAfterFile</tt> во время
           компиляции автоматически преобразуется с использованием языкового
@@ -88,14 +85,12 @@
           </ul>
         </li>
       </ul>
-      <br />
-      <div class="absaz">Примечание: Unicode версия Inno Setup может создавать
+      <p>Примечание: Unicode версия Inno Setup может создавать
         только Unicode версии программ установок и, аналогично, ANSI версия Inno
         Setup может создавать только ANSI версии программ установок. Если вы
         хотите создавать программы установок Unicode и ANSI версий на одном
         компьютере, вам необходимо установить обе версии Inno Setup, но в разные
-        папки.</div>
-      <br />
+        папки.</p>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Режим не административной установки</title>
@@ -18,15 +18,12 @@
   <body>
     <h1 class="topicheading">Режим не административной установки</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Установка может работать в одном из двух режимов:
+      <p>Установка может работать в одном из двух режимов:
         административном или не административном. Выбор режима определяется
         директивами <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>
         и <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
-        в секции <tt>[Setup]</tt>.</div>
-      <br />
-      <div class="absaz">В режиме административной установки:</div>
-      <br />
+        в секции <tt>[Setup]</tt>.</p>
+      <p>В режиме административной установки:</p>
       <ul class="null">
         <li>Папка <tt>{group}</tt> создаётся в профиле <i>Для всех
             пользователей</i>.</li>
@@ -39,9 +36,7 @@
           деинсталляции и ключи установки шрифта создаются в разделе
           HKEY_LOCAL_MACHINE.</li>
       </ul>
-      <br />
-      <div class="absaz">В режиме не административной установки:</div>
-      <br />
+      <p>В режиме не административной установки:</p>
       <ul class="null">
         <li>Папка <tt>{group}</tt> создаётся в профиле текущего пользователя.</li>
         <li>Форма "auto" для констант каталогов и специальных папок
@@ -50,24 +45,21 @@
           деинсталляции и ключи установки шрифта создаются в разделе
           HKEY_CURRENT_USER.</li>
       </ul>
-      <br />
-      <p><b>Примечания:</b></p>
-      <div class="absaz">Независимо от версии Windows, если инсталляция
+      <h2 class="heading">Комментарии</h2>
+      <p>Независимо от версии Windows, если инсталляция
         выполняется в режиме административной установки, вы должны быть предельно
         осторожны при внесении каких-либо изменений в пользовательскую область
         данных: файлы и настройки пользовательского уровня должны обрабатываться
         самим приложением, а не программой установки, работающей в административном
         режиме. Компилятор предупредит вас об этом, но если вы уверены в своих
         действиях, то это сообщение может быть отключено директивой <a 
-        href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a>.</div>
-      <br />
-      <div class="absaz">Если инсталляция выполняется в режиме не
+        href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a>.</p>
+      <p>Если инсталляция выполняется в режиме не
         административной установки, но административные привилегии все равно
         доступны, то программа установки или секция <tt>[Code]</tt> все равно
         может использовать эти привилегии. По этой причине деинсталлятор всегда
         будет требовать административные привилегии, как если бы инсталляция
-        выполнялась в режиме административной установки.</div>
-      <br />
+        выполнялась в режиме административной установки.</p>
     </div>
   </body>
 </html>

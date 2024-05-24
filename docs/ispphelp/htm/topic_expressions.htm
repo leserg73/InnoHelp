@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Expression Syntax</title>
@@ -28,15 +28,14 @@
         будут вычислены только 2 и 3 операнды).</p>
       <p>В файле сценария <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>
         вы найдете множество примеров синтаксических выражений.</p>
-      <br />
       <h2 class="heading">Различия между синтаксисом C и ISPP</h2>
       <ul>
         <li><b>ISPP</b> не поддерживает работу со следующими операторами: <i>ссылочные</i>,
           <i>разыменованные</i>, <i>разрешения области видимости</i>, <i>принадлежности</i>
           и т.д.</li>
         <li><b>ISPP</b> рассматривает идентификатор со знаком равенства в
-          качестве имени аргумента, если этот идентификатор используется в
-          списке аргументов.</li>
+          качестве имени параметра, если этот идентификатор используется в
+          списке параметров.</li>
         <li>Арифметический оператор деления (косая черта) выполняет только
           целочисленное деление, т.к. <b>ISPP</b> не поддерживает
           математические операции с плавающей запятой.</li>
@@ -51,31 +50,31 @@
           одинарных кавычек и наоборот. Если внутри строки необходимо записать
           часть выражения снова в кавычках (например, цитата), то символы этих
           кавычек необходимо экранировать (это зависит от текущего состояния
-          параметра  "<i>Pascal</i>-стиль строковых литералов" для
-          синтаксического анализа строк сценария, см. директиву <tt><a class="new"
-              href="topic_pragma.htm">pragma</a></tt>). </li>
+          параметра "<i>Pascal</i>-стиль строковых литералов" для
+          синтаксического анализа строк сценария, см. директиву <tt class="nill"><a class="new"
+
+              href="topic_pragma.htm">pragma</a></tt>). Также смотрите
+          встроенную переменную <tt class="nill"><a href="topic_predefinedvars.htm">NewLine</a></tt>.</li>
       </ul>
-      <br />
       <h2 class="heading">Типы данных</h2>
       <p><b>ISPP</b> содержит три типа данных: <b>void</b> (пустой), <b>integer</b>
         (целочисленный) и <b>string</b> (строковый). Переменные типа <b>void</b>
-        объявляются директивой <tt><a class="new" href="topic_define.htm">define</a></tt>,
+        объявляются директивой <tt class="nill"><a class="new" href="topic_define.htm">define</a></tt>,
         для которой указывается только имя переменной без каких-либо значений.
-        Такие переменные могут использоваться с директивой <tt><a class="new" href="topic_ifdef.htm">ifdef</a></tt>
-        или в функции <tt><a href="topic_defined.htm">Defined</a></tt>.</p>
+        Такие переменные могут использоваться с директивой <tt class="nill"><a class="new" href="topic_ifdef.htm">ifdef</a></tt>
+        или в функции <tt class="nill"><a href="topic_defined.htm">Defined</a></tt>.</p>
       <p>Если для синтаксического анализа строк параметр "Разрешить применение
         необъявленных идентификаторов" отключен (это состояние по умолчанию,
-        подробности смотрите в <tt><a class="new" href="topic_pragma.htm">pragma</a></tt>),
+        подробности смотрите в <tt class="nill"><a class="new" href="topic_pragma.htm">pragma</a></tt>),
         то возникнет ошибка, т.к. компилятор не знает, что это за переменные. В
         противном случае, они будут обработаны как пустые (тип <b>void</b>),
         т.е. не имеющие никаких значений.</p>
       <p>В выражениях тип <b>void</b> хорошо совместим с целочисленными (<b>int</b>)
         и строковыми (<b>str</b>) типами данных. Например, вы можете запросто
-        сложить два операнда, один из которых является <b>int</b>, в другой - <b>void</b>.
+        сложить два операнда, один из которых является <b>int</b>, в другой — <b>void</b>.
         В этом случае пустой операнд будет обработан как ноль (целое число 0).
         Если же операции выполняются над строками, пустой операнд будет
         обработан как пустая строка.</p>
-      <br />
       <h2 class="heading">Комментарии</h2>
       <p>Для облегчения чтения и понимания текста сценария, вы можете писать
         комментарии. Покажем вам основные принципы ввода комментариев и символы,
@@ -85,83 +84,99 @@
           * </span>) можно внедрить комментарий в выражение:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl slc">/* это комментарий */</span> + Var2 <span
+
 class="hl slc">/* и это тоже комментарий */</span>
 </pre> </div>
       <p>Комментарии могут быть размещены в конце выражения с использованием
-        точки с запятой (<span style="white-space: nowrap;"> </span><b><span style="color: #006600;">;</span></b> )
-        или двойной косой черты (<span style="white-space: nowrap;"> <strong style="color: #006600;">//</strong> </span>).
+        точки с запятой (&nbsp;<b><span style="color: #006600;">;</span></b>&nbsp;)
+        или двойной косой черты (&nbsp;<strong style="color: #006600;">//</strong>&nbsp;).
         Например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+
 class="hl slc">; это комментарий</span>
 <span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+
 class="hl slc">// это тоже комментарий</span> 
 </pre> </div>
       <p>Если текст комментария очень большой, то используя символ разделения
         строк — обратная косая черта (<span style="white-space: nowrap;"> <b>\</b>
-        </span>) —  его можно разбить на несколько строк. Например:</p>
+        </span>) —&nbsp; его можно разбить на несколько строк. Например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+
 class="hl slc">; здесь находится текст</span> \
 <span class="hl slc">очень длинного комментария :)</span>
 </pre> </div>
       <p>Комментарии также можно разместить в любом месте с начала строки,
-        используя двойную косую черту (<span style="white-space: nowrap;"> <strong
-            style="color: #006600;">//</strong> </span>). Например:</p>
+        используя двойную косую черту (<span style="white-space: nowrap;">&nbsp;<strong
+
+            style="color: #006600;">//</strong>&nbsp;</span>). Например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Это комментарий</span>
 </pre> </div>
       <p>Все комментарии, показанные выше, не включаются в данные <a href="topic_translation.htm"
+
           class="new1">вывода препроцессора</a>, в отличие от комментариев (не
         ISPP), использующих точку с запятой в начале строки. Например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#emit</span> Var1 <span class="hl opt">+</span> Var2 <span
+
 class="hl slc">; этого комментария на выходе препроцессора НЕ будет</span>
 <span class="hl slc">// Этого комментария тоже НЕ будет</span>
 <span class="hl slc">; А вот этот комментарий БУДЕТ</span>
 </pre> </div>
-      <br />
       <h2 class="heading">Расширенный синтаксис вызова пользовательских функций</h2>
-      <p>В ISPP имеется возможность использования именованных аргументов при
+      <p>В ISPP имеется возможность использования именованных параметров при
         вызове функций, определённых пользователем. Например, выполним
         объявление функции <tt>MyFunction</tt>:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> MyFunction<span class="hl opt">(</span><span
+
 class="hl kwd">int</span> A <span class="hl opt">=</span> <span class="hl num">2</span><span
+
 class="hl opt">,</span> <span class="hl kwd">int</span> B <span class="hl opt">=</span> <span
+
 class="hl num">2</span><span class="hl opt">)</span> A <span class="hl opt">+</span> B
 </pre> </div>
-      <p>Теперь выполним вызов этой функции и укажем имена аргументов:<br />
+      <p>Теперь выполним вызов этой функции и укажем имена параметров:<br />
       </p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>A <span
+
 class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">,</span> B <span
+
 class="hl opt">=</span> <span class="hl num">10</span><span class="hl opt">)</span>
 <span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
+
 class="hl opt">=</span> <span class="hl num">3</span><span class="hl opt">)</span>
 <span class="hl kwf">#emit</span> MyFunction<span class="hl opt">(</span>B <span
+
 class="hl opt">=</span> <span class="hl num">10</span><span class="hl opt">,</span> A <span
+
 class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">)</span>
 </pre> </div>
       <br />
       <ul>
-        <li>Если хотя бы для одного аргумента задано имя, то и все остальные
-          аргументы (обязательно!) в списке также должны иметь имена.</li>
-        <li>Порядок размещения именованных аргументов не имеет значения.</li>
+        <li>Если хотя бы для одного параметра задано имя, то и все остальные
+          параметры (обязательно!) в списке также должны иметь имена.</li>
+        <li>Порядок размещения именованных параметров не имеет значения.</li>
         <li>Если расширенный синтаксис вызова не используется, то чтобы избежать
           двусмысленности, операция присваивания должна быть заключена в круглые
           скобки:<br />
           <br />
           <div class="examplebox">
             <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span>MyVar <span
+
 class="hl opt">=</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
+
 class="hl num">10</span><span class="hl opt">)</span>
 </pre> </div>
           <br />
           В этом примере знак равенства рассматривается как оператор
           присваивания.<br />
-          Хотя функции и не имеют именованных аргументов, все же, при их вызове,
-          рекомендуется заключить аргументы в круглые скобки. </li>
+          Хотя функции и не имеют именованных параметров, все же, при их вызове,
+          рекомендуется заключить выражения в круглые скобки.</li>
         <li>Согласно стандартным правилам, для разделения фактических параметров
           используется запятая (<b> , </b>). Если вам необходимо использовать
           оператор следования, то вы должны заключить его в круглые скобки.
@@ -169,14 +184,17 @@ class="hl num">10</span><span class="hl opt">)</span>
           <br />
           <div class="examplebox">
             <pre class="hl"><span class="hl kwf">#emit</span> MyFunction<span class="hl opt">((</span><span
+
 class="hl kwd">SaveToFile</span><span class="hl opt">(</span><span class="hl str">"script.txt"</span><span
+
 class="hl opt">),</span> <span class="hl num">5</span><span class="hl opt">),</span> <span
+
 class="hl num">10</span><span class="hl opt">)</span>
 </pre> </div>
           <br />
           В показанном выше примере, выражение до первой запятой обрабатывается
           как оператор следования, тогда как вторая запятая является
-          разделителем аргументов. </li>
+          разделителем параметров.</li>
       </ul>
     </div>
   </body>

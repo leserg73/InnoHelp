@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: GetOpenFileName</title>
@@ -18,32 +18,38 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: GetOpenFileName</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function GetOpenFileName(const Prompt: String; var FileName:
-          String; const InitialDirectory, Filter, DefaultExtension: String):
-          Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет вызов диалогового окна, в котором
-        пользователь может выбрать существующий файл. Возвращает значение <tt>True</tt>,
-        если пользователь подтвердил выбор файла, иначе <tt>False</tt>. Имя
-        выбранного файла передаётся параметру <i>FileName</i>.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">К примеру, фильтр файлов: 'Text files (*.txt)|*.txt|All
-        files (*.*)|*.*'</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetOpenFileName(const Prompt: String; var FileName: String; const
+          InitialDirectory, Filter, DefaultExtension: String): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет вызов диалогового окна, в котором пользователь может выбрать
+        существующий файл. Возвращает значение <tt>True</tt>, если пользователь
+        подтвердил выбор файла, иначе — <tt>False</tt>. Имя выбранного файла
+        передаётся параметру <tt>FileName</tt>.</p>
+      <p>С помощью параметра <tt>Promt</tt> можно указать пояснение для
+        пользователя, которое будет показано в диалоге. Начальная папка для
+        выбора файла устанавливается параметром <tt>InitialDirectory</tt>.
+        Параметр <tt>Filter</tt> определяет фильтр файлов по типу, а параметром
+        <tt>DefaultExtension</tt> указывается тип (<i>расширение</i>) файла по
+        умолчанию.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Фильтр файлов устанавливается по следующему формату:</p>
+      <p> <code class="indent">&lt;название фильтра 1&gt;</code><b>|</b><code>&lt;маска
+          файлов&gt;<b>|</b>&lt;название фильтра 2&gt;</code><b>|</b><code>&lt;маска
+          файлов&gt;</code> и т.д... </p>
+      <p>Например, назначение фильтра '<code>Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*</code>'
+        позволить отобразить в диалоге или только текстовые файлы, или же файлы
+        любого типа.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   FileName: String;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Устанавливаем начальное имя файла</span>
   FileName := <span class="hl str">''</span>;
-  <span class="hl kwb">if</span> GetOpenFileName(<span class="hl str">''</span>, FileName, <span
+  <span class="hl kwb">if</span> GetOpenFileName(<span class="hl str">''</span>, FileName, <span
 class="hl str">''</span>,
-     <span class="hl str">'Текстовые файлы (*.txt)|*.txt|Все файлы|*.*'</span>, <span
+     <span class="hl str">'Текстовые файлы (*.txt)|*.txt|Все файлы|*.*'</span>, <span
 class="hl str">'txt'</span>) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// Успех: пользователь нажал OK</span>

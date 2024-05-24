@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: AppId</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: AppId</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -32,10 +31,8 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Значение директивы <tt>AppId</tt> сохраняется в файлах
+      <h2 class="heading">Описание</h2>
+      <p>Значение директивы <tt>AppId</tt> сохраняется в файлах
         журнала деинсталляции (unins???.dat) и проверяется последующими
         установками на предмет возможности <a href="topic_appendnotes.htm">добавления
           данных в существующий журнал деинсталляции</a>. Программа установки
@@ -46,20 +43,17 @@
         называется <i>My Program</i>, а другая <i>Обновление My Program 1.1</i>.
         Чтобы "Обновление My Program 1.1" было добавлено в журнал деинсталляции
         "My Program", необходимо указать одно и то же значение <tt>AppId</tt> в
-        обеих установках.</div>
-      <br />
-      <div class="absaz"><tt>AppId</tt> также определяет фактическое имя ключа в
+        обеих установках.</p>
+      <p><tt>AppId</tt> также определяет фактическое имя ключа в
         разделе реестра "Uninstall", к которому Inno Setup добавляет окончание
         "_is1". Например, если значением <tt>AppId</tt> является "MyProgram", в
         реестре будет создан ключ с именем "MyProgram<b>_is1</b>". В ранних
         версиях Inno Setup (до версии 1.3) имя ключа базировалось на значении
-        параметра <tt>AppVerName</tt>.</div>
-      <br />
-      <div class="absaz"><tt>AppId</tt> нигде не используется для вывода на
+        параметра <tt>AppVerName</tt>.</p>
+      <p><tt>AppId</tt> нигде не используется для вывода на
         экран, поэтому постарайтесь сделать его как можно более уникальным.
-        Значение может содержать константы.</div>
-      <br />
-      <div class="absaz">При использовании константы <tt>{code:..}</tt>,
+        Значение может содержать константы.</p>
+      <p>При использовании константы <tt>{code:..}</tt>,
         позволяющей пользователю настроить <tt>AppId</tt>, вам не нужно
         возвращать реальное значение до тех пор, пока не начнётся установка: на
         раннем этапе, при необходимости, можно вернуть пустое или общее
@@ -67,11 +61,9 @@
         только для восстановления предыдущих параметров установки (например,
         параметров, сохранённых директивой <a href="topic_setup_usepreviousappdir.htm">UsePreviousAppDir</a>
         в секции <tt>[Setup]</tt>). Если же значение пустое, то оно нигде не
-        используется.</div>
-      <br />
-      <div class="absaz">Максимальная длина <tt>AppId</tt> со всеми значениями
-        констант не должна превышать 127 символов.</div>
-      <br />
+        используется.</p>
+      <p>Максимальная длина <tt>AppId</tt> со всеми значениями
+        констант не должна превышать 127 символов.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">AppId</span>=MyProgram</pre>

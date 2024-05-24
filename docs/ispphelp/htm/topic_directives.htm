@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Directives</title>
@@ -22,14 +22,14 @@
         и <i>встроенным</i>.</p>
       <p><i>Простой метод</i> заключается в том, что строка с директивой
         начинается с символа "решётки" (<tt style="color: #990000;">#</tt>).
-        Например, установим переменную с именем <tt>MyAppName</tt> и присвоим ей
-        значение <tt><i>"My Program"</i></tt>:</p>
+        Например, установим переменную с именем <tt>MyAppName</tt> и
+        присвоим ей значение <tt><i>"My Program"</i></tt>:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> MyAppName <span class="hl str">"My Program"</span>
 </pre> </div>
       <p><i>Встроенный метод</i> позволяет подключить директиву, которая была
         установлена ранее. В этом случае директива записывается между начальными
-        символами <tt style="font-weight: bold; color: #993399;">{#</tt>
+        символами <tt style="font-weight: bold; color: #993399;">{#</tt>
         (открывающая фигурная скобка плюс решётка) и завершающим символом <tt style="font-weight: bold; color: #993399;">}</tt>
         (закрывающая фигурная скобка). Например, присвоим директиве IS <tt style="color: #3333ff;">AppName</tt>
         значение ранее установленной переменной <tt>MyAppName</tt> (см. пример
@@ -43,48 +43,43 @@
         Таким образом, директиве IS <tt><span style="color: #3333ff;">AppName</span></tt>
         будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
       <p>Как видно из приведенного выше примера, не обязательно указывать имя
-        директивы <tt><a class="new" href="topic_emit.htm">emit</a></tt>, если
-        она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
+        директивы <tt class="nill"><a class="new" href="topic_emit.htm">emit</a></tt>,
+        если она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
         является сокращенной записью <tt>{#emit MyAppName}</tt>.</p>
       <h2 class="heading">Синтаксис директив</h2>
       <p>При описании директив используются следующие условные обозначения:</p>
       <table>
         <tbody>
           <tr>
-            <td class="cellleft"><tt>()</tt>
-            </td>
+            <td class="cellleft"><tt class="nill">()</tt></td>
             <td class="cellright">Группа объектов.</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>[]</tt> </td>
-            <td class="cellright">Вспомогательный
-              объект или группа объектов.</td>
+            <td class="cellleft"><tt class="nill">[]</tt></td>
+            <td class="cellright">Вспомогательный объект или группа объектов.</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt>|</tt> </td>
+            <td class="cellleft"><tt class="nill">|</tt> </td>
             <td class="cellright">Взаимоисключающие объекты.</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>...</tt> </td>
-            <td class="cellright">Предыдущий
-              объект или группа объектов, которые могут быть повторены.</td>
+            <td class="cellleft"><tt class="nill">...</tt></td>
+            <td class="cellright">Предыдущий объект или группа объектов, которые
+              могут быть повторены.</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt><b>token</b></tt>
-            </td>
+            <td class="cellleft"><tt class="nill"><b>token</b></tt></td>
             <td class="cellright">Зарезервированное слово или символ(ы).
               Является терминальным объектом и должен вводиться так, как
               представлен, без каких-либо изменений или модификаций.</td>
           </tr>
           <tr style="background-color: #eeeeee;">
-            <td class="cellleft"><tt>&lt;token&gt;</tt> </td>
-            <td class="cellright">Нетерминальный
-              объект. Может представлять собой выражение, формулу, имя
-              идентификатора, переменную.</td>
+            <td class="cellleft"><tt class="nill">&lt;token&gt;</tt></td>
+            <td class="cellright">Нетерминальный объект. Может представлять
+              собой выражение, формулу, имя идентификатора, переменную.</td>
           </tr>
         </tbody>
       </table>
-      <br />
       <h2 class="heading">Доступные директивы</h2>
       <ul>
         <li><a class="new" href="topic_append.htm">#append</a></li>

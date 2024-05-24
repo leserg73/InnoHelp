@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: LoadStringFromFile</title>
@@ -18,16 +18,41 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: LoadStringFromFile</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function LoadStringFromFile(const FileName: String; var S:
-          AnsiString): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Загружает указанный двоичный или не Unicode-текстовый
-        файл в заданную строку. В случае успеха возвращает значение <tt>True</tt>,
-        иначе <tt>False</tt>.</div>
-      <br />
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          LoadStringFromFile(const FileName: String; var S: AnsiString):
+          Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Загружает указанный текстовый файл <tt>FileName</tt> в строку <tt>S</tt>.
+        Также поддерживаются файлы в кодировке UTF-8 с маркером BOM или без
+        него. В случае успеха возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Используйте для загрузки функцию <a href="topic_isxfunc_loadstringfromlockedfile.htm">LoadStringFromLockedFile</a>,
+        что даст возможность прочитать файл, даже если он уже открыт для записи
+        в другой программе.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  UnicodeStr: <span class="hl kwb">String</span>;
+  ANSIStr: AnsiString;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if</span> <span class="hl kwg">LoadStringFromFile</span>(<span
+
+class="hl sng">'C:\File.txt'</span>, ANSIStr) <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    UnicodeStr := <span class="hl kwb">String</span>(ANSIStr);
+    <span class="hl kwb">if</span> <span class="hl kwg">StringChangeEx</span>(UnicodeStr, <span
+
+class="hl sng">'FromStr'</span>, <span class="hl sng">'ToStr'</span>, <span class="hl kwg">True</span>) &gt; <span
+
+class="hl num">0</span> <span class="hl kwb">then</span>
+      <span class="hl kwg">SaveStringToFile</span>(<span class="hl sng">'C:\File.txt'</span>, <span
+
+class="hl kwd">AnsiString</span>(UnicodeStr), <span class="hl kwg">False</span>);
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_loadstringsfromfile.htm">LoadStringsFromFile</a></p>
     </div>
   </body>
 </html>

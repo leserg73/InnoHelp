@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: CreateDownloadPage</title>
@@ -18,53 +18,47 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: CreateDownloadPage</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function CreateDownloadPage(const ACaption, ADescription: String;
-          const OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет создание страницы мастера, которая позволяет
-        загружать файлы и показывает прогресс загрузки.</div>
-      <br />
-      <div class="absaz">Для параметра <tt>OnDownloadProgress</tt> укажите
-        функцию, которая будет передавать информацию о ходе загрузки, или <tt>nil</tt>,
-        если в этом нет необходимости.</div>
-      <br />
-      <div class="absaz">В отличии от других типов страниц мастера установки,
-        страницы с индикатором выполнения не отображаются как часть обычной
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateDownloadPage(const ACaption, ADescription: String; const
+          OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание страницы для мастера установки, которая позволяет
+        загружать файлы из различных источников в сети Интернет и показывает
+        прогресс загрузки.</p>
+      <p>Для параметра <tt>OnDownloadProgress</tt> укажите функцию, которая
+        будет передавать информацию о ходе загрузки, или значение <tt>nil</tt>,
+        если в этом нет необходимости.</p>
+      <p>Для параметра <tt>ACaption</tt> следует указать заголовок страницы, а
+        для параметра <tt>ADescription</tt> краткое описание назначения
+        страницы.</p>
+      <p>В отличии от других типов страниц мастера установки, страницы с
+        индикатором выполнения не отображаются как часть обычной
         последовательности страниц (обратите внимание, что параметр <tt>AfterID</tt>
-        отсутствует) Страницу с индикатором выполнения можно отобразить только
-        программно, путём вызова метода <tt>Show</tt>.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Вызов метода <tt>Show</tt> активирует и отображает
-        страницу. Завершив с ней работу, сделайте вызов метода <tt>Hide</tt>,
-        чтобы вернуться на предыдущую страницу.</div>
-      <br />
-      <div class="absaz">Всегда указывайте вызов <tt>Hide</tt> внутри раздела <tt>finally</tt>
-        конструкции <tt>try..finally</tt>, как показано в примере <i>CodeDownloadFiles.iss</i>.
+        отсутствует). Страницу с индикатором выполнения можно отобразить только
+        программно, путём вызова метода <tt>Show</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Вызов метода <tt>Show</tt> активирует и отображает страницу. Завершив
+        с ней работу, сделайте вызов метода <tt>Hide</tt>, чтобы вернуться на
+        предыдущую страницу.</p>
+      <p>Всегда указывайте вызов <tt>Hide</tt> внутри раздела <tt>finally</tt>
+        конструкции <tt>try..finally</tt>, как показано в файле примера <i>CodeDownloadFiles.iss</i>.
         Отсутствие вызова <tt>Hide</tt> приведёт к тому, что мастер установки
-        навсегда застрянет на странице выполнения.</div>
-      <br />
-      <div class="absaz">Чтобы добавить новый файл для загрузки, используйте
-        вызов метода <tt>Add</tt>. А перед добавлением первого файла всегда
-        используйте вызов метода <tt>Clear</tt>.</div>
-      <br />
-      <div class="absaz">Чтобы начать загрузку, используйте вызов метода <tt>Download</tt>.
-        В случае ошибки будет вызвано исключение. Иначе <tt>Download</tt>
-        вернёт количество загруженных байт.</div>
-      <br />
-      <div class="absaz">В описании функции <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
-        вы найдете дополнительные сведения по классу <tt>TOnDownloadProgress</tt>.</div>
-      <br />
-      <div><b>Пример:</b></div>
-      <br />
-      <div class="absaz">Смотрите пример в файле <i>CodeDownloadFiles.iss</i>.</div>
-      <br />
-      <div><b>См. также:</b></div>
-      <p><a href="topic_scriptclasses.htm#TDownloadWizardPage">TDownloadWizardPage</a>
+        навсегда застрянет на странице выполнения.</p>
+      <p>Чтобы добавить новый файл для загрузки, используйте вызов метода <tt>Add</tt>.
+        А перед добавлением первого файла всегда используйте вызов метода <tt>Clear</tt>.</p>
+      <p>Чтобы начать загрузку, используйте вызов метода <tt>Download</tt>. В
+        случае ошибки будет вызвано исключение. Иначе <tt>Download</tt> вернёт
+        количество загруженных байт.</p>
+      <p>Установите для свойства <tt>ShowBaseNameInsteadOfUrl</tt> значение <tt>True</tt>,
+         чтобы вместо URL-адреса отображалось исходное имя загружаемого файла.</p>
+      <p>В описании функции <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+        вы найдете дополнительные сведения по классу <tt>TOnDownloadProgress</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <p>Смотрите файл <i>CodeDownloadFiles.iss</i> из папки "Examples" в
+        каталоге установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TDownloadWizardPage">TDownloadWizardPage</a>
         <br />
         <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
         <br />

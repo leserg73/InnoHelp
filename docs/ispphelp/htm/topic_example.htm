@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Example Script</title>
@@ -28,9 +28,9 @@
 <span class="hl slc">; Чтобы включить директиву #define, удалите символ комментария (;),</span>
 <span class="hl slc">; или используйте ISCC с ключом /D в командной строке.</span>
 
-<span class="hl kwf">#pragma</span> <span class="hl kwd">option</span> <span class="hl opt">-</span>v<span
+<span class="hl kwf">#pragma</span> <span class="hl kwd">option</span> <span class="hl opt">-</span>v<span
 class="hl opt">+</span>
-<span class="hl kwf">#pragma</span> <span class="hl kwd">verboselevel</span> <span
+<span class="hl kwf">#pragma</span> <span class="hl kwd">verboselevel</span> <span
 class="hl num">9</span>
 
 <span class="hl slc">;#define Debug</span>
@@ -43,54 +43,53 @@ class="hl num">9</span>
   <span class="hl kwf">#define</span> AppName <span class="hl str">"My Program"</span>
 <span class="hl kwf">#endif</span>
 
-<span class="hl kwf">#define</span> AppVersion <span class="hl kwd">GetFileVersion</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+<span class="hl kwf">#define</span> AppVersion <span class="hl kwd">GetFileVersion</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
 class="hl opt">) +</span> <span class="hl str">"MyProg.exe"</span><span class="hl opt">)</span>
 
 <span class="hl kwa">[Setup]</span>
 <span class="hl kwb">AppName</span><span class="hl opt">=</span><span class="hl kwc">{#AppName}</span>
 <span class="hl kwb">AppVersion</span><span class="hl opt">=</span><span class="hl kwc">{#AppVersion}</span>
-<span class="hl kwb">DefaultDirName</span><span class="hl opt">=</span><span class="hl kwc">{pf}</span>\<span
+<span class="hl kwb">DefaultDirName</span><span class="hl opt">=</span><span class="hl kwc">{pf}</span>\<span
 class="hl kwc">{#AppName}</span>
 <span class="hl kwb">DefaultGroupName</span><span class="hl opt">=</span><span class="hl kwc">{#AppName}</span>
-<span class="hl kwb">UninstallDisplayIcon</span><span class="hl opt">=</span><span
+<span class="hl kwb">UninstallDisplayIcon</span><span class="hl opt">=</span><span
 class="hl kwc">{app}</span>\MyProg<span class="hl opt">.</span>exe
-<span class="hl kwb">LicenseFile</span><span class="hl opt">=</span><span class="hl kwc">{</span><span
-class="hl kwf">#file </span><span class="hl kwd">AddBackslash</span>(SourcePath)<span
-class="hl opt"> + </span><span class="hl str">"ISPPExample1License.txt"</span><span
+<span class="hl kwb">LicenseFile</span><span class="hl opt">=</span><span class="hl kwc">{</span><span
+class="hl kwf">#file </span><span class="hl kwd">AddBackslash</span>(SourcePath)<span
+class="hl opt"> + </span><span class="hl str">"ISPPExample1License.txt"</span><span
 class="hl kwc">}</span>
-<span class="hl kwb">VersionInfoVersion</span><span class="hl opt">=</span><span
+<span class="hl kwb">VersionInfoVersion</span><span class="hl opt">=</span><span
 class="hl kwc">{#AppVersion}</span>
-<span class="hl kwb">OutputDir</span><span class="hl opt">=</span><span class="hl kwc">userdocs</span><span
+<span class="hl kwb">OutputDir</span><span class="hl opt">=</span><span class="hl kwc">userdocs</span><span
 class="hl opt">:</span>Inno Setup Examples <span class="hl kwb">Output</span>
 
 <span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span><span class="hl opt">:</span> "MyProg<span class="hl opt">.</span>exe"<span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
+<span class="hl kwb">Source</span><span class="hl opt">:</span> "MyProg<span class="hl opt">.</span>exe"<span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
 class="hl kwc">{app}</span>"
 <span class="hl kwf">#ifdef</span> AppEnterprise
-  <span class="hl kwb">Source</span><span class="hl opt">:</span> "MyProg<span class="hl opt">.</span>chm"<span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
+  <span class="hl kwb">Source</span><span class="hl opt">:</span> "MyProg<span class="hl opt">.</span>chm"<span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
 class="hl kwc">{app}</span>"
 <span class="hl kwf">#endif</span>
-  <span class="hl kwb">Source</span><span class="hl opt">:</span> "Readme<span class="hl opt">.</span>txt"<span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
+  <span class="hl kwb">Source</span><span class="hl opt">:</span> "Readme<span class="hl opt">.</span>txt"<span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> "<span
 class="hl kwc">{app}</span>"<span class="hl opt">;</span> \
    <span class="hl kwb">Flags</span><span class="hl opt">:</span> <span class="hl kwe">isreadme</span>
 
 <span class="hl kwa">[Icons]</span>
-<span class="hl kwb">Name</span><span class="hl opt">:</span> "<span class="hl kwc">{group}</span>\<span
-class="hl kwc">{#AppName}</span>"<span class="hl opt">;</span> <span class="hl kwb">Filename</span><span
+<span class="hl kwb">Name</span><span class="hl opt">:</span> "<span class="hl kwc">{group}</span>\<span
+class="hl kwc">{#AppName}</span>"<span class="hl opt">;</span> <span class="hl kwb">Filename</span><span
 class="hl opt">:</span> "<span class="hl kwc">{app}</span>\MyProg<span class="hl opt">.</span>exe"
 
 <span class="hl kwf">#ifdef</span> Debug
-  <span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+  <span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
 class="hl opt">) +</span> <span class="hl str">"Preprocessed.iss"</span><span class="hl opt">)</span>
 <span class="hl kwf">#endif</span>
 </pre> </div>
-      <br />
-      <p>Текст этого сценария также находится в файле под названием <i>ISPPExample1.iss</i>.
+      <p>Текст этого сценария также находится в файле под названием <i>ISPPExample1.iss</i>.
         Он размещается в папке "<span style="font-style: italic; font-weight: bold;">Examples</span>"
         корневого каталога <i>Inno Setup</i> и в любое время вы можете
         выполнить его компиляцию.</p>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: User Defined Macros</title>
@@ -26,7 +26,7 @@
         обращении к данной функции. Имена параметров, определённые в выражении
         функции, обрабатываются как обычные переменные.</p>
       <p>Формальный синтаксис объявления пользовательских функций обеспечивается
-        директивой <tt><a class="new" href="topic_define.htm">define</a></tt>.
+        директивой <tt class="nill"><a class="new" href="topic_define.htm">define</a></tt>.
         В файле <a class="new1" href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>
         вы найдете множество примеров этих функций.</p>
       <p>Пожалуйста, обратите внимание, что при записи между именем функции и
@@ -43,7 +43,6 @@
         операторы последовательной оценки (comma), операторы присваивания
         (простые и сложные), а также условные операторы (<tt>?:</tt>) могут
         использоваться для построения более сложных функций.</p>
-      <br />
       <h2 class="heading">Локальный массив</h2>
       <p>В выражении функции допускается использовать дополнительный массив с
         именем <tt>Local</tt>. Его элементы могут быть задействованы в качестве
@@ -51,25 +50,22 @@
         значений выражения. Этот массив <tt>Local</tt> принадлежит только той
         функции, в которой он был вызван, и его данные недоступны за пределами
         самой функции, включая их сохранение.</p>
-      <p><br />
-      </p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
-class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
+        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
+class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
 class="hl opt">)</span> <span class="hl com">/* объявление пользовательской функции */</span> \
-Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
-class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
-class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
-class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
-class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
+Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
+class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
+class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
+class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
+class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
 class="hl opt">)) -</span> <span class="hl num">1</span><span class="hl opt">),</span> \
-S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
-class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
+S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
+class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
 class="hl opt">] +</span> <span class="hl num">1</span><span class="hl opt">),</span> \
 Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">]</span>
 </pre> </div>
-      <br />
     </div>
   </body>
 </html>

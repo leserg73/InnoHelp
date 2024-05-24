@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: PrivilegesRequiredOverridesAllowed</title>
@@ -28,8 +28,8 @@
             <td class="setuphdrr">
               <div class="margined">Одно или более значений, разделённых
                 пробелами: <br />
-                <tt>commandline</tt> <br />
-                <tt>dialog</tt> </div>
+                <tt class="nill">commandline</tt> <br />
+                <tt class="nill">dialog</tt> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -42,29 +42,24 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Данная директива позволяет конечному пользователю
-        переопределить используемое в сценарии значение <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>.</div>
-      <br />
-      <div class="absaz">При значении <tt>commandline</tt> в программе
+      <h2 class="heading">Описание</h2>
+      <p>Данная директива позволяет конечному пользователю
+        переопределить используемое в сценарии значение <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>.</p>
+      <p>При значении <tt>commandline</tt> в программе
         установки активируется поддержка дополнительных параметров
         командной строки /ALLUSERS и /CURRENTUSER, которые позволяют
         переопределить значение директивы <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>.
         Более подробную информацию смотрите в разделе справки "<a href="topic_setupcmdline.htm#ALLUSERS">Параметры
-          командной строки инсталлятора</a>".</div>
-      <br />
-      <div class="absaz">При значении <tt>dialog</tt> программа установки
+          командной строки инсталлятора</a>".</p>
+      <p>При значении <tt>dialog</tt> программа установки
         предложит пользователю выбрать режим установки на основе указанного в
         сценарии значения <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>,
         используя подавляемое диалоговое окно. Также значение <tt>dialog</tt>
         автоматически активирует <tt>commandline</tt>, и если будет использован
         один из параметров командной строки, программа установки не будет
-        показывать этот диалог.</div>
-      <br />
-      <p><b>См. также:</b><br />
-        <a href="topic_setup_usepreviousprivileges.htm">UsePreviousPrivileges</a></p>
+        показывать этот диалог.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_usepreviousprivileges.htm">UsePreviousPrivileges</a></p>
     </div>
   </body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Идентификаторы архитектур</title>
+    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Идентификаторы архитектур</h1>
+    <div class="topicbody">
+      <p>Представленные ниже идентификаторы используются в
+        значениях <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
+        и <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>.</p>
+      <dl>
+        <dt class="archid"><b>arm32compatible</b></dt>
+        <dd>
+          <p>Соответствует системам, способным запускать 32-разрядные двоичные
+            файлы Arm. Такая поддержка есть только в Windows Arm64.</p>
+        </dd>
+        <dt class="archid"><b>arm64</b></dt>
+        <dd>
+          <p>Соответствует системам, работающими под управлением Windows Arm64.</p>
+        </dd>
+        <dt class="archid"><b>win64</b></dt>
+        <dd>
+          <p>Соответствует системам, работающими под управлением Windows 64-бит,
+            независимо от архитектуры.</p>
+          <p>Это может быть полезно в программе установки, которая не поставляет
+            никаких двоичных файлов, специфичных для конкретной архитектуры, но
+            требует доступа к чему-то 64-разрядному, например, <tt>HKLM64</tt>
+            разделу реестра или собственному 64-разрядному каталогу "Program
+            Files".</p>
+        </dd>
+        <dt class="archid"><b>x64compatible</b></dt>
+        <dd>
+          <p>Соответствует системам, способным запускать 64-разрядные
+            исполняемые файлы. Сюда входят системы под управлением Windows
+            64-бит, а также системы Windows 11 на платформе Arm64, которые могут
+            запускать 64-разрядные исполняемые файлы посредством эмуляции.</p>
+        </dd>
+        <dt class="archid"><b>x64os</b></dt>
+        <dd>
+          <p>Соответствует системам, работающими только под управлением Windows
+            64-бит — но не любых других систем, способных запускать 64-разрядные
+            исполняемые файлы посредством эмуляции.</p>
+          <p>В большинстве случае следует использовать <tt>x64compatible</tt>
+            вместо <tt>x64os</tt>, т.к. <tt>x64compatible</tt> позволяет
+            устанавливать 64-разрядные приложения и на системы Arm64 Windows 11.</p>
+          <p>Однако <tt>x64os</tt> подходит в необычных случаях, когда
+            64-разрядное приложение или двоичный файл, как известно, требуют
+            родной Windows 64-бит и не могут работать в режиме эмуляции. В
+            качестве примера можно привести 64-разрядные драйвера устройств,
+            которые не поддерживают эмуляцию на уровне ядра.</p>
+          <p>До версии Inno Setup 6.3 <tt>x64os</tt> именовался <tt>x64</tt>.
+            Компилятор все ещё принимает <tt>x64</tt> в качестве псевдонима <tt>x64os</tt>,
+            но при использовании будет показано предупреждение.</p>
+        </dd>
+        <dt class="archid"><b>x86compatible</b></dt>
+        <dd>
+          <p>Соответствует системам, способным запускать 32-разрядные
+            исполняемые файлы. Сюда входят системы под управлением Windows
+            32-бит, Windows 64-бит, а также системы Windows 10 и 11 на платформе
+            Arm64, которые могут запускать 32-разрядные исполняемые файлы
+            посредством эмуляции.</p>
+          <p>Принимая во внимание, что в настоящее время программа установки
+            собирается как 32-разрядный двоичный файл, этот идентификатор всегда
+            имеет истинное значение.</p>
+        </dd>
+        <dt class="archid"><b>x86os</b></dt>
+        <dd>
+          <p>Соответствует системам, работающими только под управлением Windows
+            32-бит.</p>
+          <p><tt>x86os</tt> имеет смысл использовать только при установке
+            32-разрядных драйверов устройств. При установке обычного
+            32-разрядного приложения вместо него следует использовать <tt>x86compatible</tt>
+            (или не устанавливать значение <tt>ArchitecturesAllowed</tt>).</p>
+          <p>До версии Inno Setup 6.3 <tt>x86os</tt> именовался <tt>x86</tt>.
+            Компилятор все ещё принимает <tt>x86</tt> в качестве псевдонима <tt>x86os</tt>,
+            но при использовании будет показано предупреждение.</p>
+        </dd>
+      </dl>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isarchidentifier.htm">Сопоставление идентификаторов
+          архитектуры подобно IsX64Compatible</a> <br />
+        <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Формат сценария</title>
@@ -18,15 +18,13 @@
   <body>
     <h1 class="topicheading">Формат сценария</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Сценарии Inno Setup структурно разделёны на <i>секции</i>. Каждая
+      <p>Сценарии Inno Setup структурно разделёны на <i>секции</i>. Каждая
         секция управляет отдельным аспектом установки. Секция начинается с
         указания её имени, которое заключается в квадратные скобки <tt>[]</tt>.
-        Внутри каждой секции может быть любое количество <i>записей</i>.</div>
-      <br />
-      <div class="absaz">Существует два основных типа секций: <tt>[Setup]</tt>
+        Внутри каждой секции может быть любое количество <i>записей</i>.</p>
+      <p>Существует два основных типа секций: <tt>[Setup]</tt>
         – содержит имена и значения директив (в формате <tt>Директива=Значение</tt>),
-        и <tt>[Files]</tt> – содержит записи со списком <a href="topic_params.htm">параметров</a>.</div>
+        и <tt>[Files]</tt> – содержит записи со списком <a href="topic_params.htm">параметров</a>.</p>
       <p>Например:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Setup]</span>
 <span class="hl kwb">AppName</span>=My Program
@@ -34,41 +32,35 @@
 <span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"</pre>
-      <div class="absaz">Обратите внимание, что в сценарии можно указать
-        несколько секций с одним и тем же именем.</div>
-      <br />
-      <div class="absaz">В тексте сценария можно размещать "комментарии"
+      <p>Обратите внимание, что в сценарии можно указать
+        несколько секций с одним и тем же именем.</p>
+      <p>В тексте сценария можно размещать "комментарии"
         (которые игнорируются компилятором), поместив точку с запятой в начале
-        строки. Например:</div>
+        строки. Например:</p>
       <pre class="indent examplebox"><span class="hl slc">; Это комментарий. Здесь можно дать пояснение команде или коду...</span></pre>
-      <div class="absaz">Поддерживается C-подобная директива <a name="include"><tt>#include</tt></a>,
+      <p>Поддерживается C-подобная директива <a name="include"><tt>#include</tt></a>,
         которая позволяет вставить в сценарий строки из указанного файла в
-        позицию директивы <tt>#include</tt>. Её синтаксис следующий:</div>
+        позицию директивы <tt>#include</tt>. Её синтаксис следующий:</p>
       <pre class="indent examplebox"><span class="hl kwf">#include</span> <span
 class="hl str">"filename.txt"</span></pre>
-      <div class="absaz">Если имя файла не содержит полного пути, компилятор
+      <p>Если имя файла не содержит полного пути, компилятор
         будет искать указанный файл в том же каталоге, что и файл сценария,
         который содержит директиву <tt>#include</tt>. В имени файла можно
         указать приставку "<tt>compiler:</tt>", тогда поиск файла будет выполнен
-        в каталоге компилятора.</div>
-      <br />
-      <div class="absaz">Также поддерживается директива <a name="preproc"><tt>#preproc</tt></a>,
+        в каталоге компилятора.</p>
+      <p>Также поддерживается директива <a name="preproc"><tt>#preproc</tt></a>,
         которая определяет использование встроенного препроцессора,
         поддерживающего только вышеуказанную директиву <tt>#include</tt>, или
         же использование препроцессора Inno Setup (ISPP), который поддерживает
-        множество других директив. Её синтаксис следующий:</div>
+        множество других директив. Её синтаксис следующий:</p>
       <pre class="indent examplebox"><span class="hl kwf">#preproc</span> builtin
 <span class="hl kwf">#preproc</span> ispp</pre>
-      <div class="absaz">По умолчанию сценарии используют ISPP, если он
-        доступен, а файлы .isl использует встроенный препроцессор.</div>
-      <br />
-      <div class="absaz">Если используется Unicode, то файлы сценариев обязательно
-        должны быть в кодировке <b>UTF-8&nbsp;с&nbsp;BOM</b> (кодировка UTF-8 
-        <u>без</u>&nbsp;BOM обрабатывается компилятором и препроцессором как ANSI).</div>
-      <br />
-      <p>
-        <b>См. также:</b><br />
-        <a href="topic_params.htm">Параметры в секциях</a><br />
+      <p>По умолчанию сценарии используют ISPP, если он
+        доступен, а файлы .isl использует встроенный препроцессор.</p>
+      <p>Если используется Unicode, то файлы сценариев обязательно
+        должны быть в кодировке <b>UTF-8</b>.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_params.htm">Параметры в секциях</a><br />
         <a href="topic_consts.htm">Константы</a><br />
         <a href="topic_commonparams.htm">Общие параметры</a><br />
         <a href="topic_componentstasksparams.htm">Параметры секций [Components]

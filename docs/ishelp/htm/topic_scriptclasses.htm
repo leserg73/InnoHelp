@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Справочник поддерживаемых классов</title>
@@ -18,119 +18,125 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: Справочник поддерживаемых классов</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Ниже представлен список поддерживаемых классов, которые
-        могут быть использованы при создании Pascal-сценариев. Кроме того,
-        поддерживаются три объекта, доступные глобально:</div>
-      <br />
+      <p>Ниже представлен список поддерживаемых классов, которые могут быть
+        использованы при создании Pascal-сценариев. Кроме того, поддерживаются
+        три объекта, доступные глобально:</p>
       <ul>
-        <li><tt><a name="WizardForm">WizardForm</a></tt> — тип <a href="#TWizardForm">TWizardForm</a>.</li>
-        <li><tt><a name="UninstallProgressForm">UninstallProgressForm</a></tt> —
-          тип <a href="#TUninstallProgressForm">TUninstallProgressForm</a>.</li>
-        <li><tt><a name="MainForm">MainForm</a></tt> — тип <a href="#TMainForm">TMainForm</a>
+        <li><tt class="nill"><a name="WizardForm">WizardForm</a></tt> — тип <a
+
+            href="#TWizardForm">TWizardForm</a>.</li>
+        <li><tt class="nill"><a name="UninstallProgressForm">UninstallProgressForm</a></tt>
+          — тип <a href="#TUninstallProgressForm">TUninstallProgressForm</a>.</li>
+        <li><tt class="nill"><a name="MainForm">MainForm</a></tt> — тип <a href="#TMainForm">TMainForm</a>
           (видимый только при <a href="topic_setup_windowvisible.htm">WindowVisible</a>
           = <tt>yes</tt>.)</li>
       </ul>
-      <br />
-      <div class="absaz">Доступна одна специальная константа: <tt>crHand</tt> —
-        тип <tt>TControl.Cursor</tt>.</div>
-      <br />
-      <div class="absaz">Примечание: рекомендуем также обратиться к справочной
-        документации Delphi Visual Component Library (VCL) компании Embarcadero
-        Technologies, поскольку приведенные ниже классы в основном представляют
-        собой простые обёртки для классов VCL, используемых Inno Setup.<br /><br />
-          См. раздел <a href="http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL"
+      <p>Доступна одна специальная константа: <tt class="nill">crHand</tt> —
+        тип <tt class="nill">TControl.Cursor</tt>.</p>
+      <p>В примере сценария <i>CodeClasses.iss</i> из папки "Examples" в
+        каталоге установки Inno Setup показано, как использовать эти классы.</p>
+      <p>Примечание: рекомендуем также обратиться к справочной документации
+        Delphi Visual Component Library (VCL) компании Embarcadero Technologies,
+        поскольку приведенные ниже классы в основном представляют собой простые
+        обёртки для классов VCL, используемых Inno Setup.<br />
+        <br />
+        &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL"
+
           target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL">http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL</a><img
-          src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
-      <p><br />
-        <tt>
-          <a name="TObject">TObject</a> = class<br />
-            constructor Create;<br />
-            procedure Free;<br />
+          src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+      <p class="null"><br />
+        <tt class="nill"> <a name="TObject">TObject</a> = class<br />
+          &nbsp;&nbsp;constructor Create;<br />
+          &nbsp;&nbsp;procedure Free;<br />
           end;<br />
           <br />
           <a name="TPersistent">TPersistent</a> = class(<a href="#TObject">TObject</a>)<br />
-            procedure Assign(Source: <a href="#TPersistent">TPersistent</a>);<br />
+          &nbsp;&nbsp;procedure Assign(Source: <a href="#TPersistent">TPersistent</a>);<br />
           end;<br />
           <br />
           <a name="TComponent">TComponent</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
-            function FindComponent(AName: String): <a href="#TComponent">TComponent</a>;<br />
-            constructor Create(AOwner: <a href="#TComponent">TComponent</a>);<br />
-            property Owner: <a href="#TComponent">TComponent</a>; read write;<br />
-            procedure DestroyComponents;<br />
-            procedure Destroying;<br />
-            procedure FreeNotification(AComponent: <a href="#TComponent">TComponent</a>);<br />
-            procedure InsertComponent(AComponent: <a href="#TComponent">TComponent</a>);<br />
-            procedure RemoveComponent(AComponent: <a href="#TComponent">TComponent</a>);<br />
-            property Components[Index: Integer]: <a href="#TComponent">TComponent</a>;
+          &nbsp;&nbsp;function FindComponent(AName: String): <a href="#TComponent">TComponent</a>;<br />
+          &nbsp;&nbsp;constructor Create(AOwner: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;property Owner: <a href="#TComponent">TComponent</a>;
+          read write;<br />
+          &nbsp;&nbsp;procedure DestroyComponents;<br />
+          &nbsp;&nbsp;procedure Destroying;<br />
+          &nbsp;&nbsp;procedure FreeNotification(AComponent: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;procedure InsertComponent(AComponent: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;procedure RemoveComponent(AComponent: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;property Components[Index: Integer]: <a href="#TComponent">TComponent</a>;
           read;<br />
-            property ComponentCount: Integer; read;<br />
-            property ComponentIndex: Integer; read write;<br />
-            property ComponentState: Byte; read;<br />
-            property DesignInfo: Longint; read write;<br />
-            property Name: String; read write;<br />
-            property Tag: Longint; read write;<br />
+          &nbsp;&nbsp;property ComponentCount: Integer; read;<br />
+          &nbsp;&nbsp;property ComponentIndex: Integer; read write;<br />
+          &nbsp;&nbsp;property ComponentState: Byte; read;<br />
+          &nbsp;&nbsp;property DesignInfo: Longint; read write;<br />
+          &nbsp;&nbsp;property Name: String; read write;<br />
+          &nbsp;&nbsp;property Tag: Longint; read write;<br />
           end;<br />
           <br />
           <a name="TStrings">TStrings</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
-            function Add(S: String): Integer;<br />
-            procedure Append(S: String);<br />
-            procedure AddStrings(Strings: <a href="#TStrings">TStrings</a>);<br />
-            procedure Clear;<br />
-            procedure Delete(Index: Integer);<br />
-            function IndexOf(const S: String): Integer;<br />
-            procedure Insert(Index: Integer; S: String);<br />
-            property Count: Integer; read;<br />
-            property Text: String; read write;<br />
-            property CommaText: String; read write;<br />
-            procedure LoadFromFile(FileName: String);<br />
-            procedure SaveToFile(FileName: String);<br />
-            property Strings[Index: Integer]: String; read write;<br />
-            property Objects[Index: Integer]: <a href="#TObject">TObject</a>;
+          &nbsp;&nbsp;function Add(S: String): Integer;<br />
+          &nbsp;&nbsp;procedure Append(S: String);<br />
+          &nbsp;&nbsp;procedure AddStrings(Strings: <a href="#TStrings">TStrings</a>);<br />
+          &nbsp;&nbsp;procedure Clear;<br />
+          &nbsp;&nbsp;procedure Delete(Index: Integer);<br />
+          &nbsp;&nbsp;function IndexOf(const S: String): Integer;<br />
+          &nbsp;&nbsp;procedure Insert(Index: Integer; S: String);<br />
+          &nbsp;&nbsp;property Count: Integer; read;<br />
+          &nbsp;&nbsp;property Text: String; read write;<br />
+          &nbsp;&nbsp;property CommaText: String; read write;<br />
+          &nbsp;&nbsp;procedure LoadFromFile(FileName: String);<br />
+          &nbsp;&nbsp;procedure SaveToFile(FileName: String);<br />
+          &nbsp;&nbsp;property Strings[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property Objects[Index: Integer]: <a href="#TObject">TObject</a>;
           read write;<br />
           end;<br />
           <br />
           <a name="TNotifyEvent">TNotifyEvent</a> = procedure(Sender: <a href="#TObject">TObject</a>);<br />
           <br />
           <a name="TStringList">TStringList</a> = class(<a href="#TStrings">TStrings</a>)<br />
-            function Find(S: String; var Index: Integer): Boolean;<br />
-            procedure Sort;<br />
-            property Duplicates: TDuplicates; read write;<br />
-            property Sorted: Boolean; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnChanging: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;function Find(S: String; var Index: Integer): Boolean;<br />
+          &nbsp;&nbsp;procedure Sort;<br />
+          &nbsp;&nbsp;property Duplicates: TDuplicates; read write;<br />
+          &nbsp;&nbsp;property Sorted: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnChanging: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TStream">TStream</a> = class(<a href="#TObject">TObject</a>)<br />
-            function Read(Buffer: String; Count: Longint): Longint;<br />
-            function Write(Buffer: String; Count: Longint): Longint;<br />
-            function Seek(Offset: Int64; Origin: Word): Int64;<br />
-            procedure ReadBuffer(Buffer: String; Count: Longint);<br />
-            procedure WriteBuffer(Buffer: String; Count: Longint);<br />
-            function CopyFrom(Source: <a href="#TStream">TStream</a>; Count:
-          Int64): Int64;<br />
-            property Position: Longint; read write;<br />
-            property Size: Longint; read write;<br />
+          &nbsp;&nbsp;function Read(var Buffer: AnyString; ByteCount: Longint):
+          Longint;<br />
+          &nbsp;&nbsp;function Write(const Buffer: AnyString; ByteCount:
+          Longint): Longint;<br />
+          &nbsp;&nbsp;function Seek(Offset: Int64; Origin: Word): Int64;<br />
+          &nbsp;&nbsp;procedure ReadBuffer(var Buffer: AnyString; ByteCount:
+          Longint);<br />
+          &nbsp;&nbsp;procedure WriteBuffer(const Buffer: AnyString; ByteCount:
+          Longint);<br />
+          &nbsp;&nbsp;function CopyFrom(Source: <a href="#TStream">TStream</a>;
+          Count: Int64): Int64;<br />
+          &nbsp;&nbsp;property Position: Longint; read write;<br />
+          &nbsp;&nbsp;property Size: Longint; read write;<br />
           end;<br />
           <br />
           <a name="THandleStream">THandleStream</a> = class(<a href="#TStream">TStream</a>)<br />
-            constructor Create(AHandle: Integer);<br />
-            property Handle: Integer; read;<br />
+          &nbsp;&nbsp;constructor Create(AHandle: Integer);<br />
+          &nbsp;&nbsp;property Handle: Integer; read;<br />
           end;<br />
           <br />
           <a name="TFileStream">TFileStream</a> = class(<a href="#THandleStream">THandleStream</a>)<br />
-            constructor Create(Filename: String; Mode: Word);<br />
+          &nbsp;&nbsp;constructor Create(Filename: String; Mode: Word);<br />
           end;<br />
           <br />
           <a name="TStringStream">TStringStream</a> = class(<a href="#TStream">TStream</a>)<br />
-            constructor Create(AString: String);<br />
+          &nbsp;&nbsp;constructor Create(AString: String);<br />
           end;<br />
           <br />
           <a name="TGraphicsObject">TGraphicsObject</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TFontStyle">TFontStyle</a> = (fsBold, fsItalic, fsUnderline,
@@ -139,38 +145,40 @@
           <a name="TFontStyles">TFontStyles</a> = set of <a href="#TFontStyle">TFontStyle</a>;<br />
           <br />
           <a name="TFont">TFont</a> = class(<a href="#TGraphicsObject">TGraphicsObject</a>)<br />
-            constructor Create;<br />
-            property Handle: Integer; read;<br />
-            property Color: Integer; read write;<br />
-            property Height: Integer; read write;<br />
-            property Name: String; read write;<br />
-            property Pitch: Byte; read write;<br />
-            property Size: Integer; read write;<br />
-            property PixelsPerInch: Integer; read write;<br />
-            property Style: <a href="#TFontStyles">TFontStyles</a>; read write;<br />
+          &nbsp;&nbsp;constructor Create;<br />
+          &nbsp;&nbsp;property Handle: Integer; read;<br />
+          &nbsp;&nbsp;property Color: Integer; read write;<br />
+          &nbsp;&nbsp;property Height: Integer; read write;<br />
+          &nbsp;&nbsp;property Name: String; read write;<br />
+          &nbsp;&nbsp;property Pitch: Byte; read write;<br />
+          &nbsp;&nbsp;property Size: Integer; read write;<br />
+          &nbsp;&nbsp;property PixelsPerInch: Integer; read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TFontStyles">TFontStyles</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCanvas">TCanvas</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
-            procedure Arc(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
-            procedure Chord(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
-            procedure Draw(X, Y: Integer; Graphic: <a href="#TGraphic">TGraphic</a>);<br />
-            procedure Ellipse(X1, Y1, X2, Y2: Integer);<br />
-            procedure FloodFill(X, Y: Integer; Color: TColor; FillStyle: Byte);<br />
-            procedure LineTo(X, Y: Integer);<br />
-            procedure MoveTo(X, Y: Integer);<br />
-            procedure Pie(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
-            procedure Rectangle(X1, Y1, X2, Y2: Integer);<br />
-            procedure Refresh;<br />
-            procedure RoundRect(X1, Y1, X2, Y2, X3, Y3: Integer);<br />
-            function TextHeight(Text: String): Integer;<br />
-            procedure TextOut(X, Y: Integer; Text: String);<br />
-            function TextWidth(Text: String): Integer;<br />
-            property Handle: Integer; read write;<br />
-            property Pixels: Integer Integer Integer; read write;<br />
-            property Brush: <a href="#TBrush">TBrush</a>; read;<br />
-            property CopyMode: Byte; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read;<br />
-            property Pen: <a href="#TPen">TPen</a>; read;<br />
+          &nbsp;&nbsp;procedure Arc(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
+          &nbsp;&nbsp;procedure Chord(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
+          &nbsp;&nbsp;procedure Draw(X, Y: Integer; Graphic: <a href="#TGraphic">TGraphic</a>);<br />
+          &nbsp;&nbsp;procedure Ellipse(X1, Y1, X2, Y2: Integer);<br />
+          &nbsp;&nbsp;procedure FloodFill(X, Y: Integer; Color: TColor;
+          FillStyle: Byte);<br />
+          &nbsp;&nbsp;procedure LineTo(X, Y: Integer);<br />
+          &nbsp;&nbsp;procedure MoveTo(X, Y: Integer);<br />
+          &nbsp;&nbsp;procedure Pie(X1, Y1, X2, Y2, X3, Y3, X4, Y4: Integer);<br />
+          &nbsp;&nbsp;procedure Rectangle(X1, Y1, X2, Y2: Integer);<br />
+          &nbsp;&nbsp;procedure Refresh;<br />
+          &nbsp;&nbsp;procedure RoundRect(X1, Y1, X2, Y2, X3, Y3: Integer);<br />
+          &nbsp;&nbsp;function TextHeight(Text: String): Integer;<br />
+          &nbsp;&nbsp;procedure TextOut(X, Y: Integer; Text: String);<br />
+          &nbsp;&nbsp;function TextWidth(Text: String): Integer;<br />
+          &nbsp;&nbsp;property Handle: Integer; read write;<br />
+          &nbsp;&nbsp;property Pixels: Integer Integer Integer; read write;<br />
+          &nbsp;&nbsp;property Brush: <a href="#TBrush">TBrush</a>; read;<br />
+          &nbsp;&nbsp;property CopyMode: Byte; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read;<br />
+          &nbsp;&nbsp;property Pen: <a href="#TPen">TPen</a>; read;<br />
           end;<br />
           <br />
           <a name="TPenMode">TPenMode</a> = (pmBlack, pmWhite, pmNop, pmNot,
@@ -182,11 +190,13 @@
           psDashDot, psDashDotDot, psClear, psInsideFrame);<br />
           <br />
           <a name="TPen">TPen</a> = class(<a href="#TGraphicsObject">TGraphicsObject</a>)<br />
-            constructor Create;<br />
-            property Color: TColor; read write;<br />
-            property Mode: <a href="#TPenMode">TPenMode</a>; read write;<br />
-            property Style: <a href="#TPenStyle">TPenStyle</a>; read write;<br />
-            property Width: Integer; read write;<br />
+          &nbsp;&nbsp;constructor Create;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Mode: <a href="#TPenMode">TPenMode</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TPenStyle">TPenStyle</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Width: Integer; read write;<br />
           end;<br />
           <br />
           <a name="TBrushStyle">TBrushStyle</a> = (bsSolid, bsClear,
@@ -194,32 +204,34 @@
           bsDiagCross);<br />
           <br />
           <a name="TBrush">TBrush</a> = class(<a href="#TGraphicsObject">TGraphicsObject</a>)<br />
-            constructor Create;<br />
-            property Color: TColor; read write;<br />
-            property Style: <a href="#TBrushStyle">TBrushStyle</a>; read write;<br />
+          &nbsp;&nbsp;constructor Create;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TBrushStyle">TBrushStyle</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TGraphic">TGraphic</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
-            procedure LoadFromFile(const Filename: String);<br />
-            procedure SaveToFile(const Filename: String);<br />
-            property Empty: Boolean; read write;<br />
-            property Height: Integer; read write;<br />
-            property Modified: Boolean; read write;<br />
-            property Width: Integer; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;procedure LoadFromFile(const Filename: String);<br />
+          &nbsp;&nbsp;procedure SaveToFile(const Filename: String);<br />
+          &nbsp;&nbsp;property Empty: Boolean; read write;<br />
+          &nbsp;&nbsp;property Height: Integer; read write;<br />
+          &nbsp;&nbsp;property Modified: Boolean; read write;<br />
+          &nbsp;&nbsp;property Width: Integer; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TAlphaFormat">TAlphaFormat</a> = (afIgnored, afDefined,
           afPremultiplied);<br />
           <br />
           <a name="TBitmap">TBitmap</a> = class(<a href="#TGraphic">TGraphic</a>)<br />
-            procedure LoadFromStream(Stream: <a href="#TStream">TStream</a>);<br />
-            procedure SaveToStream(Stream: <a href="#TStream">TStream</a>);<br />
-            property AlphaFormat: <a href="#TAlphaFormat">TAlphaFormat</a>;
+          &nbsp;&nbsp;procedure LoadFromStream(Stream: <a href="#TStream">TStream</a>);<br />
+          &nbsp;&nbsp;procedure SaveToStream(Stream: <a href="#TStream">TStream</a>);<br />
+          &nbsp;&nbsp;property AlphaFormat: <a href="#TAlphaFormat">TAlphaFormat</a>;
           read write;<br />
-            property Canvas: <a href="#TCanvas">TCanvas</a>; read write;<br />
-            property Handle: HBITMAP; read write;<br />
+          &nbsp;&nbsp;property Canvas: <a href="#TCanvas">TCanvas</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Handle: HBITMAP; read write;<br />
           end;<br />
           <br />
           <a name="TAlign">TAlign</a> = (alNone, alTop, alBottom, alLeft,
@@ -231,43 +243,44 @@
           <a name="TAnchors">TAnchors</a> = set of <a href="#TAnchorKind">TAnchorKind</a>;<br />
           <br />
           <a name="TControl">TControl</a> = class(<a href="#TComponent">TComponent</a>)<br />
-            constructor Create(AOwner: <a href="#TComponent">TComponent</a>);<br />
-            procedure BringToFront;<br />
-            procedure Hide;<br />
-            procedure Invalidate;<br />
-            procedure Refresh;<br />
-            procedure Repaint;<br />
-            procedure SendToBack;<br />
-            procedure Show;<br />
-            procedure Update;<br />
-            procedure SetBounds(ALeft, ATop, AWidth, AHeight: Integer);<br />
-            property Left: Integer; read write;<br />
-            property Top: Integer; read write;<br />
-            property Width: Integer; read write;<br />
-            property Height: Integer; read write;<br />
-            property Hint: String; read write;<br />
-            property Align: <a href="#TAlign">TAlign</a>; read write;<br />
-            property ClientHeight: Longint; read write;<br />
-            property ClientWidth: Longint; read write;<br />
-            property ShowHint: Boolean; read write;<br />
-            property Visible: Boolean; read write;<br />
-            property Enabled: Boolean; read write;<br />
-            property Cursor: Integer; read write;<br />
+          &nbsp;&nbsp;constructor Create(AOwner: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;procedure BringToFront;<br />
+          &nbsp;&nbsp;procedure Hide;<br />
+          &nbsp;&nbsp;procedure Invalidate;<br />
+          &nbsp;&nbsp;procedure Refresh;<br />
+          &nbsp;&nbsp;procedure Repaint;<br />
+          &nbsp;&nbsp;procedure SendToBack;<br />
+          &nbsp;&nbsp;procedure Show;<br />
+          &nbsp;&nbsp;procedure Update;<br />
+          &nbsp;&nbsp;procedure SetBounds(ALeft, ATop, AWidth, AHeight:
+          Integer);<br />
+          &nbsp;&nbsp;property Left: Integer; read write;<br />
+          &nbsp;&nbsp;property Top: Integer; read write;<br />
+          &nbsp;&nbsp;property Width: Integer; read write;<br />
+          &nbsp;&nbsp;property Height: Integer; read write;<br />
+          &nbsp;&nbsp;property Hint: String; read write;<br />
+          &nbsp;&nbsp;property Align: <a href="#TAlign">TAlign</a>; read write;<br />
+          &nbsp;&nbsp;property ClientHeight: Longint; read write;<br />
+          &nbsp;&nbsp;property ClientWidth: Longint; read write;<br />
+          &nbsp;&nbsp;property ShowHint: Boolean; read write;<br />
+          &nbsp;&nbsp;property Visible: Boolean; read write;<br />
+          &nbsp;&nbsp;property Enabled: Boolean; read write;<br />
+          &nbsp;&nbsp;property Cursor: Integer; read write;<br />
           end;<br />
           <br />
           <a name="TWinControl">TWinControl</a> = class(<a href="#TControl">TControl</a>)<br />
-            property Parent: <a href="#TWinControl">TWinControl</a>; read
-          write;<br />
-            property ParentBackground: Boolean; read write;<br />
-            property Handle: Longint; read write;<br />
-            property Showing: Boolean; read;<br />
-            property TabOrder: Integer; read write;<br />
-            property TabStop: Boolean; read write;<br />
-            function CanFocus: Boolean;<br />
-            function Focused: Boolean;<br />
-            property Controls[Index: Integer]: <a href="#TControl">TControl</a>;
+          &nbsp;&nbsp;property Parent: <a href="#TWinControl">TWinControl</a>;
+          read write;<br />
+          &nbsp;&nbsp;property ParentBackground: Boolean; read write;<br />
+          &nbsp;&nbsp;property Handle: Longint; read write;<br />
+          &nbsp;&nbsp;property Showing: Boolean; read;<br />
+          &nbsp;&nbsp;property TabOrder: Integer; read write;<br />
+          &nbsp;&nbsp;property TabStop: Boolean; read write;<br />
+          &nbsp;&nbsp;function CanFocus: Boolean;<br />
+          &nbsp;&nbsp;function Focused: Boolean;<br />
+          &nbsp;&nbsp;property Controls[Index: Integer]: <a href="#TControl">TControl</a>;
           read;<br />
-            property ControlCount: Integer; read;<br />
+          &nbsp;&nbsp;property ControlCount: Integer; read;<br />
           end;<br />
           <br />
           <a name="TGraphicControl">TGraphicControl</a> = class(<a href="#TControl">TControl</a>)<br />
@@ -282,7 +295,7 @@
           <a name="TScrollBarInc">TScrollBarInc</a> = SmallInt;<br />
           <br />
           <a name="TScrollingWinControl">TScrollingWinControl</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            procedure ScrollInView(AControl: <a href="#TControl">TControl</a>);<br />
+          &nbsp;&nbsp;procedure ScrollInView(AControl: <a href="#TControl">TControl</a>);<br />
           end;<br />
           <br />
           <a name="TFormBorderStyle">TFormBorderStyle</a> = (bsNone, bsSingle,
@@ -296,13 +309,13 @@
           <a name="TConstraintSize">TConstraintSize</a> = 0..MaxInt;<br />
           <br />
           <a name="TSizeConstraints">TSizeConstraints</a> = class(<a href="#TPersistent">TPersistent</a>);<br />
-            property MaxHeight: <a href="#TConstraintSize">TConstraintSize</a>;
+          &nbsp;&nbsp;property MaxHeight: <a href="#TConstraintSize">TConstraintSize</a>;
           read write;<br />
-            property MaxWidth: <a href="#TConstraintSize">TConstraintSize</a>;
+          &nbsp;&nbsp;property MaxWidth: <a href="#TConstraintSize">TConstraintSize</a>;
           read write;<br />
-            property MinHeight: <a href="#TConstraintSize">TConstraintSize</a>;
+          &nbsp;&nbsp;property MinHeight: <a href="#TConstraintSize">TConstraintSize</a>;
           read write;<br />
-            property MinWidth: <a href="#TConstraintSize">TConstraintSize</a>;
+          &nbsp;&nbsp;property MinWidth: <a href="#TConstraintSize">TConstraintSize</a>;
           read write;<br />
           end;<br />
           <br />
@@ -317,6 +330,7 @@
           var Action: <a href="#TCloseAction">TCloseAction</a>);<br />
           <br />
           <a name="TCloseQueryEvent">TCloseQueryEvent</a> = procedure(Sender: <a
+
             href="#TObject">TObject</a>; var CanClose: Boolean);<br />
           <br />
           <a name="TEShiftState">TEShiftState</a> = (ssShift, ssAlt, ssCtrl,
@@ -331,55 +345,59 @@
           var Key: Char);<br />
           <br />
           <a name="TForm">TForm</a> = class(<a href="#TScrollingWinControl">TScrollingWinControl</a>)<br />
-            constructor CreateNew(AOwner: <a href="#TComponent">TComponent</a>);<br />
-            procedure Close;<br />
-            procedure Hide;<br />
-            procedure Show;<br />
-            function ShowModal: Integer;<br />
-            procedure Release;<br />
-            property Active: Boolean; read;<br />
-            property ActiveControl: <a href="#TWinControl">TWinControl</a>;
+          &nbsp;&nbsp;constructor CreateNew(AOwner: <a href="#TComponent">TComponent</a>);<br />
+          &nbsp;&nbsp;procedure Close;<br />
+          &nbsp;&nbsp;procedure Hide;<br />
+          &nbsp;&nbsp;procedure Show;<br />
+          &nbsp;&nbsp;function ShowModal: Integer;<br />
+          &nbsp;&nbsp;procedure Release;<br />
+          &nbsp;&nbsp;property Active: Boolean; read;<br />
+          &nbsp;&nbsp;property ActiveControl: <a href="#TWinControl">TWinControl</a>;
           read write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoScroll: Boolean; read write;<br />
-            property BorderIcons: <a href="#TBorderIcons">TBorderIcons</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property AutoScroll: Boolean; read write;<br />
+          &nbsp;&nbsp;property BorderIcons: <a href="#TBorderIcons">TBorderIcons</a>;
           read write;<br />
-            property BorderStyle: <a href="#TFormBorderStyle">TFormBorderStyle</a>;
+          &nbsp;&nbsp;property BorderStyle: <a href="#TFormBorderStyle">TFormBorderStyle</a>;
           read write;<br />
-            property Caption: String; read write;<br />
-            property Color: TColor; read write;<br />
-            property Constraints: <a href="#TSizeConstraints">TSizeConstraints</a>;
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Constraints: <a href="#TSizeConstraints">TSizeConstraints</a>;
           read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property FormStyle: TFormStyle; read write;<br />
-            property KeyPreview: Boolean; read write;<br />
-            property Position: <a href="#TPosition">TPosition</a>; read write;<br />
-            property OnActivate: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClose: <a href="#TCloseEvent">TCloseEvent</a>; read
-          write;<br />
-            property OnCloseQuery: <a href="#TCloseQueryEvent">TCloseQueryEvent</a>;
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property FormStyle: TFormStyle; read write;<br />
+          &nbsp;&nbsp;property KeyPreview: Boolean; read write;<br />
+          &nbsp;&nbsp;property Position: <a href="#TPosition">TPosition</a>;
           read write;<br />
-            property OnCreate: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDestroy: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDeactivate: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          &nbsp;&nbsp;property OnActivate: <a href="#TNotifyEvent">TNotifyEvent</a>;
           read write;<br />
-            property OnHide: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnResize: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnShow: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnClose: <a href="#TCloseEvent">TCloseEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnCloseQuery: <a href="#TCloseQueryEvent">TCloseQueryEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnCreate: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDestroy: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDeactivate: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnHide: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnResize: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnShow: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCustomLabel">TCustomLabel</a> = class(<a href="#TGraphicControl">TGraphicControl</a>)<br />
@@ -389,31 +407,32 @@
           taCenter);<br />
           <br />
           <a name="TLabel">TLabel</a> = class(<a href="#TCustomLabel">TCustomLabel</a>)<br />
-            property Alignment: <a href="#TAlignment">TAlignment</a>; read
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoSize: Boolean; read write;<br />
-            property Caption: String; read write;<br />
-            property Color: TColor; read write;<br />
-            property FocusControl: <a href="#TWinControl">TWinControl</a>; read
-          write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property WordWrap: Boolean; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property FocusControl: <a href="#TWinControl">TWinControl</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property WordWrap: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCustomEdit">TCustomEdit</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            procedure Clear;<br />
-            procedure ClearSelection;<br />
-            procedure SelectAll;<br />
-            property Modified: Boolean; read write;<br />
-            property SelLength: Integer; read write;<br />
-            property SelStart: Integer; read write;<br />
-            property SelText: String; read write;<br />
-            property Text: String; read write;<br />
+          &nbsp;&nbsp;procedure Clear;<br />
+          &nbsp;&nbsp;procedure ClearSelection;<br />
+          &nbsp;&nbsp;procedure SelectAll;<br />
+          &nbsp;&nbsp;property Modified: Boolean; read write;<br />
+          &nbsp;&nbsp;property SelLength: Integer; read write;<br />
+          &nbsp;&nbsp;property SelStart: Integer; read write;<br />
+          &nbsp;&nbsp;property SelText: String; read write;<br />
+          &nbsp;&nbsp;property Text: String; read write;<br />
           end;<br />
           <br />
           <a name="TBorderStyle">TBorderStyle</a> = <a href="#TFormBorderStyle">TFormBorderStyle</a>;<br />
@@ -422,105 +441,117 @@
           ecLowerCase);<br />
           <br />
           <a name="TEdit">TEdit</a> = class(<a href="#TCustomEdit">TCustomEdit</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoSelect: Boolean; read write;<br />
-            property AutoSize: Boolean; read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property AutoSelect: Boolean; read write;<br />
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
           read write;<br />
-            property CharCase: <a href="#TEditCharCase">TEditCharCase</a>; read
-          write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property HideSelection: Boolean; read write;<br />
-            property MaxLength: Integer; read write;<br />
-            property PasswordChar: Char; read write;<br />
-            property ReadOnly: Boolean; read write;<br />
-            property Text: String; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property CharCase: <a href="#TEditCharCase">TEditCharCase</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property HideSelection: Boolean; read write;<br />
+          &nbsp;&nbsp;property MaxLength: Integer; read write;<br />
+          &nbsp;&nbsp;property PasswordChar: Char; read write;<br />
+          &nbsp;&nbsp;property ReadOnly: Boolean; read write;<br />
+          &nbsp;&nbsp;property Text: String; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewEdit">TNewEdit</a> = class(<a href="#TEdit">TEdit</a>)<br />
           end;<br />
           <br />
           <a name="TCustomMemo">TCustomMemo</a> = class(<a href="#TCustomEdit">TCustomEdit</a>)<br />
-            property Lines: <a href="#TStrings">TStrings</a>; read write;<br />
+          &nbsp;&nbsp;property Lines: <a href="#TStrings">TStrings</a>; read
+          write;<br />
           end;<br />
           <br />
           <a name="TScrollStyle">TScrollStyle</a> = (ssNone, ssHorizontal,
           ssVertical, ssBoth);<br />
           <br />
           <a name="TMemo">TMemo</a> = class(<a href="#TCustomMemo">TCustomMemo</a>)<br />
-            property Alignment: <a href="#TAlignment">TAlignment</a>; read
-          write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
           read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property HideSelection: Boolean; read write;<br />
-            property Lines: <a href="#TStrings">TStrings</a>; read write;<br />
-            property MaxLength: Integer; read write;<br />
-            property ReadOnly: Boolean; read write;<br />
-            property ScrollBars: <a href="#TScrollStyle">TScrollStyle</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property WantReturns: Boolean; read write;<br />
-            property WantTabs: Boolean; read write;<br />
-            property WordWrap: Boolean; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property HideSelection: Boolean; read write;<br />
+          &nbsp;&nbsp;property Lines: <a href="#TStrings">TStrings</a>; read
+          write;<br />
+          &nbsp;&nbsp;property MaxLength: Integer; read write;<br />
+          &nbsp;&nbsp;property ReadOnly: Boolean; read write;<br />
+          &nbsp;&nbsp;property ScrollBars: <a href="#TScrollStyle">TScrollStyle</a>;
+          read write;<br />
+          &nbsp;&nbsp;property WantReturns: Boolean; read write;<br />
+          &nbsp;&nbsp;property WantTabs: Boolean; read write;<br />
+          &nbsp;&nbsp;property WordWrap: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewMemo">TNewMemo</a> = class(<a href="#TMemo">TMemo</a>)<br />
           end;<br />
           <br />
           <a name="TCustomComboBox">TCustomComboBox</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            property DroppedDown: Boolean; read write;<br />
-            property Items: <a href="#TStrings">TStrings</a>; read write;<br />
-            property ItemIndex: Integer; read write;<br />
+          &nbsp;&nbsp;property DroppedDown: Boolean; read write;<br />
+          &nbsp;&nbsp;property Items: <a href="#TStrings">TStrings</a>; read
+          write;<br />
+          &nbsp;&nbsp;property ItemIndex: Integer; read write;<br />
           end;<br />
           <br />
           <a name="TComboBoxStyle">TComboBoxStyle</a> = (csDropDown, csSimple,
           csDropDownList, csOwnerDrawFixed, csOwnerDrawVariable);<br />
           <br />
           <a name="TComboBox">TComboBox</a> = class(<a href="#TCustomComboBox">TCustomComboBox</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Color: TColor; read write;<br />
-            property DropDownCount: Integer; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property MaxLength: Integer; read write;<br />
-            property Sorted: Boolean; read write;<br />
-            property Style: <a href="#TComboBoxStyle">TComboBoxStyle</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property Text: String; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDropDown: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property DropDownCount: Integer; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property MaxLength: Integer; read write;<br />
+          &nbsp;&nbsp;property Sorted: Boolean; read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TComboBoxStyle">TComboBoxStyle</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
+          &nbsp;&nbsp;property Text: String; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDropDown: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewComboBox">TNewComboBox</a> = class(<a href="#TComboBox">TComboBox</a>)<br />
@@ -530,14 +561,15 @@
           end;<br />
           <br />
           <a name="TButton">TButton</a> = class(<a href="#TButtonControl">TButtonControl</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Cancel: Boolean; read write;<br />
-            property Caption: String; read write;<br />
-            property Default: Boolean; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property ModalResult: Longint; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
+          &nbsp;&nbsp;property Cancel: Boolean; read write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Default: Boolean; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property ModalResult: Longint; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewButton">TNewButton</a> = class(<a href="#TButton">TButton</a>)<br />
@@ -550,68 +582,100 @@
           cbGrayed);<br />
           <br />
           <a name="TCheckBox">TCheckBox</a> = class(<a href="#TCustomCheckBox">TCustomCheckBox</a>)<br />
-            property Alignment: <a href="#TAlignment">TAlignment</a>; read
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
+          read write;<br />
+          &nbsp;&nbsp;property AllowGrayed: Boolean; read write;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property AllowGrayed: Boolean; read write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Caption: String; read write;<br />
-            property Checked: Boolean; read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property State: <a href="#TCheckBoxState">TCheckBoxState</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Checked: Boolean; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property State: <a href="#TCheckBoxState">TCheckBoxState</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewCheckBox">TNewCheckBox</a> = class(<a href="#TCheckBox">TCheckBox</a>)<br />
           end;<br />
           <br />
           <a name="TRadioButton">TRadioButton</a> = class(<a href="#TButtonControl">TButtonControl</a>)<br />
-            property Alignment: <a href="#TAlignment">TAlignment</a>; read
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Caption: String; read write;<br />
-            property Checked: Boolean; read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Checked: Boolean; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewRadioButton">TNewRadioButton</a> = class(<a href="#TRadioButton">TRadioButton</a>)<br />
           end;<br />
           <br />
+          <a name="TSysLinkType">TSysLinkType</a> = (sltURL, sltID);<br />
+          <br />
+          <a name="TSysLinkEvent">TSysLinkEvent</a> = procedure(Sender: <a href="#TObject">TObject</a>;
+          const Link: string; LinkType: <a href="#TSysLinkType">TSysLinkType</a>);<br />
+          <br />
+          <a name="TCustomLinkLabel">TCustomLinkLabel</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
+          read write;<br />
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property UseVisualStyle: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnLinkClick: <a href="#TSysLinkEvent">TSysLinkEvent</a>;
+          read write;<br />
+          end;<br />
+          <br />
+          <a name="TLinkLabel">TLinkLabel</a> = class(<a href="#TCustomLinkLabel">TCustomLinkLabel</a>)<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          end;<br />
+          <br />
+          <a name="TNewLinkLabel">TNewLinkLabel</a> = class(<a href="#TLinkLabel">TLinkLabel</a>)<br />
+          &nbsp;&nbsp;function AdjustHeight: Integer;<br />
+          end;<br />
+          <br />
           <a name="TCustomListBox">TCustomListBox</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            property Items: <a href="#TStrings">TStrings</a>; read write;<br />
-            property ItemIndex: Integer; read write;<br />
-            property SelCount: Integer; read;<br />
-            property Selected[Index: Integer]: Boolean; read write;<br />
+          &nbsp;&nbsp;property Items: <a href="#TStrings">TStrings</a>; read
+          write;<br />
+          &nbsp;&nbsp;property ItemIndex: Integer; read write;<br />
+          &nbsp;&nbsp;property SelCount: Integer; read;<br />
+          &nbsp;&nbsp;property Selected[Index: Integer]: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TListBoxStyle">TListBoxStyle</a> = (lbStandard,
           lbOwnerDrawFixed, lbOwnerDrawVariable);<br />
           <br />
           <a name="TListBox">TListBox</a> = class(<a href="#TCustomListBox">TCustomListBox</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
           read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property MultiSelect: Boolean; read write;<br />
-            property Sorted: Boolean; read write;<br />
-            property Style: <a href="#TListBoxStyle">TListBoxStyle</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property MultiSelect: Boolean; read write;<br />
+          &nbsp;&nbsp;property Sorted: Boolean; read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TListBoxStyle">TListBoxStyle</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewListBox">TNewListBox</a> = class(<a href="#TListBox">TListBox</a>)<br />
@@ -626,9 +690,12 @@
           <a name="TBevelStyle">TBevelStyle</a> = (bsLowered, bsRaised);<br />
           <br />
           <a name="TBevel">TBevel</a> = class(<a href="#TGraphicControl">TGraphicControl</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Shape: <a href="#TBevelShape">TBevelShape</a>; read write;<br />
-            property Style: <a href="#TBevelStyle">TBevelStyle</a>; read write;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Shape: <a href="#TBevelShape">TBevelShape</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TBevelStyle">TBevelStyle</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCustomPanel">TCustomPanel</a> = class(<a href="#TCustomControl">TCustomControl</a>)<br />
@@ -642,95 +709,103 @@
           <a name="TBorderWidth">TBorderWidth</a> = Longint;<br />
           <br />
           <a name="TPanel">TPanel</a> = class(<a href="#TCustomPanel">TCustomPanel</a>)<br />
-            property Alignment: <a href="#TAlignment">TAlignment</a>; read
-          write;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property BevelInner: <a href="#TPanelBevel">TPanelBevel</a>; read
-          write;<br />
-            property BevelKind: <a href="#TBevelKind">TBevelKind</a>; read
-          write;<br />
-            property BevelOuter: <a href="#TPanelBevel">TPanelBevel</a>; read
-          write;<br />
-            property BevelWidth: <a href="#TBevelWidth">TBevelWidth</a>; read
-          write;<br />
-            property BorderWidth: <a href="#TBorderWidth">TBorderWidth</a>;
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
           read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property BevelInner: <a href="#TPanelBevel">TPanelBevel</a>;
           read write;<br />
-            property Caption: String; read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property BevelKind: <a href="#TBevelKind">TBevelKind</a>;
+          read write;<br />
+          &nbsp;&nbsp;property BevelOuter: <a href="#TPanelBevel">TPanelBevel</a>;
+          read write;<br />
+          &nbsp;&nbsp;property BevelWidth: <a href="#TBevelWidth">TBevelWidth</a>;
+          read write;<br />
+          &nbsp;&nbsp;property BorderWidth: <a href="#TBorderWidth">TBorderWidth</a>;
+          read write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewStaticText">TNewStaticText</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            function AdjustHeight: Integer;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoSize: Boolean; read write;<br />
-            property Caption: String; read write;<br />
-            property Color: TColor; read write;<br />
-            property FocusControl: <a href="#TWinControl">TWinControl</a>; read
+          &nbsp;&nbsp;function AdjustHeight: Integer;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property ForceLTRReading: Boolean; read write;<br />
-            property ShowAccelChar: Boolean; read write;<br />
-            property WordWrap: Boolean; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property FocusControl: <a href="#TWinControl">TWinControl</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property ForceLTRReading: Boolean; read write;<br />
+          &nbsp;&nbsp;property ShowAccelChar: Boolean; read write;<br />
+          &nbsp;&nbsp;property WordWrap: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCheckItemOperation">TCheckItemOperation</a> = (coUncheck,
           coCheck, coCheckWithChildren);<br />
           <br />
           <a name="TNewCheckListBox">TNewCheckListBox</a> = class(<a href="#TCustomListBox">TCustomListBox</a>)<br />
-            function AddCheckBox(const ACaption, ASubItem: String; ALevel: Byte;
-          AChecked, AEnabled, AHasInternalChildren, ACheckWhenParentChecked:
-          Boolean; AObject: <a href="#TObject">TObject</a>): Integer;<br />
-            function AddGroup(ACaption, ASubItem: String; ALevel: Byte; AObject:
-          <a href="#TObject">TObject</a>): Integer;<br />
-            function AddRadioButton(const ACaption, ASubItem: String; ALevel:
-          Byte; AChecked, AEnabled: Boolean; AObject: <a href="#TObject">TObject</a>):
+          &nbsp;&nbsp;function AddCheckBox(const ACaption, ASubItem: String;
+          ALevel: Byte; AChecked, AEnabled, AHasInternalChildren,
+          ACheckWhenParentChecked: Boolean; AObject: <a href="#TObject">TObject</a>):
           Integer;<br />
-            function CheckItem(const Index: Integer; const AOperation: <a href="#TCheckItemOperation">TCheckItemOperation</a>):
-          Boolean;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Checked[Index: Integer]: Boolean; read write;<br />
-            property State[Index: Integer]: <a href="#TCheckBoxState">TCheckBoxState</a>;
-          read write;<br />
-            property ItemCaption[Index: Integer]: String; read write;<br />
-            property ItemEnabled[Index: Integer]: Boolean; read write;<br />
-            property ItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>; read write;<br />
-            property ItemLevel[Index: Integer]: Byte; read;<br />
-            property ItemObject[Index: Integer]: <a href="#TObject">TObject</a>;
-          read write;<br />
-            property ItemSubItem[Index: Integer]: String; read write;<br />
-            property SubItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>; read write;<br />
-            property Flat: Boolean; read write;<br />
-            property MinItemHeight: Integer; read write;<br />
-            property Offset: Integer; read write;<br />
-            property OnClickCheck: <a href="#TNotifyEvent">TNotifyEvent</a>;
-          read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
-          read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property Sorted: Boolean; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;function AddGroup(ACaption, ASubItem: String; ALevel:
+          Byte; AObject: <a href="#TObject">TObject</a>): Integer;<br />
+          &nbsp;&nbsp;function AddRadioButton(const ACaption, ASubItem: String;
+          ALevel: Byte; AChecked, AEnabled: Boolean; AObject: <a href="#TObject">TObject</a>):
+          Integer;<br />
+          &nbsp;&nbsp;function CheckItem(const Index: Integer; const AOperation:
+          <a href="#TCheckItemOperation">TCheckItemOperation</a>): Boolean;<br />
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property Checked[Index: Integer]: Boolean; read write;<br />
+          &nbsp;&nbsp;property State[Index: Integer]: <a href="#TCheckBoxState">TCheckBoxState</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property ShowLines: Boolean; read write;<br />
-            property WantTabs: Boolean; read write;<br />
-            property RequireRadioSelection: Boolean; read write;<br />
+          &nbsp;&nbsp;property ItemCaption[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property ItemEnabled[Index: Integer]: Boolean; read write;<br />
+          &nbsp;&nbsp;property ItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>;
+          read write;<br />
+          &nbsp;&nbsp;property ItemLevel[Index: Integer]: Byte; read;<br />
+          &nbsp;&nbsp;property ItemObject[Index: Integer]: <a href="#TObject">TObject</a>;
+          read write;<br />
+          &nbsp;&nbsp;property ItemSubItem[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property SubItemFontStyle[Index: Integer]: <a href="#TFontStyles">TFontStyles</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Flat: Boolean; read write;<br />
+          &nbsp;&nbsp;property MinItemHeight: Integer; read write;<br />
+          &nbsp;&nbsp;property Offset: Integer; read write;<br />
+          &nbsp;&nbsp;property OnClickCheck: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property Sorted: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property ShowLines: Boolean; read write;<br />
+          &nbsp;&nbsp;property WantTabs: Boolean; read write;<br />
+          &nbsp;&nbsp;property RequireRadioSelection: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TNewProgressBarState">TNewProgressBarState</a> = (npbsNormal,
@@ -740,57 +815,62 @@
           (npbstNormal, npbstMarquee);<br />
           <br />
           <a name="TNewProgressBar">TNewProgressBar</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property Min: Longint; read write;<br />
-            property Max: Longint; read write;<br />
-            property Position: Longint; read write;<br />
-            property State: <a href="#TNewProgressBarState">TNewProgressBarState</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property Min: Longint; read write;<br />
+          &nbsp;&nbsp;property Max: Longint; read write;<br />
+          &nbsp;&nbsp;property Position: Longint; read write;<br />
+          &nbsp;&nbsp;property State: <a href="#TNewProgressBarState">TNewProgressBarState</a>;
           read write;<br />
-            property Style: <a href="#TNewProgressBarStyle">TNewProgressBarStyle</a>;
+          &nbsp;&nbsp;property Style: <a href="#TNewProgressBarStyle">TNewProgressBarStyle</a>;
           read write;<br />
-            property Visible: Boolean; read write;<br />
+          &nbsp;&nbsp;property Visible: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TRichEditViewer">TRichEditViewer</a> = class(<a href="#TMemo">TMemo</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property BevelKind: <a href="#TBevelKind">TBevelKind</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property BevelKind: <a href="#TBevelKind">TBevelKind</a>;
           read write;<br />
-            property RTFText: AnsiString; write;<br />
-            property UseRichEdit: Boolean; read write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          read write;<br />
+          &nbsp;&nbsp;property RTFText: AnsiString; write;<br />
+          &nbsp;&nbsp;property UseRichEdit: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TPasswordEdit">TPasswordEdit</a> = class(<a href="#TCustomEdit">TCustomEdit</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoSelect: Boolean; read write;<br />
-            property AutoSize: Boolean; read write;<br />
-            property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property AutoSelect: Boolean; read write;<br />
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property BorderStyle: <a href="#TBorderStyle">TBorderStyle</a>;
           read write;<br />
-            property Color: TColor; read write;<br />
-            property Font: <a href="#TFont">TFont</a>; read write;<br />
-            property HideSelection: Boolean; read write;<br />
-            property MaxLength: Integer; read write;<br />
-            property Password: Boolean; read write;<br />
-            property ReadOnly: Boolean; read write;<br />
-            property Text: String; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
-          write;<br />
-            property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
-            property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
+          &nbsp;&nbsp;property HideSelection: Boolean; read write;<br />
+          &nbsp;&nbsp;property MaxLength: Integer; read write;<br />
+          &nbsp;&nbsp;property Password: Boolean; read write;<br />
+          &nbsp;&nbsp;property ReadOnly: Boolean; read write;<br />
+          &nbsp;&nbsp;property Text: String; read write;<br />
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
           read write;<br />
-            property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyDown: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyPress: <a href="#TKeyPressEvent">TKeyPressEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnKeyUp: <a href="#TKeyEvent">TKeyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TCustomFolderTreeView">TCustomFolderTreeView</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            procedure ChangeDirectory(const Value: String; const CreateNewItems:
-          Boolean);<br />
-            procedure CreateNewDirectory(const ADefaultName: String);<br />
-            property: Directory: String; read write;<br />
+          &nbsp;&nbsp;procedure ChangeDirectory(const Value: String; const
+          CreateNewItems: Boolean);<br />
+          &nbsp;&nbsp;procedure CreateNewDirectory(const ADefaultName: String);<br />
+          &nbsp;&nbsp;property: Directory: String; read write;<br />
           end;<br />
           <br />
           <a name="TFolderRenameEvent">TFolderRenameEvent</a> =
@@ -798,55 +878,60 @@
           var NewName: String; var Accept: Boolean);<br />
           <br />
           <a name="TFolderTreeView">TFolderTreeView</a> = class(<a href="#TCustomFolderTreeView">TCustomFolderTreeView</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property OnRename: <a href="#TFolderRenameEvent">TFolderRenameEvent</a>;
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnRename: <a href="#TFolderRenameEvent">TFolderRenameEvent</a>;
           read write;<br />
           end;<br />
           <br />
           <a name="TStartMenuFolderTreeView">TStartMenuFolderTreeView</a> =
           class(<a href="#TCustomFolderTreeView">TCustomFolderTreeView</a>)<br />
-            procedure SetPaths(const AUserPrograms, ACommonPrograms,
+          &nbsp;&nbsp;procedure SetPaths(const AUserPrograms, ACommonPrograms,
           AUserStartup, ACommonStartup: String);<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property OnRename: <a href="#TFolderRenameEvent">TFolderRenameEvent</a>;
+          &nbsp;&nbsp;property OnChange: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnRename: <a href="#TFolderRenameEvent">TFolderRenameEvent</a>;
           read write;<br />
           end;<br />
           <br />
           <a name="TBitmapImage">TBitmapImage</a> = class(<a href="#TGraphicControl">TGraphicControl</a>)<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property AutoSize: Boolean; read write;<br />
-            property BackColor: TColor; read write;<br />
-            property Center: Boolean; read write;<br />
-            property Bitmap: <a href="#TBitmap">TBitmap</a>; read write;<br />
-            property ReplaceColor: TColor; read write;<br />
-            property ReplaceWithColor: TColor; read write;<br />
-            property Stretch: Boolean; read write;<br />
-            property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-            property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read
+          &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
+          &nbsp;&nbsp;property BackColor: TColor; read write;<br />
+          &nbsp;&nbsp;property Center: Boolean; read write;<br />
+          &nbsp;&nbsp;property Bitmap: <a href="#TBitmap">TBitmap</a>; read
           write;<br />
+          &nbsp;&nbsp;property ReplaceColor: TColor; read write;<br />
+          &nbsp;&nbsp;property ReplaceWithColor: TColor; read write;<br />
+          &nbsp;&nbsp;property Stretch: Boolean; read write;<br />
+          &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
+          &nbsp;&nbsp;property OnDblClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
+          read write;<br />
           end;<br />
           <br />
           <a name="TNewNotebook">TNewNotebook</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
-            function FindNextPage(CurPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;function FindNextPage(CurPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           GoForward: Boolean): <a href="#TNewNotebookPage">TNewNotebookPage</a>;<br />
-            property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
-            property PageCount: Integer; read write;<br />
-            property Pages[Index: Integer]: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
+          write;<br />
+          &nbsp;&nbsp;property PageCount: Integer; read write;<br />
+          &nbsp;&nbsp;property Pages[Index: Integer]: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property ActivePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property ActivePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read write;<br />
           end;<br />
           <br />
           <a name="TNewNotebookPage">TNewNotebookPage</a> = class(<a href="#TCustomControl">TCustomControl</a>)<br />
-            property Color: TColor; read write;<br />
-            property Notebook: <a href="#TNewNotebook">TNewNotebook</a>; read
-          write;<br />
-            property PageIndex: Integer; read write;<br />
+          &nbsp;&nbsp;property Color: TColor; read write;<br />
+          &nbsp;&nbsp;property Notebook: <a href="#TNewNotebook">TNewNotebook</a>;
+          read write;<br />
+          &nbsp;&nbsp;property PageIndex: Integer; read write;<br />
           end;<br />
           <br />
           <a name="TWizardPageNotifyEvent">TWizardPageNotifyEvent</a> =
@@ -860,359 +945,376 @@
           function(Sender: <a href="#TWizardPage">TWizardPage</a>): Boolean;<br />
           <br />
           <a name="TWizardPage">TWizardPage</a> = class(<a href="#TComponent">TComponent</a>)<br />
-            property ID: Integer; read;<br />
-            property Caption: String; read write;<br />
-            property Description: String; read write;<br />
-            property Surface: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property ID: Integer; read;<br />
+          &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property Description: String; read write;<br />
+          &nbsp;&nbsp;property Surface: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property SurfaceColor: TColor; read;<br />
-            property SurfaceHeight: Integer; read;<br />
-            property SurfaceWidth: Integer; read;<br />
-            property OnActivate: <a href="#TWizardPageNotifyEvent">TWizardPageNotifyEvent</a>;
+          &nbsp;&nbsp;property SurfaceColor: TColor; read;<br />
+          &nbsp;&nbsp;property SurfaceHeight: Integer; read;<br />
+          &nbsp;&nbsp;property SurfaceWidth: Integer; read;<br />
+          &nbsp;&nbsp;property OnActivate: <a href="#TWizardPageNotifyEvent">TWizardPageNotifyEvent</a>;
           read write;<br />
-            property OnBackButtonClick: <a href="#TWizardPageButtonEvent">TWizardPageButtonEvent</a>;
+          &nbsp;&nbsp;property OnBackButtonClick: <a href="#TWizardPageButtonEvent">TWizardPageButtonEvent</a>;
           read write;<br />
-            property OnCancelButtonClick: <a href="#TWizardPageCancelEvent">TWizardPageCancelEvent</a>;
+          &nbsp;&nbsp;property OnCancelButtonClick: <a href="#TWizardPageCancelEvent">TWizardPageCancelEvent</a>;
           read write;<br />
-            property OnNextButtonClick: <a href="#TWizardPageButtonEvent">TWizardPageButtonEvent</a>;
+          &nbsp;&nbsp;property OnNextButtonClick: <a href="#TWizardPageButtonEvent">TWizardPageButtonEvent</a>;
           read write;<br />
-            property OnShouldSkipPage: <a href="#TWizardPageShouldSkipEvent">TWizardPageShouldSkipEvent</a>;
+          &nbsp;&nbsp;property OnShouldSkipPage: <a href="#TWizardPageShouldSkipEvent">TWizardPageShouldSkipEvent</a>;
           read write;<br />
           end;<br />
           <br />
           <a name="TInputQueryWizardPage">TInputQueryWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            function Add(const APrompt: String; const APassword: Boolean):
-          Integer;<br />
-            property Edits[Index: Integer]: <a href="#TPasswordEdit">TPasswordEdit</a>;
+          &nbsp;&nbsp;function Add(const APrompt: String; const APassword:
+          Boolean): Integer;<br />
+          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TPasswordEdit">TPasswordEdit</a>;
           read;<br />
-            property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Values[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property Values[Index: Integer]: String; read write;<br />
           end;<br />
           <br />
           <a name="TInputOptionWizardPage">TInputOptionWizardPage</a> = class(<a
+
             href="#TWizardPage">TWizardPage</a>)<br />
-            function Add(const ACaption: String): Integer;<br />
-            function AddEx(const ACaption: String; const ALevel: Byte; const
-          AExclusive: Boolean): Integer;<br />
-            property CheckListBox: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
+          &nbsp;&nbsp;function Add(const ACaption: String): Integer;<br />
+          &nbsp;&nbsp;function AddEx(const ACaption: String; const ALevel: Byte;
+          const AExclusive: Boolean): Integer;<br />
+          &nbsp;&nbsp;property CheckListBox: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
           read;<br />
-            property SelectedValueIndex: Integer; read write;<br />
-            property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property SelectedValueIndex: Integer; read write;<br />
+          &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Values[Index: Integer]: Boolean; read write;<br />
+          &nbsp;&nbsp;property Values[Index: Integer]: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TInputDirWizardPage">TInputDirWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            function Add(const APrompt: String): Integer;<br />
-            property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>;
+          &nbsp;&nbsp;function Add(const APrompt: String): Integer;<br />
+          &nbsp;&nbsp;property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>; read;<br />
-            property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>;
           read;<br />
-            property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Values[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          read;<br />
+          &nbsp;&nbsp;property Values[Index: Integer]: String; read write;<br />
           end;<br />
           <br />
           <a name="TInputFileWizardPage">TInputFileWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            function Add(const APrompt, AFilter, ADefaultExtension: String):
-          Integer;<br />
-            property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>;
+          &nbsp;&nbsp;function Add(const APrompt, AFilter, ADefaultExtension:
+          String): Integer;<br />
+          &nbsp;&nbsp;property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>; read;<br />
-            property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>;
           read;<br />
-            property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Values[Index: Integer]: String; read write;<br />
-            property IsSaveButton[Index: Integer]: Boolean; read write;<br />
+          &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          read;<br />
+          &nbsp;&nbsp;property Values[Index: Integer]: String; read write;<br />
+          &nbsp;&nbsp;property IsSaveButton[Index: Integer]: Boolean; read
+          write;<br />
           end;<br />
           <br />
           <a name="TOutputMsgWizardPage">TOutputMsgWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            property MsgLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property MsgLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
           end;<br />
           <br />
           <a name="TOutputMsgMemoWizardPage">TOutputMsgMemoWizardPage</a> =
           class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            property RichEditViewer: <a href="#TRichEditViewer">TRichEditViewer</a>;
+          &nbsp;&nbsp;property RichEditViewer: <a href="#TRichEditViewer">TRichEditViewer</a>;
           read;<br />
-            property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
           end;<br />
           <br />
           <a name="TOutputProgressWizardPage">TOutputProgressWizardPage</a> =
           class(<a href="#TWizardPage">TWizardPage</a>)<br />
-            procedure Hide;<br />
-            property Msg1Label: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;procedure Hide;<br />
+          &nbsp;&nbsp;property Msg1Label: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Msg2Label: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property Msg2Label: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property ProgressBar: <a href="#TNewProgressBar">TNewProgressBar</a>;
+          &nbsp;&nbsp;property ProgressBar: <a href="#TNewProgressBar">TNewProgressBar</a>;
           read;<br />
-            procedure SetProgress(const Position, Max: Longint);<br />
-            procedure SetText(const Msg1, Msg2: String);<br />
-            procedure Show;<br />
+          &nbsp;&nbsp;procedure SetProgress(const Position, Max: Longint);<br />
+          &nbsp;&nbsp;procedure SetText(const Msg1, Msg2: String);<br />
+          &nbsp;&nbsp;procedure Show;<br />
           end;<br />
           <br />
-          <a name="TOutputMarqueeProgressWizardPage">TOutputMarqueeProgressWizardPage</a> =
-          class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
-            procedure Animate;<br />
+          <a name="TOutputMarqueeProgressWizardPage">TOutputMarqueeProgressWizardPage</a>
+          = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
+          &nbsp;&nbsp;procedure Animate;<br />
           end;<br />
           <br />
           <a name="TDownloadWizardPage">TDownloadWizardPage</a> = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
-            property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
-            property AbortedByUser: Boolean; read;<br />
-            procedure Add(const Url, BaseName, RequiredSHA256OfFile: String);<br />
-            procedure AddEx(const Url, BaseName, RequiredSHA256OfFile, UserName, Password: String);<br />
-            procedure Clear;<br />
-            function Download: Int64;<br />
+          &nbsp;&nbsp;property AbortButton: <a href="#TNewButton">TNewButton</a>;
+          read;<br />
+          &nbsp;&nbsp;property AbortedByUser: Boolean; read;<br />
+          &nbsp;&nbsp;procedure Add(const Url, BaseName, RequiredSHA256OfFile:
+          String);<br />
+          &nbsp;&nbsp;procedure AddEx(const Url, BaseName, RequiredSHA256OfFile,
+          UserName, Password: String);<br />
+          &nbsp;&nbsp;procedure Clear;<br />
+          &nbsp;&nbsp;function Download: Int64;<br />
+          &nbsp;&nbsp;property ShowBaseNameInsteadOfUrl: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TUIStateForm">TUIStateForm</a> = class(<a href="#TForm">TForm</a>)<br />
           end;<br />
           <br />
           <a name="TSetupForm">TSetupForm</a> = class(<a href="#TUIStateForm">TUIStateForm</a>)<br />
-            function CalculateButtonWidth(const ButtonCaptions: array of
-          String): Integer;<br />
-            function ShouldSizeX: Boolean;<br />
-            function ShouldSizeY: Boolean;<br />
-            procedure FlipSizeAndCenterIfNeeded(const ACenterInsideControl:
-          Boolean; const CenterInsideControlCtl: <a href="#TWinControl">TWinControl</a>;
+          &nbsp;&nbsp;function CalculateButtonWidth(const ButtonCaptions: array
+          of String): Integer;<br />
+          &nbsp;&nbsp;function ShouldSizeX: Boolean;<br />
+          &nbsp;&nbsp;function ShouldSizeY: Boolean;<br />
+          &nbsp;&nbsp;procedure FlipSizeAndCenterIfNeeded(const
+          ACenterInsideControl: Boolean; const CenterInsideControlCtl: <a href="#TWinControl">TWinControl</a>;
           const CenterInsideControlInsideClientArea: Boolean);<br />
-            property ControlsFlipped: Boolean; read;<br />
-            property FlipControlsOnShow: Boolean; read write;<br />
-            property KeepSizeY: Boolean; read; write;<br />
-            property RightToLeft: Boolean; read;<br />
-            property SizeAndCenterOnShow: Boolean; read write;<br />
+          &nbsp;&nbsp;property ControlsFlipped: Boolean; read;<br />
+          &nbsp;&nbsp;property FlipControlsOnShow: Boolean; read write;<br />
+          &nbsp;&nbsp;property KeepSizeY: Boolean; read; write;<br />
+          &nbsp;&nbsp;property RightToLeft: Boolean; read;<br />
+          &nbsp;&nbsp;property SizeAndCenterOnShow: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TMainForm">TMainForm</a> = class(<a href="#TSetupForm">TSetupForm</a>)<br />
-            procedure ShowAboutBox;<br />
+          &nbsp;&nbsp;procedure ShowAboutBox;<br />
           end;<br />
           <br />
           <a name="TWizardForm">TWizardForm</a> = class(<a href="#TSetupForm">TSetupForm</a>)<br />
-            property CancelButton: <a href="#TNewButton">TNewButton</a>; read;<br />
-            property NextButton: <a href="#TNewButton">TNewButton</a>; read;<br />
-            property BackButton: <a href="#TNewButton">TNewButton</a>; read;<br />
-            property OuterNotebook: TNotebook; read;<br />
-            property InnerNotebook: TNotebook; read;<br />
-            property WelcomePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property CancelButton: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property InnerPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property NextButton: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property FinishedPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property BackButton: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property LicensePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property OuterNotebook: TNotebook; read;<br />
+          &nbsp;&nbsp;property InnerNotebook: TNotebook; read;<br />
+          &nbsp;&nbsp;property WelcomePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property PasswordPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property InnerPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property InfoBeforePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property FinishedPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property UserInfoPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property LicensePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property SelectDirPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property PasswordPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property SelectComponentsPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property InfoBeforePage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property SelectProgramGroupPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property UserInfoPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property SelectTasksPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property SelectDirPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property ReadyPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property SelectComponentsPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property PreparingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property SelectProgramGroupPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property InstallingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property SelectTasksPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property InfoAfterPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property ReadyPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property DiskSpaceLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PreparingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property DirEdit: <a href="#TEdit">TEdit</a>; read;<br />
-            property GroupEdit: <a href="#TNewEdit">TNewEdit</a>; read;<br />
-            property NoIconsCheck: <a href="#TNewCheckBox">TNewCheckBox</a>;
+          &nbsp;&nbsp;property InstallingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property PasswordLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property InfoAfterPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property PasswordEdit: <a href="#TPasswordEdit">TPasswordEdit</a>;
+          &nbsp;&nbsp;property DiskSpaceLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property PasswordEditLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property DirEdit: <a href="#TEdit">TEdit</a>; read;<br />
+          &nbsp;&nbsp;property GroupEdit: <a href="#TNewEdit">TNewEdit</a>;
           read;<br />
-            property ReadyMemo: <a href="#TNewMemo">TNewMemo</a>; read;<br />
-            property TypesCombo: <a href="#TNewComboBox">TNewComboBox</a>;
+          &nbsp;&nbsp;property NoIconsCheck: <a href="#TNewCheckBox">TNewCheckBox</a>;
           read;<br />
-            property Bevel: <a href="#TBevel">TBevel</a>; read;<br />
-            property WizardBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property PasswordLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property WelcomeLabel1: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PasswordEdit: <a href="#TPasswordEdit">TPasswordEdit</a>;
           read;<br />
-            property InfoBeforeMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
+          &nbsp;&nbsp;property PasswordEditLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property InfoBeforeClickLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property ReadyMemo: <a href="#TNewMemo">TNewMemo</a>;
           read;<br />
-            property MainPanel: <a href="#TPanel">TPanel</a>; read;<br />
-            property Bevel1: <a href="#TBevel">TBevel</a>; read;<br />
-            property PageNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property TypesCombo: <a href="#TNewComboBox">TNewComboBox</a>;
           read;<br />
-            property PageDescriptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property Bevel: <a href="#TBevel">TBevel</a>; read;<br />
+          &nbsp;&nbsp;property WizardBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
           read;<br />
-            property WizardSmallBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property WelcomeLabel1: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property ReadyLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property InfoBeforeMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
           read;<br />
-            property FinishedLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property InfoBeforeClickLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property YesRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property MainPanel: <a href="#TPanel">TPanel</a>; read;<br />
+          &nbsp;&nbsp;property Bevel1: <a href="#TBevel">TBevel</a>; read;<br />
+          &nbsp;&nbsp;property PageNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property NoRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property PageDescriptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property WizardBitmapImage2: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property WizardSmallBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
           read;<br />
-            property WelcomeLabel2: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property ReadyLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property LicenseLabel1: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property FinishedLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property LicenseMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
+          &nbsp;&nbsp;property YesRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
           read;<br />
-            property InfoAfterMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
+          &nbsp;&nbsp;property NoRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
           read;<br />
-            property InfoAfterClickLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property WizardBitmapImage2: <a href="#TBitmapImage">TBitmapImage</a>;
           read;<br />
-            property ComponentsList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
+          &nbsp;&nbsp;property WelcomeLabel2: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property ComponentsDiskSpaceLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property LicenseLabel1: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property BeveledLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property LicenseMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
           read;<br />
-            property StatusLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property InfoAfterMemo: <a href="#TRichEditViewer">TRichEditViewer</a>;
           read;<br />
-            property FilenameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property InfoAfterClickLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property ProgressGauge: <a href="#TNewProgressBar">TNewProgressBar</a>;
+          &nbsp;&nbsp;property ComponentsList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
           read;<br />
-            property SelectDirLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property ComponentsDiskSpaceLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectStartMenuFolderLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property BeveledLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectComponentsLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property StatusLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectTasksLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property FilenameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property LicenseAcceptedRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property ProgressGauge: <a href="#TNewProgressBar">TNewProgressBar</a>;
           read;<br />
-            property LicenseNotAcceptedRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property SelectDirLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property UserInfoNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property SelectStartMenuFolderLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property UserInfoNameEdit: <a href="#TNewEdit">TNewEdit</a>; read;<br />
-            property UserInfoOrgLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property SelectComponentsLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property UserInfoOrgEdit: <a href="#TNewEdit">TNewEdit</a>; read;<br />
-            property PreparingErrorBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property SelectTasksLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property PreparingLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property LicenseAcceptedRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
           read;<br />
-            property FinishedHeadingLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property LicenseNotAcceptedRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
           read;<br />
-            property UserInfoSerialLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property UserInfoNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property UserInfoSerialEdit: <a href="#TNewEdit">TNewEdit</a>;
+          &nbsp;&nbsp;property UserInfoNameEdit: <a href="#TNewEdit">TNewEdit</a>;
           read;<br />
-            property TasksList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
+          &nbsp;&nbsp;property UserInfoOrgLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property RunList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
+          &nbsp;&nbsp;property UserInfoOrgEdit: <a href="#TNewEdit">TNewEdit</a>;
           read;<br />
-            property DirBrowseButton: <a href="#TNewButton">TNewButton</a>;
+          &nbsp;&nbsp;property PreparingErrorBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
           read;<br />
-            property GroupBrowseButton: <a href="#TNewButton">TNewButton</a>;
+          &nbsp;&nbsp;property PreparingLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectDirBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property FinishedHeadingLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectGroupBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property UserInfoSerialLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property SelectDirBrowseLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property UserInfoSerialEdit: <a href="#TNewEdit">TNewEdit</a>;
           read;<br />
-            property SelectStartMenuFolderBrowseLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property TasksList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
           read;<br />
-            property PreparingYesRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property RunList: <a href="#TNewCheckListBox">TNewCheckListBox</a>;
           read;<br />
-            property PreparingNoRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          &nbsp;&nbsp;property DirBrowseButton: <a href="#TNewButton">TNewButton</a>;
           read;<br />
-            property PreparingMemo: <a href="#TNewMemo">TNewMemo</a>; read;<br />
-            property CurPageID: Integer; read;<br />
-            function AdjustLabelHeight(ALabel: <a href="#TNewStaticText">TNewStaticText</a>):
+          &nbsp;&nbsp;property GroupBrowseButton: <a href="#TNewButton">TNewButton</a>;
+          read;<br />
+          &nbsp;&nbsp;property SelectDirBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          read;<br />
+          &nbsp;&nbsp;property SelectGroupBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          read;<br />
+          &nbsp;&nbsp;property SelectDirBrowseLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          read;<br />
+          &nbsp;&nbsp;property SelectStartMenuFolderBrowseLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          read;<br />
+          &nbsp;&nbsp;property PreparingYesRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          read;<br />
+          &nbsp;&nbsp;property PreparingNoRadio: <a href="#TNewRadioButton">TNewRadioButton</a>;
+          read;<br />
+          &nbsp;&nbsp;property PreparingMemo: <a href="#TNewMemo">TNewMemo</a>;
+          read;<br />
+          &nbsp;&nbsp;property CurPageID: Integer; read;<br />
+          &nbsp;&nbsp;function AdjustLabelHeight(ALabel: <a href="#TNewStaticText">TNewStaticText</a>):
           Integer;<br />
-            procedure IncTopDecHeight(AControl: <a href="#TControl">TControl</a>;
+          &nbsp;&nbsp;function AdjustLinkLabelHeight(ALinkLabel: <a href="#TNewLinkLabel">TNewLinkLabel</a>):
+          Integer;<br />
+          &nbsp;&nbsp;procedure IncTopDecHeight(AControl: <a href="#TControl">TControl</a>;
           Amount: Integer);<br />
-            property PrevAppDir: String; read;<br />
+          &nbsp;&nbsp;property PrevAppDir: String; read;<br />
           end;<br />
           <br />
           <a name="TUninstallProgressForm">TUninstallProgressForm</a> = class(<a
+
             href="#TSetupForm">TSetupForm</a>)<br />
-            property OuterNotebook: <a href="#TNewNotebook">TNewNotebook</a>;
+          &nbsp;&nbsp;property OuterNotebook: <a href="#TNewNotebook">TNewNotebook</a>;
           read;<br />
-            property InnerPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property InnerPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property InnerNotebook: <a href="#TNewNotebook">TNewNotebook</a>;
+          &nbsp;&nbsp;property InnerNotebook: <a href="#TNewNotebook">TNewNotebook</a>;
           read;<br />
-            property InstallingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
+          &nbsp;&nbsp;property InstallingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>;
           read;<br />
-            property MainPanel: <a href="#TPanel">TPanel</a>; read;<br />
-            property PageNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property MainPanel: <a href="#TPanel">TPanel</a>; read;<br />
+          &nbsp;&nbsp;property PageNameLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property PageDescriptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property PageDescriptionLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property WizardSmallBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
+          &nbsp;&nbsp;property WizardSmallBitmapImage: <a href="#TBitmapImage">TBitmapImage</a>;
           read;<br />
-            property Bevel1: <a href="#TBevel">TBevel</a>; read;<br />
-            property StatusLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property Bevel1: <a href="#TBevel">TBevel</a>; read;<br />
+          &nbsp;&nbsp;property StatusLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property ProgressBar: <a href="#TNewProgressBar">TNewProgressBar</a>;
+          &nbsp;&nbsp;property ProgressBar: <a href="#TNewProgressBar">TNewProgressBar</a>;
           read;<br />
-            property BeveledLabel: <a href="#TNewStaticText">TNewStaticText</a>;
+          &nbsp;&nbsp;property BeveledLabel: <a href="#TNewStaticText">TNewStaticText</a>;
           read;<br />
-            property Bevel: <a href="#TBevel">TBevel</a>; read;<br />
-            property CancelButton: <a href="#TNewButton">TNewButton</a>; read;<br />
+          &nbsp;&nbsp;property Bevel: <a href="#TBevel">TBevel</a>; read;<br />
+          &nbsp;&nbsp;property CancelButton: <a href="#TNewButton">TNewButton</a>;
+          read;<br />
           end;<br />
         </tt></p>
-      <p>
-        <br />
-          <b>См. также:</b><br />
-        <br />
-        <tt>function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String):
-          TInputQueryWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          Exclusive, ListBox: Boolean): TInputOptionWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          AAppendDir: Boolean; ANewFolderName: String): TInputDirWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String):
-          TInputFileWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, AMsg: String):
-          TOutputMsgWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          const AMsg: AnsiString): TOutputMsgMemoWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const
-          ACaption, ADescription: String): TOutputProgressWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const
-          ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;</tt><br/>
-        <tt>function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const
+      <h2 class="heading">См. также:</h2>
+      <p class="null" style="text-indent: 0;"><tt class="nill">function
+          <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>: TSetupForm;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const
           AfterID: Integer; const ACaption, ADescription: String): TWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>:
-          TSetupForm;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>(const
+          ACaption, ADescription: String; const OnDownloadProgress: TOnDownloadProgress):
+          TDownloadWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const
+          AfterID: Integer; const ACaption, ADescription, ASubCaption: String; AAppendDir:
+          Boolean; ANewFolderName: String): TInputDirWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const
+          AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputFileWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const
+          AfterID: Integer; const ACaption, ADescription, ASubCaption: String; Exclusive, ListBox:
+          Boolean): TInputOptionWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const
+          AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputQueryWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const
+          ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const
+          AfterID: Integer; const ACaption, ADescription, ASubCaption: String; const AMsg: AnsiString):
+          TOutputMsgMemoWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const
+          AfterID: Integer; const ACaption, ADescription, AMsg: String): TOutputMsgWizardPage;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const
+          ACaption, ADescription: String): TOutputProgressWizardPage;</tt><br />
         <br />
-        <tt>function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const
+        <tt class="nill">function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const
           ID: Integer): TWizardPage;</tt><br />
-        <tt>function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const
+        <tt class="nill">function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const
           Filename: String; const Font: TFont; MaxLen: Integer): String;</tt><br />
       </p>
     </div>

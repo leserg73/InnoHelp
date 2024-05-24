@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: Introduction</title>
@@ -34,9 +34,9 @@
       <p>Другой пример использования <b>ISPP</b> – это сбор информации о версии
         приложения путем считывания данных из EXE-файла и подставновки их в
         директиву IS <a href="../../ishelp/htm/topic_setup_appvername.htm" target="_blank" title="Директива AppVerName">AppVerName</a><img
-          src="../images/extlink.png" alt=" [внешняя ссылка]" /> секции [Setup]
-        или где-то в другом месте сценария. Без применения <b>ISPP</b> в
-        сценарии пришлось бы вручную менять все записи, в которых упоминается
+          src="../images/extlink.png" alt=" [внешняя ссылка]" />
+        секции [Setup] или где-то в другом месте сценария. Без применения <b>ISPP</b>
+        в сценарии пришлось бы вручную менять все записи, в которых упоминается
         версия приложения.</p>
       <p>Точно так же <b>ISPP</b> можно использовать для сканирования исходных
         папок и создания строк сценария со списком найденных файлов. Без <b>ISPP</b>
@@ -51,20 +51,19 @@
       <p>Примечание: <b>ISPP</b> работает исключительно в время компиляции
         сценария и не имеет никакой функциональности при выполнении
         установки/деинсталляции приложения. </p>
-      <br />
       <h2 class="heading">Основные главы документа</h2>
       <ul>
-        <li><a href="topic_expressions.htm" class="new1">Синтаксис выражений</a></li>
-        <li><a href="topic_predefinedvars.htm" class="new1">Встроенные
-            переменные</a></li>
-        <li><a href="topic_visibility.htm" class="new1">Область видимости
-            переменных</a></li>
-        <li><a href="topic_linespan.htm" class="new1">Разделение строк</a></li>
+        <li><a href="topic_example.htm" class="new1">Пример сценария</a></li>
         <li><a href="topic_directives.htm" class="new1">Поддерживаемые директивы</a></li>
         <li><a href="topic_funcs.htm" class="new1">Поддерживаемые функции</a></li>
         <li><a href="topic_macros.htm" class="new1">Пользовательские функции</a></li>
-        <li><a href="topic_example.htm" class="new1">Пример сценария</a></li>
+        <li><a href="topic_expressions.htm" class="new1">Синтаксис выражений</a></li>
+        <li><a href="topic_predefinedvars.htm" class="new1">Встроенные
+            переменные</a></li>
+        <li><a href="topic_linespan.htm" class="new1">Разделение строк</a></li>
         <li><a href="topic_builtinsiss.htm" class="new1">ISPPBuiltins.iss</a></li>
+        <li><a href="topic_visibility.htm" class="new1">Область видимости
+            переменных</a></li>
         <li><a href="topic_isppcc.htm" class="new1">Компиляция в командной
             строке</a></li>
         <li><a href="topic_translation.htm" class="new1">Вывод препроцессора</a></li>

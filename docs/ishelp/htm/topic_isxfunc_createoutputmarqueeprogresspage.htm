@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: CreateOutputMarqueeProgressPage</title>
@@ -18,31 +18,27 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: CreateOutputMarqueeProgressPage</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function CreateOutputMarqueeProgressPage(const ACaption,
-          ADescription: String): TOutputMarqueeProgressWizardPage;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет создание страницы мастера, которая содержит
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateOutputMarqueeProgressPage(const ACaption, ADescription: String):
+          TOutputMarqueeProgressWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание страницы мастера установки, которая содержит
         статичный текст и непрерывный (стиль <em>Marquee</em>) индикатор
-        выполнения.</div>
-      <br />
-      <div class="absaz">Информацию о создании страниц с индикатором выполнения
-        смотрите в разделе <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Для анимации индикатора выполнения используйте вызов
-        метода <tt>Animate</tt>. Не используйте вызов метода <tt>SetProgress</tt>,
-        это приведёт к внутренней ошибке.</div>
-      <br />
-      <div><b>Пример:</b></div>
-      <br />
-      <div class="absaz">Смотрите пример в файле <i>AllPagesExample.iss</i>.</div>
-      <br />
-      <div><b>См также:</b></div>
-      <p><a href="topic_scriptclasses.htm#TOutputMarqueeProgressWizardPage">TOutputMarqueeProgressWizardPage</a>
+        выполнения.</p>
+      <p>Параметр <tt>ACaption</tt> определяет текст для заголовка страницы,
+        параметр <tt>ADescription</tt> — краткое описание назначения страницы.</p>
+      <p>Информацию о создании страниц с индикатором выполнения смотрите в
+        разделе <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Для анимации индикатора выполнения используйте вызов метода <tt>Animate</tt>.
+        Не используйте вызов метода <tt>SetProgress</tt>, это приведёт к
+        внутренней ошибке.</p>
+      <h2 class="heading">Пример</h2>
+      <p>Смотрите файл <i>AllPagesExample.iss</i> из папки "Examples" в
+        каталоге установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TOutputMarqueeProgressWizardPage">TOutputMarqueeProgressWizardPage</a>
       </p>
     </div>
   </body>

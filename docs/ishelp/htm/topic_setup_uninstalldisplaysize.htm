@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: UninstallDisplaySize</title>
@@ -18,10 +18,8 @@
   <body>
     <h1 class="topicheading">[Setup]: UninstallDisplaySize</h1>
     <div class="topicbody">
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">В ОС Windows 7 и выше программа установки использует
+      <h2 class="heading">Описание</h2>
+      <p>В ОС Windows 7 и выше программа установки использует
         эту директиву для записи значения <tt>EstimatedSize</tt> в разделе
         реестра деинсталляции приложения, поскольку Windows 7 больше не
         вычисляет его автоматически (см. апплет "<i>Программы и компоненты</i>",
@@ -29,11 +27,9 @@
         не задана, программа установки оценивает примерный размер приложения на
         основании всех установленных файлов и добавляет все значения в <tt>ExtraDiskSpaceRequired</tt>.
         Примечание: Windows 7 без пакета обновления поддерживает отображение
-        значений не более 4 Гб.</div>
-      <br />
-      <div class="absaz">Значение необходимо указывать в байтах (1048576 байт =
-        1 Мб).</div>
-      <br />
+        значений не более 4 Гб.</p>
+      <p>Значение необходимо указывать в байтах (1048576 байт =
+        1 Мб).</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">UninstallDisplaySize</span>=<span

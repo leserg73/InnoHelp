@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: WizardStyle</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: WizardStyle</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,7 +25,7 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>classic</tt> или <tt>modern</tt> </div>
+              <div class="margined"><tt class="nill">classic</tt> или <tt class="nill">modern</tt> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -34,27 +33,23 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>classic</tt> </div>
+              <div class="margined"><tt class="nill">classic</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива позволяет изменить внешний вид программы
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива позволяет изменить внешний вид программы
         установки/удаления. При указании значения <tt>modern</tt>, инсталлятор
         примет более современный вид, а значения по умолчанию для директив <a href="topic_setup_wizardresizable.htm">WizardResizable</a>
         и <a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a>
         будут изменены на новые <tt>yes</tt> и <tt>120,120</tt>
-        соответственно.</div>
-      <br />
-      <div class="absaz">Чтобы добавить полную поддержку <tt>WizardResizable</tt>
+        соответственно.</p>
+      <p>Чтобы добавить полную поддержку <tt>WizardResizable</tt>
         и <tt>WizardSizePercent</tt> для всех пользовательских элементов
         управления и страниц мастера, если таковые имеются, используйте свойства
         <tt>Anchors</tt> и <tt>KeepSizeY</tt>. В качестве примера смотрите файл
-        сценария <i>CodeClasses.iss</i>.</div>
-      <br />
+        сценария <i>CodeClasses.iss</i>.</p>
     </div>
   </body>
 </html>

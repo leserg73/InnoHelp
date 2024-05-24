@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Функции событий</title>
@@ -20,20 +20,17 @@
     <div class="topicbody">
       <p>Pascal-сценарий может содержать несколько функций, которые вызываются
         при определённых событиях.</p>
-      <br />
       <h2 class="heading">Функции событий программы установки</h2>
-      <div class="absaz">Программа установки поддерживает следующие функции
-        событий:</div>
-      <br />
+      <p>Программа установки поддерживает следующие функции
+        событий:</p>
       <dl>
-        <dt class="func"><tt>function <a name="InitializeSetup">InitializeSetup</a>():
-            Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="InitializeSetup">InitializeSetup</a>(): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается во время инициализации программы установки. В случае
             успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt> и
             работа программы установки прерывается.</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="InitializeWizard">InitializeWizard</a>(); </tt></dt>
+        <dt class="func"><code>procedure <a name="InitializeWizard">InitializeWizard</a>();</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при создании формы мастера установки. Эту функцию можно
             использовать для внесения изменений в форму или страницы мастера
@@ -41,15 +38,13 @@
             поскольку на момент запуска инсталлятора форма мастера ещё не
             существует. </p>
         </dd>
-        <dt class="func"><tt>procedure <a name="DeinitializeSetup">DeinitializeSetup</a>();
-          </tt></dt>
+        <dt class="func"><code>procedure <a name="DeinitializeSetup">DeinitializeSetup</a>();</code></dt>
         <dd class="paramlist1">
           <p>Вызывается перед завершением программы установки. Обратите
             внимание, что эта функция вызывается даже, если пользователь
             преждевременно завершит работу программы установки.</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="CurStepChanged">CurStepChanged</a>(CurStep:
-            <a href="#TSetupStep">TSetupStep</a>); </tt></dt>
+        <dt class="func"><code>procedure <a name="CurStepChanged">CurStepChanged</a>(CurStep: <a href="#TSetupStep">TSetupStep</a>);</code></dt>
         <dd class="paramlist1">
           <p>Вызывается на определённых этапах установки и может использоваться
             для выполнения собственных задач до и после процесса установки.</p>
@@ -59,15 +54,13 @@
             непосредственно перед завершением программы установки, если
             инсталляция завершилась успешно.</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="CurInstallProgressChanged">CurInstallProgressChanged</a>(CurProgress,
-            MaxProgress: Integer); </tt></dt>
+        <dt class="func"><code>procedure <a name="CurInstallProgressChanged">CurInstallProgressChanged</a>(CurProgress, MaxProgress: Integer);</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при изменении текущего прогресса установки и может
             использоваться для отслеживания прогресса извлечения файлов,
             создания ярлыков, создания записей в INI-файлах или реестре.</p>
         </dd>
-        <dt class="func"><tt>function <a name="NextButtonClick">NextButtonClick</a>(<a href="#PageID">CurPageID</a>:
-            Integer): Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="NextButtonClick">NextButtonClick</a>(<a href="#PageID">CurPageID</a>: Integer): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при нажатии кнопки "<i>Далее</i>". Если функция вернёт
             значение <tt>True</tt>, мастер перейдёт на следующую страницу. При
@@ -81,17 +74,14 @@
             до начала процесса установки, программа установки автоматически
             завершит свою работу. </p>
         </dd>
-        <dt class="func"><tt>function <a name="BackButtonClick">BackButtonClick</a>(<a href="#PageID">CurPageID</a>:
-            Integer): Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="BackButtonClick">BackButtonClick</a>(<a href="#PageID">CurPageID</a>: Integer): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при нажатии кнопки "<i>Назад</i>". Если функция вернёт
             значение <tt>True</tt>, мастер перейдёт на предыдущую страницу. При
             значении <tt>False</tt> мастер останется на текущей странице
             (указанной в параметре <tt>CurPageID</tt>).</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="CancelButtonClick">CancelButtonClick</a>(<a
-              href="#PageID">CurPageID</a>: Integer; var Cancel, Confirm:
-            Boolean); </tt></dt>
+        <dt class="func"><code>procedure <a name="CancelButtonClick">CancelButtonClick</a>(<a  href="#PageID">CurPageID</a>: Integer; var Cancel, Confirm: Boolean);</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при нажатии кнопки "<i>Отмена</i>", или "<i>Закрыть</i>"
             в заголовке окна. Параметр <tt>Cancel</tt> определяет обычную
@@ -101,8 +91,7 @@
             Если параметр <tt>Cancel</tt> имеет значение <tt>False</tt>,
             значение параметра <tt>Confirm</tt> игнорируется. </p>
         </dd>
-        <dt class="func"><tt>function <a name="ShouldSkipPage">ShouldSkipPage</a>(<a href="#PageID">PageID</a>:
-            Integer): Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="ShouldSkipPage">ShouldSkipPage</a>(<a href="#PageID">PageID</a>: Integer): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при определении условия пропуска определённой страницы
             (указанной в параметре <tt>PageID</tt>). Если функция вернёт
@@ -114,14 +103,12 @@
             страница <tt>wpSelectComponents</tt>, если инсталлятор не содержит
             компонентов).</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="CurPageChanged">CurPageChanged</a>(<a href="#PageID">CurPageID</a>:
-            Integer); </tt></dt>
+        <dt class="func"><code>procedure <a name="CurPageChanged">CurPageChanged</a>(<a href="#PageID">CurPageID</a>: Integer);</code></dt>
         <dd class="paramlist1">
           <p>Вызывается после отображения определённой страницы (указанной в
             параметре <tt>CurPageID</tt>).</p>
         </dd>
-        <dt class="func"><tt>function <a name="CheckPassword">CheckPassword</a>(Password:
-            String): Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="CheckPassword">CheckPassword</a>(Password: String): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Если программа установки обнаружит в сценарии функцию <tt>CheckPassword</tt>,
             она автоматически отобразит страницу <i>Пароль</i> и выполнит вызов
@@ -138,16 +125,14 @@
             будет вызвана <i>ранее</i> других функций события, включая <tt><a
                 href="#InitializeSetup">InitializeSetup</a></tt>. </p>
         </dd>
-        <dt class="func"><tt>function <a name="NeedRestart">NeedRestart</a>(): Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="NeedRestart">NeedRestart</a>(): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при проверке условия перезагрузки ПК. Если функция
             возвращает значение <tt>True</tt>, то при успешном завершении
             установки пользователю будет предложено выполнить перезагрузку ПК,
             иначе <tt>False</tt>.</p>
         </dd>
-        <dt class="func"><tt>function <a name="UpdateReadyMemo">UpdateReadyMemo</a>(Space,
-            NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo,
-            MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String; </tt></dt>
+        <dt class="func"><code>function <a name="UpdateReadyMemo">UpdateReadyMemo</a>(Space, NewLine, MemoUserInfoInfo, MemoDirInfo, MemoTypeInfo, MemoComponentsInfo, MemoGroupInfo, MemoTasksInfo: String): String;</code></dt>
         <dd class="paramlist1">
           <p>Если программа установки обнаружит в сценарии функцию <tt>UpdateReadyMemo</tt>,
             она автоматически выполнит её вызов, когда страница "<i>Всё готово к
@@ -162,16 +147,14 @@
             Параметр <tt>MemoDirInfo</tt>, к примеру, содержит строку для
             раздела <i>Папка установки</i>. </p>
         </dd>
-        <dt class="func"><tt>procedure <a name="RegisterPreviousData">RegisterPreviousData</a>(PreviousDataKey:
-            Integer); </tt></dt>
+        <dt class="func"><code>procedure <a name="RegisterPreviousData">RegisterPreviousData</a>(PreviousDataKey: Integer);</code></dt>
         <dd class="paramlist1">
           <p>Чтобы сохранить пользовательские параметры, введённые на
             пользовательских страницах мастера, поместите в сценарий функцию <tt>RegisterPreviousData</tt>
             и выполните из неё вызов функции <a href="topic_isxfunc_setpreviousdata.htm">SetPreviousData(PreviousDataKey,
               ...)</a> соответственно для каждого параметра. </p>
         </dd>
-        <dt class="func"><tt>function <a name="CheckSerial">CheckSerial</a>(Serial: String):
-            Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="CheckSerial">CheckSerial</a>(Serial: String): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Если программа установки обнаружит в сценарии функцию <tt>CheckSerial</tt>,
             она автоматически отобразит поле ввода серийного номера на странице
@@ -187,8 +170,7 @@
             введённого серийного номера (записанного в константу <tt>{userinfoserial}</tt>)
             для вашего приложения. </p>
         </dd>
-        <dt class="func"><tt>function <a name="GetCustomSetupExitCode">GetCustomSetupExitCode</a>:
-            Integer; </tt></dt>
+        <dt class="func"><code>function <a name="GetCustomSetupExitCode">GetCustomSetupExitCode</a>: Integer;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается только в том случае, если программа установки успешно
             завершила свою работу и код выхода был равен 0. Используйте
@@ -196,8 +178,7 @@
             пользовательский код выхода. См. также "<a href="topic_setupexitcodes.htm">Коды
               выхода программы установки</a>". </p>
         </dd>
-        <dt class="func"><tt>function <a name="PrepareToInstall">PrepareToInstall</a>(var
-            NeedsRestart: Boolean): String; </tt></dt>
+        <dt class="func"><code>function <a name="PrepareToInstall">PrepareToInstall</a>(var NeedsRestart: Boolean): String;</code></dt>
         <dd class="paramlist1">
           <p>Эту функцию можно использовать для обнаружения и установки
             недостающих зависимостей и/или завершения работы любого приложения,
@@ -223,8 +204,7 @@
             другой установкой) для замены или удаления при следующем
             перезапуске.</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="RegisterExtraCloseApplicationsResources">RegisterExtraCloseApplicationsResources</a>;
-          </tt></dt>
+        <dt class="func"><code>procedure <a name="RegisterExtraCloseApplicationsResources">RegisterExtraCloseApplicationsResources</a>;</code></dt>
         <dd class="paramlist1">
           <p>Чтобы зарегистрировать дополнительные файлы, которые программа
             установки должна проверить на предмет использования, когда для
@@ -234,21 +214,17 @@
             соответственно для каждого файла. </p>
         </dd>
       </dl>
-      <br />
       <h2 class="heading">Функции событий программы удаления</h2>
-      <div class="absaz">Программа удаления поддерживает следующие функции
-        событий:</div>
-      <br />
+      <p>Программа удаления поддерживает следующие функции
+        событий:</p>
       <dl>
-        <dt class="func"><tt>function <a name="InitializeUninstall">InitializeUninstall</a>():
-            Boolean; </tt></dt>
+        <dt class="func"><code>function <a name="InitializeUninstall">InitializeUninstall</a>(): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается во время инициализации программы удаления. В случае
             успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt> и
             работа программы удаления прерывается.</p>
         </dd>
-        <dt class="func"><tt>procedure <a name="InitializeUninstallProgressForm">InitializeUninstallProgressForm</a>();
-            </tt></dt>
+        <dt class="func"><code>procedure <a name="InitializeUninstallProgressForm">InitializeUninstallProgressForm</a>();</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при создании формы с прогрессом удаления и может
             использоваться для внесения в неё изменений. Для этих целей нельзя
@@ -256,16 +232,9 @@
             момент запуска деинсталлятора форма с прогрессом удаления ещё не
             существует. </p>
         </dd>
-        <dt class="func"><tt>procedure <a name="DeinitializeUninstall">DeinitializeUninstall</a>();
-            </tt></dt>
-        <dd><br />
-        </dd>
-        <dt class="func"><tt>procedure <a name="CurUninstallStepChanged">CurUninstallStepChanged</a>(CurUninstallStep:
-            <a href="#TUninstallStep">TUninstallStep</a>); </tt></dt>
-        <dd><br />
-        </dd>
-        <dt class="func"><tt>function <a name="UninstallNeedRestart">UninstallNeedRestart</a>():
-            Boolean; </tt></dt>
+        <dt class="func"><code>procedure <a name="DeinitializeUninstall">DeinitializeUninstall</a>();</code></dt>
+        <dt class="func"><code>procedure <a name="CurUninstallStepChanged">CurUninstallStepChanged</a>(CurUninstallStep: <a href="#TUninstallStep">TUninstallStep</a>);</code></dt>
+        <dt class="func"><code>function <a name="UninstallNeedRestart">UninstallNeedRestart</a>(): Boolean;</code></dt>
         <dd class="paramlist1">
           <p>Вызывается при проверке условия перезагрузки ПК. Если функция
             возвращает значение <tt>True</tt>, то при успешном завершении
@@ -273,11 +242,9 @@
             иначе <tt>False</tt>.</p>
         </dd>
       </dl>
-      <br />
       <h2 class="heading">Константы</h2>
-      <div class="absaz">Ниже приведен перечень констант, используемых этими
-        функциями:</div>
-      <br />
+      <p>Ниже приведен перечень констант, используемых этими
+        функциями:</p>
       <ul>
         <li><i><a name="TSetupStep">Значения TSetupStep</a></i><br />
           ssInstall, ssPostInstall, ssDone</li>
@@ -289,17 +256,15 @@
           wpSelectDir, wpSelectComponents, wpSelectProgramGroup, wpSelectTasks,
           wpReady, wpPreparing, wpInstalling, wpInfoAfter, wpFinished</li>
       </ul>
-      <br />
       <h2 class="heading"><a name="eventattributes">Атрибуты события</a></h2>
-      <div class="absaz">Как правило, сценарий может содержать только одну
+      <p>Как правило, сценарий может содержать только одну
         реализацию для каждой функции события. Используя атрибуты события,
         сценарий может иметь несколько реализаций одной и той же функции
         события. Особенно хорошо их эффективность проявляется во включенных
         сценариях, реализующих функции событий, что позволяет избежать
-        конфликтов с основным сценарием.</div>
-      <br />
-      <div class="absaz">Ниже приведен пример сценария, который содержит три
-        реализации функции <tt>InitializeWizard</tt>.</div>
+        конфликтов с основным сценарием.</p>
+      <p>Ниже приведен пример сценария, который содержит три
+        реализации функции <tt>InitializeWizard</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
 <span class="hl kwb">procedure</span> <span class="hl kwd">InitializeWizard</span>;
 <span class="hl kwb">begin</span>
@@ -317,9 +282,8 @@
 <span class="hl kwb">begin</span>
   Log(<span class="hl str">'InitializeWizard3 called'</span>);
 <span class="hl kwb">end</span>;</pre>
-      <div class="absaz">При использовании атрибутов события действуют следующие
-        правила:</div>
-      <br />
+      <p>При использовании атрибутов события действуют следующие
+        правила:</p>
       <ul>
         <li>Реализации будут вызываться в порядке их определения за исключением
           того, что любая основная реализация (<i>реализация без атрибута
@@ -355,7 +319,7 @@
           функций, у которых ещё нет имени функции события.</li>
         <li>Если функция события использует параметры <tt>var</tt>, то значение
           будет передаваться от одной реализации к другой. </li>
-        <li>Для вызова самой реализации с атрибутом события из секции [Code],
+        <li>Для вызова самой реализации с атрибутом события из секции <tt>[Code]</tt>,
           следует использовать обычное имя функции, как если бы реализация не
           имела атрибута события.</li>
       </ul>

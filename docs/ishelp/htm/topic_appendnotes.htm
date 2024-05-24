@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Обновление журнала деинсталлятора</title>
@@ -18,38 +18,29 @@
   <body>
     <h1 class="topicheading">Обновление журнала деинсталлятора</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Когда новая версия приложения устанавливается поверх
+      <p>Когда новая версия приложения устанавливается поверх
         существующей версии, вместо создания нового файл журнала деинсталляции
         (unins???.dat), программа установки по умолчанию ищет и дополняет
         существующий файл журнала, который принадлежит <a href="topic_sameappnotes.htm">тому
           же приложению</a> в той же самой папке. Таким образом, когда
         приложение будет удалено, изменения, сделанные всеми различными
-        установками, будут отменены (начиная с самой последней инсталляции).</div>
-      <br />
-      <div class="absaz">Деинсталлятор будет использовать <a href="topic_messagessection.htm">сообщения</a>
+        установками, будут отменены (начиная с самой последней инсталляции).</p>
+      <p>Деинсталлятор будет использовать <a href="topic_messagessection.htm">сообщения</a>
         от самой последней установки приложения. Однако есть некоторые
         особенности: если программа установки была создана более ранней версией
         Inno Setup, которая содержала более старую версию деинсталлятора, чем
         существующая в системе пользователя, ни существующий деинсталлятор, ни
         его сообщения не будут заменены. В этом случае файл журнала
         деинсталляции все же будет дополнен, так как формат файла имеет обратную
-        совместимость.</div>
-      <br />
-      <div class="absaz">Имя приложения, показанное деинсталлятором, будет таким
+        совместимость.</p>
+      <p>Имя приложения, показанное деинсталлятором, будет таким
         же самым как и значение директивы <a href="topic_setup_appname.htm">AppName</a>
         в секции <tt>[Setup]</tt> из самой последней установки, если только <a
           href="topic_setup_updateuninstalllogappname.htm">UpdateUninstallLogAppName</a>
-        не имеет значение <tt>no</tt>.</div>
-      <br />
-      <div class="absaz">Функция дополнения журнала деинсталляции появилась в
-        Inno Setup 1.3. Чтобы отключить её, используйте директиву <a href="topic_setup_uninstalllogmode.htm">UninstallLogMode</a>
-        в секции <tt>[Setup]</tt>.</div>
-      <br />
-      <div class="absaz"><i>Примечание:</i> программа установки может дополнять
-        журналы деинсталляции только тех установок, инсталляции которых были
-        созданы в Inno Setup 1.3.1 (или позднее).</div>
-      <br />
+        не имеет значение <tt>no</tt>.</p>
+      <p>Чтобы отключить функцию дополнения журнала деинсталляции,
+        используйте директиву <a href="topic_setup_uninstalllogmode.htm">UninstallLogMode</a>
+        в секции <tt>[Setup]</tt>.</p>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: CreateInputOptionPage</title>
@@ -18,31 +18,31 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: CreateInputOptionPage</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function CreateInputOptionPage(const AfterID: Integer; const
-          ACaption, ADescription, ASubCaption: String; Exclusive, ListBox:
-          Boolean): TInputOptionWizardPage;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет создание страницы мастера, которая содержит
-        флажки или переключатели.</div>
-      <br />
-      <div class="absaz">Если параметр <i>Exclusive</i> установлен в <tt>True</tt>,
-        то вместо флажков отображаются переключатели и в списке может быть
-        выбран только один элемент. Если параметр <i>ListBox</i> установлен в <tt>True</tt>,
-        то флажки или переключатели помещаются внутри прокручиваемого списка.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Для создания на странице флажков/переключателей,
-        используйте вызов метода <tt>Add</tt>. Свойство <tt>Values</tt>
-        используйте для получения/установки состояний элементов управления. На
-        страницах, созданных с <tt>Exclusive=True</tt>, можно
-        получить/установить индекс одного выбранного элемента, используя
-        свойство <tt>SelectedValueIndex</tt>.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateInputOptionPage(const AfterID: Integer; const ACaption,
+          ADescription, ASubCaption: String; Exclusive, ListBox: Boolean):
+          TInputOptionWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание страницы мастера установки, которая содержит флажки
+        или переключатели.</p>
+      <p>Параметр <tt>AfterID</tt> определяет страницу мастера установки, после
+        которой будет размещена (показана) эта страница.</p>
+      <p>Для параметра <tt>ACaption</tt> следует указать заголовок страницы. В
+        параметре <tt>ADescription</tt> укажите краткое описание назначения
+        страницы, а в параметре <tt>ASubCaption</tt> — подзаголовок с
+        пояснениями для пользователя.</p>
+      <p>Если параметр <tt>Exclusive</tt> установлен в <tt>True</tt>, то
+        вместо флажков отображаются переключатели и в списке может быть выбран
+        только один элемент. Если параметр <tt>ListBox</tt> установлен в <tt>True</tt>,
+        то флажки или переключатели помещаются внутри прокручиваемого списка.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Для создания на странице флажков/переключателей, используйте вызов
+        метода <tt>Add</tt>. Свойство <tt>Values</tt> используйте для
+        получения/установки состояний элементов управления. На страницах,
+        созданных с <tt>Exclusive=True</tt>, можно получить/установить индекс
+        одного выбранного элемента, используя свойство <tt>SelectedValueIndex</tt>.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   Page: TInputOptionWizardPage;
   IsRegisteredUser: Boolean;
@@ -65,11 +65,10 @@ Page.Values[<span class="hl num">0</span>] := False;
 
 <span class="hl slc">// Считываем значение в переменную</span>
 IsRegisteredUser := Page.Values[<span class="hl num">0</span>];</pre>
-      <br />
-      <div class="absaz">См. другой пример в файле <i>AllPagesExample.iss</i>.</div>
-      <br />
-      <div><b>См. также:</b></div>
-      <p><a href="topic_scriptclasses.htm#TInputOptionWizardPage">TInputOptionWizardPage</a>
+      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
+        "Examples" в каталоге установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TInputOptionWizardPage">TInputOptionWizardPage</a>
       </p>
     </div>
   </body>

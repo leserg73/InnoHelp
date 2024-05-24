@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Components]</title>
@@ -18,17 +18,14 @@
   <body>
     <h1 class="topicheading">Секция [Components]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Эта секция не является обязательной. Она определяет все
+      <p>Эта секция не является обязательной. Она определяет все
         компоненты, которые программа установки покажет на странице "<i>Выбор
-          компонентов</i>" для настройки типа установки.</div>
-      <br />
-      <div class="absaz">Сама по себе эта секция ничего не делает: она должна
+          компонентов</i>" для настройки типа установки.</p>
+      <p>Сама по себе эта секция ничего не делает: она должна
         быть "связана" с другими записями инсталляции. Смотрите раздел справки "<a
           href="topic_componentstasksparams.htm">Параметры секций [Components] и
-          [Tasks]</a>".</div>
-      <br />
-      <div class="absaz">Пример секции <tt>[Components]</tt>:</div>
+          [Tasks]</a>".</p>
+      <p>Пример секции <tt>[Components]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Components]</span>
 <span class="hl kwb">Name</span>: "main"; <span class="hl kwb">Description</span>: "Main Files"; <span
 class="hl kwb">Types</span>: <span class="hl kwe">full compact custom</span>; <span
@@ -39,14 +36,12 @@ class="hl kwb">Types</span>: <span class="hl kwe">full</span>
 class="hl kwb">Types</span>: <span class="hl kwe">full</span>
 <span class="hl kwb">Name</span>: "help\dutch"; <span class="hl kwb">Description</span>: "Dutch"; <span
 class="hl kwb">Types</span>: <span class="hl kwe">full</span></pre>
-      <div class="absaz">В приведенном выше примере создаётся четыре компонента:
+      <p>В приведенном выше примере создаётся четыре компонента:
         компонент "<tt>main</tt>" будет установлен, если пользователь выберет
         тип установки "<tt>full</tt>" или "<tt>compact</tt>". Компонент "<tt>help</tt>",
         имеющий два дочерних компонента, будет установлен только в том случае,
-        если пользователь выберет тип установки "<tt>full</tt>".</div>
-      <br />
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+        если пользователь выберет тип установки "<tt>full</tt>".</p>
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Name">Name</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">

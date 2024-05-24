@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: GetSpaceOnDisk64</title>
@@ -18,30 +18,27 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: GetSpaceOnDisk64</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function GetSpaceOnDisk64(const Path: String; var Free, Total:
-          Int64): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Позволяет получить размер общего и свободного
-        пространства на диске в байтах. Параметр <i>Path</i> определяет каталог
-        на диске или ресурс в сети (UNC-путь). Это может быть корневой каталог
-        (например, <tt>C:\</tt>), или существующий подкаталог. В случае успеха
-        возвращает значение <tt>True</tt>, иначе <tt>False</tt>.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetSpaceOnDisk64(const Path: String; var Free, Total: Int64): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Позволяет получить размер общего <tt>Total</tt> и свободного <tt>Free</tt>
+        пространства на диске в байтах. Параметр <tt>Path</tt> определяет
+        каталог на диске или ресурс в сети (UNC-путь). Это может быть корневой
+        каталог (например, <code>C:\</code>), или существующий подкаталог. В
+        случае успеха возвращает значение <tt>True</tt>, иначе <tt>False</tt>.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   Path: String;
   FreeBytes, TotalBytes: Int64;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Получаем объём свободного места в байтах на диске с каталогом "Program Files"</span>
-  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
+  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
 class="hl str">'</span>);
-  <span class="hl kwb">if</span> GetSpaceOnDisk64(Path, FreeBytes, TotalBytes) <span
+  <span class="hl kwb">if</span> GetSpaceOnDisk64(Path, FreeBytes, TotalBytes) <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    MsgBox(<span class="hl str">'Доступно '</span> + IntToStr(FreeBytes) + <span
+    MsgBox(<span class="hl str">'Доступно '</span> + IntToStr(FreeBytes) + <span
 class="hl str">' байт по пути '</span> +
       Path, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>
@@ -49,8 +46,8 @@ class="hl str">' байт по пути '</span> +
     <span class="hl slc">// ошибка выполнения функции</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_getspaceondisk.htm">GetSpaceOnDisk</a>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_getspaceondisk.htm">GetSpaceOnDisk</a>
       </p>
     </div>
   </body>

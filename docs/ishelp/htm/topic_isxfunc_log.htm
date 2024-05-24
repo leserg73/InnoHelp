@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Log</title>
@@ -18,21 +18,18 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: Log</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>procedure Log(const S: String);</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет запись указанной строки в файл журнала
-        установки.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Вызов этой функции игнорируется, если в командной
-        строке не указан параметр <a href="topic_setupcmdline.htm">/LOG</a> или
-        не задана директива <a href="topic_setup_setuplogging.htm">SetupLogging</a>
-        в секции <tt>[Setup]</tt>, которые включают создание журнала установки.</div>
-      <br />
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure Log(const S:
+          String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет запись указанной строки <tt>S</tt> в файл журнала
+        установки/удаления и/или отображает в окне отладки IDE компилятора.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Вызов этой функции игнорируется, если создание журнала не включено (с
+        помощью параметра командной строки <a href="topic_setupcmdline.htm">/LOG</a>
+        или директивы <a href="topic_setup_setuplogging.htm">SetupLogging</a> в
+        секции <tt>[Setup]</tt>, или директивы <a href="topic_setup_uninstalllogging.htm">UninstallLogging</a>
+        в секции <tt>[Setup]</tt>, или режима отладки в IDE компилятора).</p>
     </div>
   </body>
 </html>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Setup]</title>
@@ -18,22 +18,20 @@
   <body>
     <h1 class="topicheading">Секция [Setup]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Эта секция содержит глобальные директивы, которые
+      <p>Эта секция содержит глобальные директивы, которые
         используются как программой установки, так и программой удаления.
         Определённые директивы этой секции необходимы для создания любого
-        инсталлятора. Ниже приведен пример секции <tt>[Setup]</tt>:</div>
+        инсталлятора. Ниже приведен пример секции <tt>[Setup]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Setup]</span>
 <span class="hl kwb">AppName</span>=My Program
 <span class="hl kwb">AppVersion</span>=<span class="hl num">1.5</span>
 <span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{autopf}</span>\My Program
 <span class="hl kwb">DefaultGroupName</span>=My Program</pre>
-      <div class="absaz">По умолчанию все начальные и конечные пробелы в
+      <p>По умолчанию все начальные и конечные пробелы в
         значении директивы будут удалены. Этого можно избежать, если заключить
-        значение параметра в двойные кавычки (<tt>"</tt>).</div>
-      <br />
-      <div class="absaz">В секции <tt>[Setup]</tt> поддерживаются следующие
-        директивы:</div>
+        значение параметра в двойные кавычки (<tt>"</tt>).</p>
+      <p>В секции <tt>[Setup]</tt> поддерживаются следующие
+        директивы:</p>
       <p>(выделенные <b>жирным</b> шрифтом — являются обязательными)</p>
       <h2 class="heading">Директивы компиляции</h2>
       <ul>
@@ -85,12 +83,10 @@
         <li class="compact"><a href="topic_setup_versioninfotextversion.htm">VersionInfoTextVersion</a></li>
         <li class="compact"><a href="topic_setup_versioninfoversion.htm">VersionInfoVersion</a></li>
       </ul>
-      <br />
       <h2 class="heading">Директивы установки</h2>
-      <div class="absaz"><b>Функционал:</b> эти директивы влияют на работу
+      <p><b>Функционал:</b> эти директивы влияют на работу
         программы установки или же сохраняются и используются программой
-        удаления позднее.</div>
-      <br />
+        удаления позднее.</p>
       <ul>
         <li class="compact"><a href="topic_setup_allowcancelduringinstall.htm">AllowCancelDuringInstall</a></li>
         <li class="compact"><a href="topic_setup_allownetworkdrive.htm">AllowNetworkDrive</a></li>
@@ -165,6 +161,7 @@
         <li class="compact"><a href="topic_setup_uninstalldisplayname.htm">UninstallDisplayName</a></li>
         <li class="compact"><a href="topic_setup_uninstalldisplaysize.htm">UninstallDisplaySize</a></li>
         <li class="compact"><a href="topic_setup_uninstallfilesdir.htm">UninstallFilesDir</a></li>
+        <li class="compact"><a href="topic_setup_uninstalllogging.htm">UninstallLogging</a></li>
         <li class="compact"><a href="topic_setup_uninstalllogmode.htm">UninstallLogMode</a></li>
         <li class="compact"><a href="topic_setup_uninstallrestartcomputer.htm">UninstallRestartComputer</a></li>
         <li class="compact"><a href="topic_setup_updateuninstalllogappname.htm">UpdateUninstallLogAppName</a></li>
@@ -177,10 +174,8 @@
         <li class="compact"><a href="topic_setup_useprevioususerinfo.htm">UsePreviousUserInfo</a></li>
         <li class="compact"><a href="topic_setup_userinfopage.htm">UserInfoPage</a></li>
       </ul>
-      <br />
-      <div class="absaz"><b>Оформление:</b> эти директивы влияют только на
-        внешний вид программы установки.</div>
-      <br />
+      <h2 class="heading">Оформление</h2>
+      <p>Эти директивы влияют только на внешний вид программы установки.</p>
       <ul>
         <li class="compact"><a href="topic_setup_appcopyright.htm">AppCopyright</a></li>
         <li class="compact"><a href="topic_setup_backcolor.htm">BackColor</a></li>
@@ -203,11 +198,9 @@
         <li class="compact"><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a></li>
         <li class="compact"><a href="topic_setup_wizardstyle.htm">WizardStyle</a></li>
       </ul>
-      <br />
       <h2 class="heading">Устаревшие директивы</h2>
-      <div class="absaz">Эти директивы уже устарели и не должны больше
-        использоваться в новых сценариях.</div>
-      <br />
+      <p>Эти директивы уже устарели и не должны больше
+        использоваться в новых сценариях.</p>
       <ul>
         <li class="compact"><a href="topic_setup_alwayscreateuninstallicon.htm">AlwaysCreateUninstallIcon</a></li>
         <li class="compact"><a href="topic_setup_disableappenddir.htm">DisableAppendDir</a></li>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: SetupIconFile</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: SetupIconFile</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -31,27 +30,21 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива позволяет указать другой значок, который
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива позволяет указать другой значок, который
         будет использоваться программой установки/удаления. При сборке
         инсталлятора файл значка должен находиться в <a href="topic_sourcedirectorynotes.htm">исходном
           каталоге</a> сценария, в противном случае необходимо указать полный
         путь к файлу или путь с приставкой "<tt>compiler:</tt>", тогда
-        компилятор будет искать его в собственном каталоге.</div>
-      <br />
-      <div class="absaz">При создании собственного или использовании другого
+        компилятор будет искать его в собственном каталоге.</p>
+      <p>При создании собственного или использовании другого
         значка рекомендуется включать в него как минимум следующие размеры
-        изображений: 16x16, 32x32, 48x48, 64x64 и 256x256.</div>
-      <br />
-      <div class="absaz">Если эта директива не указана или имеет пустое значение,
+        изображений: 16x16, 32x32, 48x48, 64x64 и 256x256.</p>
+      <p>Если эта директива не указана или имеет пустое значение,
         то будет использоваться встроенный значок, поддерживающий перечисленные
-        выше размеры.</div>
-      <br />
-      <div class="absaz">Чтобы вновь использовать старый значок программы
-        установки, укажите директиву со значением <tt>compiler:SetupClassicIcon.ico</tt>.</div>
-      <br />
+        выше размеры.</p>
+      <p>Чтобы вновь использовать старый значок программы
+        установки, укажите директиву со значением <tt>compiler:SetupClassicIcon.ico</tt>.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">SetupIconFile</span>=MyProgSetup.ico</pre>

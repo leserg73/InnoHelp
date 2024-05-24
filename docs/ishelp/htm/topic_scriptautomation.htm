@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Использование COM-объектов</title>
@@ -18,16 +18,14 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: Использование COM-объектов</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Pascal-код сценария может обращаться к методам и
+      <p>Pascal-код сценария может обращаться к методам и
         свойствам COM (также известным как OLE или ActiveX) посредством
         поддержки объектов автоматизации COM. Это позволяет получить доступ,
         например, к стандартным COM-серверам Windows, пользовательским
         COM-серверам, DLL-библиотекам Visual Basic ActiveX и сборкам .NET,
-        используя технологию COM Interop.</div>
-      <br />
+        используя технологию COM Interop.</p>
       <dl>
-        <dt><b>Интерфейс <span style="color: #990000;">IDispatch</span></b></dt>
+        <h2 class="heading">Интерфейс <span style="color: #990000;">IDispatch</span></h2>
         <dd>
           <p>Существует две поддерживаемые функции для инициализации объектов
             автоматизации COM на базе интерфейса IDispatch: <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
@@ -62,7 +60,7 @@
               ErrorCode);</tt> и добавьте переменную <tt>ErrorCode</tt> с типом
             <tt>Integer</tt>. </p>
         </dd>
-        <dt><b>Интерфейс <span style="color: #990000;">IUnknown</span></b></dt>
+        <h2 class="heading">Интерфейс <span style="color: #990000;">IUnknown</span></h2>
         <dd>
           <p>Если интерфейс IDispatch не реализуется объектом, то можно
             воспользоваться интерфейсом IUnknown.</p>
@@ -91,7 +89,7 @@
             В нём рассматривается использование объектов автоматизации COM на
             базе интерфейса IUnknown.</p>
         </dd>
-        <dt><b>Общие положения</b></dt>
+        <h2 class="heading">Общие положения</b></h2>
         <dd>
           <p>СОМ-объекты освобождаются автоматически, когда выходят из области
             видимости. Не существует никаких функций для их "уничтожения" или

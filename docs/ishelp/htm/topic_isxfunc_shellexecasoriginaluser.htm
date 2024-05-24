@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: ShellExecAsOriginalUser</title>
@@ -18,31 +18,25 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: ShellExecAsOriginalUser</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function ShellExecAsOriginalUser(const Verb, Filename, Params,
-          WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var
-          ErrorCode: Integer): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Открывает указанный файл или выполняет другое действие,
-        заданное параметром <i>Verb</i>, используя те же учетные данные
-        пользователя (как правило не повышенные), который запустил программу
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ShellExecAsOriginalUser(const Verb, Filename, Params, WorkingDir:
+          String; const ShowCmd: Integer; const Wait: TExecWait; var ErrorCode:
+          Integer): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Открывает указанный файл или выполняет другое действие, заданное
+        параметром <tt>Verb</tt>, используя те же учётные данные пользователя
+        (как правило без повышенных привилегий), который запустил программу
         установки. Более подробную информацию смотрите в описании функции <a href="topic_isxfunc_shellexec.htm">ShellExec</a>
-        и в секции <tt>[Run]</tt> по флагу <tt>runasoriginaluser</tt>.</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Эта функция не поддерживается во время деинсталляции.</div>
-      <br />
-      <div class="absaz">В очень необычных случаях отказа (например, если
-        первоначальный процесс установки неожиданно прекратится) эта функция
-        может вызвать исключение вместо того, чтобы просто вернуть значение <tt>False</tt>.</div>
-      <br />
-      <div class="absaz">Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+        и в описании секции <tt>[Run]</tt> по флагу <tt>runasoriginaluser</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Эта функция не поддерживается во время деинсталляции.</p>
+      <p>В очень необычных случаях отказа (например, если первоначальный процесс
+        установки неожиданно прекратится) эта функция может вызвать исключение
+        вместо того, чтобы просто вернуть значение <tt>False</tt>.</p>
+      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок на MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</div>
-      <br />
+          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
     </div>
   </body>
 </html>

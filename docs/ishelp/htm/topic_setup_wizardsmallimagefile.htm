@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: WizardSmallImageFile</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: WizardSmallImageFile</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -31,26 +30,21 @@
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива определяет малое изображение, которое
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива определяет малое изображение, которое
         отображается в правом верхнем углу на страницах мастера
         установки/удаления. Принимает один или несколько файлов изображений в
         формате BMP, также поддерживает маску файловых имён. При сборке
         инсталлятора файлы изображений должны находиться <a href="topic_sourcedirectorynotes.htm">исходном
           каталоге</a> сценария, в противном случае необходимо указывать полные
         пути или пути с приставкой "<i>compiler:</i>", тогда компилятор будет
-        искать эти файлы в собственном каталоге.</div>
-      <br />
-      <div class="absaz">256-цветные изображения могут не корректно показаны в
-        256-цветном режиме, т.к. он не поддерживает обработку палитры.</div>
-      <br />
-      <div class="absaz">Если указано несколько файлов, программа установки
+        искать эти файлы в собственном каталоге.</p>
+      <p>256-цветные изображения могут не корректно показаны в
+        256-цветном режиме, т.к. он не поддерживает обработку палитры.</p>
+      <p>Если указано несколько файлов, программа установки
         автоматически выберет из них тот, который лучше всего соответствует
         системным параметрам DPI. Рекомендуется использовать следующие размеры
-        (в пикселях) изображений согласно DPI:</div>
-      <br />
+        (в пикселях) изображений согласно DPI:</p>
       <table>
         <tbody>
           <tr>
@@ -83,19 +77,17 @@
           </tr>
         </tbody>
       </table>
-      <div class="absaz">Если эта директива не указана или имеет пустое значение,
+      <p>Если эта директива не указана или имеет пустое значение,
         то будут использоваться встроенные изображения мастера установки,
-        поддерживающие несколько настроек DPI.</div>
-      <br />
-      <div class="absaz">Чтобы вновь использовать старое малое изображение мастера
-        установки, укажите директиву со значением <tt>compiler:WizClassicSmallImage.bmp</tt>.</div>
-      <br />
+        поддерживающие несколько настроек DPI.</p>
+      <p>Чтобы вновь использовать старое малое изображение мастера
+        установки, укажите директиву со значением <tt>compiler:WizClassicSmallImage.bmp</tt>.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">WizardSmallImageFile</span>=mysmallimage.bmp,mysmallimage2.bmp</pre>
       </div>
-      <p><b>См. также:</b><br />
-        <a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />
         <a href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a><br />
         <a href="topic_setup_wizardimagestretch.htm">WizardImageStretch</a></p>
     </div>

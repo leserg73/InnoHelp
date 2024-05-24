@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: Format</title>
@@ -18,21 +18,39 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: Format</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function Format(const Format: string; const Args: array of const):
-          string;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Форматирует последовательность аргументов в открытом
-        массиве <i>Args</i>. Форматирование управляется строковым форматом
-        функции и результат возвращается в виде строки.</div>
-      <br />
-      <div class="absaz">Если строка имеет недопустимый формат, передаётся
-        недостаточное количество аргументов или какие-либо аргументы имеют
-        неправильный тип, будет вызвано исключение.</div>
-      <br />
-      <div><b>Пример:</b></div>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function Format(const
+          Format: string; const Args: array of const): string;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Форматирует в указанной строке <tt>Format</tt> последовательность
+        простых типов данных из массива <tt>Args</tt> (<i>список аргументов</i>).
+        Форматирование управляется строковым форматом функции и результат
+        возвращается в виде преобразованной строки.</p>
+      <p>В простых условиях каждые данные (<i>спецификаторы формата</i>),
+        форматирующие подстроку, начинаются знаком <tt>%</tt> и заканчиваются
+        индикатором типа данных:</p>
+      <pre class="indent"><b>d</b> = Десятичный (целое число)
+<b>e</b> = Научный
+<b>f</b> = Фиксированный
+<b>g</b> = Генерал
+<b>m</b> = Денежный
+<b>n</b> = Числовой (с плавающей точкой)
+<b>p</b> = Указатель
+<b>s</b> = Строковый
+<b>u</b> = Десятичный без знака
+<b>x</b> = Шестнадцатеричный
+</pre>
+      <p>Общий форма записи спецификатора формата следующая:</p>
+      <code class="indent">%[Index:][-][Width][.Precision]Type</code>
+      <p>В квадратных скобках указаны необязательные параметры, определяющие
+        особенности форматирования данных: <code>[Index]</code> — индекс
+        аргумента,
+        <code> [-]</code> — признак выравнивания по левому краю; <code>[Width]</code> — ширина
+        вывода; <code>[.Precision]</code> — точность вывода.</p>
+      <p>Если строка имеет недопустимый формат, передаётся недостаточное
+        количество аргументов или какие-либо аргументы имеют неправильный тип,
+        будет вызвано исключение.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   S: <span class="hl kwb">String</span>;
   I: Integer;

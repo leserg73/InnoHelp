@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: DelTree</title>
@@ -18,36 +18,28 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: DelTree</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function DelTree(const Path: String; const IsDir, DeleteFiles,
-          DeleteSubdirsAlso: Boolean): Boolean;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выполняет удаление указанного каталога, если для
-        параметра <i>IsDir</i> установлено значение <tt>True</tt>, или удаляет
-        файлы/каталоги, соответствующих маске, если для параметра <i>IsDir</i>
-        установлено значение <tt>False</tt>. Возвращает значение <tt>True</tt>,
-        если всё было успешно удалено.</div>
-      <br />
-      <div class="absaz">Если для параметра <i>DeleteFiles</i> установлено
-        значение <tt>True</tt>, то будут удалены все файлы в указанном каталоге
-        при условии, что параметр <i>IsDir</i> также установлен в <tt>True</tt>.
-        Если же параметр <i>IsDir</i> установлен в <tt>False</tt>, то будут
-        удалены файлы, соответствующие маске (включая файлы с атрибутами '<i>скрытый</i>',
-        '<i>системный</i>' и '<i>только для чтения</i>').</div>
-      <br />
-      <div class="absaz">Если оба параметра <i>DeleteFiles</i> и <i>DeleteSubdirsAlso</i>
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function DelTree(const
+          Path: String; const IsDir, DeleteFiles, DeleteSubdirsAlso: Boolean):
+          Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет удаление указанного каталога <tt>Path</tt>, если для
+        параметра <tt>IsDir</tt> установлено значение <tt>True</tt>. Если же
+        для параметра <tt>IsDir</tt> установлено значение <tt>False</tt>, то
+        будут удалены файлы/каталоги в соответствии с заданной маской. Функция
+        возвращает значение <tt>True</tt>, если всё было успешно удалено.</p>
+      <p>Если для параметров <tt>DeleteFiles</tt> и <tt>IsDir</tt> установлено
+        значение <tt>True</tt>, то в указанном каталоге будут удалены все
+        файлы. Если же параметр <tt>IsDir</tt> установлен в <tt>False</tt>, то
+        будут удалены файлы в соответствии с заданной маской (включая файлы с
+        атрибутами '<i>скрытый</i>', '<i>системный</i>' и '<i>только для чтения</i>').</p>
+      <p>Если оба параметра <tt>DeleteFiles</tt> и <tt>DeleteSubdirsAlso</tt>
         установлены в <tt>True</tt>, то вместе файлами также будут удалены и
-        подкаталоги (со всем содержимым).</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz">Эта функция удалит каталоги, которые являются точками
-        повторной обработки, но не будет рекурсивно удалять файлы/каталоги
-        внутри них.</div>
-      <br />
-      <div><b>Пример:</b></div>
+        подкаталоги (со всем содержимым).</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Эта функция удалит каталоги, которые являются точками повторной
+        обработки, но не будет рекурсивно удалять файлы/каталоги внутри них.</p>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   <span class="hl slc">// Удаление каталога C:\Test со всем содержимым, включая подкаталоги</span>
   DelTree(<span class="hl str">'C:\Test'</span>, True, True, True);

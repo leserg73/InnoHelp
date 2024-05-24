@@ -1,6 +1,6 @@
 /*
   Inno Setup
-  Copyright (C) 1997-2021 Jordan Russell
+  Copyright (C) 1997-2024 Jordan Russell
   Portions by Martijn Laan
   For conditions of distribution and use, see LICENSE.TXT.
 
@@ -8,149 +8,221 @@
 */
 
 body {
-	font-size: 13px;
-	font-family: 'Verdana', 'Helvetica', sans-serif;
-	font-weight: normal;
-	margin: 0;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 0;
+    color: #272727;
 }
-pre, tt {
-	font-size: 13px;
-	font-family: 'Courier New', 'Courier', monospace;
+
+pre, tt, code {
+    /* for CHM style */
+    /*font-size: 13px;
+    font-family: 'Courier New', 'Courier', monospace;*/
+    /* for Web style */
+    font: 13px/19px monospace;
 }
+
+tt {
+    /*padding: 0 1px*/
+    /* Modern style for code&directives */
+    color: inherit;
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
 h1, h2, h3, h4, h5, blockquote, form, ol, ul, li, dl, dd, table, div.margined {
-	/* only the end of paragraphs etc. has a margin */
-	margin-top: 0;
-	margin-bottom: 0.6em;
-	font-size: 12px;
-	font-family: verdana, Helvetica, Sans-Serif;
-	font-weight: normal;
+    /* only the end of paragraphs etc. has a margin */
+    margin-top: 0;
+    margin-bottom: 0.6em;
+    font-weight: normal;
 }
+
 p {
-	font-size: 100%;
-	text-indent: 0.7em;
-	/* Отступ первой строки */
-	text-align: justify;
-	/* Выравнивание по ширине */
+    margin-right: 5px;
+    text-indent: 0.7em;
+    /* Отступ первой строки */
+    text-align: justify;
+    /* Выравнивание по ширине */
 }
+
 .null {
-	text-align: left;
+    text-align: left;
 }
+
+.nill {
+    background-color: inherit;
+    padding: 0 0;
+    border-radius: 0;
+}
+
 .prototip {
-	background-color: lightblue;
-	padding-left: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	-webkit-border-radius: 15px 0px 0px 0px;
-	-moz-border-radius: 15px 0px 0px 0px;
-	border-radius: 15px 0px 0px 0px;
-	text-align: left;
+    background-color: lightblue;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    -webkit-border-radius: 15px 0px 0px 0px;
+    -moz-border-radius: 15px 0px 0px 0px;
+    border-radius: 15px 0px 0px 0px;
+    margin-bottom: 10px;
+    text-align: left;
 }
+
 .prototip1 {
-	background-color: #e7f9ff;
-	padding-left: 10px;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	margin-top: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-	-webkit-border-radius: 0px 0px 15px 0px;
-	-moz-border-radius: 0px 0px 15px 0px;
-	border-radius: 0px 0px 15px 0px;
-	text-align: left;
+    background-color: #e7f9ff;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    -webkit-border-radius: 0px 0px 15px 0px;
+    -moz-border-radius: 0px 0px 15px 0px;
+    border-radius: 0px 0px 15px 0px;
+    text-align: left;
 }
+
 .sintax {
-	background-color: #dfce62;
-	padding-left: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	-webkit-border-radius: 15px 0px 0px 0px;
-	-moz-border-radius: 15px 0px 0px 0px;
-	border-radius: 15px 0px 0px 0px;
-	text-align: left;
+    background-color: #dfce62;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    -webkit-border-radius: 15px 0px 0px 0px;
+    -moz-border-radius: 15px 0px 0px 0px;
+    border-radius: 15px 0px 0px 0px;
+    text-align: left;
 }
+
 .sintax1 {
-	background-color: #fff9d5;
-	padding-left: 10px;
-	padding-bottom: 20px;
-	padding-top: 20px;
-	margin-top: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
-	-webkit-border-radius: 0px 0px 15px 0px;
-	-moz-border-radius: 0px 0px 15px 0px;
-	border-radius: 0px 0px 15px 0px;
-	text-align: left;
+    background-color: #fff9d5;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 14px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    -webkit-border-radius: 0px 0px 15px 0px;
+    -moz-border-radius: 0px 0px 15px 0px;
+    border-radius: 0px 0px 15px 0px;
+    text-align: left;
 }
+
+.sinfix1 {
+    margin-left: 0;
+}
+
 .func {
-	background-color: #d9e9f8;
-	font-weight: bold;
-	border-left: 7px solid #26428b;
-	color: darkblue;
-	padding-left: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 5px;
-	-webkit-border-radius: 15px 15px 15px 15px;
-	-moz-border-radius: 15px 15px 15px 15px;
-	border-radius: 15px 15px 15px 15px;
-	text-align: left;
+    /* background-color: #d9e9f8; */
+    background: rgb(217, 233, 248);
+    background: -moz-linear-gradient(90deg, rgba(217, 233, 248, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: -webkit-linear-gradient(90deg, rgba(217, 233, 248, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(90deg, rgba(217, 233, 248, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d9e9f8", endColorstr="#ffffff", GradientType=1);
+    font-weight: bold;
+    /*border-left: 7px solid #b5d3ee;*/
+    color: darkblue;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 5px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    text-align: left;
 }
+
 .const {
-	background-color: #f4e9f9;
-	font-weight: bold;
-	border-left: 7px solid #804b9f;
-	color: #53097f;
-	padding-left: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 5px;
-	-webkit-border-radius: 15px 15px 15px 15px;
-	-moz-border-radius: 15px 15px 15px 15px;
-	border-radius: 15px 15px 15px 15px;
-	text-align: left;
+    /* background-color: #f4e9f9; */
+    background: rgb(244, 233, 249);
+    background: -moz-linear-gradient(90deg, rgba(244, 233, 249, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: -webkit-linear-gradient(90deg, rgba(244, 233, 249, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(90deg, rgba(244, 233, 249, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4e9f9", endColorstr="#ffffff", GradientType=1);
+    /*font-weight: bold;*/
+    /*border-left: 7px solid #ceb3dd;*/
+    color: #410166;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 5px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    text-align: left;
 }
+
+.archid {
+    /* background-color: #f4fff9; */
+    background: rgb(238, 245, 255);
+    background: -moz-linear-gradient(90deg, rgba(238, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: -webkit-linear-gradient(90deg, rgba(238, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(90deg, rgba(238, 245, 255, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eef5ff", endColorstr="#ffffff", GradientType=1);
+    /*font-weight: bold;*/
+    /*border-left: 7px solid #cce1b7;*/
+    color: #021a02;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 5px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    text-align: left;
+    letter-spacing: 0.08em;
+    /* font-family: 'Courier New', 'Courier', monospace; */
+}
+
 .absaz {
-	font-size: 100%;
-	text-indent: 0.7em;
-	/* Отступ первой строки */
-	text-align: justify;
-	/* Выравнивание по ширине */
-	margin-left: 0px;
-	margin-right: 5px;
+    font-size: 100%;
+    text-indent: 0.7em;
+    /* Отступ первой строки */
+    text-align: justify;
+    /* Выравнивание по ширине */
+    margin-left: 0px;
+    margin-right: 5px;
 }
+
 .desct {
-	font-weight: bold;
-	color: #006600;
-	padding-bottom: 10px;
-	padding-top: 20px;
-	text-align: left;
-	text-decoration: underline;
+    font-weight: bold;
+    color: #006600;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    text-align: left;
+    text-decoration: underline;
 }
+
 ol, ul, dd {
-	/* specify both of these for firefox compat. */
-	margin-left: 0;
-	padding-left: 2em;
-	text-align: justify;
-	/* Выравнивание по ширине */
+    /* specify both of these for firefox compat. */
+    margin-left: 0;
+    padding-left: 2em;
+    margin-right: 5px;
+    text-align: justify;
+    /* Выравнивание по ширине */
 }
+
 table {
-	/* equivalent of cellspacing="0" */
-	border-collapse: collapse;
-	margin-left: 1.0em;
+    /* equivalent of cellspacing="0" */
+    border-collapse: collapse;
+    margin-left: 1.0em;
 }
 
 th {
-	font-weight: bold;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: center;
-	background-color: #4c98af;
-	color: white;
-	border-left: 1px solid #ffffff;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4c98af;
+    color: white;
+    border-left: 1px solid #ffffff;
 }
 
 /* tr:nth-child(odd){background-color: #FFFFFF;} */
@@ -158,252 +230,337 @@ th {
 /* tr:nth-child(even){background-color: #EEEEEE;} */
 
 td {
-	/* equivalent of cellpadding="0" */
-	padding: 5px;
-	/* note: "baseline" is broken on IE6; it only aligns correctly when there's
+    /* equivalent of cellpadding="0" */
+    padding: 5px;
+    /* note: "baseline" is broken on IE6; it only aligns correctly when there's
 	a single line of text, and that text is directly inside the <TD> tag
 	(not inside a <DIV>). otherwise it behaves more like "top".
 	(firefox 1.5 and opera 9 don't have this problem) */
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
+
 a:link, a:visited, a:active {
-	color: #0000FF;
-	/* color: #008000; */
+    /* color: #0000FF; */
+    color: #008000;
 }
+
 a.new:link, a.new:visited, a.new:active {
-	color: #990000;
-	font-weight: bold;
+    color: #990000;
+    font-weight: bold;
 }
+
 a.new1:link, a.new1:visited, a.new1:active {
-	color: #804000;
+    color: #804000;
 }
+
 a.new2:link, a.new2:visited, a.new2:active {
-	color: #000099;
-	font-weight: bold;
+    color: #000099;
+    font-weight: bold;
 }
+
 a.highlighted {
-	background-color: #ffff00;
-	color: black;
-	padding-top: 40px;
-	margin-top: -40px;
-	-webkit-background-clip: content-box;
-	background-clip: content-box;
+    background-color: #ffff00;
+    color: black;
+    padding-top: 55px;
+    margin-top: -55px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
 }
+
 .small {
-	/* what we want is an 8pt font. 8pt/10pt = 80%, but on firefox that
+    /* what we want is an 8pt font. 8pt/10pt = 80%, but on firefox that
 	   actually creates a font smaller than 8pt, so use 82% */
-	font-size: 82%;
+    font-size: 82%;
 }
+
 .heading {
-	margin-top: 0.6em;
-	font-size: 120%;
-	font-weight: bold;
+    margin-top: 1.6em;
+    font-size: 16px;
+    font-weight: bold;
 }
+
 .notopmargin {
-	margin-top: 0;
+    margin-top: 0;
 }
+
 .notopmarginX {
-	margin-top: -10px;
+    margin-top: -10px;
+    text-indent: 0;
+    padding-left: 25px;
 }
+
 .indent {
-	margin-left: 2em;
+    margin-left: 2em;
+    text-indent: 0;
+    padding-bottom: 10px;
 }
+
 pre.nomargin {
-	margin-left: 10px;
+    margin-left: 10px;
+    line-height: normal;
 }
+
 pre.hl {
-	color: #000000;
-	background-color: #f8f8f8;
-	margin-left: 10px;
+    color: #272727;
+    background-color: #f8f8f8;
+    padding-top: 0;
+    margin-left: 0;
+    margin-top: 2px;
+    line-height: normal;
 }
+
 .hl.num {
-	color: #800000;
+    color: #800000;
 }
+
 .hl.esc {
-	color: #000000;
+    color: #000000;
 }
+
+.hl.sng {
+    color: #800000;
+}
+
 .hl.str {
-	color: #800000;
+    color: #800000;
 }
+
 .hl.pps {
-	color: #000000;
+    color: #000000;
 }
+
 .hl.slc {
-	color: #006600;
-	font-style: italic;
+    color: #006600;
+    font-style: italic;
 }
+
 .hl.com {
-	color: #006600;
-	font-style: italic;
+    color: #006600;
+    font-style: italic;
 }
+
 .hl.ppc {
-	color: #c04040;
+    color: #c04040;
 }
+
 .hl.opt {
-	color: #000000;
+    color: #000000;
 }
+
 .hl.ipl {
-	color: #9e5dff;
+    color: #9e5dff;
 }
+
 .hl.lin {
-	color: #303030;
+    color: #303030;
 }
+
 .hl.kwa {
-	color: #000000;
-	font-weight: bold;
+    color: #000000;
+    font-weight: bold;
 }
+
 .hl.kwb {
-	color: #0000ff;
+    color: #0000ff;
 }
+
 .hl.kwc {
-	color: #8000cc;
+    color: #8000cc;
 }
+
 .hl.kwd {
-	color: #000050;
-	font-weight: bold;
+    color: #000050;
+    font-weight: bold;
 }
+
 .hl.kwe {
-	color: #0060c0;
+    color: #0060c0;
 }
+
 .hl.kwf {
-	color: #990000;
+    color: #990000;
 }
+
 li.compact {
-	margin-bottom: 2px;
+    margin-bottom: 2px;
 }
+
 .topicheading {
-	background: ButtonFace;
-	color: WindowText;
-	padding: 6px 8px;
-	margin: 0;
-	border-bottom: 1px solid #d0d0d0;
-	font-size: 120%;
-	font-weight: bold;
-	position: fixed;  
-	top: 0;  
-	z-index: 100;
-	width: 100%;
+    background: ButtonFace;
+    color: WindowText;
+    padding: 6px 8px;
+    margin: 0;
+    border-bottom: 1px solid #d0d0d0;
+    font-size: 18px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
 }
+
 .topicbody {
-	padding: 15px 15px 5px 10px;
-	margin-top: 20px;
+    padding: 0px 10px 5px 15px;
+    margin-top: 55px;
 }
+
 .topicbody_w {
-	font-size: 12px;
-	font-family: Verdana, Helvetica, Sans-Serif, Tahoma;
-	font-weight: normal;
-	padding: 15px 15px 5px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 15px 15px 5px 10px;
 }
+
 .examplebox {
-	background: #f8f8f8;
-	color: black;
-	padding: 4px;
-	margin-left: 10px;
-	border: 1px solid #e0e0e0;
-	/* on IE6, if the content of the box is wider than the page,
+    background: #f8f8f8;
+    color: #272727;
+    line-height: normal;
+    padding-top: 10px;
+    /* padding-bottom: 10px; */
+    padding-left:20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    border: 1px solid #e0e0e0;
+    /* on IE6, if the content of the box is wider than the page,
 	   the width of the box is increased. on firefox 1.5, by default
 	   the box width stays the same, and the content is drawn outside
 	   the box. that looks ugly. "overflow: auto" tells it to put a
 	   scroll bar on the box when the content is too wide. (IE6
 	   apparently ignores "overflow: auto", at least here.) */
-	overflow: auto;
+    overflow: auto;
 }
+
 .exampleheader {
-	font-size: 82%;
-	font-weight: bold;
-	margin-bottom: 0.6em;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 0.6em;
 }
+
 dt.paramlist {
-	margin-bottom: 0.6em;
-	color: darkblue; /* #0000ff; */
-	border-left: 7px solid darkblue; /* #4b8ed1;*/
-	padding-left: 5px;
-	margin-left: 5px;
+    font-size: 15px;
+    margin-bottom: 0.6em;
+    color: darkblue;
+    /* #0000ff; */
+    /*border-left: 5px solid darkblue;*/
+    border-bottom: 1px solid darkblue;
+    /* #4b8ed1;*/
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 1px;
+    margin-top: 30px;
+    margin-left: 5px;
+    border-image: linear-gradient(to right, darkblue, white);
+    -moz-border-image: -moz-linear-gradient(left, darkblue, white);
+    -webkit-border-image: -webkit-linear-gradient(left, darkblue, white);
+    border-image-slice: 1;
+    width: 300px;
 }
+
 dd.paramlist {
-	/* give a little extra spacing between items */
-	margin-bottom: 1.2em;
+    /* give a little extra spacing between items */
+    margin-bottom: 1.2em;
 }
+
 dd.paramlist1 {
-	/* give a little extra spacing between items */
-	margin-bottom: 2em;
+    /* give a little extra spacing between items */
+    margin-bottom: 2em;
 }
+
 dt.flaglist {
-	font-weight: bold;
-	color: #0060c0;
-	/* border-left: 7px dotted #0060c0; /* #4b8ed1;*/
-	padding-left: 5px;
+    font-weight: bold;
+    color: #0060c0;
+    padding-left: 1px;
+    margin-top: 20px;
 }
+
+dt.flaglist:before {
+    color: #00468c;
+    padding: 0px 8px;
+    content: "\2023";
+}
+
 dt.cmdline {
-	/* background-color: #ffecd8; */
-	background: rgb(255,236,216);
-	background: -moz-linear-gradient(90deg, rgba(255,236,216,1) 0%, rgba(255,255,255,1) 70%);
-	background: -webkit-linear-gradient(90deg, rgba(255,236,216,1) 0%, rgba(255,255,255,1) 70%);
-	background: linear-gradient(90deg, rgba(255,236,216,1) 0%, rgba(255,255,255,1) 70%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffecd8",endColorstr="#ffffff",GradientType=1); 
-	font-weight: bold;
-	/* color: #663300; */
-	/* border: 1px ridge #7B3F04; */
-	padding-left: 10px;
-	padding-bottom: 5px;
-	padding-top: 5px;
-	margin-left: 2px;
-	-webkit-border-radius: 15px 15px 15px 15px;
-	-moz-border-radius: 15px 15px 15px 15px;
-	border-radius: 15px 15px 15px 15px;
-	text-align: left;
+    /* background-color: #ffecd8; */
+    background: rgb(255, 236, 216);
+    background: -moz-linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: -webkit-linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    background: linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffecd8", endColorstr="#ffffff", GradientType=1);
+    /*font-weight: bold;*/
+    /* color: #663300; */
+    /* border: 1px ridge #7b3f04; */
+    padding-left: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 30px;
+    margin-left: 2px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    text-align: left;
 }
+
 td.cellleft {
-	white-space: nowrap;
+    white-space: nowrap;
 }
+
 td.cellright {
-	padding-left: 2em;
+    padding-left: 2em;
 }
+
 table.setuphdr {
-	font-size: 13px;
-	font: "courier new", monospace;
-	margin: 0;
-	padding: 4px 4px;
-	width: 100%;
+    font-size: 14px;
+    font: "courier new", monospace;
+    margin: 0;
+    padding: 4px 4px;
+    width: 100%;
 }
+
 td.setuphdrl {
-	font-weight: bold;
-	white-space: nowrap;
-	padding-left: 1.2em;
-	width: 200px;
+    font-weight: bold;
+    white-space: nowrap;
+    padding-left: 1.2em;
+    width: 200px;
 }
+
 td.setuphdrr {
-	padding-left: 1em;
+    padding-left: 1em;
 }
+
 tr.setuphdrtr1 {
-	background-color: #fcf8e4;
-	border-left: 5px solid #f2b400;
+    background-color: #fcf8e4;
+    border-left: 5px solid #f2b400;
 }
+
 tr.setuphdrtr2 {
-	background-color: #ddf9de;
-	border-left: 5px solid #48a24e;
+    background-color: #ddf9de;
+    border-left: 5px solid #48a24e;
 }
+
 tr.setuphdrtr3 {
-	background-color: #fde7f2;
-	border-left: 5px solid #a34878;
+    background-color: #fde7f2;
+    border-left: 5px solid #a34878;
 }
+
 #redirectbox {
-	position: absolute;
-	background: InfoBackground;
-	color: InfoText;
-	padding: 16px 24px;
-	border: 1px solid ThreeDDarkShadow;
-	font-size: 120%;
-	font-weight: bold;
-	box-shadow: #808080 0 0 12px;
-	-moz-box-shadow: #808080 0 0 12px;
-	/* for Firefox 3.6 */
-	-webkit-box-shadow: #808080 0 0 12px;
-	/* for Chrome 6.0 */
+    position: absolute;
+    background: InfoBackground;
+    color: InfoText;
+    padding: 16px 24px;
+    border: 1px solid ThreeDDarkShadow;
+    font-size: 120%;
+    font-weight: bold;
+    box-shadow: #808080 0 0 12px;
+    -moz-box-shadow: #808080 0 0 12px;
+    /* for Firefox 3.6 */
+    -webkit-box-shadow: #808080 0 0 12px;
+    /* for Chrome 6.0 */
 }
-li {  
-	margin-left: 10px;
+
+li {
+    margin-left: 10px;
+    margin-right: 5px;
 }
+
 .highlight {
-	background: #FFFF40;
+    background: #FFFF40;
 }

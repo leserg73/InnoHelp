@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Inno Setup Preprocessor: #ifdef, #ifndef, #ifexist, #ifnexist</title>
@@ -20,57 +20,53 @@
       #ifnexist</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div  class="sintax1 notopmarginX">
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>ifdef-directive:</i>
-            </td>
-            <td class="cellright"><b>ifdef</b> &lt;ident&gt; </td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>ifndef-directive:</i>
-            </td>
-            <td class="cellright"><b>ifndef</b> &lt;ident&gt; </td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>ifexist-directive:</i>
-            </td>
-            <td class="cellright"><b>ifexist</b> &lt;expr&gt; </td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <tbody>
-          <tr>
-            <td class="cellleft" style="width: 120px;"><i>ifnexist-directive:</i>
-            </td>
-            <td class="cellright"><b>ifnexist</b> &lt;expr&gt; </td>
-          </tr>
-        </tbody>
-      </table></div>
-      <br />
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>ifdef-directive:</i></td>
+              <td class="cellright"><b>ifdef</b> &lt;ident&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>ifndef-directive:</i></td>
+              <td class="cellright"><b>ifndef</b> &lt;ident&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>ifexist-directive:</i></td>
+              <td class="cellright"><b>ifexist</b> &lt;expr&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>ifnexist-directive:</i></td>
+              <td class="cellright"><b>ifnexist</b> &lt;expr&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt style="font-weight: bold; color: #990000;">ifdef</tt>, <tt
-          style="font-weight: bold; color: #990000;">ifndef</tt>, <tt style="font-weight: bold; color: #990000;">ifexist</tt>
+      <p>Директивы <tt style="font-weight: bold; color: #990000;">ifdef</tt>,
+        <tt style="font-weight: bold; color: #990000;">ifndef</tt>, <tt style="font-weight: bold; color: #990000;">ifexist</tt>
         и <tt style="font-weight: bold; color: #990000;">ifnexist</tt> можно
-        использовать там, где необходимо применить директиву <tt><a class="new"
+        использовать там, где необходимо применить директиву <tt class="nill"><a class="new"
             href="topic_if.htm">if</a></tt>, чтобы обеспечить выполнение участка
-        кода только при соблюдении определённых условий. Состояние директивы <tt
+        кода только при соблюдении определённых условий. Состояние директивы <tt
           style="font-weight: bold; color: #990000;">ifdef</tt> является
         истинным, если указанный идентификатор был определён (найден), и
         наоборот – ложным, если идентификатор не определён или был удалён
-        директивой <tt><a class="new" href="topic_undef.htm">undef</a></tt>. Все
-        эти директивы позволяют только проверить наличие или отсутствие
-        идентификаторов, установленных директивой <tt><a class="new" href="topic_define.htm">define</a></tt>.</p>
+        директивой <tt class="nill"><a class="new" href="topic_undef.htm">undef</a></tt>.
+        Все эти директивы позволяют только проверить наличие или отсутствие
+        идентификаторов, установленных директивой <tt class="nill"><a class="new" href="topic_define.htm">define</a></tt>.</p>
       <p>Директивы <tt style="font-weight: bold; color: #990000;">ifexist</tt>
         и <tt style="font-weight: bold; color: #990000;">ifnexist</tt>
         позволяют проверить <i>наличие</i> или <i>отсутствие</i> указанного
@@ -80,7 +76,6 @@
         <tt style="font-weight: bold; color: #990000;">ifndef</tt>, <tt style="font-weight: bold; color: #990000;">ifexist</tt>
         или <tt style="font-weight: bold; color: #990000;">ifnexist</tt>,
         должен обязательно закрываться директивой <tt style="font-weight: bold; color: #990000;">endif</tt>.</p>
-      <br />
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Files]</span>
@@ -88,8 +83,8 @@
 <span class="hl slc">// Если файл существует, то выполняем команды, определенные условием.</span>
 <span class="hl slc">// Если файл НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifexist</span> <span class="hl str">"myfile.ext"</span>
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"myfile.ext"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"myfile.ext"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
 <span class="hl slc">// Конец условия ifexist.</span>
 <span class="hl kwf">#endif</span>
@@ -98,14 +93,13 @@ class="hl kwc">{app}</span>
 <span class="hl slc">// Если переменная существует, то выполняем команды, определенные условием.</span>
 <span class="hl slc">// Если переменная НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifdef</span> Enterpise
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"extra.dll"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"extra.dll"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
 <span class="hl slc">// Конец условия ifdef.</span>
 <span class="hl kwf">#endif</span>
 </pre> </div>
-      <br />
-      <h2 class="heading">См. также</h2>
+      <h2 class="heading">См. также:</h2>
       <p><a href="topic_fileexists.htm">FileExists</a></p>
     </div>
   </body>

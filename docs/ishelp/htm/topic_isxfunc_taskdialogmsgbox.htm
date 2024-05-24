@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Pascal Scripting: TaskDialogMsgBox</title>
@@ -18,41 +18,37 @@
   <body>
     <h1 class="topicheading">Pascal Scripting: TaskDialogMsgBox</h1>
     <div class="topicbody">
-      <br />
-      <div class="prototip"><b>Прототип:</b></div>
-      <p class="prototip1"><tt>function TaskDialogMsgBox(const Instruction, Text: String; const
-          Typ: TMsgBoxType; const Buttons: Cardinal; const ButtonLabels:
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          TaskDialogMsgBox(const Instruction, Text: String; const Typ:
+          TMsgBoxType; const Buttons: Cardinal; const ButtonLabels:
           TArrayOfString; const ShieldButton: Integer): Integer;</tt></p>
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Выводит на экран сообщение, используя диалоговое окно
-        задач.</div>
-      <br />
-      <b>Параметры:</b><br />
-      <br />
+      <h2 class="heading">Описание</h2>
+      <p>Выводит на экран сообщение, используя диалоговое окно задач.</p>
+      <p>  <b>Параметры:</b></p>
       <table>
         <tbody>
           <tr>
-            <td class="cellleft"><i>Instruction</i></td>
+            <td class="cellleft"><tt>Instruction</tt></td>
             <td class="cellright">Определяет текст инструкции.</td>
           </tr>
           <tr>
-            <td class="cellleft"><i>Text</i></td>
+            <td class="cellleft"><tt>Text</tt></td>
             <td class="cellright">Определяет текст сообщения.</td>
           </tr>
           <tr>
-            <td class="cellleft"><i>Typ</i></td>
+            <td class="cellleft"><tt>Typ</tt></td>
             <td class="cellright">Определяет значок, отображаемый в диалоге
               задач.<br />
-              Если установлено значение <tt>mbConfirmation</tt>, то значок
+              Если установлено значение <code>mbConfirmation</code>, то значок
               показан не будет.</td>
           </tr>
           <tr>
-            <td class="cellleft"><i>Buttons</i></td>
+            <td class="cellleft"><tt>Buttons</tt></td>
             <td class="cellright">Определяет кнопки, включённые в диалог задач.</td>
           </tr>
           <tr>
-            <td class="cellleft"><i>ButtonLabels</i></td>
+            <td class="cellleft"><tt>ButtonLabels</tt></td>
             <td class="cellright">Определяет строковый массив с метками
               используемых кнопок.<br />
               Если массив пустой, то по умолчанию будут использоваться системные
@@ -62,63 +58,59 @@
               примечания.</td>
           </tr>
           <tr>
-            <td class="cellleft"><i>ShieldButton</i></td>
+            <td class="cellleft"><tt>ShieldButton</tt></td>
             <td class="cellright">Определяет кнопку, на которой будет показан
               значок щита.<br />
               Если установлено значение 0, то значок щита показан не будет.</td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div class="absaz">Функция возвращает константу ID*, указывающую кнопку,
-        которую нажал пользователь, или 0, если в работе функции произошёл сбой
-        (что маловероятно, за исключением неверно переданных параметров или
-        нехватки системных ресурсов).</div>
-      <br />
-      <div><b>Примечание:</b></div>
-      <br />
-      <div class="absaz"><i>TMsgBoxType</i> может принимать следующие значения:</div>
-      <p><tt></tt></p>
-      <div class="null" style="margin-left: 20px;"><tt>TMsgBoxType =
-          (mbInformation, mbConfirmation, mbError, mbCriticalError);</tt></div>
-      <br />
-      <div class="absaz">Флаги, поддерживаемые параметром <tt>Buttons</tt>:</div>
-      <p><tt></tt></p>
-      <div class="null" style="margin-left: 20px;"><tt>MB_OK, MB_OKCANCEL,
-          MB_YESNOCANCEL, MB_YESNO, MB_RETRYCANCEL, MB_ABORTRETRYIGNORE</tt></div>
-      <br />
-      <div class="absaz">Если используется флаг <tt>MB_ABORTRETRYIGNORE</tt>,
-        то параметр <tt>ButtonLabels</tt> не может быть пустым массивом и метки
-        кнопок должны быть указаны в следующем порядке: <i>Retry</i>, <i>Ignore</i>,
-        <i>Abort</i>.</div>
-      <br />
-      <div class="absaz">Поддерживаемые значения для параметра <tt>ShieldButton</tt>,
-        а также возможные возвращаемые значения функции:</div>
-      <p><tt></tt></p>
-      <div class="null" style="margin-left: 20px;"><tt>IDOK, IDCANCEL, IDRETRY,
-          IDYES, IDNO, IDABORT, IDIGNORE</tt></div>
-      <br />
-      <div><b>Пример:</b></div>
+      <p>Функция возвращает константу ID*, указывающую кнопку, которую нажал
+        пользователь, или 0, если в работе функции произошёл сбой (что
+        маловероятно, за исключением неверно переданных параметров или нехватки
+        системных ресурсов).</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Класс <code>TMsgBoxType</code> представлен следующими значениями:</p>
+      <pre class="indent">TMsgBoxType = (mbInformation, mbConfirmation, mbError, mbCriticalError);</pre>
+      <p>Флаги, поддерживаемые параметром <tt>Buttons</tt>:</p>
+      <pre class="indent">MB_OK               - одна кнопка [OK]
+MB_OKCANCEL         - две кнопки [OK] и [Cancel]
+MB_ABORTRETRYIGNORE - три кнопки [Abort], [Retry] и [Ignore]
+MB_YESNOCANCEL      - три кнопки [Yes], [No] и [Cancel]
+MB_YESNO            - две кнопки [Yes] и [No]
+MB_RETRYCANCEL      - две кнопки [Retry] и [Cancel]</pre>
+      <p>Если используется флаг <code>MB_ABORTRETRYIGNORE</code>, то параметр <tt>ButtonLabels</tt>
+        не может быть пустым массивом и метки кнопок должны быть указаны в
+        следующем порядке: <i>Retry</i>, <i>Ignore</i>, <i>Abort</i>.</p>
+      <p>Поддерживаемые значения для параметра <tt>ShieldButton</tt>, а также
+        возможные возвращаемые значения функции:</p>
+      <pre class="indent">IDOK     - нажата кнопка [OK]
+IDCANCEL - нажата кнопка [Cancel]
+IDABORT  - нажата кнопка [Abort]
+IDRETRY  - нажата кнопка [Retry]
+IDIGNORE - нажата кнопка [Ignore]
+IDYES    - нажата кнопка [Yes]
+IDNO     - нажата кнопка [No]</pre>
+      <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   <span class="hl kwb">case</span> TaskDialogMsgBox(<span class="hl str">'Выбор A или B'</span>,
                         <span class="hl str">'Вы можете выбрать A или B.'</span>,   
                         <span class="hl kwe">mbInformation</span>,
-                        <span class="hl kwe">MB_YESNOCANCEL</span>, [<span class="hl str">'Я выбираю &amp;A'</span><span
-class="hl kwf">#13#10</span><span class="hl str">'Будет выбрано A.'</span>, <span
-class="hl str">'Я выбираю &amp;B'</span><span class="hl kwf">#13#10</span><span
+                        <span class="hl kwe">MB_YESNOCANCEL</span>, [<span class="hl str">'Я выбираю &amp;A'</span><span
+class="hl kwf">#13#10</span><span class="hl str">'Будет выбрано A.'</span>, <span
+class="hl str">'Я выбираю &amp;B'</span><span class="hl kwf">#13#10</span><span
 class="hl str">'Будет выбрано B.'</span>],
                         <span class="hl kwe">IDYES</span>) <span class="hl kwb">of</span>
-    <span class="hl kwe">IDYES</span>: MsgBox(<span class="hl str">'Ваш выбор A.'</span>, <span
+    <span class="hl kwe">IDYES</span>: MsgBox(<span class="hl str">'Ваш выбор A.'</span>, <span
 class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
-    <span class="hl kwe">IDNO</span>: MsgBox(<span class="hl str">'Ваш выбор B.'</span>, <span
+    <span class="hl kwe">IDNO</span>: MsgBox(<span class="hl str">'Ваш выбор B.'</span>, <span
 class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
-      <div><b>См. также:</b></div>
-      <p><a href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>
         <br />
-        <a href="topic_isxfunc_msgbox.htm">MsgBox</a>
-      </p>
+        <a href="topic_isxfunc_msgbox.htm">MsgBox</a> </p>
     </div>
   </body>
 </html>

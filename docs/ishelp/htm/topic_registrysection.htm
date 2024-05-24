@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Registry]</title>
@@ -18,17 +18,14 @@
   <body>
     <h1 class="topicheading">Секция [Registry]</h1>
     <div class="topicbody">
-      <br />
-      <div class="absaz">Эта секция является необязательной и определяет
+      <p>Эта секция является необязательной и определяет
         какие-либо ключи/значения реестра Windows, которые программа установки
-        должна создать, изменить или удалить на системе пользователя.</div>
-      <br />
-      <div class="absaz">По умолчанию ключи и значения реестра, созданные
+        должна создать, изменить или удалить на системе пользователя.</p>
+      <p>По умолчанию ключи и значения реестра, созданные
         программой установки, не удаляются во время деинсталляции приложения.
         Если необходимо, чтобы деинсталлятор выполнял их удаление, используйте
-        флаг <tt>uninsdelete*</tt>, который описывается ниже.</div>
-      <br />
-      <div class="absaz">Ниже представлен пример секции <tt>[Registry]</tt>.</div>
+        флаг <tt>uninsdelete*</tt>, который описывается ниже.</p>
+      <p>Ниже представлен пример секции <tt>[Registry]</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Registry]</span>
 <span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span>; <span class="hl kwb">Subkey</span>: "Software\My Company"; <span
 class="hl kwb">Flags</span>: <span class="hl kwe">uninsdeletekeyifempty</span>
@@ -37,8 +34,7 @@ class="hl kwb">Flags</span>: <span class="hl kwe">uninsdeletekey</span>
 <span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span>; <span class="hl kwb">Subkey</span>: "Software\My Company\My Program\Settings"; <span
 class="hl kwb">ValueType</span>: string; <span class="hl kwb">ValueName</span>: "InstallPath"; <span
 class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
-      <div class="absaz">Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</div>
-      <br />
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
         <dt class="paramlist"><b><a name="Root">Root</a></b>  <i>(обязательный)</i></dt>
         <dd class="paramlist">
@@ -47,23 +43,23 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             <table>
               <tbody>
                 <tr>
-                  <td class="cellleft"><tt>HKCU</tt></td>
+                  <td class="cellleft"><code>HKCU</code></td>
                   <td class="cellright">(HKEY_CURRENT_USER)</td>
                 </tr>
                 <tr>
-                  <td class="cellleft"><tt>HKLM</tt></td>
+                  <td class="cellleft"><code>HKLM</code></td>
                   <td class="cellright">(HKEY_LOCAL_MACHINE)</td>
                 </tr>
                 <tr>
-                  <td class="cellleft"><tt>HKCR</tt></td>
+                  <td class="cellleft"><code>HKCR</code></td>
                   <td class="cellright">(HKEY_CLASSES_ROOT)</td>
                 </tr>
                 <tr>
-                  <td class="cellleft"><tt>HKU</tt></td>
+                  <td class="cellleft"><code>HKU</code></td>
                   <td class="cellright">(HKEY_USERS)</td>
                 </tr>
                 <tr>
-                  <td class="cellleft"><tt>HKCC</tt></td>
+                  <td class="cellleft"><code>HKCC</code></td>
                   <td class="cellright">(HKEY_CURRENT_CONFIG)</td>
                 </tr>
               </tbody>
@@ -74,7 +70,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             <table>
               <tbody>
                 <tr>
-                  <td class="cellleft"><tt>HKA</tt></td>
+                  <td class="cellleft"><code>HKA</code></td>
                   <td class="cellright">(в <a href="topic_admininstallmode.htm">режиме
                       административной установки</a> равен HKLM, иначе HKCU) </td>
                 </tr>
@@ -85,7 +81,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             для настроек, совместимых с перемещаемыми профилями.</p>
           <p>Использовать <tt>HKCR</tt> не рекомендуется. Вместо него
             используйте <tt>HKA</tt> с параметром <tt>Subkey</tt> и значением
-            "Software\Classes". </p>
+            "Software\Classes".</p>
           <p>Значения (включая <tt>HKA</tt>) могут иметь суффикс <tt>32</tt>
             или <tt>64</tt>. Имена разделов с суффиксом <tt>32</tt> (например,
             <tt>HKLM32</tt>) сопоставляются с 32-разрядным представлением
@@ -102,7 +98,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             значению с суффиксом <tt>32</tt> (например, <tt>HKLM32</tt>), пока
             инсталлятор не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
               режиме установки</a>, иначе эквивалентно значению с суффиксом <tt>64</tt>
-            (например, <tt>HKLM64</tt>). </p>
+            (например, <tt>HKLM64</tt>).</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span></pre>
@@ -123,36 +119,36 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
           <table>
             <tbody>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>none</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>none</code></span></td>
                 <td class="cellright">(по умолчанию) параметр реестра <i>без</i>
                   значения.<br />
                   В этом случае параметр <tt>ValueData</tt> игнорируется.</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>string</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>string</code></span></td>
                 <td class="cellright">строковое значение (REG_SZ).</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>expandsz</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>expandsz</code></span></td>
                 <td class="cellright">расширяемое строковое значение
                   (REG_EXPAND_SZ).</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>multisz</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>multisz</code></span></td>
                 <td class="cellright">многостроковое значение (REG_MULTI_SZ).</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>dword</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>dword</code></span></td>
                 <td class="cellright">32-разрядное числовое значение
                   (REG_DWORD).</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>qword</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>qword</code></span></td>
                 <td class="cellright">64-разрядное числовое значение
                   (REG_QWORD).</td>
               </tr>
               <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><tt>binary</tt></span></td>
+                <td class="cellleft"><span style="font-weight: bold;"><code>binary</code></span></td>
                 <td class="cellright">двоичное значение (REG_BINARY).</td>
               </tr>
             </tbody>
@@ -222,9 +218,6 @@ class="hl num">1.0</span>"</pre>
             существовал ли раздел реестра ранее. Разрешения не устанавливаются,
             если параметр <tt>ValueType</tt> имеет значение <tt>none</tt> и
             используется флаг <tt>deletekey</tt> или <tt>deletevalue</tt>. </p>
-          <p>В версиях Windows для архитектуры Itanium этот параметр работает
-            только с 32-разрядными разделами реестра. (В 64-разрядных версиях
-            Windows такого ограничений нет.)</p>
           <p>Параметр может содержать один или более значений, разделённых
             пробелами, в следующем формате:</p>
           <div class="indent">
@@ -279,7 +272,7 @@ class="hl num">1.0</span>"</pre>
                 параметры и подразделы в нём. Затем, если параметр <tt>ValueType</tt>
                 не имеет значения <tt>none</tt>, будет создан новый раздел и
                 параметр. </p>
-              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+              <p>Во избежание сбоев, в процессе установки этот флаг игнорируется,
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты. </p>
             </dd>
@@ -330,7 +323,7 @@ class="hl num">1.0</span>"</pre>
                 использовать его для разделов реестра, к которым обращается
                 Windows, довольно безрассудно. Рекомендуется использовать этот
                 флаг только для частных разделов реестра вашего приложения.</p>
-              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+              <p>Во избежание сбоев, в процессе установки этот флаг игнорируется,
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты. </p>
             </dd>
@@ -340,7 +333,7 @@ class="hl num">1.0</span>"</pre>
                 реестра, если в нём больше не осталось никаких параметров или
                 подразделов. Этот флаг нельзя использовать вместе с флагом <tt>uninsdeletevalue.</tt>
               </p>
-              <p>Во избежание сбоев, в процессе установки этот игнорируется,
+              <p>Во избежание сбоев, в процессе установки этот флаг игнорируется,
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты. </p>
             </dd>

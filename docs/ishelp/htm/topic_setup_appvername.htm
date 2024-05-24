@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: AppVerName</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: AppVerName</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr2">
@@ -29,29 +28,24 @@
               <div class="margined"><a href="topic_setup_appname.htm">AppName</a>
                 версия <a href="topic_setup_appversion.htm">AppVersion</a>,
                 локализованное в соответствии с <a href="topic_setup_appversion.htm">пользовательским
-                  сообщением</a> <tt>NameAndVersion</tt> для активного языка </div>
+                  сообщением</a> <tt class="nill">NameAndVersion</tt> для активного языка </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">Эта директива определяет имя и версию устанавливаемого
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива определяет имя и версию устанавливаемого
         приложения. Значение этого параметра отображается на странице "<i>Приветствие</i>"
         программы установки и используется в качестве названия по умолчанию для
         приложений в апплете "<i>Удаление или изменение программы</i>" (смотрите
         директиву <a href="topic_setup_uninstalldisplayname.htm">UninstallDisplayName</a>).
-        Значение может содержать константы.</div>
-      <br />
-      <div class="absaz">Если директиве <a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a>
+        Значение может содержать константы.</p>
+      <p>Если директиве <a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a>
         задано значение <tt>yes</tt> (является значением по умолчанию), то в
         заголовках окон используется значение директивы <tt>AppVerName</tt>
-        вместо <a href="topic_setup_appname.htm">AppName</a>.</div>
-      <br />
-      <div class="absaz">Эта директива является обязательной, если директива <a
-          href="topic_setup_appversion.htm">AppVersion</a> не используется.</div>
-      <br />
+        вместо <a href="topic_setup_appname.htm">AppName</a>.</p>
+      <p>Эта директива является обязательной, если директива <a
+          href="topic_setup_appversion.htm">AppVersion</a> не используется.</p>
       <div class="examplebox">
         <div class="exampleheader">Примеры:</div>
         <pre class="nomargin"><span class="hl kwb">AppVerName</span>=My Program <span
@@ -59,8 +53,8 @@ class="hl num">1.5</span>
 <span class="hl kwb">AppVerName</span>=My Program version <span class="hl num">1.5</span>
 <span class="hl kwb">AppVerName</span>=<span class="hl kwc">{cm:NameAndVersion,My Program,1.5}</span></pre>
       </div>
-      <p><b>См. также:</b><br />
-        <a href="topic_setup_appname.htm">AppName</a>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_appname.htm">AppName</a>
       </p>
     </div>
   </body>

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: UserInfoPage</title>
@@ -18,7 +18,6 @@
   <body>
     <h1 class="topicheading">[Setup]: UserInfoPage</h1>
     <div class="topicbody">
-      <br />
       <table class="setuphdr">
         <tbody>
           <tr class="setuphdrtr1">
@@ -26,8 +25,8 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><a href="topic_yesnonotes.htm"><tt>yes</tt>
-                  или <tt>no</tt></a> </div>
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -35,26 +34,22 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt>no</tt> </div>
+              <div class="margined"><tt class="nill">no</tt> </div>
             </td>
           </tr>
         </tbody>
       </table>
-      <br />
-      <div><b>Описание:</b></div>
-      <br />
-      <div class="absaz">При значении <tt>yes</tt> программа установки
+      <h2 class="heading">Описание</h2>
+      <p>При значении <tt>yes</tt> программа установки
         отобразит страницу "<i>Информация о пользователе</i>", на которой нужно
         указать имя пользователя, организацию и, возможно, серийный номер.
         Введённые пользователем данные будут присвоены константам <tt>{userinfoname}</tt>,
         <tt>{userinfoorg}</tt> и <tt>{userinfoserial}</tt>. Эти константы можно применить в
         записях секции <tt>[Registry]</tt> или <tt>[INI]</tt>, чтобы сохранить
-        их значения для дальнейшего использования.</div>
-      <br />
-      <div class="absaz">Чтобы поле серийного номера стало видимым, должна быть
-        объявлена функция для события <a href="topic_scriptevents.htm#CheckSerial">CheckSerial</a>.</div>
-      <br />
-      <div class="absaz">Директивы <a href="topic_setup_defaultuserinfoname.htm">DefaultUserInfoName</a>,
+        их значения для дальнейшего использования.</p>
+      <p>Чтобы поле серийного номера стало видимым, должна быть
+        объявлена функция для события <a href="topic_scriptevents.htm#CheckSerial">CheckSerial</a>.</p>
+      <p>Директивы <a href="topic_setup_defaultuserinfoname.htm">DefaultUserInfoName</a>,
         <a href="topic_setup_defaultuserinfoorg.htm">DefaultUserInfoOrg</a> и <a
           href="topic_setup_defaultuserinfoserial.htm">DefaultUserInfoSerial</a>
         определяют для имени пользователя, организации и серийного номера
@@ -62,14 +57,12 @@
         имеет значение <tt>yes</tt> и программа установки найдет информацию об
         установке <a href="topic_sameappnotes.htm">того же приложения</a>, она
         будет использовать имя пользователя, организацию и серийный номер из
-        предыдущей установки.</div>
-      <br />
-      <div class="absaz">При тихой установке для имени пользователя, организации
+        предыдущей установки.</p>
+      <p>При тихой установке для имени пользователя, организации
         и серийного номера будут приняты значения по умолчанию. Программа
         установки не будет проверять, является ли имя пользователя пустым (так
         как у пользователя не будет возможности его исправить), однако серийный
-        номер всё равно будет проверен.</div>
-      <br />
+        номер всё равно будет проверен.</p>
     </div>
   </body>
 </html>
