@@ -29,7 +29,7 @@
       <p style="text-align: left;">&nbsp;&nbsp;— консольные программы всегда
         запускаются в скрытом режиме, а параметр <tt>ShowCmd</tt> влияет только
         на программы с графического интерфейсом, поэтому рекомендуется всегда
-        использовать флаг <code><span class="hl kwe">SW_SHOW</span></code>
+        использовать флаг <code><span class="hl kwe">SW_SHOWNORMAL</span></code>
         вместо <code><span class="hl kwe">SW_HIDE</span></code>;</p>
       <p style="text-align: left;">&nbsp;&nbsp;— если значение параметра <tt>OnLog</tt>
         равно <tt>nil</tt>, то выходные данные исполняемого или пакетного файла
@@ -67,7 +67,7 @@ class="hl sng">''</span>) <span class="hl kwb">then</span>
 class="hl kwb">var</span> ResultCode: Integer): String;
 <span class="hl kwb">begin</span>
   Line := <span class="hl sng">''</span>;
-  ExecAndLogOutput(Filename, Params, WorkingDir, <span class="hl kwe">SW_SHOW</span>, ewWaitUntilTerminated, ResultCode, <span
+  ExecAndLogOutput(Filename, Params, WorkingDir, <span class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode, <span
 
 class="hl ppc">@ExecAndGetFirstLineLog</span>);
   Result := Line;

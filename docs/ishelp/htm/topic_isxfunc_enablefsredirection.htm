@@ -66,9 +66,11 @@
     <span class="hl slc">// из 64-bit каталога System.</span>
     OldState := EnableFsRedirection(False);
     <span class="hl kwb">try</span>
-      Exec(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cmd}</span><span
-class="hl str">'</span>), <span class="hl str">''</span>, <span class="hl str">''</span>, <span
-class="hl kwe">SW_SHOW</span>,
+      Exec(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cmd}</span><span
+
+class="hl str">'</span>), <span class="hl str">''</span>, <span class="hl str">''</span>, <span
+
+class="hl kwe">SW_SHOWNORMAL</span>,
         ewWaitUntilTerminated, ResultCode);
     <span class="hl kwb">finally</span>
       <span class="hl slc">// Восстанавливаем предыдущее состояние перенаправления.</span>

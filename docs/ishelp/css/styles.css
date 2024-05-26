@@ -8,12 +8,13 @@
 */
 
 body {
-    font-size: 14px;
+    /*font-size: 14px;
     font-family: "Segoe UI", sans-serif;
-    font-weight: normal;
+    font-weight: normal;*/
+    font: calc(14rem/16)/1.5 "Segoe UI", sans-serif;
     line-height: 1.4;
     margin: 0;
-    color: #272727;
+    color: #282828;
 }
 
 pre, tt, code {
@@ -21,7 +22,7 @@ pre, tt, code {
     /*font-size: 13px;
     font-family: 'Courier New', 'Courier', monospace;*/
     /* for Web style */
-    font: 13px/19px monospace;
+    font: calc(13rem/16)/calc(21rem/16) monospace;
 }
 
 tt {

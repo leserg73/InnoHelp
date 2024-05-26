@@ -45,16 +45,19 @@
         результате выполнения функции не будет создан новый процесс (например,
         когда файл уже открыт запущенным экземпляром программы, связанной с
         данным типом файлов).</p>
-      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
           системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   ErrorCode: Integer;
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if not</span> ShellExec(<span class="hl str">''</span>, ExpandConstant(<span
+  <span class="hl kwb">if not</span> ShellExec(<span class="hl str">''</span>, ExpandConstant(<span
+
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\filename.rtf'</span>),
-     <span class="hl str">''</span>, <span class="hl str">''</span>, <span class="hl kwe">SW_SHOW</span>, ewNoWait, ErrorCode) <span
+     <span class="hl str">''</span>, <span class="hl str">''</span>, <span class="hl kwe">SW_SHOWNORMAL</span>, ewNoWait, ErrorCode) <span
+
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// если нужно, обработайте результат в случае ошибки</span>
