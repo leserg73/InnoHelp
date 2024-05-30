@@ -12,7 +12,7 @@
     a:visited    { color: #5e85d7; background-color: transparent }
     a:active     { color: #7799dd; background-color: transparent }
     tt, pre      { font: calc(13rem/16)/calc(19rem/16) monospace; color: inherit; background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px }
-    pre          { line-height: normal }
+    pre          { line-height: normal; padding: 10px; border-radius: 6px }
     li, div.limargins { margin-top: 5px; margin-bottom: 5px }
     div.bluehead { text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold; line-height: normal }
     .date        { font-size: calc(11rem/16); font-weight: bold }
@@ -157,7 +157,7 @@
         <tt>IsX64Compatible</tt>, <tt>IsX64OS</tt>, <tt>IsX86Compatible</tt> и
         <tt>IsX86OS</tt>. Функция <tt>IsX64</tt> все ещё существует, но уже
         устарела, как объяснялось выше. Ниже показан пример проверки всех
-        идентификаторов платформ:
+        идентификаторов архитектуры:
         <pre style="color:#000000; background-color:#f8f8f8;"><span style="color:#000000; font-weight:bold">[Code]</span>
 <span style="color:#0000ff">function</span> <span style="color:#000050; font-weight:bold">InitializeSetup</span>: Boolean;
 <span style="color:#0000ff">begin</span>
@@ -206,7 +206,7 @@ style="color:#800000">'IsWin64'</span>);
         переключении вкладок.</li>
     </ul>
     <p><span class="head2">Удалена поддержка Windows Vista, Windows Server 2008
-        и процессоров архитектуры Itanium</span></p>
+        и архитектуры Itanium</span></p>
     <ul>
       <li><b>Изменения в требованиях ОС:</b> Windows Vista и Windows Server 2008
         больше не поддерживаются. Windows 7 и Windows Server 2008 R2 теперь
@@ -214,10 +214,10 @@ style="color:#800000">'IsWin64'</span>);
         в секции <tt>[Setup]</tt> по умолчанию все ешё имеет значение <tt>6.1sp1</tt>,
         поэтому по умолчанию программа установки все также не будет работать
         Windows 7 и Windows Server 2008 R2, которые не были обновлены.</li>
-      <li>Процессор архитектуры Itanium больше не поддерживается. Идентификатор
-        платформы <tt>ia64</tt> был удалён и вместо этого программа установки
-        всегда будет выдавать сообщение об ошибке и завершать работу, если она
-        запущена на системе Itanium.</li>
+      <li>Устаревшая архитектура Itanium больше не поддерживается. Идентификатор
+        архитектуры <tt>ia64</tt> был удалён и теперь при запуске на системе
+        Itanium программа установки будет выдавать сообщение об ошибке
+        <tt>WindowsVersionNotSupported</tt>.</li>
       <li>В секции <tt>[Icons]</tt> удалён флаг <tt>foldershortcut</tt>,
         который и так игнорировался, за исключением случаев работы на Windows
         Vista или Windows Server 2008, так как ярлыки папок в меню "Пуск" больше
