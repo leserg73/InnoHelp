@@ -6,12 +6,11 @@
     <title>История версий Inno Setup 6</title>
     <base href="https://jrsoftware.org/">
     <style type="text/css">
-    /* line-height 1.5 improves readability, and ensures that there is ~2px vertical spacing between lines of TT text */
     body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: #282828; background-color: white }
     a:link       { color: #264b99; background-color: transparent }
     a:visited    { color: #5e85d7; background-color: transparent }
     a:active     { color: #7799dd; background-color: transparent }
-    tt, pre      { font: calc(13rem/16)/calc(19rem/16) monospace; color: inherit; background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px }
+    tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px }
     pre          { line-height: normal; padding: 10px; border-radius: 6px }
     li, div.limargins { margin-top: 5px; margin-bottom: 5px }
     div.bluehead { text-align: center; color: white; background-color: #264b99; padding: 5px; font-weight: bold; line-height: normal }
@@ -250,12 +249,16 @@ style="color:#800000">'IsWin64'</span>);
       <li>Обновлены значки редактора, используемые в поле справа от номера
         строки, включая автоматический выбор значков высокого качества при более
         высоких настройках DPI.</li>
-      <li>Строки с точками останова теперь отображаются как обычные строки с
-        подсветкой синтаксиса вместо текста белого цвета на красном фоне.</li>
+      <li>Строки с установленными точками останова теперь отображаются в виде
+        обычных строк вместо текста белого цвета на красном фоне.</li>
       <li>Точки останова теперь сохраняются между сессиями для каждого файла.</li>
       <li>В меню "<i>Run</i>" (Отладка) добавлен новый пункт "<i>Delete All
           Breakpoints</i>" (Shift+Ctrl+F5) (Удалить все точки останова).</li>
       <li>Добавлены значки для элементов меню.</li>
+      <li>Добавлены новые параметры "<i>Highlight occurrences of current selection</i>"
+        (Подсвечивать совпадения текущего выделения) и "<i>Highlight occurrences
+          of current word</i>" (Подсвечивать совпадения текущего слова). По умолчанию
+        первый параметр включен, а второй отключен.</li>
       <li>Параметр "<i>Allow cursor to move beyond end of lines</i>" (Перемещать
         каретку за пределы конца строк) теперь по умолчанию отключен, как и в
         большинстве других редакторов.</li>
@@ -285,8 +288,10 @@ style="color:#800000">'IsWin64'</span>);
         теперь учитывает настройки ширины и символов табуляции редактора, делает
         соответствующие отступы в генерируемом Pascal-сценарии и предупреждает,
         если позиция курсора находится не в секции <tt>[Code]</tt>.</li>
+      <li>Небольшая коррекция цвета темы, например, другой цвет фона для
+        выделенного текста.</li>
     </ul>
-    <p><span class="head2">Улучшена поддержка ведения журналов</span></p>
+    <p><span class="head2">Улучшена поддержка ведения журнала</span></p>
     <ul>
       <li>Добавлен новый флаг <tt>logoutput</tt> для секций <tt>[Run]</tt> и <tt>[UninstallRun]</tt>.
         Он указывает программе установки/удаления вести протокол запускаемой
