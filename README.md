@@ -1,5 +1,9 @@
 ![ISPP Logo](https://leserg73.github.io/InnoHelp/ispphelp/images/innka.png)
 
+[![Latest Version](https://img.shields.io/github/release/leserg73/InnoHelp.svg)](https://github.com/leserg73/InnoHelp/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/leserg73/InnoHelp/total.svg)](https://github.com/leserg73/InnoHelp/releases)
+[![Latest Release Downloads](https://img.shields.io/github/downloads/leserg73/InnoHelp/latest/total.svg)](https://github.com/leserg73/InnoHelp/releases/latest)
+
 Документация Inno Setup 6
 -----------------------
 
