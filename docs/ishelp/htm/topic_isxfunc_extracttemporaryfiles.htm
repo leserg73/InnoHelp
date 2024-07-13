@@ -44,11 +44,14 @@
         множество других файлов.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
+<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
+
 class="hl kwe">dontcopy</span>
-<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
+
 class="hl kwc">{app}</span>"
-<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
+
 class="hl kwc">{app}</span>"
 
 <span class="hl kwa">[Code]</span>
@@ -58,9 +61,11 @@ class="hl kwc">{app}</span>"
   ResultCode: Integer;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
+
 class="hl str">\Readme.txt'</span>);
-  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
+  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
+
 class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     MsgBox(S, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
@@ -68,11 +73,15 @@ class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span c
 
   <span class="hl slc">// Извлекаем все файлы MyProg и запускаем её.</span>
   <span class="hl slc">// Заметьте, константа {app} не расширяется.</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+
 class="hl str">\MyProg.*'</span>);
-  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
-class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span
-class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span
+  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
+
+class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span
+
+class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span
+
 class="hl str">''</span>,
     <span class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode);
 
