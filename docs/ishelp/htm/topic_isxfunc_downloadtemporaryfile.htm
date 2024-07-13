@@ -42,13 +42,13 @@
         если в этом нет необходимости.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Класс <code>TOnDownloadProgress</code> представлен следующей функцией:</p>
-      <pre class="indent">TOnDownloadProgress = function(const Url, FileName: string; const Progress, ProgressMax: Int64): Boolean;</pre>
+      <pre class="indent">TOnDownloadProgress = function(const Url, FileName: String; const Progress, ProgressMax: Int64): Boolean;</pre>
       <p>Параметр <tt>ProgressMax</tt> будет равен 0, если размер файла
         по-прежнему неизвестен. Функция возвращает значение <tt>True</tt>,
         которое позволяет продолжить загрузку, иначе — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
-<span class="hl kwb">function</span> OnDownloadProgress(<span class="hl kwb">const</span> Url, Filename: string; <span
+<span class="hl kwb">function</span> OnDownloadProgress(<span class="hl kwb">const</span> Url, Filename: String; <span
 class="hl kwb">const</span> Progress, ProgressMax: Int64): Boolean;
 <span class="hl kwb">begin</span>
   <span class="hl kwb">if</span> ProgressMax &lt;&gt; <span class="hl num">0</span> <span

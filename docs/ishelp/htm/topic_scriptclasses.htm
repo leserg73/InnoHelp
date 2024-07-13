@@ -40,9 +40,9 @@
         поскольку приведенные ниже классы в основном представляют собой простые
         обёртки для классов VCL, используемых Inno Setup.<br />
         <br />
-        &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL"
+        &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL"
 
-          target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL">http://docwiki.embarcadero.com/RADStudio/Rio/en/VCL</a><img
+          target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL">http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL</a><img
           src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
       <p class="null"><br />
         <tt class="nill"> <a name="TObject">TObject</a> = class<br />
@@ -69,9 +69,9 @@
           &nbsp;&nbsp;property ComponentCount: Integer; read;<br />
           &nbsp;&nbsp;property ComponentIndex: Integer; read write;<br />
           &nbsp;&nbsp;property ComponentState: Byte; read;<br />
-          &nbsp;&nbsp;property DesignInfo: Longint; read write;<br />
+          &nbsp;&nbsp;property DesignInfo: LongInt; read write;<br />
           &nbsp;&nbsp;property Name: String; read write;<br />
-          &nbsp;&nbsp;property Tag: Longint; read write;<br />
+          &nbsp;&nbsp;property Tag: LongInt; read write;<br />
           end;<br />
           <br />
           <a name="TStrings">TStrings</a> = class(<a href="#TPersistent">TPersistent</a>)<br />
@@ -106,19 +106,19 @@
           end;<br />
           <br />
           <a name="TStream">TStream</a> = class(<a href="#TObject">TObject</a>)<br />
-          &nbsp;&nbsp;function Read(var Buffer: AnyString; ByteCount: Longint):
-          Longint;<br />
+          &nbsp;&nbsp;function Read(var Buffer: AnyString; ByteCount: LongInt):
+          LongInt;<br />
           &nbsp;&nbsp;function Write(const Buffer: AnyString; ByteCount:
-          Longint): Longint;<br />
+          LongInt): LongInt;<br />
           &nbsp;&nbsp;function Seek(Offset: Int64; Origin: Word): Int64;<br />
           &nbsp;&nbsp;procedure ReadBuffer(var Buffer: AnyString; ByteCount:
-          Longint);<br />
+          LongInt);<br />
           &nbsp;&nbsp;procedure WriteBuffer(const Buffer: AnyString; ByteCount:
-          Longint);<br />
+          LongInt);<br />
           &nbsp;&nbsp;function CopyFrom(Source: <a href="#TStream">TStream</a>;
           Count: Int64): Int64;<br />
-          &nbsp;&nbsp;property Position: Longint; read write;<br />
-          &nbsp;&nbsp;property Size: Longint; read write;<br />
+          &nbsp;&nbsp;property Position: LongInt; read write;<br />
+          &nbsp;&nbsp;property Size: LongInt; read write;<br />
           end;<br />
           <br />
           <a name="THandleStream">THandleStream</a> = class(<a href="#TStream">TStream</a>)<br />
@@ -260,8 +260,8 @@
           &nbsp;&nbsp;property Height: Integer; read write;<br />
           &nbsp;&nbsp;property Hint: String; read write;<br />
           &nbsp;&nbsp;property Align: <a href="#TAlign">TAlign</a>; read write;<br />
-          &nbsp;&nbsp;property ClientHeight: Longint; read write;<br />
-          &nbsp;&nbsp;property ClientWidth: Longint; read write;<br />
+          &nbsp;&nbsp;property ClientHeight: LongInt; read write;<br />
+          &nbsp;&nbsp;property ClientWidth: LongInt; read write;<br />
           &nbsp;&nbsp;property ShowHint: Boolean; read write;<br />
           &nbsp;&nbsp;property Visible: Boolean; read write;<br />
           &nbsp;&nbsp;property Enabled: Boolean; read write;<br />
@@ -272,7 +272,7 @@
           &nbsp;&nbsp;property Parent: <a href="#TWinControl">TWinControl</a>;
           read write;<br />
           &nbsp;&nbsp;property ParentBackground: Boolean; read write;<br />
-          &nbsp;&nbsp;property Handle: Longint; read write;<br />
+          &nbsp;&nbsp;property Handle: LongInt; read write;<br />
           &nbsp;&nbsp;property Showing: Boolean; read;<br />
           &nbsp;&nbsp;property TabOrder: Integer; read write;<br />
           &nbsp;&nbsp;property TabStop: Boolean; read write;<br />
@@ -567,7 +567,7 @@
           &nbsp;&nbsp;property Caption: String; read write;<br />
           &nbsp;&nbsp;property Default: Boolean; read write;<br />
           &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
-          &nbsp;&nbsp;property ModalResult: Longint; read write;<br />
+          &nbsp;&nbsp;property ModalResult: LongInt; read write;<br />
           &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>;
           read write;<br />
           end;<br />
@@ -621,7 +621,7 @@
           <a name="TSysLinkType">TSysLinkType</a> = (sltURL, sltID);<br />
           <br />
           <a name="TSysLinkEvent">TSysLinkEvent</a> = procedure(Sender: <a href="#TObject">TObject</a>;
-          const Link: string; LinkType: <a href="#TSysLinkType">TSysLinkType</a>);<br />
+          const Link: String; LinkType: <a href="#TSysLinkType">TSysLinkType</a>);<br />
           <br />
           <a name="TCustomLinkLabel">TCustomLinkLabel</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
           &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
@@ -704,9 +704,9 @@
           <a name="TPanelBevel">TPanelBevel</a> = (bvNone, bvLowered, bvRaised,
           bvSpace);<br />
           <br />
-          <a name="TBevelWidth">TBevelWidth</a> = Longint;<br />
+          <a name="TBevelWidth">TBevelWidth</a> = LongInt;<br />
           <br />
-          <a name="TBorderWidth">TBorderWidth</a> = Longint;<br />
+          <a name="TBorderWidth">TBorderWidth</a> = LongInt;<br />
           <br />
           <a name="TPanel">TPanel</a> = class(<a href="#TCustomPanel">TCustomPanel</a>)<br />
           &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>;
@@ -817,9 +817,9 @@
           <a name="TNewProgressBar">TNewProgressBar</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
           &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read
           write;<br />
-          &nbsp;&nbsp;property Min: Longint; read write;<br />
-          &nbsp;&nbsp;property Max: Longint; read write;<br />
-          &nbsp;&nbsp;property Position: Longint; read write;<br />
+          &nbsp;&nbsp;property Min: LongInt; read write;<br />
+          &nbsp;&nbsp;property Max: LongInt; read write;<br />
+          &nbsp;&nbsp;property Position: LongInt; read write;<br />
           &nbsp;&nbsp;property State: <a href="#TNewProgressBarState">TNewProgressBarState</a>;
           read write;<br />
           &nbsp;&nbsp;property Style: <a href="#TNewProgressBarStyle">TNewProgressBarStyle</a>;
@@ -1042,7 +1042,7 @@
           read;<br />
           &nbsp;&nbsp;property ProgressBar: <a href="#TNewProgressBar">TNewProgressBar</a>;
           read;<br />
-          &nbsp;&nbsp;procedure SetProgress(const Position, Max: Longint);<br />
+          &nbsp;&nbsp;procedure SetProgress(const Position, Max: LongInt);<br />
           &nbsp;&nbsp;procedure SetText(const Msg1, Msg2: String);<br />
           &nbsp;&nbsp;procedure Show;<br />
           end;<br />

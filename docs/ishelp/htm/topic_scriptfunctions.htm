@@ -170,19 +170,19 @@
         <tt class="nill">function <a href="topic_isxfunc_findwindowbywindowname.htm">FindWindowByWindowName</a>(const
           WindowName: String): HWND;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_sendmessage.htm">SendMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Longint;</tt><br />
+          Wnd: HWND; const Msg, WParam, LParam: LongInt): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_postmessage.htm">PostMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;</tt><br />
+          Wnd: HWND; const Msg, WParam, LParam: LongInt): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_sendnotifymessage.htm">SendNotifyMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;</tt><br />
+          Wnd: HWND; const Msg, WParam, LParam: LongInt): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_registerwindowmessage.htm">RegisterWindowMessage</a>(const
-          Name: String): Longint;</tt><br />
+          Name: String): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_sendbroadcastmessage.htm">SendBroadcastMessage</a>(const
-          Msg, WParam, LParam: Longint): Longint;</tt><br />
+          Msg, WParam, LParam: LongInt): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_postbroadcastmessage.htm">PostBroadcastMessage</a>(const
-          Msg, WParam, LParam: Longint): Boolean;</tt><br />
+          Msg, WParam, LParam: LongInt): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_sendbroadcastnotifymessage.htm">SendBroadcastNotifyMessage</a>(const
-          Msg, WParam, LParam: Longint): Boolean;</tt><br />
+          Msg, WParam, LParam: LongInt): Boolean;</tt><br />
         <br />
         <tt class="nill">procedure <a href="topic_isxfunc_createmutex.htm">CreateMutex</a>(const
           Name: String);</tt><br />
@@ -197,7 +197,7 @@
         <tt class="nill">procedure <a href="topic_isxfunc_unloaddll.htm">UnloadDLL</a>(Filename:
           String);</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_dllgetlasterror.htm">DLLGetLastError</a>():
-          Longint;</tt><br />
+          LongInt;</tt><br />
       </p>
       <p> <br />
         <b>Функции обработки строк</b><br />
@@ -208,8 +208,8 @@
           Char): Byte;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_copy.htm">Copy</a>(S:
           String; Index, Count: Integer): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_length.htm">Length</a>(s:
-          String): Longint;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_length.htm">Length</a>(S:
+          String): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_lowercase.htm">Lowercase</a>(S:
           String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_uppercase.htm">Uppercase</a>(S:
@@ -218,8 +218,8 @@
           String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_ansiuppercase.htm">AnsiUppercase</a>(S:
           String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringofchar.htm">StringOfChar</a>(c:
-          Char; I : Longint): String;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_stringofchar.htm">StringOfChar</a>(C:
+          Char; I : LongInt): String;</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_delete.htm">Delete</a>(var
           S: String; Index, Count: Integer);</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_insert.htm">Insert</a>(Source:
@@ -239,42 +239,42 @@
           S: String): Boolean;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_comparetext.htm">CompareText</a>(const
-          S1, S2: string): Integer;</tt><br />
+          S1, S2: String): Integer;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_comparestr.htm">CompareStr</a>(const
-          S1, S2: string): Integer;</tt><br />
+          S1, S2: String): Integer;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_sametext.htm">SameText</a>(const
-          S1, S2: string): Boolean;</tt><br />
+          S1, S2: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_samestr.htm">SameStr</a>(const
-          S1, S2: string): Boolean;</tt><br />
+          S1, S2: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_iswildcard.htm">IsWildcard</a>(const
           Pattern: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_wildcardmatch.htm">WildcardMatch</a>(const
           Text, Pattern: String): Boolean;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_format.htm">Format</a>(const
-          Format: string; const Args: array of const): string; </tt><br />
+          Format: String; const Args: array of const): String; </tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_trim.htm">Trim</a>(const
-          S: string): String;</tt><br />
+          S: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_trimleft.htm">TrimLeft</a>(const
-          S: string): String;</tt><br />
+          S: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_trimright.htm">TrimRight</a>(const
-          S: string): String;</tt><br />
+          S: String): String;</tt><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_strtointdef.htm">StrToIntDef</a>(s:
-          string; def: Longint): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint.htm">StrToInt</a>(s:
-          string): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a>(s:
-          string; def: Int64): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint64.htm">StrToInt64</a>(s:
-          string): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtofloat.htm">StrToFloat</a>(s:
-          string): Extended;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_inttostr.htm">IntToStr</a>(i:
+        <tt class="nill">function <a href="topic_isxfunc_strtointdef.htm">StrToIntDef</a>(S:
+          String; Def: LongInt): LongInt;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_strtoint.htm">StrToInt</a>(S:
+          String): LongInt;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a>(S:
+          String; Def: Int64): Int64;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_strtoint64.htm">StrToInt64</a>(S:
+          String): Int64;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_strtofloat.htm">StrToFloat</a>(S:
+          String): Extended;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_inttostr.htm">IntToStr</a>(I:
           Int64): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_floattostr.htm">FloatToStr</a>(e:
-          extended): String;</tt><br />
+        <tt class="nill">function <a href="topic_isxfunc_floattostr.htm">FloatToStr</a>(E:
+          Extended): String;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_charlength.htm">CharLength</a>(const
           S: String; const Index: Integer): Integer; </tt><br />
@@ -288,30 +288,30 @@
         <tt class="nill">function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const
           S: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_changefileext.htm">ChangeFileExt</a>(const
-          FileName, Extension: string): String;</tt><br />
+          FileName, Extension: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractfileext.htm">ExtractFileExt</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractfiledir.htm">ExtractFileDir</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractfilepath.htm">ExtractFilePath</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractfilename.htm">ExtractFileName</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractfiledrive.htm">ExtractFileDrive</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_extractrelativepath.htm">ExtractRelativePath</a>(const
           BaseName, DestName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_expandfilename.htm">ExpandFileName</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_expanduncfilename.htm">ExpandUNCFileName</a>(const
-          FileName: string): String;</tt><br />
+          FileName: String): String;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_getdatetimestring.htm">GetDateTimeString</a>(const
           DateTimeFormat: String; const DateSeparator, TimeSeparator: Char):
           String; </tt><br />
         <br />
         <tt class="nill">procedure <a href="topic_isxfunc_setlength.htm">SetLength</a>(var
-          S: String; L: Longint);</tt><br />
+          S: String; L: LongInt);</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_chartooembuff.htm">CharToOemBuff</a>(var
           S: AnsiString);</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_oemtocharbuff.htm">OemToCharBuff</a>(var
@@ -344,9 +344,9 @@
         <b>Функции обработки массивов</b><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_getarraylength.htm">GetArrayLength</a>(var
-          Arr: Array): Longint;</tt><br />
+          Arr: Array): LongInt;</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_setarraylength.htm">SetArrayLength</a>(var
-          Arr: Array; I: Longint);</tt><br />
+          Arr: Array; I: LongInt);</tt><br />
       </p>
       <p> <br />
         <b>Функции обработки типа Variant</b><br />
@@ -385,7 +385,7 @@
           Path: String; var Free, Total: Int64): Boolean;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_filesearch.htm">FileSearch</a>(const
-          Name, DirList: string): String;</tt><br />
+          Name, DirList: String): String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_findfirst.htm">FindFirst</a>(const
           FileName: String; var FindRec: TFindRec): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_findnext.htm">FindNext</a>(var
@@ -396,7 +396,7 @@
         <tt class="nill">function <a href="topic_isxfunc_getcurrentdir.htm">GetCurrentDir</a>:
           String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_setcurrentdir.htm">SetCurrentDir</a>(const
-          Dir: string): Boolean;</tt><br />
+          Dir: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_getwindir.htm">GetWinDir</a>:
           String;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_getsystemdir.htm">GetSystemDir</a>:
@@ -457,11 +457,11 @@
           Url): String;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_renamefile.htm">RenameFile</a>(const
-          OldName, NewName: string): Boolean;</tt><br />
+          OldName, NewName: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_filecopy.htm">FileCopy</a>(const
           ExistingFile, NewFile: String; const FailIfExists: Boolean): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_deletefile.htm">DeleteFile</a>(const
-          FileName: string): Boolean;</tt><br />
+          FileName: String): Boolean;</tt><br />
         <tt class="nill">procedure <a href="topic_isxfunc_delaydeletefile.htm">DelayDeleteFile</a>(const
           Filename: String; const Tries: Integer);</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_setntfscompression.htm">SetNTFSCompression</a>(const
@@ -469,11 +469,11 @@
         <br />
         <tt class="nill">function <a href="topic_isxfunc_loadstringfromfile.htm">LoadStringFromFile</a>(const
           FileName: String; var S: AnsiString): Boolean;</tt><br />
-        <tt>function <a href="topic_isxfunc_loadstringfromlockedfile.htm">LoadStringFromLockedFile</a>(const
+        <tt class="nill">function <a href="topic_isxfunc_loadstringfromlockedfile.htm">LoadStringFromLockedFile</a>(const
           FileName: String; var S: AnsiString): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_loadstringsfromfile.htm">LoadStringsFromFile</a>(const
           FileName: String; var S: TArrayOfString): Boolean;</tt><br />
-        <tt>function <a href="topic_isxfunc_loadstringsfromlockedfile.htm">LoadStringsFromLockedFile</a>(const
+        <tt class="nill">function <a href="topic_isxfunc_loadstringsfromlockedfile.htm">LoadStringsFromLockedFile</a>(const
           FileName: String; var S: TArrayOfString): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_savestringtofile.htm">SaveStringToFile</a>(const
           FileName: String; const S: AnsiString; const Append: Boolean):
@@ -489,11 +489,11 @@
           Boolean;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_createdir.htm">CreateDir</a>(const
-          Dir: string): Boolean;</tt><br />
+          Dir: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_forcedirectories.htm">ForceDirectories</a>(Dir:
-          string): Boolean;</tt><br />
+          String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_removedir.htm">RemoveDir</a>(const
-          Dir: string): Boolean;</tt><br />
+          Dir: String): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_deltree.htm">DelTree</a>(const
           Path: String; const IsDir, DeleteFiles, DeleteSubdirsAlso: Boolean):
           Boolean;</tt><br />
@@ -618,8 +618,8 @@
           Section, Key: String; const Default: Boolean; const Filename: String):
           Boolean</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_getiniint.htm">GetIniInt</a>(const
-          Section, Key: String; const Default, Min, Max: Longint; const
-          Filename: String): Longint;</tt><br />
+          Section, Key: String; const Default, Min, Max: LongInt; const
+          Filename: String): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_getinistring.htm">GetIniString</a>(const
           Section, Key, Default, Filename: String): String;</tt><br />
         <br />
@@ -627,7 +627,7 @@
           Section, Key: String; const Value: Boolean; const Filename: String):
           Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_setiniint.htm">SetIniInt</a>(const
-          Section, Key: String; const Value: Longint; const Filename: String):
+          Section, Key: String; const Value: LongInt; const Filename: String):
           Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_setinistring.htm">SetIniString</a>(const
           Section, Key, Value, Filename: String): Boolean;</tt><br />
@@ -722,9 +722,9 @@
         <b>Функции поддержки COM-объектов</b><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>(const
-          ClassName: string): Variant;</tt><br />
+          ClassName: String): Variant;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>(const
-          ClassName: string): Variant;</tt><br />
+          ClassName: String): Variant;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_idispatchinvoke.htm">IDispatchInvoke</a>(Self:
           IDispatch; PropertySet: Boolean; const Name: String; Par: array of
           Variant): Variant;</tt><br />
@@ -766,17 +766,17 @@
         <b>Устаревшие функции</b><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_loaddll.htm">LoadDLL</a>(const
-          DLLName: String; var ErrorCode: Integer): Longint;</tt><br />
+          DLLName: String; var ErrorCode: Integer): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_calldllproc.htm">CallDLLProc</a>(const
-          DLLHandle: Longint; const ProcName: String; const Param1, Param2:
-          Longint; var Result: Longint): Boolean;</tt><br />
+          DLLHandle: LongInt; const ProcName: String; const Param1, Param2:
+          LongInt; var Result: LongInt): Boolean;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_freedll.htm">FreeDLL</a>(const
-          DLLHandle: Longint): Boolean;</tt><br />
+          DLLHandle: LongInt): Boolean;</tt><br />
         <br />
         <tt class="nill">function <a href="topic_isxfunc_caststringtointeger.htm">CastStringToInteger</a>(var
-          S: String): Longint;</tt><br />
+          S: String): LongInt;</tt><br />
         <tt class="nill">function <a href="topic_isxfunc_castintegertostring.htm">CastIntegerToString</a>(const
-          L: Longint): String;</tt><br />
+          L: LongInt): String;</tt><br />
       </p>
       <h2 class="heading">Константы</h2>
       <p>Ниже приведен перечень констант, используемых этими функциями:</p>
