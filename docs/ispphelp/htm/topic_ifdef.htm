@@ -55,27 +55,27 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt style="font-weight: bold; color: #990000;">ifdef</tt>,
-        <tt style="font-weight: bold; color: #990000;">ifndef</tt>, <tt style="font-weight: bold; color: #990000;">ifexist</tt>
-        и <tt style="font-weight: bold; color: #990000;">ifnexist</tt> можно
-        использовать там, где необходимо применить директиву <tt class="nill"><a class="new"
+      <p>Директивы <tt>ifdef</tt>,
+        <tt>ifndef</tt>, <tt>ifexist</tt>
+        и <tt>ifnexist</tt> можно
+        использовать там, где необходимо применить директиву <tt class="nill"><a
             href="topic_if.htm">if</a></tt>, чтобы обеспечить выполнение участка
         кода только при соблюдении определённых условий. Состояние директивы <tt
-          style="font-weight: bold; color: #990000;">ifdef</tt> является
+         >ifdef</tt> является
         истинным, если указанный идентификатор был определён (найден), и
         наоборот – ложным, если идентификатор не определён или был удалён
-        директивой <tt class="nill"><a class="new" href="topic_undef.htm">undef</a></tt>.
+        директивой <tt class="nill"><a href="topic_undef.htm">undef</a></tt>.
         Все эти директивы позволяют только проверить наличие или отсутствие
-        идентификаторов, установленных директивой <tt class="nill"><a class="new" href="topic_define.htm">define</a></tt>.</p>
-      <p>Директивы <tt style="font-weight: bold; color: #990000;">ifexist</tt>
-        и <tt style="font-weight: bold; color: #990000;">ifnexist</tt>
+        идентификаторов, установленных директивой <tt class="nill"><a href="topic_define.htm">define</a></tt>.</p>
+      <p>Директивы <tt>ifexist</tt>
+        и <tt>ifnexist</tt>
         позволяют проверить <i>наличие</i> или <i>отсутствие</i> указанного
         файла, соответственно.</p>
-      <p>По аналогии с директивой <tt style="font-weight: bold; color: #990000;">if</tt>,
-        каждый блок команд, начинающийся директивой <tt style="font-weight: bold; color: #990000;">ifdef</tt>,
-        <tt style="font-weight: bold; color: #990000;">ifndef</tt>, <tt style="font-weight: bold; color: #990000;">ifexist</tt>
-        или <tt style="font-weight: bold; color: #990000;">ifnexist</tt>,
-        должен обязательно закрываться директивой <tt style="font-weight: bold; color: #990000;">endif</tt>.</p>
+      <p>По аналогии с директивой <tt>if</tt>,
+        каждый блок команд, начинающийся директивой <tt>ifdef</tt>,
+        <tt>ifndef</tt>, <tt>ifexist</tt>
+        или <tt>ifnexist</tt>,
+        должен обязательно закрываться директивой <tt>endif</tt>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Files]</span>
@@ -98,9 +98,11 @@ class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">
 class="hl kwc">{app}</span>
 <span class="hl slc">// Конец условия ifdef.</span>
 <span class="hl kwf">#endif</span>
-</pre> </div>
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p><a href="topic_fileexists.htm">FileExists</a></p>
+      <p class="indent"><a href="topic_fileexists.htm">FileExists</a>
+      </p>
     </div>
   </body>
 </html>

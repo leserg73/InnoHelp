@@ -259,20 +259,6 @@ a:active {
     color: #7799dd;
 }
 
-a.new:link, a.new:visited, a.new:active {
-    color: #990000;
-    font-weight: bold;
-}
-
-a.new1:link, a.new1:visited, a.new1:active {
-    color: #804000;
-}
-
-a.new2:link, a.new2:visited, a.new2:active {
-    color: #000099;
-    font-weight: bold;
-}
-
 a.highlighted {
     background-color: #ffff00;
     color: black;
@@ -597,4 +583,8 @@ span.comidispatch {
 .isppflags {
     font-weight: bold;
     color: #663300;
+}
+
+.isppborder {
+    border: 1px solid #c7c7c7;
 }

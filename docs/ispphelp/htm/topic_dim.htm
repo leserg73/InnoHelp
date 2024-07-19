@@ -41,19 +41,19 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Директива <tt style="font-weight: bold; color: #990000;">dim</tt>
+      <p>Директива <tt>dim</tt>
         используется для объявления переменной массива, установки его размеров
         и, при необходимости, его инициализации. Для всех НЕ инициализированных
         элементов массива устанавливается начальное значение ноль (<i>void</i>).
         Чтобы установить значения элементов массива, используйте директиву <tt class="nill"><a
-            href="topic_define.htm" class="new">define</a></tt>. Вместо этой
+            href="topic_define.htm">define</a></tt>. Вместо этой
         директивы также можно использовать значение элемента, как левый оператор
         в операции присваивания.</p>
-      <p>Директива <tt style="font-weight: bold; color: #990000;">redim</tt>
+      <p>Директива <tt>redim</tt>
         позволяет увеличить или уменьшить размеры существующей переменной
         массива. Начальные значения всех новых элементов массива будут равны
         нулю (<i>void</i>), а существующие элементы будут оставлены без
-        изменений. Эта директива идентична <span style="font-weight: bold; color: #990000;">dim</span>,
+        изменений. Эта директива идентична <span>dim</span>,
         если переменная массива <tt style="font-style: italic;">ident</tt>
         не существует.</p>
       <h2 class="heading">Примеры</h2>
@@ -82,11 +82,17 @@ class="hl opt">]</span>
 <span class="hl slc">; с заданными начальными значениями.</span>
 <span class="hl kwf">#dim</span> MyArray2<span class="hl opt">[</span><span class="hl num">3</span><span
 class="hl opt">]</span> <span class="hl com">{1, 2, 3}</span>
-</pre> </div>
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p><tt class="nill"><a href="topic_define.htm" class="new">define</a></tt>, <tt class="nill"><a href="topic_undef.htm"
-            class="new">undef</a></tt>, <a href="topic_dimof.htm">DimOf</a>, <a
-          href="topic_visibility.htm" class="new1">область видимости переменных</a>.</p>
+      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_undef.htm">undef</a></tt>
+      <br />
+      <a href="topic_dimof.htm">DimOf</a>
+      <br />
+      <a href="topic_visibility.htm">Область видимости переменных</a>
+      </p>
     </div>
   </body>
 </html>

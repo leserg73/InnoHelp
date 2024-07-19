@@ -21,7 +21,7 @@
       <p>В <b>ISPP</b> директивы могут быть использованы двумя методами: <i>простым</i>
         и <i>встроенным</i>.</p>
       <p><i>Простой метод</i> заключается в том, что строка с директивой
-        начинается с символа "решётки" (<tt style="color: #990000;">#</tt>).
+        начинается с символа "решётки" (<tt>#</tt>).
         Например, установим переменную с именем <tt>MyAppName</tt> и
         присвоим ей значение <tt><i>"My Program"</i></tt>:</p>
       <div class="examplebox">
@@ -29,9 +29,9 @@
 </pre> </div>
       <p><i>Встроенный метод</i> позволяет подключить директиву, которая была
         установлена ранее. В этом случае директива записывается между начальными
-        символами <tt style="font-weight: bold; color: #993399;">{#</tt>
-        (открывающая фигурная скобка плюс решётка) и завершающим символом <tt style="font-weight: bold; color: #993399;">}</tt>
-        (закрывающая фигурная скобка). Например, присвоим директиве IS <tt style="color: #3333ff;">AppName</tt>
+        символами <tt>{#</tt>
+        (открывающая фигурная скобка плюс решётка) и завершающим символом <tt>}</tt>
+        (закрывающая фигурная скобка). Например, присвоим директиве IS <tt>AppName</tt>
         значение ранее установленной переменной <tt>MyAppName</tt> (см. пример
         выше):</p>
       <div class="examplebox">
@@ -40,10 +40,10 @@
 </pre> </div>
       <p>При выполнении сценария вместо выражения <tt>{#MyAppName}</tt> будет
         подставлено значение <tt><i>"My Program"</i></tt> из переменной <tt>MyAppName</tt>.
-        Таким образом, директиве IS <tt><span style="color: #3333ff;">AppName</span></tt>
+        Таким образом, директиве IS <tt>AppName</tt>
         будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
       <p>Как видно из приведенного выше примера, не обязательно указывать имя
-        директивы <tt class="nill"><a class="new" href="topic_emit.htm">emit</a></tt>,
+        директивы <tt class="nill"><a href="topic_emit.htm">emit</a></tt>,
         если она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
         является сокращенной записью <tt>{#emit MyAppName}</tt>.</p>
       <h2 class="heading">Синтаксис директив</h2>
@@ -82,21 +82,21 @@
       </table>
       <h2 class="heading">Доступные директивы</h2>
       <ul>
-        <li><a class="new" href="topic_append.htm">#append</a></li>
-        <li><a class="new" href="topic_define.htm">#define</a></li>
-        <li><a class="new" href="topic_dim.htm">#dim, #redim</a></li>
-        <li><a class="new" href="topic_emit.htm">#emit</a></li>
-        <li><a class="new" href="topic_error.htm">#error</a></li>
-        <li><a class="new" href="topic_expr.htm">#expr</a></li>
-        <li><a class="new" href="topic_file.htm">#file</a></li>
-        <li><a class="new" href="topic_for.htm">#for</a></li>
-        <li><a class="new" href="topic_if.htm">#if, #elif, #else, #endif</a></li>
-        <li><a class="new" href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist, #ifnexist</a></li>
-        <li><a class="new" href="topic_include.htm">#include</a></li>
-        <li><a class="new" href="topic_insert.htm">#insert</a></li>
-        <li><a class="new" href="topic_pragma.htm">#pragma</a></li>
-        <li><a class="new" href="topic_sub.htm">#sub, #endsub</a></li>
-        <li><a class="new" href="topic_undef.htm">#undef</a></li>
+        <li><a href="topic_append.htm">#append</a></li>
+        <li><a href="topic_define.htm">#define</a></li>
+        <li><a href="topic_dim.htm">#dim, #redim</a></li>
+        <li><a href="topic_emit.htm">#emit</a></li>
+        <li><a href="topic_error.htm">#error</a></li>
+        <li><a href="topic_expr.htm">#expr</a></li>
+        <li><a href="topic_file.htm">#file</a></li>
+        <li><a href="topic_for.htm">#for</a></li>
+        <li><a href="topic_if.htm">#if, #elif, #else, #endif</a></li>
+        <li><a href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist, #ifnexist</a></li>
+        <li><a href="topic_include.htm">#include</a></li>
+        <li><a href="topic_insert.htm">#insert</a></li>
+        <li><a href="topic_pragma.htm">#pragma</a></li>
+        <li><a href="topic_sub.htm">#sub, #endsub</a></li>
+        <li><a href="topic_undef.htm">#undef</a></li>
       </ul>
     </div>
   </body>

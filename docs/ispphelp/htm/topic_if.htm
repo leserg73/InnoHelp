@@ -54,42 +54,42 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt style="font-weight: bold; color: #990000;">if</tt>,
-        <tt style="font-weight: bold; color: #990000;">elif</tt>, <tt style="font-weight: bold; color: #990000;">else</tt>
-        и <tt style="font-weight: bold; color: #990000;">endif</tt>
+      <p>Директивы <tt>if</tt>,
+        <tt>elif</tt>, <tt>else</tt>
+        и <tt>endif</tt>
         представляют собой операторы ветвления, с помощью которых можно
         обеспечить выполнение каких-либо операций (набора команд) только при
         соблюдении определённых условий.</p>
       <p>Сначала <b>ISPP</b> выполняет проверку условия, следующего за
-        директивой <tt style="font-weight: bold; color: #990000;">if</tt>
-        или <tt style="font-weight: bold; color: #990000;">elif</tt>. Если
+        директивой <tt>if</tt>
+        или <tt>elif</tt>. Если
         условие истинно, то выполняются все команды сценария, записанные до
-        последующих директив <tt style="font-weight: bold; color: #990000;">elif</tt>,
-        <tt style="font-weight: bold; color: #990000;">else</tt> или <tt style="font-weight: bold; color: #990000;">endif</tt>.
+        последующих директив <tt>elif</tt>,
+        <tt>else</tt> или <tt>endif</tt>.
         Если условие ложно, то эти команды сценария компилятором <i>Inno Setup</i>
         будут пропущены.</p>
-      <p>Если в конструкции <tt style="font-weight: bold; color: #990000;">if</tt>
-        используется директива <tt style="font-weight: bold; color: #990000;">else</tt>
+      <p>Если в конструкции <tt>if</tt>
+        используется директива <tt>else</tt>
         и результат проверки оказался ложным, то будут выполнены команды
-        сценария, которые следуют за директивой <tt style="font-weight: bold; color: #990000;">else</tt>.
+        сценария, которые следуют за директивой <tt>else</tt>.
         В противном случае ничего не будет выполнено.</p>
       <p>При создании сценария с операторами ветвления каждый блок команд,
-        начинающийся директивой <tt style="font-weight: bold; color: #990000;">if</tt>,
-        должен обязательно закрываться директивой <tt style="font-weight: bold; color: #990000;">endif</tt>.
-        Внутри конструкции <tt style="font-weight: bold; color: #990000;">if
-          ... endif</tt> может быть любое количество директив <tt style="font-weight: bold; color: #990000;">elif</tt><span
-          style="font-weight: bold;"></span>, и только одна директива <tt style="font-weight: bold; color: #990000;">else</tt>,
-        которая должна быть последней перед директивой <tt style="font-weight: bold; color: #990000;">endif</tt>.</p>
-      <p>Директивы <span style="font-weight: bold; color: #990000;"><tt style="font-weight: bold;">if</tt></span>,
-        <tt style="font-weight: bold; color: #990000;">elif</tt>, <tt><span style="font-weight: bold; color: #990000;">else</span>
-        </tt>и <tt style="font-weight: bold; color: #990000;">endif</tt> могут
+        начинающийся директивой <tt>if</tt>,
+        должен обязательно закрываться директивой <tt>endif</tt>.
+        Внутри конструкции <tt>if
+          ... endif</tt> может быть любое количество директив <tt>elif</tt><span
+          style="font-weight: bold;"></span>, и только одна директива <tt>else</tt>,
+        которая должна быть последней перед директивой <tt>endif</tt>.</p>
+      <p>Директивы <span><tt style="font-weight: bold;">if</tt></span>,
+        <tt>elif</tt>, <tt><span>else</span>
+        </tt>и <tt>endif</tt> могут
         быть вложенными и организовать многомерные конструкции ветвления кода
         сценария.</p>
       <p>Методы использования условных директив нельзя смешивать между собой.
-        Если директива <tt style="font-weight: bold; color: #990000;">if</tt>
+        Если директива <tt>if</tt>
         используется <i>простым</i> методом, то и связанные с ней директивы (<tt
-          style="font-weight: bold; color: #990000;">elif</tt>, <tt style="font-weight: bold; color: #990000;">else</tt>
-        или <tt style="font-weight: bold; color: #990000;">endif</tt>) также
+         >elif</tt>, <tt>else</tt>
+        или <tt>endif</tt>) также
         должны быть использованы этим методом, но не <i>вложенным</i> (или
         наоборот).</p>
       <h2 class="heading">Пример</h2>

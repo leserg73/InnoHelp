@@ -102,7 +102,7 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Инструкция <tt><span style="font-weight: bold; color: #990000;">pragma</span></tt>
+      <p>Инструкция <tt><span>pragma</span></tt>
         является специальной директивой. Пожалуйста, обратите внимание, если <span
 
           style="font-weight: bold;">ISPP</span> не удалось выполнить
@@ -111,7 +111,7 @@
         только предупреждение. Это сделано для совместимости с другими
         препроцессорами, которые могут иметь собственные синтаксические лексемы
         директивы <tt>pragma</tt>.</p>
-      <p>Ключ <tt>pragma-option</tt> директивы <tt><span style="font-weight: bold; color: #990000;">pragma</span></tt>
+      <p>Ключ <tt>pragma-option</tt> директивы <tt><span>pragma</span></tt>
         управляет параметрами, которые <b>ISPP</b> использует для чтения
         исходных данных. Каждому параметру соответствует определенная буква.
         Чтобы указать параметр, необходимо ввести имя группы (<tt>option</tt>
@@ -139,7 +139,7 @@
         помощи окон сообщений посредством компилятора. Выражение должно
         быть строкового типа. Смотрите также директиву <tt class="nill"><a href="topic_error.htm"
 
-            class="new">error</a></tt>.</p>
+           >error</a></tt>.</p>
       <p>Ключ <tt>pragma-verblev</tt> включает режим вывода сообщений и
         устанавливает их уровень детализации, который управляет важностью
         сообщений (см. ниже). Наименее значимые сообщения будут показаны только
@@ -147,28 +147,28 @@
       <p>Ключ <tt>pragma include</tt> устанавливает переменную пути окружения.
         Выражение может содержать несколько путей, разделенных между собой
         точкой с запятой. Список этих каталогов используется ISPP при поиске
-        файлов, указанных директивой <tt class="nill"><a href="topic_include.htm" class="new">include</a></tt>.</p>
+        файлов, указанных директивой <tt class="nill"><a href="topic_include.htm">include</a></tt>.</p>
       <p>Ключ <tt>pragma spansymbol</tt> устанавливает символ разделения
         длинных строк на более короткие. Выражение не должно возвращать пустую
         строку, из которой принимается только первый символ.</p>
       <h2 class="heading">Параметры ISPP</h2>
-      <table border="1">
+      <table class="isppborder">
         <tbody>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>c</b></td>
-            <td class="cellright">Указывает на то, что данные <a class="new1" href="topic_translation.htm">вывода
+            <td class="cellright">Указывает на то, что данные <a href="topic_translation.htm">вывода
                 препроцессора</a> должны передаваться компилятору после
               завершения предварительной обработки. По умолчанию: on (вкл.).</td>
           </tr>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>e</b></td>
             <td class="cellright">Указывает режим обработки пустых строк или
-              строк с пробелами, должны ли они передаваться на <a class="new1"
+              строк с пробелами, должны ли они передаваться на <a
 
                 href="topic_translation.htm">выход препроцессора</a>. По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>v</b></td>
             <td class="cellright">Включение/Отключение подробного режима вывода
               сообщений. По умолчанию: off (откл.).</td>
@@ -176,20 +176,20 @@
         </tbody>
       </table>
       <h2 class="heading">Параметры синтаксического анализа</h2>
-      <table border="1">
+      <table class="isppborder">
         <tbody>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>b</b></td>
             <td class="cellright">Упрощенная оценка логических операторов. По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>m</b></td>
             <td class="cellright">Упрощенная оценка оператора умножения.
               (Выражение вида "<tt>0 * A</tt>" не будет вычисляться, т.к.
               результат уже и так известен - ноль.) По умолчанию: off (откл.).</td>
           </tr>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>p</b></td>
             <td class="cellright">Паскалевский стиль представления строк (<span
 
@@ -198,7 +198,7 @@
               строк (вместе с <i>escape</i>-последовательностями). По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr>
+          <tr class="isppborder">
             <td class="cellleft"><b>u</b></td>
             <td class="cellright">Разрешить не объявленные идентификаторы. Если
               встречается неизвестный идентификатор, то ISPP выводит сообщение
@@ -277,10 +277,15 @@ class="hl opt">+</span> <span class="hl str">";D:\INCLUDE"</span>
 <span class="hl kwf">#pragma</span> <span class="hl kwd">spansymbol</span> <span
 
 class="hl str">"_"</span>
-</pre> </div>
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p><tt class="nill"><a href="topic_message.htm">Message</a></tt>, <tt class="nill"><a href="topic_warning.htm">Warning</a></tt>,
-        <tt class="nill"><a href="topic_error2.htm">Error</a></tt>. </p>
+      <p class="indent"><a href="topic_message.htm">Message</a>
+      <br />
+      <a href="topic_warning.htm">Warning</a>
+      <br />
+      <a href="topic_error2.htm">Error</a>
+      </p>
     </div>
   </body>
 </html>

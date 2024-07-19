@@ -35,20 +35,20 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет подключение к данным <a class="new1" href="topic_translation.htm">вывода
+      <p>Выполняет подключение к данным <a href="topic_translation.htm">вывода
           препроцессора</a> указанного файла. Если используется файл Unicode, то
         он обязательно должен быть в кодировке UTF-8 (с или без маркера BOM).</p>
       <p>Если имя файла заключено в кавычки, то <b>ISPP</b> начинает его поиск
         с каталога, в котором находится текущий файл сценария. Если указанный
         файл обнаружить не удалось, то его поиск будет продолжен в каталоге
-        заданном директивой <tt class="nill"><a class="new" href="topic_pragma.htm">pragma</a></tt>
+        заданном директивой <tt class="nill"><a href="topic_pragma.htm">pragma</a></tt>
         с параметром INCLUDE, который устанавливает переменную пути окружения.</p>
       <p>Если имя файла является выражением или указано в угловых скобках, то
         его поиск будет выполнен только в указанном месте.</p>
-      <p>С именем файла можно использовать приставку "<span style="font-weight: bold; color: #6600cc;">compiler:</span>",
+      <p>С именем файла можно использовать приставку "<tt>compiler:</tt>",
         тогда поиск файла будет осуществлён в каталоге компилятора, по месту
         установки<i> Inno Setup</i>.</p>
-      <p>Директиву <tt><span style="font-weight: bold; color: #990000;">include</span></tt>
+      <p>Директиву <tt><span>include</span></tt>
         нельзя использовать <i>встроенным</i> методом.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
@@ -71,11 +71,13 @@ class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="
 <span class="hl slc">// Этот пример аналогичен предыдущему.</span>
 <span class="hl slc">// Вместо переменной используется константа ISPP 'compiler:'.</span>
 <span class="hl kwf">#include</span> <span class="hl str">"</span><span class="hl kwc">compiler</span>:common.iss"
-</pre> </div>
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p><tt class="nill"><a class="new" href="topic_file.htm">file</a></tt>, <tt class="nill"><a class="new"
-
-            href="topic_sub.htm">sub</a></tt>. </p>
+      <p class="indent"><tt class="nill"><a href="topic_file.htm">file</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_sub.htm">sub</a></tt>
+      </p>
     </div>
   </body>
 </html>

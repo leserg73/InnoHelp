@@ -23,9 +23,9 @@
         компилятора (файл <i>ISCC.exe</i>) автоматически предоставляет
         дополнительные параметры для управления процессом предварительной
         обработки сценариев <i>Inno Setup</i>.</p>
-      <p>Использование: <tt class="nill" style="font-weight: bold; color: #000099;">iscc
+      <p>Использование: <tt class="nill">iscc
           [параметры] scriptfile.iss</tt></p>
-      <p>Или посредством стандартного ввода: <tt class="nill" style="font-weight: bold; color: #000099;">iscc
+      <p>Или посредством стандартного ввода: <tt class="nill">iscc
           [параметры] -</tt></p>
       <p>где параметры могут быть следующие:</p>
       <table>
@@ -62,42 +62,42 @@
           </tr>
           <tr>
             <td class="cellleft"><tt class="nill">/D&lt;name&gt;[=&lt;value&gt;]</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#define</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#define</span>
                 public &lt;name&gt; &lt;value&gt;</tt></td>
           </tr>
           <tr class="altcolorrow"">
             <td class="cellleft"><tt class="nill">/$&lt;letter&gt;(+|-)</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 option -&lt;letter&gt;(+|-)</tt></td>
           </tr>
           <tr>
             <td class="cellleft"><tt class="nill">/P&lt;letter&gt;(+|-)</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 parseroption -&lt;letter&gt;(+|-)</tt></td>
           </tr>
           <tr class="altcolorrow"">
             <td class="cellleft"><tt class="nill">/I&lt;paths&gt;</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 include -&lt;paths&gt;</tt></td>
           </tr>
           <tr>
             <td class="cellleft"><tt class="nill">/J&lt;filename&gt;</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#include</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#include</span>
                 -&lt;filename&gt;</tt></td>
           </tr>
           <tr class="altcolorrow"">
             <td class="cellleft"><tt class="nill">/{#&lt;string&gt;</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 inlinestart -&lt;string&gt;</tt></td>
           </tr>
           <tr>
             <td class="cellleft"><tt class="nill">/}&lt;string&gt;</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 inlineend -&lt;string&gt;</tt></td>
           </tr>
           <tr class="altcolorrow"">
             <td class="cellleft"><tt class="nill">/V&lt;number&gt;</tt></td>
-            <td class="cellright">Эмулирует <tt class="nill"><span style="font-weight: bold; color: #990000;">#pragma</span>
+            <td class="cellright">Эмулирует <tt class="nill"><span>#pragma</span>
                 verboselevel -&lt;number&gt;</tt></td>
           </tr>
         </tbody>
@@ -105,7 +105,7 @@
       <p style="text-align: left;"><br />
         <b>Пример</b>:<br />
         <br />
-        <tt class="nill" style="font-weight: bold; color: #000099;">iscc /$c- /Pu+
+        <tt class="nill">iscc /$c- /Pu+
           "/DLicenseFile=Trial License.txt" /Ic:\inc;d:\inc /Jdefines.iss
           "c:\isetup\samples\my script.iss"</tt></p>
     </div>
