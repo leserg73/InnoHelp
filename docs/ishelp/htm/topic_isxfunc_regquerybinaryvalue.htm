@@ -31,13 +31,17 @@
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   V: <span class="hl kwb">String</span>;
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> <span class="hl kwg">RegQueryStringValue</span>(<span
-class="hl kwe">HKLM</span>, <span class="hl sng">'SOFTWARE\Google\Google Sketchup 6'</span>, <span
+  <span class="hl kwb">if</span> <span class="hl kwg">RegQueryStringValue</span>(<span
+
+class="hl kwe">HKLM</span>, <span class="hl sng">'SOFTWARE\Google\Google Sketchup 6'</span>, <span
+
 class="hl sng">''</span>, V) <span class="hl kwb">then</span>
-    <span class="hl kwg">MsgBox</span>(<span class="hl sng">'Значение составляет "'</span> + V + <span
+    <span class="hl kwg">MsgBox</span>(<span class="hl sng">'Значение составляет "'</span> + V + <span
+
 class="hl sng">'"'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   Result := True;
 <span class="hl kwb">end</span>;
-</pre> </div>
+</pre>
+    </div>
   </body>
 </html>

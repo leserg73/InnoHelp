@@ -32,32 +32,42 @@
 
 <span class="hl kwb">procedure</span> <span class="hl kwd">InitializeWizard</span>;
 <span class="hl kwb">begin</span>
-  UserPage := <span class="hl kwg">CreateInputQueryPage</span>(<span class="hl kwe">wpWelcome</span>, <span
-class="hl str">'Caption'</span>, <span class="hl str">'Description'</span>, <span
+  UserPage := <span class="hl kwg">CreateInputQueryPage</span>(<span class="hl kwe">wpWelcome</span>, <span
+
+class="hl str">'Caption'</span>, <span class="hl str">'Description'</span>, <span
+
 class="hl str">''</span>);
-  UserPage.<span class="hl kwd">Add</span>(<span class="hl str">'Service name:'</span>, <span
+  UserPage.<span class="hl kwd">Add</span>(<span class="hl str">'Service name:'</span>, <span
+
 class="hl kwg">False</span>);
 <span class="hl kwb">end</span>;
 
-<span class="hl kwb">procedure</span> <span class="hl kwd">RegisterPreviousData</span>(PreviousDataKey: <span
+<span class="hl kwb">procedure</span> <span class="hl kwd">RegisterPreviousData</span>(PreviousDataKey: <span
+
 class="hl kwg">Integer</span>);
 <span class="hl kwb">begin</span>
-  <span class="hl kwg">SetPreviousData</span>(PreviousDataKey, <span class="hl str">'ServiceName'</span>, UserPage.Values[<span
+  <span class="hl kwg">SetPreviousData</span>(PreviousDataKey, <span class="hl str">'ServiceName'</span>, UserPage.Values[<span
+
 class="hl num">0</span>]);
 <span class="hl kwb">end</span>;
 
-<span class="hl kwb">function</span> <span class="hl kwd">InitializeUninstall</span>: <span
+<span class="hl kwb">function</span> <span class="hl kwd">InitializeUninstall</span>: <span
+
 class="hl kwg">Boolean</span>;
 <span class="hl kwb">var</span>
   ServiceName: String;
 <span class="hl kwb">begin</span>
-  ServiceName := <span class="hl kwg">GetPreviousData</span>(<span class="hl str">'ServiceName'</span>, <span
+  ServiceName := <span class="hl kwg">GetPreviousData</span>(<span class="hl str">'ServiceName'</span>, <span
+
 class="hl str">''</span>);
-  <span class="hl kwb">if</span> ServiceName &lt;&gt; <span class="hl str">''</span> <span
+  <span class="hl kwb">if</span> ServiceName &lt;&gt; <span class="hl str">''</span> <span
+
 class="hl kwb">then</span>
-    <span class="hl kwg">MsgBox</span>(<span class="hl str">'The value entered before: '</span> + ServiceName, <span
+    <span class="hl kwg">MsgBox</span>(<span class="hl str">'The value entered before: '</span> + ServiceName, <span
+
 class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;
-</pre> </div>
+</pre>
+    </div>
   </body>
 </html>

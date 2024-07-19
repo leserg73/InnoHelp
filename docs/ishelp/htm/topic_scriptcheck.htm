@@ -49,7 +49,7 @@
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyProgCheck
 <span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyDirCheck(ExpandConstant(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A'</span>))
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A'</span>)) 
 <span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: DirExists(ExpandConstant(<span
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'</span>))</pre>
@@ -87,7 +87,7 @@ class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'
   <span class="hl kwb">if not</span> MyProgChecked <span class="hl kwb">then begin</span>
     MyProgCheckResult := MsgBox(<span class="hl str">'Вы хотите установить MyProg.exe в '</span> + ExtractFilePath(CurrentFileName) + <span
 class="hl str">'?'</span>, <span class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span>) = <span
-class="hl kwe">IDYES</span>;
+class="hl kwe">IDYES</span>;   
     MyProgChecked := True;
   <span class="hl kwb">end</span>;
   Result := MyProgCheckResult;
@@ -96,7 +96,8 @@ class="hl kwe">IDYES</span>;
 <span class="hl kwb">function</span> MyDirCheck(DirName: String): Boolean;
 <span class="hl kwb">begin</span>
   Result := DirExists(DirName);
-<span class="hl kwb">end</span>;</pre>
+<span class="hl kwb">end</span>;
+</pre>
     </div>
   </body>
 </html>

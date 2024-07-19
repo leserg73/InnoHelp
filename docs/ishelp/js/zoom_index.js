@@ -8162,7 +8162,7 @@ skipwords = ["and",
 	"have",
 	"with",
 	"into"];
-var STR_FORM_SEARCHFOR = "Найти:";
+var STR_FORM_SEARCHFOR = "Найти:&nbsp;";
 var STR_FORM_SUBMIT_BUTTON = " ";
 var STR_FORM_SUBMIT_RBUTTON = " ";
 var STR_FORM_RESULTS_PER_PAGE = "Результаты на странице:";

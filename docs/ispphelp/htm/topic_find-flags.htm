@@ -20,32 +20,32 @@
     <div class="topicbody">
       <h2 class="heading notopmargin">Описание</h2>
       <p>Обязательно должен быть указан один из следующих четырех флагов:</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_MATCH</tt> (0) —
+      <p><tt class="isppflags">FIND_MATCH</tt> (0) —
         строка должна иметь полное соответствие искомой строке;</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_BEGINS</tt> (1) —
+      <p><tt class="isppflags">FIND_BEGINS</tt> (1) —
         строка должна начинаться искомой строкой;</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_ENDS</tt> (2) —
+      <p><tt class="isppflags">FIND_ENDS</tt> (2) —
         строка должна заканчиваться искомой строкой;</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_CONTAINS</tt> (3) —
+      <p><tt class="isppflags">FIND_CONTAINS</tt> (3) —
         строка должна содержать строку поиска (этот флаг объединяет все три
         предыдущих).</p>
       <p>Любой из следующих флагов может быть скомбинирован с предыдущими с
-        помощью логической операции "ИЛИ" (<tt>&nbsp;<b>|</b>&nbsp;</tt>):</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_CASESENSITIVE</tt>
+        помощью логической операции "ИЛИ" (&nbsp;<tt><b>|</b></tt>&nbsp;):</p>
+      <p><tt class="isppflags">FIND_CASESENSITIVE</tt>
         (4) — сравнение должно выполняться с учётом регистра символов;</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_AND</tt> (0) —
+      <p><tt class="isppflags">FIND_AND</tt> (0) —
         добавляет к предыдущему критерию поиска ещё один обязательный критерий
         (например, для пары параметров в функции <tt>Find</tt>);</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_OR</tt> (8) —
+      <p><tt class="isppflags">FIND_OR</tt> (8) —
         добавляет к предыдущему критерию поиска ещё один критерий, если
         предыдущий не был выполнен;</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_NOT</tt> (16) —
+      <p><tt class="isppflags">FIND_NOT</tt> (16) —
         добавляет критерий поиска, который не должен быть выполнен.</p>
-      <p>Флаги <tt style="font-weight: bold; color: #663300;">FIND_AND</tt> и <tt
-          style="font-weight: bold; color: #663300;">FIND_OR</tt> являются
-        взаимоисключающими. Если указаны оба, то приоритет имеет флаг <tt style="font-weight: bold; color: #663300;">FIND_OR</tt>.</p>
+      <p>Флаги <tt class="isppflags">FIND_AND</tt> и <tt
+          class="isppflags">FIND_OR</tt> являются
+        взаимоисключающими. Если указаны оба, то приоритет имеет флаг <tt class="isppflags">FIND_OR</tt>.</p>
       <p>Специальные флаги:</p>
-      <p><tt style="font-weight: bold; color: #663300;">FIND_TRIM</tt> (32) —
+      <p><tt class="isppflags">FIND_TRIM</tt> (32) —
         при выполнении поиска исключает из строк начальные и конечные пробелы,
         т.е. этот флаг выполняется первым и только потом все остальные. Его
         необходимо указать в третьем параметре функции <tt style="font-style: italic;">Find</tt>.</p>

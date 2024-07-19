@@ -28,17 +28,22 @@
       <p>Класс <code>TDotNetVersion</code> представлен следующими значениями:</p>
       <pre class="indent">TDotNetVersion = (net11, net20, net30, net35, net4Client, net4Full, net45, net451, net452, net46, net461, net462, net47, net471, net472, net48);</pre>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+
 class="hl kwd">InitializeSetup</span>: Boolean;
 <span class="hl kwb">begin</span>
   Result := IsDotNetInstalled(net462, <span class="hl num">0</span>);
   <span class="hl slc">// Возвращает True, если установлен .NET Framework версии 4.6.2 или совместимый, такой как 4.8</span>
   <span class="hl kwb">if not</span> Result <span class="hl kwb">then</span>
-    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), [<span
-class="hl str">'.NET Framework'</span>, <span class="hl str">'4.6.2'</span>]), <span
-class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
-class="hl kwe">IDOK</span>);
-<span class="hl kwb">end</span>;</pre>
+    SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), [<span
+
+class="hl str">'.NET Framework'</span>, <span class="hl str">'4.6.2'</span>]), <span
+
+class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
+
+class="hl kwe">IDOK</span>);   
+<span class="hl kwb">end</span>;
+</pre>
     </div>
   </body>
 </html>

@@ -277,7 +277,7 @@
 "setup_compressionthreads:CompressionThreads",
 "filessection#confirmoverwrite:confirmoverwrite",
 "consts:Constants",
-"credits:Contributers",
+"credits:Contributors",
 "isxfunc_convertpercentstr:ConvertPercentStr",
 "isxfunc_copy:Copy",
 "langoptionssection#CopyrightFontName:CopyrightFontName",

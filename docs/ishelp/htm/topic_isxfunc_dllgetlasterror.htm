@@ -30,20 +30,24 @@
         API Windows, так как программа установки или удаления выполняет
         собственные вызовы API и в любое время последний код ошибки может быть
         перезаписан.</p>
-      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+      <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
+
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
           системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> MessageBox(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal): Integer;
+      <pre class="indent examplebox"><span class="hl kwb">function</span> MessageBox(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal): Integer;   
  <span class="hl kwb">external</span> <span class="hl str">'MessageBoxA@user32.dll stdcall'</span>;
 
 ...
 
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> MessageBox(-<span class="hl num">1</span>, <span
-class="hl str">''</span>, <span class="hl str">''</span>, -<span class="hl num">1</span>) = <span
+  <span class="hl kwb">if</span> MessageBox(-<span class="hl num">1</span>, <span
+
+class="hl str">''</span>, <span class="hl str">''</span>, -<span class="hl num">1</span>) = <span
+
 class="hl num">0</span> <span class="hl kwb">then</span>
-    MsgBox(SysErrorMessage(DLLGetLastError), <span class="hl kwe">mbError</span>, <span
+    MsgBox(SysErrorMessage(DLLGetLastError), <span class="hl kwe">mbError</span>, <span
+
 class="hl kwe">MB_OK</span>);</pre>
     </div>
   </body>

@@ -26,26 +26,30 @@
         Если параметр <tt>Description</tt> имеет значение <tt>True</tt>, то
         функция вернёт описание, в противном случае — имя.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">procedure</span> <span
+      <pre class="indent examplebox"><span class="hl kwb">procedure</span> <span
+
 class="hl kwd">CurStepChanged</span>(CurStep: TSetupStep);
 <span class="hl kwb">var</span>
   SetupType: <span class="hl kwb">String</span>;
 <span class="hl kwb">begin</span>
   <span class="hl kwg">Log</span>(<span class="hl kwg">Format</span>(<span class="hl sng">'CurStepChanged %d'</span>, [CurStep]));
 
-  <span class="hl kwb">if</span> CurStep = <span class="hl kwe">ssInstall</span> <span
+  <span class="hl kwb">if</span> CurStep = <span class="hl kwe">ssInstall</span> <span
+
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     SetupType := <span class="hl kwg">WizardSetupType</span>(<span class="hl kwg">False</span>);
 
-    <span class="hl kwb">if</span> SetupType = <span class="hl sng">'application'</span> <span
+    <span class="hl kwb">if</span> SetupType = <span class="hl sng">'application'</span> <span
+
 class="hl kwb">then</span>
     <span class="hl kwb">begin</span>
       <span class="hl kwg">Log</span>(<span class="hl sng">'Установка сервера приложений'</span>);
       ApplicationServer;
     <span class="hl kwb">end</span>
       <span class="hl kwb">else</span>
-    <span class="hl kwb">if</span> SetupType = <span class="hl sng">'client'</span> <span
+    <span class="hl kwb">if</span> SetupType = <span class="hl sng">'client'</span> <span
+
 class="hl kwb">then</span>
     <span class="hl kwb">begin</span>
       <span class="hl kwg">Log</span>(<span class="hl sng">'Установка клиента'</span>);
@@ -57,6 +61,7 @@ class="hl kwb">then</span>
     <span class="hl kwb">end</span>;
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;
-</pre> </div>
+</pre>
+    </div>
   </body>
 </html>

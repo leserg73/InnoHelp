@@ -1,0 +1,18 @@
+/*
+Inno Setup
+Copyright (C) 1992-2024 Sergii Leonov
+*/
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 8pt;   /* 8pt (8/12)  66.667% */
+    color: #272727;
+    background: #efefef;
+}
+p {
+    margin-top: -8px;
+    padding: 3px;
+    background-color: inherit;
+    text-align: right;
+    /*border-top: 1px solid #5B585C;*/
+}

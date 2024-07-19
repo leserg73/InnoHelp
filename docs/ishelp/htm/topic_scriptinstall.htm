@@ -46,10 +46,10 @@
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall
 <span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
 <span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
 <span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: Log(<span
 class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
@@ -77,10 +77,10 @@ class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall
 <span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
 <span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
 <span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: Log(<span
 class="hl str">'After MYPROG.CHM Install'</span>)</pre>
@@ -111,7 +111,7 @@ class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span clas
 <span class="hl kwb">procedure</span> MyBeforeInstall2(FileName: String);
 <span class="hl kwb">begin</span>
   MsgBox(<span class="hl str">'Будет установлен '</span> + FileName + <span class="hl str">' как '</span> + CurrentFileName + <span
-class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);   
 <span class="hl kwb">end</span>;
 
 <span class="hl kwb">procedure</span> MyAfterInstall();

@@ -3,8 +3,6 @@
   Copyright (C) 1997-2024 Jordan Russell
   Portions by Martijn Laan
   For conditions of distribution and use, see LICENSE.TXT.
-
-  $jrsoftware: ishelp/Staging/styles.css,v 1.7 2010/09/17 03:48:14 jr Exp $
 */
 
 body {
@@ -14,7 +12,8 @@ body {
     font: calc(14rem/16)/1.5 "Segoe UI", sans-serif;
     line-height: 1.4;
     margin: 0;
-    color: #282828;
+    /*background-color: #efefef;*/
+    color: #272727;
 }
 
 pre, tt, code {
@@ -240,9 +239,24 @@ td {
     vertical-align: baseline;
 }
 
-a:link, a:visited, a:active {
-    /* color: #0000FF; */
-    color: #008000;
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:link {
+    color: #264b99;
+}
+
+a:visited {
+    color: #5e85d7;
+}
+
+a:active {
+    color: #7799dd;
 }
 
 a.new:link, a.new:visited, a.new:active {
@@ -418,8 +432,10 @@ li.compact {
     padding-top: 10px;
     /* padding-bottom: 10px; */
     padding-left:20px;
+    padding-right:5px;
     margin-left: 10px;
     margin-right: 5px;
+    text-align: left;
     border: 1px solid #e0e0e0;
     /* on IE6, if the content of the box is wider than the page,
 	   the width of the box is increased. on firefox 1.5, by default
@@ -479,15 +495,15 @@ dt.flaglist:before {
     content: "\2023";
 }
 
-dt.cmdline {
+.cmdline {
     /* background-color: #ffecd8; */
     background: rgb(255, 236, 216);
     background: -moz-linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
     background: -webkit-linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
     background: linear-gradient(90deg, rgba(255, 236, 216, 1) 0%, rgba(255, 255, 255, 1) 70%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffecd8", endColorstr="#ffffff", GradientType=1);
-    /*font-weight: bold;*/
-    /* color: #663300; */
+    font-weight: bold;
+    color: #663300;
     /* border: 1px ridge #7b3f04; */
     padding-left: 15px;
     padding-bottom: 5px;
@@ -510,7 +526,6 @@ td.cellright {
 
 table.setuphdr {
     font-size: 14px;
-    font: "courier new", monospace;
     margin: 0;
     padding: 4px 4px;
     width: 100%;
@@ -525,6 +540,7 @@ td.setuphdrl {
 
 td.setuphdrr {
     padding-left: 1em;
+    color: #272727;
 }
 
 tr.setuphdrtr1 {
@@ -544,7 +560,7 @@ tr.setuphdrtr3 {
 
 #redirectbox {
     position: absolute;
-    background: InfoBackground;
+    background-color: InfoBackground;
     color: InfoText;
     padding: 16px 24px;
     border: 1px solid ThreeDDarkShadow;
@@ -564,4 +580,21 @@ li {
 
 .highlight {
     background: #FFFF40;
+    padding-top: 55px;
+    margin-top: -55px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+
+.altcolorrow {
+    background-color: #eeeeee;
+}
+
+span.comidispatch {
+    color: #990000;
+}
+
+.isppflags {
+    font-weight: bold;
+    color: #663300;
 }

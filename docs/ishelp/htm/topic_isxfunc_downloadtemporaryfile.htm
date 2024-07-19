@@ -48,10 +48,12 @@
         которое позволяет продолжить загрузку, иначе — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
-<span class="hl kwb">function</span> OnDownloadProgress(<span class="hl kwb">const</span> Url, Filename: String; <span
-class="hl kwb">const</span> Progress, ProgressMax: Int64): Boolean;
+<span class="hl kwb">function</span> OnDownloadProgress(<span class="hl kwb">const</span> Url, Filename: String; <span
+
+class="hl kwb">const</span> Progress, ProgressMax: Int64): Boolean;   
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> ProgressMax &lt;&gt; <span class="hl num">0</span> <span
+  <span class="hl kwb">if</span> ProgressMax &lt;&gt; <span class="hl num">0</span> <span
+
 class="hl kwb">then</span>
     Log(Format(<span class="hl str">'  %d из %d байт.'</span>, [Progress, ProgressMax]))
   <span class="hl kwb">else</span>
@@ -75,7 +77,8 @@ class="hl kwb">then</span>
     Log(GetExceptionMessage);
     Result := False;
   <span class="hl kwb">end</span>;
-<span class="hl kwb">end</span>;</pre>
+<span class="hl kwb">end</span>;
+</pre>
       <p>Также смотрите в файле <i>CodeDownloadFiles.iss</i> другой пример с
         использованием <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>.</p>
       <h2 class="heading">См. также:</h2>
