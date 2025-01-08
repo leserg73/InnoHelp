@@ -10,9 +10,9 @@ body {
     background: #efefef;
 }
 p {
-    margin-top: -8px;
-    padding: 3px;
+    margin-top: -0.08333in;
+    padding: 0.03125in;
     background-color: inherit;
     text-align: right;
-    /*border-top: 1px solid #5B585C;*/
+    /* border-top: 0.010416in solid #5B585C; */
 }

@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: CallDLLProc</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: CallDLLProc</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,12 +15,12 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: CallDLLProc</h1>
+    <h1 class="topicheading">Программирование: CallDLLProc</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function
-          CallDLLProc(const DLLHandle: LongInt; const ProcName: String; const
-          Param1, Param2: LongInt; var Result: LongInt): Boolean;</tt></p>
+          CallDLLProc(const DLLHandle: Longint; const ProcName: String; const
+          Param1, Param2: Longint; var Result: Longint): Boolean;</tt></p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет вызов указанной функции из библиотеки DLL, определённой с
         помощью дескриптора DLL, который вернула функция LoadDLL. Возвращает

@@ -1080,17 +1080,17 @@ function ZoomShowSearchBox()
 
 function ZoomShowSearchButton()
 {
-	document.writeln("<input type=\"submit\" value=\"" + STR_FORM_SUBMIT_BUTTON + "\" class=\"zoom_button\" /><br />");
+	document.writeln("<input type=\"submit\" value=\"" + STR_FORM_SUBMIT_BUTTON + "\" class=\"zoom_button\" />");
 }
 
 function ZoomShowResetFormStart()
 {
-	document.writeln("<form target=\"_self\" class=\"zoom_resetform\">");
+	document.writeln("<form target=\"_self\" id=\"zoom_resetform\">");
 }
 
 function ZoomShowResetButton()
 {
-	document.writeln("<input type=\"submit\" value=\"" + STR_FORM_SUBMIT_RBUTTON + "\" class=\"zoom_resetbutton\" /><br />");
+	document.writeln("<input type=\"submit\" value=\"" + STR_FORM_SUBMIT_RBUTTON + "\" class=\"zoom_resetbutton\" form=\"zoom_resetform\" /><br />");
 }
 
 function ZoomShowResultsPerPage()
@@ -1265,6 +1265,7 @@ function ZoomShowSearchForm()
 		ZoomShowFormStart();
 		ZoomShowSearchBox();
 		ZoomShowSearchButton();
+		ZoomShowResetButton();
 		if (FormFormat == 2)
 		{
 			ZoomShowResultsPerPage();			
@@ -1274,12 +1275,12 @@ function ZoomShowSearchForm()
 			ZoomShowMetaFields();
 		}
 		ZoomShowFormEnd();
-		if (DisplayResetButton == 1)
-		{
+		//if (DisplayResetButton == 1)
+		//{
 			ZoomShowResetFormStart();
-			ZoomShowResetButton();
+		//	ZoomShowResetButton();
 			ZoomShowResetFormEnd();
-		}
+		//}
 	}
 }
 

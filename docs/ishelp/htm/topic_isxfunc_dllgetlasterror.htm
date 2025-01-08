@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: DLLGetLastError</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: DLLGetLastError</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,11 +15,11 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: DLLGetLastError</h1>
+    <h1 class="topicheading">Программирование: DLLGetLastError</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function
-          DLLGetLastError(): LongInt;</tt></p>
+          DLLGetLastError(): Longint;</tt></p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает последний код ошибки после самого последнего вызова функции
         DLL. Полезно использовать после обращения к функциям API Windows (если
@@ -33,7 +32,7 @@
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
 
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">function</span> MessageBox(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal): Integer;   
  <span class="hl kwb">external</span> <span class="hl str">'MessageBoxA@user32.dll stdcall'</span>;

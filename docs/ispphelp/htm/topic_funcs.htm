@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Inno Setup Preprocessor: Functions</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Препроцессор Inno Setup: Функции</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Inno Setup Preprocessor: Поддерживаемые функции</h1>
+    <h1 class="topicheading">Препроцессор Inno Setup: Функции</h1>
     <div class="topicbody">
       <p><b>ISPP</b> содержит ряд встроенных функций, которые можно использовать
         для выполнения каких-либо операций во время компиляции и/или изменения
@@ -24,8 +23,9 @@
         получим версию исполняемого файла программы, а затем полученное значение
         подставим в директиву <a href="../../ishelp/htm/topic_setup_appvername.htm" target="_blank"
           title="Директива AppVerName">AppVerName</a><img src="../images/extlink.png"
-          alt=" [внешняя ссылка]" /> в секции [Setup], используя директиву ISPP
-        <tt class="nill"><a href="topic_emit.htm">emit</a></tt>:</p>
+          alt=" [внешняя ссылка]" /> в секции [Setup], используя
+        директиву ISPP <tt class="nill"><a href="topic_emit.htm">emit</a></tt>:
+      </p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
@@ -104,6 +104,9 @@ class="hl kwc">{#MyAppVer}</span>
         <li><a href="topic_getsha1offile.htm">GetSHA1OfFile</a></li>
         <li><a href="topic_getsha1ofstring.htm">GetSHA1OfString</a></li>
         <li><a href="topic_getsha1ofunicodestring.htm">GetSHA1OfUnicodeString</a></li>
+        <li><a href="topic_getsha256offile.htm">GetSHA256OfFile</a></li>
+        <li><a href="topic_getsha256ofstring.htm">GetSHA256OfString</a></li>
+        <li><a href="topic_getsha256ofunicodestring.htm">GetSHA256OfUnicodeString</a></li>
         <li><a href="topic_getstringfileinfo.htm">GetStringFileInfo</a></li>
         <li><a href="topic_getversioncomponents.htm">GetVersionComponents</a></li>
         <li><a href="topic_getversionnumbers.htm">GetVersionNumbers</a></li>

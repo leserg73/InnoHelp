@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Регулярные выражения</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Регулярные выражения</h1>
+      <div class="topicbody">
+      
+      <p>Среда разработки Inno Setup поддерживает регулярные выражения для всех операций поиска и замены. Включить или отключить эту функцию можно с помощью параметра "<i>Использовать регулярные выражения</i>" в меню "<i>Правка</i>" или используя комбинацию клавиш (Alt+R). Включенное или отключенное состояние этого параметра будет сохраняться во всех сеансах редактора.</p>
+      
+      <p>При использовании регулярные выражения будут соответствовать только диапазонам в одной строке, но никогда не будут соответствовать нескольким строкам.</p>
+      
+      <p>Регулярные выражения должны быть составлены в грамматике ECMAScript, в целом схожей с грамматикой, используемой в JavaScript и языках .NET. Неправильные регулярные выражения приведут к появлению сообщения об ошибке.</p>
+      
+      <p>Более подробную информацию по грамматике смотрите на ресурсах:</p>
+      <ul>
+      <li><a href="https://cplusplus.com/reference/regex/ECMAScript/" target="_blank" title="https://cplusplus.com/reference/regex/ECMAScript/">https://cplusplus.com/reference/regex/ECMAScript/</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+      <li><a href="https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp" target="_blank" title="https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp">https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+      <li><a href="https://regex101.com/r/fYE7S3/1" target="_blank" title="https://regex101.com/r/fYE7S3/1">https://regex101.com/r/fYE7S3/1</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+      </ul>
+      
+      <p>При замене с помощью регулярных выражений строка замены может содержать следующие специальные управляющие символы:</p>
+      
+      <table>
+      <tr><td class="cellleft"><u>Управляющие символы</u></td><td class="cellright"><u>Толкование</u></td></tr>
+      <tr>
+        <td class="cellleft">от $1 до $9 или от \1 до \9</td><td class="cellright">Содержимое соответствующей группы захвата</td>
+      </tr>
+      <tr>
+        <td class="cellleft">$&amp; или \0</td><td class="cellright">Полное совпадение содержимого</td>
+      </tr>
+      <tr>
+        <td class="cellleft">$$</td><td class="cellright">Литеральный символ '$'</td>
+      </tr>
+      <tr>
+        <td class="cellleft">\\, \a, \b, \f, \r, \n, \t, \v</td><td class="cellright">Литералы '\', '\a', '\b' и т.д.</td>
+      </tr>
+      </table>
+      
+      <p>Например, если искомая строка содержит выражение <tt>(Ex)(ample)</tt>, а строка замены <tt>$2$1</tt>, то при выполнении операции замены весь текст "Examples" в сценарии изменится на "<tt>ampleExs</tt>". Или же, если строка замены содержит выражение <tt>$1\r\n$2</tt>, то между "Ex" и "amples" будет вставлена новая строка.
+      </p>
+    </div>
+  </body>
+</html>

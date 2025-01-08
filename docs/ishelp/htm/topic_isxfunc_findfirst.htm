@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: FindFirst</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: FindFirst</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: FindFirst</h1>
+    <h1 class="topicheading">Программирование: FindFirst</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function
@@ -27,9 +26,9 @@
       <p>Объявление структуры <code>TFindRec</code>:</p>
       <pre class="indent">  TFindRec = record
     Name: String;               // имя найденного файла (без пути)
-    Attributes: LongWord;       // атрибуты файла
-    SizeHigh: LongWord;         // размер файла, более 32 бит
-    SizeLow: LongWord;          // размер файла, менее 32 бит
+    Attributes: Longword;       // атрибуты файла
+    SizeHigh: Longword;         // размер файла, более 32 бит
+    SizeLow: Longword;          // размер файла, менее 32 бит
     CreationTime: TFileTime;    // время создания файла
     LastAccessTime: TFileTime;  // время последнего доступа к файлу
     LastWriteTime: TFileTime;   // время последнего изменения файла

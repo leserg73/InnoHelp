@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: Функции событий</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: Функции событий</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: Функции событий</h1>
+    <h1 class="topicheading">Программирование: Функции событий</h1>
     <div class="topicbody">
       <p>Pascal-сценарий может содержать несколько функций, которые вызываются
         при определённых событиях.</p>
@@ -113,17 +112,22 @@
           <p>Если программа установки обнаружит в сценарии функцию <tt>CheckPassword</tt>,
             она автоматически отобразит страницу <i>Пароль</i> и выполнит вызов
             <tt>CheckPassword</tt> для проверки пароля. Возвращает значение <tt>True</tt>,
-            если пароль принят, и <tt>False</tt>, если пароль отклонен. </p>
+            если пароль принят, и <tt>False</tt>, если пароль отклонен.</p>
           <p>Чтобы обезопасить свой инсталлятор, не указывайте пароль для
             сравнения с пользовательским вводом в открытом виде. Вместо этого
             используйте хеширование строк. Определите хеш действительного пароля
-            по алгоритму SHA-1, затем укажите это значение в функции проверки,
-            сравнивая его с введённым паролем посредством <tt><a href="topic_isxfunc_getsha1ofstring.htm">GetSHA1OfString</a>(Password)</tt>.
+            по алгоритму SHA-256, затем укажите это значение в функции проверки,
+            сравнивая его с введённым паролем посредством <tt><a href="topic_isxfunc_getsha256ofstring.htm">GetSHA256OfString</a>(Password)</tt>.
             Таким образом, фактическое значение пароля останется защищённым. </p>
           <p>Примечание: если программа установки запущена с <a href="topic_setupcmdline.htm#PASSWORD">параметром
               командной строки</a> /PASSWORD=, функция <tt>CheckPassword</tt>
             будет вызвана <i>ранее</i> других функций события, включая <tt><a
-                href="#InitializeSetup">InitializeSetup</a></tt>. </p>
+                href="#InitializeSetup">InitializeSetup</a></tt>.</p>
+          <p>Также обратите внимание: если для директивы <tt><a
+            href="topic_setup_encryption.htm">Encryption</a></tt> установлено
+            значение <tt>yes</tt>, а функция проверки пароля <tt>CheckPassword</tt>
+            принимает пароли, которые отличаются от используемых для шифрования,
+            убедитесь, что извлекаете только незашифрованные файлы.</p>
         </dd>
         <dt class="func"><code>function <a name="NeedRestart">NeedRestart</a>(): Boolean;</code></dt>
         <dd class="paramlist1">

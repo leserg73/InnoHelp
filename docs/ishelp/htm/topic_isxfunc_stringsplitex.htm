@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: StringSplitEx</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: StringSplitEx</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+        <p class="prototip1 notopmarginX"><tt class="nill">function
+          StringSplitEx(const S: String; const Separators: TArrayOfString; const
+          Quote: Char; const Typ: TSplitType): TArrayOfString;</tt></p>
+      <h2 class="heading">Описание</h2>
+        <p>Выполняет разделение заданной строки на подстроки, используя указанные
+          символы или строки в качестве разделителя. Пустые подстроки могут быть
+          проигнорированы. Используйте параметр <tt>Quote</tt>, чтобы указать
+          начальный и конечный символ заключенной в кавычки части строки, где
+          разделители не учитываются.</p>
+<p>Класс <tt>TSplitType</tt> объявлен как:</p>
+<p>&nbsp;&nbsp;&nbsp;<tt class="nill">TSplitType = (stAll, stExcludeEmpty, stExcludeLastEmpty);</tt></p>
+      <h2 class="heading">Пример</h2>
+        <pre class="indent examplebox"><span class="hl kwb">var</span>
+  A: <span class="hl kwb">array of String</span>;
+<span class="hl kwb">begin</span>
+  A := <span class="hl kwd">StringSplitEx</span>(<span class="hl sng">&#39;1,&quot;,&quot;,2&#39;</span>, [<span class="hl sng">&#39;,&#39;</span>], <span class="hl sng">&#39;&quot;&#39;</span>, stAll);
+  <span class="hl slc">// A = [&#39;1&#39;,&#39;&quot;,&quot;&#39;,&#39;2&#39;]</span>
+<span class="hl kwb">end</span>;
+</pre>
+    <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_stringsplit.htm">StringSplit</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: Encryption</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -42,22 +41,21 @@
       <h2 class="heading">Описание</h2>
       <p>При установке значения <tt>yes</tt> файлы инсталлятора
         (указанные в секции <tt>[Files]</tt>) будут зашифрованы алгоритмом
-        ARCFOUR с использованием 160-разрядного ключа, полученного из значения
-        параметра <a href="topic_setup_password.htm">Password</a> в секции <tt>[Setup]</tt>.</p>
-      <p>Из-за наличия в некоторых странах законов о правилах
-        использования шифрования, библиотека шифрования не включена в основной
-        пакет установки Inno Setup, а загружается им отдельно во время установки.
-        Дополнительную информацию по данному вопросу смотрите на странице <a 
-        href="https://jrsoftware.org/isdl.php" target="_blank" title="https://jrsoftware.org/isdl.php">Inno
-        Setup Downloads</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.</p>
+        <b>XChaCha20</b>.</p>
       <p>Если при включенном шифровании в секции <tt>[Code]</tt>
         используется вызов функции <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
         прежде, чем пользователь введёт корректный пароль, работа этой функции
         будет завершаться ошибкой, пока в секции <tt>[Files]</tt> для данного
         файла не будет указан флаг <tt>noencryption</tt>.</p>
-      <p>Ключ, используемый для шифрования, является
-        160-разрядным хешем SHA-1 случайного 64-разрядного модификатора, включая
-        значение директивы <a href="topic_setup_password.htm">Password</a>.</p>
+      <p>256-разрядный ключ шифрования XChaCha20 формируется из значения директивы
+        <a href="topic_setup_password.htm">Password</a>, используя функцию PBKDF2 c
+        заданным количеством итераций, которая указана в директиве <a
+        href="topic_setup_encryptionkeyderivation.htm">EncryptionKeyDerivation</a>,
+        а 192-разрядный <i>нонс</i> шифрования XChaCha20
+        представляет собой случайный базовый нонс, к которому добавляется индекс
+        первого файла в чанке для получения уникальных нонсов шифрования.</p>
+      <p>Примечание: нонс (от англ. <tt>nonce</tt>) – это число, которое может быть
+        использовано только один раз.</p>
     </div>
   </body>
 </html>

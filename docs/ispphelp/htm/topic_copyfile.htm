@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Inno Setup Preprocessor: CopyFile</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Препроцессор Inno Setup: CopyFile</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,15 +15,15 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Inno Setup Preprocessor: CopyFile</h1>
+    <h1 class="topicheading">Препроцессор Inno Setup: CopyFile</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>void</b> CopyFile(<b>str</b> 1, <b>str</b>
-          2)</tt></p>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>void</b> CopyFile(<b>str</b> ExistingFile, <b>str</b>
+          NewFile)</tt></p>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет копирование существующего файла (<i>первый параметр</i>) в
-        новый файл (<i>второй параметр</i>). Если новый файл уже существует, то
-        он будет перезаписан.</p>
+      <p>Выполняет копирование существующего файла <tt>ExistingFile</tt> в
+        новый файл <tt>NewFile</tt> с сохранением метки времени и атрибутов
+        файла. Если новый файл уже существует, то он будет перезаписан.</p>
     </div>
   </body>
 </html>

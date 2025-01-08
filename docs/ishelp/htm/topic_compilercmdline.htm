@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Командная строка компилятора</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -23,7 +22,7 @@
           <p>Другой вариант сборки сценариев — это использовать консольную
             версию компилятора, ISCC.exe. Общий вид использования командной
             строки следующий:</p>
-          <div class="indent">
+          <div>
             <p>iscc <i>[параметры]</i> <i>&lt;имя сценария&gt;</i> </p>
             <p>Или выполнять чтение из стандартного ввода:</p>
             <p>iscc <i>[параметры]</i> - </p>
@@ -33,38 +32,49 @@
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
-          <div class="null">Допустимые параметры:<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/O-</b>" — отключает вывод (переопределяет значение директивы
-            <tt>Output</tt> в сценарии);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/O+</b>" — включает вывод (переопределяет значение директивы
-            <tt>Output</tt> в сценарии);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/O</b>" — устанавливает путь вывода (переопределяет значение
-            директивы <tt>OutputDir</tt> в сценарии);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/F</b>" — устанавливает выходное имя файла (переопределяет
-            значение директивы <tt>OutputBaseFilename</tt> в сценарии);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/S</b>" — устанавливает инструмент цифровой подписи (любые
-            инструменты цифровой подписи, настроенные с помощью компилятора,
-            будут использованы автоматически);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/Q[p]</b>" — включает режим тихой компиляции (выводятся
-            только сообщения об ошибках, с ключом "p" будет показан прогресс
-            выполнения);<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;"<b>/?</b>" — отображает краткую справку по параметрам
-            компилятора.</div>
-          <br />
-          <div class="indent">
+          <div class="null">Допустимые параметры:
+          <table>
+            <tr>
+              <td class="cellleft"><b>/O(+|-)</b></td>
+              <td class="cellright">Включает (+) или отключает (-) параметр вывода
+                (замещает в сценарии команду <tt>Output</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/O&lt;path&gt;</b></td>
+              <td class="cellright">Устанавливает путь вывода файла (замещает в
+                сценарии команду <tt>OutputDir</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/F&lt;filename&gt;</b></td>
+              <td class="cellright">Устанавливает выходное имя файла (замещает в
+                сценарии команду <tt>OutputBaseFilename</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/S&lt;name&gt;=&lt;command&gt;</b></td>
+              <td class="cellright">Устанавливает инструмент цифровой подписи с
+                указанным именем и параметрами (все инструменты цифровой подписи,
+                настроенные в IDE компилятора, будут указаны автоматически)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/Q</b></td>
+              <td class="cellright">Тихая компиляция (будут показаны только
+                сообщения об ошибках)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/Qp</b></td>
+              <td class="cellright">Тихая компиляция с отображением прогресса
+                выполнения</td>
+            </tr>
+          </table>
+          <div>
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
               iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p
               "c:\isetup\samples\my script.iss"<br /><br /></div>
           </div>
-          <br />
+          <p>Другие параметры смотрите в разделе <a
+
+            href="topic_isppcc.htm">Inno Setup Preprocessor: Компиляция в командной строке</a>.</p>
           <div class="null">ISCC возвращает один из следующих кодов выхода:<br />
             <br />
             &nbsp;&nbsp;&nbsp;0 — компиляция прошла успешно;<br />
@@ -78,7 +88,7 @@
         <li>
           <p>Компиляцию сценариев также можно выполнить из командной строки.
             Общий вид использования командной строки следующий:</p>
-          <div class="indent">
+          <div>
             <p>compil32 /cc <i>&lt;имя сценария&gt;</i> </p>
             <div class="examplebox">
               <div class="exampleheader">Пример:</div>
@@ -101,7 +111,7 @@
         <li>
           <p>Мастер создания сценария также может быть запущен из командной
             строки. Общий вид использования командной строки следующий:</p>
-          <div class="indent">
+          <div>
             <p>compil32 /wizard <i>&lt;название мастера&gt; &lt;имя
                 сценария&gt;</i> </p>
             <div class="examplebox">
@@ -127,6 +137,7 @@
           <br />
         </li>
       </ul>
+      <br />
     </div>
   </body>
 </html>

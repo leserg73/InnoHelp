@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: VarType</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: VarType</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: VarType</h1>
+    <h1 class="topicheading">Программирование: VarType</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function VarType(const
@@ -46,7 +45,13 @@
   varVariant  = <span class="hl num">$000C</span>;
   varUnknown  = <span class="hl num">$000D</span>;
   varByte     = <span class="hl num">$0011</span>;
+  varWord     = <span class="hl num">$0012</span>;
+  varLongWord = <span class="hl num">$0013</span>;
+  varInt64    = <span class="hl num">$0014</span>;
+  varStrArg   = <span class="hl num">$0048</span>;
   varString   = <span class="hl num">$0100</span>;
+  varAny      = <span class="hl num">$0101</span>;
+  varUString  = <span class="hl num">$0102</span>;
   varTypeMask = <span class="hl num">$0FFF</span>;
   varArray    = <span class="hl num">$2000</span>;
   varByRef    = <span class="hl num">$4000</span>;</pre>

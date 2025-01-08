@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: Exec</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: Exec</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: Exec</h1>
+    <h1 class="topicheading">Программирование: Exec</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function Exec(const
@@ -57,6 +56,8 @@
           режиме установки</a>, при вызове <tt>CreateProcess</tt> эта функция
         отключает перенаправление файловой системы в WOW64. Это можно
         переопределить, вызвав функцию <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>.</p>
+      <p>Эта функция не может использоваться для запуска самой программы установки
+        до тех пор, пока не начнётся процесс установки.</p>
       <p><u>Внимание!</u> По сравнению с функцией <tt>Exec</tt> в ISPP
         параметры <tt>ShowCmd</tt> и <tt>Wait</tt> поменяны местами!</p>
       <h2 class="heading">Пример</h2>
@@ -82,9 +83,12 @@ class="hl kwe">SW_SHOWNORMAL</span>,
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
+      <p class="indent"><a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a>
         <br />
-        <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a> </p>
+        <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
+        <br />
+        <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>
+      </p>
     </div>
   </body>
 </html>

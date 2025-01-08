@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Клавиатурные команды компилятора</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Сочетания клавиш и управление мышкой</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -14,161 +13,427 @@
     <script type="text/javascript">
       $(document).ready(function(){highlight();});
     </script>
+    <style type="text/css">
+      table { table-layout: fixed; }
+    </style>
   </head>
   <body>
-    <h1 class="topicheading">Клавиатурные команды компилятора</h1>
+    <h1 class="topicheading">Сочетания клавиш и управление мышкой</h1>
     <div class="topicbody">
-      <p>Помимо клавиатурных, которые можно видеть в меню программы, среда
-        компилятора поддерживает следующие дополнительные команды:</p>
+      <p>Помимо комбинаций клавиш, которые можно увидеть в меню, редактор
+        поддерживает дополнительные сочетания клавиш и управление с помощью
+        мышки, некоторые из которых зависят от выбранной пользователем схемы
+        управления: "Classic" или&nbsp; "Visual Studio Code".</p>
+      <p>Если в колонке "Visual Studio Code" напротив команды ничего нет, значит
+        комбинация клавиш для этой команды такая же самая, что указана в колонке
+        "Classic".</p>
+      <p>Прочерк (&nbsp;-&nbsp;) означает, что данной команды в раскладке клавиш
+        комбинация клавиш недоступна (отсутствует).</p>
+      <p>Примечание: некоторые из приведенных комбинаций клавиш используют
+        строковое представление для специальных виртуальных клавиш. А именно:
+        точка с запятой (&nbsp;;&nbsp;) для VK_OEM_1, точка (&nbsp;.&nbsp;) для
+        VK_OEM_PERIOD, косая черта (&nbsp;/&nbsp;) для VK_OEM_2, открывающая
+        квадратная скобка (&nbsp;[&nbsp;) для VK_OEM_4, (&nbsp;\&nbsp;) для
+        VK_OEM_5 и закрывающая квадратная скобка (&nbsp;]&nbsp;) для VK_OEM_6. В
+        разных раскладках клавиатуры эти специальные виртуальные клавиши обычно
+        располагаются по-другому или меняют символы, появляющиеся при их
+        нажатии. В меню "<i>Edit</i>" (Правка) эти комбинации клавиш
+        отображаются в соответствии с раскладкой клавиатуры текущей системы.
+        Например, при использовании французской раскладки клавиатуры AZERTY
+        комбинация клавиш для команды "<i>Toggle Line Comment</i>" (Переключить
+        комментарий к строке) отображается как Ctrl+: вместо Ctrl+/. Если
+        раскладка клавиатуры не поддерживает виртуальную клавишу, то комбинация
+        клавиш с её использованием показана не будет.</p>
       <table>
         <tbody>
           <tr>
-            <th>Команда</th>
-            <th>Сочетание клавиш</th>
-          </tr>
-          <tr class="altcolorrow">
-            <td class="cellleft">Вставить отступ.</td>
-            <td class="cellright"><b>Tab</b></td>
+            <th style="width: 600px; min-width: 360px; ">Команда</th>
+            <th style="width: 220px; max-width: 220px;">"Classic"</th>
+            <th style="width: 220px; max-width: 220px;">"Visual Studio Code"</th>
           </tr>
           <tr>
-            <td class="cellleft">Удалить отступ.</td>
-            <td class="cellright"><b>Shift+Tab</b></td>
-          </tr>
-          <tr class="altcolorrow">
-            <td class="cellleft">Удалить до начала слова.</td>
-            <td class="cellright"><b>Ctrl+Backspace</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Удалить до конца слова.</td>
-            <td class="cellright"><b>Ctrl+Delete</b></td>
+            <td>Вставить отступ.</td>
+            <td><b>Tab</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Удалить до начала строки.</td>
-            <td class="cellright"><b>Ctrl+Shift+Backspace</b></td>
+            <td>Удалить отступ.</td>
+            <td><b>Shift+Tab</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Удалить до конца строки.</td>
-            <td class="cellright"><b>Ctrl+Shift+Delete</b></td>
+            <td>Вставить отступ строк.</td>
+            <td>-</td>
+            <td><b>Ctrl+]</b></td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Перейти в начало документа. Вместе с Shift -
-              выделение.</td>
-            <td class="cellright"><b>Ctrl+Home</b></td>
+            <td>Удалить отступ строк.</td>
+            <td>-</td>
+            <td><b>Ctrl+[</b></td>
           </tr>
           <tr>
-            <td class="cellleft">Перейти в начало строки.</td>
-            <td class="cellright"><b>Alt+Home</b></td>
+            <td>Переключить комментарий строки.</td>
+            <td><b>Ctrl+/</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Перейти в конец документа. Вместе с Shift -
-              выделение.</td>
-            <td class="cellright"><b>Ctrl+End</b></td>
+            <td>Удалить до начала слова.</td>
+            <td><b>Ctrl+Backspace</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Перейти в конец строки.</td>
-            <td class="cellright"><b>Alt+End</b></td>
+            <td>Удалить до конца слова.</td>
+            <td><b>Ctrl+Delete</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Прокрутить вверх.</td>
-            <td class="cellright"><b>Ctrl+Up</b></td>
+            <td>Удалить до начала строки.</td>
+            <td><b>Ctrl+Shift+Backspace</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Прокрутить вниз.</td>
-            <td class="cellright"><b>Ctrl+Down</b></td>
+            <td>Удалить до конца строки.</td>
+            <td><b>Ctrl+Shift+Delete</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Вырезать строку.</td>
-            <td class="cellright"><b>Ctrl+L</b></td>
+            <td>Перейти в начало документа.<br>
+              Вместе с Shift – расширяет выделение.</td>
+            <td><b>Ctrl+Home</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Копировать строку.</td>
-            <td class="cellright"><b>Ctrl+Shift+T</b></td>
+            <td>Перейти к первому непустому символу строки.</td>
+            <td><b>Home</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Удалить строку.</td>
-            <td class="cellright"><b>Ctrl+Shift+L</b></td>
+            <td>Перейти в начало строки.</td>
+            <td><b>Alt+Home</b> или<br>
+              <b>Home Home</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Поменять строку с предыдущей.</td>
-            <td class="cellright"><b>Ctrl+T</b></td>
+            <td>Перейти в конец документа.<br>
+              Вместе с Shift – расширяет выделение.</td>
+            <td><b>Ctrl+End</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Сделать копию строки или выделения.</td>
-            <td class="cellright"><b>Ctrl+D</b></td>
+            <td>Прейти к следующему абзацу.<br>
+              Вместе с Shift – расширяет выделение.</td>
+            <td><b>Ctrl+]</b></td>
+            <td>-</td>
           </tr>
           <tr>
-            <td class="cellleft">Перейти к предыдущему абзацу. Вместе с Shift -
-              расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+[</b></td>
+            <td>Перейти к предыдущему абзацу.<br>
+              Вместе с Shift – расширяет выделение.</td>
+            <td><b>Ctrl+[</b></td>
+            <td>-</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Перейти к следующему абзацу. Вместе с Shift -
-              расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+]</b></td>
+            <td>Перейти в конец строки.</td>
+            <td><b>End</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Перейти на предыдущее слово. Вместе с Shift -
-              расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+Left</b></td>
+            <td>Перейти в конец перенесенной строки.</td>
+            <td><b>Alt+End</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Перейти на следующее слово. Вместе с Shift -
-              расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+Right</b></td>
+            <td>Перейти к предыдущему слову.<br>
+              Вместе с Shift – выделение.</td>
+            <td><b>Ctrl+Left</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Перейти на предыдущую часть слова. Вместе с
-              Shift - расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+/</b></td>
+            <td>Перейти к следующему слову.<br>
+              Вместе с Shift – расширяет выделение.</td>
+            <td><b>Ctrl+Right</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Перейти на следующую часть слова. Вместе с
-              Shift - расширить выделение.</td>
-            <td class="cellright"><b>Ctrl+\</b></td>
+            <td>Перейти к парной скобке.</td>
+            <td><b>Ctrl+Shift+\</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Расширить выделение.</td>
-            <td class="cellright"><b>Shift+Стрелки</b></td>
+            <td>Прокрутить вверх.</td>
+            <td><b>Ctrl+Up</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Добавить дополнительное выделение.</td>
-            <td class="cellright"><b>Ctrl+Клик</b> или
-              <b>Ctrl+Перетаскивание</b></td>
+            <td>Прокрутить вниз.</td>
+            <td><b>Ctrl+Down</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Выделить блок.</td>
-            <td class="cellright"><b>Alt+Shift+Стрелки</b> или <b>Alt+Перетаскивание</b></td>
+            <td>Прокрутить по горизонтали.</td>
+            <td><b>Shift+MouseWheel</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Расширить выделенный блок до начала строки.</td>
-            <td class="cellright"><b>Alt+Shift+Home</b></td>
+            <td>Вырезать выделение или строку.</td>
+            <td><b>Ctrl+X</b> или<br>
+              <b>Shift+Delete</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Расширить выделенный блок до конца строки.</td>
-            <td class="cellright"><b>Alt+Shift+End</b></td>
+            <td>Копировать выделение или строку.</td>
+            <td><b>Ctrl+C</b> или<br>
+              <b>Ctrl+Insert</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Преобразовать множественное выделения в
-              одно или одного выделения в пустое.</td>
-            <td class="cellright"><b>Esc</b></td>
+            <td>Вырезать строки.</td>
+            <td><b>Ctrl+L</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr>
-            <td class="cellleft">Включить автозавершение слов.</td>
-            <td class="cellright"><b>Ctrl+Space</b>, <b>Ctrl+I</b> или <b>Alt+Right</b><br />
-              (комбинация Alt+Right недоступна в раскладке Delphi)</td>
+            <td>Копировать строки.</td>
+            <td><b>Ctrl+Shift+T</b></td>
+            <td>&nbsp;</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft">Вставить выбранное слово автозавершения.</td>
-            <td class="cellright"><b>Tab</b>, <b>Enter</b> или <b>Space</b>
-              (для директив ISPP);<br />
-              <b>\</b> (для констант);<br />
-              <b>:</b> (для констант и параметров секций);<br />
-              <b>]</b> (для секций);<br />
-              <b>=</b> (для параметров секции);</td>
+            <td>Удалить строку.</td>
+            <td><b>Ctrl+Shift+L</b></td>
+            <td><b>Ctrl+Shift+K</b></td>
           </tr>
           <tr>
-            <td class="cellleft">Отменить автозавершение.</td>
-            <td class="cellright"><b>Esc</b></td>
+            <td>Переключить строку с предыдущей.</td>
+            <td><b>Ctrl+T</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Переместить выделенные строки вверх.</td>
+            <td><b>Alt+Up</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Переместить выделенные строки вниз.</td>
+            <td><b>Alt+Down</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Дублировать выделение или копировать строки вниз.</td>
+            <td><b>Ctrl+D</b></td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Копировать строку вниз.</td>
+            <td>-</td>
+            <td><b>Shift+Alt+Down</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Изменить регистр строк на строчный.</td>
+            <td><b>Ctrl+U</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Изменить регистр строк на ПРОПИСНОЙ.</td>
+            <td><b>Ctrl+Shift+U</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Расширить выделение.</td>
+            <td><b>Shift+Arrow</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Выделить слово.</td>
+            <td><b>DoubleClick</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Выделить строку.</td>
+            <td><b>TripleClick</b> или<br>
+              <b>Click</b> по номеру строки</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Выделить все.</td>
+            <td><b>Ctrl+A</b> или<br>
+              <b>Ctrl+Click</b> по номеру строки</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Добавить дополнительный курсор или выделение.</td>
+            <td><b>Ctrl+Click</b> или<br>
+              <b>Ctrl+Drag</b></td>
+            <td><b>Alt+Click</b> или<br>
+              <b>Alt+Drag</b></td>
+          </tr>
+          <tr>
+            <td>Отменить выделение, щёлкнув по нему.</td>
+            <td><b>Ctrl+Click</b></td>
+            <td><b>Alt+Click</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Добавить слово как дополнительное выделение.</td>
+            <td><b>Ctrl+DoubleClick</b></td>
+            <td><b>Alt+DoubleClick</b></td>
+          </tr>
+          <tr>
+            <td>Добавить строку как дополнительное выделение.</td>
+            <td><b>Ctrl+TripleClick</b></td>
+            <td><b>Alt+TripleClick</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Добавить дополнительный курсор или выделение вверх.</td>
+            <td><b>Ctrl+Alt+Up</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Добавить дополнительный курсор или выделение вниз.</td>
+            <td><b>Ctrl+Alt+Down</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Добавить курсоры к концам строк.</td>
+            <td><b>Shift+Alt+I</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Добавить следующее вхождение текущего слова или выделенного
+              текста в качестве дополнительного выделения.</td>
+            <td><b>Shift+Alt+.</b></td>
+            <td><b>Ctrl+D</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Выделить все вхождения текущего слова или выделенного текста.</td>
+            <td><b>Shift+Alt+;</b></td>
+            <td><b>Ctrl+Shift+L</b> или<br>
+              <b>Ctrl+F2</b> (только если клавиши классического меню не активны)</td>
+          </tr>
+          <tr>
+            <td>Выделить все вхождения последнего поиска (также работает при
+              открытом диалоге поиска).</td>
+            <td><b>Alt+Enter</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Свернуть несколько выделений в одно или одно выделение в пустое.</td>
+            <td><b>Esc</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Выделить прямоугольный блок (при помощи мышки).<br>
+              Вместе с Shift – дополняет выделение.</td>
+            <td><b>Alt+Drag</b></td>
+            <td><b>Shift+Alt+Drag</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Выделить прямоугольный блок (при помощи клавиатуры).</td>
+            <td><b>Shift+Alt+Arrow</b></td>
+            <td><b>Ctrl+Shift+Alt+Arrow</b></td>
+          </tr>
+          <tr>
+            <td>Расширить выделенный блок до первого непустого символа в строке.</td>
+            <td><b>Shift+Alt+Home</b></td>
+            <td><b>Ctrl+Shift+Alt+Home</b></td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Расширить выделенный блок до начала строки.</td>
+            <td><b>Shift+Alt+Home Home</b></td>
+            <td><b>Ctrl+Shift+Alt+Home Home</b></td>
+          </tr>
+          <tr>
+            <td>Расширить выделенный блок до конца строки.</td>
+            <td><b>Shift+Alt+End</b></td>
+            <td><b>Ctrl+Shift+Alt+End</b></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Свернуть секцию.</td>
+            <td><b>Ctrl+Shift+[</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Развернуть секцию.</td>
+            <td><b>Ctrl+Shift+]</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Свернуть или развернуть все секции.</td>
+            <td><b>Ctrl+Shift+Click</b> в поле свертки</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Вызвать автозавершение.</td>
+            <td><b>Ctrl+Space</b> или<br>
+              <b>Ctrl+I</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Применить выбранное автозавершение.</td>
+            <td><b>Tab</b> или <b>Enter</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Закончить автозавершение.</td>
+            <td><b>Space</b> для директив ISPP, флагов (Flags) и типов (Type);<br>
+              <b>\</b>&nbsp;&nbsp;&nbsp;для констант;<br>
+              <b>:</b>&nbsp;&nbsp;&nbsp;для констант и параметров секций;<br>
+              <b>]</b>&nbsp;&nbsp;&nbsp;для секций;<br>
+              <b>=</b>&nbsp;&nbsp;&nbsp;для параметров секций;<br>
+              <b>(</b>&nbsp;&nbsp;&nbsp;для [Code].</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Вызвать подсказку параметра или показать следующее определение.</td>
+            <td><b>Ctrl+Shift+Space</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Отменить автозавершение или подсказку параметра.</td>
+            <td><b>Esc</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Переключить перезапись (режим вставки).</td>
+            <td><b>Insert</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>Выбрать вкладку.</td>
+            <td><b>Ctrl+1</b>, <b>Ctrl+2</b>&nbsp;...&nbsp;<b>Ctrl+9</b></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="altcolorrow">
+            <td>Переключение между активной вкладкой редактора и активной
+              панелью снизу.</td>
+            <td><b>F6</b></td>
+            <td>&nbsp;</td>
           </tr>
         </tbody>
       </table>

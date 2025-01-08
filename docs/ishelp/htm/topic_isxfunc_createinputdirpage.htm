@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Pascal Scripting: CreateInputDirPage</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
+    <title>Программирование: CreateInputDirPage</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -16,7 +15,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Pascal Scripting: CreateInputDirPage</h1>
+    <h1 class="topicheading">Программирование: CreateInputDirPage</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX"><tt class="nill">function
@@ -55,7 +54,7 @@ Page := CreateInputDirPage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Файлы личных данных будут храниться в следующей папке.'</span><span
 class="hl kwf">#13#10#13#10</span> +
   <span class="hl str">'Для продолжения нажмите "Далее". Чтобы выбрать другую папку, нажмите кнопку "Обзор".'</span>,
-  False, <span class="hl str">'New Folder'</span>);
+  False, SetupMessage(msgNewFolderName));
 
 <span class="hl slc">// Добавляем элемент (с пустым заголовком)</span>
 Page.Add(<span class="hl str">''</span>);

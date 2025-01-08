@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Идентификаторы архитектуры</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -22,16 +21,17 @@
         значениях <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
         и <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>.</p>
       <dl>
-        <dt class="archid"><b>arm32compatible</b></dt>
+        <dt class="archid">arm32compatible</dt>
         <dd>
           <p>Соответствует системам, способным запускать 32-разрядные двоичные
-            файлы Arm. Такая поддержка есть только в Windows Arm64.</p>
+            файлы Arm. Ранее Windows Arm64 включала такую поддержку, но в
+            Windows 11 24H2 она была удалена.</p>
         </dd>
-        <dt class="archid"><b>arm64</b></dt>
+        <dt class="archid">arm64</dt>
         <dd>
           <p>Соответствует системам, работающими под управлением Windows Arm64.</p>
         </dd>
-        <dt class="archid"><b>win64</b></dt>
+        <dt class="archid">win64</dt>
         <dd>
           <p>Соответствует системам, работающими под управлением Windows 64-бит,
             независимо от архитектуры.</p>
@@ -41,14 +41,14 @@
             разделу реестра или собственному 64-разрядному каталогу "Program
             Files".</p>
         </dd>
-        <dt class="archid"><b>x64compatible</b></dt>
+        <dt class="archid">x64compatible</dt>
         <dd>
           <p>Соответствует системам, способным запускать 64-разрядные
             исполняемые файлы. Сюда входят системы под управлением Windows
             64-бит, а также системы Windows 11 на платформе Arm64, которые могут
             запускать 64-разрядные исполняемые файлы посредством эмуляции.</p>
         </dd>
-        <dt class="archid"><b>x64os</b></dt>
+        <dt class="archid">x64os</dt>
         <dd>
           <p>Соответствует системам, работающими только под управлением Windows
             64-бит — но не любых других систем, способных запускать 64-разрядные
@@ -65,7 +65,7 @@
             Компилятор все ещё принимает <tt>x64</tt> в качестве псевдонима <tt>x64os</tt>,
             но при использовании будет показано предупреждение.</p>
         </dd>
-        <dt class="archid"><b>x86compatible</b></dt>
+        <dt class="archid">x86compatible</dt>
         <dd>
           <p>Соответствует системам, способным запускать 32-разрядные
             исполняемые файлы. Сюда входят системы под управлением Windows
@@ -76,7 +76,7 @@
             собирается как 32-разрядный двоичный файл, этот идентификатор всегда
             имеет истинное значение.</p>
         </dd>
-        <dt class="archid"><b>x86os</b></dt>
+        <dt class="archid">x86os</dt>
         <dd>
           <p>Соответствует системам, работающими только под управлением Windows
             32-бит.</p>
@@ -91,7 +91,7 @@
       </dl>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><a href="topic_isarchidentifier.htm">Сопоставление идентификаторов
-          архитектуры подобно IsX64Compatible</a> <br />
+          архитектуры</a> <br />
         <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>
       </p>
     </div>

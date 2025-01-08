@@ -3,10 +3,9 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
-    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: Compression</title>
-    <!--[if IE 6]><style type="text/css">html{overflow-y:scroll}</style><![endif]-->
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -74,14 +73,14 @@
         уровень сжатия не указан, по умолчанию используется 7.</p>
       <p>Значение <tt>bzip</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.bzip.org/" target="_blank"
-          title="http://www.bzip.org/">bzip2</a><img src="../images/extlink.png" alt=" [внешняя ссылка]" />.
+          title="http://www.bzip.org/">bzip2</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.
         В большинстве случаев степень сжатия у него лучше, чем у <tt>zip</tt>,
         но для сжатия и распаковки ему необходимо затратить больше времени. При
         распаковке требует до 4 Мб оперативной памяти, а при сжатии – до 8 Мб.
         Если уровень сжатия не указан, по умолчанию используется 9.</p>
       <p>Значение <tt>lzma</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.7-zip.org/" target="_blank"
-          title="http://www.7-zip.org/">7-Zip LZMA</a><img src="../images/extlink.png"
+          title="http://www.7-zip.org/">7-Zip LZMA</a><img src="../images/extlink.png" srcset="../images/extlink.svg"
           alt=" [внешняя ссылка]" />. Обычно степень сжатия у него намного
         лучше, чем у методов <tt>zip</tt> и <tt>bzip</tt>. Однако, в
         зависимости от уровня сжатия, он может оказаться гораздо медленнее и
@@ -96,72 +95,81 @@
               <td class="cellleft"><br />
               </td>
               <td class="cellright"><u>Распаковка (размер словаря)</u></td>
-              <td class="cellright"><u>Сжатие (4Мб + 11 * размер словаря)</u></td>
+              <td class="cellright"><u>Сжатие (6Мб + 11.5 * размер словаря)</u></td>
             </tr>
             <tr>
               <td class="cellleft"><tt>fast</tt> (худший)</td>
               <td class="cellright">32 Кб</td>
-              <td class="cellright">3 Мб</td>
+              <td class="cellright">6 Мб</td>
             </tr>
             <tr>
               <td class="cellleft"><tt>normal</tt></td>
               <td class="cellright">2 Мб</td>
-              <td class="cellright">26 Мб</td>
+              <td class="cellright">29 Мб</td>
             </tr>
             <tr>
               <td class="cellleft"><tt>max</tt> (по умолчанию)</td>
               <td class="cellright">8 Мб</td>
-              <td class="cellright">92 Мб</td>
+              <td class="cellright">98 Мб</td>
             </tr>
             <tr>
               <td class="cellleft"><tt>ultra</tt></td>
               <td class="cellright">32 Мб</td>
-              <td class="cellright">356 Мб</td>
+              <td class="cellright">374 Мб</td>
             </tr>
             <tr>
               <td class="cellleft"><tt>ultra64</tt> (лучший)</td>
               <td class="cellright">64 Мб</td>
-              <td class="cellright">708 Мб</td>
+              <td class="cellright">742 Мб</td>
             </tr>
             <tr>
               <td class="cellleft"><br />
               </td>
               <td class="cellright">128 Мб</td>
-              <td class="cellright">1.38 Гб</td>
+              <td class="cellright">1.44 Гб</td>
             </tr>
             <tr>
               <td class="cellleft"><br />
               </td>
               <td class="cellright">256 Мб</td>
-              <td class="cellright">2.75 Гб</td>
+              <td class="cellright">2.88 Гб</td>
             </tr>
             <tr>
               <td class="cellleft"><br />
               </td>
               <td class="cellright">512 Мб</td>
-              <td class="cellright">5.5 Гб</td>
+              <td class="cellright">5.76 Гб</td>
             </tr>
             <tr>
               <td class="cellleft"><br />
               </td>
               <td class="cellright">1 Гб</td>
-              <td class="cellright">11 Гб</td>
+              <td class="cellright">11.51 Гб</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p>При указании директивы <a href="topic_setup_lzmamatchfinder.htm">LZMAMatchFinder</a>
+        со значением <tt>HC</tt> требования к памяти для сжатия составляют
+        примерно 60% от вышеуказанных, что обусловлено уменьшением степени сжатия.</p>
       <p>Значение <tt>lzma2</tt> определяет метод сжатия,
         используемый компрессором <a href="http://www.7-zip.org/" target="_blank"
-          title="http://www.7-zip.org/">7-Zip LZMA2</a><img src="../images/extlink.png"
+          title="http://www.7-zip.org/">7-Zip LZMA2</a><img src="../images/extlink.png" srcset="../images/extlink.svg"
           alt=" [внешняя ссылка]" />. Метод LZMA2 является модифицированной
         версией LZMA и предлагает лучшую степень сжатия для несжимаемых данных
         (размер случайных данных увеличивается примерно на 0.005%, по сравнению
         с 1.35% в оригинальном LZMA). При необходимости может выполнять сжатие
         больших файлов в несколько потоков, значительно увеличивая скорость
         сжатия, правда с возможным снижением коэффициента сжатия (смотрите <a href="topic_setup_lzmanumblockthreads.htm">LZMANumBlockThreads</a>).
-        Как и LZMA, предъявляет <i>высокие</i> требования к объёму оперативной
-        памяти (см. таблицу выше). Если уровень сжатия не указан, то по
-        умолчанию используется <tt>max</tt>.</p>
+        Если уровень сжатия не указан, то по умолчанию используется <tt>max</tt>
+        Как и LZMA, LZMA2 предъявляет <i>высокие</i> требования к объёму оперативной
+        памяти (см. таблицу выше). Следует заметить, что LZMA2 поддерживает
+        только ограниченное число размеров словарей, поэтому другие размеры будут
+        округляться до следующего поддерживаемого размера. В свою очередь значения
+        поддерживаемых размеров являются кратными двум, начиная с 4 (4, 8, 16, 32
+        и т.д. до 1048576), и средними между ними (6, 12, 24 и т.д. до 786432).
+        Например, словарь размером 524289 (512 Мб + 1 байт) потребует столько же
+        памяти, сколько словарь размером 786432 (768 Мб).</p>
       <p>Значение <tt>none</tt> указывает, что сжатие не
         используется.</p>
       <h2 class="heading">См. также:</h2>
