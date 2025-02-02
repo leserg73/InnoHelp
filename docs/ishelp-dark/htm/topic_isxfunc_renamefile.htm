@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: RenameFile</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: RenameFile</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          RenameFile(const OldName, NewName: String): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет попытку изменить имя файла или папки, указанного в <tt>OldFile</tt>,
+        на новое <tt>NewFile</tt>. В случае успеха функция возвращает значение
+        <tt>True</tt>. Если переименование не удалось (например, файл, заданный
+        параметром <tt>NewName</tt>, уже существует), функция возвращает
+        значение <tt>False</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Эта функция не может использоваться для переименования файла программы
+        установки до тех пор, пока не начнётся процесс установки.</p>
+    </div>
+  </body>
+</html>

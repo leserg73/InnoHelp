@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: DisableProgramGroupPage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: DisableProgramGroupPage</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">auto</tt>, <a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">auto</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива управляет отображением страницы с выбором
+        папки в меню «Пуск».</p>
+      <p>Если задано значение <tt>yes</tt>, программа установки
+        не будет показывать страницу "<i>Выбор папки в меню «Пуск»</i>".</p>
+      <p>Если директива имеет значение <tt>auto</tt>, тогда при
+        запуске программа установки выполнит в реестре поиск идентификатора <a
+          href="topic_sameappnotes.htm">такого же приложения</a> и в случае его
+        обнаружения страница "<i>Выбор папки в меню «Пуск»</i>" показана не
+        будет.</p>
+      <p>Если страница мастера "<i>Выбор папки в меню «Пуск»</i>"
+        не отображается, для меню «Пуск» всегда используется имя папки по
+        умолчанию.</p>
+      <p>См. также <a href="topic_setup_alwaysshowgrouponreadypage.htm">AlwaysShowGroupOnReadyPage</a>.</p>
+    </div>
+  </body>
+</html>

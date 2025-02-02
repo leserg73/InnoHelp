@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: SetupMutex</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: SetupMutex</h1>
+    <div class="topicbody">
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива используется для предотвращения
+        повторного запуска программы установки во время её работы. Он определяет
+        один или несколько именованных мьютексов (при указании нескольких
+        мьютексов их необходимо разделять запятыми), которые программа установки
+        будет проверять при запуске. Если хоть один из них существует, будет
+        выдано сообщение: "Обнаружен запущенный экземпляр программы установки.
+        Пожалуйста, закройте все экземпляры приложения, затем нажмите «OK»,
+        чтобы продолжить, или «Отмена», чтобы выйти.". Если ни один из них не
+        обнаружен, программа установки создаст мьютекс(ы) и продолжит свою
+        работу в обычном режиме. Значение может содержать константы.</p>
+      <p>Чтобы указать мьютекс с именем, содержащим запятую,
+        экранируйте запятую обратной косой чертой.</p>
+      <p>Дополнительные сведения о мьютексах смотрите в разделе
+        "CreateMutex" справки MS SDK.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">SetupMutex</span>=MySetupsMutexName,Global\MySetupsMutexName</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_appmutex.htm">AppMutex</a>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: WizardSizePercent</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: WizardSizePercent</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr3">
+            <td class="setuphdrl">
+              <p>Формат:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill"><i>a</i>,<i>b</i></tt>, где <tt class="nill"><i>a</i></tt>
+                – это размер по горизонтали, а <tt class="nill"><i>b</i></tt> – размер по
+                вертикали.</div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">каждый размер: от <tt class="nill">100</tt> до <tt class="nill">150</tt>
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">120,120</tt>, если <a href="topic_setup_wizardstyle.htm">WizardStyle</a>=<tt class="nill">modern</tt>,
+                иначе <tt class="nill">100,100</tt></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Позволяет увеличить стандартный размер всех окон
+        мастера установки/удаления без увеличения размера шрифта. К примеру,
+        значение 120 означает увеличение размеров на 20%.</p>
+      <p>Если в директиве указано только одно значение, то оно
+        будет использовано для изменения размера как по горизонтали, так и по
+        вертикали.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">WizardSizePercent</span>=<span
+class="hl num">120</span></pre>
+      </div>
+      <p>Чтобы добавить полную поддержку <tt>WizardResizable</tt>
+        и <tt>WizardSizePercent</tt> для всех пользовательских элементов
+        управления и страниц мастера, если таковые имеются, используйте свойства
+        <tt>Anchors</tt> и <tt>KeepSizeY</tt>. В качестве примера смотрите файл
+        сценария <i>CodeClasses.iss</i>.</p>
+      <p>Примечание: некоторые окна мастера, такие как "<i>Выбор
+          языка</i>", будут увеличиваться только по горизонтали.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardresizable.htm">WizardResizable</a><br />
+        <a href="topic_langoptionssection.htm#DialogFontSize">DialogFontSize</a></p>
+    </div>
+  </body>
+</html>

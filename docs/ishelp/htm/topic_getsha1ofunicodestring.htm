@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: GetSHA1OfUnicodeString</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: GetSHA1OfUnicodeString</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> GetSHA1OfUnicodeString(<b>str</b>)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение контрольной суммы <b>SHA-1</b> для
+        заданной строки в кодировке <b>Unicode</b>.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl slc">// Объявляем переменную SHA1 и присваиваем ей значение</span>
+<span class="hl slc">// контрольной суммы строки "Test", которое вернёт функция.</span>
+<span class="hl kwf">#define</span> SHA1 <span class="hl kwd">GetSHA1OfUnicodeString</span><span
+
+class="hl opt">(</span><span class="hl str">'Test'</span><span class="hl opt">)</span>
+<span class="hl slc">// SHA1 = '9ab696a37604d665dc97134dbee44cfe70451b1a'</span>
+</pre> </div>
+    </div>
+  </body>
+</html>

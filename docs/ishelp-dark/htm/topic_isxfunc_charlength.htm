@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: CharLength</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: CharLength</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CharLength(const S: String; const Index: Integer): Integer;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает длину в байтах (1 или 2) символа в указанной строке <tt>S</tt>
+        по заданному индексу <tt>Index</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>В двухбайтовых наборах символов (китайский, японский, корейский)
+        большинство символов, отличных от ASCII, занимают два байта. Обратите
+        внимание, что второй байт двухбайтового символа, называемый "младшим
+        байтом", может находиться в том же диапазоне, который используется
+        символами ASCII (ниже 128). Таким образом, при переходе по строке,
+        которая может содержать двухбайтовые символы, такие как путь или имя
+        файла, необходимо принять меры, чтобы ошибочно не принимать младшие
+        байты за однобайтовые символы ASCII.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">function</span> BackslashToSlash(<span
+class="hl kwb">const</span> S: String): String;
+<span class="hl kwb">var</span>
+  I: Integer;
+<span class="hl kwb">begin</span>
+  Result := S;
+  I := <span class="hl num">1</span>;
+  <span class="hl kwb">while</span> I &lt;= Length(Result) <span class="hl kwb">do</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl kwb">if</span> Result[I] = <span class="hl str">'\'</span> <span
+class="hl kwb">then</span>
+      Result[I] := <span class="hl str">'/'</span>;
+    <span class="hl slc">// Переходим к следующему символу, но I увеличиваем не просто на 1,</span>
+    <span class="hl slc">// а на значение CharLength(), в зависимости от символа Result[I].</span>
+    I := I + CharLength(Result, I);
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;
+
+...
+
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Показываем путь, в котором обратная косая черта изменена на прямую.</span>
+  MsgBox(BackslashToSlash(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cf}</span><span
+class="hl str">'</span>)), <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

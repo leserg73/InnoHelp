@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: CreateInputOptionPage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: CreateInputOptionPage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateInputOptionPage(const AfterID: Integer; const ACaption,
+          ADescription, ASubCaption: String; Exclusive, ListBox: Boolean):
+          TInputOptionWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание страницы мастера установки, которая содержит флажки
+        или переключатели.</p>
+      <p>Параметр <tt>AfterID</tt> определяет страницу мастера установки, после
+        которой будет размещена (показана) эта страница.</p>
+      <p>Для параметра <tt>ACaption</tt> следует указать заголовок страницы. В
+        параметре <tt>ADescription</tt> укажите краткое описание назначения
+        страницы, а в параметре <tt>ASubCaption</tt> — подзаголовок с
+        пояснениями для пользователя.</p>
+      <p>Если параметр <tt>Exclusive</tt> установлен в <tt>True</tt>, то
+        вместо флажков отображаются переключатели и в списке может быть выбран
+        только один элемент. Если параметр <tt>ListBox</tt> установлен в <tt>True</tt>,
+        то флажки или переключатели помещаются внутри прокручиваемого списка.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Для создания на странице флажков/переключателей, используйте вызов
+        метода <tt>Add</tt>. Свойство <tt>Values</tt> используйте для
+        получения/установки состояний элементов управления. На страницах,
+        созданных с <tt>Exclusive=True</tt>, можно получить/установить индекс
+        одного выбранного элемента, используя свойство <tt>SelectedValueIndex</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  Page: TInputOptionWizardPage;
+  IsRegisteredUser: Boolean;
+
+...
+
+<span class="hl slc">// Создаём страницу</span>
+Page := CreateInputOptionPage(<span class="hl kwe">wpWelcome</span>,
+  <span class="hl str">'Информация о лицензии'</span>, <span class="hl str">'Вы зарегистрированный пользователь?'</span>,
+  <span class="hl str">'Если вы зарегистрированный пользователь, отметьте опцию ниже и нажмите "Далее".'</span>,
+  False, False);
+
+<span class="hl slc">// Добавляем элемент</span>
+Page.Add(<span class="hl str">'Я зарегистрированный пользователь'</span>);
+
+<span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
+Page.Values[<span class="hl num">0</span>] := False;
+
+...
+
+<span class="hl slc">// Считываем значение в переменную</span>
+IsRegisteredUser := Page.Values[<span class="hl num">0</span>];</pre>
+      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
+        "Examples" в каталоге установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TInputOptionWizardPage">TInputOptionWizardPage</a>
+      </p>
+    </div>
+  </body>
+</html>

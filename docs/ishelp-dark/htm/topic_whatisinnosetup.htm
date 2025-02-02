@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Что такое Inno Setup?</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Что такое Inno Setup?</h1>
+    <div class="topicbody">
+      <!--[if lt IE 6]>
+<p style="background: #ffa0a0; color: black; padding: 6px; border: 1px solid black">You are running an old version of Internet Explorer. Consequently, you may encounter problems viewing the documentation. It is recommended that you upgrade to Internet Explorer 6.0 or later.
+</p><![endif]-->
+      <p style="text-indent: 0;">
+        <b>Inno Setup версия 6.4.0</b><br />
+        <b>Авторские права © 1997-2025 Jordan Russell. Все права защищены.</b><br />
+        <b>Смежные авторские права © 2000-2025 Martijn Laan. Все права защищены.</b><br />
+        <a href="https://jrsoftware.org/" target="_blank" title="https://jrsoftware.org/">Домашняя
+          страница Inno Setup</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />
+      </p>
+      <p>Inno Setup - это <i>бесплатный</i> установщик для
+        программ Windows, разработанный Jordan Russell и Martijn Laan. Первая
+        версия этой программы появилась в 1997 году и сегодня Inno Setup
+        является одной из самой популярной по созданию программ установок и даже
+        превосходит многие коммерческие продукты по набору функций и
+        стабильности.</p>
+      <h2 class="heading">Ключевые особенности:</h2>
+      <ul>
+        <li>Поддержка каждого выпуска Windows, начиная с 2009 года, включая:
+          Windows 11, Windows 11 на базе Arm,
+          Windows 10, Windows 10 на базе Arm, Windows Server 2019, Windows
+          Server 2016, Windows 8.1, Windows 8, Windows Server 2012, Windows 7,
+          Windows Server 2008 R2 и Windows Server 2008. (Пакеты обновлений
+          не требуются.)</li>
+        <li>Обширная поддержка установки <a href="topic_32vs64bitinstalls.htm">64-разрядных</a>
+          приложений на 64-разрядные версии Windows. Также поддерживаются
+          архитектуры x64 и Arm64. </li>
+        <li>Обширная поддержка как для административных, так и для <a href="topic_admininstallmode.htm">не
+            административных</a> установок. </li>
+        <li>Поддержка создания одного EXE-файла программы установки для удобного
+          распространения в сети Интернет. Также поддерживается <a href="topic_setup_diskspanning.htm">разбивка
+            на диски</a>. </li>
+        <li>Изменяемый размер стандартного окна мастера установки.</li>
+        <li>Создание настраиваемого <a href="topic_typessection.htm">типа</a>
+          установки, например: Полная, Минимальная, Выборочная. </li>
+        <li>Возможность создания <a href="topic_setup_uninstallable.htm">деинсталлятора</a>
+          (программы удаления). </li>
+        <li>Установка <a href="topic_filessection.htm">файлов</a>:<br />
+          Включает интегрированную поддержку для "deflate", bzip2, and 7-Zip
+          LZMA/LZMA2 методов <a href="topic_setup_compression.htm">сжатия</a>
+          файлов. Программа установки также может сравнивать версии файлов,
+          выполнять замену используемых/занятых файлов, назначать применение
+          общих файлов, регистрировать DLL/OCX и другие типы библиотек,
+          устанавливать шрифты. </li>
+        <li>Создание <a href="topic_iconssection.htm">ярлыков</a> в любом
+          месте, в том числе в меню "Пуск" и на Рабочем столе. </li>
+        <li>Создание записей в <a href="topic_registrysection.htm">реестре</a>
+          и файлах <a href="topic_inisection.htm">INI</a>. </li>
+        <li>Возможность <a href="topic_runsection.htm">запуска</a> сторонних
+          программ перед началом, в течении и после окончания установки.</li>
+        <li>Поддержка <a href="topic_languagessection.htm">многоязычных</a>
+          программ установок, в том числе с языком справа налево. </li>
+        <li>Поддержка <a href="topic_setup_password.htm">защищенных паролем</a>
+          и <a href="topic_setup_encryption.htm">шифрованных</a> программ
+          установок. </li>
+        <li>Создание программ установок и удаления с <a href="topic_setup_signtool.htm">цифровой
+            подписью</a>.</li>
+        <li><a href="topic_setupcmdline.htm#SILENT">Тихая установка</a> и <a href="topic_uninstcmdline.htm#SILENT">тихое
+            удаление</a>.</li>
+        <li><a href="topic_unicode.htm">Unicode</a> версия программ установок.</li>
+        <li>Встроенная функция предварительной обработки сценариев
+          (препроцессор).</li>
+        <li>Встроенный компилятор <a href="topic_scriptintro.htm">сценариев на
+            языке Pascal</a>, позволяющего расширить функции и возможности
+          программ установок и удаления. </li>
+        <li>Полностью открытый исходный код, доступный на ресурсе <a href="https://github.com/jrsoftware/issrc"
+            target="_blank" title="https://github.com/jrsoftware/issrc">GitHub</a><img
+            src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />. </li>
+        <li>Небольшой размер модуля установки: всего лишь 1,75 Мб со всеми
+          функциями.</li>
+        <li>Все функции полностью документированы.</li>
+        <li>Используется <a href="https://code.visualstudio.com" target="_blank"
+            title="https://code.visualstudio.com">Microsoft Visual Studio Code</a><img
+            src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /> и <a href="https://www.embarcadero.com/products/delphi"
+            target="_blank" title="https://www.embarcadero.com/products/delphi">Embarcardero
+            Delphi</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />. </li>
+      </ul>
+      <br />
+      <p><b><i>Inno Setup действительно полностью бесплатная программа, даже для
+        коммерческого применения?</i></b></p>
+      <p>Да, Inno Setup может использоваться абсолютно
+        бесплатно, даже для развёртывания коммерческих приложений.</p>
+      <p>(Примечание: "полностью бесплатная" не следует путать с
+        "полностью свободная". Inno Setup защищена авторским правом и <i>не</i>
+        является общественным достоянием. Некоторые ограничения о использовании
+        и распространении смотрите в файле лицензии LICENSE.TXT.)</p>
+    </div>
+  </body>
+</html>

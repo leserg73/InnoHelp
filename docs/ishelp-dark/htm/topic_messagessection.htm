@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Messages]</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Messages]</h1>
+    <div class="topicbody">
+      <p>Секция <tt>[Messages]</tt> используется для
+        определения сообщений, которые будут показаны программой установки или
+        удаления. Как правило, создавать секцию <tt>[Messages]</tt> в главном
+        сценарии не нужно, поскольку все необходимые сообщения извлекаются из
+        файла <a name="Default.isl"><i>Default.isl</i></a> (или другого
+        языкового файла, указанного в секции <tt>[Languages]</tt>), который
+        входит в поставку Inno Setup.</p>
+      <p>Однако некоторые сообщения можно переопределить путём
+        создания секции <tt>[Messages]</tt> в файле сценария. Для этого сначала
+        необходимо узнать ID сообщения, которое требуется изменить. Его можно
+        легко найти в файле <i>Default.isl.</i> Допустим, вы хотите изменить
+        текст кнопки "<i>&amp;Далее &gt;</i>" на текст "<i>&amp;Вперёд &gt;</i>".
+        ID этого сообщения "ButtonNext", таким образом нужно создать секцию <tt>[Messages]</tt>
+        следующего вида:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Messages]</span>
+<span class="hl kwb">ButtonNext</span>=&amp;Forward &gt;</pre>
+      <p>Некоторые сообщения используют аргументы, такие как %1
+        и %2. Порядок аргументов можно изменять (например, разместить %2 перед
+        %1), а также, в случае необходимости, дублировать (например, "%1 ... %1
+        %2"). При указании аргументов в сообщениях используйте последовательную
+        запись двух знаков "%", чтобы встроить один "%". Аргумент "%n" создаёт
+        разрыв строки.</p>
+      <p>Если вы хотите перевести все тексты Inno Setup на
+        другой язык, вместо изменения Default.isl или переопределения каждого
+        сообщения в собственном сценарии, создайте копию файла Default.isl и
+        переименуйте его, например, в <i>MyTranslation.isl.</i> Теперь, чтобы
+        использовать собственный перевод MyTranslation.isl в любом инсталляторе,
+        просто создайте <a href="topic_languagessection.htm">секцию [Languages]</a>
+        с записью, указывающей на этот файл.</p>
+      <p>В случаях, когда в секции <tt>[Languages]</tt>
+        определено несколько языков, использование секции <tt>[Messages]</tt> в
+        собственном сценарии (в противоположность файлу .isl) по умолчанию
+        переопределит сообщения для всех языков. Чтобы применить параметры
+        секции <tt>[Messages]</tt> только для одного языка, добавьте к ID
+        сообщений приставку в виде внутреннего имени языка с разделительной
+        точкой. Например:</p>
+      <pre class="indent examplebox">en.<span class="hl kwb">ButtonNext</span>=&amp;Forward &gt;</pre>
+      <p>Если сообщения отсутствуют или для какого-то языка не определены,
+        компилятор выдаст соответствующее предупреждение. Эти предупреждения могут быть отключены
+        при помощи директив <a href="topic_setup_missingmessageswarning.htm">MissingMessagesWarning</a>
+        и <a href="topic_setup_notrecognizedmessageswarning.htm">NotRecognizedMessagesWarning</a>.</p>
+      <h2 class="heading">Сообщения специального назначения</h2>
+      <p>Сообщение <a name="BeveledLabel"><tt>BeveledLabel</tt></a>
+        можно использовать для указания особого текста, который будет
+        отображаться с левой стороны в нижней части окна программы установки и
+        удаления. Например:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Messages]</span>
+<span class="hl kwb">BeveledLabel</span>=Inno Setup</pre>
+      <p>Сообщение <tt>HelpTextNote</tt> можно использовать для
+        указания одной или нескольких строк, которые будут добавлены в общий
+        список параметров и отображаться при передаче инсталлятору в командной
+        строке ключа <a href="topic_setupcmdline.htm#HELP">/HELP</a>. Например:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Messages]</span>
+<span class="hl kwb">HelpTextNote</span>=/PORTABLE=<span class="hl num">1</span>%nEnable portable mode.</pre>
+      <p>Все сообщения специального назначения по умолчанию
+        представляют собой пустую строку. При их использовании и многоязычной
+        установке убедитесь, что они содержат значения (не являются пустыми) для
+        всех указанных в сценарии языков.</p>
+    </div>
+  </body>
+</html>

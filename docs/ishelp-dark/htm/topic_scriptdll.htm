@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Использование DLL и .NET сборок</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Использование DLL и .NET сборок</h1>
+    <div class="topicbody">
+      <p>При помощи Pascal-сценариев можно вызывать функции из
+        внешних библиотек DLL. Сюда относятся как стандартные функции API Win32
+        из системных библиотек Windows, так и пользовательские функции из
+        пользовательских библиотек DLL. Кроме того, поддерживается вызов .NET
+        сборок.</p>
+      <p>Пример использования внешних библиотек DLL показан в
+        файле сценария "<i>CodeDll.iss</i>" из папки "Examples" по месту
+        установки Inno Setup.</p>
+      <p>Папка "Examples" также содержит три примера проекта
+        создания пользовательских DLL: один для Microsoft Visual C++, один для
+        Microsoft Visual C# и один для Borland Delphi. Проект для C#
+        демонстрирует пример создания .NET сборки, совместимой с
+        Pascal-сценарием.</p>
+      <p>Для вызова функции из библиотеки DLL сначала, как
+        обычно, следует записать прототип функции, но вместо тела функции
+        необходимо использовать ключевое слово 'external' и указать DLL. Если, к
+        примеру, функция имеет прототип <tt>function A(B: Integer): Integer;</tt>,
+        то для неё поддерживаются следующие три формы:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">function</span> A(B: Integer): Integer;
+<span class="hl kwb">external</span> <span class="hl str">'&lt;dllfunctionname&gt;@&lt;dllfilename&gt;'</span>;
+
+<span class="hl kwb">function</span> A(B: Integer): Integer;
+<span class="hl kwb">external</span> <span class="hl str">'&lt;dllfunctionname&gt;@&lt;dllfilename&gt; &lt;callingconvention&gt;'</span>;
+
+<span class="hl kwb">function</span> A(B: Integer): Integer;
+<span class="hl kwb">external</span> <span class="hl str">'&lt;dllfunctionname&gt;@&lt;dllfilename&gt; &lt;callingconvention&gt; &lt;options&gt;'</span>;</pre>
+      <p><i>Первая форма</i> определяет вызов DLL-функции с
+        использованием соглашения о вызовах по умолчанию, т.е. 'stdcall'. Все
+        стандартные функции API Win32 и большинство пользовательских DLL-функций
+        используют 'stdcall'.</p>
+      <p><i>Вторая форма</i> определяет вызов DLL-функции с
+        использованием специального соглашения о вызовах. Допустимыми
+        соглашениями о вызовах являются: 'stdcall' (по умолчанию), 'cdecl',
+        'pascal' и 'register'.</p>
+      <p><i>Третья форма</i> определяет один или несколько
+        параметров загрузки DLL, разделённых пробелами:</p>
+      <div class="indent">
+        <dl>
+          <dt class="flaglist"><a name="delayload">delayload</a></dt>
+          <dd>
+            <p>Определяет отложенную загрузку библиотеки DLL. Как правило, при
+              запуске Pascal-сценарий проверяет доступность вызываемых
+              DLL-функций и в случае отсутствия одной из них прекращает свою
+              работу. Этого не произойдёт, если указать отложенную загрузку
+              'delayload': библиотека будет загружена не сразу, а только при
+              первом обращении к функции. Используйте отложенную загрузку, когда
+              не знаете, что при выполнении вызываемая DLL-функция будет
+              фактически доступной. В случае невозможности её вызова
+              Pascal-сценарий продолжит свою работу, но вызовет исключение,
+              которое можно перехватить и корректно обработать отсутствие
+              DLL-функции.</p>
+          </dd>
+          <dt class="flaglist"><a name="loadwithalteredsearchpath">loadwithalteredsearchpath</a></dt>
+          <dd>
+            <p>Определяет загрузку библиотеки DLL с флагом
+              LOAD_WITH_ALTERED_SEARCH_PATH, который, по сути, заставляет
+              загрузчик выполнять поиск зависимых DLL, начиная с каталога, в
+              котором находится DLL.</p>
+          </dd>
+          <dt class="flaglist"><a name="setuponly">setuponly</a></dt>
+          <dd>
+            <p>Определяет загрузку библиотеки DLL только при выполнении сценария
+              из программы установки.</p>
+          </dd>
+          <dt class="flaglist"><a name="uninstallonly">uninstallonly</a></dt>
+          <dd>
+            <p>Определяет загрузку библиотеки DLL только при выполнении сценария
+              из программы удаления.</p>
+          </dd>
+        </dl>
+      </div>
+      <p>Например (вторая форма), если в библиотеке DLL функция
+        называется 'A2', файл DLL имеет имя 'MyDll.dll' и DLL-функция использует
+        соглашение о вызовах 'stdcall', то код записывается следующим образом:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">function</span> A(B: Integer): Integer;
+<span class="hl kwb">external</span> <span class="hl str">'A2@MyDll.dll stdcall'</span>;</pre>
+      <p>Имя файла DLL может содержать константы.</p>
+      <p>При установке можно использовать специальную приставку
+        'files:', чтобы инструктировать программу установки автоматически
+        извлекать один или более файлов DLL, указанных в секции <tt>[Files]</tt>,
+        до загрузки первой библиотеки DLL. Например:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MyDll.dll"; <span class="hl kwb">Flags</span>: <span
+class="hl kwe">dontcopy</span>
+<span class="hl kwb">Source</span>: "A.dll"; <span class="hl kwb">Flags</span>: <span
+class="hl kwe">dontcopy</span>
+<span class="hl kwb">Source</span>: "B.dll"; <span class="hl kwb">Flags</span>: <span
+class="hl kwe">dontcopy</span>
+
+<span class="hl kwa">[Code]</span>
+<span class="hl kwb">procedure</span> MyDllFunc(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal);
+<span class="hl kwb">external</span> <span class="hl str">'MyDllFunc@files:MyDll.dll stdcall'</span>;
+
+<span class="hl kwb">procedure</span> ADllFunc(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal);
+<span class="hl kwb">external</span> <span class="hl str">'ADllFunc@files:A.dll,B.dll stdcall loadwithalteredsearchpath'</span>; <span
+class="hl slc">//A.dll зависит от B.dll</span>   
+</pre>
+      <p>Когда используется приставка 'files:' и включено <a href="topic_setup_solidcompression.htm">непрерывное
+          сжатие</a>, постарайтесь разместить все файлы DLL в начале списка
+        файлов секции [Files]. Чтобы извлечь произвольный файл в инсталляторе с
+        непрерывным сжатием, программа установки должна будет сперва распаковать
+        все предыдущие файлы, используя временный буфер в памяти. Это может
+        привести к существенной задержке в работе инсталлятора, если перед
+        необходимым файлом DLL перечислен ряд других файлов.</p>
+      <p>Используйте <a href="topic_isxfunc_createcallback.htm">CreateCallback</a>
+        для выполнения вызова из DLL-функций напрямую в функции вашего сценария
+        (подобно функциям API Windows).</p>
+    </div>
+  </body>
+</html>

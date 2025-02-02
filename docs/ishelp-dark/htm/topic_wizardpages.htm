@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Страницы мастера</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Страницы мастера</h1>
+    <div class="topicbody">
+      <p>Ниже представлен список всех страниц мастера, которые
+        потенциально могут отображаться программой установки, а также условия,
+        при которых они будут показаны.</p>
+      <ul>
+        <li>
+          <b>Приветствие</b><br />
+          Отображается, если для директивы <a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a>
+          указано значение <tt>no</tt>.</li>
+        <li>
+          <b>Лицензионное соглашение</b><br />
+          Отображается, если для директивы <a href="topic_setup_licensefile.htm">LicenseFile</a>
+          задан файл лицензии. Пользователи смогут перейти на следующую страницу
+          только при выборе опции "<i>Я принимаю условия соглашения</i>".</li>
+        <li>
+          <b>Пароль</b><br />
+          Отображается, если для директивы <a href="topic_setup_password.htm">Password</a>
+          задан пароль. Пользователи смогут перейти на следующую страницу только
+          после ввода правильного пароля.</li>
+        <li>
+          <b>Информация</b><br />
+          Отображается, если для директивы <a href="topic_setup_infobeforefile.htm">InfoBeforeFile</a>
+          задан файл с информацией.</li>
+        <li>
+          <b>Информация о пользователе</b><br />
+          Отображается, если для директивы <a href="topic_setup_userinfopage.htm">UserInfoPage</a>
+          указано значение <tt>yes</tt>.</li>
+        <li>
+          <b>Выбор папки установки</b><br />
+          Отображается, если для директивы <a href="topic_setup_disabledirpage.htm">DisableDirPage</a>
+          указано значение <tt>no</tt> или <tt>auto</tt>.</li>
+        <li>
+          <b>Выбор компонентов</b><br />
+          Отображается, если секция <a href="topic_componentssection.htm">[Components]</a>
+          содержит соответствующие записи.</li>
+        <li>
+          <b>Выбор папки в меню "Пуск"</b><br />
+          Отображается, если секция <a href="topic_iconssection.htm">[Icons]</a>
+          содержит соответствующие записи и для директивы <a href="topic_setup_disableprogramgrouppage.htm">DisableProgramGroupPage</a>
+          указано значение <tt>no</tt> или <tt>auto</tt>.</li>
+        <li>
+          <b>Выбор задач</b><br />
+          Отображается, когда секция <a href="topic_taskssection.htm">[Tasks]</a>
+          содержит соответствующие записи, но только если они не связаны с
+          компонентами, которые не были выбраны на странице <i>Select
+            Components</i>.</li>
+        <li>
+          <b>Всё готово к установке</b><br />
+          По умолчанию отображается всегда, но может быть отключена с помощью
+          директивы <a href="topic_setup_disablereadypage.htm">DisableReadyPage</a>.</li>
+        <li>
+          <b>Подготовка к установке</b><br />
+          Обычно программа установки никогда не останавливается на этой
+          странице. Остановка происходит только в том случае, если программа
+          установки не может продолжить свою работу или обнаружит приложения,
+          которые используют файлы, нуждающиеся в обновлении.<br />
+          <br />
+          Описанное выше событие может произойти, когда функция <a href="topic_scriptevents.htm#PrepareToInstall"><tt>PrepareToInstall</tt></a>
+          вернула код ошибки, или когда один или несколько файлов, указанных в
+          секциях <tt>[Files]</tt> и <tt>[InstallDelete]</tt>, были поставлены
+          в очередь (какой-либо другой программой установки) для замены или
+          удаления при следующей перезагрузки. В этом случае пользователю будет
+          сказано о необходимости перезагрузки компьютера и повторном запуске
+          программы установки. Заметьте, что такая же проверка выполняется при
+          автоматической установке, но все сообщения отображаются в окне
+          сообщений, а не на странице мастера. <br />
+          <br />
+          Последнее может произойти, если для директивы <a href="topic_setup_closeapplications.htm">CloseApplications</a>
+          указано значение <tt>yes</tt> или <tt>force</tt>. </li>
+        <li>
+          <b>Установка</b><br />
+          Отображается во время фактического процесса установки.</li>
+        <li>
+          <b>Информация</b><br />
+          Отображается, если для директивы <a href="topic_setup_infoafterfile.htm">InfoAfterFile</a>
+          задан файл с информацией.</li>
+        <li>
+          <b>Установка завершена</b><br />
+          По умолчанию отображается всегда, но может быть отключена с помощью
+          директивы <a href="topic_setup_disablefinishedpage.htm">DisableFinishedPage</a>.</li>
+      </ul>
+      <p>Смотрите пример сценария <i>AllPagesExample.iss</i>, в
+        котором можно увидеть все эти страницы.</p>
+    </div>
+  </body>
+</html>

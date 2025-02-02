@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ExtractFileDrive</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ExtractFileDrive</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ExtractFileDrive(const FileName: String): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строку с диском для полного пути к файлу, переданного в
+        параметре <tt>FileName</tt>. Для локальных путей с буквой диска
+        итоговая строка будет представлена по форме '&lt;<tt>буква диска</tt>&gt;:'
+        (напр. <tt>С</tt>:). Для путей в формате UNC итоговая строка будет
+        иметь вид '<code>\\&lt;servername&gt;\&lt;sharename&gt;</code>'. Если
+        заданный путь не содержит ни одного определения диска, результатом
+        функции будет пустая строка.</p>
+    </div>
+  </body>
+</html>

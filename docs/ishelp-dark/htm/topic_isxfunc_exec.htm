@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Exec</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Exec</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function Exec(const
+          Filename, Params, WorkingDir: String; const ShowCmd: Integer; const
+          Wait: TExecWait; var ResultCode: Integer): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет запуск указанного исполняемого (.exe) или пакетного (.bat)
+        файла, используя те же учётные данные, что и программа
+        установки/удаления. Параметр <tt>Wait</tt> определяет немедленный
+        возврат функции или ожидание завершения запущенного процесса или его
+        бездействия. Функция возвращает значение <tt>True</tt>, если указанный
+        файл был успешно запущен, в противном случае <tt>False</tt>.</p>
+      <p>Если функция вернула <tt>True</tt>, а для параметра <tt>Wait</tt>
+        задано значение <tt>ewWaitUntilTerminated</tt>, тогда параметр <tt>ResultCode</tt>
+        возвращает код выхода запущенного процесса.</p>
+      <p>Если функция вернула <tt>False</tt>, то значение параметра <tt>ResultCode</tt>
+        указывает на возникшую ошибку. Используйте <tt>SysErrorMessage(ResultCode)</tt>
+        для получения описания ошибки.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Класс <code>TExecWait</code> представлен следующими значениями:</p>
+      <pre class="indent">TExecWait = (ewNoWait, ewWaitUntilTerminated, ewWaitUntilIdle);</pre>
+      <p>Используйте функцию <a href="topic_isxfunc_shellexec.htm">ShellExec</a>,
+        если требуется запустить файл отличный от исполняемого или пакетного.</p>
+      <p>Не заключайте значение параметра <tt>Filename</tt> в кавычки: функция
+        добавит их автоматически.</p>
+      <p>Параметр <tt>WorkingDir</tt> может быть пустой строкой. В этом случае
+        функция попытается получить рабочий каталог из параметра <tt>Filename</tt>
+        и использовать его в качестве текущего каталога процесса. Если в <tt>Filename</tt>
+        не указано имя пути, то будет использован каталог по умолчанию.</p>
+      <p>Если в одной строке содержится имя файла и параметры его запуска
+        (например, командная строка, полученная из ключа <tt>UninstallString</tt>
+        в реестре), нет необходимости в их разделении: просто передайте <tt>'&gt;'</tt>
+        в параметре <tt>Filename</tt>, а всю командную строку в параметре <tt>Params</tt>.
+        (Обратите внимание, что в этом случае поддержка файлов .bat и .cmd
+        отключается; просто указанная командная строка передается в <tt>CreateProcess</tt>
+        без какой-либо обработки.)</p>
+      <p>По умолчанию, когда программа установки/удаления выполняется в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+          режиме установки</a>, при вызове <tt>CreateProcess</tt> эта функция
+        отключает перенаправление файловой системы в WOW64. Это можно
+        переопределить, вызвав функцию <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>.</p>
+      <p>Эта функция не может использоваться для запуска самой программы установки
+        до тех пор, пока не начнётся процесс установки.</p>
+      <p><u>Внимание!</u> По сравнению с функцией <tt>Exec</tt> в ISPP
+        параметры <tt>ShowCmd</tt> и <tt>Wait</tt> поменяны местами!</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  ResultCode: Integer;
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Запускаем Блокнот и ожидаем завершения его работы</span>
+  <span class="hl kwb">if</span> Exec(ExpandConstant(<span class="hl str">'</span><span
+
+class="hl kwc">{win}</span><span class="hl str">\notepad.exe'</span>), <span
+
+class="hl str">''</span>, <span class="hl str">''</span>, <span
+
+class="hl kwe">SW_SHOWNORMAL</span>,
+     ewWaitUntilTerminated, ResultCode) <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl slc">// выполняем какие-либо действия в случае успеха</span>
+    <span class="hl slc">// параметр ResultCode содержит код выхода</span>
+  <span class="hl kwb">end</span>
+  <span class="hl kwb">else begin</span>
+    <span class="hl slc">// выполняем какие-либо действия в случае неудачи</span>
+    <span class="hl slc">// параметр ResultCode содержит код выхода</span>
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a>
+        <br />
+        <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
+        <br />
+        <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>
+      </p>
+    </div>
+  </body>
+</html>

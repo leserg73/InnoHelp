@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: CreateOutputMsgMemoPage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: CreateOutputMsgMemoPage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateOutputMsgMemoPage(const AfterID: Integer; const ACaption,
+          ADescription, ASubCaption: String; const AMsg: AnsiString):
+          TOutputMsgMemoWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет создание на странице мастера установки определённого текста,
+        доступного только для чтения, а также многострочного текстового поля,
+        способного отобразить документ в формате RTF.</p>
+      <p>Параметр <tt>AfterID</tt> определяет страницу мастера установки, после
+        которой будет размещена (показана) эта страница.</p>
+      <p>Параметр <tt>ACaption</tt> определяет текст для заголовка страницы, а
+        параметр <tt>ADescription</tt> — краткое описание назначения страницы.</p>
+      <p> Параметр <tt>ASubCaption</tt> определяет неизменный текст для
+        отображения, а параметр <tt>AMsg</tt> — текст, который будет назначен
+        элементу текстового поля.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  Page: TOutputMsgMemoWizardPage;
+
+...
+
+<span class="hl slc">// Создаём страницу</span>
+Page := CreateOutputMsgMemoPage(<span class="hl kwe">wpWelcome</span>,
+  <span class="hl str">'Информация'</span>, <span class="hl str">'Пожалуйста, ознакомьтесь с важной информацией.'</span>,
+  <span class="hl str">'Когда вы будете готовы продолжить установку, нажмите "Далее".'</span>,
+  <span class="hl str">'Бла-бла-бла.'</span>);</pre>
+      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
+        "Examples" в каталоге установки Inno Setup.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TOutputMsgMemoWizardPage">TOutputMsgMemoWizardPage</a>
+      </p>
+    </div>
+  </body>
+</html>

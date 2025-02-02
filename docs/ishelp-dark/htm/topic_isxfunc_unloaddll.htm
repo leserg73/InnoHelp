@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: UnloadDLL</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: UnloadDLL</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          UnloadDLL(Filename: String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выгружает указанный файл DLL, который был загружен секцией <tt>[Code]</tt>
+        с использованием директивы "external". Функция может быть полезной,
+        когда необходимо удалить файл DLL.</p>
+      <p>Регистр символов в имени файла и пути должен строго соответствовать
+        регистру импортируемой функции. Перед передачей файла в <tt>UnloadDLL</tt>
+        необходимо самостоятельно развернуть все константы в имени файла.</p>
+      <p>Если при импорте функции использовался префикс "files:", добавьте
+        значение константы <tt>{tmp}</tt> к имени файла (например, <code>ExpandConstant('{tmp}\filename.dll')</code>).</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Не рекомендуется экспериментировать, но если вы попытаетесь вызвать
+        функцию из файла DLL, который уже был выгружен, то этот файл DLL будет
+        перезагружен.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  <span class="hl slc">// Вызываем функцию DllFunc из MyDll.dll</span>
+  DllFunc;
+
+  <span class="hl slc">// Выгружаем библиотеку DLL</span>
+  UnloadDLL(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+class="hl str">\MyDll.dll'</span>));
+
+  <span class="hl slc">// Теперь можем удалить библиотеку DLL</span>
+  DeleteFile(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
+class="hl str">\MyDll.dll'</span>));
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

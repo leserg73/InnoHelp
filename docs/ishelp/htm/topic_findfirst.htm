@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: FindFirst</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: FindFirst</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>int</b> FindFirst(<b>str</b>, <b>int</b>)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет поиск файла в указанной папке согласно заданному имени
+        (первый параметр) и атрибуту файла (второй параметр). Если файл найден,
+        то возвращает его дескриптор, который должен быть использован в
+        последующих вызовах функций <tt class="nill"><a href="topic_findgetfilename.htm">FindGetFileName</a></tt>,
+        <tt class="nill"><a href="topic_findnext.htm">FindNext</a></tt> и <tt class="nill"><a href="topic_findclose.htm">FindClose</a></tt>.
+        В противном случае функция вернёт значение 0.</p>
+      <p><i>Первый параметр</i> (<b>str</b>) устанавливает маску имени
+        папки/файла, включая символы подстановки. Например, строка вида <tt>'<b>.\*.*</b>'</tt>
+        определяет все файлы в текущем каталоге.</p>
+      <p><i>Второй параметр</i> (<b>int</b>) устанавливает атрибут файлов,
+        которые должны быть включены в поиск помимо обычных файлов. Выберите
+        необходимый атрибут или соответствующую ему константу, которые
+        определены в файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>:</p>
+      <table>
+        <tbody>
+          <tr>
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faReadOnly</tt></td>
+            <td class="cellright">файлы только для чтения</td>
+            <td class="cellright">0x00000001</td>
+          </tr>
+          <tr class="altcolorrow"">
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faHidden</tt></td>
+            <td class="cellright">скрытые файлы</td>
+            <td class="cellright">0x00000002</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faSysFile</tt></td>
+            <td class="cellright">системные файлы</td>
+            <td class="cellright">0x00000004</td>
+          </tr>
+          <tr class="altcolorrow"">
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faVolumeID</tt></td>
+            <td class="cellright">файлы ID-тома</td>
+            <td class="cellright">0x00000008</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faDirectory</tt></td>
+            <td class="cellright">файлы каталога</td>
+            <td class="cellright">0x00000010</td>
+          </tr>
+          <tr class="altcolorrow"">
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faArchive</tt></td>
+            <td class="cellright">архивные файлы</td>
+            <td class="cellright">0x00000020</td>
+          </tr>
+          <tr>
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faSymLink</tt></td>
+            <td class="cellright">файлы символьных ссылок</td>
+            <td class="cellright">0x00000040</td>
+          </tr>
+          <tr class="altcolorrow"">
+            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faAnyFile</tt></td>
+            <td class="cellright">любые файлы</td>
+            <td class="cellright">0x0000003F</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Атрибуты можно комбинировать между собой, используя логическую операцию
+        "ИЛИ" как для значений, так и для констант. Например, для поиска также
+        скрытых файлов и только для чтения, укажите в качестве второго параметра
+        <tt style="font-weight: bold;">faReadOnly | faHidden</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwa">[Files]</span>
+<span class="hl kwf">#define</span> FindHandle
+<span class="hl kwf">#define</span> FindResult
+<span class="hl kwf">#define</span> Mask <span class="hl str">"*.pas"</span>
+
+<span class="hl kwf">#sub</span> ProcessFoundFile
+  <span class="hl kwf">#define</span> FileName <span class="hl kwd">FindGetFileName</span><span
+class="hl opt">(</span>FindHandle<span class="hl opt">)</span>
+  <span class="hl kwf">#if</span> <span class="hl kwd">LowerCase</span><span class="hl opt">(</span><span
+class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
+class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">4</span><span
+class="hl opt">)) ==</span> <span class="hl str">"ispp"</span>
+    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+class="hl kwc">{app}</span>\ispp
+  <span class="hl kwf">#else</span>
+    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+class="hl kwc">{app}</span>
+  <span class="hl kwf">#endif</span>
+<span class="hl kwf">#endsub</span>
+
+<span class="hl kwf">#for</span> {FindHandle <span class="hl opt">=</span> FindResult <span
+class="hl opt">=</span> <span class="hl kwd">FindFirst</span><span class="hl opt">(</span>Mask<span
+class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">);</span> FindResult<span
+class="hl opt">;</span> \
+      FindResult <span class="hl opt">=</span> <span class="hl kwd">FindNext</span><span
+class="hl opt">(</span>FindHandle<span class="hl opt">)</span>} ProcessFoundFile
+<span class="hl kwf">#if</span> FindHandle
+  <span class="hl kwf">#expr</span> <span class="hl kwd">FindClose</span><span class="hl opt">(</span>FindHandle<span
+class="hl opt">)</span>
+<span class="hl kwf">#endif</span>
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_sub.htm">sub</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_if.htm">if</a></tt>
+      </p>
+    </div>
+  </body>
+</html>

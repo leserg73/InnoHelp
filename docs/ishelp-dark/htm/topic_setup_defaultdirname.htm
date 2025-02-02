@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: DefaultDirName</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: DefaultDirName</h1>
+    <div class="topicbody">
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива является обязательной и определяет имя
+        каталога по умолчанию, в который будет выполнена установка приложения.
+        Значение используется на странице "<i>Выбор папки установки</i>" и
+        обычно начинается с константы.</p>
+      <p>Если директива <a href="topic_setup_usepreviousappdir.htm">UsePreviousAppDir</a>
+        имеет значение <tt>yes</tt> (используется по умолчанию) и программа
+        установки обнаружит уже установленную предыдущую версию <a href="topic_sameappnotes.htm">такого
+          же приложения</a>, вместо заданного по умолчанию каталога будет
+        установлен выбранный ранее каталог.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Примеры:</div>
+        <b>Если задано:</b><br />
+        <pre><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{sd}</span>\MYPROG</pre>
+        <b>Программа установки предложит путь:</b><br />
+        C:\MYPROG<br />
+        <br />
+        <b>Если задано:</b><br />
+        <pre><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{autopf}</span>\My Program</pre>
+        <b>Программа установки предложит путь:</b><br />
+        C:\Program Files\My Program<br /><br /></div>
+    </div>
+  </body>
+</html>

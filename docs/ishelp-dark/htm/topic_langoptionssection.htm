@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [LangOptions]</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [LangOptions]</h1>
+    <div class="topicbody">
+      <p>Секция <a name="LangOptions">[LangOptions]</a>
+        используется для объявления специфических для языка параметров, таких
+        как шрифты, используемых программой установки и удаления. Как правило,
+        создавать секцию <tt>[LangOptions]</tt> в главном сценарии не нужно,
+        поскольку по умолчанию все необходимые для конкретного языка параметры
+        извлекаются из файла <i>Default.isl</i> (или другого языкового файла,
+        указанного в секции <tt>[Languages]</tt>), который входит в поставку
+        Inno Setup.</p>
+      <p>Ниже представлен пример секции <tt>[LangOptions]</tt>
+        (все перечисленные здесь параметры используются по умолчанию).</p>
+      <pre class="indent examplebox"><span class="hl kwa">[LangOptions]</span>
+<span class="hl kwb">LanguageName</span>=English
+<span class="hl kwb">LanguageID</span>=<span class="hl num">$0409</span>
+<span class="hl kwb">LanguageCodePage</span>=<span class="hl num">0</span>
+<span class="hl kwb">DialogFontName</span>=
+<span class="hl kwb">DialogFontSize</span>=<span class="hl num">8</span>
+<span class="hl kwb">WelcomeFontName</span>=Verdana
+<span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">12</span>
+<span class="hl kwb">TitleFontName</span>=Arial
+<span class="hl kwb">TitleFontSize</span>=<span class="hl num">29</span>
+<span class="hl kwb">CopyrightFontName</span>=Arial
+<span class="hl kwb">CopyrightFontSize</span>=<span class="hl num">8</span>
+<span class="hl kwb">RightToLeft</span>=<span class="hl kwe">no</span></pre>
+      <p><b><a name="LanguageName">LanguageName</a></b> —
+        собственное имя языка (но не имя на английском). Оно отображается в
+        списке доступных языков в диалоге "<i>Выбор языка</i>" при многоязычной
+        установке.</p>
+      <p><b><a name="LanguageID">LanguageID</a></b> —
+        числовой идентификатор языка. Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
+          target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">список
+          действительных идентификаторов языка на портале MSDN</a><img src="../images/extlink.png" srcset="../images/extlink.svg"
+          alt=" [внешняя ссылка]" />. Этот параметр, наряду с <tt>LanguageCodePage</tt>,
+        применяется для автоматического определения наиболее подходящего языка,
+        используемого по умолчанию, поэтому убедитесь, что он установлен
+        правильно. Он всегда должен начинаться со знака "$", поскольку
+        идентификаторы языка представлены в шестнадцатеричном формате. Если для
+        нужного языка идентификатор языка ещё не существует, укажите значение
+        ноль.</p>
+      <p><b><a name="LanguageCodePage">LanguageCodePage</a></b>
+        — определяет "кодовую страницу" (набор символов), используемую
+        компилятором для преобразования любого ASCII-текста языковых файлов в
+        текст Unicode. Обратите внимание, что любой текст в файле .iss,
+        например, текст сообщений секции [CustomMessages], никогда не
+        преобразуется и уже должен быть в кодировке Unicode. Если для нужного
+        языка кодовой страницы ещё не существует, укажите в параметре <tt>LanguageCodePage</tt>
+        значение ноль и используйте текст в языковых файлах только в кодировке
+        Unicode (UTF-8). Если параметр <tt>LanguageCodePage</tt> имеет значение
+        ноль, но в одном из языковых файлов используется ASCII-текст, то для его
+        преобразования в кодировку Unicode будет использоваться системная
+        кодовая страница.</p>
+      <p><b><a name="DialogFontName">DialogFontName</a></b> и <b><a
+            name="DialogFontSize">DialogFontSize</a></b> — определяют имя и
+        размер шрифта, используемого в диалогах. Если параметр <tt>DialogFontName</tt>
+        отсутствует, то для имени шрифта используется значение директивы <a href="topic_setup_defaultdialogfontname.htm">DefaultDialogFontName</a>
+        секции <tt>[Setup]</tt>. Если же указанный шрифт в системе пользователя
+        не существует или параметр содержит пустую строку, будет сделана подмена
+        на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 8
+        пунктов.</p>
+      <p><b><a name="WelcomeFontName">WelcomeFontName</a></b> и
+        <b><a name="WelcomeFontSize">WelcomeFontSize</a></b> — определяют имя и
+        размер шрифта, используемого в заголовках на страницах <i>Приветствие</i>
+        и <i>Установка завершена</i>. Если указанный шрифт в системе
+        пользователя не существует или параметр содержит пустую строку, будет
+        сделана подмена на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i>
+        размером 12 пунктов.</p>
+      <p><b><a name="TitleFontName">TitleFontName</a></b> и <b><a
+            name="TitleFontSize">TitleFontSize</a></b> — определяют имя и размер
+        шрифта для вывода имени приложения в фоновом окне установки (только если
+        <tt>WindowVisible=yes</tt>). Если указанный шрифт в системе пользователя
+        не существует, будет сделана подмена на <i>Arial</i> размером 29
+        пунктов. Если же параметр содержит пустую строку, будет сделана подмена
+        на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 29
+        пунктов.</p>
+      <p><b><a name="CopyrightFontName">CopyrightFontName</a></b>
+        и <b><a name="CopyrightFontSize">CopyrightFontSize</a></b> — определяет
+        имя и размер шрифта для вывода сообщения <tt>AppCopyright</tt> в
+        фоновом окне установки (только если <tt>WindowVisible=yes</tt>). Если
+        указанный шрифт в системе пользователя не существует, будет сделана
+        подмена на <i>Arial</i> размером 8 пунктов. Если же параметр содержит
+        пустую строку, будет сделана подмена на <i>Microsoft Sans Serif</i> или
+        <i>MS Sans Serif</i> размером 8 пунктов.</p>
+      <p><b><a name="RightToLeft">RightToLeft</a></b> —
+        определяет направление письма справа налево. При значении <tt>yes</tt>
+        выравнивание текста и направление письма будут инвертированы (с
+        некоторыми преднамеренными исключениями), а элементы управления будут
+        расположены справа налево ("перевёрнуты").</p>
+      <p>В случаях, когда в секции <tt>[Languages]</tt>
+        определено несколько языков, использование секции <tt>[LangOptions]</tt>
+        в собственном сценарии (в противоположность файлу .isl) по умолчанию
+        переопределит параметры для всех языков. Чтобы применить параметры
+        секции <tt>[LangOptions]</tt> только для одного языка, добавьте к
+        именам параметров приставку в виде внутреннего имени языка с
+        разделительной точкой. Например:</p>
+      <pre class="indent examplebox">en.LanguageName=English
+</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: IDispatchInvoke</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: IDispatchInvoke</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          IDispatchInvoke(Self: IDispatch; PropertySet: Boolean; const Name:
+          String; Par: array of Variant): Variant;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Функция <tt>IDispatchInvoke</tt> позволяет выполнить доступ к свойству
+        или методу объекта COM, чьё имя входит в список зарезервированных слов.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  AObject: Variant;
+  AType: String;
+<span class="hl kwb">begin</span>
+  AObject := CreateOleObject(<span class="hl str">'MyObject'</span>);
+  <span class="hl slc">// Устанавливаем свойство с именем 'Type'</span>
+  <span class="hl slc">// Нельзя использовать "AObject.Type := 'MyType';",</span>
+  <span class="hl slc">// т.к. Type является зарезервированным словом</span>
+  IDispatchInvoke(AObject, True, <span class="hl str">'Type'</span>, [<span class="hl str">'MyType'</span>]);
+  <span class="hl slc">// Получаем свойство или вызываем метод с именем 'Type'</span>
+  AType := IDispatchInvoke(AObject, False, <span class="hl str">'Type'</span>, [<span
+class="hl str">''</span>]);
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptautomation.htm">Использование
+          объектов COM</a> </p>
+    </div>
+  </body>
+</html>

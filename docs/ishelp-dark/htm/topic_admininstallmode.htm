@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Режим не административной установки</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Режим не административной установки</h1>
+    <div class="topicbody">
+      <p>Установка может работать в одном из двух режимов:
+        административном или не административном. Выбор режима определяется
+        директивами <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>
+        и <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
+        в секции <tt>[Setup]</tt>.</p>
+      <p>В режиме административной установки:</p>
+      <ul class="null">
+        <li>Папка <tt>{group}</tt> создаётся в профиле <i>Для всех
+            пользователей</i>.</li>
+        <li>Форма "auto" для констант каталогов и специальных папок
+          сопоставляется с формой "common".</li>
+        <li>НЕ следует использовать форму "user" этих констант: файлы и настройки
+          пользовательского уровня должны обрабатываться самим приложением, а не
+          программой установки, работающей в административном режиме.</li>
+        <li>Корневой раздел <a href="topic_registrysection.htm">HKA</a>, ключи
+          деинсталляции и ключи установки шрифта создаются в разделе
+          HKEY_LOCAL_MACHINE.</li>
+      </ul>
+      <p>В режиме не административной установки:</p>
+      <ul class="null">
+        <li>Папка <tt>{group}</tt> создаётся в профиле текущего пользователя.</li>
+        <li>Форма "auto" для констант каталогов и специальных папок
+          сопоставляется с формой "user".</li>
+        <li>Корневой раздел <a href="topic_registrysection.htm">HKA</a>, ключи
+          деинсталляции и ключи установки шрифта создаются в разделе
+          HKEY_CURRENT_USER.</li>
+      </ul>
+      <h2 class="heading">Комментарии</h2>
+      <p>Независимо от версии Windows, если инсталляция
+        выполняется в режиме административной установки, вы должны быть предельно
+        осторожны при внесении каких-либо изменений в пользовательскую область
+        данных: файлы и настройки пользовательского уровня должны обрабатываться
+        самим приложением, а не программой установки, работающей в административном
+        режиме. Компилятор предупредит вас об этом, но если вы уверены в своих
+        действиях, то это сообщение может быть отключено директивой <a 
+        href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a>.</p>
+      <p>Если инсталляция выполняется в режиме не
+        административной установки, но административные привилегии все равно
+        доступны, то программа установки или секция <tt>[Code]</tt> все равно
+        может использовать эти привилегии. По этой причине деинсталлятор всегда
+        будет требовать административные привилегии, как если бы инсталляция
+        выполнялась в режиме административной установки.</p>
+    </div>
+  </body>
+</html>

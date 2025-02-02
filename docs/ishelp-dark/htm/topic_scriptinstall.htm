@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Параметры "BeforeInstall" и "AfterInstall"</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Параметры "BeforeInstall" и
+      "AfterInstall"</h1>
+    <div class="topicbody">
+      <p>Существует два необязательных <a href="topic_params.htm">параметра</a>,
+        поддерживаемые всеми секциями, записи которых представляют собой набор
+        параметров, за исключением секций <tt>[Languages]</tt>, <tt>[Types]</tt>,
+        <tt>[Components]</tt> и <tt>[Tasks]</tt>. Этими параметрами являются:</p>
+      <dl>
+        <dt class="paramlist"><b><a name="BeforeInstall">BeforeInstall</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет имя функции, которая будет вызвана непосредственно перед
+            установкой записи. Эта функция должна быть либо пользовательской и
+            описана в секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
+              функций</a>. </p>
+          <p>Может содержать параметры, разделённые запятыми, которые программа
+            установки должна передать в функцию. Допустимыми типами параметров
+            являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
+            и <tt>Boolean</tt> (<i>логический</i>). Строковые параметры могут
+            содержать константы. Эти константы не будут автоматически расширены.
+            Если требуется передать расширенную константу, существует одна
+            специальная <a href="topic_scriptfunctions.htm">поддерживаемая
+              функция</a>, которая может быть вызвана из списка параметров: <tt>ExpandConstant</tt>.
+          </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall
+<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
+<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
+<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: Log(<span
+class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="AfterInstall">AfterInstall</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет имя функции, которая будет вызвана сразу после установки
+            записи. Эта функция должна быть либо пользовательской и описана в
+            секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
+              функций</a>. </p>
+          <p>Может содержать параметры, разделённые запятыми, которые программа
+            установки должна передать в функцию. Допустимыми типами параметров
+            являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
+            и <tt>Boolean</tt> (<i>логический</i>). Строковые параметры могут
+            содержать константы. Эти константы не будут автоматически расширены.
+            Если требуется передать расширенную константу, существует одна
+            специальная <a href="topic_scriptfunctions.htm">поддерживаемая
+              функция</a>, которая может быть вызвана из списка параметров: <tt>ExpandConstant</tt>.
+          </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall
+<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
+<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
+<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: Log(<span
+class="hl str">'After MYPROG.CHM Install'</span>)</pre>
+          </div>
+        </dd>
+      </dl>
+      <p>Все функции <tt>BeforeInstall</tt> и <tt>AfterInstall</tt>
+        не должны иметь возвращаемого значения.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
+        не будет вызвана, если программа установки уже определила, что запись не
+        должна быть обработана.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
+        в записях секции <tt>[Files]</tt> с использованием маски файлов, но без флага
+        <tt>external</tt>, вызывается один раз для каждого файла, который соответствует
+        маске, а не один раз для каждой записи. Используйте <tt>CurrentFileName</tt>,
+        чтобы проверить, для какого именно файла вызывается функция.</p>
+      <p>Ниже приведен пример секции <tt>[Code]</tt>, в котором
+        используются функции, указанные выше. Функции <tt>CurrentFileName</tt>
+        и <tt>Log</tt> являются <a href="topic_scriptfunctions.htm">поддерживаемыми
+          функциями</a>, и поэтому не включены в эту секцию <tt>[Code]</tt>.</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">procedure</span> MyBeforeInstall();
+<span class="hl kwb">begin</span>
+  MsgBox(<span class="hl str">'Будет установлен MyProg.exe как '</span> + CurrentFileName + <span
+class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">procedure</span> MyBeforeInstall2(FileName: String);
+<span class="hl kwb">begin</span>
+  MsgBox(<span class="hl str">'Будет установлен '</span> + FileName + <span class="hl str">' как '</span> + CurrentFileName + <span
+class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);   
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">procedure</span> MyAfterInstall();
+<span class="hl kwb">begin</span>
+  MsgBox(<span class="hl str">'MyProg.exe уже установлен как '</span> + CurrentFileName + <span
+class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">procedure</span> MyAfterInstall2(FileName: String);
+<span class="hl kwb">begin</span>
+  MsgBox(FileName + <span class="hl str">' уже установлен как '</span> + CurrentFileName + <span
+class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: RegisterExtraCloseApplicationsResource</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование:
+      RegisterExtraCloseApplicationsResource</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          RegisterExtraCloseApplicationsResource(const DisableFsRedir: Boolean;
+          const AFilename: String): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет регистрацию дополнительного файла, который программа
+        установки должна проверить на предмет использования. Вызов функции <tt>RegisterExtraCloseApplicationsResource</tt>
+        необходимо выполнять внутри события <tt>RegisterExtraCloseApplicationsResources</tt>
+        для каждого файла. При этом фильтр <a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a>
+        не учитывается. В случае успеха функция возвращает значение <tt>True</tt>.</p>
+    </div>
+  </body>
+</html>

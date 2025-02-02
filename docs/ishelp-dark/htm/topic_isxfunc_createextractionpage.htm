@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: CreateExtractionPage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: CreateExtractionPage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+        <p class="prototip1 notopmarginX"><tt class="nill">function
+          CreateExtractionPage(const ACaption, ADescription: String; const
+          OnExtractionProgress: TOnExtractionProgress): ExtractionWizardPage;</tt></p>
+      <h2 class="heading">Описание</h2>
+        <p>Выполняет создание страницы для мастера установки, которая позволяет
+          распаковывать архивы 7-Zip и отображать ход выполнения.</p>
+        <p>Для параметра <tt>OnExtractionProgress</tt> укажите функцию, которая
+          будет передавать информацию о ходе загрузки, или значение <tt>nil</tt>,
+          если в этом нет необходимости.</p>
+        <p>В отличии от других типов страниц мастера установки, страницы с ходом
+          выполнения не отображаются как часть обычной последовательности страниц
+          (обратите внимание на отсутствие параметра <tt>AfterID</tt>). Страница
+          с ходом выполнения распаковки может быть показана только программно,
+          путём вызова метода <tt>Show</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+        <p>Для активации страницы используйте вызов метода <tt>Show</tt>. По
+          окончании процесса распаковки используйте вызов <tt>Hide</tt>, чтобы
+          вернуться на предыдущую страницу.</p>
+        <p>Вызов метода <tt>Hide</tt> всегда размещайте внутри блока <tt>finally</tt>
+          конструкции <tt>try..finally</tt>, как это показано в примере
+          <i>CodeDownloadFiles.iss</i>. Если не вызвать <tt>Hide</tt>, то
+          мастер установки навсегда застрянет на странице с ходом выполнения.</p>
+        <p>Чтобы распаковать новый архив, используйте вызов метода <tt>Add</tt>.
+          Перед добавлением первого архива всегда вызывайте метод <tt>Clear</tt>.</p>
+        <p>Для запуска распаковки вызовите метод <tt>Extract</tt>. В случае
+          возникновения ошибки будет вызвано исключение. Иначе <tt>Extract</tt>
+          вернёт количество распакованных архивов.</p>
+        <p>Установите для свойства <tt>ShowArchiveInsteadFile</tt> значение
+          <tt>True</tt>, чтобы показать пользователю имя распаковываемого архива
+          вместо имён файлов, которые находятся внутри архива.</p>
+        <p>Другие определения <tt>TOnExtractionProgress</tt> смотрите в разделе
+          <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a>
+          настоящей справки.</p>
+      <h2 class="heading">Пример</h2>
+        <p>Смотрите файл <i>CodeDownloadFiles.iss</i> с примером страницы
+          <tt>CreateDownloadPage</tt>, которая во многом похожа на страницу
+          <tt>CreateExtractionPage</tt>.</p>
+    <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_scriptclasses.htm#TExtractionWizardPage">TExtractionWizardPage</a><br />
+        <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a><br />
+        <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>
+      </p>
+    </div>
+  </body>
+</html>

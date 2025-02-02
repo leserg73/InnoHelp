@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: Введение</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: Введение</h1>
+    <div class="topicbody">
+      <p><b>Препроцессор Inno Setup (ISPP)</b> - это программа предварительной
+        обработки сценариев для <i>Inno Setup</i>.</p>
+      <p>Основной целью <b>ISPP</b> является автоматизация каких-либо задач во
+        время компиляции сценария и предотвращение возможных ошибок при его
+        составлении. Например, можно объявить переменную <b>ISPP</b>
+        (переменная, используемая в процессе компиляции) с <i>именем
+          приложения</i>, а затем использовать её в различных местах
+        сценария. Если по каким-то причинам нужно будет изменить <i>имя
+          приложения</i>, то сделать это потребуется только один раз, изменив
+        значение объявленной переменной. Во время компиляции сценария вместо
+        этой переменной будет подставлено её значение. Без <b> ISPP</b> нужно
+        было бы изменять все значения параметров, в которых используется имя
+        приложения.</p>
+      <p>Другой пример использования <b>ISPP</b> – это сбор информации о версии
+        приложения путем считывания данных из EXE-файла и подставновки их в
+        директиву IS <a href="../../ishelp/htm/topic_setup_appvername.htm" target="_blank" title="Директива AppVerName">AppVerName</a><img
+          src="../images/extlink.png" alt=" [внешняя ссылка]" />
+        секции [Setup] или где-то в другом месте сценария. Без применения <b>ISPP</b>
+        в сценарии пришлось бы вручную менять все записи, в которых упоминается
+        версия приложения.</p>
+      <p>Точно так же <b>ISPP</b> можно использовать для сканирования исходных
+        папок и создания строк сценария со списком найденных файлов. Без <b>ISPP</b>
+        все файлы установки придётся вносить вручную.</p>
+      <p>Кроме того, применяя директивы <b>ISPP</b> условной компиляции,
+        имеется возможность исключить или наоборот выполнить часть сценария для
+        различных версий/компоновок приложения (например, ознакомительная и
+        полная версии). Без <b>ISPP</b> потребуется составить несколько
+        различных сценариев.</p>
+      <p>И наконец, <b>ISPP</b> даёт возможность разбить длинные строки на
+        более короткие, используя символ разделения строк.</p>
+      <p>Примечание: <b>ISPP</b> работает исключительно в время компиляции
+        сценария и не имеет никакой функциональности при выполнении
+        установки/деинсталляции приложения. </p>
+      <h2 class="heading">Основные главы документа</h2>
+      <ul>
+        <li><a href="topic_example.htm">Пример сценария</a></li>
+        <li><a href="topic_directives.htm">Поддерживаемые директивы</a></li>
+        <li><a href="topic_funcs.htm">Поддерживаемые функции</a></li>
+        <li><a href="topic_macros.htm">Пользовательские функции</a></li>
+        <li><a href="topic_expressions.htm">Синтаксис выражений</a></li>
+        <li><a href="topic_predefinedvars.htm">Встроенные
+            переменные</a></li>
+        <li><a href="topic_linespan.htm">Разделение строк</a></li>
+        <li><a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a></li>
+        <li><a href="topic_visibility.htm">Область видимости
+            переменных</a></li>
+        <li><a href="topic_isppcc.htm">Компиляция в командной
+            строке</a></li>
+        <li><a href="topic_translation.htm">Вывод препроцессора</a></li>
+        <li><a href="topic_current-translation.htm">Текущий вывод
+            препроцессора</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

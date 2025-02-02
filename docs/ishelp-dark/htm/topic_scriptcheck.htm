@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Параметр "Check"</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Параметр "Check"</h1>
+    <div class="topicbody">
+      <p>Существует один необязательный <a href="topic_params.htm">параметр</a>,
+        поддерживаемый всеми секциями, записи которых представляют собой набор
+        параметров. Этим параметром является:</p>
+      <dl>
+        <dt class="paramlist"><b><a name="Check">Check</a></b></dt>
+        <dd class="paramlist">
+          <p>Определяет имя проверочной функции, по результату которой
+            принимается решение по обработке данной записи. Этой функцией может
+            быть либо пользовательская функция, объявленная в секции <tt>[Code]</tt>,
+            либо одна из <a href="topic_scriptfunctions.htm">поддерживаемых
+              функций</a>. </p>
+          <p>Кроме прямого указания функции, допускается также использовать
+            логические выражения. Смотрите примеры логических выражений в
+            разделе справки "<a href="topic_componentstasksparams.htm">Параметры
+              секций [Components] и [Tasks]</a>". </p>
+          <p>Каждая проверочная функция может содержать параметры, разделённые
+            запятыми, которые программа установки должна передать для проверки.
+            Допустимыми типами параметров являются <tt>String</tt> (<i>строковый</i>),
+            <tt>Integer</tt> (<i>целочисленный</i>) и <tt>Boolean</tt> (<i>логический</i>).
+            Строковые параметры могут содержать константы. Эти константы не
+            будут автоматически расширены. Если требуется передать расширенную
+            константу, существует одна специальная <a href="topic_scriptfunctions.htm">поддерживаемая
+              функция</a>, которая может быть вызвана из списка параметров: <tt>ExpandConstant</tt>.
+          </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyProgCheck
+<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyDirCheck(ExpandConstant(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A'</span>)) 
+<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: DirExists(ExpandConstant(<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'</span>))</pre>
+          </div>
+        </dd>
+      </dl>
+      <p>Все проверочные функции должны возвращать значение типа
+        <tt>Boolean</tt> (<i>логический</i>). Если проверочная функция (или
+        логическое выражение) возвращает значение <tt>True</tt>, запись будет
+        обработана, иначе пропущена.</p>
+      <p>Программа установки может вызывать каждую проверочную
+        функцию несколько раз, даже если существует только одна запись,
+        использующая проверку. Если функция выполняет длинный фрагмент кода, её
+        можно оптимизировать, выполнив код только один раз и сохранив результат
+        в глобальную переменную.</p>
+      <p>Проверочная функция не вызывается, если программа
+        установки уже определила, что запись не нуждается в обработке.</p>
+      <p>Для записей секции <tt>[Files]</tt> с использованием
+        символов подстановки (<i>маски файлов</i>), но без флага <tt>external</tt>,
+        проверочная функция будет вызвана один раз для каждого файла, который
+        соответствует маске, а не один раз для каждой записи. Используйте
+        функцию <tt>CurrentFileName</tt> для проверки имени файла,
+        обрабатываемого в текущий момент.</p>
+      <p>Ниже представлен пример секции <tt>[Code]</tt> с
+        проверочной функцией, используемой в примере выше. Функция <tt>DirExists</tt>
+        является <a href="topic_scriptfunctions.htm">поддерживаемой</a> и
+        поэтому сюда не включена.</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">var</span>
+  MyProgChecked: Boolean;
+  MyProgCheckResult: Boolean;
+
+<span class="hl kwb">function</span> MyProgCheck(): Boolean;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if not</span> MyProgChecked <span class="hl kwb">then begin</span>
+    MyProgCheckResult := MsgBox(<span class="hl str">'Вы хотите установить MyProg.exe в '</span> + ExtractFilePath(CurrentFileName) + <span
+class="hl str">'?'</span>, <span class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span>) = <span
+class="hl kwe">IDYES</span>;   
+    MyProgChecked := True;
+  <span class="hl kwb">end</span>;
+  Result := MyProgCheckResult;
+<span class="hl kwb">end</span>;
+
+<span class="hl kwb">function</span> MyDirCheck(DirName: String): Boolean;
+<span class="hl kwb">begin</span>
+  Result := DirExists(DirName);
+<span class="hl kwb">end</span>;
+</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: FindFirst</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: FindFirst</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          FindFirst(const FileName: String; var FindRec: TFindRec): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Получает информацию о первом файле, имя которого указано в параметре <tt>FileName</tt>.
+        В случае успеха возвращает значение <tt>True</tt>.</p>
+      <p>Объявление структуры <code>TFindRec</code>:</p>
+      <pre class="indent">  TFindRec = record
+    Name: String;               // имя найденного файла (без пути)
+    Attributes: Longword;       // атрибуты файла
+    SizeHigh: Longword;         // размер файла, более 32 бит
+    SizeLow: Longword;          // размер файла, менее 32 бит
+    CreationTime: TFileTime;    // время создания файла
+    LastAccessTime: TFileTime;  // время последнего доступа к файлу
+    LastWriteTime: TFileTime;   // время последнего изменения файла
+    AlternateName: String;      // короткое имя файла (если нет, пустая строка)
+    FindHandle: THandle;        // дескриптор поиска
+  end;
+</pre>
+      <p>Объявление структуры <code>TFileTime</code>:</p>
+      <pre class="indent">  TFileTime = record
+    dwLowDateTime: DWORD;
+    dwHighDateTime: DWORD;
+  end;
+</pre>
+      <p>Допустимые атрибуты файла следующие:</p>
+      <pre class="indent">  FILE_ATTRIBUTE_READONLY
+  FILE_ATTRIBUTE_HIDDEN
+  FILE_ATTRIBUTE_SYSTEM
+  FILE_ATTRIBUTE_DIRECTORY
+  FILE_ATTRIBUTE_ARCHIVE
+  FILE_ATTRIBUTE_DEVICE
+  FILE_ATTRIBUTE_NORMAL
+  FILE_ATTRIBUTE_TEMPORARY
+  FILE_ATTRIBUTE_SPARSE_FILE
+  FILE_ATTRIBUTE_REPARSE_POINT
+  FILE_ATTRIBUTE_COMPRESSED
+  FILE_ATTRIBUTE_OFFLINE
+  FILE_ATTRIBUTE_NOT_CONTENT_INDEXED
+  FILE_ATTRIBUTE_ENCRYPTED
+</pre>
+      <h2 class="heading">Комментарии</h2>
+      <p>Если функция <tt>FindFirst</tt> возвращает значение <tt>True</tt>,
+        используйте вызов функции <a href="topic_isxfunc_findnext.htm">FindNext</a>,
+        чтобы продолжить поиск. После завершения поиска обязательно вызовите
+        функцию <a href="topic_isxfunc_findclose.htm">FindClose</a>, чтобы
+        освободить системные ресурсы, занятые процессом поиска.</p>
+      <h2 class="heading">Пример</h2>
+      <p>В примере ниже подсчитывается количество файлов в системном каталоге
+        Windows.</p>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  FilesFound: Integer;
+  FindRec: TFindRec;
+<span class="hl kwb">begin</span>
+  FilesFound := <span class="hl num">0</span>;
+  <span class="hl kwb">if</span> FindFirst(ExpandConstant(<span class="hl str">'</span><span
+class="hl kwc">{sys}</span><span class="hl str">\*'</span>), FindRec) <span class="hl kwb">then begin</span>
+    <span class="hl kwb">try</span>
+      <span class="hl kwb">repeat</span>
+        <span class="hl slc">// Исключаем из подсчёта каталоги</span>
+        <span class="hl kwb">if</span> FindRec.Attributes <span class="hl kwb">and</span> FILE_ATTRIBUTE_DIRECTORY = <span
+class="hl num">0</span> <span class="hl kwb">then</span>
+          FilesFound := FilesFound + <span class="hl num">1</span>;
+      <span class="hl kwb">until not</span> FindNext(FindRec);
+    <span class="hl kwb">finally</span>
+      FindClose(FindRec);
+    <span class="hl kwb">end</span>;
+  <span class="hl kwb">end</span>;
+  MsgBox(<span class="hl str">'В каталоге System найдено '</span> + IntToStr(FilesFound) + <span
+class="hl str">' файлов.'</span>,
+    <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_findnext.htm">FindNext</a> <br />
+        <a href="topic_isxfunc_findclose.htm">FindClose</a> </p>
+    </div>
+  </body>
+</html>

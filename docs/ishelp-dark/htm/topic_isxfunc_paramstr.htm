@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ParamStr</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ParamStr</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          ParamStr(Index: Integer): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>По указанному индексу <tt>Index</tt> возвращает один из параметров
+        командной строки, переданных программе установки или удаления, за
+        исключением недокументированных внутренних параметров, используемых ими.</p>
+      <p>Параметр с индексом 0 — это полное имя файла, с которого была запущена
+        программа установки или удаления.</p>
+      <p>Если индекс недействительный, функция вернёт пустую строку.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_paramcount.htm">ParamCount</a><br />
+        <a href="topic_isxfunc_getcmdtail.htm">GetCmdTail</a> </p>
+    </div>
+  </body>
+</html>

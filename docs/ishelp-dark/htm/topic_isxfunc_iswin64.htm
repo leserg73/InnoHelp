@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: IsWin64</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: IsWin64</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function IsWin64:
+          Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает значение <tt>True</tt>, если система является 64-бит
+        версией Windows, которая обеспечивает поддержку всех функций API,
+        необходимых <i>Inno Setup</i> для выполнения 64-бит задач установки.
+        Если функция вернёт <tt>False</tt>, то вы не сможете воспользоваться ни
+        одной из 64-бит функций <i>Inno Setup</i>.</p>
+      <p>Другое описание этой функции: возвращает <tt>True</tt>, если система
+        соответствует идентификатору архитектуры <a href="topic_archidentifiers.htm">win64</a>.</p>
+      <p>Не используйте эту функцию для определения режима <a href="topic_32vs64bitinstalls.htm">64-бит</a>.
+        Вместо неё применяйте функцию <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  <span class="hl slc">// Прежде чем использовать особенности 64-бит, вызываем IsWin64,</span>
+  <span class="hl slc">// чтобы избежать получения исключения при запуске в Windows 32-бит.</span>
+  <span class="hl kwb">if</span> IsWin64 <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    MsgBox(<span class="hl str">'Путь каталога "Program Files" в системе 64-бит: '</span> +
+      ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf64}</span><span
+class="hl str">'</span>), <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>
+        <br />
+        <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>
+      </p>
+    </div>
+  </body>
+</html>

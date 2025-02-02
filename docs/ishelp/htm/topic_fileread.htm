@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: FileRead</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: FileRead</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> FileRead(<b>int</b>)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет чтение строк файла, открытого с помощью функции <tt class="nill"><a href="topic_fileopen.htm">FileOpen</a></tt>.
+        Принимается только дескриптор файла, который возвращает функция <tt class="nill"><a
+            href="topic_fileopen.htm">FileOpen</a></tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#define</span> FileHandle
+<span class="hl kwf">#define</span> FileLine
+<span class="hl kwf">#sub</span> ProcessFileLine
+  <span class="hl kwf">#define</span> FileLine <span class="hl opt">=</span> <span
+class="hl kwd">FileRead</span><span class="hl opt">(</span>FileHandle<span class="hl opt">)</span>
+  <span class="hl kwf">#pragma</span> <span class="hl kwd">message</span> FileLine
+<span class="hl kwf">#endsub</span>
+<span class="hl kwf">#for</span> {FileHandle <span class="hl opt">=</span> <span
+class="hl kwd">FileOpen</span><span class="hl opt">(</span><span class="hl str">"c:</span><span
+class="hl str">\autoexec.bat"</span><span class="hl opt">);</span> \
+      FileHandle <span class="hl opt">&amp;&amp; </span><span class="hl kwf">!</span><span
+class="hl kwd">FileEof</span><span class="hl opt">(</span>FileHandle<span class="hl opt">);</span> <span
+class="hl str">""</span>} \
+      ProcessFileLine
+<span class="hl kwf">#if</span> FileHandle
+  <span class="hl kwf">#expr</span> <span class="hl kwd">FileClose</span><span class="hl opt">(</span>FindHandle<span
+class="hl opt">)</span>
+<span class="hl kwf">#endif</span>
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_sub.htm">sub</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_pragma.htm">pragma</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_for.htm">for</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_if.htm">if</a></tt>
+      </p>
+    </div>
+  </body>
+</html>

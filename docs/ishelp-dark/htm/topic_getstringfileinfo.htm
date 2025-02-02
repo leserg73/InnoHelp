@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: GetStringFileInfo</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: GetStringFileInfo</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> GetStringFileInfo(<b>str</b>
+          1, <b>str</b> 2, <b>int</b>? 3)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает из указанного файла строку с информацией о версии.
+        Информация считывается из ресурсного блока файла.</p>
+      <p><i>Первый параметр</i> (<b>str</b> 1) — это имя файла, версию которого
+        необходимо получить.</p>
+      <p><i>Второй параметр</i> (<b>str </b>2) — строковое имя одного из
+        ресурсов версии, значение которого необходимо получить. Все строковые
+        имена ресурсов версии являются стандартными (<tt>CompanyName</tt>,
+        <tt>FileDescription</tt>,
+        <tt>FileVersion</tt> и
+        т.д.) и объявлены в файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>.</p>
+      <p><i>Третий параметр</i> является дополнительным и определяет язык и
+        кодировку ресурсного блока версии. Если исследуемый файл является
+        мультиязычным, то этим параметром вы можете уточнить, из какого
+        языкового ресурса считать информацию о версии. Например: значение <b>0x04BE0409</b>
+        расшифровывается как язык "<b>English (United States)</b>". Если этот
+        параметр не указан, то <b>ISPP</b> проверит все доступные ресурсные
+        блоки в поисках заданного строкового имени в указанном файле.</p>
+      <p>Функция вернёт пустую строку, если ничего не будет найдено.</p>
+    </div>
+  </body>
+</html>

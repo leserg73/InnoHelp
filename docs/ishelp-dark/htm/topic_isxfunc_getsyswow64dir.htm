@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: GetSysWow64Dir</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: GetSysWow64Dir</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetSysWow64Dir: String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Эта функция действительна только в 64-разрядной версии Windows.
+        Возвращает полный путь к папке SysWOW64, которая используется для
+        32-разрядных системных файлов. Функция возвращает пустую строку, если её
+        вызов выполняется на 32-разрядной версии Windows, или если по каким-то
+        причинам не удаётся получить путь к каталогу на 64-разрядной версии
+        Windows (что маловероятно).</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  S: <span class="hl kwb">String</span>;
+<span class="hl kwb">begin</span>
+  S := GetSysWow64Dir;
+  <span class="hl slc">// Проверяем строку S: если строка пустая,</span>
+  <span class="hl slc">// каталог SysWOW64 не существует.</span>
+  <span class="hl kwb">if</span> S &lt;&gt; <span class="hl str">''</span> <span
+class="hl kwb">then</span>
+    MsgBox(<span class="hl str">'Каталог SysWOW64: '</span> + S, <span class="hl kwe">mbInformation</span>, <span
+class="hl kwe">MB_OK</span>)
+  <span class="hl kwb">else</span>
+    MsgBox(<span class="hl str">'Здесь нет каталога SysWOW64.'</span>, <span class="hl kwe">mbInformation</span>, <span
+class="hl kwe">MB_OK</span>);
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

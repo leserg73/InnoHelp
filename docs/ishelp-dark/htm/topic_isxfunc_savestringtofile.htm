@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: SaveStringToFile</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: SaveStringToFile</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          SaveStringToFile(const FileName: String; const S: AnsiString; const
+          Append: Boolean): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Сохраняет указанную строку <tt>S</tt> в заданном файле <tt>FileName</tt>.
+        Если параметр <tt>Append</tt> имеет значение <tt>True</tt> и заданный
+        файл уже существует, то строки будут добавлены к файлу, вместо его
+        полной перезаписи. В случае успеха возвращает значение <tt>True</tt>,
+        иначе <tt>False</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Эта функция не выполняет автоматическую вставку переносов до или после
+        строки. Если параметр <tt>Append</tt> имеет значение <tt>True</tt> и
+        существующий файл завершается строкой без переноса, то функция
+        фактически дополнит эту строку указанной. Чтобы избежать этого, можно
+        поместить символы разрыва строки до и после строки так, как это показано
+        в примере ниже:</p>
+      <pre class="indent examplebox">SaveStringToFile(<span class="hl str">'c:\filename.txt'</span>, <span
+
+class="hl kwf">#13#10</span> + <span class="hl str">'the string'</span> + <span
+
+class="hl kwf">#13#10</span>, True);</pre>
+    </div>
+  </body>
+</html>

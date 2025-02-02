@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: OutputDir</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: OutputDir</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">Output</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Определяет для сценария каталог "вывода", в котором
+        компилятор будет создавать файлы установки SETUP.*. По умолчанию вывод
+        осуществляется в папку с именем "Output", которая создаётся в одном
+        каталоге с файлом сценария.</p>
+      <p>Если <tt>OutputDir</tt> не содержит полного пути, то
+        он будет создан относительно пути в параметре <tt>SourceDir</tt>. Если
+        же имя пути содержит приставку "userdocs:", то вывод будет выполнен
+        относительно папки "Мои документы" для текущего пользователя, который
+        вошёл в систему. Установка в директиве <tt>OutputDir</tt> значения <tt>.</tt>
+        приведёт к выводу файлов установки в исходный каталог сценария.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">OutputDir</span>=c:\output</pre>
+      </div>
+    </div>
+  </body>
+</html>

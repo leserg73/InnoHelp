@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: TouchDate</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: TouchDate</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">current</tt>, <tt class="nill">none</tt> или <tt class="nill"><i>YYYY</i>-<i>MM</i>-<i>DD</i></tt>
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">current</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Определяет дату, используемую в отметке даты/времени
+        для файлов секции <tt>[Files]</tt>, у которых указан флаг <tt>touch</tt>.</p>
+      <p>Значение <tt>current</tt> устанавливает текущее
+        системное время при компиляции программы установки. Значение <tt>none</tt>
+        оставляет время без изменений. В противном случае значение директивы <tt>TouchDate</tt>
+        интерпретируется явным образом согласно формата <tt><i>YYYY</i>-<i>MM</i>-<i>DD</i></tt>
+        (ISO 8601). Если для <a href="topic_setup_timestampsinutc.htm">TimeStampsInUTC</a>
+        указано значение <tt>yes</tt>, дата устанавливается в соответствии со
+        стандартом UTC.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">TouchDate</span>=<span class="hl num">2004</span>-<span
+class="hl num">01</span>-<span class="hl num">31</span></pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ArchitecturesInstallIn64BitMode</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ArchitecturesInstallIn64BitMode</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Разделённый пробелами список <a 
+                href="topic_archidentifiers.htm">идентификаторов архитектуры</a>.<br />
+                Или логическое выражение, содержащее <a href="topic_archidentifiers.htm">идентификаторы архитектуры</a>.<br />
+                Примеры логических выражений см. в разделе "<a href="topic_componentstasksparams.htm">Параметры
+                секций [Components] и [Tasks]</a>". 
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><i>(пустое)</i> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Определяет архитектуры, на которых программа установки должна включить
+        <a href="topic_32vs64bitinstalls.htm">64-разрядный режим установки</a>.
+        Если директива не указана или является пустой, программа установки всегда
+        будет использовать <a href="topic_32vs64bitinstalls.htm">32-разрядный
+        режим установки</a>.</p>
+      <p>Как правило, 64-разрядный режим установки следует включать только в тех
+        программах установки, которые поставляют 64-разрядные двоичные файлы
+        (x64 или Arm64).</p>
+      <p>Поскольку 64-разрядный режим установки поддерживается только на системах
+        под управлением Windows 64-бит, указанное выражение никогда не должно
+        совпадать с системами под управлением Windows 32-бит. Поэтому, например,
+        не устанавливайте для этой директивы значение типа <tt>x86compatible</tt>,
+        так как оно <i>будет</i> соответствовать системам под управлением Windows
+        32-бит. Если выражение действительно соответствует системе под управлением
+        Windows 32-бит, программа установки выдаст сообщение об ошибке и завершит
+        работу.</p>
+      <p>Прежде чем использовать эту директиву, ознакомьтесь с
+        разделом "<a href="topic_64bitlimitations.htm">Ограничения в
+        64-разрядном режиме</a>".</p>
+      <p>Если ваше приложение работает только на 64-разрядных архитектурах, следует
+        в директиве <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
+        указать такое же самое значение, как и для этой директивы, чтобы
+        предотвратить работу программы установки на Windows 32-бит.</p>
+      <div class="examplebox">
+         <div class="exampleheader">Примеры:</div>
+<pre class="nomargin">
+<span class="hl slc">; Разрешить запуск инсталлятора на x64-совместимых системах</span>
+<span class="hl slc">; и включить 64-разрядный режим установки:</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=x64compatible
+<span class="hl kwb">ArchitecturesInstallIn64BitMode</span>=x64compatible
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></p>
+    </div>
+  </body>
+</html>

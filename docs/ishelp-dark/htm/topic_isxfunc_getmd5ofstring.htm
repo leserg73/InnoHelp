@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: GetMD5OfString</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: GetMD5OfString</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetMD5OfString(const S: AnsiString): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение контрольной суммы MD5 для заданной строки
+        в кодировке ANSI.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  MD5: String;
+<span class="hl kwb">begin</span>
+  MD5 := GetMD5OfString(<span class="hl str">'Test'</span>);
+  <span class="hl slc">// MD5 = '0cbc6611f5540bd0809a388dc95a615b'</span>
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>64-разрядный режим установки</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">64-разрядный режим установки</h1>
+    <div class="topicbody">
+      <p>Установка может выполняться в одном из двух режимов:
+        32-разрядном или 64-разрядном. 64-разрядный режим установки будет
+        выбран, если пользователь использует 64-разрядную версию Windows и
+        архитектура процессора системы включена в значение директивы <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>
+        секции <tt>[Setup]</tt>. В противном случае используется 32-разрядный
+        режим установки.</p>
+      <p>Чем же различаются эти два режима работы? Главное
+        различие состоит в значениях констант, которые используются по
+        умолчанию.</p>
+      <h2 class="heading">В 32-разрядном режиме установки:</h2>
+      <ul>
+        <li>Путь System32, возвращаемый константой <tt>{sys}</tt>, по умолчанию
+          ссылается на 32-разрядный каталог System. </li>
+        <li>Константа <tt>{commonpf}</tt> эквивалентна константе <tt>{commonpf32}</tt>.
+        </li>
+        <li>Константа <tt>{commoncf}</tt> эквивалентна константе <tt>{commoncf32}</tt>.
+        </li>
+        <li>Секция <tt>[Registry]</tt> по умолчанию выполняет запись в
+          32-разрядном представлении реестра.</li>
+        <li>Константа <tt>{reg:...}</tt> по умолчанию выполняет чтение из
+          32-разрядного представления реестра. </li>
+        <li>Функции <tt>Reg*</tt> секции <tt>[Code]</tt> по умолчанию получают
+          доступ к 32-разрядному представлению реестра. </li>
+        <li>Флаг <tt>useapppaths</tt> секции <tt>[Icons]</tt> считывает ключ
+          "App Paths" в 32-разрядном представлении реестра. </li>
+        <li>Флаги <tt>regserver</tt> и <tt>regtypelib</tt> секции <tt>[Files]</tt>
+          по умолчанию выполняют загрузку и регистрацию файлов внутри
+          32-разрядного процесса. </li>
+        <li>Флаг <tt>sharedfile</tt> секции <tt>[Files]</tt> по умолчанию
+          обновляет ключ "SharedDLLs" в 32-разрядном представлении реестра. </li>
+        <li>Ключи деинсталляции создаются в 32-разрядном представлении реестра.</li>
+      </ul>
+      <h2 class="heading">В 64-разрядном режиме установки:</h2>
+      <ul>
+        <li>Путь System32, возвращаемый константой <tt>{sys}</tt>, по умолчанию
+          ссылается на 64-разрядный каталог System, если используется в секциях
+          <tt>[Dirs]</tt>, <tt>[Files]</tt>, <tt>[InstallDelete]</tt>, <tt>[Run]</tt>,
+          <tt>[UninstallDelete]</tt> и <tt>[UninstallRun]</tt>. Это связано с
+          тем, что программа установки/удаления временно отключает <a href="http://msdn.microsoft.com/en-us/library/aa384187.aspx"
+            target="_blank" title="http://msdn.microsoft.com/en-us/library/aa384187.aspx">перенаправление
+            файловой системы WOW64</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />
+          при доступе к файлам и папкам из этих секций. Где-нибудь в другом
+          месте System32 и <tt>{sys}</tt> ссылается на 32-разрядный каталог
+          System, как это обычно и происходит в 32-разрядном процессе. </li>
+        <li>Константа <tt>{commonpf}</tt> эквивалентна константе <tt>{commonpf64}</tt>.
+        </li>
+        <li>Константе <tt>{commoncf}</tt> эквивалентна константе <tt>{commoncf64}</tt>.
+        </li>
+        <li>Секция <tt>[Registry]</tt> по умолчанию выполняет запись в
+          64-разрядном представлении реестра.</li>
+        <li>Константа <tt>{reg:...}</tt> по умолчанию выполняет чтение из
+          64-разрядного представления реестра. </li>
+        <li>Функции <tt>Reg*</tt> секции <tt>[Code]</tt> по умолчанию получают
+          доступ к 64-разрядному представлению реестра. </li>
+        <li>Флаг <tt>useapppaths</tt> секции <tt>[Icons]</tt> считывает ключ
+          "App Paths" в 64-разрядном представлении реестра. </li>
+        <li>Флаги <tt>regserver</tt> и <tt>regtypelib</tt> секции <tt>[Files]</tt>
+          по умолчанию выполняют загрузку и регистрацию файлов внутри
+          64-разрядного процесса. </li>
+        <li>Флаг <tt>sharedfile</tt> секции <tt>[Files]</tt> по умолчанию
+          обновляет ключ "SharedDLLs" в 64-разрядном представлении реестра. </li>
+        <li>Ключи деинсталляции создаются в 64-разрядном представлении реестра.</li>
+      </ul>
+    </div>
+  </body>
+</html>

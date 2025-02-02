@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Константы</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Константы</h1>
+    <div class="topicbody">
+      <p>Во многих записях сценария широко можно использовать <i>константы</i>.
+        Это предопределённые строки, заключённые в фигурные скобки <tt>{&nbsp;}</tt>.
+        Программа установки или удаления преобразует константы в их литеральные
+        значения в зависимости от выбора пользователя и конфигурации системы.
+        Например, константа <tt>{win}</tt> на большинстве систем будет
+        преобразовываться в "C:\WINDOWS".</p>
+      <p>Символ открывающей фигурной скобки "{" рассматривается
+        как начало константы. Если необходимо в месте применения константы
+        использовать фактический символ "{", введите его дважды "{{". При этом
+        дублировать символ закрывающей скобки "}" не нужно.</p>
+      <p>Если за константой следует символ обратной косой черты
+        ("\"), а само значение константы уже заканчивается обратной косой
+        чертой, то программа установки или удаления его автоматически удалит.
+        Таким образом, если значение определённой константы равно "C:\", то
+        запись <tt>{<i>constantname</i>}\file</tt> будет преобразована в
+        "C:\file", а не в "C:\\file". Если необходимо это предотвратить,
+        заключите символ обратной косой черты в фигурные скобки <tt>{&nbsp;}</tt>,
+        например, <tt>{app}{\}</tt>.</p>
+      <p>Ниже приведен список поддерживаемых констант.</p>
+      <h2 class="heading">Константы каталогов</h2>
+      <dl>
+        <dt class="const"><a name="app">{app}</a></dt>
+        <dd>
+          <p>Каталог приложения, которую пользователь выбирает на странице
+            мастера "<i>Выбор папки установки</i>".</p>
+          <p>Например: если в сценарии используется запись <tt>{app}\MYPROG.EXE</tt>,
+            а в качестве каталога приложения пользователь выбрал "C:\MYPROG", то
+            программа установки преобразует её в "C:\MYPROG\MYPROG.EXE". </p>
+        </dd>
+        <dt class="const"><a name="win">{win}</a></dt>
+        <dd>
+          <p>Каталог операционной системы Windows.</p>
+          <p>Например: если в сценарии используется запись <tt>{win}\MYPROG.INI</tt>,
+            а каталогом ОС Windows является "C:\WINDOWS", то программа установки
+            или удаления преобразует её в "C:\WINDOWS\MYPROG.INI".</p>
+        </dd>
+        <dt class="const"><a name="sys">{sys}</a></dt>
+        <dd>
+          <p>Системный каталог System32.</p>
+          <p>Например: если в сценарии используется запись <tt>{sys}\CTL3D32.DLL</tt>,
+            а системным каталогом ОС Windows является "C:\WINDOWS\SYSTEM", то
+            программа установки или удаления преобразует её в
+            "C:\WINDOWS\SYSTEM\CTL3D32.DLL".</p>
+          <p>На 64-разрядных системах Windows, по умолчанию, путь к каталогу
+            System32, возвращаемый этой константой, сопоставляется с каталогом,
+            в котором находятся 32-разрядные системные файлы, как и в
+            32-разрядных ОС Windows. (Эта константа может быть изменена
+            включением <a href="topic_32vs64bitinstalls.htm">64-разрядного
+              режима установки</a>.) </p>
+        </dd>
+        <dt class="const"><a name="sysnative">{sysnative}</a></dt>
+        <dd>
+          <p>На 64-разрядных Windows каталог, возвращаемый этой константой,
+            содержит 64-разрядные системные файлы. На 32-разрядных Windows —
+            32-разрядные системные файлы.</p>
+        </dd>
+        <dt class="const"><a name="syswow64">{syswow64}</a></dt>
+        <dd>
+          <p>Системный каталог SysWOW64 на 64-разрядных Windows, обычно
+            "C:\WINDOWS\SysWOW64". Фактически в этом каталоге находятся
+            32-разрядные системные файлы. На 32-разрядных Windows каталога
+            SysWOW64 не существует, поэтому эта константа вернёт такой же самый
+            каталог, что и константа <tt>{sys}</tt>, если будет там
+            использована. </p>
+          <p>Не используйте эту константу, если не требуется получить имя
+            фактического каталога, в котором находятся 32-разрядные системные
+            файлы. Необоснованное использование константы <tt>{syswow64}</tt> в
+            местах, где применение <tt>{sys}</tt> было бы достаточным, может
+            привести к серьёзным проблемам. (В качестве примера смотрите
+            описание секции <a href="topic_filessection.htm">[Files]</a> по
+            флагу <tt>sharedfile</tt>.) </p>
+        </dd>
+        <dt class="const"><a name="src">{src}</a></dt>
+        <dd>
+          <p>Каталог, в котором находятся файлы программы установки.<br />
+            Например: если в сценарии используется запись <tt>{src}\MYPROG.EXE</tt>
+            и пользователь выполняет установку из "D:\Soft", то программа
+            установки преобразует её в "D:\Soft\MYPROG.EXE".</p>
+        </dd>
+        <dt class="const"><a name="sd">{sd}</a></dt>
+        <dd>
+          <p>Системный диск, на котором установлена операционная система
+            Windows. Обычно диск "C:". Эта константа эквивалентна переменной
+            среды <i>SystemDrive</i>. </p>
+        </dd>
+        <dt class="const"><a name="commonpf">{commonpf}</a></dt>
+        <dd>
+          <p>Каталог Program Files, в который обычно выполняется установка
+            приложений. Константа <tt>{commonpf}</tt> эквивалентна константе <tt>{commonpf32}</tt>,
+            если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+              режиме</a>, иначе эквивалентна константе <tt>{commonpf64}</tt>. </p>
+        </dd>
+        <dt class="const"><a name="commonpf32">{commonpf32}</a></dt>
+        <dd>
+          <p>32-разрядный каталог Program Files, предназначенный для установки
+            32-разрядных приложений. Обычно это путь "C:\Program Files" на
+            32-разрядных Windows и "C:\Program Files (x86)" на 64-разрядных
+            Windows.</p>
+        </dd>
+        <dt class="const"><a name="commonpf64">{commonpf64}</a></dt>
+        <dd>
+          <p>64-разрядный каталог Program Files, предназначенный для установки
+            64-разрядных приложений. Обычно это путь "C:\Program Files".
+            Константа действительна только на 64-разрядных Windows. При попытке
+            её использования на 32-разрядных Windows будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="commoncf">{commoncf}</a></dt>
+        <dd>
+          <p>Каталог Common Files, в который обычно выполняется установка
+            системных файлов приложений. Константа <tt>{commoncf}</tt>
+            эквивалентна константе <tt>{commoncf32}</tt>, если установка не
+            работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+              режиме</a>, иначе эквивалентна константе <tt>{commoncf64}</tt>. </p>
+        </dd>
+        <dt class="const"><a name="commoncf32">{commoncf32}</a></dt>
+        <dd>
+          <p>32-разрядный каталог Common Files, предназначенный для установки
+            32-разрядных системных файлов приложений. Обычно это путь
+            "C:\Program Files\Common Files" на 32-разрядных Windows и
+            "C:\Program Files (x86)\Common Files" на 64-разрядных Windows.</p>
+        </dd>
+        <dt class="const"><a name="commoncf64">{commoncf64}</a></dt>
+        <dd>
+          <p>64-разрядный каталог Common Files, предназначенный для установки
+            64-разрядных системных файлов приложений. Обычно это путь
+            "C:\Program Files\Common Files". Константа действительна только на
+            64-разрядных Windows. При попытке её использования на 32-разрядных
+            Windows будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="tmp">{tmp}</a></dt>
+        <dd>
+          <p>Временный каталог, используемый программой установки или удаления.
+            Константа <i>не</i> является значением переменной окружения TEMP
+            пользователя. Это подкаталог во временном каталоге пользователя,
+            который создаёт программа установки или удаления при запуске (с
+            именем подобно "C:\WINDOWS\TEMP\IS-xxxxx.tmp"). Все файлы и
+            подкаталоги в этом каталоге автоматически удаляются, когда программа
+            установки или удаления завершает свою работу. При установке эта
+            константа обычно используется для извлечения файлов, которые должны
+            быть выполнены в секции [Run], но не нужны после установки. </p>
+        </dd>
+        <dt class="const"><a name="commonfonts">{commonfonts}</a></dt>
+        <dd>
+          <p>Каталог шрифтов. Обычно называется "Fonts" и находится в каталоге
+            Windows.</p>
+        </dd>
+        <dt class="const"><a name="dao">{dao}</a></dt>
+        <dd>
+          <p>Каталог DAO. Константа эквивалентна записи <tt>{commoncf}\Microsoft
+              Shared\DAO</tt>. </p>
+        </dd>
+        <dt class="const"><a name="dotnet11">{dotnet11}</a></dt>
+        <dd>
+          <p>Корневой каталог установки 32-разрядной .NET Framework версии 1.1.</p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 1.1, будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="dotnet20">{dotnet20}</a></dt>
+        <dd>
+          <p>Корневой каталог установки .NET Framework версии 2.0-3.5. Константа
+            <tt>{dotnet20}</tt> эквивалентна константе <tt>{dotnet2032}</tt>,
+            если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+              режиме</a>, иначе эквивалентна константе <tt>{dotnet2064}</tt>. </p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="dotnet2032">{dotnet2032}</a></dt>
+        <dd>
+          <p>Корневой каталог установки 32-разрядной .NET Framework версии
+            2.0-3.5.</p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="dotnet2064">{dotnet2064}</a></dt>
+        <dd>
+          <p>Корневой каталог установки 64-разрядной .NET Framework версии
+            2.0-3.5. Константа действительна только на 64-разрядных Windows.</p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="dotnet40">{dotnet40}</a></dt>
+        <dd>
+          <p>Корневой каталог установки .NET Framework версии 4.0 и выше.
+            Константа <tt>{dotnet40}</tt> эквивалентна константе <tt>{dotnet4032}</tt>,
+            если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+              режиме</a>, иначе эквивалентна константе <tt>{dotnet4064}</tt>. </p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
+          <p>См. также <a href="topic_isxfunc_isdotnetinstalled.htm">IsDotNetInstalled</a>.
+          </p>
+        </dd>
+        <dt class="const"><a name="dotnet4032">{dotnet4032}</a></dt>
+        <dd>
+          <p>Корневой каталог установки 32-разрядной .NET Framework версии 4.0 и
+            выше.</p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
+        </dd>
+        <dt class="const"><a name="dotnet4064">{dotnet4064}</a></dt>
+        <dd>
+          <p>Корневой каталог установки 64-разрядной .NET Framework версии 4.0 и
+            выше. Константа действительна только на 64-разрядных Windows.</p>
+          <p>При попытке использования этой константы на системах, на которых
+            нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
+        </dd>
+      </dl>
+      <h2 class="heading">Константы специальных папок</h2>
+      <p>Inno Setup поддерживает другой набор констант каталога,
+        именуемый <i>константы специальных папок</i>. Их можно использовать так
+        же, как и другие константы каталога.</p>
+      <p>Константы "common" относятся к профилю <i>Все
+          пользователи</i>.</p>
+      <p>Константы "user" относятся к профилю пользователя,
+        который запускает программу установки. Часто этот пользователь является
+        не тем пользователем, который вошёл в систему, поэтому используйте
+        константы "user" с осторожностью.</p>
+      <dl>
+        <dt class="const"><a name="group">{group}</a></dt>
+        <dd>
+          <p>Путь к папке в меню «Пуск», которую пользователь выбрал на странице
+            мастера "<i>Выберите папку в меню «Пуск»</i>". Если инсталлятор
+            работает в <a href="topic_admininstallmode.htm">режиме не
+              административной установки</a>, папка создаётся в профиле текущего
+            пользователя, иначе — в профиле <i>Все пользователи</i>. </p>
+        </dd>
+        <dt class="const"><a name="localappdata">{localappdata}</a></dt>
+        <dd>
+          <p>Путь к локальной (без роуминга) папке "Application Data" текущего пользователя.</p>
+        </dd>
+        <dt class="const"><a name="userappdata">{userappdata}</a>
+          и <a name="commonappdata">{commonappdata}</a></dt>
+        <dd>
+          <p>Путь к папке "Application Data".</p>
+        </dd>
+        <dt class="const"><a name="usercf">{usercf}</a></dt>
+        <dd>
+          <p>Путь к папке "Common Files" текущего пользователя. Константа <tt>{usercf}</tt>
+            поддерживается только в Windows 7 и более поздних версиях. При
+            использовании в предыдущих версиях Windows она будет преобразована в
+            <tt>{localappdata}\Programs\Common</tt>. </p>
+        </dd>
+        <dt class="const"><a name="userdesktop">{userdesktop}</a>
+          и <a name="commondesktop">{commondesktop}</a></dt>
+        <dd>
+          <p>Путь к папке "Рабочий стол".</p>
+        </dd>
+        <dt class="const"><a name="userdocs">{userdocs}</a>
+          и <a name="commondocs">{commondocs}</a></dt>
+        <dd>
+          <p>Путь к папке "Мои документы".</p>
+        </dd>
+        <dt class="const"><a name="userfavorites">{userfavorites}</a></dt>
+        <dd>
+          <p>Путь к папке "Избранное" текущего пользователя. (Общей папки
+            "Избранное" не существует.)</p>
+        </dd>
+        <dt class="const"><a name="userfonts">{userfonts}</a></dt>
+        <dd>
+          <p>Путь к папке "Fonts" текущего пользователя. Только Windows 10
+            версии 1803 и выше поддерживает константу <tt>{userfonts}</tt>.
+            Соответствует каталогу <tt>{localappdata}\Microsoft\Windows\Fonts</tt>.
+          </p>
+        </dd>
+        <dt class="const"><a name="userpf">{userpf}</a></dt>
+        <dd>
+          <p>Путь к папке "Program Files" текущего пользователя. Константа <tt>{userpf}</tt>
+            поддерживается только в Windows 7 и более поздних версиях. При
+            использовании в предыдущих версиях Windows она будет преобразована в
+            <tt>{localappdata}\Programs</tt>. </p>
+        </dd>
+        <dt class="const"><a name="userprograms">{userprograms}</a>
+          и <a name="commonprograms">{commonprograms}</a></dt>
+        <dd>
+          <p>Путь к папке "Программы" в меню «Пуск».</p>
+        </dd>
+        <dt class="const"><a name="usersavedgames">{usersavedgames}</a></dt>
+        <dd>
+          <p>Путь к папке "Сохранения игр" (Saved Games) текущего пользователя.
+             (Общей папки "Сохранения игр" не существует.)</p>
+        </dd>
+        <dt class="const"><a name="usersendto">{usersendto}</a></dt>
+        <dd>
+          <p>Путь к папке "Отправить" текущего пользователя. (Общей папки
+            "Отправить" не существует.)</p>
+        </dd>
+        <dt class="const"><a name="userstartmenu">{userstartmenu}</a>
+          и <a name="commonstartmenu">{commonstartmenu}</a></dt>
+        <dd>
+          <p>Путь к папке верхнего уровня меню «Пуск».</p>
+        </dd>
+        <dt class="const"><a name="userstartup">{userstartup}</a>
+          и <a name="commonstartup">{commonstartup}</a></dt>
+        <dd>
+          <p>Путь к папке "Автозагрузка" в меню «Пуск».</p>
+        </dd>
+        <dt class="const"><a name="usertemplates">{usertemplates}</a>
+          и <a name="commontemplates">{commontemplates}</a></dt>
+        <dd>
+          <p>Путь к папке "Шаблоны".</p>
+        </dd>
+      </dl>
+      <h2 class="heading">Константы "auto"</h2>
+      <p>Помимо констант "common" и "user", Inno Setup также
+        поддерживает константы "auto". Если инсталлятор работает в <a href="topic_admininstallmode.htm">режиме
+          не административной установки</a>, константы "auto" сопоставляются
+        формой "user", иначе — с формой "common".</p>
+      <p>Если это возможно, рекомендуется всегда использовать
+        константы "auto", чтобы предотвратить появление ошибок.</p>
+      <div class="indent">
+        <table>
+          <tbody>
+            <tr>
+              <td class="cellleft"><br />
+              </td>
+              <td class="cellright"><u>Административный</u></td>
+              <td class="cellright"><u>Не административный</u></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autoappdata">autoappdata</a></tt></td>
+              <td class="cellright"><tt class="nill">commonappdata</tt></td>
+              <td class="cellright"><tt class="nill">userappdata</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autocf">autocf</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autocf32">autocf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf32</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autocf64">autocf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf64</tt></td>
+              <td class="cellright"><tt class="nill">usercf</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autodesktop">autodesktop</a></tt></td>
+              <td class="cellright"><tt class="nill">commondesktop</tt></td>
+              <td class="cellright"><tt class="nill">userdesktop</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autodocs">autodocs</a></tt></td>
+              <td class="cellright"><tt class="nill">commondocs</tt></td>
+              <td class="cellright"><tt class="nill">userdocs</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autofonts">autofonts</a></tt></td>
+              <td class="cellright"><tt class="nill">commonfonts</tt></td>
+              <td class="cellright"><tt class="nill">userfonts</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autopf">autopf</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autopf32">autopf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf32</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autopf64">autopf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf64</tt></td>
+              <td class="cellright"><tt class="nill">userpf</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autoprograms">autoprograms</a></tt></td>
+              <td class="cellright"><tt class="nill">commonprograms</tt></td>
+              <td class="cellright"><tt class="nill">userprograms</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autostartmenu">autostartmenu</a></tt></td>
+              <td class="cellright"><tt class="nill">commonstartmenu</tt></td>
+              <td class="cellright"><tt class="nill">userstartmenu</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="autostartup">autostartup</a></tt></td>
+              <td class="cellright"><tt class="nill">commonstartup</tt></td>
+              <td class="cellright"><tt class="nill">userstartup</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="autotemplates">autotemplates</a></tt></td>
+              <td class="cellright"><tt class="nill">commontemplates</tt></td>
+              <td class="cellright"><tt class="nill">usertemplates</tt></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="heading">Переименованные константы</h2>
+      <p>Начиная с Inno Setup 6 некоторые константы каталогов и
+        специальных папок получили новые имена. В сценариях старые имена все ещё
+        поддерживаются, но рекомендуется их обновить на новые (или применить
+        форму "auto"), иначе компилятор выдаст предупреждение, если этого не
+        сделать.</p>
+      <div class="indent">
+        <table>
+          <tbody>
+            <tr>
+              <td class="cellleft"><u>Старое имя</u></td>
+              <td class="cellright"><u>Новое имя</u></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="cf">cf</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="cf32">cf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf32</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="cf64">cf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commoncf64</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="fonts">fonts</a></tt></td>
+              <td class="cellright"><tt class="nill">commonfonts</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="pf">pf</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="pf32">pf32</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf32</tt></td>
+            </tr>
+            <tr class="altcolorrow">
+              <td class="cellleft"><tt class="nill"><a name="pf64">pf64</a></tt></td>
+              <td class="cellright"><tt class="nill">commonpf64</tt></td>
+            </tr>
+            <tr>
+              <td class="cellleft"><tt class="nill"><a name="sendto">sendto</a></tt></td>
+              <td class="cellright"><tt class="nill">usersendto</tt></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="heading">Прочие константы</h2>
+      <dl>
+        <dt class="const"><a name="bs">{\}</a></dt>
+        <dd>
+          <p>Символ обратной косой черты. В начале этой главы описано различие в
+            использовании между <tt>{\}</tt> и <tt>\</tt>. </p>
+        </dd>
+        <dt class="const"><a name="name">{%<i>NAME</i>|<i>DefaultValue</i>}</a></dt>
+        <dd>
+          <p>Выполняет вставку значения переменной среды.</p>
+          <ul>
+            <li><i>NAME</i> определяет имя используемой переменной среды</li>
+            <li><i>DefaultValue</i> определяет строку для вставки, если
+              указанная переменная в системе пользователя не существует.</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li><i>NAME</i> и <i>DefaultValue</i> могут содержать константы.
+              Обратите внимание, что закрывающую фигурную скобку константы
+              здесь, как описано выше, экранировать <i>не</i> нужно; это
+              необходимо только тогда, когда закрывающая скобка используется в
+              другом месте.</li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Примеры:</div>
+            <pre class="nomargin">{%COMSPEC}
+{%PROMPT|$P$G}
+</pre>
+          </div>
+        </dd>
+        <dt class="const"><a name="cmd">{cmd}</a></dt>
+        <dd>
+          <p>Полный путь к стандартному системному интерпретатору команд. Обычно
+            это <i>Windows\System32\</i>cmd.exe. Обратите внимание, что
+            переменная среды COMSPEC не используется при расширении этой
+            константы. </p>
+        </dd>
+        <dt class="const"><a name="computername">{computername}</a></dt>
+        <dd>
+          <p>Имя компьютера, на котором запущена программа установки или
+            удаления (возвращается функцией <i>GetComputerName</i>). </p>
+        </dd>
+        <dt class="const"><a name="drive">{drive:<i>Path</i>}</a></dt>
+        <dd>
+          <p>Извлекает и возвращает букву диска и двоеточие (например, "C:") по
+            указанному пути. В случае, если путь является сетевым, возвращает
+            имя сервера и общего ресурса (например, "\\SERVER\SHARE").</p>
+          <ul>
+            <li><i>Path</i> определяет путь.</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li><i>Path</i> может содержать константы. Обратите внимание, что
+              закрывающую фигурную скобку константы здесь, как описано выше,
+              экранировать <i>не</i> нужно; это необходимо только тогда, когда
+              закрывающая скобка используется в другом месте.</li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Примеры:</div>
+            <pre class="nomargin">{drive:{src}}
+{drive:c:\path\file}
+{drive:\\server\share\path\file}
+</pre>
+          </div>
+        </dd>
+        <dt class="const"><a name="groupname">{groupname}</a></dt>
+        <dd>
+          <p>Путь к папке в меню «Пуск», которую пользователь выбрал на странице
+            мастера "<i>Выберите папку в меню «Пуск»</i>". Эта константа
+            отличается от константы <tt>{group}</tt> тем, что содержит только
+            имя папки, а не путь к ней. </p>
+        </dd>
+        <dt class="const"><a name="hwnd">{hwnd}</a></dt>
+        <dd>
+          <p><i>С версии 6.4 функция удалена.</i> Ранее транслировала фоновое окно
+            программы установки в дескриптор окна, которое могло быть включено при
+            помощи директивы <a href="topic_setup_windowvisible.htm">WindowVisible</a>.</p>
+        </dd>
+        <dt class="const"><a name="wizardhwnd">{wizardhwnd}</a></dt>
+        <dd>
+          <p><i>(Специального назначения)</i> преобразует окно мастера программы
+            установки в дескриптор окна. Дескриптор равен "0", если в момент
+            трансляции дескриптор окна недоступен.</p>
+        </dd>
+        <dt class="const"><a name="ini">{ini:<i>Filename</i>,<i>Section</i>,<i>Key</i>|<i>DefaultValue</i>}</a></dt>
+        <dd>
+          <p>Выполняет вставку значения из файла INI.</p>
+          <ul>
+            <li><i>Filename</i> определяет имя INI-файла.</li>
+            <li><i>Section</i> определяет имя секции.</li>
+            <li><i>Key</i> определяет имя ключа.</li>
+            <li><i>DefaultValue</i> определяет строку для вставки, если
+              указанное значение ключа не существует.</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li><i>Filename, Section, Key</i> и <i>DefaultValue</i> могут содержать
+              константы. Обратите внимание, что закрывающую фигурную скобку
+              константы здесь, как описано выше, экранировать <i>не</i> нужно;
+              это необходимо только тогда, когда закрывающая скобка используется
+              в другом месте.</li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">{ini:{win}\MyProg.ini,Settings,Path|{autopf}\My Program}</pre>
+          </div>
+        </dd>
+        <dt class="const"><a name="language">{language}</a></dt>
+        <dd>
+          <p>Внутреннее имя выбранного языка. Более подробную информацию
+            смотрите в описании секции <a href="topic_languagessection.htm">[Languages]</a>.
+          </p>
+        </dd>
+        <dt class="const"><a name="cm">{cm:<i>MessageName</i>}</a><br />
+          {cm:<i>MessageName</i>,<i>Arguments</i>}</dt>
+        <dd>
+          <p>Выполняет вставку значения пользовательского сообщения на основе
+            активного языка.</p>
+          <ul>
+            <li><i>MessageName</i> определяет имя пользовательского сообщения.
+              Более подробную информацию смотрите в описании секции <a href="topic_custommessagessection.htm">[CustomMessages]</a>.</li>
+            <li><i>Arguments</i> дополнительно определяет разделенный запятыми
+              список аргументов для значения сообщения.</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li>Каждый аргумент в <i>Arguments</i> может содержать константы.
+              Обратите внимание, что закрывающую фигурную скобку константы
+              здесь, как описано выше, экранировать <i>не</i> нужно; это
+              необходимо только тогда, когда закрывающая скобка используется в
+              другом месте. </li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">{cm:LaunchProgram,Inno Setup}</pre>
+          </div>
+          <p>В приведенном выше примере сообщение будет транслировано в "Launch
+            Inno Setup", если активным языком является английский (English).</p>
+        </dd>
+        <dt class="const"><a name="reg">{reg:HK<i>xx</i>\<i>SubkeyName</i>,<i>ValueName</i>|<i>DefaultValue</i>}</a></dt>
+        <dd>
+          <p>Выполняет вставку значения реестра.</p>
+          <ul>
+            <li>HK<i>xx</i> определяет корневой раздел реестра. Действительные
+              значения корневых разделов реестра смотрите в описании секции <a
+                href="topic_registrysection.htm">[Registry]</a>.</li>
+            <li><i>SubkeyName</i> определяет имя подраздела реестра.</li>
+            <li><i>ValueName</i> определяет имя значения. Если необходимо
+              получить значение ключа "по умолчанию", оставьте параметр <i>ValueName</i>
+              пустым.</li>
+            <li><i>DefaultValue</i> определяет строку для вставки, если
+              указанное значение реестра не существует или не является строковым
+              типом (REG_SZ или REG_EXPAND_SZ).</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li><i>SubkeyName, ValueName,</i> и <i>DefaultValue</i> могут
+              содержать константы. Обратите внимание, что закрывающую фигурную
+              скобку константы здесь, как описано выше, экранировать <i>не</i>
+              нужно; это необходимо только тогда, когда закрывающая скобка
+              используется в другом месте.</li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">{reg:HKA\Software\My Program,Path|{autopf}\My Program}</pre>
+          </div>
+        </dd>
+        <dt class="const"><a name="param">{param:<i>ParamName</i>|<i>DefaultValue</i>}</a></dt>
+        <dd>
+          <p>Выполняет вставку значения параметра командной строки.</p>
+          <ul>
+            <li><i>ParamName</i> определяет имя параметра командной строки.</li>
+            <li><i>DefaultValue</i> определяет строку для вставки, если
+              указанный параметр командной строки не существует или не удалось
+              определить его значение.</li>
+            <li>Если необходимо заключить внутри константы запятую, вертикальную
+              черту ("|") или закрывающую фигурную скобку ("}"), следует
+              использовать экранирование при помощи "%-кодирования". Это
+              означает, что вместо символа записывается его двузначный код в
+              шестнадцатеричном формате с приставкой "%". Так символ запятой
+              нужно заменить на escape-код "%2c", вертикальную черту — "%7c", а
+              закрывающую скобку — "%7d". Если нужно заключить реальный символ
+              "%", используйте escape-код "%25".</li>
+            <li><i>ParamName</i> и <i>DefaultValue</i> могут содержать
+              константы. Обратите внимание, что закрывающую фигурную скобку
+              константы здесь, как описано выше, экранировать <i>не</i> нужно;
+              это необходимо только тогда, когда закрывающая скобка используется
+              в другом месте.</li>
+          </ul>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">{param:Path|{autopf}\My Program}</pre>
+          </div>
+          <p>В приведенном выше примере, указанная командная строка <tt>/Path="c:\My
+              Program"</tt> преобразуется в <tt>c:\My Program</tt>. </p>
+        </dd>
+        <dt class="const"><a name="srcexe">{srcexe}</a></dt>
+        <dd>
+          <p>Полный путь к файлу программы установки, например, "C:\SETUP.EXE".</p>
+        </dd>
+        <dt class="const"><a name="uninstallexe">{uninstallexe}</a></dt>
+        <dd>
+          <p>Полный путь к файлу программы удаления, извлечённого из программы
+            установки, например, "C:\Program Files\My Program\unins000.exe". Эта
+            константа чаще всего используется в секции <tt>[Icons]</tt> для
+            создания значка деинсталлятора. Константа действительна только в том
+            случае, если директиве <tt>Uninstallable</tt> в секции <tt>[Setup]</tt>
+            присвоено значение <tt>yes</tt> (используется по умолчанию). </p>
+        </dd>
+        <dt class="const"><a name="sysuserinfoname">{sysuserinfoname}</a><br />
+          <a name="sysuserinfoorg">{sysuserinfoorg}</a></dt>
+        <dd>
+          <p>Соответственно имя и организация, на которые зарегистрирована
+            Windows. Эта информация считывается из реестра.</p>
+        </dd>
+        <dt class="const"><a name="userinfoname">{userinfoname}</a><br />
+          <a name="userinfoorg">{userinfoorg}</a><br />
+          <a name="userinfoserial">{userinfoserial}</a></dt>
+        <dd>
+          <p>Соответственно имя, организация и серийный номер, которые
+            пользователь ввёл на странице мастера "<i>Информация о пользователе</i>"
+            (эту страница может быть включена директивой <tt>UserInfoPage</tt>).
+            Обычно эти константы используются в записях секции <tt>[Registry]</tt>
+            или <tt>[INI]</tt> для сохранения их значения с целью последующего
+            использования. </p>
+        </dd>
+        <dt class="const"><a name="username">{username}</a></dt>
+        <dd>
+          <p>Имя пользователя, выполняющего программу установки или удаления
+            (возвращается функцией <i>GetUserName</i>). </p>
+        </dd>
+        <dt class="const"><a name="log">{log}</a></dt>
+        <dd>
+          <p>Имя файла отчёта или пустая строка, если <a href="topic_setup_setuplogging.htm">создание
+              файла журнала</a> не включено. </p>
+        </dd>
+      </dl>
+    </div>
+  </body>
+</html>

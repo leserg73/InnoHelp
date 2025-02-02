@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: WizardSelectTasks</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: WizardSelectTasks</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          WizardSelectTasks(const Tasks: String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет выбор указанных в списке задач, разделённых запятыми.</p>
+      <p>Если имя задачи начинается символом "<b>!</b>", то её выбор будет
+        отменён.</p>
+      <p>Эта функция не изменяет состояние задач, которых нет в списке.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  WizardSelectTasks(<span class="hl str">'!desktopicon'</span>);
+  <span class="hl slc">// выбор задачи 'desktopicon' отменён</span>
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_wizardselectedtasks.htm">WizardSelectedTasks</a>
+        <br />
+        <a href="topic_isxfunc_wizardistaskselected.htm">WizardIsTaskSelected</a>
+      </p>
+    </div>
+  </body>
+</html>

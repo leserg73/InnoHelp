@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Tasks]</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Tasks]</h1>
+    <div class="topicbody">
+      <p>Эта секция является необязательной. Она определяет все
+        выбранные пользователем задачи, которые программа установки будет
+        выполнять во время инсталляции. Эти задачи отображаются на странице "<i>Выбор
+          дополнительных задач</i>" в виде флажков или переключателей.</p>
+      <p>Сама по себе эта секция ничего не делает: она должна
+        быть "связана" с другими записями установки. Смотрите раздел справки "<a
+          href="topic_componentstasksparams.htm">Параметры секций [Components] и
+          [Tasks]</a>".</p>
+      <p>Пример секции <tt>[Tasks]</tt>:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Tasks]</span>
+<span class="hl kwb">Name</span>: desktopicon; <span class="hl kwb">Description</span>: "Создать ярлык на Рабочем столе"; <span
+class="hl kwb">GroupDescription</span>: "Дополнительно:"; <span class="hl kwb">Components</span>: main
+<span class="hl kwb">Name</span>: desktopicon\common; <span class="hl kwb">Description</span>: "Для всех пользователей"; <span
+class="hl kwb">GroupDescription</span>: "Дополнительно:"; <span class="hl kwb">Components</span>: main; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">exclusive</span>
+<span class="hl kwb">Name</span>: desktopicon\user; <span class="hl kwb">Description</span>: "Только для текущего пользователя"; <span
+class="hl kwb">GroupDescription</span>: "Дополнительно:"; <span class="hl kwb">Components</span>: main; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">exclusive unchecked</span>   
+<span class="hl kwb">Name</span>: quicklaunchicon; <span class="hl kwb">Description</span>: "Создать ярлык на панели быстрого запуска"; <span
+class="hl kwb">GroupDescription</span>: "Дополнительно:"; <span class="hl kwb">Components</span>: main; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">unchecked</span>
+<span class="hl kwb">Name</span>: associate; <span class="hl kwb">Description</span>: "Создать ассоциацию файлов"; <span
+class="hl kwb">GroupDescription</span>: "Прочие задачи:"; <span class="hl kwb">Flags</span>: <span
+class="hl kwe">unchecked</span>
+</pre>
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
+      <dl>
+        <dt class="paramlist"><b><a name="Name">Name</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Определяет внутреннее имя задачи.</p>
+          <p>Общее количество символов \ или / в имени задачи определяет её
+            уровень. Любая задача с уровнем 1 или выше является дочерней.
+            Задача, находящаяся в списке перед дочерней задачей с уровнем на 1
+            меньше, чем дочерняя, является родительской. Другие задачи, имеющие
+            одну и ту же родительскую задачу, что и дочерние, являются задачами
+            одного уровня.</p>
+          <p>Дочерняя задача не может быть выбрана, если не выбрана её
+            родительская задача. Родительская задача не может быть выбрана: если
+            не выбрана ни одна из её дочерних задач; если параметр секции <tt>[Tasks]</tt>
+            не имеет прямой связи с родительской задачей; если родительская
+            задача не содержит флаг <tt>checkablealone</tt>. </p>
+          <p>Если задачи одного уровня содержат флаг <tt>exclusive</tt>, то
+            выбрана может быть только одна из них. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Name</span>: "desktopicon"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Description">Description</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Описание задачи (может содержать константы). Это описание
+            отображается во время установки.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Description</span>: "Создать ярлык на Рабочем столе"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="GroupDescription">GroupDescription</a></b></dt>
+        <dd class="paramlist">
+          <p>Описание группы задач (может содержать константы). Перечень задач с
+            одинаковым описанием будут сгруппированы в одну текстовую метку.
+            Текстовая метка отображает описание группы.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">GroupDescription</span>: "Дополнительные ярлыки"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Components">Components</a></b></dt>
+        <dd class="paramlist">
+          <p>Разделённый пробелами список компонентов, к которым принадлежит
+            данная задача. Если пользователь выберет компонент из этого списка,
+            эта задача будет показана. Задача без параметра <tt>Components</tt>
+            отображается всегда.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Components</span>: main</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dd class="paramlist">
+          <p>Этот параметр представляет собой набор дополнительных опций.
+            Допускается использовать несколько опций, разделяя их пробелами.
+            Поддерживаются следующие опции:</p>
+          <dl>
+            <dt class="flaglist"><a name="checkablealone">checkablealone</a></dt>
+            <dd>
+              <p>Указывает, что задача может быть выбрана, если ни одна из её
+                дочерних задач не выбрана. По умолчанию, если ни один параметр
+                секции <tt>[Tasks]</tt> не имеет прямой ссылки на задачу, тогда
+                отмена выбора у всех дочерних задач приведёт к отмене выбора
+                родительской задачи. </p>
+            </dd>
+            <dt class="flaglist"><a name="checkedonce">checkedonce</a></dt>
+            <dd>
+              <p>Указывает программе установки отменить изначальный выбор данной
+                задачи, если инсталлятор обнаружит, что предыдущая версия <a href="topic_sameappnotes.htm">того
+                  же приложения</a> уже установлена. </p>
+              <p>Если директива <tt>UsePreviousTasks</tt> в секции <tt>[Setup]</tt>
+                имеет значение <tt>no</tt>, то этот флаг не учитывается. </p>
+            </dd>
+            <dt class="flaglist"><a name="dontinheritcheck">dontinheritcheck</a></dt>
+            <dd>
+              <p>Указывает, что задача не должна быть выбрана автоматически,
+                если выбирается родительская задача. Не влияет на задачи
+                верхнего уровня и не может быть объединён с флагом <tt>exclusive</tt>.
+              </p>
+            </dd>
+            <dt class="flaglist"><a name="exclusive">exclusive</a></dt>
+            <dd>
+              <p>Указывает программе установки, что данная задача является
+                взаимоисключающей среди задач одного уровня, также имеющих флаг
+                <tt>exclusive</tt>. </p>
+            </dd>
+            <dt class="flaglist"><a name="restart">restart</a></dt>
+            <dd>
+              <p>Указывает программе установки, чтобы при выборе данной задачи,
+                когда установка будет завершена, необходимо перезапустить
+                систему, даже если в этом нет необходимости (например, из-за
+                записей с флагом <tt>restartreplace</tt> в секции <tt>[Files]</tt>).
+                Действует также, как и директива <a href="topic_setup_alwaysrestart.htm">AlwaysRestart</a>,
+                но только для задачи. </p>
+            </dd>
+            <dt class="flaglist"><a name="unchecked">unchecked</a></dt>
+            <dd>
+              <p>Указывает программе установки, что данная задача изначально не
+                должна быть выбранной.</p>
+            </dd>
+          </dl>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Flags</span>: <span class="hl kwe">unchecked</span></pre>
+          </div>
+        </dd>
+      </dl>
+      <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
+    </div>
+  </body>
+</html>

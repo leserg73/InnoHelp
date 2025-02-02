@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Коды выхода деинсталлятора</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Коды выхода деинсталлятора</h1>
+    <div class="topicbody">
+      <p>Деинсталлятор возвращает
+        ненулевой код выхода, если пользователь отменяет его работу или
+        происходит сбой. Программы, проверяющие код выхода для выявления ошибок,
+        не должны проверять какое-то определённое ненулевое значение. Любое
+        ненулевое значение указывает на то, что работа деинсталлятора не была
+        завершена должным образом.</p>
+      <p>Обратите внимание, что в момент получения кода выхода
+        деинсталлятора, некоторый код, связанный с удалением, может продолжать
+        свою работу. Поскольку Windows не разрешает программам удалять свои
+        собственные EXE файлы, деинсталлятор создает и запускает собственную
+        копию в каталоге TEMP. Этот "клон" выполняет фактическое удаление и по
+        окончании завершает работу оригинального ЕХЕ файла деинсталлятора (в
+        этот момент вы получаете код выхода), затем удаляет его, после чего
+        выводит сообщение "Деинсталляция завершена" (если не были использованы
+        параметры командной строки /SILENT или /VERYSILENT).</p>
+    </div>
+  </body>
+</html>

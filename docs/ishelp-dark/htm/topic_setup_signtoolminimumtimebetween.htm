@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: SignToolMinimumTimeBetween</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: SignToolMinimumTimeBetween</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">0</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Если не указано значение 0, определяет минимальное
+        время паузы в миллисекундах между последовательными действиями
+        компилятора по созданию цифровой подписи. Например, при значении 5000
+        компилятор не будет выполнять более одной подписи в течении 5 секунд.
+        Может быть использовано для предотвращения конфликта доступа к службам
+        создания отметки времени.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_signtool.htm">SignTool</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ArchitecturesAllowed</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ArchitecturesAllowed</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Разделённый пробелами список <a href="topic_archidentifiers.htm">идентификаторов
+                  архитектуры</a>.<br />
+                Или логическое выражение, содержащее <a href="topic_archidentifiers.htm">идентификаторы
+                  архитектуры</a>.<br />
+                Примеры логических выражений см. в разделе "<a href="topic_componentstasksparams.htm">Параметры
+                  секций [Components] и [Tasks]</a>".</div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">x86compatible</tt></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Позволяет определить, на каких архитектурах разрешено запускать
+        программу установки. Если ни один из указанных идентификаторов
+        архитектуры не соответствует текущей системе, программа установки выдаст
+        сообщение об ошибке (<tt>WindowsVersionNotSupported</tt>) и завершит
+        работу.</p>
+      <p>Если все двоичные файлы вашего приложения являются 32-разрядными, то
+        обычно нет необходимости устанавливать эту директиву; значение по
+        умолчанию <tt>x86compatible</tt> является правильным. Если же двоичные
+        файлы вашего приложения собираются для архитектур x64 или Arm64, то
+        следует установить для этой директивы значение <tt>x64compatible</tt>
+        или <tt>arm64</tt> соответственно.</p>
+      <p>Если выполняется установка драйверов устройств, то правильным значением
+        для этой директивы будет <tt>x86os</tt>, <tt>x64os</tt> или <tt>arm64</tt>,
+        в зависимости от архитектуры драйверов.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Примеры:</div>
+        <pre class="nomargin"><span class="hl slc">; Требуется одновременное совпадение двух идентификаторов архитектуры.</span>
+<span class="hl slc">; - Программа установки x64-приложений, включающая некоторые 32-битные двоичные файлы x86:</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=x64compatible <span class="hl kwb">and</span> x86compatible
+<span class="hl slc">; - Программа установки приложений для Arm64, включающая некоторые исполняемые файлы x64:</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=arm64 <span class="hl kwb">and</span> x64compatible
+
+<span class="hl slc">; Разрешить установку только на системы, не совместимые с x64.</span>
+<span class="hl slc">; Полезно в ситуации, когда у вас есть отдельные программы установки x86 и x64,</span>
+<span class="hl slc">; и вы не хотите, чтобы пользователи x64-совместимых ОС (x64 + Arm64 Win11)</span>
+<span class="hl slc">; ошибочно запускали программу установки x86:</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=x86compatible <span class="hl kwb">and not</span> x64compatible
+
+<span class="hl slc">; Разрешить установку на x64-совместимые системы, но запретить Arm64.</span>
+<span class="hl slc">; Полезно, если вы предоставляете отдельную программу установки для систем Arm64.</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=x64compatible <span class="hl kwb">and not</span> arm64
+
+<span class="hl slc">; Вариант "os" уместен при установке того, что не может работать</span>
+<span class="hl slc">; в эмулируемой среде, например, драйвер устройства.</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=x64os
+
+<span class="hl slc">; Разрешить установку только на Windows 64-бит, но не проверять архитектуру.</span>
+<span class="hl slc">; (Не используйте этот параметр при установке двоичных файлов,</span>
+<span class="hl slc">; специфичных для конкретной архитектуры.)</span>
+<span class="hl kwb">ArchitecturesAllowed</span>=win64
+</pre> </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a></p>
+    </div>
+  </body>
+</html>

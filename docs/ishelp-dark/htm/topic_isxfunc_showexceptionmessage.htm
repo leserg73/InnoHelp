@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ShowExceptionMessage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ShowExceptionMessage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          ShowExceptionMessage;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выводит на экран сообщение, связанное с текущим исключением. Эту
+        функцию следует вызывать только из раздела <tt>except</tt>, или другой
+        функции, которая содержит раздел <tt>except</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Если включено ведение журнала (с помощью параметра командной строки <a
+          href="topic_setupcmdline.htm">/LOG</a> или директивой <a href="topic_setup_setuplogging.htm">SetupLogging</a>
+        в секции <tt>[Setup]</tt>, или директивой <a href="topic_setup_uninstalllogging.htm">UninstallLogging</a>
+        в секции <tt>[Setup]</tt>, или режимом отладки в IDE компилятора), это
+        сообщение будет не только показано, но также записано в файл журнала
+        и/или выведено в окне отладки IDE компилятора.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  I: Integer;
+<span class="hl kwb">begin</span>
+  I := <span class="hl num">1</span>;
+  <span class="hl kwb">try</span>
+    <span class="hl slc">// Следующая строка вызовет исключение "Деление на ноль".</span>
+    I := I <span class="hl kwb">div</span> <span class="hl num">0</span>;
+  <span class="hl kwb">except</span>
+    <span class="hl slc">// Перехватываем исключение, показываем и продолжаем работу.</span>
+    ShowExceptionMessage;
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

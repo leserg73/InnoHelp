@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ExecAndCaptureOutput</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ExecAndCaptureOutput</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+        ExecAndCaptureOutput(const Filename, Params, WorkingDir: String; const
+        ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer; var
+        Output: TExecOutput): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Идентична функции <a href="topic_isxfunc_exec.htm">Exec</a> за
+        исключением:</p>
+      <p style="text-align: left;">&nbsp;&nbsp;— вывод программы перехватывается
+        из потоков <i>stdout</i> и <i>stderr</i>. Это отличается от функции
+        <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>, которая
+        объединяется потоки вывода.</p>
+      <p style="text-align: left;">&nbsp;&nbsp;— консольные программы всегда
+        запускаются в скрытом режиме, а параметр <tt>ShowCmd</tt> влияет только
+        на программы с графического интерфейсом, поэтому рекомендуется всегда
+        использовать флаг <code><span class="hl kwe">SW_SHOWNORMAL</span></code>
+        вместо <code><span class="hl kwe">SW_HIDE</span></code>;</p>
+      <p style="text-align: left;">&nbsp;&nbsp;— если при настройке
+        перенаправления вывода произошла ошибка (что должно происходить крайне
+        редко), будет вызвано исключение.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>При вызове этой функции для параметра <tt>Wait</tt> всегда должно быть
+        установлено значение <tt>ewWaitUntilTerminated</tt>.</p>
+      <p>Класс <code>TExecOutput</code> объявлен как:</p>
+      <pre class="indent">TExecOutput = <span class="hl kwb">record</span>
+  StdOut: TArrayOfString;
+  StdErr: TArrayOfString;
+  Error: <span class="hl kwg">Boolean</span>;
+<span class="hl kwb">end</span>;
+</pre>
+      <p><tt>Error</tt> будет <tt>True</tt>, если чтение вывода не удалось (что
+        возможно в довольно редких случаях), или если вывод слишком велик.
+        Ошибка регистрируется в файле журнала установки или удаления и/или в
+        панели сообщений отладки IDE компилятора. После ошибки дальнейший вывод
+        не производится.</p>
+      <p>Общий размер вывода ограничен 10 миллионами байт или максимум 1
+        миллионом строк.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  ResultCode: <span class="hl kwg">Integer</span>;
+  Output: TExecOutput;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">try</span>
+    <span class="hl slc">// Получаем конфигурацию системы</span>
+    Result := <span class="hl kwd">ExecAndCaptureOutput</span>(<span
+class="hl kwg">ExpandConstant</span>(<span class="hl str">&#39;</span><span
+
+class="hl kwc">{cmd}</span><span class="hl str">&#39;</span>), <span
+
+class="hl str">&#39;/c systeminfo&#39;</span>, <span class="hl str">&#39;&#39;</span>, <span
+
+class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode, Output);   
+  <span class="hl kwb">except</span>
+    Result := <span class="hl kwg">False</span>;
+    <span class="hl kwg">Log</span>(<span class="hl kwg">GetExceptionMessage</span>);
+  <span class="hl kwb">end</span>;
+
+  <span class="hl kwb">if</span> Result <span class="hl kwb">then begin</span>
+    <span class="hl slc">// Выполняем необходимые операции с массивом строк Output.StdOut</span>
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;
+
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_exec.htm">Exec</a>
+        <br />
+        <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
+      </p>
+    </div>
+  </body>
+</html>

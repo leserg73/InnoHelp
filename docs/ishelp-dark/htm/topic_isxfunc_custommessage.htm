@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: CustomMessage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: CustomMessage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          CustomMessage(const MsgName: String): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает значение записи <tt>[CustomMessages]</tt> для указанного
+        имени сообщения <tt>MsgName</tt>. Если запись с указанным именем не
+        существует, будет создано исключение.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  S: String;
+<span class="hl kwb">begin</span>
+  S := CustomMessage(<span class="hl str">'CreateDesktopIcon'</span>);
+  <span class="hl slc">// S = 'Создать ярлык на Рабочем столе'</span>
+
+  S := FmtMessage(CustomMessage(<span class="hl str">'NameAndVersion'</span>), [<span
+class="hl str">'My Program'</span>, <span class="hl str">'1.0'</span>]);
+  <span class="hl slc">// S = 'My Program version 1.0'</span>
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

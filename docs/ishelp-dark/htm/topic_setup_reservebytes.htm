@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ReserveBytes</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ReserveBytes</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">0</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Определяет минимальный размер пустого места (в байтах),
+        которое будет зарезервировано на первом диске. Эта функция может
+        пригодиться, когда помимо файлов программы установки на диск нужно будет
+        скопировать другие файлы (например, ReadMe и др.).</p>
+      <p>Компилятор выполнит округление заданного числа до
+        размеров ближайшего кластера.</p>
+      <p>Эта директива не учитывается, если не включено
+        разделение данных на диски при помощи <tt>DiskSpanning</tt> в секции <tt>[Setup]</tt>.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Использование номера сборки и/или пакета обновления</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Использование номера сборки и/или пакета обновления</h1>
+    <div class="topicbody">
+      <p>Версии системы, определённые в <tt>MinVersion</tt> и <tt>OnlyBelowVersion</tt>,
+        могут также содержать номера сборки и/или версии пакета обновления.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Примеры:</div>
+        <pre class="nomargin">6.1sp1
+10.0.22000
+</pre>
+      </div>
+      <p>Если номер сборки не указан или равен нулю, то
+        программа установки не будет проверять номер сборки системы.</p>
+      <p>Если версия пакета обновления не указана или равна
+        нулю, то программа установки не будет проверять версию пакета обновления
+        системы.</p>
+      <p>Если версия пакета обновления указана, то программа
+        установки будет сравнивать её с версией пакета обновления системы только
+        в том случае, если указанный номер старшей и младшей версии полностью
+        соответствует версии системы. Например, если для <tt>MinVersion</tt>
+        указано значение <tt>6.1sp1</tt>, то программа установки выполнит
+        проверку только для SP1 на системах Windows 7 и Windows Server 2008 R2 (6.1).</p>
+      <p>В параметре <tt>OnlyBelowVersion</tt>: если указанная
+        версия совпадает с версией системы, то обычно программа установки
+        считает эту версию слишком высокой. Однако, если ещё указана и версия
+        пакета обновления, то указанная версия может оказаться в пределах
+        допуска версии системы.</p>
+    </div>
+  </body>
+</html>

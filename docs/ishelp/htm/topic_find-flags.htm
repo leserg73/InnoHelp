@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: Флаги функции Find</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: Флаги функции Find</h1>
+    <div class="topicbody">
+      <h2 class="heading notopmargin">Описание</h2>
+      <p>Обязательно должен быть указан один из следующих четырех флагов:</p>
+      <p><tt class="isppflags">FIND_MATCH</tt> (0) —
+        строка должна иметь полное соответствие искомой строке;</p>
+      <p><tt class="isppflags">FIND_BEGINS</tt> (1) —
+        строка должна начинаться искомой строкой;</p>
+      <p><tt class="isppflags">FIND_ENDS</tt> (2) —
+        строка должна заканчиваться искомой строкой;</p>
+      <p><tt class="isppflags">FIND_CONTAINS</tt> (3) —
+        строка должна содержать строку поиска (этот флаг объединяет все три
+        предыдущих).</p>
+      <p>Любой из следующих флагов может быть скомбинирован с предыдущими с
+        помощью логической операции "ИЛИ" (&nbsp;<tt><b>|</b></tt>&nbsp;):</p>
+      <p><tt class="isppflags">FIND_CASESENSITIVE</tt>
+        (4) — сравнение должно выполняться с учётом регистра символов;</p>
+      <p><tt class="isppflags">FIND_AND</tt> (0) —
+        добавляет к предыдущему критерию поиска ещё один обязательный критерий
+        (например, для пары параметров в функции <tt>Find</tt>);</p>
+      <p><tt class="isppflags">FIND_OR</tt> (8) —
+        добавляет к предыдущему критерию поиска ещё один критерий, если
+        предыдущий не был выполнен;</p>
+      <p><tt class="isppflags">FIND_NOT</tt> (16) —
+        добавляет критерий поиска, который не должен быть выполнен.</p>
+      <p>Флаги <tt class="isppflags">FIND_AND</tt> и <tt
+          class="isppflags">FIND_OR</tt> являются
+        взаимоисключающими. Если указаны оба, то приоритет имеет флаг <tt class="isppflags">FIND_OR</tt>.</p>
+      <p>Специальные флаги:</p>
+      <p><tt class="isppflags">FIND_TRIM</tt> (32) —
+        при выполнении поиска исключает из строк начальные и конечные пробелы,
+        т.е. этот флаг выполняется первым и только потом все остальные. Его
+        необходимо указать в третьем параметре функции <tt style="font-style: italic;">Find</tt>.</p>
+    </div>
+  </body>
+</html>

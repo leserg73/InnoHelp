@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: GetSHA256OfUnicodeString</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: GetSHA256OfUnicodeString</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetSHA256OfUnicodeString(const S: String): String;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает строковое значение контрольной суммы SHA-256 для заданной
+        строки в кодировке Unicode.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  SHA256: String;
+<span class="hl kwb">begin</span>
+  SHA256 := GetSHA256OfUnicodeString(<span class="hl str">'Test'</span>);
+  <span class="hl slc">// SHA256 = 'e6fa3ca87b1b641ab646d3b4933bba8d0970763f030b6578a60abdeae7366247'</span>
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: RegisterTypeLibrary</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: RegisterTypeLibrary</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          RegisterTypeLibrary(const Is64Bit: Boolean; const Filename: String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Регистрирует библиотеку типов с указанным именем файла <tt>Filename</tt>.
+        Если для параметра <tt>Is64Bit</tt> указано значение <tt>True</tt>, то
+        файл библиотеки будет зарегистрирован в 64-разрядном процессе. В случае
+        неудачи будет вызвано исключение.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+  <span class="hl slc">// Регистрация stdole2.tlb, находящейся в каталоге System.</span>
+  RegisterTypeLibrary(Is64BitInstallMode, ExpandConstant(<span class="hl str">'{sys}\stdole2.tlb'</span>));
+<span class="hl kwb">end</span>;</pre>
+      <p>В примере выше, первым параметром мы указали функцию <tt>Is64BitInstallMode</tt>.
+        Таким образом, если программа установки будет запущена в 64-разрядной
+        системе, то функция зарегистрирует файл как 64-разрядную библиотеку
+        типов в 64-разрядном каталоге System. В противном случае файл будет
+        зарегистрирован как 32-разрядная библиотека типов в 32-разрядном
+        каталоге System.</p>
+    </div>
+  </body>
+</html>

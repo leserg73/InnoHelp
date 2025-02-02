@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: #undef</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: #undef</h1>
+    <div class="topicbody">
+      <h2 class="heading sintax">Синтаксис</h2>
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>undef-directive:</i></td>
+              <td class="cellright">(<b>undef</b> | <b>x</b>) [<b>private</b> |
+                <b>protected</b> | <b>public</b>] &lt;ident&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет отмену (удаление) объявленной переменной или пользовательской
+        функции. Если <a href="topic_visibility.htm">область
+          видимости переменной</a> (<tt>public</tt>,
+        <tt>protected</tt>, или <tt>private</tt>)
+        не указана, то <b>ISPP</b> сначала удалит переменную "<tt>private</tt>",
+        затем "<tt>protected</tt>" и, наконец, "<tt>public</tt>".</p>
+      <h2 class="heading">Примеры</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#undef</span> MyVar
+<span class="hl kwf">#undef</span> MyFunction
+<span class="hl kwf">#undef</span> <span class="hl kwd">public</span> MyVar
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_dim.htm">dim</a></tt>
+      <br />
+      <a href="topic_visibility.htm">Область видимости переменных</a>
+      </p>
+    </div>
+  </body>
+</html>

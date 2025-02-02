@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: GetWindowsVersion</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: GetWindowsVersion</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          GetWindowsVersion: Cardinal;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает номер версии Windows в виде целочисленного значения. Старшие
+        8 бит определяют основную версию. Следующие 8 бит определяют младшую
+        версию. И последние 16 бит указывают номер сборки. Например, на системе
+        Windows 10 1507 функция вернёт значение $0A002800, что соответствует
+        версии 10.0.10240.</p>
+      <p>Чтобы получить только старшую версию, используйте: <code>GetWindowsVersion
+          shr 24</code>. Для получения младшей версии используйте: <code>(GetWindowsVersion
+          shr 16) and $FF</code>. А чтобы получить номер сборки, используйте: <code>GetWindowsVersion
+          and $FFFF</code>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">function</span> IsWindows8OrLater: Boolean;
+<span class="hl kwb">begin</span>
+  Result := (GetWindowsVersion &gt;= <span class="hl num">$06020000</span>);
+<span class="hl kwb">end</span>;</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>
+      </p>
+    </div>
+  </body>
+</html>

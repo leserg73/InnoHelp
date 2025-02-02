@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: EnableFsRedirection</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: EnableFsRedirection</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">function
+          EnableFsRedirection(const Enable: Boolean): Boolean;</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Управляет состоянием перенаправления файловой системы в WOW64 (с <a href="topic_64bitlimitations.htm">некоторыми
+          исключениями</a>) при обращении к файлам встроенными функциями Inno.
+        Укажите для параметра <tt>Enable</tt> значение <tt>True</tt>, чтобы
+        при вызове этих функций оставить перенаправление включенным, или
+        значение <tt>False</tt>, чтобы отключить перенаправление. Функция
+        возвращает предыдущее состояние перенаправления (<tt>True</tt>, если
+        перенаправление было включено).</p>
+      <p>Если параметру <tt>Enable</tt> передаётся значение <tt>False</tt> и
+        пользователь не работает в поддерживаемой 64-разрядной версии Windows,
+        будет вызвано исключение. Чтобы избежать исключения, сначала вызовите
+        функцию <a href="topic_isxfunc_iswin64.htm">IsWin64</a>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>После выполнения операции, требующей изменения состояния
+        перенаправления, обязательно восстановите предыдущее состояние. Всегда
+        используйте конструкцию <tt>try..finally</tt>, чтобы гарантировать, что
+        предыдущее состояние будет восстановлено, даже если произойдёт
+        исключение. Ниже приведен пример.</p>
+      <p>По умолчанию в <a href="topic_32vs64bitinstalls.htm">32-разрядном
+          режиме</a> установки перенаправление файловой системы <i>включено</i>,
+        а в 64-разрядном режиме установки <i>отключено</i>.</p>
+      <p>Эта функция не влияет на вызов функций из внешних файлов DLL. При
+        вызове внешних функций перенаправление файловой системы всегда остаётся
+        включенным.</p>
+      <p>Допустимо вызвать эту функцию со значением <tt>True</tt> для параметра
+        <tt>Enable</tt>, если пользователь не работает на 64-разрядной версии
+        Windows. Но в этом случае вызов не будет действовать.</p>
+      <h2 class="heading">Пример</h2>
+      <p>В примере ниже показано, как запустить исполняемый файл, расположенный
+        в 64-разрядном каталоге System. (Примечание: в <a href="topic_32vs64bitinstalls.htm">64-разрядном
+          режиме</a> установки нет необходимости использовать вызов <tt>EnableFsRedirection</tt>,
+        т.к. по умолчанию перенаправление файловой системы уже отключено.)</p>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  OldState: Boolean;
+  ResultCode: Integer;
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Сперва проверяем, что пользователь запустил установку</span>
+  <span class="hl slc">// в Windows 64-бит, иначе вызов EnableFsRedirection(False)</span>
+  <span class="hl slc">// создаст исключение.</span>
+  <span class="hl kwb">if</span> IsWin64 <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    <span class="hl slc">// Отключаем перенаправление, чтобы cmd.exe запускался</span>
+    <span class="hl slc">// из 64-bit каталога System.</span>
+    OldState := EnableFsRedirection(False);
+    <span class="hl kwb">try</span>
+      Exec(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cmd}</span><span
+
+class="hl str">'</span>), <span class="hl str">''</span>, <span class="hl str">''</span>, <span
+
+class="hl kwe">SW_SHOWNORMAL</span>,
+        ewWaitUntilTerminated, ResultCode);
+    <span class="hl kwb">finally</span>
+      <span class="hl slc">// Восстанавливаем предыдущее состояние перенаправления.</span>
+      EnableFsRedirection(OldState);
+    <span class="hl kwb">end</span>;
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;</pre>
+    </div>
+  </body>
+</html>

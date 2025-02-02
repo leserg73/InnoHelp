@@ -8,7 +8,6 @@
 -----------------------
 
 - [Руководство пользователя](https://leserg73.github.io/InnoHelp/ishelp/index.htm)
-- [Препроцессор Inno Setup (ISPP)](https://leserg73.github.io/InnoHelp/ispphelp/index.htm)
 
 ### История версий
 

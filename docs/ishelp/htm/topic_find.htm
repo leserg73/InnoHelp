@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: Find</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: Find</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>int</b> Find(<b>int</b> 1, <b>str</b>
+          2, <b>int</b>? 3, <b>str</b>? 4, <b>int</b>? 5, <b>str</b>? 6, <b>int</b>?
+          7)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Функция <tt>Find</tt> предназначена для использования совместно с
+        директивой <tt class="nill"><a href="topic_insert.htm">insert</a></tt>.
+        Возвращает индекс строки в данных <a href="topic_translation.htm">вывода
+          препроцессора</a> в зависимости от указанных критериев поиска.</p>
+      <p><i>Первый параметр</i> определяет индекс строки, с которой необходимо
+        начать поиск. Обычно используется значение ноль (0).</p>
+      <p><i>Второй, четвертый и шестой параметры</i> определяют подстроку поиска
+        в пределах каждой из строк. Второй параметр является обязательным.
+        Четвертый и шестой могут быть опущены.</p>
+      <p><i>Третий, пятый и седьмой параметры</i> определяют критерии поиска,
+        которые задаются специальными флагами. Третий параметр относится ко
+        второму параметру с подстрокой. Соответственно пятый параметр к
+        четвертому и седьмой — к шестому.</p>
+      <p>Если любой из параметров критерия поиска (флагов) не указан, но
+        определена соответствующая подстрока, то по умолчанию считается, что
+        используются флаги <tt>FIND_MATCH | FIND_AND</tt> (т.е. равны 0).</p>
+      <p>Значения для третьего, пятого и седьмого параметров функции <tt>Find</tt>
+        объявлены в файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>.
+        См. раздел <a href="topic_find-flags.htm">Флаги функции
+          Find</a> с описанием значений каждого флага. </p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><tt class="nill"><a href="topic_insert.htm">insert</a></tt>
+      <br />
+      <a href="topic_find-flags.htm">Флаги функции Find</a>
+      </p>
+    </div>
+  </body>
+</html>

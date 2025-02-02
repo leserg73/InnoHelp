@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Log</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Log</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure Log(const S:
+          String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет запись указанной строки <tt>S</tt> в файл журнала
+        установки/удаления и/или отображает в окне отладки IDE компилятора.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Вызов этой функции игнорируется, если создание журнала не включено (с
+        помощью параметра командной строки <a href="topic_setupcmdline.htm">/LOG</a>
+        или директивы <a href="topic_setup_setuplogging.htm">SetupLogging</a> в
+        секции <tt>[Setup]</tt>, или директивы <a href="topic_setup_uninstalllogging.htm">UninstallLogging</a>
+        в секции <tt>[Setup]</tt>, или режима отладки в IDE компилятора).</p>
+    </div>
+  </body>
+</html>

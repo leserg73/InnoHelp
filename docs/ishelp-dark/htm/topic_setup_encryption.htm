@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: Encryption</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: Encryption</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">no</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>При установке значения <tt>yes</tt> файлы инсталлятора
+        (указанные в секции <tt>[Files]</tt>) будут зашифрованы алгоритмом
+        <b>XChaCha20</b>.</p>
+      <p>Если при включенном шифровании в секции <tt>[Code]</tt>
+        используется вызов функции <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+        прежде, чем пользователь введёт корректный пароль, работа этой функции
+        будет завершаться ошибкой, пока в секции <tt>[Files]</tt> для данного
+        файла не будет указан флаг <tt>noencryption</tt>.</p>
+      <p>256-разрядный ключ шифрования XChaCha20 формируется из значения директивы
+        <a href="topic_setup_password.htm">Password</a>, используя функцию PBKDF2 c
+        заданным количеством итераций, которая указана в директиве <a
+        href="topic_setup_encryptionkeyderivation.htm">EncryptionKeyDerivation</a>,
+        а 192-разрядный <i>нонс</i> шифрования XChaCha20
+        представляет собой случайный базовый нонс, к которому добавляется индекс
+        первого файла в чанке для получения уникальных нонсов шифрования.</p>
+      <p>Примечание: нонс (от англ. <tt>nonce</tt>) – это число, которое может быть
+        использовано только один раз.</p>
+    </div>
+  </body>
+</html>

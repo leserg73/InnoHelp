@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: StringChange</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: StringChange</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> StringChange(<b>str</b>,
+          <b>str</b>, <b>str</b>)</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Возвращает копию строки (<i>первый параметр</i>), в которой искомое
+        вхождение (<i>второй параметр</i>) заменено на другую строку (<i>третий
+          параметр</i>).</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl slc">; Объявляем переменную MyString2 и присваиваем ей значение 'a ca c'</span>
+<span class="hl kwf">#define</span> MyString <span class="hl str">"a ca c"</span>
+<span class="hl slc">; Выполняем в строке замену символов ' ' (пробел) на символ 'b'</span>
+<span class="hl kwf">#define</span> MyString2 <span class="hl kwd">StringChange</span><span
+class="hl opt">(</span>MyString<span class="hl opt">,</span> <span class="hl str">" "</span><span
+class="hl opt">,</span> <span class="hl str">"b"</span><span class="hl opt">)</span>
+<span class="hl slc">// Результат: переменная MyString2 = 'abcabc'</span>
+</pre> </div>
+    </div>
+  </body>
+</html>

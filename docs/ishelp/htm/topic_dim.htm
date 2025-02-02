@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: #dim, #redim</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: #dim, #redim</h1>
+    <div class="topicbody">
+      <h2 class="heading sintax">Синтаксис</h2>
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>dim-directive:</i></td>
+              <td class="cellright"><b>dim</b> [<b>private</b> | <b>protected</b>
+                | <b>public</b>] &lt;ident&gt; <b>[</b> &lt;expr&gt; <b>]</b>
+                [<b>{</b> &lt;expr&gt; [<b>,</b> &lt;expr&gt;]... <b>}</b>]</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>redim-directive:</i></td>
+              <td class="cellright"><b>redim</b> [<b>private</b> | <b>protected</b>
+                | <b>public</b>] &lt;ident&gt; <b>[</b> &lt;expr&gt; <b>]</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="heading">Описание</h2>
+      <p>Директива <tt>dim</tt>
+        используется для объявления переменной массива, установки его размеров
+        и, при необходимости, его инициализации. Для всех НЕ инициализированных
+        элементов массива устанавливается начальное значение ноль (<i>void</i>).
+        Чтобы установить значения элементов массива, используйте директиву <tt class="nill"><a
+            href="topic_define.htm">define</a></tt>. Вместо этой
+        директивы также можно использовать значение элемента, как левый оператор
+        в операции присваивания.</p>
+      <p>Директива <tt>redim</tt>
+        позволяет увеличить или уменьшить размеры существующей переменной
+        массива. Начальные значения всех новых элементов массива будут равны
+        нулю (<i>void</i>), а существующие элементы будут оставлены без
+        изменений. Эта директива идентична <span>dim</span>,
+        если переменная массива <tt style="font-style: italic;">ident</tt>
+        не существует.</p>
+      <h2 class="heading">Примеры</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl slc">; Объявляем новый массив с именем MyArray, который содержит 10 элементов.</span>
+<span class="hl kwf">#dim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+class="hl opt">]</span>
+
+<span class="hl slc">; Устанавливаем в массиве MyArray для элемента 0 значение 15.</span>
+<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">0</span><span
+class="hl opt">]</span> <span class="hl num">15</span>
+
+<span class="hl slc">; Увеличиваем размер массива MyArray до 20 элементов.</span>
+<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">20</span><span
+class="hl opt">]</span>
+
+<span class="hl slc">; Устанавливаем в массиве MyArray для элемента 10 значение 30.</span>
+<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+class="hl opt">]</span> <span class="hl num">30</span>
+
+<span class="hl slc">; Уменьшаем размер массива MyArray до 10 элементов.</span>
+<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+class="hl opt">]</span>
+
+<span class="hl slc">; Объявляем новый массив с именем MyArray2, который содержит 3 элемента</span>
+<span class="hl slc">; с заданными начальными значениями.</span>
+<span class="hl kwf">#dim</span> MyArray2<span class="hl opt">[</span><span class="hl num">3</span><span
+class="hl opt">]</span> <span class="hl com">{1, 2, 3}</span>
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <br />
+      <tt class="nill"><a href="topic_undef.htm">undef</a></tt>
+      <br />
+      <a href="topic_dimof.htm">DimOf</a>
+      <br />
+      <a href="topic_visibility.htm">Область видимости переменных</a>
+      </p>
+    </div>
+  </body>
+</html>

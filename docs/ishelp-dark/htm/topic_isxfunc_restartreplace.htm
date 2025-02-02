@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: RestartReplace</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: RestartReplace</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX"><tt class="nill">procedure
+          RestartReplace(const TempFile, DestFile: String);</tt></p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет переименование файла <tt>TempFile</tt> в <tt>DestFile</tt>
+        при следующем запуске Windows. Если <tt>DestFile</tt> уже существует,
+        он будет перезаписан. Если <tt>DestFile</tt> не указан, то <tt>TempFile</tt>
+        будет удалён. В случае ошибки будет вызвано исключение.</p>
+    </div>
+  </body>
+</html>

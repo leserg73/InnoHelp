@@ -8,7 +8,6 @@
 -----------------------
 
 - [Руководство пользователя](https://leserg73.github.io/InnoHelp/ishelp/index.htm)
-- [Препроцессор Inno Setup (ISPP)](https://leserg73.github.io/InnoHelp/ispphelp/index.htm)
 
 ### История версий
 
@@ -20,4 +19,4 @@
 
 -----------------------
 
-В разделе [релизов](https://github.com/leserg73/InnoHelp/releases) вы найдёте скомпилированную справку в формате CHM для различных версий Inno Setup.
+Справка в формате [CHM](https://github.com/leserg73/InnoHelp/releases) для различных версий Inno Setup.

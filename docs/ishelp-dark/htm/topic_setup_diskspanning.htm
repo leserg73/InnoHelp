@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: DiskSpanning</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: DiskSpanning</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">no</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>При установке значения <tt>yes</tt> активируется
+        функция разделения данных. Чтобы не объединять все данные в один сжатый
+        файл SETUP.EXE, компилятор будет их разбивать на несколько отдельных
+        файлов SETUP-*.BIN — именуемых "сегментами" — которые потом можно
+        скопировать на дискеты, CD или DVD диски. Каждый созданный сегмент будет
+        содержать в своем имени число, указывающее порядковый номер диска, на
+        который он должен быть скопирован. (Например, файл SETUP-2.BIN следует
+        записать на диск 2.) Созданный файл SETUP.EXE всегда следует записывать
+        на диск 1 вместе с файлом SETUP-1*.BIN.</p>
+      <p>Размер каждого сегмента и их количество для каждого
+        диска определяются значениями директив <a href="topic_setup_diskslicesize.htm">DiskSliceSize</a>
+        и <a href="topic_setup_slicesperdisk.htm">SlicesPerDisk</a> в секции <tt>[Setup]</tt>.
+        К другим директивам, связанными с дисками, которые можно изменить,
+        относятся <a href="topic_setup_diskclustersize.htm">DiskClusterSize</a>
+        и <a href="topic_setup_reservebytes.htm">ReserveBytes</a>.</p>
+      <p>Обратите внимание, что этой директиве обязательно
+        следует присвоить значение <tt>yes</tt>, если упакованный размер
+        инсталлятора превышает размер 2,100,000,000 байт, даже если разделение
+        установки на диски не планируется. (Установка по-прежнему будет работать
+        корректно, если все файлы SETUP-*.BIN будут размещены на одном
+        носителе.)</p>
+    </div>
+  </body>
+</html>

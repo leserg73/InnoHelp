@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: DisableFinishedPage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: DisableFinishedPage</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><tt class="nill">yes</tt>
+                  или <tt class="nill">no</tt></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><tt class="nill">no</tt> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива управляет отображением страницы
+        завершения установки.</p>
+      <p>Если задано значение <tt>yes</tt>, программа установки
+        не будет показывать страницу "<i>Установка завершена</i>", а вместо
+        этого будет немедленно закрыта сразу же по завершении процесса
+        установки. Директива может быть использована, когда для запуска
+        программы в секции <tt>[Run]</tt> указан флаг <tt>nowait</tt>, и нет
+        никакой необходимости оставлять окно "<i>Установка завершена</i>" в
+        фоновом режиме после запуска другой программы.</p>
+      <p>Обратите внимание, что директива <tt>DisableFinishedPage</tt>
+        будет пропущена, если по условиям установки необходимо выполнить
+        перезагрузку компьютера, или для директивы <tt>InfoAfterFile</tt> в
+        секции <tt>[Setup]</tt> был назначен файл. В таких случаях страница
+        мастера "<i>Установка завершена</i>" будет все равно показана.</p>
+    </div>
+  </body>
+</html>

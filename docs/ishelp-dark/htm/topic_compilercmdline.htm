@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Командная строка компилятора</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Командная строка компилятора</h1>
+    <div class="topicbody">
+      <ul>
+        <li>
+          <p>Другой вариант сборки сценариев — это использовать консольную
+            версию компилятора, ISCC.exe. Общий вид использования командной
+            строки следующий:</p>
+          <div>
+            <p>iscc <i>[параметры]</i> <i>&lt;имя сценария&gt;</i> </p>
+            <p>Или выполнять чтение из стандартного ввода:</p>
+            <p>iscc <i>[параметры]</i> - </p>
+            <div class="examplebox">
+              <div class="exampleheader">Пример:</div>
+              iscc "c:\isetup\samples\my script.iss"<br /><br /></div>
+          </div>
+          <p>Как показано в примере выше, имена файлов с пробелами должны
+            заключаться в кавычки.</p>
+          <div class="null">Допустимые параметры:
+          <table>
+            <tr>
+              <td class="cellleft"><b>/O(+|-)</b></td>
+              <td class="cellright">Включает (+) или отключает (-) параметр вывода
+                (замещает в сценарии команду <tt>Output</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/O&lt;path&gt;</b></td>
+              <td class="cellright">Устанавливает путь вывода файла (замещает в
+                сценарии команду <tt>OutputDir</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/F&lt;filename&gt;</b></td>
+              <td class="cellright">Устанавливает выходное имя файла (замещает в
+                сценарии команду <tt>OutputBaseFilename</tt>)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/S&lt;name&gt;=&lt;command&gt;</b></td>
+              <td class="cellright">Устанавливает инструмент цифровой подписи с
+                указанным именем и параметрами (все инструменты цифровой подписи,
+                настроенные в IDE компилятора, будут указаны автоматически)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/Q</b></td>
+              <td class="cellright">Тихая компиляция (будут показаны только
+                сообщения об ошибках)</td>
+            </tr>
+            <tr>
+              <td class="cellleft"><b>/Qp</b></td>
+              <td class="cellright">Тихая компиляция с отображением прогресса
+                выполнения</td>
+            </tr>
+          </table>
+          <div>
+            <div class="examplebox">
+              <div class="exampleheader">Пример:</div>
+              iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p
+              "c:\isetup\samples\my script.iss"<br /><br /></div>
+          </div>
+          <p>Другие параметры смотрите в разделе <a
+
+            href="topic_isppcc.htm">Inno Setup Preprocessor: Компиляция в командной строке</a>.</p>
+          <div class="null">ISCC возвращает один из следующих кодов выхода:<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;0 — компиляция прошла успешно;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно или произошла
+            внутренняя ошибка;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;2 — компиляция не удалась.</div>
+          <br />
+        </li>
+        <li>
+          <p>Компиляцию сценариев также можно выполнить из командной строки.
+            Общий вид использования командной строки следующий:</p>
+          <div>
+            <p>compil32 /cc <i>&lt;имя сценария&gt;</i> </p>
+            <div class="examplebox">
+              <div class="exampleheader">Пример:</div>
+              compil32 /cc "c:\isetup\samples\my script.iss"<br /><br /></div>
+          </div>
+          <p>Как показано в примере выше, имена файлов с пробелами должны
+            заключаться в кавычки.</p>
+          <p>Запуск компилятора из командной строки не подавляет отображение
+            обычного хода выполнения или сообщения об ошибках.</p>
+          <div class="null">Компилятор возвращает один из следующих кодов
+            выхода:<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;0 — компиляция прошла успешно;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;2 — компиляция не удалась.</div>
+          <br />
+        </li>
+        <li>
+          <p>Мастер создания сценария также может быть запущен из командной
+            строки. Общий вид использования командной строки следующий:</p>
+          <div>
+            <p>compil32 /wizard <i>&lt;название мастера&gt; &lt;имя
+                сценария&gt;</i> </p>
+            <div class="examplebox">
+              <div class="exampleheader">Пример:</div>
+              compil32 /wizard "MyProg Script Wizard" "c:\temp.iss"<br /><br /></div>
+          </div>
+          <p>Обратите внимание, если имена файлов и название мастера содержит
+            пробелы, то они должны заключаться в кавычки.</p>
+          <p>Запуск мастера из командной строки не подавляет сообщения об
+            ошибках.</p>
+          <div class="null">Мастер создания сценария возвращает один из
+            следующих кодов выхода:<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;0 — какие-либо ошибки отсутствуют и файл сценария успешно
+            сохранён с указанным именем;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;2 — не удалось сохранить созданный файл сценария.</div>
+          <br />
+          Если пользователь отменит работу мастера, будет возвращён код выхода 0
+          и сценарий не сохранится.
+          <br />
+        </li>
+      </ul>
+      <br />
+    </div>
+  </body>
+</html>

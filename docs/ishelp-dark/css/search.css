@@ -1,0 +1,147 @@
+/*
+Inno Setup
+Copyright (C) 1992-2024 Sergii Leonov
+*/
+
+html {
+    scrollbar-face-color: #403E41;
+    scrollbar-shadow-color: #1f1f1f;
+    scrollbar-highlight-color: #5f5f5f;
+    scrollbar-3dlight-color: #1f1f1f;
+    scrollbar-darkshadow-color: #1f1f1f;
+    scrollbar-track-color: #1f1f1f;
+    scrollbar-arrow-color: #403E41;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 10pt;   /* 8pt (8/12)  66.667% */
+    background-color: #1f1f1f;
+    color:#c7c7c7;
+}
+.highlight { /*background: #ffc156;*/ color: #fbcc13;}
+.searchheading { font-size: 100%; font-weight: bold; }
+.summary { font-size: 80%; font-style: italic; }
+.suggestion { font-size: 100%; }
+.results { font-size: 100%; }
+.category { color: #999999; }
+.sorting { text-align: right; }
+
+.result_title { font-size: 100%; }    
+.description { font-size: 90%; color: #d0d0d0; }
+.context { font-size: 100%; }
+.infoline { font-size: 80%; font-style: italic; color: #808080;}
+
+.zoom_searchform { /*font-size: 80%;*/ display: inline-block;}
+.zoom_resetform { font-size: 80%; width: 0.27083in; display: inline-block; }
+.zoom_results_per_page { font-size: 80%; margin-left: 0.1042in; position: relative; top: 0.0521;}
+.zoom_match { font-size: 80%; margin-left: 0.1042in;}        
+.zoom_categories { font-size: 80%; }
+.zoom_categories ul { display: inline; margin: 0; padding: 0;}
+.zoom_categories li { display: inline; margin-left: 0.15625in; list-style-type: none; }
+
+.cat_summary ul { margin: 0; padding: 0; display: inline; }
+.cat_summary li { display: inline; margin-left: 0.15625in; list-style-type: none; }
+
+input.zoom_button {
+    background: url('../images/find16.png') no-repeat center;
+    width: 0.25in;
+    height: 0.20833in;
+    border: 0.01042in solid #707070;
+    border-radius: 0.03125in;
+}
+
+input.zoom_button:hover  {
+    background-color: #3f3f3f;
+    border: 0.01042in solid #4994CE;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+input.zoom_searchbox {
+    background-color: #1f1f1f;
+    color:#c7c7c7;
+    border: 0.01042in solid #707070;
+    border-radius: 0.25rem;
+}
+
+input.zoom_searchbox:hover {
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    background-color: #2f2f2f;
+}
+
+input.zoom_searchbox:focus {
+    outline: 0;
+    border: 0.01042in solid #0078d3;
+}
+
+input.zoom_resetbutton  {
+    background: url('../images/delete16.png') no-repeat center;
+    width: 0.25in;
+    height: 0.20833in;
+    border: 0.01042in solid #707070;
+    border-radius: 0.03125in;
+}
+
+input.zoom_resetbutton:hover  {
+    background-color: #3f3f3f;
+    border: 0.01042in solid #4994CE;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.result_image { float: left; display: block; }
+.result_image img { margin: 0.1042in; width: 0.8333in; border: 0; }
+
+.result_block { margin-top: 0.15625in; margin-bottom: 0.15625in; clear: left; }
+.result_altblock { margin-top: 0.15625in; margin-bottom: 0.15625in; clear: left; }
+
+.result_pages { font-size: 100%; }
+.result_pagescount { font-size: 100%; }
+
+.searchtime { font-size: 80%; }
+
+.recommended 
+{ 
+    background: #DFFFBF; 
+    border-top: 0.01042in dotted #808080; 
+    border-bottom: 0.01042in dotted #808080; 
+    margin-top: 0.15625in; 
+    margin-bottom: 0.15625in; 
+}
+.recommended_heading { float: right; font-weight: bold; }
+.recommend_block { margin-top: 0.15625in; margin-bottom: 0.15625in; clear: left; }    
+.recommend_title { font-size: 100%; }
+.recommend_description { font-size: 100%; color: #008000; }
+.recommend_infoline { font-size: 80%; font-style: normal; color: #808080;}
+.recommend_image { float: left; display: block; }
+.recommend_image img { margin: 0.1042in; width: 0.8333in; border: 0; }
+
+a:link, a:visited {
+	color: hsl(206, 100%, 50%); /* for IE */
+	/*color: light-dark(hsl(206, 100%, 30%), hsl(206, 100%, 43%));*/
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a[href]:hover {
+	color: hsl(206, 100%, 43%);
+	text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 0.1042in;
+    height: 0.1000in;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px #1f1f1f; 
+    /*border-radius: 8px;*/
+    background-color: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #a6a6a6;
+    -webkit-box-shadow: inset 0 0 3px #1f1f1f; 
+}

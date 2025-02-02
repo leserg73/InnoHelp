@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: AppName</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: AppName</h1>
+    <div class="topicbody">
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива является обязательной и определяет имя
+        устанавливаемого приложения. Здесь не следует указывать номер версии
+        приложения, т.к. для него предназначены другие директивы: <a href="topic_setup_appversion.htm">AppVersion</a>
+        и/или <a href="topic_setup_appvername.htm">AppVerName</a>. Значение <tt>AppName</tt>
+        используется в заголовке окна программы установки и удаления, на
+        страницах мастера, а также в сообщениях и диалогах. Может содержать
+        константы.</p>
+      <p>Если директиве <a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a>
+        задано значение <tt>yes</tt> (является значением по умолчанию), то в
+        заголовках окон используется значение директивы <a href="topic_setup_appvername.htm">AppVerName</a>
+        вместо <tt>AppName</tt>.</p>
+      <p>Значение этой директивы также используется в качестве
+        значения по умолчанию для директив <a href="topic_setup_appid.htm">AppId</a>,
+        <a href="topic_setup_versioninfodescription.htm">VersionInfoDescription</a>
+        и <a href="topic_setup_versioninfoproductname.htm">VersionInfoProductName</a>,
+        если они не указаны.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="nomargin"><span class="hl kwb">AppName</span>=My Program</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_appvername.htm">AppVerName</a>
+      </p>
+    </div>
+  </body>
+</html>

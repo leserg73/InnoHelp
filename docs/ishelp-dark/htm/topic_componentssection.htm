@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [Components]</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [Components]</h1>
+    <div class="topicbody">
+      <p>Эта секция не является обязательной. Она определяет все
+        компоненты, которые программа установки покажет на странице "<i>Выбор
+          компонентов</i>" для настройки типа установки.</p>
+      <p>Сама по себе эта секция ничего не делает: она должна
+        быть "связана" с другими записями инсталляции. Смотрите раздел справки "<a
+          href="topic_componentstasksparams.htm">Параметры секций [Components] и
+          [Tasks]</a>".</p>
+      <p>Пример секции <tt>[Components]</tt>:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Components]</span>
+<span class="hl kwb">Name</span>: "main"; <span class="hl kwb">Description</span>: "Main Files"; <span
+class="hl kwb">Types</span>: <span class="hl kwe">full compact custom</span>; <span
+class="hl kwb">Flags</span>: <span class="hl kwe">fixed</span>
+<span class="hl kwb">Name</span>: "help"; <span class="hl kwb">Description</span>: "Help Files"; <span
+class="hl kwb">Types</span>: <span class="hl kwe">full</span>
+<span class="hl kwb">Name</span>: "help\english"; <span class="hl kwb">Description</span>: "English"; <span
+class="hl kwb">Types</span>: <span class="hl kwe">full</span>
+<span class="hl kwb">Name</span>: "help\dutch"; <span class="hl kwb">Description</span>: "Dutch"; <span
+class="hl kwb">Types</span>: <span class="hl kwe">full</span></pre>
+      <p>В приведенном выше примере создаётся четыре компонента:
+        компонент "<tt>main</tt>" будет установлен, если пользователь выберет
+        тип установки "<tt>full</tt>" или "<tt>compact</tt>". Компонент "<tt>help</tt>",
+        имеющий два дочерних компонента, будет установлен только в том случае,
+        если пользователь выберет тип установки "<tt>full</tt>".</p>
+      <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
+      <dl>
+        <dt class="paramlist"><b><a name="Name">Name</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Внутреннее имя компонента.</p>
+          <p>Общее количество символов \ или / в имени компонента определяет его
+            уровень. Любой компонент с уровнем 1 или выше является дочерним
+            компонентом. Компонент, находящийся в списке перед дочерним
+            компонентом с уровнем на 1 меньше, чем дочерний, является
+            родительским. Другие компоненты, имеющие один и тот же родительский
+            компонент, что и дочерние, являются компонентами одного уровня.</p>
+          <p>Дочерний компонент не может быть выбран, если не выбран его
+            родительский компонент. Родительский компонент не может быть выбран:
+            если не выбран ни один из его дочерних компонентов; если параметр
+            секции <tt>[Components]</tt> не имеет прямой связи с родительским
+            компонентом; если родительский компонент не содержит флаг <tt>checkablealone</tt>.
+          </p>
+          <p>Если компоненты одного уровня содержат флаг <tt>exclusive</tt>, то
+            выбран может быть только один из них. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Name</span>: "help"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Description">Description</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dd class="paramlist">
+          <p>Описание компонента (может содержать константы). Это описание
+            показывается конечному пользователю во время установки.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Description</span>: "Help Files"</pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Types">Types</a></b></dt>
+        <dd class="paramlist">
+          <p>Перечень типов, разделённых пробелами, которые поддерживают данный
+            компонент. Если конечный пользователь выберет один из перечисленных
+            типов, компонент будет установлен.</p>
+          <p>Если флаг <tt>fixed</tt> (см. ниже) не используется, то любые
+            выборочные типы (с флагом <tt>iscustom</tt>) в этом списке
+            игнорируются программой установки. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Types</span>: <span class="hl kwe">full compact</span></pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="ExtraDiskSpaceRequired">ExtraDiskSpaceRequired</a></b></dt>
+        <dd class="paramlist">
+          <p>Дополнительное место на диске, необходимое этому компоненту.
+            Параметр аналогичен директиве <a href="topic_setup_extradiskspacerequired.htm">ExtraDiskSpaceRequired</a>
+            в секции <tt>[Setup]</tt>. </p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">ExtraDiskSpaceRequired</span>: <span
+class="hl num">0</span></pre>
+          </div>
+        </dd>
+        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dd class="paramlist">
+          <p>Этот параметр представляет собой набор дополнительных опций.
+            Допускается использовать несколько опций, разделяя их пробелами.
+            Поддерживаются следующие опции:</p>
+          <dl>
+            <dt class="flaglist"><a name="checkablealone">checkablealone</a></dt>
+            <dd>
+              <p>Указывает, что компонент может быть выбран, если ни один из его
+                дочерних компонентов не выбран. По умолчанию, если ни один
+                параметр секции <tt>[Components]</tt> не имеет прямой ссылки на
+                компонент, тогда отмена выбора у всех дочерних компонентов
+                приведёт к отмене выбора родительского компонента. </p>
+            </dd>
+            <dt class="flaglist"><a name="dontinheritcheck">dontinheritcheck</a></dt>
+            <dd>
+              <p>Указывает, что компонент не должен быть выбран автоматически,
+                если выбирается родительский компонент. Не влияет на компоненты
+                верхнего уровня и не может быть объединён с флагом <tt>exclusive</tt>.
+              </p>
+            </dd>
+            <dt class="flaglist"><a name="exclusive">exclusive</a></dt>
+            <dd>
+              <p>Указывает программе установки, что данный компонент является
+                взаимоисключающим среди компонентов одного уровня, также имеющих
+                флаг <tt>exclusive</tt>. </p>
+            </dd>
+            <dt class="flaglist"><a name="fixed">fixed</a></dt>
+            <dd>
+              <p>Указывает программе установки, что данный компонент не может
+                быть выбран или не выбран конечным пользователем во время
+                инсталляции.</p>
+            </dd>
+            <dt class="flaglist"><a name="restart">restart</a></dt>
+            <dd>
+              <p>Указывает программе установки о необходимости перезапуска
+                системы после установки данного компонента, даже если в этом нет
+                необходимости (например, из-за записей с флагом <tt>restartreplace</tt>
+                в секции <tt>[Files]</tt>). Действует также, как и директива <a
+                  href="topic_setup_alwaysrestart.htm">AlwaysRestart</a>, но
+                только для компонента. </p>
+            </dd>
+            <dt class="flaglist"><a name="disablenouninstallwarning">disablenouninstallwarning</a></dt>
+            <dd>
+              <p>Указывает программе установки не предупреждать пользователя о
+                том, что данный компонент не будет удалён после того, как с него
+                будет снят выбор, если он уже был установлен на этом ПК.</p>
+              <p>В зависимости от сложности конфигурации компонентов, можно
+                попробовать использовать секцию <tt>[InstallDelete]</tt> и этот
+                флаг для автоматической "деинсталляции" компонентов, выбор
+                которых был отменён.</p>
+            </dd>
+          </dl>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">Flags</span>: <span class="hl kwe">fixed</span></pre>
+          </div>
+        </dd>
+      </dl>
+      <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
+    </div>
+  </body>
+</html>
