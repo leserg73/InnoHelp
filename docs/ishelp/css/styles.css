@@ -211,6 +211,11 @@ a.highlighted {
     margin-top: -0.5729in;
     -webkit-background-clip: content-box;
     background-clip: content-box;
+
+    > tt {
+    background-color: #ffff00;
+    color: black;
+    }
 }
 
 .small {
