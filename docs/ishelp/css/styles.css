@@ -213,8 +213,8 @@ a.highlighted {
     background-clip: content-box;
 
     > tt {
-    background-color: #ffff00;
-    color: black;
+          background-color: #ffff00;
+          color: black;
     }
 }
 
