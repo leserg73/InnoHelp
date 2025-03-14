@@ -437,6 +437,7 @@
 "scriptclasses:Close",
 "setup_closeapplications:CloseApplications",
 "setup_closeapplicationsfilter:CloseApplicationsFilter",
+"setup_closeapplicationsfilterexcludes:CloseApplicationsFilterExcludes",
 "iconssection#closeonexit:closeonexit",
 "scriptclasses:clPurple",
 "scriptclasses:clRed",
