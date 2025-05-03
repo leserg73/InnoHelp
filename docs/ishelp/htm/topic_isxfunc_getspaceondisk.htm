@@ -42,9 +42,9 @@
   FreeMB, TotalMB: Cardinal;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Получаем объём свободного места в Мб на диске с каталогом "Program Files"</span>
-  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
+  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
 class="hl str">'</span>);
-  <span class="hl kwb">if</span> GetSpaceOnDisk(Path, True, FreeMB, TotalMB) <span
+  <span class="hl kwb">if</span> GetSpaceOnDisk(Path, True, FreeMB, TotalMB) <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     MsgBox(<span class="hl str">'Доступно '</span> + IntToStr(FreeMB) + <span class="hl str">' Мб по пути '</span> +

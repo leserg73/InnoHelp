@@ -51,7 +51,7 @@
 <span class="hl slc">// Создаём страницу</span>
 Page := CreateInputDirPage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Выбор персонального каталога'</span>, <span class="hl str">'Где должны храниться файлы персональных данных?'</span>,
-  <span class="hl str">'Файлы личных данных будут храниться в следующей папке.'</span><span
+  <span class="hl str">'Файлы личных данных будут храниться в следующей папке.'</span><span
 class="hl kwf">#13#10#13#10</span> +
   <span class="hl str">'Для продолжения нажмите "Далее". Чтобы выбрать другую папку, нажмите кнопку "Обзор".'</span>,
   False, SetupMessage(msgNewFolderName));
@@ -60,7 +60,7 @@ class="hl kwf">#13#10#13#10</span> +
 Page.Add(<span class="hl str">''</span>);
 
 <span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
-Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
+Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
 class="hl kwc">{userappdata}</span><span class="hl str">\My Company\My Program'</span>);
 
 ...

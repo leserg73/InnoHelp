@@ -63,7 +63,7 @@
         некоторых выпусках Windows и проверить уровень пакета обновления для
         нескольких версий операционной системы. (Ни одну из этих проверок
         невозможно выполнить с помощью директивы <tt>MinVersion</tt> в секции <tt>[Setup]</tt>.)</p>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
 class="hl kwd">InitializeSetup</span>: Boolean;
 <span class="hl kwb">var</span>
   Version: TWindowsVersion;
@@ -72,22 +72,22 @@ class="hl kwd">InitializeSetup</span>: Boolean;
   GetWindowsVersionEx(Version);
 
   <span class="hl slc">// Запрещаем установку на Windows редакции Home</span>
-  <span class="hl kwb">if</span> Version.SuiteMask <span class="hl kwb">and</span> VER_SUITE_PERSONAL &lt;&gt; <span
+  <span class="hl kwb">if</span> Version.SuiteMask <span class="hl kwb">and</span> VER_SUITE_PERSONAL &lt;&gt; <span
 class="hl num">0</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     SuppressibleMsgBox(<span class="hl str">'Эта программа не поддерживает Windows Home.'</span>,
-      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
+      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
 class="hl kwe">IDOK</span>);
     Result := False;
     Exit;
   <span class="hl kwb">end</span>;
 
   <span class="hl slc">// Запрещаем установку на контроллерах домена</span>
-  <span class="hl kwb">if</span> Version.ProductType = VER_NT_DOMAIN_CONTROLLER <span
+  <span class="hl kwb">if</span> Version.ProductType = VER_NT_DOMAIN_CONTROLLER <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     SuppressibleMsgBox(<span class="hl str">'Эта программа не поддерживает контроллеры домена.'</span>,
-      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
+      <span class="hl kwe">mbCriticalError</span>, <span class="hl kwe">MB_OK</span>, <span
 class="hl kwe">IDOK</span>);
     Result := False;
     Exit;

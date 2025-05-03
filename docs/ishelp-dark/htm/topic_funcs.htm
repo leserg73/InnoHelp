@@ -21,20 +21,19 @@
         для выполнения каких-либо операций во время компиляции и/или изменения
         сценария. Например, сначала при помощи функции ISPP <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>
         получим версию исполняемого файла программы, а затем полученное значение
-        подставим в директиву <a href="../../ishelp/htm/topic_setup_appvername.htm" target="_blank"
-          title="Директива AppVerName">AppVerName</a><img src="../images/extlink.png"
-          alt=" [внешняя ссылка]" /> в секции [Setup], используя
+        подставим в директиву <a href="topic_setup_appvername.htm"
+          title="Директива AppVerName">AppVerName</a> в секции [Setup], используя
         директиву ISPP <tt class="nill"><a href="topic_emit.htm">emit</a></tt>:
       </p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
 <span class="hl slc">; которое вернёт функция GetVersionNumbersString() (получение версии ЕХЕ-файла).</span>
-<span class="hl kwf">#define</span> MyAppVer <span class="hl kwd">GetVersionNumbersString</span><span
+<span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a 
 
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+href="topic_addbackslash.htm">AddBackslash</a>(<a href="topic_predefinedvars.htm">SourcePath</a>) +</span> <span 
 
-class="hl opt">) +</span> <span class="hl str">"MyProg.exe"</span><span class="hl opt">)</span>
+class="hl str">"MyProg.exe"</span><span class="hl opt">)</span>
 
 <span class="hl slc">; Раздел параметров инсталляции</span>
 <span class="hl kwa">[Setup]</span>
@@ -42,6 +41,25 @@ class="hl opt">) +</span> <span class="hl str">"MyProg.exe"</span><span class="h
 <span class="hl kwb">AppVerName</span><span class="hl opt">=</span>MyProg version <span
 
 class="hl kwc">{#MyAppVer}</span>
+</pre> </div>
+      <p>Встроенные функции также можно вызывать из директивы <tt><a href="topic_emit.htm">emit</a></tt>
+        напрямую.</p>
+      <div class="examplebox">
+        <div class="exampleheader">Пример:</div>
+        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppEnterprise</span>
+<span class="hl kwf">#define</span> MyAppEnterprise
+
+<span class="hl kwa">[Setup]</span>
+<span class="hl slc">; Устанавливаем имя приложения</span>
+<span class="hl kwb">AppName</span>=MyProg<span class="hl kwc">{#<a 
+
+href="topic_defined.htm">Defined</a> MyAppEnterprise?&quot; Enterprise Edition&quot;:&quot;&quot;}</span>
+<span class="hl slc">; Получаем версию приложения</span>
+<span class="hl kwb">AppVersion</span>=<span class="hl kwc">{#<a 
+
+href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a href="topic_addbackslash.htm">AddBackslash</a>(<a 
+
+href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span>
 </pre> </div>
       <h2 class="heading">Синтаксис прототипов функций</h2>
       <p>Прототипы функций представлены, как типом возвращаемых функцией данных,

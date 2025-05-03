@@ -47,9 +47,9 @@
   <span class="hl slc">// Создаём список</span>
   FileNameList := TStringList.Create;
   <span class="hl kwb">try</span>
-    <span class="hl kwb">if</span> GetOpenFileNameMulti(<span class="hl str">''</span>, FileNameList, <span
+    <span class="hl kwb">if</span> GetOpenFileNameMulti(<span class="hl str">''</span>, FileNameList, <span
 class="hl str">''</span>,
-       <span class="hl str">'Текстовые файлы (*.txt)|*.txt|Все файлы|*.*'</span>, <span
+       <span class="hl str">'Текстовые файлы (*.txt)|*.txt|Все файлы|*.*'</span>, <span
 class="hl str">'txt'</span>) <span class="hl kwb">then</span>
     <span class="hl kwb">begin</span>
       <span class="hl slc">// Успех: пользователь нажал OK</span>

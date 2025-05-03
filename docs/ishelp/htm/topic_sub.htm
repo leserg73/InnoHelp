@@ -37,13 +37,13 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt>sub</tt> и <tt
+      <p>Директивы <tt>sub</tt> и <tt
          >endsub</tt> используются
         для объявления пользовательских процедур, которые являются частью
         сценария и могут быть включены единожды или несколько раз. Вызов
         процедуры может быть осуществлен как непосредственно из внешнего файла,
         так и из выражений. Только обратите внимание, настоятельно не
-        рекомендуется вызывать процедуры, которые выдают несколько строк на <a
+        рекомендуется вызывать процедуры, которые выдают несколько строк на <a
           href="topic_translation.htm">выход препроцессора</a> из
         составных выражений или директив.</p>
       <p>Вызов процедуры выполняется простым указанием её идентификатора, с
@@ -54,15 +54,15 @@
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#sub</span> AddFile
-  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span
-class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> <span
+  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span
+class="hl opt">,</span> <span class="hl num">1</span><span class="hl opt">,</span> <span
 class="hl num">1</span><span class="hl opt">) ==</span> <span class="hl str">"A"</span>
-    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>\A
   <span class="hl kwf">#else</span>
-    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+    <span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
   <span class="hl kwf">#endif</span>
 <span class="hl kwf">#endsub</span>

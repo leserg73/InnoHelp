@@ -33,7 +33,7 @@
         файла, необходимо принять меры, чтобы ошибочно не принимать младшие
         байты за однобайтовые символы ASCII.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> BackslashToSlash(<span
+      <pre class="indent examplebox"><span class="hl kwb">function</span> BackslashToSlash(<span
 class="hl kwb">const</span> S: String): String;
 <span class="hl kwb">var</span>
   I: Integer;
@@ -42,7 +42,7 @@ class="hl kwb">const</span> S: String): String;
   I := <span class="hl num">1</span>;
   <span class="hl kwb">while</span> I &lt;= Length(Result) <span class="hl kwb">do</span>
   <span class="hl kwb">begin</span>
-    <span class="hl kwb">if</span> Result[I] = <span class="hl str">'\'</span> <span
+    <span class="hl kwb">if</span> Result[I] = <span class="hl str">'\'</span> <span
 class="hl kwb">then</span>
       Result[I] := <span class="hl str">'/'</span>;
     <span class="hl slc">// Переходим к следующему символу, но I увеличиваем не просто на 1,</span>
@@ -55,7 +55,7 @@ class="hl kwb">then</span>
 
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Показываем путь, в котором обратная косая черта изменена на прямую.</span>
-  MsgBox(BackslashToSlash(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cf}</span><span
+  MsgBox(BackslashToSlash(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{cf}</span><span
 class="hl str">'</span>)), <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;</pre>
     </div>

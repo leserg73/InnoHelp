@@ -76,7 +76,7 @@
         начинающийся директивой <tt>if</tt>,
         должен обязательно закрываться директивой <tt>endif</tt>.
         Внутри конструкции <tt>if
-          ... endif</tt> может быть любое количество директив <tt>elif</tt><span
+          ... endif</tt> может быть любое количество директив <tt>elif</tt><span
           style="font-weight: bold;"></span>, и только одна директива <tt>else</tt>,
         которая должна быть последней перед директивой <tt>endif</tt>.</p>
       <p>Директивы <span><tt style="font-weight: bold;">if</tt></span>,
@@ -86,7 +86,7 @@
         сценария.</p>
       <p>Методы использования условных директив нельзя смешивать между собой.
         Если директива <tt>if</tt>
-        используется <i>простым</i> методом, то и связанные с ней директивы (<tt
+        используется <i>простым</i> методом, то и связанные с ней директивы (<tt
          >elif</tt>, <tt>else</tt>
         или <tt>endif</tt>) также
         должны быть использованы этим методом, но не <i>вложенным</i> (или
@@ -100,15 +100,15 @@
 <span class="hl slc">// Присваиваем переменной Lang значение считанное из файла</span>
 <span class="hl slc">// (см. выражение после оператора условия ==).</span>
 <span class="hl slc">// Сравниваем строку "English" со значением переменной Lang. </span>
-<span class="hl kwf">#if</span> <span class="hl str">"English"</span> <span class="hl opt">==</span> Lang <span
-class="hl opt">=</span> <span class="hl kwd">ReadIni</span><span class="hl opt">(</span><span
-class="hl kwd">SetupSetting</span><span class="hl opt">(</span><span class="hl str">"MessagesFile"</span><span
+<span class="hl kwf">#if</span> <span class="hl str">"English"</span> <span class="hl opt">==</span> Lang <span
+class="hl opt">=</span> <span class="hl kwd">ReadIni</span><span class="hl opt">(</span><span
+class="hl kwd">SetupSetting</span><span class="hl opt">(</span><span class="hl str">"MessagesFile"</span><span
 class="hl opt">),</span> \
-    <span class="hl str">"LangOptions"</span><span class="hl opt">,</span> <span
+    <span class="hl str">"LangOptions"</span><span class="hl opt">,</span> <span
 class="hl str">"LanguageName"</span><span class="hl opt">)</span>
     <span class="hl slc">// Если результат условия является истинной,</span>
     <span class="hl slc">// то выполняем следующие команды.</span>
-    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"For all users"</span><span
+    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"For all users"</span><span
 class="hl opt">;</span> <span class="hl kwb">Name</span><span class="hl opt">:</span> all
 
 <span class="hl slc">// Если предыдущее условие ложно </span>
@@ -118,7 +118,7 @@ class="hl opt">;</span> <span class="hl kwb">Name</span><span class="hl opt">:</
 <span class="hl kwf">#elif</span> <span class="hl str">"Russian"</span> <span class="hl opt">==</span> Lang
     <span class="hl slc">// Если результат условия является истинной,</span>
     <span class="hl slc">// то выполняем следующие команды.</span>
-    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"Для всех пользователей"</span><span
+    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"Для всех пользователей"</span><span
 class="hl opt">;</span> <span class="hl kwb">Name</span><span class="hl opt">:</span> all
 
 <span class="hl slc">// Если ни одно из условий не выполняется,</span>

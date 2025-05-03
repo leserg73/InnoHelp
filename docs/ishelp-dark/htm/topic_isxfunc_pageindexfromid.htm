@@ -25,7 +25,7 @@
         Используйте эту функцию, если, к примеру, хотите узнать, находится ли
         данная страница перед какой-нибудь другой.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
 class="hl kwd">ShouldSkipPage</span>(PageID: Integer): Boolean;
 <span class="hl kwb">begin</span>
   Result := PageIndexFromID(PageID) &lt; PageIndexFromID(<span class="hl kwe">wpReady</span>);

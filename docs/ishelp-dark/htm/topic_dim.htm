@@ -44,7 +44,7 @@
         используется для объявления переменной массива, установки его размеров
         и, при необходимости, его инициализации. Для всех НЕ инициализированных
         элементов массива устанавливается начальное значение ноль (<i>void</i>).
-        Чтобы установить значения элементов массива, используйте директиву <tt class="nill"><a
+        Чтобы установить значения элементов массива, используйте директиву <tt class="nill"><a
             href="topic_define.htm">define</a></tt>. Вместо этой
         директивы также можно использовать значение элемента, как левый оператор
         в операции присваивания.</p>
@@ -58,28 +58,28 @@
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">; Объявляем новый массив с именем MyArray, который содержит 10 элементов.</span>
-<span class="hl kwf">#dim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+<span class="hl kwf">#dim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
 class="hl opt">]</span>
 
 <span class="hl slc">; Устанавливаем в массиве MyArray для элемента 0 значение 15.</span>
-<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">0</span><span
+<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">0</span><span
 class="hl opt">]</span> <span class="hl num">15</span>
 
 <span class="hl slc">; Увеличиваем размер массива MyArray до 20 элементов.</span>
-<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">20</span><span
+<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">20</span><span
 class="hl opt">]</span>
 
 <span class="hl slc">; Устанавливаем в массиве MyArray для элемента 10 значение 30.</span>
-<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
 class="hl opt">]</span> <span class="hl num">30</span>
 
 <span class="hl slc">; Уменьшаем размер массива MyArray до 10 элементов.</span>
-<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
+<span class="hl kwf">#redim</span> MyArray<span class="hl opt">[</span><span class="hl num">10</span><span
 class="hl opt">]</span>
 
 <span class="hl slc">; Объявляем новый массив с именем MyArray2, который содержит 3 элемента</span>
 <span class="hl slc">; с заданными начальными значениями.</span>
-<span class="hl kwf">#dim</span> MyArray2<span class="hl opt">[</span><span class="hl num">3</span><span
+<span class="hl kwf">#dim</span> MyArray2<span class="hl opt">[</span><span class="hl num">3</span><span
 class="hl opt">]</span> <span class="hl com">{1, 2, 3}</span>
 </pre>
       </div>

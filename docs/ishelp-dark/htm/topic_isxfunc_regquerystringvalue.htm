@@ -31,12 +31,12 @@
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   Country: String;
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> RegQueryStringValue(<span class="hl kwe">HKEY_CURRENT_USER</span>, <span
+  <span class="hl kwb">if</span> RegQueryStringValue(<span class="hl kwe">HKEY_CURRENT_USER</span>, <span
 class="hl str">'Control Panel\International'</span>,
      <span class="hl str">'sCountry'</span>, Country) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// Успешно получили значение</span>
-    MsgBox(<span class="hl str">'Ваша страна: '</span> + Country, <span class="hl kwe">mbInformation</span>, <span
+    MsgBox(<span class="hl str">'Ваша страна: '</span> + Country, <span class="hl kwe">mbInformation</span>, <span
 class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>

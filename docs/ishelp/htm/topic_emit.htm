@@ -35,15 +35,25 @@
         можно не указывать.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwa">[Files]</span>
+        <pre class="hl"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">AppVersion</span>=<span class="hl kwc">{#<a 
+
+href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a 
+
+href="topic_addbackslash.htm">AddBackslash</a>(SourcePath) + &quot;MyProg.exe&quot;)}</span>
+
+<span class="hl kwa">[Files]</span>
 <span class="hl slc">; В указанном выражении вместо переменной MyDestDir подставляется её значение.</span>
-<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: '</span> <span
+<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: '</span> <span
+
 class="hl opt">+</span> MyDestDir
 
 <span class="hl slc">; Для параметра DestDir выполняется подстановка значения из переменной MyDestDir</span>
 <span class="hl slc">; (имя директивы emit не указано, т.к. она используется встроенным методом).</span>
-<span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl str">"file2.ext"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+<span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl str">"file2.ext"</span><span
+
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+
 class="hl kwc">{#MyDestDir}</span>
 
 <span class="hl slc">; Выполняется чтение текущего значения пользовательской функции</span>
@@ -53,7 +63,10 @@ class="hl kwc">{#MyDestDir}</span>
 <span class="hl kwd">const</span>
 <span class="hl slc">; Директива emit используется встроенным методом, поэтому её имя не указано.</span>
 <span class="hl slc">; Выполняется чтение значения вызываемой функции SetupSetting().</span>
-AppName <span class="hl opt">=</span> <span class="hl str">'{#<a href="topic_setupsetting.htm">SetupSetting</a>("AppName")}'</span><span
+AppName <span class="hl opt">=</span> <span class="hl kwc">'{#<a 
+
+href="topic_setupsetting.htm">SetupSetting</a>("AppName")}'</span><span
+
 class="hl opt">;</span>
 </pre>
       </div>

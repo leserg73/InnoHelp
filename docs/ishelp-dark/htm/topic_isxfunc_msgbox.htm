@@ -55,21 +55,21 @@ IDNO     - нажата кнопка [No]</pre>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   <span class="hl slc">// Простое сообщение с кнопкой OK</span>
-  MsgBox(<span class="hl str">'Hello.'</span>, <span class="hl kwe">mbInformation</span>, <span
+  MsgBox(<span class="hl str">'Hello.'</span>, <span class="hl kwe">mbInformation</span>, <span
 class="hl kwe">MB_OK</span>);
 
   <span class="hl slc">// Запрос к пользователю с кнопками ответа Да/Нет</span>
-  <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
-class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span>) = <span
+  <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
+class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span>) = <span
 class="hl kwe">IDYES</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// пользователь выбрал "Да"</span>
   <span class="hl kwb">end</span>;
 
   <span class="hl slc">// Запрос к пользователю с кнопками ответа Да/Нет, по умолчанию выбран "Нет"</span>
-  <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
-class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span> <span
-class="hl kwb">or</span> <span class="hl kwe">MB_DEFBUTTON2</span>) = <span class="hl kwe">IDYES</span> <span
+  <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
+class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span> <span
+class="hl kwb">or</span> <span class="hl kwe">MB_DEFBUTTON2</span>) = <span class="hl kwe">IDYES</span> <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     <span class="hl slc">// пользователь выбрал "Да"</span>

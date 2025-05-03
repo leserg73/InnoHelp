@@ -28,7 +28,7 @@
         компонентов версии передаются соответственно в параметрах <tt>Major</tt>,
         <tt>Minor</tt>, <tt>Revision</tt> и <tt>Build</tt>.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
+      <pre class="indent examplebox"><span class="hl kwb">function</span> <span
 class="hl kwd">InitializeSetup</span>: <span class="hl kwg">Boolean</span>;
 <span class="hl kwb">var</span>
   Major, Minor, Rev, Build: <span class="hl kwg">Word</span>;
@@ -36,7 +36,7 @@ class="hl kwd">InitializeSetup</span>: <span class="hl kwg">Boolean</span>;
 <span class="hl kwb">begin</span>
   <span class="hl kwg">GetVersionComponents</span>(<span class="hl sng">'C:\path\MyProg.exe'</span>, Major, Minor, Rev, Build);
   Msg := <span class="hl kwg">Format</span>(<span class="hl sng">'Version is: %d.%d.%d.%d'</span>, [Major, Minor, Rev, Build]);
-  <span class="hl kwg">MsgBox</span>(Msg, <span class="hl kwe">mbInformation</span>, <span
+  <span class="hl kwg">MsgBox</span>(Msg, <span class="hl kwe">mbInformation</span>, <span
 class="hl kwe">MB_OK</span>);
   Result := <span class="hl kwg">True</span>;
 <span class="hl kwb">end</span>;

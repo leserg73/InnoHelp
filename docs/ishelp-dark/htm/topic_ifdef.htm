@@ -57,9 +57,9 @@
       <p>Директивы <tt>ifdef</tt>,
         <tt>ifndef</tt>, <tt>ifexist</tt>
         и <tt>ifnexist</tt> можно
-        использовать там, где необходимо применить директиву <tt class="nill"><a
+        использовать там, где необходимо применить директиву <tt class="nill"><a
             href="topic_if.htm">if</a></tt>, чтобы обеспечить выполнение участка
-        кода только при соблюдении определённых условий. Состояние директивы <tt
+        кода только при соблюдении определённых условий. Состояние директивы <tt
          >ifdef</tt> является
         истинным, если указанный идентификатор был определён (найден), и
         наоборот – ложным, если идентификатор не определён или был удалён
@@ -82,8 +82,8 @@
 <span class="hl slc">// Если файл существует, то выполняем команды, определенные условием.</span>
 <span class="hl slc">// Если файл НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifexist</span> <span class="hl str">"myfile.ext"</span>
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"myfile.ext"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"myfile.ext"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
 <span class="hl slc">// Конец условия ifexist.</span>
 <span class="hl kwf">#endif</span>
@@ -92,8 +92,8 @@ class="hl kwc">{app}</span>
 <span class="hl slc">// Если переменная существует, то выполняем команды, определенные условием.</span>
 <span class="hl slc">// Если переменная НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifdef</span> Enterpise
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"extra.dll"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
+  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"extra.dll"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>
 <span class="hl slc">// Конец условия ifdef.</span>
 <span class="hl kwf">#endif</span>

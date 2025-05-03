@@ -31,21 +31,21 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет указанное выражение, игнорируя полученный результат. Эта
         директива подобна директиве <tt class="nill"><a href="topic_emit.htm">emit</a></tt>
-        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
+        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
          >выход препроцессора</a>.</p>
       <p>Эта директива предназначена для использования с теми функциями, которые
         производят побочные эффекты и не возвращают какие-либо существенные
         значения.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
+        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
+class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
 class="hl opt">) + (</span><span class="hl str">"Preprocessed.iss"</span><span class="hl opt">),</span> \
-          <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
-class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
+          <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
+class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"Compil32.exe"</span><span
 class="hl opt">,</span> \
-          <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
-class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
+          <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
+class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
 class="hl str">"Preprocessed.iss"</span><span class="hl opt">)</span>
 </pre>
       </div>

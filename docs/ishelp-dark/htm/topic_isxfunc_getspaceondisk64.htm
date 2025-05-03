@@ -32,12 +32,12 @@
   FreeBytes, TotalBytes: Int64;
 <span class="hl kwb">begin</span>
   <span class="hl slc">// Получаем объём свободного места в байтах на диске с каталогом "Program Files"</span>
-  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
+  Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
 class="hl str">'</span>);
-  <span class="hl kwb">if</span> GetSpaceOnDisk64(Path, FreeBytes, TotalBytes) <span
+  <span class="hl kwb">if</span> GetSpaceOnDisk64(Path, FreeBytes, TotalBytes) <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    MsgBox(<span class="hl str">'Доступно '</span> + IntToStr(FreeBytes) + <span
+    MsgBox(<span class="hl str">'Доступно '</span> + IntToStr(FreeBytes) + <span
 class="hl str">' байт по пути '</span> +
       Path, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>

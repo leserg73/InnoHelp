@@ -72,12 +72,12 @@
   FindRec: TFindRec;
 <span class="hl kwb">begin</span>
   FilesFound := <span class="hl num">0</span>;
-  <span class="hl kwb">if</span> FindFirst(ExpandConstant(<span class="hl str">'</span><span
+  <span class="hl kwb">if</span> FindFirst(ExpandConstant(<span class="hl str">'</span><span
 class="hl kwc">{sys}</span><span class="hl str">\*'</span>), FindRec) <span class="hl kwb">then begin</span>
     <span class="hl kwb">try</span>
       <span class="hl kwb">repeat</span>
         <span class="hl slc">// Исключаем из подсчёта каталоги</span>
-        <span class="hl kwb">if</span> FindRec.Attributes <span class="hl kwb">and</span> FILE_ATTRIBUTE_DIRECTORY = <span
+        <span class="hl kwb">if</span> FindRec.Attributes <span class="hl kwb">and</span> FILE_ATTRIBUTE_DIRECTORY = <span
 class="hl num">0</span> <span class="hl kwb">then</span>
           FilesFound := FilesFound + <span class="hl num">1</span>;
       <span class="hl kwb">until not</span> FindNext(FindRec);
@@ -85,7 +85,7 @@ class="hl num">0</span> <span class="hl kwb">then</span>
       FindClose(FindRec);
     <span class="hl kwb">end</span>;
   <span class="hl kwb">end</span>;
-  MsgBox(<span class="hl str">'В каталоге System найдено '</span> + IntToStr(FilesFound) + <span
+  MsgBox(<span class="hl str">'В каталоге System найдено '</span> + IntToStr(FilesFound) + <span
 class="hl str">' файлов.'</span>,
     <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;</pre>

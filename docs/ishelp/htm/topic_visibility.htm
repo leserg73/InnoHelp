@@ -33,15 +33,15 @@
         Посмотрите на следующие примеры:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">; Объявляем общедоступную переменную с именем MyVar и присваиваем ей значение 12</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">public</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">public</span> MyVar <span
 class="hl num">12</span>
 
 <span class="hl slc">; Объявляем защищенную переменную с именем MyVar и присваиваем ей значение 13</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">protected</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">protected</span> MyVar <span
 class="hl num">13</span>
 
 <span class="hl slc">; Объявляем закрытую переменную с именем MyVar и присваиваем ей значение 14</span>
-<span class="hl kwf">#define</span> <span class="hl kwd">private</span> MyVar <span
+<span class="hl kwf">#define</span> <span class="hl kwd">private</span> MyVar <span
 class="hl num">14</span>
 </pre> </div>
       <p>В приведенном выше примере, ни одно из последующих объявлений
@@ -52,7 +52,7 @@ class="hl num">14</span>
         доступны из любого места после того, как были объявлены.</p>
       <p><b>Защищенные</b> (<i>protected</i>) — это переменные, которые доступны
         только в том файле, в котором они были объявлены, а также во всех
-        файлах, подключенных при помощи директивы <tt class="nill"><a href="topic_include.htm"
+        файлах, подключенных при помощи директивы <tt class="nill"><a href="topic_include.htm"
            >include</a></tt> или <tt class="nill"><a href="topic_file.htm">file</a></tt>.
         В большинстве случаев защищенные переменные можно воспринимать как
         общедоступные, определение которых автоматически отменяется после
@@ -84,7 +84,7 @@ class="hl num">14</span>
         (<i>private</i>) переменной.</p>
       <p>В каждом файле можно задать область видимости переменных по умолчанию,
         которая будет использована для тех переменных, у которых она явно не
-        указана. Это делается при помощи директивы <tt class="nill"><a href="topic_define.htm"
+        указана. Это делается при помощи директивы <tt class="nill"><a href="topic_define.htm"
            >define</a></tt>, например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> <span class="hl kwd">protected</span>

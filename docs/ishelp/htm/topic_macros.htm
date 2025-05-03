@@ -51,17 +51,17 @@
         самой функции, включая их сохранение.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
-class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
+        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
+class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
 class="hl opt">)</span> <span class="hl com">/* объявление пользовательской функции */</span> \
-Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
-class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
-class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
-class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
-class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
+Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
+class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
+class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
+class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
+class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
 class="hl opt">)) -</span> <span class="hl num">1</span><span class="hl opt">),</span> \
-S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
-class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
+S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
+class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
 class="hl opt">] +</span> <span class="hl num">1</span><span class="hl opt">),</span> \
 Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">]</span>
 </pre> </div>
