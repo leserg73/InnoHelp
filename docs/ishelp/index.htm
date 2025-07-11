@@ -1,63 +1,71 @@
-﻿<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
 <head>
-  <link rel="shortcut icon" href="images/innosetup32.png" type="image/png">
-  <meta content="text/html; charset=utf-8" http-equiv="content-type">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- SVG (предпочтительный вариант) -->
+  <link rel="icon" href="images/innosetup32.svg" type="image/svg+xml" />
+  <!-- PNG (для старых браузеров) -->
+  <link rel="icon" href="images/innosetup32.png" type="image/png" />
+  <!-- ICO (если нужна поддержка очень старых браузеров) -->
+  <link rel="icon" href="images/innosetup32.ico" type="image/x-icon" sizes="any" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/shared.css" />
   <title>Справка Inno Setup 6</title>
-  <script type="text/javascript">
-  <!--
 
-  var contentsFrameLoaded = false;
-  var bodyFrameLoaded = false;
-  var footerFrameLoaded = false;
-
-  // When this page is first loaded, trigger_sync_contents() isn't called
-  // until both contentsframe.onload and bodyframe.onload have fired
-  // (order does not matter). After that, trigger_sync_contents() is
-  // called whenever further onload events come in on either frame (as
-  // a result of refreshing, clicking a link, or clicking Back/Forward).
-
-  function trigger_sync_contents()
-  {
-    window.frames["contentsframe"].sync_contents();
-  }
-
-  function bodyframe_loaded()
-  {
-    bodyFrameLoaded = true;
-    if (contentsFrameLoaded) trigger_sync_contents();
-  }
-
-  function contentsframe_loaded()
-  {
-    contentsFrameLoaded = true;
-    if (bodyFrameLoaded) trigger_sync_contents();
-  }
-
-  function contentsfooter_loaded()
-  {
-    footerFrameLoaded = true;
-  }
-
-  -->
-  </script>
+  <!-- Стили для фреймов -->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .frame-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .main-content {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+    #contentsframe {
+      width: 312px;
+      border-right: 1px solid var(--border-color);
+    }
+    #bodyframe {
+      flex: 1;
+    }
+    #footerframe {
+      height: 26px;
+      border-top: 1px solid var(--border-color);
+      overflow: hidden !important;
+      scrollbar-width: none !important; /* Для Firefox */
+      -ms-overflow-style: none !important; /* Для IE и Edge */
+    }
+    #footerframe::-webkit-scrollbar {
+      display: none !important; /* Для Chrome, Safari и Opera */
+    }
+    iframe {
+      border: none;
+      background: var(--body-bg-color);
+    }
+  </style>
 </head>
-<frameset rows="*, 26">
-<frameset cols="312, *">
-  <frame name="contentsframe" onload="contentsframe_loaded();" src=
-  "htm/contents.htm">
-  <frame name="bodyframe" onload="bodyframe_loaded();" src=
-  "htm/topic_whatisinnosetup.htm">
-  <noframes>
-    <body>
-      <p>Ваш браузер не поддерживает фреймы.</p>
-      <p><a href="htm/contents.htm">Перейти к оглавлению справки</a></p>
-    </body>
-  </noframes>
-</frameset>
-  <frameset>
-    <frame name="footerframe" onload="contentsfooter_loaded();" src=
-  "htm/contents_footer.htm" scrolling="no" noresize>
-  </frameset>
-</frameset>
+<body>
+  <!-- Контейнер с фреймами -->
+  <div class="frame-container">
+    <div class="main-content">
+      <!-- Левый фрейм - содержание -->
+      <iframe id="contentsframe" name="contentsframe" src="htm/contents.htm"></iframe>
+
+      <!-- Основной фрейм - контент -->
+      <iframe id="bodyframe" name="bodyframe" src="htm/topic_whatisinnosetup.htm"></iframe>
+    </div>
+
+    <!-- Нижний фрейм - футер -->
+    <iframe id="footerframe" name="footerframe" src="htm/contents_footer.htm" scrolling="no"></iframe>
+  </div>
+  <script type="text/javascript" src="js/theme_load.js"></script>
+</body>
 </html>

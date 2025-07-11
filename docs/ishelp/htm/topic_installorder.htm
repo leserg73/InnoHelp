@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Порядок установки</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -26,7 +27,7 @@
         <li>Обрабатывается секция <a href="topic_installdeletesection.htm">[InstallDelete]</a>.</li>
         <li>Записи секции <a href="topic_uninstalldeletesection.htm">[UninstallDelete]</a>
           сохраняются в журнал деинсталляции (который на данном этапе хранится в
-          памяти). </li>
+          памяти).</li>
         <li>При необходимости создаётся каталог приложения.</li>
         <li>Обрабатывается секция <a href="topic_dirssection.htm">[Dirs]</a>.</li>
         <li>При необходимости резервируется имя файла для журнала деинсталляции.</li>
@@ -38,9 +39,9 @@
         <li>Выполняется регистрация необходимых файлов, за исключением тех,
           регистрацию которых требуется выполнить после перезагрузки системы.</li>
         <li>При необходимости создаётся запись в параметрах системы <i>Установка
-            или изменение программы</i>. </li>
+            или изменение программы</i>.</li>
         <li>Записи секции <a href="topic_runsection.htm">[UninstallRun]</a>
-          сохраняются в журнал деинсталляции. </li>
+          сохраняются в журнал деинсталляции.</li>
         <li>Завершается создание программы и журнала деинсталляции и они
           сохраняются на диск. После этого пользователю запрещается отменять
           установку и любые последующие ошибки не приведут к откату того, что
@@ -55,13 +56,13 @@
           было задано значение <tt>yes</tt> или записанная в сценарии функция <a
 
             href="topic_scriptexpression.htm">логического выражения</a> вернула
-          значение <tt>True</tt>, выполняется обновление файловых ассоциаций. </li>
+          значение <tt>True</tt>, выполняется обновление файловых ассоциаций.</li>
         <li>Если для директивы <a href="topic_setup_changesenvironment.htm">ChangesEnvironment</a>
           было задано значение <tt>yes</tt> или записанная в сценарии функция <a
 
             href="topic_scriptexpression.htm">логического выражения</a> вернула
           значение <tt>True</tt>, выполняется уведомление приложений об
-          изменении переменных среды окружения. </li>
+          изменении переменных среды окружения.</li>
       </ul>
       <p>Все записи обрабатываются программой установки в порядке их указания в
         секции.</p>
@@ -98,5 +99,6 @@ class="hl kwe">uninsdeleteentry</span>
         и <tt>[UninstallDelete]</tt> выполняется в том же порядке, в каком они
         указаны в сценарии (а не в обратном).</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

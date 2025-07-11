@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: RegQueryMultiStringValue</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,9 +19,9 @@
     <h1 class="topicheading">Программирование: RegQueryMultiStringValue</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
+      <p class="prototip1 notopmarginX">function
           RegQueryMultiStringValue(const RootKey: Integer; const SubKeyName,
-          ValueName: String; var ResultStr: String): Boolean;</tt></p>
+          ValueName: String; var ResultStr: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Запрашивает в указанном разделе реестра значение с типом REG_MULTI_SZ и
         возвращает данные в параметре <tt>ResultStr</tt>. В случае успеха
@@ -30,5 +31,6 @@
       <p>В значении типа REG_MULTI_SZ каждая строка разделяется нулевым символом
         (<tt>#0</tt>).</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

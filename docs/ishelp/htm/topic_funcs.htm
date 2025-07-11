@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: Функции</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -23,7 +24,7 @@
         получим версию исполняемого файла программы, а затем полученное значение
         подставим в директиву <a href="topic_setup_appvername.htm"
           title="Директива AppVerName">AppVerName</a> в секции [Setup], используя
-        директиву ISPP <tt class="nill"><a href="topic_emit.htm">emit</a></tt>:
+        директиву ISPP <code><a href="topic_emit.htm">emit</a></code>:
       </p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
@@ -143,7 +144,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_power.htm">Power</a></li>
         <li><a href="topic_readini.htm">ReadIni</a></li>
         <li><a href="topic_readreg.htm">ReadReg</a></li>
-        <li><a href="topic_removebackslash.htm">RemoveBackslash</a></li>
+        <li><a href="topic_removebackslashunlessroot.htm">RemoveBackslashUnlessRoot</a></li>
         <li><a href="topic_removefileext.htm">RemoveFileExt</a></li>
         <li><a href="topic_rpos.htm">RPos</a></li>
         <li><a href="topic_samepackedversion.htm">SamePackedVersion</a></li>
@@ -167,5 +168,6 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_yesno.htm">YesNo</a></li>
       </ul>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

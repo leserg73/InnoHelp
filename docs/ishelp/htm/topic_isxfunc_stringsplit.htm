@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: StringSplit</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,15 +19,15 @@
     <h1 class="topicheading">Программирование: StringSplit</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-        <p class="prototip1 notopmarginX"><tt class="nill">function StringSplit(const
+        <p class="prototip1 notopmarginX">function StringSplit(const
           S: String; const Separators: TArrayOfString; const Typ: TSplitType):
-          TArrayOfString;</tt></p>
+          TArrayOfString;</p>
       <h2 class="heading">Описание</h2>
         <p>Выполняет разделение заданной строки на подстроки, используя указанные
           символы или строки в качестве разделителя. Пустые подстроки могут быть
           проигнорированы.</p>
         <p>Класс <tt>TSplitType</tt> объявлен как:</p>
-        <p>&nbsp;&nbsp;&nbsp;<tt class="nill">TSplitType = (stAll, stExcludeEmpty, stExcludeLastEmpty);</tt></p>
+        <p>&nbsp;&nbsp;&nbsp;<code>TSplitType = (stAll, stExcludeEmpty, stExcludeLastEmpty);</code></p>
       <h2 class="heading">Пример</h2>
         <pre class="indent examplebox"><span class="hl kwb">var</span>
   A: <span class="hl kwb">array of String</span>;
@@ -40,5 +41,6 @@
       <a href="topic_isxfunc_stringsplitex.htm">StringSplitEx</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

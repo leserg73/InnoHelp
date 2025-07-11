@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: Параметры "BeforeInstall" и "AfterInstall"</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -28,7 +29,7 @@
           <p>Определяет имя функции, которая будет вызвана непосредственно перед
             установкой записи. Эта функция должна быть либо пользовательской и
             описана в секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
-              функций</a>. </p>
+              функций</a>.</p>
           <p>Может содержать параметры, разделённые запятыми, которые программа
             установки должна передать в функцию. Допустимыми типами параметров
             являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
@@ -41,15 +42,15 @@
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall
-<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "A\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
-<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MyFile.txt'</span>)   
+<span class="hl kwb">Source</span>: "B\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBeforeInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
-<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MyFile.txt'</span>)   
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: Log(<span
 class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
           </div>
@@ -59,7 +60,7 @@ class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
           <p>Определяет имя функции, которая будет вызвана сразу после установки
             записи. Эта функция должна быть либо пользовательской и описана в
             секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
-              функций</a>. </p>
+              функций</a>.</p>
           <p>Может содержать параметры, разделённые запятыми, которые программа
             установки должна передать в функцию. Допустимыми типами параметров
             являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
@@ -72,15 +73,15 @@ class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall
-<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "A\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MYFILE.TXT'</span>)   
-<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A\MyFile.txt'</span>)   
+<span class="hl kwb">Source</span>: "B\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterInstall2(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MYFILE.TXT'</span>)   
-<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MyFile.txt'</span>)   
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: Log(<span
 class="hl str">'After MYPROG.CHM Install'</span>)</pre>
           </div>
@@ -125,5 +126,6 @@ class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span clas
 class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;</pre>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ExtractArchive</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ExtractArchive</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">procedure
+        ExtractArchive(const ArchiveFileName, DestDir, Password: String; const
+        FullPaths: Boolean; const OnExtractionProgress: TOnExtractionProgress);</p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет распаковку указанного архива в заданный каталог с сохранением
+        или без сохранения полных путей.</p>
+      <p>В случае возникновения ошибки будет вызвано исключение.</p>
+      <p>Поддерживаемые форматы архивов, помимо .7z, а также поддержка защищённых
+        паролем и многотомных архивов, зависят от значения директивы <a
+        href="topic_setup_archiveextraction.htm">ArchiveExtraction</a>
+        в секции <tt>[Setup]</tt>.</p>
+      <p>Используйте значение <tt>OnExtractionProgress</tt> для получения информации
+        о ходе выполнения распаковки, в противном случае укажите <tt>nil</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Класс <tt>TOnExtractionProgress</tt> представлен следующей функцией:</p>
+      <pre class="indent">TOnExtractionProgress = function(const ArchiveName, FileName: String; const Progress, ProgressMax: Int64): Boolean;</pre>
+      <p>Возвращает значение <tt>True</tt>, что позволяет продолжить распаковку,
+        иначе - <tt>False</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <p>Смотрите сценарий <i>DownloadFiles.iss</i>, в котором показана возможность
+        загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a><br />
+        <a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a><br />
+        <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a><br />
+        <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a><br />
+        <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+      </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

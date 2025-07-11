@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: GetDateTimeString</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,8 +19,8 @@
     <h1 class="topicheading">Препроцессор Inno Setup: GetDateTimeString</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> GetDateTimeString(<b>str</b>,
-          <b>str</b>, <b>str</b>)</tt></p>
+      <p class="prototip1 notopmarginX null"><b>str</b> GetDateTimeString(<b>str</b>,
+          <b>str</b>, <b>str</b>)</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает строковое значение текущей даты и времени в указанном
         формате.</p>
@@ -33,7 +34,7 @@
             <td class="cellleft"><b>d</b></td>
             <td class="cellright">Номер дня без начального нуля (1-31).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>dd</b></td>
             <td class="cellright">Номер дня с начальным нулем (01-31).</td>
           </tr>
@@ -41,7 +42,7 @@
             <td class="cellleft"><b>ddd</b></td>
             <td class="cellright">Сокращенное название дня недели (Sun-Sat).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>dddd</b></td>
             <td class="cellright">Полное название дня недели (Sunday-Saturday).</td>
           </tr>
@@ -49,7 +50,7 @@
             <td class="cellleft"><b>ddddd</b></td>
             <td class="cellright">Системная дата в сокращенном формате.</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>dddddd</b></td>
             <td class="cellright">Системная дата в полном формате.</td>
           </tr>
@@ -59,7 +60,7 @@
               спецификатор <b>m</b> следует сразу за спецификаторами <b>h</b>
               или <b>hh</b>, то вместо месяца будут выведены минуты.</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>mm</b></td>
             <td class="cellright">Номер месяца с начальным нулем (01-12). Если
               спецификатор <b>m</b> следует сразу за спецификаторами <b>h</b>
@@ -69,7 +70,7 @@
             <td class="cellleft"><b>mmm</b></td>
             <td class="cellright">Сокращенное название месяца (Jan-Dec).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>mmmm</b></td>
             <td class="cellright">Полное название месяца (January-December).</td>
           </tr>
@@ -77,7 +78,7 @@
             <td class="cellleft"><b>yy</b></td>
             <td class="cellright">Двузначное число года (00-99).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>yyyy</b></td>
             <td class="cellright">Четырехзначное число года (0000-9999).</td>
           </tr>
@@ -85,7 +86,7 @@
             <td class="cellleft"><b>h</b></td>
             <td class="cellright">Время часов без начального нуля (0-23).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>hh</b></td>
             <td class="cellright">Время часов с начальным нулем (00-23).</td>
           </tr>
@@ -93,7 +94,7 @@
             <td class="cellleft"><b>n</b></td>
             <td class="cellright">Время минут без начального нуля (0-59).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>nn</b></td>
             <td class="cellright">Время минут с начальным нулем (00-59).</td>
           </tr>
@@ -101,7 +102,7 @@
             <td class="cellleft"><b>s</b></td>
             <td class="cellright">Время секунд без начального нуля (0-59).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>ss</b></td>
             <td class="cellright">Время секунд с начальным нулем (00-59).</td>
           </tr>
@@ -109,7 +110,7 @@
             <td class="cellleft"><b>t</b></td>
             <td class="cellright">Системное время в сокращенном формате.</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>tt</b></td>
             <td class="cellright">Системное время в полном формате.</td>
           </tr>
@@ -123,7 +124,7 @@
               спецификатора, в соответствующем регистре будет выведен результат
               (<b>am/pm</b>, <b>AM/PM</b> или <b>am/PM</b> и наоборот).</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>a/p</b></td>
             <td class="cellright">Установка 12-часового формата времени для
               указания часов (<b>h</b> или <b>hh</b>) и вывод сокращений: <b>a</b>
@@ -138,7 +139,7 @@
               даты (DateSeparator). Если DateSeparator не указан (пустой), то
               будет использован разделитель системной даты.</td>
           </tr>
-          <tr class="altcolorrow"">
+          <tr class="altcolorrow">
             <td class="cellleft"><b>:</b></td>
             <td class="cellright">Установка символа разделителя для составляющих
               времени (TimeSeparator). Если TimeSeparator не указан (пустой), то
@@ -170,5 +171,6 @@ class="hl str">'-'</span><span class="hl opt">,</span> <span class="hl str">':'<
 class="hl opt">)</span>
 </pre> </div>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

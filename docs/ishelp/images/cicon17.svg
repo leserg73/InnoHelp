@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg fill="currentColor" version="1.1" id="cicon17" height="16" width="16" viewBox="0 0 16 16" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs1">
+    <linearGradient id="LG1" gradientTransform="rotate(90)">
+      <stop style="stop-color:#b9cff9;" offset="0" />
+      <stop style="stop-color:#0b4db1;" offset="1" />
+    </linearGradient>
+  </defs>
+  <path d="M 7.9999999,2.041542 A 6.1198858,5.9584738 0 0 0 1.8801293,8.0000003 6.1198858,5.9584738 0 0 0 7.9999999,13.958458 6.1198858,5.9584738 0 0 0 14.119871,8.0000003 6.1198858,5.9584738 0 0 0 7.9999999,2.041542 Z" style="fill:url(#LG1);stroke:#2b55a7;stroke-width:0.909" />
+  <path d="M 6.8098442,5.0351227 A 1.2317038,0.78479167 0 0 1 8.041548,4.2503311 h 0.01232 a 1.2317038,0.78479167 0 1 1 0,1.5695832 H 8.041548 A 1.2317038,0.78479167 0 0 1 6.8098442,5.0351227 Z m 0.01232,6.2783353 a 1.2317038,0.78479167 0 1 0 2.4634076,0 V 7.3894977 a 1.2317038,0.78479167 0 1 0 -2.4634076,0 z" style="fill:#ffffff" />
+</svg>

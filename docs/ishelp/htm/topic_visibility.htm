@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: Область видимости переменных</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -29,7 +30,7 @@
         (<tt>protected</tt>) или <i>закрытые</i>
         (<tt>private</tt>). При объявлении такой
         переменной, её область видимости указывается ключевым словом после
-        директивы <tt class="nill"><a href="topic_define.htm">define</a></tt>.
+        директивы <code><a href="topic_define.htm">define</a></code>.
         Посмотрите на следующие примеры:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">; Объявляем общедоступную переменную с именем MyVar и присваиваем ей значение 12</span>
@@ -52,8 +53,8 @@ class="hl num">14</span>
         доступны из любого места после того, как были объявлены.</p>
       <p><b>Защищенные</b> (<i>protected</i>) — это переменные, которые доступны
         только в том файле, в котором они были объявлены, а также во всех
-        файлах, подключенных при помощи директивы <tt class="nill"><a href="topic_include.htm"
-           >include</a></tt> или <tt class="nill"><a href="topic_file.htm">file</a></tt>.
+        файлах, подключенных при помощи директивы <code><a href="topic_include.htm"
+           >include</a></code> или <code><a href="topic_file.htm">file</a></code>.
         В большинстве случаев защищенные переменные можно воспринимать как
         общедоступные, определение которых автоматически отменяется после
         завершения работы файла.</p>
@@ -72,7 +73,7 @@ class="hl num">14</span>
         её идентификатор относится к защищенной (<i>protected</i>) области
         видимости переменной <tt>MyVar</tt>. Если же она заявлена в одном из
         файлов подключенных через стек (т.е. один из файлов подключенного
-        директивой <tt class="nill"><a href="topic_include.htm">include</a></tt>,
+        директивой <code><a href="topic_include.htm">include</a></code>,
         которая в процессе обработки приводит к объявленному файлу), то её
         идентификатор относится к общедоступной (<i>public</i>) области
         видимости переменной <tt>MyVar</tt>.</p>
@@ -84,8 +85,8 @@ class="hl num">14</span>
         (<i>private</i>) переменной.</p>
       <p>В каждом файле можно задать область видимости переменных по умолчанию,
         которая будет использована для тех переменных, у которых она явно не
-        указана. Это делается при помощи директивы <tt class="nill"><a href="topic_define.htm"
-           >define</a></tt>, например:</p>
+        указана. Это делается при помощи директивы <code><a href="topic_define.htm"
+           >define</a></code>, например:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> <span class="hl kwd">protected</span>
 </pre> </div>
@@ -112,5 +113,6 @@ class="hl num">14</span>
         большинстве случаев можете указывать защищенную (<i>protected</i>)
         область видимости.</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

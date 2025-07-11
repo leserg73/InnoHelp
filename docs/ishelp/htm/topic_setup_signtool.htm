@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: SignTool</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -25,7 +26,7 @@
             </td>
             <td class="setuphdrr">
               <div class="margined">Имя или перечень параметров, разделённых
-                пробелами </div>
+                пробелами</div>
             </td>
           </tr>
         </tbody>
@@ -35,28 +36,32 @@
         подписи, который используется для подписи:</p>
       <ul>
         <li class="compact">программы установки (инсталлятор)</li>
-        <li class="compact">программы удаления (деинсталлятор), если <a href="topic_setup_signeduninstaller.htm">SignedUninstaller</a>=<tt>yes</tt>
-        </li>
-        <li class="compact">исходных файлов в секции <a href="topic_filessection.htm">[Files]</a>,
-          если используется флаг <tt>sign</tt> или <tt>signonce</tt> </li>
+        <li class="compact">программы удаления (деинсталлятор), если <a
+          href="topic_setup_signeduninstaller.htm">SignedUninstaller</a>=<tt>yes</tt></li>
+        <li class="compact">исходных файлов в секции <a
+          href="topic_filessection.htm">[Files]</a>, если используется флаг
+          <tt>sign</tt> или <tt>signonce</tt></li>
       </ul>
-      <br />
       <p>Когда инсталлятор содержит действительную цифровую
         подпись, тогда при его запуске пользователь не получит предупреждение о
         неизвестном издателе.</p>
       <p>Имя и параметры инструмента цифровой подписи должны
         быть указаны в IDE компилятора (меню <i>Инструменты | Настройка
-          цифровой подписи...</i>) или в <a href="topic_compilercmdline.htm">командной
-          строке компилятора</a> (при помощи ключа "/S"), иначе произойдёт
+        цифровой подписи...</i>) или в <a href="topic_compilercmdline.htm">командной
+        строке компилятора</a> (при помощи ключа "/S"), иначе произойдёт
         ошибка.</p>
       <p>В параметра и командах инструмента цифровой подписи
         можно использовать следующие специальные указатели:</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;<tt>$f</tt> (<i>обязательный</i>) — заменяется заключённым в
+      <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$f</tt>
+        (<i>обязательный</i>) — заменяется заключённым в
         кавычки файлом, который должен быть подписан.</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;<tt>$p</tt> — заменяется параметрами инструмента цифровой подписи.</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;<tt>$q</tt> — заменяется кавычкой; может использоваться для
+      <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$p</tt>
+        — заменяется параметрами инструмента цифровой подписи.</p>
+      <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$q</tt>
+        — заменяется кавычкой; может использоваться для
         экранирования ключей командной строки, содержащих кавычки.</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;<tt>$$</tt> — заменяется на один символ <tt>$</tt>.</p>
+      <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$$</tt>
+        — заменяется на один символ <tt>$</tt>.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <p>Предположим, в IDE компилятора определены следующие
@@ -111,5 +116,6 @@ byparam=$p
         <a href="topic_setup_signtoolretrycount.htm">SignToolRetryCount</a><br />
         <a href="topic_setup_signtoolrunminimized.htm">SignToolRunMinimized</a></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Параметры секций [Components] и [Tasks]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -29,17 +30,17 @@
             пользователь выберет компонент из этого списка, запись будет
             обработана (например, установится файл).</p>
           <p>Запись без параметра <tt>Components</tt> обрабатывается всегда,
-            пока другие параметры этого не отменят. </p>
+            пока другие параметры этого не отменят.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 
 class="hl kwc">{app}</span>"; <span class="hl kwb">Components</span>: main
-<span class="hl kwb">Source</span>: "MYPROG.CHM"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 
 class="hl kwc">{app}</span>"; <span class="hl kwb">Components</span>: help
-<span class="hl kwb">Source</span>: "README.TXT"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">DestDir</span>: "<span
 
 class="hl kwc">{app}</span>"</pre>
           </div>
@@ -51,11 +52,11 @@ class="hl kwc">{app}</span>"</pre>
             выберет задачу из этого списка, то запись будет обработана
             (например, установится файл).</p>
           <p>Запись без параметра <tt>Tasks</tt> обрабатывается всегда, пока
-            другие параметры этого не отменят. </p>
+            другие параметры этого не отменят.</p>
           <p>Обратите внимание, что флажок "<i>Не создавать папку в меню «Пуск»</i>"
             на странице мастера "<i>Выберите папку в меню «Пуск»</i>" не влияет
             на записи секции <tt>[Icons]</tt>, имеющих параметры <tt>Tasks</tt>,
-            поскольку они имеют свои собственные флажки. </p>
+            поскольку они имеют свои собственные флажки.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Icons]</span>
@@ -107,5 +108,6 @@ class="hl kwd">not</span> (a <span class="hl kwd">or</span> b)
 
 class="hl kwd">or</span> b - old style; <span class="hl kwb">Components</span>: a b</pre>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

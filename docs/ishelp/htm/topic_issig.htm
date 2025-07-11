@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Подписи .issig: Введение</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Подписи .issig: Введение</h1>
+    <div class="topicbody">
+    <p>Inno Setup включает встроенную проверку целостности и подлинности ваших
+      файлов, которая может быть выполнена при компиляции – перед включением
+      файлов в установочный пакет или во время установки – перед копированием
+      файлов в систему пользователя.</p>
+    <p><i>Подписи</i> создаются при помощи утилиты <a href="topic_issigtool.htm">Inno
+      Setup Signature Tool</a> (<tt>ISSigTool.exe</tt>) и хранятся в отдельных
+      файлах с расширением <tt>.issig</tt>. Поскольку подписи записаны в отдельных
+      файлах, оригинальные файлы остаются без изменений. Таким образом, любой тип
+      файла может быть подписан и проверен.</p>
+    <p>Для создания подписей <tt>.issig</tt> <i>не</i> требуется сертификат от
+      центра сертификации, что делает этот процесс совершенно бесплатным.</p>
+    <p>Обратите внимание, подписи <tt>.issig</tt> не могут быть использованы для
+      устранения предупреждения «Неизвестный издатель», которое показывает Windows
+      при запуске программы установки или другого EXE-файла. Для этого требуется
+      совершенно другой тип цифровой подписи (Authenticode), встроенной в EXE-файл
+      с помощью инструмента <tt>signtool.exe</tt> от Microsoft, а также сертификат,
+      полученный от центра сертификации. Однако вы можете использовать для одного
+      файла как <tt>signtool.exe</tt>, так и <tt>ISSigTool.exe</tt>, причем в
+      указанном порядке. Дополнительную информацию о <tt>signtool.exe</tt> см. в
+      разделе <a href="topic_setup_signtool.htm">SignTool</a>.</p>
+    <h2 class="heading">Быстрый старт: проверка файлов во время компиляции</h2>
+    <p>В командах <tt>issigtool</tt>, показанных ниже, укажите путь к Inno Setup
+      и заключите его в кавычки. Например,
+      <tt>"%ProgramFiles(x86)%\Inno Setup 6\issigtool"</tt>.</p>
+    <ol>
+      <li>
+        <p style="text-indent: 0;">Создайте файл закрытого ключа, который будет
+          использоваться для подписи:</p>
+        <pre class="indent examplebox">
+issigtool --key-file="MyKey.isprivatekey" generate-private-key
+</pre>
+        <p style="text-indent: 0;">Файл с именем <tt>MyKey.isprivatekey</tt> будет
+          создан в текущей папке. При необходимости можете указать для него
+          желаемый путь.</p>
+        <p style="text-indent: 0;">Этот файл не следует передавать другим лицам
+          или размещать в публичных хранилищах. Чтобы снизить риск случайного
+          раскрытия данных, рекомендуется хранить его вне исходного кода проекта.</p>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Создайте файл, который следует пописать, а
+          затем создайте подпись:</p>
+        <pre class="indent examplebox">
+echo Hello &gt; MyFile.txt
+issigtool --key-file="MyKey.isprivatekey" sign "MyFile.txt"
+</pre>
+        <p style="text-indent: 0;">Будет создан файл подписи с именем
+          <tt>MyFile.txt.issig</tt>.</p>
+      </li>
+      <li>
+        <p style="text-indent: 0;">В сценарии Inno Setup добавьте секцию <a
+          href="topic_issigkeyssection.htm">[ISSigKeys]</a> с записью вашего файла
+          закрытого ключа, а в секции <a href="topic_filessection.htm">[Files]</a>
+          для файла <tt>MyFile.txt</tt> укажите флаг <tt>issigverify</tt>:</p>
+        <pre class="indent examplebox">
+[ISSigKeys]
+Name: MyKey; KeyFile: "MyKey.isprivatekey"
+
+[Files]
+Source: "MyFile.txt"; DestDir: "{app}"; Flags: issigverify
+</pre>
+        <p style="text-indent: 0;">Примечание: здесь желательно указать файл
+          <i>открытого</i> ключа; см. раздел <a href="topic_issig.htm#tips">Советы
+          и рекомендации</a> ниже.</p>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Выполните сборку сценария. На вкладке вывода
+          сообщений компилятора вы увидите строку с результатом успешной проверки
+          файла:</p>
+      <pre class="indent examplebox">
+   Compressing: MyFile.txt
+      Verification successful.
+</pre>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Теперь убедитесь, что компилятор действительно
+          выявляет повреждение или подмену файла.</p>
+        <p style="text-indent: 0;">Измените содержимое <tt>MyFile.txt</tt> — напр.
+          добавьте или измените один символ.</p>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Попробуйте снова выполнить сборку сценария. На
+          этот раз вы должны получить сообщение об ошибке, подобную следующей:</p>
+        <pre class="indent examplebox">
+Signature is not valid for source file "MyFile.txt": file hash incorrect.
+</pre>
+      </li>
+    </ol>
+  <h2 class="heading">Проверка внешних файлов во время установки</h2>
+    <p>Процедура настройки проверки <tt>внешних</tt> файлов по существу аналогична
+      описанной выше процедуре проверки во время компиляции, за исключением:</p>
+    <ul>
+      <li>
+        <p style="text-indent: 0;">Запись в секции <tt>[Files]</tt> для параметра
+          <tt>Source</tt> будет содержать путь и включать флаг <tt>external</tt>:</p>
+        <pre class="indent examplebox">
+[Files]
+Source: "{src}\MyFile.txt"; DestDir: "{app}"; Flags: external issigverify
+</pre>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Файл подписи — <tt>MyFile.txt.issig</tt> в этом
+          примере — должен находиться в том же каталоге, что и файл <tt>Source</tt>
+          в процессе установки. (Проверка <tt>внешних</tt> файлов во время
+          компиляции не производится.)</p>
+      </li>
+    </ul>
+  <h2 class="heading"><a name="tips">Советы и рекомендации</a></h2>
+    <ul>
+      <li>
+        <p style="text-indent: 0;">Несмотря на то что параметр <tt>KeyFile</tt>
+          в секции <a href="topic_issigkeyssection.htm">[ISSigKeys]</a> указывает
+          на файл закрытого ключа, как показано в примере выше, рекомендуется по
+          возможности указывать файл открытого ключа. В отличие от файла закрытого
+          ключа, файл открытого ключа не нужно держать в секрете и он может
+          безопасно храниться в системе контроля версий.</p>
+        <p style="text-indent: 0;">Чтобы создать файл открытого ключа
+          (<tt>MyKey.ispublickey</tt>) из существующего файла закрытого ключа
+          (<tt>MyKey.isprivatekey</tt>), выполните следующую команду:</p>
+        <pre class="indent examplebox">
+issigtool --key-file="MyKey.isprivatekey" export-public-key "MyKey.ispublickey"
+</pre>
+        <p style="text-indent: 0;">В качестве альтернативы, значения открытых
+          ключей можно указать непосредственно в сценарии, используя параметры
+          <tt>PublicX</tt> и <tt>PublicY</tt> вместо <tt>KeyFile</tt>.</p>
+      </li>
+      <li>
+        <p style="text-indent: 0;">Чтобы не повторять один и тот же параметр
+          <tt>--key-file=</tt> при каждом вызове команды <tt>issigtool</tt>, 
+          можно установить переменную окружения <tt>ISSIGTOOL_KEY_FILE</tt> со
+          значением пути к вашему файлу ключей.</p>
+        <p style="text-indent: 0;">В <tt>cmd.exe</tt> или пакетном файле:</p>
+        <pre class="indent examplebox">
+set ISSIGTOOL_KEY_FILE=MyKey.isprivatekey
+</pre>
+        <p style="text-indent: 0;">В оболочке PowerShell:</p>
+        <pre class="indent examplebox">
+$env:ISSIGTOOL_KEY_FILE = "MyKey.isprivatekey"
+</pre>
+        <p style="text-indent: 0;">Приведенные выше назначения переменных не
+          являются постоянными; они влияют только на текущий сеанс <tt>cmd.exe</tt>
+          или PowerShell.</p>
+        <p style="text-indent: 0;">После этого для создания подписей и проверки
+          просто выполните следующие команды:</p>
+        <pre class="indent examplebox">
+issigtool sign "MyFile.txt"
+issigtool verify "MyFile.txt"
+</pre>
+      </li>
+    </ul>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

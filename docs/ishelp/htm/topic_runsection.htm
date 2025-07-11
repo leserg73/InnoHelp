@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секции [Run] и [UninstallRun]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -38,12 +39,12 @@
         значение <tt>no</tt>.</p>
       <p>Ниже представлен пример секции <tt>[Run]</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Run]</span>
-<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\INIT.EXE"; <span
+<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\Init.exe"; <span
 class="hl kwb">Parameters</span>: "/x"
-<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\README.TXT"; <span
+<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\Readme.txt"; <span
 class="hl kwb">Description</span>: "Просмотр файла README"; <span class="hl kwb">Flags</span>: <span
 class="hl kwe">postinstall shellexec skipifsilent</span>
-<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MYPROG.EXE"; <span
+<span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.exe"; <span
 class="hl kwb">Description</span>: "Запуск приложения"; <span class="hl kwb">Flags</span>: <span
 class="hl kwe">postinstall nowait skipifsilent unchecked</span>   
 </pre>
@@ -55,10 +56,10 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             открыть. Если параметр <tt>Filename</tt> не содержит исполняемого
             (.exe или .com) или пакетного (.bat или .cmd) файла, следует <i>обязательно</i>
             использовать флаг <tt>shellexec</tt>. Этот параметр может содержать
-            константы. </p>
+            константы.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\INIT.EXE"</pre>
+            <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\Init.exe"</pre>
           </div>
         </dd>
         <dt class="paramlist"><b><a name="Description">Description</a></b></dt>
@@ -68,7 +69,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             используется для записей с флагом <tt>postinstall</tt>. Если
             описание не указано, программа установки будет использовать описание
             по умолчанию. Также является зависимым от типа запуска (обычный или
-            посредством <tt>shellexec</tt>). </p>
+            посредством <tt>shellexec</tt>).</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Description</span>: "View the README file"</pre>
@@ -89,7 +90,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             Если параметр не указан или является пустым, будет использоваться
             каталог из параметра <tt>Filename</tt>; если же параметр <tt>Filename</tt>
             не содержит путь, будет использоваться каталог по умолчанию. Может
-            содержать константы. </p>
+            содержать константы.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">WorkingDir</span>: "<span
@@ -102,7 +103,7 @@ class="hl kwc">{app}</span>"</pre>
             Определяет сообщение, которое будет показано мастером в процессе
             выполнения программы. Если этот параметр не указан или является
             пустым, будет использоваться сообщение по умолчанию "Завершение
-            установки...". Может содержать константы. </p>
+            установки...". Может содержать константы.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">StatusMsg</span>: "Установка BDE..."</pre>
@@ -136,7 +137,7 @@ class="hl kwc">{app}</span>"</pre>
             использовать вместе с флагом <tt>shellexec</tt>. Стандартными
             действиями являются "open" (открыть) и "print" (печать). Если этот
             параметр не указан или является пустым, по умолчанию будет выполнено
-            действие сопоставленное с типом файла (обычно "open"). </p>
+            действие сопоставленное с типом файла (обычно "open").</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Verb</span>: "print"</pre>
@@ -154,7 +155,7 @@ class="hl kwc">{app}</span>"</pre>
                 каталогом System, если используется в параметрах <tt>Filename</tt>
                 и <tt>WorkingDir</tt>. Такое поведение используется по
                 умолчанию в <a href="topic_32vs64bitinstalls.htm">32-разрядном
-                  режиме установки</a>. </p>
+                  режиме установки</a>.</p>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>shellexec</tt>.
               </p>
             </dd>
@@ -164,14 +165,14 @@ class="hl kwc">{app}</span>"</pre>
                 64-разрядным каталогом System, если используется в параметрах <tt>Filename</tt>
                 и <tt>WorkingDir</tt>. Такое поведение используется по
                 умолчанию <a href="topic_32vs64bitinstalls.htm">64-разрядном
-                  режиме установки</a>. </p>
+                  режиме установки</a>.</p>
               <p>Этот флаг можно использовать только при работе программы
                 установки в 64-разрядной системе Windows, иначе произойдёт
                 ошибка. При создании инсталлятора, поддерживающего обе
                 архитектуры, 32-бит и 64-бит, ошибки можно избежать, добавив
                 параметр <tt>Check: IsWin64</tt>, который приведет к тому, что
                 при работе в 32-разрядной системе Windows данная запись будет
-                пропущена. </p>
+                пропущена.</p>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>shellexec</tt>.
               </p>
             </dd>
@@ -198,7 +199,7 @@ class="hl kwc">{app}</span>"</pre>
                 завершения запущенного процесса, прежде чем перейти к следующей
                 записи секции <tt>[Run]</tt> или завершению установки. Этот
                 флаг нельзя использовать вместе с флагом <tt>waituntilidle</tt>
-                или <tt>waituntilterminated</tt>. </p>
+                или <tt>waituntilterminated</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="postinstall">postinstall</a></dt>
             <dd>
@@ -213,14 +214,14 @@ class="hl kwc">{app}</span>"</pre>
                 или если директива <tt>AlwaysRestart</tt> секции <tt>[Setup]</tt>
                 имеет значение <tt>yes</tt>), возможности для отображения
                 флажка не будет, и, следовательно, эта запись никогда не будет
-                обработана. </p>
+                обработана.</p>
               <p>Флаг <tt>isreadme</tt> для записей в секции <tt>[Files]</tt>
                 уже является устаревшим. Если компилятор обнаружит запись с
                 флагом <tt>isreadme</tt>, он убирает этот флаг из записи секции
                 <tt>[Files]</tt> и вставляет вновь созданную запись в начало
                 секции <tt>[Run]</tt>. Эта созданная запись секции <tt>[Run]</tt>
                 запускает файл README и содержит флаги <tt>shellexec</tt>, <tt>skipifdoesntexist</tt>,
-                <tt>postinstall</tt> и <tt>skipifsilent</tt>. </p>
+                <tt>postinstall</tt> и <tt>skipifsilent</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="runascurrentuser">runascurrentuser</a></dt>
             <dd>
@@ -228,7 +229,7 @@ class="hl kwc">{app}</span>"</pre>
                 полномочия пользователя, который запустил программу
                 установки/удаления (как правило, полные права администратора).</p>
               <p>Такое поведение принимается по умолчанию, если флаг <tt>postinstall</tt>
-                не используется. </p>
+                не используется.</p>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>runasoriginaluser</tt>.
               </p>
             </dd>
@@ -240,7 +241,7 @@ class="hl kwc">{app}</span>"</pre>
                 который изначально запустил программу установки (т.е. с правами
                 до появления "диалога UAC".</p>
               <p>Такое поведение принимается по умолчанию, если используется
-                флаг <tt>postinstall</tt>. </p>
+                флаг <tt>postinstall</tt>.</p>
               <p>Если пользователь запустит программу установки посредством
                 контекстного меню, выбрав команду "Запуск от имени
                 администратора", этот флаг, к сожалению, не будет иметь никакого
@@ -279,25 +280,25 @@ class="hl kwc">{app}</span>"</pre>
                 любым зарегистрированным типом файла — включая *.chm, *.doc и
                 т.д. Указанный файл будет открыт приложением, которое связано с
                 данным типом файла в системе пользователя, точно так же, как
-                если бы пользователь дважды щёлкнул по файлу в Проводнике. </p>
+                если бы пользователь дважды щёлкнул по файлу в Проводнике.</p>
               <p>По умолчанию, когда используется флаг <tt>shellexec</tt>,
                 инсталлятор не будет ожидать завершения запущенного процесса. В
                 случае, если это необходимо, добавьте флаг <tt>waituntilterminated</tt>.
                 Обратите внимание, что инсталлятор не может и не будет ожидать,
                 если новый процесс не был создан, например, если в параметре <tt>Filename</tt>
-                указана папка. </p>
+                указана папка.</p>
             </dd>
             <dt class="flaglist"><a name="skipifdoesntexist">skipifdoesntexist</a></dt>
             <dd>
               <p>При указании этого флага в секции <tt>[Run]</tt> программа
                 установки не будет показывать сообщение об ошибке, если <tt>Filename</tt>
-                не существует. </p>
+                не существует.</p>
               <p>При указании этого флага в секции <tt>[UninstallRun]</tt>
                 программа установки не будет показывать предупреждение
                 "некоторые элементы не могут быть удалены", если <tt>Filename</tt>
-                не существует. </p>
+                не существует.</p>
               <p>Когда используется этот флаг, параметр <tt>Filename</tt>
-                должен содержать абсолютный путь. </p>
+                должен содержать абсолютный путь.</p>
             </dd>
             <dt class="flaglist"><a name="skipifnotsilent">skipifnotsilent</a></dt>
             <dd>
@@ -317,7 +318,7 @@ class="hl kwc">{app}</span>"</pre>
                 Указывает программе установки снять флажок. Пользователь по
                 прежнему сможет установить флажок, если захочет, чтобы данная
                 запись была обработана. Этот флаг игнорируется, если флаг <tt>postinstall</tt>
-                также не указан. </p>
+                также не указан.</p>
             </dd>
             <dt class="flaglist"><a name="waituntilidle">waituntilidle</a></dt>
             <dd>
@@ -325,7 +326,7 @@ class="hl kwc">{app}</span>"</pre>
                 завершения пользовательского ввода, вместо завершения
                 запущенного процесса. (Используется вызов функции Windows API <i>WaitForInputIdle</i>.)
                 Этот флаг нельзя использовать вместе с флагом <tt>nowait</tt>
-                или <tt>waituntilterminated</tt>. </p>
+                или <tt>waituntilterminated</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="waituntilterminated">waituntilterminated</a></dt>
             <dd>
@@ -335,7 +336,7 @@ class="hl kwc">{app}</span>"</pre>
                 указывать), если не задан флаг <tt>shellexec</tt>. Иначе его
                 следует указать, если требуется, чтобы ожидание было выполнено.
                 Этот флаг нельзя использовать вместе с флагом <tt>nowait</tt>
-                или <tt>waituntilidle</tt>. </p>
+                или <tt>waituntilidle</tt>.</p>
             </dd>
           </dl>
           <div class="examplebox">
@@ -348,5 +349,6 @@ class="hl kwc">{app}</span>"</pre>
             [Components] и [Tasks]</a></b></p>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Icons]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -23,7 +24,7 @@
       <p>Пример секции <tt>[Icons]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Icons]</span>
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\My Program"; <span
-class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MYPROG.EXE"; <span
+class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.exe"; <span
 class="hl kwb">WorkingDir</span>: "<span class="hl kwc">{app}</span>"
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\Uninstall My Program"; <span
 class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pre>
@@ -55,7 +56,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
             (адреса веб-сайтов). Если указан URL-адрес, программа установки
             создаст файл "Internet Shortcut" (.url) и проигнорирует параметры
             ярлыка <tt>Parameters</tt>, <tt>WorkingDir</tt>, <tt>HotKey</tt>
-            и <tt>Comment</tt>. </p>
+            и <tt>Comment</tt>.</p>
           <p>Следует отметить, что в 64-разрядной ОС Windows константа <tt>{sys}</tt>
             будет сопоставлена с собственным 64-разрядным каталогом System, из
             которого ярлыком будет запущен 64-разрядный процесс, такой как
@@ -67,7 +68,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
             </p>
           <div class="examplebox">
             <div class="exampleheader">Примеры:</div>
-            <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MYPROG.EXE"
+            <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.exe"
 <span class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"
 <span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\FolderName"
 <span class="hl kwb">Filename</span>: "http://www.example.com/"</pre>
@@ -85,11 +86,11 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
         <dt class="paramlist"><b><a name="WorkingDir">WorkingDir</a></b></dt>
         <dd class="paramlist">
           <p>Определяет рабочий (или <i>начальный</i>) каталог программы, на
-            которую ссылается ярлык. Этот параметр может содержать константы. </p>
+            которую ссылается ярлык. Этот параметр может содержать константы.</p>
           <p>Если этот параметр не указан или является пустым, программа
             установки попытается получить имя каталога из параметра <tt>Filename</tt>.
             В случае неудачи (что маловероятно), в качестве рабочего каталога
-            будет установлено значение <tt>{sys}</tt>. </p>
+            будет установлено значение <tt>{sys}</tt>.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">WorkingDir</span>: "<span
@@ -114,7 +115,7 @@ class="hl kwc">{app}</span>"</pre>
         <dd class="paramlist">
           <p>Позволяет задать <i>комментарий</i> (или "описание"), текст
             которого отображается во всплывающей подсказке при наведении на
-            ярлык курсора мышки. Этот параметр может содержать константы. </p>
+            ярлык курсора мышки. Этот параметр может содержать константы.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Comment</span>: "This is my program"</pre>
@@ -137,16 +138,16 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             Windows, то она автоматически заменит значение <tt>{commonpf32}\</tt>
             в имени файла на значение "%ProgramFiles(x86)%\" для обхода ошибки в
             64-бит ОС Windows: в ней происходит замена на значение
-            "%ProgramFiles%\", что является неверным. </p>
+            "%ProgramFiles%\", что является неверным.</p>
         </dd>
         <dt class="paramlist"><b><a name="IconIndex">IconIndex</a></b></dt>
         <dd class="paramlist">
           <p>Определяет начинающийся с нуля индекс значка, используемого в файле
             и указанном в параметре <tt>IconFilename</tt>. Значением по
-            умолчание является <tt>0</tt>. </p>
+            умолчание является <tt>0</tt>.</p>
           <p>Если значение <tt>IconIndex</tt> не равно нулю, а значение <tt>IconFilename</tt>
             не указано или является пустым, то параметр <tt>IconFilename</tt>
-            будет использовать значение <tt>Filename</tt>. </p>
+            будет использовать значение <tt>Filename</tt>.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">IconIndex</span>: <span class="hl num">0</span></pre>
@@ -185,19 +186,19 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
                 приложение MS-DOS (ярлык имеет расширение .pif). Если ни этот
                 флаг, ни флаг <tt>dontcloseonexit</tt> не указаны, программа
                 установки не будет пытаться изменить свойство "Закрыть при
-                выходе". </p>
+                выходе".</p>
             </dd>
             <dt class="flaglist"><a name="createonlyiffileexists">createonlyiffileexists</a></dt>
             <dd>
               <p>Предписывает программе установки создать ярлык только в том
                 случае, если указанный в параметре <tt>Filename</tt> файл
-                существует. </p>
+                существует.</p>
             </dd>
             <dt class="flaglist"><a name="dontcloseonexit">dontcloseonexit</a></dt>
             <dd>
               <p>Аналогичен флагу <tt>closeonexit</tt>, за исключением того,
                 что программа установки снимает флажок "Закрыть при выходе" в
-                свойствах ярлыка. </p>
+                свойствах ярлыка.</p>
             </dd>
             <dt class="flaglist"><a name="excludefromshowinnewinstall">excludefromshowinnewinstall</a></dt>
             <dd>
@@ -237,7 +238,7 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
                 "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App
                 Paths" и автоматически добавить его к имени файла. При этом в
                 параметре <tt>Filename</tt> достаточно указать только имя файла
-                (без пути к нему). </p>
+                (без пути к нему).</p>
             </dd>
           </dl>
           <div class="examplebox">
@@ -250,5 +251,6 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             [Components] и [Tasks]</a></b></p>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

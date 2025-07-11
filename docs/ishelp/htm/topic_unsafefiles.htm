@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Небезопасные файлы</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -39,7 +40,7 @@
             файлы DLL могут быть заменены другими, несовместимыми версиями, без
             вашего ведома. Это может привести к непредсказуемым и трудно
             решаемым проблемам на системах пользователей при создании новых
-            установок. </p>
+            установок.</p>
           <p>Вместо развертывания библиотек DLL из системного каталога Windows
             вы должны найти версии, которые специально предназначены для
             "распространения". Свободно распространяемые библиотеки DLL обычно
@@ -49,7 +50,7 @@
           <p>Если вы <b>абсолютно уверены</b>, что имеющаяся у вас библиотека
             DLL, находящаяся в системном каталоге Windows, является свободно
             распространяемой, скопируйте её в исходную папку с вашим сценарием и
-            используйте только оттуда. </p>
+            используйте только оттуда.</p>
         </dd>
         <dt><b>ADVAPI32.DLL, COMDLG32.DLL, GDI32.DLL, KERNEL32.DLL,
             RICHED32.DLL, SHELL32.DLL, USER32.DLL, UXTHEME.DLL</b></dt>
@@ -72,18 +73,19 @@
             Также могут возникнуть проблемы, если ваши версии файлов окажутся
             старше, чем имеющиеся версии файлов в каталоге <tt>{sys}</tt>.
             Кроме того, если ваши копии файлов были удалены, то другие
-            приложения перестанут работать. </p>
+            приложения перестанут работать.</p>
         </dd>
         <dt><b>COMCTL32.DLL</b></dt>
         <dd>
           <p>Microsoft не разрешает отдельное перераспределение COMCTL32.DLL (и
             это правильно - файл между платформами отличается), поэтому никогда
             не следует помещать COMCTL32.DLL в секцию <tt>[Files]</tt>. Однако
-            можно направить пользователей <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en"
-              target="_blank" title="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en">на
-              загрузку обновления COMCTL32 с сайта Microsoft</a><img src="../images/extlink.png" srcset="../images/extlink.svg"
-              alt=" [внешняя ссылка]" /> или добавить обновление COMCTL32 к вашей
-            программе. </p>
+            можно направить пользователей <a
+            href="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en"
+            target="_blank" title="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en">на
+            загрузку обновления COMCTL32 с сайта Microsoft</a><img src="../images/extlink.svg"
+            alt=" [внешняя ссылка]" /> или добавить обновление COMCTL32 к вашей
+            программе.</p>
         </dd>
         <dt><b>SHDOCVW.DLL, SHLWAPI.DLL, URLMON.DLL, WININET.DLL</b></dt>
         <dd>
@@ -102,5 +104,6 @@
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

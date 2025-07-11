@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Общие параметры</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -28,12 +29,12 @@
             конечный пользователь выберет язык из этого списка, то такая запись
             будет обработана (например, выполнится установка файла).</p>
           <p>Запись без параметра <tt>Languages</tt> обрабатывается всегда,
-            пока другие параметры этого не отменят. </p>
+            пока другие параметры этого не отменят.</p>
           <p>Помимо списков, разделённых пробелами, также можно использовать
             логические выражения, содержащих названия языков.
             Смотрите раздел справки "<a href="topic_componentstasksparams.htm">Параметры
               секций [Components] и [Tasks]</a>" с примерами логических
-            выражений. </p>
+            выражений.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Languages</span>: en nl</pre>
@@ -46,9 +47,9 @@
             то эта запись никогда не будет обработана. Значение также может
             содержать <a href="topic_buildnumnotes.htm">номер сборки и версию
               пакета обновления</a>. Переопределяет любое значение директивы <tt>MinVersion</tt>
-            в секции <tt>[Setup]</tt>. </p>
+            в секции <tt>[Setup]</tt>.</p>
           <p>Запись без параметра <tt>MinVersion</tt> обрабатывается всегда,
-            пока другие параметры этого не отменят. </p>
+            пока другие параметры этого не отменят.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">MinVersion</span>: <span
@@ -73,7 +74,7 @@ class="hl num">6.2</span></pre>
             больше, чем <tt>6.1</tt>, иначе запись не будет обработана.
             (ОС Windows Vista/Server 2008 больше не поддерживаются.)</p>
           <p>Запись без параметра <tt>OnlyBelowVersion</tt> обрабатывается
-            всегда, пока другие параметры этого не отменят. </p>
+            всегда, пока другие параметры этого не отменят.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">OnlyBelowVersion</span>: <span
@@ -82,5 +83,6 @@ class="hl num">6.2</span></pre>
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

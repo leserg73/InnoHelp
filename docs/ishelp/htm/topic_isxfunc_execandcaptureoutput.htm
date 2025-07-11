@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: ExecAndCaptureOutput</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,10 +19,10 @@
     <h1 class="topicheading">Программирование: ExecAndCaptureOutput</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
+      <p class="prototip1 notopmarginX">function
         ExecAndCaptureOutput(const Filename, Params, WorkingDir: String; const
         ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer; var
-        Output: TExecOutput): Boolean;</tt></p>
+        Output: TExecOutput): Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Идентична функции <a href="topic_isxfunc_exec.htm">Exec</a> за
         исключением:</p>
@@ -40,7 +41,7 @@
       <h2 class="heading">Комментарии</h2>
       <p>При вызове этой функции для параметра <tt>Wait</tt> всегда должно быть
         установлено значение <tt>ewWaitUntilTerminated</tt>.</p>
-      <p>Класс <code>TExecOutput</code> объявлен как:</p>
+      <p>Класс <tt>TExecOutput</tt> объявлен как:</p>
       <pre class="indent">TExecOutput = <span class="hl kwb">record</span>
   StdOut: TArrayOfString;
   StdErr: TArrayOfString;
@@ -86,5 +87,6 @@ class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode, Output);
         <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

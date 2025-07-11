@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: ExtractFileDir</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,11 +19,17 @@
     <h1 class="topicheading">Программирование: ExtractFileDir</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
-          ExtractFileDir(const FileName: String): String;</tt></p>
+      <p class="prototip1 notopmarginX">function
+          ExtractFileDir(const FileName: String): String;</p>
       <h2 class="heading">Описание</h2>
-      <p>Извлекает путь для указанного имени файла. Если параметр <tt>FileName</tt>
-        не содержит букву диска и каталог, то функция вернёт пустую строку.</p>
+      <p>Извлекает диск и каталог для указанного имени файла, исключая завершающий
+        символ обратной косой черты (кроме корневого каталога). Если параметр
+        <tt>FileName</tt> не содержит букву диска и каталог, то функция вернёт
+        пустую строку.</p>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_extractfilepath.htm">ExtractFilePath</a>
+      </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

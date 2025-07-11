@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: RegQueryBinaryValue</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,9 +19,9 @@
     <h1 class="topicheading">Программирование: RegQueryBinaryValue</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
+      <p class="prototip1 notopmarginX">function
           RegQueryBinaryValue(const RootKey: Integer; const SubKeyName,
-          ValueName: String; var ResultStr: AnsiString): Boolean;</tt></p>
+          ValueName: String; var ResultStr: AnsiString): Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Запрашивает в указанном разделе реестра значение с типом REG_BINARY и
         возвращает данные в параметре <tt>ResultStr</tt>. В случае успеха
@@ -42,5 +43,6 @@ class="hl sng">'"'</span>, <span class="hl kwe">mbInformation</span>, <span clas
 <span class="hl kwb">end</span>;
 </pre>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: LoadDLL</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,8 +19,8 @@
     <h1 class="topicheading">Программирование: LoadDLL</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function LoadDLL(const
-          DLLName: String; var ErrorCode: Integer): Longint;</tt></p>
+      <p class="prototip1 notopmarginX">function LoadDLL(const
+          DLLName: String; var ErrorCode: Integer): Longint;</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет загрузку указанного файла DLL, указанного в параметре <tt>DLLName</tt>.
         Если файл был успешно загружен, то возвращает дескриптор DLL, в
@@ -28,10 +29,11 @@
         вызов <tt>SysErrorMessage(ErrorCode)</tt>.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Эта функция устарела. Смотрите раздел <a href="topic_scriptdll.htm">Использование
-          DLL</a>.</p>
+        DLL</a>.</p>
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
-          target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+        target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
+        системных ошибок в библиотеке MSDN</a><img src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

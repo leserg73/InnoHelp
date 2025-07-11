@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: SetSetupSetting</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,8 +19,8 @@
     <h1 class="topicheading">Препроцессор Inno Setup: SetSetupSetting</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>void</b> SetSetupSetting(<b>str</b>
-          1, <b>str</b> 2)</tt></p>
+      <p class="prototip1 notopmarginX null"><b>void</b> SetSetupSetting(<b>str</b>
+          1, <b>str</b> 2)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет создание или изменение в секции <tt>[Setup]</tt>
         директивы с заданным ключом (<i>первый параметр</i>) и его значением (<i>второй
@@ -32,7 +33,8 @@
       <p>Пожалуйста, при использовании функции <tt>SetSetupSetting</tt> будьте
         предельно осторожны. Не допускается её применение, когда директивы
         передаются <b>ISPP</b> <i>встроенным методом</i> (т.е. после
-        использования директивы <tt class="nill"><a href="topic_insert.htm">#insert</a></tt>).
+        использования директивы <code><a href="topic_insert.htm">#insert</a></code>).
         </p> </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

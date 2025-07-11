@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: #insert</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -46,12 +47,12 @@
           препроцессора</a>. Таким образом, каждая новая строка будет добавлена
         после строк, вставленных предыдущей командой.</p>
       <p>Не рекомендуется использовать директиву совместно с функциями
-        компоновки сценариев (например, <tt class="nill"><a href="topic_setsetupsetting.htm">SetSetupSetting</a></tt>),
+        компоновки сценариев (например, <code><a href="topic_setsetupsetting.htm">SetSetupSetting</a></code>),
         которые самостоятельно позволяют вставить строку. Они смещают часть
         кода, но не обновляют значение счетчика вставки. Это может привести к
         другой точке возврата в коде сценария, нарушив его алгоритм.</p>
       <p>Чтобы получить необходимое значение (выражение) для директивы <tt>insert</tt>,
-        можно использовать функцию <tt class="nill"><a href="topic_find.htm">Find</a></tt>.</p>
+        можно использовать функцию <code><a href="topic_find.htm">Find</a></code>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Вставка строки, идущей после секции [Icons].</span>
@@ -71,8 +72,9 @@ class="hl opt">,</span> <span class="hl kwe">FIND_CONTAINS</span><span class="hl
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><tt class="nill"><a href="topic_append.htm">append</a></tt>
+      <p class="indent"><code><a href="topic_append.htm">append</a></code>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

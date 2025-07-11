@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ISSigVerify</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ISSigVerify</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function ISSigVerify(const
+        AllowedKeysRuntimeIDs: TStringList; const Filename: String; const
+        VerifyFilename: Boolean; const KeepOpen: Boolean): TFileStream;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет проверку подписи указанного файла с использованием разрешённых
+        ключей, поиск которых осуществляется по параметру <tt>RuntimeID</tt> из
+        секции <a href="topic_issigkeyssection.htm">[ISSigKeys]</a>. Чтобы
+        разрешить использование любых ключей, установите для <tt>AllowedKeysRuntimeIDs</tt>
+        значение <tt>nil</tt>. В случае ошибки будет вызвано исключение.</p>
+      <p>Если для параметра <tt>VerifyFilename</tt> указано значение <tt>False</tt>,
+        при проверке подписи имя файла не учитывается. Рекомендуется устанавливать
+        значение <tt>False</tt> только в том случае, если вы не знаете имя файла,
+        которое использовалось при создании подписи. При этом размер файла и хеш
+        всегда должны совпадать.</p>
+      <p>Возвращает дескриптор для все ещё открытого файла, если в параметре
+        <tt>KeepOpen</tt> задано значение <tt>True</tt>, в противном случае
+        возвращает значение <tt>nil</tt>. Рекомендуется для этого параметра всегда
+        указывать значение <tt>True</tt>, если планируется использовать файл для
+        чего-либо ещё после выполнения проверки. В противном случае вы рискуете
+        создать уязвимость <a 
+        href="https://www.securityvision.ru/education/cyberwiki/t/time-of-check-to-time-of-use-toctou/">Time-Of-Check
+        to Time-Of-Use (TOCTOU)</a><img src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  F: TFileStream;
+<span class="hl kwb">begin</span>
+  F := <span class="hl kwg">ISSigVerify</span>([], <span class="hl kwb">Filename</span>, <span class="hl kwg">True</span>);
+  <span class="hl kwb">try</span>
+    <span class="hl slc">// Операции с файлом</span>
+  <span class="hl kwb">finally</span>
+    F.Free;
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_issig.htm">Подписи .issig: Введение</a><br />
+        <a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a>
+      </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

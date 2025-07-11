@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Components]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -58,7 +59,7 @@ class="hl kwb">Types</span>: <span class="hl kwe">full</span></pre>
             компонентом; если родительский компонент не содержит флаг <tt>checkablealone</tt>.
           </p>
           <p>Если компоненты одного уровня содержат флаг <tt>exclusive</tt>, то
-            выбран может быть только один из них. </p>
+            выбран может быть только один из них.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Name</span>: "help"</pre>
@@ -80,7 +81,7 @@ class="hl kwb">Types</span>: <span class="hl kwe">full</span></pre>
             типов, компонент будет установлен.</p>
           <p>Если флаг <tt>fixed</tt> (см. ниже) не используется, то любые
             выборочные типы (с флагом <tt>iscustom</tt>) в этом списке
-            игнорируются программой установки. </p>
+            игнорируются программой установки.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Types</span>: <span class="hl kwe">full compact</span></pre>
@@ -88,13 +89,15 @@ class="hl kwb">Types</span>: <span class="hl kwe">full</span></pre>
         </dd>
         <dt class="paramlist"><b><a name="ExtraDiskSpaceRequired">ExtraDiskSpaceRequired</a></b></dt>
         <dd class="paramlist">
-          <p>Дополнительное место на диске, необходимое этому компоненту.
-            Параметр аналогичен директиве <a href="topic_setup_extradiskspacerequired.htm">ExtraDiskSpaceRequired</a>
-            в секции <tt>[Setup]</tt>. </p>
+          <p>Дополнительное место на диске, необходимое для установки этого
+            компонента. Параметр аналогичен директиве <a
+            href="topic_setup_extradiskspacerequired.htm">ExtraDiskSpaceRequired</a>
+            в секции <tt>[Setup]</tt>.</p>
+          <p>Поддерживает разделители цифр и задаётся в байтах (1048576 байт = 1 Мб).</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">ExtraDiskSpaceRequired</span>: <span
-class="hl num">0</span></pre>
+class="hl num">1_048_576</span></pre>
           </div>
         </dd>
         <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
@@ -109,7 +112,7 @@ class="hl num">0</span></pre>
                 дочерних компонентов не выбран. По умолчанию, если ни один
                 параметр секции <tt>[Components]</tt> не имеет прямой ссылки на
                 компонент, тогда отмена выбора у всех дочерних компонентов
-                приведёт к отмене выбора родительского компонента. </p>
+                приведёт к отмене выбора родительского компонента.</p>
             </dd>
             <dt class="flaglist"><a name="dontinheritcheck">dontinheritcheck</a></dt>
             <dd>
@@ -122,7 +125,7 @@ class="hl num">0</span></pre>
             <dd>
               <p>Указывает программе установки, что данный компонент является
                 взаимоисключающим среди компонентов одного уровня, также имеющих
-                флаг <tt>exclusive</tt>. </p>
+                флаг <tt>exclusive</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="fixed">fixed</a></dt>
             <dd>
@@ -137,7 +140,7 @@ class="hl num">0</span></pre>
                 необходимости (например, из-за записей с флагом <tt>restartreplace</tt>
                 в секции <tt>[Files]</tt>). Действует также, как и директива <a
                   href="topic_setup_alwaysrestart.htm">AlwaysRestart</a>, но
-                только для компонента. </p>
+                только для компонента.</p>
             </dd>
             <dt class="flaglist"><a name="disablenouninstallwarning">disablenouninstallwarning</a></dt>
             <dd>
@@ -158,5 +161,6 @@ class="hl num">0</span></pre>
       </dl>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

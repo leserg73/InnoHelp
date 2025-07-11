@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Languages]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -26,15 +27,16 @@
           (обычно в секции <tt>[LangOptions]</tt> языкового файла .isl),
           который совпадает с идентификаторами основного и дополнительного языка
           пользовательского интерфейса текущего пользователя или локали (зависит
-          от значения в директиве <a href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).
-          </li>
+          от значения в директиве <a
+          href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).</li>
         <li>Если совпадений не найдено, выполняется поиск совпадений только с
           идентификатором основного языка. Если два и более доступных языков
           имеют один и тот же идентификатор основного языка, то выбирается язык,
           который в секции <tt>[Languages]</tt> указан первым.<br />
           Исключение: для языка Simplified Chinese этот этап пропускается, если
           текущим языком пользовательского интерфейса или локали является язык
-          Traditional Chinese и наоборот (зависит от значения в параметре <a href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).</li>
+          Traditional Chinese и наоборот (зависит от значения в параметре <a
+          href="topic_setup_languagedetectionmethod.htm">LanguageDetectionMethod</a>).</li>
         <li>Если ничего не найдено, по умолчанию принимается язык, который в
           секции <tt>[Languages]</tt> указан первым.</li>
       </ol>
@@ -42,8 +44,8 @@
         в секции <tt>[Setup]</tt> имеет значение <tt>yes</tt> (используется по
         умолчанию), будет показан диалог "<i>Выбор языка</i>", в котором
         пользователь сможет переопределить язык программы установки. Для
-        получения дополнительной информации обратитесь к разделу справки "<a href="topic_langoptionssection.htm">Секция
-          [LangOptions]</a>".</p>
+        получения дополнительной информации обратитесь к разделу справки "<a
+        href="topic_langoptionssection.htm">Секция [LangOptions]</a>".</p>
       <p>Ниже приведен пример секции <tt>[Languages]</tt>, в
         котором указываются два языка: Английский (English), базирующийся на
         файле Default.isl, и Нидерландский (Dutch), базирующийся на переводе
@@ -73,7 +75,7 @@ class="hl kwc">compiler</span>:Languages\Dutch.isl"</pre>
               href="topic_sourcedirectorynotes.htm">исходном каталоге</a>
             сценария, в противном случае к этим файлам следует указать полный
             путь или путь с приставкой "<tt>compiler:</tt>", тогда компилятор
-            будет искать их в собственном каталоге. </p>
+            будет искать их в собственном каталоге.</p>
           <p>Каждый файл сообщений должен содержать <a href="topic_langoptionssection.htm">секцию
               [LangOptions]</a>, <a href="topic_messagessection.htm">секцию
               [Messages]</a> и <a href="topic_custommessagessection.htm">секцию
@@ -83,7 +85,7 @@ class="hl kwc">compiler</span>:Languages\Dutch.isl"</pre>
             сообщения всех предыдущих файлов. Любые языковые параметры или
             сообщения в основном сценарии переопределяют параметры из файлов
             сообщений.</p>
-          <p>Если используется файл Unicode, он должен быть в кодировке UTF-8.</p>
+          <p>Файл рекомендуется использовать в кодировке UTF-8, без маркера BOM.</p>
           <div class="examplebox">
             <div class="exampleheader">Примеры:</div>
             <pre class="nomargin"><span class="hl kwb">MessagesFile</span>: "<span
@@ -100,7 +102,7 @@ class="hl kwc">compiler</span>:MyMessages.isl"</pre>
             находиться <a href="topic_sourcedirectorynotes.htm">исходном
               каталоге</a> сценария, в противном случае к этому файлу необходимо
             указать полный путь или путь с приставкой "<tt>compiler:</tt>",
-            тогда компилятор будет искать его в собственном каталоге. </p>
+            тогда компилятор будет искать его в собственном каталоге.</p>
           <p>Если используется Unicode файл .txt, он должен быть в кодировке UTF-8
             (с маркером BOM или без него) или UTF-16LE.</p>
           <div class="examplebox">
@@ -116,7 +118,7 @@ class="hl kwc">compiler</span>:MyMessages.isl"</pre>
             должен находиться <a href="topic_sourcedirectorynotes.htm">исходном
               каталоге</a> сценария, в противном случае к этому файлу необходимо
             указать полный путь или путь с приставкой "<tt>compiler:</tt>",
-            тогда компилятор будет искать его в собственном каталоге. </p>
+            тогда компилятор будет искать его в собственном каталоге.</p>
           <p>Если используется Unicode файл .txt, он должен быть в кодировке UTF-8
             (с маркером BOM или без него) или UTF-16LE.</p>
           <div class="examplebox">
@@ -132,10 +134,10 @@ class="hl kwc">compiler</span>:MyMessages.isl"</pre>
             находиться <a href="topic_sourcedirectorynotes.htm">исходном
               каталоге</a> сценария, в противном случае необходимо указать
             полный путь к файлу или путь с приставкой "<tt>compiler:</tt>",
-            тогда компилятор будет искать его в собственном каталоге. </p>
+            тогда компилятор будет искать его в собственном каталоге.</p>
           <p>Эта директива отличается от файлов с флагом <tt>isreadme</tt> тем,
             что текст документа отображается на странице мастера, а не в
-            Блокноте Windows. </p>
+            Блокноте Windows.</p>
           <p>Если используется Unicode файл .txt, он должен быть в кодировке UTF-8
             (с маркером BOM или без него) или UTF-16LE.</p>
           <div class="examplebox">
@@ -145,5 +147,6 @@ class="hl kwc">compiler</span>:MyMessages.isl"</pre>
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: GetPackedVersion</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,19 +19,20 @@
     <h1 class="topicheading">Препроцессор Inno Setup: GetPackedVersion</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>str</b> GetPackedVersion(<b>str</b>
-          Filename, <b>int</b> *Version)</tt></p>
+      <p class="prototip1 notopmarginX null"><b>str</b> GetPackedVersion(<b>str</b>
+          Filename, <b>int</b> *Version)</p>
       <h2 class="heading">Описание</h2>
       <p>Получение упакованной версии заданного файла. В случае успеха
         возвращает строковое значение версии (в формате "<tt>0.0.0.0</tt>"),
         иначе — пустую строку.</p>
-      <p>Всегда используйте <tt class="nill"><a href="topic_comparepackedversion.htm">ComparePackedVersion</a></tt>
-        или <tt class="nill"><a href="topic_samepackedversion.htm">SamePackedVersion</a></tt>
+      <p>Всегда используйте <code><a href="topic_comparepackedversion.htm">ComparePackedVersion</a></code>
+        или <code><a href="topic_samepackedversion.htm">SamePackedVersion</a></code>
         для сравнения упакованных версий.</p>
       <p>Функция объявлена в файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>.</p>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><a href="topic_packversioncomponents.htm">PackVersionComponents</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

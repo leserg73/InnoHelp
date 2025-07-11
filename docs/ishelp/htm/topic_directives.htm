@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: Директивы</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -42,7 +43,7 @@
         Таким образом, директиве IS <tt>AppName</tt>
         будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
       <p>Как видно из приведенного выше примера, не обязательно указывать имя
-        директивы <tt class="nill"><a href="topic_emit.htm">emit</a></tt>,
+        директивы <code><a href="topic_emit.htm">emit</a></code>,
         если она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
         является сокращенной записью <tt>{#emit MyAppName}</tt>.</p>
       <h2 class="heading">Синтаксис директив</h2>
@@ -50,30 +51,30 @@
       <table>
         <tbody>
           <tr>
-            <td class="cellleft"><tt class="nill">()</tt></td>
+            <td class="cellleft"><code>()</code></td>
             <td class="cellright">Группа объектов.</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill">[]</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code>[]</code></td>
             <td class="cellright">Вспомогательный объект или группа объектов.</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt class="nill">|</tt> </td>
+            <td class="cellleft"><code>|</code> </td>
             <td class="cellright">Взаимоисключающие объекты.</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill">...</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code>...</code></td>
             <td class="cellright">Предыдущий объект или группа объектов, которые
               могут быть повторены.</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt class="nill"><b>token</b></tt></td>
+            <td class="cellleft"><code><b>token</b></code></td>
             <td class="cellright">Зарезервированное слово или символ(ы).
               Является терминальным объектом и должен вводиться так, как
               представлен, без каких-либо изменений или модификаций.</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill">&lt;token&gt;</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code>&lt;token&gt;</code></td>
             <td class="cellright">Нетерминальный объект. Может представлять
               собой выражение, формулу, имя идентификатора, переменную.</td>
           </tr>
@@ -98,5 +99,6 @@
         <li><a href="topic_undef.htm">#undef</a></li>
       </ul>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

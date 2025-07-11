@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Секция [ISSigKeys]</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Секция [ISSigKeys]</h1>
+    <div class="topicbody">
+    <p>Эта секция является необязательной и определяет ключи, которые компилятор
+      и программа установки могут использовать для проверки файлов при включении
+      флага <tt>issigverify</tt> в секции <a href="topic_filessection.htm">[Files]</a>.</p>
+    <p>Ниже приведены два примера секции <tt>[ISSigKeys]</tt>:</p>
+    <pre class="indent examplebox">
+<span class="hl kwa">[ISSigKeys]</span>
+<span class="hl kwb">Name</span>: "MyKey1"; \
+  <span class="hl kwb">KeyID</span>:   "def0147c3bbc17ab99bf7b7a9c2de1390283f38972152418d7c2a4a7d7131a38"; \
+  <span class="hl kwb">KeyFile</span>: "MyKey1.ispublickey"
+<span class="hl kwb">Name</span>: "MyKey2"; \
+  <span class="hl kwb">KeyID</span>:   "def020edee3c4835fd54d85eff8b66d4d899b22a777353ca4a114b652e5e7a28"; \
+  <span class="hl kwb">PublicX</span>: "515dc7d6c16d4a46272ceb3d158c5630a96466ab4d948e72c2029d737c823097"; \
+  <span class="hl kwb">PublicY</span>: "f3c21f6b5156c52a35f6f28016ee3e31a3ded60c325b81fb7b1f88c221081a61"
+</pre>
+    <pre class="indent examplebox">
+<span class="hl kwa">[ISSigKeys]</span>
+<span class="hl kwb">Name</span>: anna: <span class="hl kwb">KeyFile</span>: "anna.ispublickey"; <span class="hl kwb">Group</span>: exesigner
+<span class="hl kwb">Name</span>: ryan; <span class="hl kwb">KeyFile</span>: "ryan.ispublickey"; <span class="hl kwb">Group</span>: exesigner
+<span class="hl kwb">Name</span>: ivan; <span class="hl kwb">KeyFile</span>: "ivan.ispublickey"; <span class="hl kwb">Group</span>: docsigner
+<span class="hl slc">; "max" является доверенным для подписания как exe, так и doc</span>
+<span class="hl kwb">Name</span>: max; <span class="hl kwb">KeyFile</span>: "max.ispublickey"; <span class="hl kwb">Group</span>: exesigner docsigner
+<span class="hl slc">; "boss" также имеет ключ</span>
+<span class="hl kwb">Name</span>: bosskey; <span class="hl kwb">KeyFile</span>: "boss.ispublickey"
+</pre>
+    <p>Обязательно ознакомьтесь с <i>Замечаниями</i> в конце этого раздела.</p>
+    <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
+    <dl>
+      <dt class="paramlist"><b><a name="Name">Name</a></b> <i>(обязательный)</i></dt>
+      <dd class="paramlist">
+        <p>Внутреннее имя ключа.</p>
+        <p>Имена ключей не записываются в файлах установочного пакета, что позволяет
+          использовать в них личную или не предназначенную для широкой публики
+          информацию, например, имена разработчиков.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">Name</span>: MyKey</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="Group">Group</a></b></dt>
+      <dd class="paramlist">
+        <p>Разделенный пробелами список имен внутренних групп, определяющий
+          способ группировки ключа.</p>
+        <p>Имена групп не записываются в файлах установочного пакета, что позволяет
+          использовать в них личную или не предназначенную для широкой публики
+          информацию, например, имена групп разработчиков.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">Group</span>: exesigner docsigner</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="KeyID">KeyID</a></b></dt>
+      <dd class="paramlist">
+        <p>Определяет идентификатор (ID) ключа и используется компилятором для
+          дополнительной проверки значений параметров <tt>KeyFile</tt>, <tt>PublicX</tt>
+          и <tt>PublicY</tt>. Больше ни для чего не используется.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">KeyID</span>: "def0147c3bbc17ab99bf7b7a9c2de1390283f38972152418d7c2a4a7d7131a38"</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="KeyFile">KeyFile</a></b></dt>
+      <dd class="paramlist">
+        <p>Определяет файл открытого или закрытого ключа. Если указан не полный
+         путь к файлу, компилятор автоматически добавит путь к <a
+         href="topic_sourcedirectorynotes.htm">исходному каталогу</a> вашей
+         установки.</p>
+        <p>Этот параметр обязателен, если не заданы параметры <tt>PublicX</tt> и
+          <tt>PublicY</tt>.</p>
+        <p>Если указан файл закрытого ключа, в файлах установочного пакета
+          сохраняется только открытая информации.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">KeyFile</span>: "MyKey.ispublickey"</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="PublicX">PublicX</a></b></dt>
+      <dd class="paramlist">
+        <p>Определяет "public-x" значение ключа.</p>
+        <p>Должен быть задан, если параметр <tt>KeyFile</tt> отсутствует.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">PublicX</span>: "e3e943066aff8f28d2219fd71c9ffff4c8d1aa26bc4225434be67180ab5e242d"</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="PublicY">PublicY</a></b></dt>
+      <dd class="paramlist">
+        <p>Определяет "public-y" значение ключа.</p>
+        <p>Должен быть задан, если параметр <tt>KeyFile</tt> отсутствует.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">PublicY</span>: "e419041c3f54551e86a1c47f387005cd535dfc9d64339b30d37f9a4f7866b650"</pre>
+        </div>
+      </dd>
+      <dt class="paramlist"><b><a name="RuntimeID">RuntimeID</a></b></dt>
+      <dd class="paramlist">
+        <p>Определяет идентификатор времени выполнения, используемый
+          <a href="topic_isxfunc_issigverify.htm">ISSigVerify</a>.</p>
+        <p>Эти идентификаторы сохраняются в установочных файлах, поэтому <i>не</i>
+          следует использовать в них личную или конфиденциальную информацию.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwb">RuntimeID</span>: def01</pre>
+        </div>
+      </dd>
+    </dl>
+    <h2 class="heading">Замечания</h2>
+    <p>Ключи и файлы ключей должны быть созданы с помощью <a
+      href="topic_issigtool.htm">Inno Setup Signature Tool</a>.</p>
+    <p>Созданные файлы ключей имеют читаемый формат и могут быть открыты в любом
+      текстовом редакторе для просмотра значений <tt>KeyID</tt>, <tt>PublicX</tt>
+      и <tt>PublicY</tt>. Обратите внимание, что эти значения не требуются, если
+      указан параметр <tt>KeyFile</tt>.</p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

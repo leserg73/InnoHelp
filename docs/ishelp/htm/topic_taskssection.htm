@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Секция [Tasks]</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -57,9 +58,9 @@ class="hl kwe">unchecked</span>
             родительская задача. Родительская задача не может быть выбрана: если
             не выбрана ни одна из её дочерних задач; если параметр секции <tt>[Tasks]</tt>
             не имеет прямой связи с родительской задачей; если родительская
-            задача не содержит флаг <tt>checkablealone</tt>. </p>
+            задача не содержит флаг <tt>checkablealone</tt>.</p>
           <p>Если задачи одного уровня содержат флаг <tt>exclusive</tt>, то
-            выбрана может быть только одна из них. </p>
+            выбрана может быть только одна из них.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Name</span>: "desktopicon"</pre>
@@ -107,15 +108,15 @@ class="hl kwe">unchecked</span>
                 дочерних задач не выбрана. По умолчанию, если ни один параметр
                 секции <tt>[Tasks]</tt> не имеет прямой ссылки на задачу, тогда
                 отмена выбора у всех дочерних задач приведёт к отмене выбора
-                родительской задачи. </p>
+                родительской задачи.</p>
             </dd>
             <dt class="flaglist"><a name="checkedonce">checkedonce</a></dt>
             <dd>
               <p>Указывает программе установки отменить изначальный выбор данной
                 задачи, если инсталлятор обнаружит, что предыдущая версия <a href="topic_sameappnotes.htm">того
-                  же приложения</a> уже установлена. </p>
+                  же приложения</a> уже установлена.</p>
               <p>Если директива <tt>UsePreviousTasks</tt> в секции <tt>[Setup]</tt>
-                имеет значение <tt>no</tt>, то этот флаг не учитывается. </p>
+                имеет значение <tt>no</tt>, то этот флаг не учитывается.</p>
             </dd>
             <dt class="flaglist"><a name="dontinheritcheck">dontinheritcheck</a></dt>
             <dd>
@@ -128,7 +129,7 @@ class="hl kwe">unchecked</span>
             <dd>
               <p>Указывает программе установки, что данная задача является
                 взаимоисключающей среди задач одного уровня, также имеющих флаг
-                <tt>exclusive</tt>. </p>
+                <tt>exclusive</tt>.</p>
             </dd>
             <dt class="flaglist"><a name="restart">restart</a></dt>
             <dd>
@@ -137,7 +138,7 @@ class="hl kwe">unchecked</span>
                 систему, даже если в этом нет необходимости (например, из-за
                 записей с флагом <tt>restartreplace</tt> в секции <tt>[Files]</tt>).
                 Действует также, как и директива <a href="topic_setup_alwaysrestart.htm">AlwaysRestart</a>,
-                но только для задачи. </p>
+                но только для задачи.</p>
             </dd>
             <dt class="flaglist"><a name="unchecked">unchecked</a></dt>
             <dd>
@@ -153,5 +154,6 @@ class="hl kwe">unchecked</span>
       </dl>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

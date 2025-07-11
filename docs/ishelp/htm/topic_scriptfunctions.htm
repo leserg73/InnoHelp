@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,11 +7,12 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: Поддерживаемые функции</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){highlight();});
+      $(document).ready(&nbsp;&nbsp;function(){highlight();});
     </script>
   </head>
   <body>
@@ -28,777 +29,473 @@
       <p class="null"><br />
         <b>Функции обработки программы установки или удаления</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getcmdtail.htm">GetCmdTail</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_paramcount.htm">ParamCount</a>:
-          Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_paramstr.htm">ParamStr</a>(Index:
-          Integer): String;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getcmdtail.htm">GetCmdTail</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_paramcount.htm">ParamCount</a>: Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_paramstr.htm">ParamStr</a>(Index: Integer): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_activelanguage.htm">ActiveLanguage</a>:
-          String; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_activelanguage.htm">ActiveLanguage</a>: String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_custommessage.htm">CustomMessage</a>(const
-          MsgName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_fmtmessage.htm">FmtMessage</a>(const
-          S: String; const Args: array of String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setupmessage.htm">SetupMessage</a>(const
-          ID: TSetupMessageID): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_custommessage.htm">CustomMessage</a>(const MsgName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_fmtmessage.htm">FmtMessage</a>(const S: String; const Args: array of String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setupmessage.htm">SetupMessage</a>(const ID: TSetupMessageID): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_wizarddirvalue.htm">WizardDirValue</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardgroupvalue.htm">WizardGroupValue</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardnoicons.htm">WizardNoIcons</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardsetuptype.htm">WizardSetupType</a>(const
-          Description: Boolean): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a>(const
-          Descriptions: Boolean): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a>(const
-          Components: String): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_wizardselectcomponents.htm">WizardSelectComponents</a>(const
-          Components: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardselectedtasks.htm">WizardSelectedTasks</a>(const
-          Descriptions: Boolean): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardistaskselected.htm">WizardIsTaskSelected</a>(const
-          Tasks: String): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_wizardselecttasks.htm">WizardSelectTasks</a>(const
-          Tasks: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wizardsilent.htm">WizardSilent</a>:
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizarddirvalue.htm">WizardDirValue</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardgroupvalue.htm">WizardGroupValue</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardnoicons.htm">WizardNoIcons</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardsetuptype.htm">WizardSetupType</a>(const Description: Boolean): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a>(const Descriptions: Boolean): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a>(const Components: String): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselectcomponents.htm">WizardSelectComponents</a>(const Components: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardselectedtasks.htm">WizardSelectedTasks</a>(const Descriptions: Boolean): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardistaskselected.htm">WizardIsTaskSelected</a>(const Tasks: String): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselecttasks.htm">WizardSelectTasks</a>(const Tasks: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wizardsilent.htm">WizardSilent</a>: Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_isuninstaller.htm">IsUninstaller</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_uninstallsilent.htm">UninstallSilent</a>:
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isuninstaller.htm">IsUninstaller</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_uninstallsilent.htm">UninstallSilent</a>: Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_currentfilename.htm">CurrentFilename</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_currentsourcefilename.htm">CurrentSourceFilename</a>:
-          String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_currentfilename.htm">CurrentFilename</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_currentsourcefilename.htm">CurrentSourceFilename</a>: String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_expandconstantex.htm">ExpandConstantEx</a>(const
-          S: String; const CustomConst, CustomValue: String): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_expandconstantex.htm">ExpandConstantEx</a>(const S: String; const CustomConst, CustomValue: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getpreviousdata.htm">GetPreviousData</a>(const
-          ValueName, DefaultValueData: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setpreviousdata.htm">SetPreviousData</a>(const
-          PreviousDataKey: Integer; const ValueName, ValueData: String):
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getpreviousdata.htm">GetPreviousData</a>(const ValueName, DefaultValueData: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setpreviousdata.htm">SetPreviousData</a>(const PreviousDataKey: Integer; const ValueName, ValueData: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_terminated.htm">Terminated</a>:
-          Boolean; </tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_debugging.htm">Debugging</a>:
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_terminated.htm">Terminated</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_debugging.htm">Debugging</a>: Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_registerextracloseapplicationsresource.htm">RegisterExtraCloseApplicationsResource</a>(const
-          DisableFsRedir: Boolean; const AFilename: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_rmsessionstarted.htm">RmSessionStarted</a>:
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_registerextracloseapplicationsresource.htm">RegisterExtraCloseApplicationsResource</a>(const DisableFsRedir: Boolean; const AFilename: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_rmsessionstarted.htm">RmSessionStarted</a>: Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getwizardform.htm">GetWizardForm</a>:
-          TWizardForm;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getuninstallprogressform.htm">GetUninstallProgressForm</a>:
-          TUninstallProgressForm;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getwizardform.htm">GetWizardForm</a>: TWizardForm;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getuninstallprogressform.htm">GetUninstallProgressForm</a>: TUninstallProgressForm;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки исключений</b><br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_abort.htm">Abort</a>;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_raiseexception.htm">RaiseException</a>(const
-          Msg: String);</tt><br />
+        <code>
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_abort.htm">Abort</a>;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_raiseexception.htm">RaiseException</a>(const Msg: String);<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getexceptionmessage.htm">GetExceptionMessage</a>:
-          String;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_showexceptionmessage.htm">ShowExceptionMessage</a>;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getexceptionmessage.htm">GetExceptionMessage</a>: String;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_showexceptionmessage.htm">ShowExceptionMessage</a>;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Системные функции</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_isadmin.htm">IsAdmin</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isadmininstallmode.htm">IsAdminInstallMode</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>:
-          Cardinal;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>(var
-          Version: TWindowsVersion);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getwindowsversionstring.htm">GetWindowsVersionString</a>:
-          String;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isadmin.htm">IsAdmin</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isadmininstallmode.htm">IsAdminInstallMode</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>: Cardinal;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>(var Version: TWindowsVersion);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getwindowsversionstring.htm">GetWindowsVersionString</a>: String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_iswin64.htm">IsWin64</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>:
-          TSetupProcessorArchitecture;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isarm32compatible.htm">IsArm32Compatible</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isarm64.htm">IsArm64</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isx64compatible.htm">IsX64Compatible</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isx64os.htm">IsX64OS</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isx86compatible.htm">IsX86Compatible</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isx86os.htm">IsX86OS</a>:
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_iswin64.htm">IsWin64</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>: TSetupProcessorArchitecture;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isarm32compatible.htm">IsArm32Compatible</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isarm64.htm">IsArm64</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isx64compatible.htm">IsX64Compatible</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isx64os.htm">IsX64OS</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isx86compatible.htm">IsX86Compatible</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isx86os.htm">IsX86OS</a>: Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_installonthisversion.htm">InstallOnThisVersion</a>(const
-          MinVersion, OnlyBelowVersion: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isdotnetinstalled.htm">IsDotNetInstalled</a>(const
-          MinVersion: TDotNetVersion; const MinServicePack: Cardinal): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_ismsiproductinstalled.htm">IsMsiProductInstalled</a>(const
-          UpgradeCode: String; const PackedMinVersion: Int64): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_installonthisversion.htm">InstallOnThisVersion</a>(const MinVersion, OnlyBelowVersion: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isdotnetinstalled.htm">IsDotNetInstalled</a>(const MinVersion: TDotNetVersion; const MinServicePack: Cardinal): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ismsiproductinstalled.htm">IsMsiProductInstalled</a>(const UpgradeCode: String; const PackedMinVersion: Int64): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getenv.htm">GetEnv</a>(const
-          EnvVar: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getusernamestring.htm">GetUserNameString</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getcomputernamestring.htm">GetComputerNameString</a>:
-          String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getenv.htm">GetEnv</a>(const EnvVar: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getusernamestring.htm">GetUserNameString</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getcomputernamestring.htm">GetComputerNameString</a>: String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getuilanguage.htm">GetUILanguage</a>:
-          Integer; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getuilanguage.htm">GetUILanguage</a>: Integer;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_fontexists.htm">FontExists</a>(const
-          FaceName: String): Boolean; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_fontexists.htm">FontExists</a>(const FaceName: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_findwindowbyclassname.htm">FindWindowByClassName</a>(const
-          ClassName: String): HWND;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_findwindowbywindowname.htm">FindWindowByWindowName</a>(const
-          WindowName: String): HWND;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_sendmessage.htm">SendMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_postmessage.htm">PostMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_sendnotifymessage.htm">SendNotifyMessage</a>(const
-          Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_registerwindowmessage.htm">RegisterWindowMessage</a>(const
-          Name: String): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_sendbroadcastmessage.htm">SendBroadcastMessage</a>(const
-          Msg, WParam, LParam: Longint): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_postbroadcastmessage.htm">PostBroadcastMessage</a>(const
-          Msg, WParam, LParam: Longint): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_sendbroadcastnotifymessage.htm">SendBroadcastNotifyMessage</a>(const
-          Msg, WParam, LParam: Longint): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_findwindowbyclassname.htm">FindWindowByClassName</a>(const ClassName: String): HWND;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_findwindowbywindowname.htm">FindWindowByWindowName</a>(const WindowName: String): HWND;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sendmessage.htm">SendMessage</a>(const Wnd: HWND; const Msg, WParam, LParam: Longint): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_postmessage.htm">PostMessage</a>(const Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sendnotifymessage.htm">SendNotifyMessage</a>(const Wnd: HWND; const Msg, WParam, LParam: Longint): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_registerwindowmessage.htm">RegisterWindowMessage</a>(const Name: String): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sendbroadcastmessage.htm">SendBroadcastMessage</a>(const Msg, WParam, LParam: Longint): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_postbroadcastmessage.htm">PostBroadcastMessage</a>(const Msg, WParam, LParam: Longint): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sendbroadcastnotifymessage.htm">SendBroadcastNotifyMessage</a>(const Msg, WParam, LParam: Longint): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_createmutex.htm">CreateMutex</a>(const
-          Name: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_checkformutexes.htm">CheckForMutexes</a>(Mutexes:
-          String): Boolean;</tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_createmutex.htm">CreateMutex</a>(const Name: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_checkformutexes.htm">CheckForMutexes</a>(Mutexes: String): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_makependingfilerenameoperationschecksum.htm">MakePendingFileRenameOperationsChecksum</a>:
-          String; </tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_makependingfilerenameoperationschecksum.htm">MakePendingFileRenameOperationsChecksum</a>: String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createcallback.htm">CreateCallback</a>(Method:
-          AnyMethod): Longword;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_unloaddll.htm">UnloadDLL</a>(Filename:
-          String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_dllgetlasterror.htm">DLLGetLastError</a>():
-          Longint;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createcallback.htm">CreateCallback</a>(Method: AnyMethod): Longword;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_unloaddll.htm">UnloadDLL</a>(Filename: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_dllgetlasterror.htm">DLLGetLastError</a>(): Longint;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки строк</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_chr.htm">Chr</a>(B:
-          Byte): Char;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_ord.htm">Ord</a>(C:
-          Char): Byte;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_copy.htm">Copy</a>(S:
-          AnyString; Index, Count: Integer): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_length.htm">Length</a>(S:
-          AnyString): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_lowercase.htm">Lowercase</a>(S:
-          AnyString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_uppercase.htm">Uppercase</a>(S:
-          AnyString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_ansilowercase.htm">AnsiLowercase</a>(S:
-          AnyString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_ansiuppercase.htm">AnsiUppercase</a>(S:
-          AnyString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringofchar.htm">StringOfChar</a>(C:
-          Char; I : Longint): String;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_delete.htm">Delete</a>(var
-          S: AnyString; Index, Count: Integer);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_insert.htm">Insert</a>(Source:
-          AnyString; var Dest: AnyString; Index: Integer);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringchange.htm">StringChange</a>(var
-          S: String; const FromStr, ToStr: String): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringchangeex.htm">StringChangeEx</a>(var
-          S: String; const FromStr, ToStr: String; const SupportDBCS: Boolean):
-          Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_pos.htm">Pos</a>(SubStr,
-          S: AnyString): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_addquotes.htm">AddQuotes</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_removequotes.htm">RemoveQuotes</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_convertpercentstr.htm">ConvertPercentStr</a>(var
-          S: String): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_chr.htm">Chr</a>(B: Byte): Char;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ord.htm">Ord</a>(C: Char): Byte;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_copy.htm">Copy</a>(S: AnyString; Index, Count: Integer): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_length.htm">Length</a>(S: AnyString): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_lowercase.htm">Lowercase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_uppercase.htm">Uppercase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ansilowercase.htm">AnsiLowercase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ansiuppercase.htm">AnsiUppercase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringofchar.htm">StringOfChar</a>(C: Char; I : Longint): String;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_delete.htm">Delete</a>(var S: AnyString; Index, Count: Integer);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_insert.htm">Insert</a>(Source: AnyString; var Dest: AnyString; Index: Integer);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringchange.htm">StringChange</a>(var S: String; const FromStr, ToStr: String): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringchangeex.htm">StringChangeEx</a>(var S: String; const FromStr, ToStr: String; const SupportDBCS: Boolean): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pos.htm">Pos</a>(SubStr, S: AnyString): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_addquotes.htm">AddQuotes</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_removequotes.htm">RemoveQuotes</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_convertpercentstr.htm">ConvertPercentStr</a>(var S: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_comparetext.htm">CompareText</a>(const
-          S1, S2: String): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_comparestr.htm">CompareStr</a>(const
-          S1, S2: String): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_sametext.htm">SameText</a>(const
-          S1, S2: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_samestr.htm">SameStr</a>(const
-          S1, S2: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_iswildcard.htm">IsWildcard</a>(const
-          Pattern: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_wildcardmatch.htm">WildcardMatch</a>(const
-          Text, Pattern: String): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_comparetext.htm">CompareText</a>(const S1, S2: String): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_comparestr.htm">CompareStr</a>(const S1, S2: String): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sametext.htm">SameText</a>(const S1, S2: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_samestr.htm">SameStr</a>(const S1, S2: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_iswildcard.htm">IsWildcard</a>(const Pattern: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_wildcardmatch.htm">WildcardMatch</a>(const Text, Pattern: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_format.htm">Format</a>(const
-          Format: String; const Args: array of const): String; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_format.htm">Format</a>(const Format: String; const Args: array of const): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_trim.htm">Trim</a>(const
-          S: AnyString): AnyString;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_trimleft.htm">TrimLeft</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_trimright.htm">TrimRight</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringjoin.htm">StringJoin</a>(const
-          Separator: String; const Values: TArrayOfString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringsplit.htm">StringSplit</a>(const
-          S: String; const Separators: TArrayOfString; const Typ: TSplitType): TArrayOfString;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringsplitex.htm">StringSplitEx</a>(const
-          S: String; const Separators: TArrayOfString; const Quote: Char; const Typ: TSplitType): TArrayOfString;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_trim.htm">Trim</a>(const S: AnyString): AnyString;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_trimleft.htm">TrimLeft</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_trimright.htm">TrimRight</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringjoin.htm">StringJoin</a>(const Separator: String; const Values: TArrayOfString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringsplit.htm">StringSplit</a>(const S: String; const Separators: TArrayOfString; const Typ: TSplitType): TArrayOfString;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringsplitex.htm">StringSplitEx</a>(const S: String; const Separators: TArrayOfString; const Quote: Char; const Typ: TSplitType): TArrayOfString;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_strtointdef.htm">StrToIntDef</a>(S:
-          String; Def: Longint): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint.htm">StrToInt</a>(S:
-          String): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a>(S:
-          String; Def: Int64): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoint64.htm">StrToInt64</a>(S:
-          String): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtofloat.htm">StrToFloat</a>(S:
-          String): Extended;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_inttostr.htm">IntToStr</a>(I:
-          Int64): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_floattostr.htm">FloatToStr</a>(E:
-          Extended): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtointdef.htm">StrToIntDef</a>(S: String; Def: Longint): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtoint.htm">StrToInt</a>(S: String): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a>(S: String; Def: Int64): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtoint64.htm">StrToInt64</a>(S: String): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtofloat.htm">StrToFloat</a>(S: String): Extended;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_inttostr.htm">IntToStr</a>(I: Int64): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_floattostr.htm">FloatToStr</a>(E: Extended): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_charlength.htm">CharLength</a>(const
-          S: String; const Index: Integer): Integer; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_charlength.htm">CharLength</a>(const S: String; const Index: Integer): Integer;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_addbackslash.htm">AddBackslash</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_removebackslashunlessroot.htm">RemoveBackslashUnlessRoot</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_removebackslash.htm">RemoveBackslash</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_changefileext.htm">ChangeFileExt</a>(const
-          FileName, Extension: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractfileext.htm">ExtractFileExt</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractfiledir.htm">ExtractFileDir</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractfilepath.htm">ExtractFilePath</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractfilename.htm">ExtractFileName</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractfiledrive.htm">ExtractFileDrive</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extractrelativepath.htm">ExtractRelativePath</a>(const
-          BaseName, DestName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_expandfilename.htm">ExpandFileName</a>(const
-          FileName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_expanduncfilename.htm">ExpandUNCFileName</a>(const
-          FileName: String): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_addbackslash.htm">AddBackslash</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_removebackslashunlessroot.htm">RemoveBackslashUnlessRoot</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_removebackslash.htm">RemoveBackslash</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_changefileext.htm">ChangeFileExt</a>(const FileName, Extension: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractfileext.htm">ExtractFileExt</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractfiledir.htm">ExtractFileDir</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractfilepath.htm">ExtractFilePath</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractfilename.htm">ExtractFileName</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractfiledrive.htm">ExtractFileDrive</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extractrelativepath.htm">ExtractRelativePath</a>(const BaseName, DestName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_expandfilename.htm">ExpandFileName</a>(const FileName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_expanduncfilename.htm">ExpandUNCFileName</a>(const FileName: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getdatetimestring.htm">GetDateTimeString</a>(const
-          DateTimeFormat: String; const DateSeparator, TimeSeparator: Char):
-          String; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getdatetimestring.htm">GetDateTimeString</a>(const DateTimeFormat: String; const DateSeparator, TimeSeparator: Char): String;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_setlength.htm">SetLength</a>(var
-          S: AnyString; L: Longint);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_chartooembuff.htm">CharToOemBuff</a>(var
-          S: AnsiString);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_oemtocharbuff.htm">OemToCharBuff</a>(var
-          S: AnsiString);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_utf8encode.htm">Utf8Encode</a>(const
-          S: String): AnsiString;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_utf8decode.htm">Utf8Decode</a>(const
-          S: AnsiString): String;</tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_setlength.htm">SetLength</a>(var S: AnyString; L: Longint);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_chartooembuff.htm">CharToOemBuff</a>(var S: AnsiString);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_oemtocharbuff.htm">OemToCharBuff</a>(var S: AnsiString);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_utf8encode.htm">Utf8Encode</a>(const S: String): AnsiString;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_utf8decode.htm">Utf8Decode</a>(const S: AnsiString): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getmd5ofstring.htm">GetMD5OfString</a>(const
-          S: AnsiString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getmd5ofunicodestring.htm">GetMD5OfUnicodeString</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha1ofstring.htm">GetSHA1OfString</a>(const
-          S: AnsiString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha1ofunicodestring.htm">GetSHA1OfUnicodeString</a>(const
-          S: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha256ofstring.htm">GetSHA256OfString</a>(const
-          S: AnsiString): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha256ofunicodestring.htm">GetSHA256OfUnicodeString</a>(const
-          S: String): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getmd5ofstring.htm">GetMD5OfString</a>(const S: AnsiString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getmd5ofunicodestring.htm">GetMD5OfUnicodeString</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha1ofstring.htm">GetSHA1OfString</a>(const S: AnsiString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha1ofunicodestring.htm">GetSHA1OfUnicodeString</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha256ofstring.htm">GetSHA256OfString</a>(const S: AnsiString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha256ofunicodestring.htm">GetSHA256OfUnicodeString</a>(const S: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_syserrormessage.htm">SysErrorMessage</a>(ErrorCode:
-          Integer): String; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_syserrormessage.htm">SysErrorMessage</a>(ErrorCode: Integer): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const
-          Filename: String; const Font: TFont; MaxLen: Integer): String; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const Filename: String; const Font: TFont; MaxLen: Integer): String;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки массивов</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getarraylength.htm">GetArrayLength</a>(var
-          Arr: Array): Longint;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_setarraylength.htm">SetArrayLength</a>(var
-          Arr: Array; I: Longint);</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getarraylength.htm">GetArrayLength</a>(var Arr: Array): Longint;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_setarraylength.htm">SetArrayLength</a>(var Arr: Array; I: Longint);<br />
+        </code>
+      </p>
+      <p class="null"><br />
+        <b>Функции обработки потоков</b><br />
+        <br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha256ofstream.htm">GetSHA256OfStream</a>(const Stream: TStream): String;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки типа Variant</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_null.htm">Null</a>:
-          Variant;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_unassigned.htm">Unassigned</a>:
-          Variant;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_null.htm">Null</a>: Variant;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_unassigned.htm">Unassigned</a>: Variant;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_varisempty.htm">VarIsEmpty</a>(const
-          V: Variant): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_varisclear.htm">VarIsClear</a>(const
-          V: Variant): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_varisnull.htm">VarIsNull</a>(const
-          V: Variant): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_vartype.htm">VarType</a>(const
-          V: Variant): TVarType;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_vararrayget.htm">VarArrayGet</a>(var
-          S: Variant; I: Integer): Variant;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_vararrayset.htm">VarArraySet</a>(C:
-          Variant; I: Integer; var S: Variant);</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_varisempty.htm">VarIsEmpty</a>(const V: Variant): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_varisclear.htm">VarIsClear</a>(const V: Variant): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_varisnull.htm">VarIsNull</a>(const V: Variant): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_vartype.htm">VarType</a>(const V: Variant): TVarType;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_vararrayget.htm">VarArrayGet</a>(var S: Variant; I: Integer): Variant;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_vararrayset.htm">VarArraySet</a>(C: Variant; I: Integer; var S: Variant);<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции файловой системы</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_direxists.htm">DirExists</a>(const
-          Name: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_fileexists.htm">FileExists</a>(const
-          Name: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_fileordirexists.htm">FileOrDirExists</a>(const
-          Name: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_filesize.htm">FileSize</a>(const
-          Name: String; var Size: Integer): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_filesize64.htm">FileSize64</a>(const
-          Name: String; var Size: Int64): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getspaceondisk.htm">GetSpaceOnDisk</a>(const
-          Path: String; const InMegabytes: Boolean; var Free, Total: Cardinal):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getspaceondisk64.htm">GetSpaceOnDisk64</a>(const
-          Path: String; var Free, Total: Int64): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_direxists.htm">DirExists</a>(const Name: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_fileexists.htm">FileExists</a>(const Name: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_fileordirexists.htm">FileOrDirExists</a>(const Name: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_filesize.htm">FileSize</a>(const Name: String; var Size: Integer): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_filesize64.htm">FileSize64</a>(const Name: String; var Size: Int64): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getspaceondisk.htm">GetSpaceOnDisk</a>(const Path: String; const InMegabytes: Boolean; var Free, Total: Cardinal): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getspaceondisk64.htm">GetSpaceOnDisk64</a>(const Path: String; var Free, Total: Int64): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_filesearch.htm">FileSearch</a>(const
-          Name, DirList: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_findfirst.htm">FindFirst</a>(const
-          FileName: String; var FindRec: TFindRec): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_findnext.htm">FindNext</a>(var
-          FindRec: TFindRec): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_findclose.htm">FindClose</a>(var
-          FindRec: TFindRec);</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_filesearch.htm">FileSearch</a>(const Name, DirList: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_findfirst.htm">FindFirst</a>(const FileName: String; var FindRec: TFindRec): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_findnext.htm">FindNext</a>(var FindRec: TFindRec): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_findclose.htm">FindClose</a>(var FindRec: TFindRec);<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getcurrentdir.htm">GetCurrentDir</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setcurrentdir.htm">SetCurrentDir</a>(const
-          Dir: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getwindir.htm">GetWinDir</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsystemdir.htm">GetSystemDir</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsyswow64dir.htm">GetSysWow64Dir</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_gettempdir.htm">GetTempDir</a>:
-          String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getshellfolderbycsidl.htm">GetShellFolderByCSIDL</a>(const
-          Folder: Integer; const Create: Boolean): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getcurrentdir.htm">GetCurrentDir</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setcurrentdir.htm">SetCurrentDir</a>(const Dir: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getwindir.htm">GetWinDir</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsystemdir.htm">GetSystemDir</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsyswow64dir.htm">GetSysWow64Dir</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_gettempdir.htm">GetTempDir</a>: String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getshellfolderbycsidl.htm">GetShellFolderByCSIDL</a>(const Folder: Integer; const Create: Boolean): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getshortname.htm">GetShortName</a>(const
-          LongName: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_generateuniquename.htm">GenerateUniqueName</a>(Path:
-          String; const Extension: String): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getshortname.htm">GetShortName</a>(const LongName: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_generateuniquename.htm">GenerateUniqueName</a>(Path: String; const Extension: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_isprotectedsystemfile.htm">IsProtectedSystemFile</a>(const
-          Filename: String): Boolean; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isprotectedsystemfile.htm">IsProtectedSystemFile</a>(const Filename: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getmd5offile.htm">GetMD5OfFile</a>(const
-          Filename: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha1offile.htm">GetSHA1OfFile</a>(const
-          Filename: String): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsha256offile.htm">GetSHA256OfFile</a>(const
-          Filename: String): String;</tt><br />
-        <br />
-        <tt class="nill">function <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>(const
-          Enable: Boolean): Boolean; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>(const Enable: Boolean): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки файлов</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_exec.htm">Exec</a>(const
-          Filename, Params, WorkingDir: String; const ShowCmd: Integer; const
-          Wait: TExecWait; var ResultCode: Integer): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>(const
-          Filename, Params, WorkingDir: String; const ShowCmd: Integer; const
-          Wait: TExecWait; var ResultCode: Integer): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_shellexec.htm">ShellExec</a>(const
-          Verb, Filename, Params, WorkingDir: String; const ShowCmd: Integer;
-          const Wait: TExecWait; var ErrorCode: Integer): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>(const
-          Verb, Filename, Params, WorkingDir: String; const ShowCmd: Integer;
-          const Wait: TExecWait; var ErrorCode: Integer): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_exec.htm">Exec</a>(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_shellexec.htm">ShellExec</a>(const Verb, Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ErrorCode: Integer): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>(const Verb, Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ErrorCode: Integer): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>(const
-          FileName: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_extracttemporaryfiles.htm">ExtractTemporaryFiles</a>(const
-          Pattern: String): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>(const
-          Url, FileName, RequiredSHA256OfFile: String; const OnDownloadProgress:
-          TOnDownloadProgress): Int64;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a>(const
-          User, Pass: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a>(const
-          Url): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a>(const
-          Url): String;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a>(const
-          ArchiveFileName, DestDir: String; const FullPaths: Boolean; const OnExtractionProgress: TOnExtractionProgress);</tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>(const FileName: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_extracttemporaryfiles.htm">ExtractTemporaryFiles</a>(const Pattern: String): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>(const Url, BaseName, RequiredSHA256OfFile: String; const OnDownloadProgress: TOnDownloadProgress): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a>(const Url, ISSigUrl, BaseName: String; const AllowedKeysRuntimeIDs: TStringList; const OnDownloadProgress: TOnDownloadProgress): Int64;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a>(const User, Pass: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a>(const Url): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a>(const Url): String;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a>(const ArchiveFileName, DestDir, Password: String; const FullPaths: Boolean; const OnExtractionProgress: TOnExtractionProgress);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a>(const DestExt, SourceExt: String);<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_renamefile.htm">RenameFile</a>(const
-          OldName, NewName: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_copyfile.htm">CopyFile</a>(const
-          ExistingFile, NewFile: String; const FailIfExists: Boolean): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_deletefile.htm">DeleteFile</a>(const
-          FileName: String): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_delaydeletefile.htm">DelayDeleteFile</a>(const
-          Filename: String; const Tries: Integer);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setntfscompression.htm">SetNTFSCompression</a>(const
-          FileOrDir: String; Compress: Boolean): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getmd5offile.htm">GetMD5OfFile</a>(const Filename: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha1offile.htm">GetSHA1OfFile</a>(const Filename: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsha256offile.htm">GetSHA256OfFile</a>(const Filename: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_loadstringfromfile.htm">LoadStringFromFile</a>(const
-          FileName: String; var S: AnsiString): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_loadstringfromlockedfile.htm">LoadStringFromLockedFile</a>(const
-          FileName: String; var S: AnsiString): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_loadstringsfromfile.htm">LoadStringsFromFile</a>(const
-          FileName: String; var S: TArrayOfString): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_loadstringsfromlockedfile.htm">LoadStringsFromLockedFile</a>(const
-          FileName: String; var S: TArrayOfString): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_savestringtofile.htm">SaveStringToFile</a>(const
-          FileName: String; const S: AnsiString; const Append: Boolean):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_savestringstofile.htm">SaveStringsToFile</a>(const
-          FileName: String; const S: TArrayOfString; const Append: Boolean):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_savestringstoutf8file.htm">SaveStringsToUTF8File</a>(const
-          FileName: String; const S: TArrayOfString; const Append: Boolean):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_savestringstoutf8filewithoutbom.htm">SaveStringsToUTF8FileWithoutBOM</a>(const
-          FileName: String; const S: TArrayOfString; const Append: Boolean):
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_issigverify.htm">ISSigVerify</a>(const AllowedKeysRuntimeIDs: TStringList; const Filename: String; const VerifyFilename: Boolean; const KeepOpen: Boolean): TFileStream;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createdir.htm">CreateDir</a>(const
-          Dir: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_forcedirectories.htm">ForceDirectories</a>(Dir:
-          String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_removedir.htm">RemoveDir</a>(const
-          Dir: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_deltree.htm">DelTree</a>(const
-          Path: String; const IsDir, DeleteFiles, DeleteSubdirsAlso: Boolean):
-          Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_renamefile.htm">RenameFile</a>(const OldName, NewName: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_copyfile.htm">CopyFile</a>(const ExistingFile, NewFile: String; const FailIfExists: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_deletefile.htm">DeleteFile</a>(const FileName: String): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_delaydeletefile.htm">DelayDeleteFile</a>(const Filename: String; const Tries: Integer);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setntfscompression.htm">SetNTFSCompression</a>(const FileOrDir: String; Compress: Boolean): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createshelllink.htm">CreateShellLink</a>(const
-          Filename, Description, ShortcutTo, Parameters, WorkingDir,
-          IconFilename: String; const IconIndex, ShowCmd: Integer): String;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_unpinshelllink.htm">UnpinShellLink</a>(const
-          Filename: String): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_loadstringfromfile.htm">LoadStringFromFile</a>(const FileName: String; var S: AnsiString): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_loadstringfromlockedfile.htm">LoadStringFromLockedFile</a>(const FileName: String; var S: AnsiString): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_loadstringsfromfile.htm">LoadStringsFromFile</a>(const FileName: String; var S: TArrayOfString): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_loadstringsfromlockedfile.htm">LoadStringsFromLockedFile</a>(const FileName: String; var S: TArrayOfString): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_savestringtofile.htm">SaveStringToFile</a>(const FileName: String; const S: AnsiString; const Append: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_savestringstofile.htm">SaveStringsToFile</a>(const FileName: String; const S: TArrayOfString; const Append: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_savestringstoutf8file.htm">SaveStringsToUTF8File</a>(const FileName: String; const S: TArrayOfString; const Append: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_savestringstoutf8filewithoutbom.htm">SaveStringsToUTF8FileWithoutBOM</a>(const FileName: String; const S: TArrayOfString; const Append: Boolean): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_registerserver.htm">RegisterServer</a>(const
-          Is64Bit: Boolean; const Filename: String; const FailCriticalErrors:
-          Boolean);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_unregisterserver.htm">UnregisterServer</a>(const
-          Is64Bit: Boolean; const Filename: String; const FailCriticalErrors:
-          Boolean): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_registertypelibrary.htm">RegisterTypeLibrary</a>(const
-          Is64Bit: Boolean; const Filename: String);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_unregistertypelibrary.htm">UnregisterTypeLibrary</a>(const
-          Is64Bit: Boolean; const Filename: String): Boolean</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_incrementsharedcount.htm">IncrementSharedCount</a>(const
-          Is64Bit: Boolean; const Filename: String; const AlreadyExisted:
-          Boolean);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_decrementsharedcount.htm">DecrementSharedCount</a>(const
-          Is64Bit: Boolean; const Filename: String): Boolean;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_restartreplace.htm">RestartReplace</a>(const
-          TempFile, DestFile: String);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_unregisterfont.htm">UnregisterFont</a>(const
-          FontName, FontFilename: String; const PerUserFont: Boolean);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_modifypiffile.htm">ModifyPifFile</a>(const
-          Filename: String; const CloseOnExit: Boolean): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createdir.htm">CreateDir</a>(const Dir: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_forcedirectories.htm">ForceDirectories</a>(Dir: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_removedir.htm">RemoveDir</a>(const Dir: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_deltree.htm">DelTree</a>(const Path: String; const IsDir, DeleteFiles, DeleteSubdirsAlso: Boolean): Boolean;<br />
+        <br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createshelllink.htm">CreateShellLink</a>(const Filename, Description, ShortcutTo, Parameters, WorkingDir, IconFilename: String; const IconIndex, ShowCmd: Integer): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_unpinshelllink.htm">UnpinShellLink</a>(const Filename: String): Boolean;<br />
+        <br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_registerserver.htm">RegisterServer</a>(const Is64Bit: Boolean; const Filename: String; const FailCriticalErrors: Boolean);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_unregisterserver.htm">UnregisterServer</a>(const Is64Bit: Boolean; const Filename: String; const FailCriticalErrors: Boolean): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_registertypelibrary.htm">RegisterTypeLibrary</a>(const Is64Bit: Boolean; const Filename: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_unregistertypelibrary.htm">UnregisterTypeLibrary</a>(const Is64Bit: Boolean; const Filename: String): Boolean<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_incrementsharedcount.htm">IncrementSharedCount</a>(const Is64Bit: Boolean; const Filename: String; const AlreadyExisted: Boolean);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_decrementsharedcount.htm">DecrementSharedCount</a>(const Is64Bit: Boolean; const Filename: String): Boolean;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_restartreplace.htm">RestartReplace</a>(const TempFile, DestFile: String);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_unregisterfont.htm">UnregisterFont</a>(const FontName, FontFilename: String; const PerUserFont: Boolean);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_modifypiffile.htm">ModifyPifFile</a>(const Filename: String; const CloseOnExit: Boolean): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки версии файла</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getversionnumbers.htm">GetVersionNumbers</a>(const
-          Filename: String; var VersionMS, VersionLS: Cardinal): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getversioncomponents.htm">GetVersionComponents</a>(const
-          Filename: String; var Major, Minor, Revision, Build: Word): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getversionnumbersstring.htm">GetVersionNumbersString</a>(const
-          Filename: String; var Version: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getpackedversion.htm">GetPackedVersion</a>(const
-          Filename: String; var Version: Int64): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getversionnumbers.htm">GetVersionNumbers</a>(const Filename: String; var VersionMS, VersionLS: Cardinal): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getversioncomponents.htm">GetVersionComponents</a>(const Filename: String; var Major, Minor, Revision, Build: Word): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getversionnumbersstring.htm">GetVersionNumbersString</a>(const Filename: String; var Version: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getpackedversion.htm">GetPackedVersion</a>(const Filename: String; var Version: Int64): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_packversionnumbers.htm">PackVersionNumbers</a>(const
-          VersionMS, VersionLS: Cardinal): Int64;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_packversioncomponents.htm">PackVersionComponents</a>(const
-          Major, Minor, Revision, Build: Word): Int64;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_packversionnumbers.htm">PackVersionNumbers</a>(const VersionMS, VersionLS: Cardinal): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_packversioncomponents.htm">PackVersionComponents</a>(const Major, Minor, Revision, Build: Word): Int64;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_comparepackedversion.htm">ComparePackedVersion</a>(const
-          Version1, Version2: Int64): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_samepackedversion.htm">SamePackedVersion</a>(const
-          Version1, Version2: Int64): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_comparepackedversion.htm">ComparePackedVersion</a>(const Version1, Version2: Int64): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_samepackedversion.htm">SamePackedVersion</a>(const Version1, Version2: Int64): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_unpackversionnumbers.htm">UnpackVersionNumbers</a>(const
-          Version: Int64; var VersionMS, VersionLS: Cardinal);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_unpackversioncomponents.htm">UnpackVersionComponents</a>(const
-          Version: Int64; var Major, Minor, Revision, Build: Word);</tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_unpackversionnumbers.htm">UnpackVersionNumbers</a>(const Version: Int64; var VersionMS, VersionLS: Cardinal);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_unpackversioncomponents.htm">UnpackVersionComponents</a>(const Version: Int64; var Major, Minor, Revision, Build: Word);<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_versiontostr.htm">VersionToStr</a>(const
-          Version: Int64): String; </tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_strtoversion.htm">StrToVersion</a>(const
-          Version: String; var Version: Int64): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_versiontostr.htm">VersionToStr</a>(const Version: Int64): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtoversion.htm">StrToVersion</a>(const Version: String; var Version: Int64): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки реестра</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_regkeyexists.htm">RegKeyExists</a>(const
-          RootKey: Integer; const SubKeyName: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regvalueexists.htm">RegValueExists</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regkeyexists.htm">RegKeyExists</a>(const RootKey: Integer; const SubKeyName: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regvalueexists.htm">RegValueExists</a>(const RootKey: Integer; const SubKeyName, ValueName: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_reggetsubkeynames.htm">RegGetSubkeyNames</a>(const
-          RootKey: Integer; const SubKeyName: String; var Names:
-          TArrayOfString): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_reggetvaluenames.htm">RegGetValueNames</a>(const
-          RootKey: Integer; const SubKeyName: String; var Names:
-          TArrayOfString): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_reggetsubkeynames.htm">RegGetSubkeyNames</a>(const RootKey: Integer; const SubKeyName: String; var Names: TArrayOfString): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_reggetvaluenames.htm">RegGetValueNames</a>(const RootKey: Integer; const SubKeyName: String; var Names: TArrayOfString): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_regquerystringvalue.htm">RegQueryStringValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr:
-          String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regquerymultistringvalue.htm">RegQueryMultiStringValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr:
-          String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regquerydwordvalue.htm">RegQueryDWordValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; var
-          ResultDWord: Cardinal): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regquerybinaryvalue.htm">RegQueryBinaryValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr:
-          AnsiString): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regquerystringvalue.htm">RegQueryStringValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regquerymultistringvalue.htm">RegQueryMultiStringValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regquerydwordvalue.htm">RegQueryDWordValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; var ResultDWord: Cardinal): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regquerybinaryvalue.htm">RegQueryBinaryValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; var ResultStr: AnsiString): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_regwritestringvalue.htm">RegWriteStringValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regwriteexpandstringvalue.htm">RegWriteExpandStringValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regwritemultistringvalue.htm">RegWriteMultiStringValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regwritedwordvalue.htm">RegWriteDWordValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; const Data:
-          Cardinal): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regwritebinaryvalue.htm">RegWriteBinaryValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String; const Data:
-          AnsiString): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regwritestringvalue.htm">RegWriteStringValue</a>(const RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regwriteexpandstringvalue.htm">RegWriteExpandStringValue</a>(const RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regwritemultistringvalue.htm">RegWriteMultiStringValue</a>(const RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regwritedwordvalue.htm">RegWriteDWordValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; const Data: Cardinal): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regwritebinaryvalue.htm">RegWriteBinaryValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String; const Data: AnsiString): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_regdeletekeyincludingsubkeys.htm">RegDeleteKeyIncludingSubkeys</a>(const
-          RootKey: Integer; const SubkeyName: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regdeletekeyifempty.htm">RegDeleteKeyIfEmpty</a>(const
-          RootKey: Integer; const SubkeyName: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_regdeletevalue.htm">RegDeleteValue</a>(const
-          RootKey: Integer; const SubKeyName, ValueName: String): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regdeletekeyincludingsubkeys.htm">RegDeleteKeyIncludingSubkeys</a>(const RootKey: Integer; const SubkeyName: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regdeletekeyifempty.htm">RegDeleteKeyIfEmpty</a>(const RootKey: Integer; const SubkeyName: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_regdeletevalue.htm">RegDeleteValue</a>(const RootKey: Integer; const SubKeyName, ValueName: String): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки INI-файлов</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_inikeyexists.htm">IniKeyExists</a>(const
-          Section, Key, Filename: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_isinisectionempty.htm">IsIniSectionEmpty</a>(const
-          Section, Filename: String): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_inikeyexists.htm">IniKeyExists</a>(const Section, Key, Filename: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isinisectionempty.htm">IsIniSectionEmpty</a>(const Section, Filename: String): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_getinibool.htm">GetIniBool</a>(const
-          Section, Key: String; const Default: Boolean; const Filename: String):
-          Boolean</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getiniint.htm">GetIniInt</a>(const
-          Section, Key: String; const Default, Min, Max: Longint; const
-          Filename: String): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getinistring.htm">GetIniString</a>(const
-          Section, Key, Default, Filename: String): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getinibool.htm">GetIniBool</a>(const Section, Key: String; const Default: Boolean; const Filename: String): Boolean<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getiniint.htm">GetIniInt</a>(const Section, Key: String; const Default, Min, Max: Longint; const Filename: String): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getinistring.htm">GetIniString</a>(const Section, Key, Default, Filename: String): String;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_setinibool.htm">SetIniBool</a>(const
-          Section, Key: String; const Value: Boolean; const Filename: String):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setiniint.htm">SetIniInt</a>(const
-          Section, Key: String; const Value: Longint; const Filename: String):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_setinistring.htm">SetIniString</a>(const
-          Section, Key, Value, Filename: String): Boolean;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setinibool.htm">SetIniBool</a>(const Section, Key: String; const Value: Boolean; const Filename: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setiniint.htm">SetIniInt</a>(const Section, Key: String; const Value: Longint; const Filename: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_setinistring.htm">SetIniString</a>(const Section, Key, Value, Filename: String): Boolean;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_deleteinisection.htm">DeleteIniSection</a>(const
-          Section, Filename: String);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_deleteinientry.htm">DeleteIniEntry</a>(const
-          Section, Key, Filename: String);</tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_deleteinisection.htm">DeleteIniSection</a>(const Section, Filename: String);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_deleteinientry.htm">DeleteIniEntry</a>(const Section, Key, Filename: String);<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции дополнительных страниц мастера установки</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String):
-          TInputQueryWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          Exclusive, ListBox: Boolean): TInputOptionWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          AAppendDir: Boolean; ANewFolderName: String): TInputDirWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String):
-          TInputFileWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, AMsg: String):
-          TOutputMsgWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const
-          AfterID: Integer; const ACaption, ADescription, ASubCaption: String;
-          const AMsg: AnsiString): TOutputMsgMemoWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const
-          ACaption, ADescription: String): TOutputProgressWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const
-          ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>(const
-          ACaption, ADescription: String; const OnDownloadProgress:
-          TOnDownloadProgress): TDownloadWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a>(const
-          ACaption, ADescription: String; const OnExtractionProgress: TOnExtractionProgress):
-          ExtractionWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const
-          AfterID: Integer; const ACaption, ADescription: String): TWizardPage;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputQueryWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; Exclusive, ListBox: Boolean): TInputOptionWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; AAppendDir: Boolean; ANewFolderName: String): TInputDirWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputFileWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const AfterID: Integer; const ACaption, ADescription, AMsg: String): TOutputMsgWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; const AMsg: AnsiString): TOutputMsgMemoWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const ACaption, ADescription: String): TOutputProgressWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>(const ACaption, ADescription: String; const OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a>(const ACaption, ADescription: String; const OnExtractionProgress: TOnExtractionProgress): TExtractionWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const AfterID: Integer; const ACaption, ADescription: String): TWizardPage;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>:
-          TSetupForm; </tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>: TSetupForm;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_initializebitmapimagefromicon.htm">InitializeBitmapImageFromIcon</a>(const
-          BitmapImage: TBitmapImage; const IconFilename: String; const BkColor:
-          TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const
-          ID: Integer): TWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_pageindexfromid.htm">PageIndexFromID</a>(const
-          ID: Integer): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_scalex.htm">ScaleX</a>(X:
-          Integer): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_scaley.htm">ScaleY</a>(Y:
-          Integer): Integer;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const ID: Integer): TWizardPage;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pageindexfromid.htm">PageIndexFromID</a>(const ID: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_scalex.htm">ScaleX</a>(X: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_scaley.htm">ScaleY</a>(Y: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_initializebitmapimagefromicon.htm">InitializeBitmapImageFromIcon</a>(const BitmapImage: TBitmapImage; const IconFilename: String; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции обработки диалогов</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_msgbox.htm">MsgBox</a>(const
-          Text: String; const Typ: TMsgBoxType; const Buttons: Integer):
-          Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a>(const
-          Text: String; const Typ: TMsgBoxType; const Buttons, Default:
-          Integer): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_taskdialogmsgbox.htm">TaskDialogMsgBox</a>(const
-          Instruction, Text: String; const Typ: TMsgBoxType; const Buttons:
-          Cardinal; const ButtonLabels: TArrayOfString; const ShieldButton:
-          Integer): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>(const
-          Instruction, Text: String; const Typ: TMsgBoxType; const Buttons:
-          Cardinal; const ButtonLabels: TArrayOfString; const ShieldButton:
-          Integer; const Default: Integer): Integer;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getopenfilename.htm">GetOpenFileName</a>(const
-          Prompt: String; var FileName: String; const InitialDirectory, Filter,
-          DefaultExtension: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getopenfilenamemulti.htm">GetOpenFileNameMulti</a>(const
-          Prompt: String; var FileNameList: TStrings; const InitialDirectory,
-          Filter, DefaultExtension: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getsavefilename.htm">GetSaveFileName</a>(const
-          Prompt: String; var FileName: String; const InitialDirectory, Filter,
-          DefaultExtension: String): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_browseforfolder.htm">BrowseForFolder</a>(const
-          Prompt: String; var Directory: String; const NewFolderButton:
-          Boolean): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_exitsetupmsgbox.htm">ExitSetupMsgBox</a>:
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_selectdisk.htm">SelectDisk</a>(const
-          DiskNumber: Integer; const AFilename: String; var Path: String):
-          Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_msgbox.htm">MsgBox</a>(const Text: String; const Typ: TMsgBoxType; const Buttons: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a>(const Text: String; const Typ: TMsgBoxType; const Buttons, Default: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_taskdialogmsgbox.htm">TaskDialogMsgBox</a>(const Instruction, Text: String; const Typ: TMsgBoxType; const Buttons: Cardinal; const ButtonLabels: TArrayOfString; const ShieldButton: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>(const Instruction, Text: String; const Typ: TMsgBoxType; const Buttons: Cardinal; const ButtonLabels: TArrayOfString; const ShieldButton: Integer; const Default: Integer): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getopenfilename.htm">GetOpenFileName</a>(const Prompt: String; var FileName: String; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getopenfilenamemulti.htm">GetOpenFileNameMulti</a>(const Prompt: String; var FileNameList: TStrings; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getsavefilename.htm">GetSaveFileName</a>(const Prompt: String; var FileName: String; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_browseforfolder.htm">BrowseForFolder</a>(const Prompt: String; var Directory: String; const NewFolderButton: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_exitsetupmsgbox.htm">ExitSetupMsgBox</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_selectdisk.htm">SelectDisk</a>(const DiskNumber: Integer; const AFilename: String; var Path: String): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции поддержки COM-объектов</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>(const
-          ClassName: String): Variant;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>(const
-          ClassName: String): Variant;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_idispatchinvoke.htm">IDispatchInvoke</a>(Self:
-          IDispatch; PropertySet: Boolean; const Name: String; Par: array of
-          Variant): Variant;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createcomobject.htm">CreateComObject</a>(const
-          ClassID: TGUID): IUnknown;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_stringtoguid.htm">StringToGUID</a>(const
-          S: String): TGUID;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_olecheck.htm">OleCheck</a>(Result:
-          HResult);</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_cofreeunusedlibraries.htm">CoFreeUnusedLibraries</a>;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>(const ClassName: String): Variant;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>(const ClassName: String): Variant;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_idispatchinvoke.htm">IDispatchInvoke</a>(Self: IDispatch; PropertySet: Boolean; const Name: String; Par: array of Variant): Variant;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_createcomobject.htm">CreateComObject</a>(const ClassID: TGUID): IUnknown;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_stringtoguid.htm">StringToGUID</a>(const S: String): TGUID;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_olecheck.htm">OleCheck</a>(Result: HResult);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_cofreeunusedlibraries.htm">CoFreeUnusedLibraries</a>;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Функции ведения журнала установки</b><br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_log.htm">Log</a>(const
-          S: String); </tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a>(const
-          Filename, Params, WorkingDir: String; const ShowCmd: Integer; const
-          Wait: TExecWait; var ResultCode: Integer; var Output: TExecOutput):
-          Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>(const
-          Filename, Params, WorkingDir: String; const ShowCmd: Integer; const
-          Wait: TExecWait; var ResultCode: Integer; const OnLog: TOnLog):
-          Boolean; </tt><br />
+        <code>
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_log.htm">Log</a>(const S: String);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a>(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer; var Output: TExecOutput): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer; const OnLog: TOnLog): Boolean;<br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Другие функции</b><br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_sleep.htm">Sleep</a>(const
-          Milliseconds: Longint);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_random.htm">Random</a>(const
-          Range: Integer): Integer;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_beep.htm">Beep</a>;</tt><br />
-        <tt class="nill">procedure <a href="topic_isxfunc_set8087cw.htm">Set8087CW</a>(NewCW:
-          Word);</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_get8087cw.htm">Get8087CW</a>:
-          Word;</tt><br />
+        <code>
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_sleep.htm">Sleep</a>(const Milliseconds: Longint);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_random.htm">Random</a>(const Range: Integer): Integer;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_beep.htm">Beep</a>;<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_set8087cw.htm">Set8087CW</a>(NewCW: Word);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_get8087cw.htm">Get8087CW</a>: Word;<br />
         <br />
-        <tt class="nill">procedure <a href="topic_isxfunc_bringtofrontandrestore.htm">BringToFrontAndRestore</a>;
-        </tt><br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_bringtofrontandrestore.htm">BringToFrontAndRestore</a>;
+        <br />
+        </code>
       </p>
       <p class="null"><br />
         <b>Устаревшие функции</b><br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_loaddll.htm">LoadDLL</a>(const
-          DLLName: String; var ErrorCode: Integer): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_calldllproc.htm">CallDLLProc</a>(const
-          DLLHandle: Longint; const ProcName: String; const Param1, Param2:
-          Longint; var Result: Longint): Boolean;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_freedll.htm">FreeDLL</a>(const
-          DLLHandle: Longint): Boolean;</tt><br />
+        <code>
+        &nbsp;&nbsp;function <a href="topic_isxfunc_loaddll.htm">LoadDLL</a>(const DLLName: String; var ErrorCode: Integer): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_calldllproc.htm">CallDLLProc</a>(const DLLHandle: Longint; const ProcName: String; const Param1, Param2: Longint; var Result: Longint): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_freedll.htm">FreeDLL</a>(const DLLHandle: Longint): Boolean;<br />
         <br />
-        <tt class="nill">function <a href="topic_isxfunc_caststringtointeger.htm">CastStringToInteger</a>(var
-          S: String): Longint;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_castintegertostring.htm">CastIntegerToString</a>(const
-          L: Longint): String;</tt><br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_caststringtointeger.htm">CastStringToInteger</a>(var S: String): Longint;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_castintegertostring.htm">CastIntegerToString</a>(const L: Longint): String;<br />
+        </code>
       </p>
       <h2 class="heading">Константы</h2>
       <p>Ниже приведен перечень констант, используемых этими функциями:</p>
@@ -819,9 +516,8 @@
         MB_SETFOREGROUND</p>
       <p class="indent"> <i>MsgBox - возвращаемые значения</i><br />
         IDOK, IDCANCEL, IDABORT, IDRETRY, IDIGNORE, IDYES, IDNO</p>
-      <p class="indent"> <i>Reg* - значения корневых разделов реестра (см.
-          также <a href="topic_registrysection.htm">Секция [Registry]</a> в
-          справке)</i><br />
+      <p class="indent"> <i>Reg* - значения корневых разделов реестра (см. также
+        <a href="topic_registrysection.htm">Секция [Registry]</a> в справке)</i><br />
         HKEY_AUTO, HKEY_AUTO_32, HKEY_AUTO_64,<br />
         HKEY_CLASSES_ROOT, HKEY_CLASSES_ROOT_32, HKEY_CLASSES_ROOT_64,<br />
         HKEY_CURRENT_USER, HKEY_CURRENT_USER_32, HKEY_CURRENT_USER_64,<br />
@@ -835,5 +531,6 @@
       <p class="indent"> <i>TSetupMessageID</i><br />
         Используйте 'msg' + имя сообщения. Например: <i>SetupMessage(msgSetupAppTitle)</i></p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: #pragma</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -136,9 +137,9 @@
         <tt>warning</tt> или <tt>error</tt>). Все сообщения и предупреждения
         передаются в окно сообщений компилятора. Ошибки отображаются при
         помощи окон сообщений посредством компилятора. Выражение должно
-        быть строкового типа. Смотрите также директиву <tt class="nill"><a href="topic_error.htm"
+        быть строкового типа. Смотрите также директиву <code><a href="topic_error.htm"
 
-           >error</a></tt>.</p>
+           >error</a></code>.</p>
       <p>Ключ <tt>pragma-verblev</tt> включает режим вывода сообщений и
         устанавливает их уровень детализации, который управляет важностью
         сообщений (см. ниже). Наименее значимые сообщения будут показаны только
@@ -146,7 +147,7 @@
       <p>Ключ <tt>pragma include</tt> устанавливает переменную пути окружения.
         Выражение может содержать несколько путей, разделенных между собой
         точкой с запятой. Список этих каталогов используется ISPP при поиске
-        файлов, указанных директивой <tt class="nill"><a href="topic_include.htm">include</a></tt>.</p>
+        файлов, указанных директивой <code><a href="topic_include.htm">include</a></code>.</p>
       <p>Ключ <tt>pragma spansymbol</tt> устанавливает символ разделения
         длинных строк на более короткие. Выражение не должно возвращать пустую
         строку, из которой принимается только первый символ.</p>
@@ -286,5 +287,6 @@ class="hl str">"_"</span>
       <a href="topic_error2.htm">Error</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

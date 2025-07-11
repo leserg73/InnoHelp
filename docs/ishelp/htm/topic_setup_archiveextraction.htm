@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: ArchiveExtraction</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: ArchiveExtraction</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><code>basic</code><br />
+              <code>enhanced/nopassword</code><br />
+              <code>enhanced</code><br />
+              <code>full</code></div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><code>basic</code></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <h2 class="heading">Описание</h2>
+    <p>Определяет метод извлечения архива, используемый флагом <a
+      href="topic_filessection.htm#extractarchive">extractarchive</a> в секции
+      <tt>[Files]</tt> и функциями <a
+      href="topic_isxfunc_extractarchive.htm">ExtractArchive</a> и <a
+      href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a>.</p>
+    <p><tt>basic</tt> использует исходную версию декодера "<i>7z ANSI-C
+      Decoder</i>" из LZMA SDK (автор – Игорь Павлов) с небольшими доработками:
+      улучшена поддержка Unicode, оптимизированы сообщения об ошибках и добавлен
+      вывод требований к памяти. Поддерживает только архивы .7z, не защищённые
+      паролем.</p>
+    <p><tt>enhanced/nopassword</tt> использует внешнюю библиотеку 7zxr.dll,
+      собранную на базе исходного кода 7-Zip (автор – Игорь Павлов) с минимальными
+      изменениями: добавлена цифровая подпись и файл переименован в is7zxr.dll.
+      По сравнению с методом <tt>basic</tt>, предлагает более эффективное
+      использование памяти при работе с архивами, содержащими крупные файлы, но
+      приводит к увеличению размера установочного пакета. Важно отметить, что
+      данный метод поддерживает исключительно архивы .7z без парольной защиты.</p>
+    <p><tt>enhanced</tt> использует библиотеку 7zxa.dll вместо 7zxr.dll. Файл
+      библиотеки собран заново, подписан цифровым сертификатом и переименован в
+      is7zxa.dll. Поддерживает только архивы .7z, включая защищённые паролем.</p>
+    <p><tt>full</tt> вместо библиотеки 7zxa.dll использует 7z.dll. Данная
+      библиотека была перекомпилирована, подписана и переименована в is7z.dll.
+      Поддерживает наиболее популярные форматы архивов (такие как .7z, .zip, .rar
+      и другие), но не все по сравнению с оригинальной 7z.dll — это было сделано
+      для уменьшения её размера. Кроме того, реализована поддержка многотомных
+      архивов.</p>
+    <p>В следующей таблице приведены различия между этими методами.</p>
+    <div class="indent">
+      <table>
+        <tr>
+          <td class="cellleft"></td>
+          <td class="cellright"><u>Требования к памяти</u></td>
+          <td class="cellright"><u>Архивы под паролем</u></td>
+          <td class="cellright"><u>Увеличение инсталлятора</u></td>
+          <td class="cellright"><u>Формат архивов</u></td>
+        </tr>
+        <tr>
+          <td class="cellleft"><tt>basic</tt> (по умолчанию)</td>
+          <td class="cellright">Высокие для больших файлов<b>*</b></td>
+          <td class="cellright">Нет</td>
+          <td class="cellright">0 Кб</td>
+          <td class="cellright">.7z</td>
+        </tr>
+        <tr>
+          <td class="cellleft"><tt>enhanced/nopassword</tt></td>
+          <td class="cellright">Нормальные</td>
+          <td class="cellright">Нет</td>
+          <td class="cellright">100 Кб</td>
+          <td class="cellright">.7z</td>
+        </tr>
+        <tr>
+          <td class="cellleft"><tt>enhanced</tt></td>
+          <td class="cellright">Нормальные</td>
+          <td class="cellright">Да</td>
+          <td class="cellright">123 Кб</td>
+          <td class="cellright">.7z</td>
+        </tr>
+        <tr>
+          <td class="cellleft"><tt>full</tt></td>
+          <td class="cellright">Нормальные</td>
+          <td class="cellright">Да</td>
+          <td class="cellright">458 Кб</td>
+          <td class="cellright">.7z, .zip, .gz, .bz2, .xz, .tar, .rar, .iso,
+            .msi, .cab, .rpm, .vhd, .vhdx, .vdi, .vmdk, .wim, .dmg, .001</td>
+        </tr>
+      </table>
+      <p>* = При извлечении файла всегда будет выделен достаточный объём памяти,
+        чтобы вместить <b>весь</b> файл, независимо от размера блока. Например,
+        для извлечения файла размером 1 ГБ с использованием метода <tt>basic</tt>
+        потребуется не менее 1 ГБ оперативной памяти. Однако для 7z-архивов с
+        крупными файлами рекомендуется использовать альтернативный метод: в таком
+        случае потребление памяти зависит исключительно от размера словаря.</p>
+    </div>
+    <p>Все методы автоматически перезаписывают существующие в целевой папке файлы
+      (даже с атрибутом "<i>только для чтения</i>") без предупреждения пользователя.</p>
+    <p>Все методы восстанавливают из архива следующие свойства файлов, если они
+      доступны: время создания, время последнего изменения и атрибуты.</p>
+    <p>При использовании метода <tt>full</tt> для извлечения содержимого архива,
+      например <i>archive.tar.gz</i>, на выходе будет получен сам файл архива
+      (например, <i>archive.tar</i>), а не отдельные файлы, которые в нём
+      содержатся.</p>
+    <p>Метод <tt>basic</tt> имеет следующие ограничения, как указано Игорем
+      Павловым в комментариях к LZMA SDK:</p>
+    <ul>
+      <li>Не поддерживает методы PPMd и BZip2.</li>
+      <li>Преобразует оригинальные имена файлов в кодировке UTF-16 Unicode в
+        имена с кодировкой UTF-8 Unicode.</li>
+      <li>Декодирует весь непрерывный блок архива 7z в оперативную память. При
+        этом потребление памяти может быть очень высоким.</li>
+    </ul>
+    <h2 class="heading">См. также:</h2>
+    <p class="indent"><a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a><br />
+      <a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a><br />
+      <a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a>
+    </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

@@ -1,170 +1,253 @@
-п»ї/*
+/*
   Inno Setup
-  Copyright (C) 1997-2024 Jordan Russell
+  Copyright (C) 1997-2025 Jordan Russell
   Portions by Martijn Laan
   For conditions of distribution and use, see LICENSE.TXT.
 
   Style sheet used by contents.htm
 */
 
-BODY {
-	font-family: "Segoe UI", Tahoma, sans-serif;
-	font-size: 80%;   /* 9pt (12px/16px) */
-	margin: 0;
-	background-color: Window;
-	color: WindowText;
+html {
+  scrollbar-face-color: #d6d6d6;
+  scrollbar-shadow-color: #ffffff;
+  scrollbar-highlight-color: #5f5f5f;
+  scrollbar-3dlight-color: #ffffff;
+  scrollbar-darkshadow-color: #ffffff;
+  scrollbar-track-color: #ffffff;
+  scrollbar-arrow-color: #d6d6d6;
 }
 
-INPUT {
-	font: inherit;
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 80%;   /* 9pt (12px/16px) */
+  margin: 0;
+  background-color: #ffffff;
+  color: #282828;
+  overflow: hidden;
+}
+
+input {
+  font: inherit;
 }
 
 #tabbar {
-	background-color: ButtonFace;
-	color: WindowText;
-	padding-top: 0.0625in;
-	padding-bottom: 0;
-	cursor: default;
-	-moz-user-select: none;
-	position: fixed;  
-	top: 0;  
-	z-index: 100;
-	width: 100%;
+  background-color: #e0e0e0;
+  color: #282828;
+  padding-top: 0.0625in;
+  padding-bottom: 0;
+  cursor: default;
+  -moz-user-select: none;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
 
 #tabbar TD {
-	padding: 0;
-	font-weight: bold;
-	border-bottom: 0.01042in solid #d0d0d0;
+  padding: 0;
+  font-weight: bold;
+  border-bottom: 0.01042in solid #d0d0d0;
 }
 
 #tabbar TD.selectedtab {
-	background-color: #ffffff;
-	padding: 0.02083in 0.0625in 0.03125in 0.0625in;
-	border-left: 0.01042in solid #cacaca;
-	border-top: 0.01042in solid #cacaca;
-	border-right: 0.01042in solid #cacaca;
-	border-bottom: 0.02083in solid #ffffff;
-	border-radius: 0.0625in 0.0625in 0 0;
-	-webkit-border-radius: 0.052083in 0.052083in 0 0;
-	-moz-border-radius: 0.052083in 0.052083in 0 0;
-	border-radius: 0.072916in 0.072916in 0 0;
+  background-color: #ffffff;
+  padding: 0.02083in 0.0625in 0.03125in 0.0625in;
+  border-left: 0.01042in solid #cacaca;
+  border-top: 0.01042in solid #cacaca;
+  border-right: 0.01042in solid #cacaca;
+  border-bottom: 0.02083in solid #ffffff;
+  border-radius: 0.0625in 0.0625in 0 0;
+  -webkit-border-radius: 0.052083in 0.052083in 0 0;
+  border-radius: 0.072916in 0.072916in 0 0;
 }
 
 #tabbar TD.unselectedtab {
-	padding: 0.03125in 0.072916in 0.02083in 0.072916in;
-	cursor: pointer;
-	border-bottom: 0.01042in solid #d0d0d0;
+  padding: 0.03125in 0.072916in 0.02083in 0.072916in;
+  cursor: pointer;
+  border-bottom: 0.01042in solid #d0d0d0;
 }
 
 #tabbar A {
-	background-color: transparent;
-	color: WindowText;
-	text-decoration: none;
-	outline: none;
+  background-color: transparent;
+  color: #282828;
+  text-decoration: none;
+  outline: none;
 }
 
 #tabbar TD.selectedtab A {
-	cursor: default;
+  cursor: default;
 }
 
 #tabbar TD.unselectedtab:hover A {
-	color: #0091ff;
+  color: #0091ff;
 }
 
 #tabbody-contents {
-	padding: 0.041666in 0.02083in;
-	/* white-space: nowrap; */
-	margin-top: 0.375in;
-	margin-left: 0.02083in;
+  padding: 0.041666in 0.02083in;
+  /* white-space: nowrap; */
+  margin-top: 0.01083in;
+  margin-left: 0.08083in;
+  position: fixed;
+  top: 0.41111in;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 #tabbody-contents A {
-	/* Using inline-block because otherwise, second line of wrapped text
-	   doesn't line up with first, and on IE6, the focus rect doesn't extend
-	   all the way to the edges of Highlight area */
-	display: inline-block;
-	padding: 0.01042in 0.02083in;
+  /* Using inline-block because otherwise, second line of wrapped text
+     doesn't line up with first, and on IE6, the focus rect doesn't extend
+     all the way to the edges of Highlight area */
+  display: inline-block;
+  padding: 0.01042in 0.02083in;
 }
 
 #tabbody-contents A:link,
 #tabbody-contents A:visited,
 #tabbody-contents A:active {
-	color: WindowText;
-	background-color: transparent;
-	text-decoration: none;
+  color: #282828;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 #tabbody-contents A:hover {
-	color: #0078D4;
-	background-color: transparent;
+  color: #0078d4;
+  background-color: transparent;
 }
 
 #tabbody-contents A.selectedlink:link,
 #tabbody-contents A.selectedlink:visited {
-	color: WindowText;
-	background-color: ButtonFace;
+  color: #282828;
+  background-color: #e0e0e0;
 }
 
 /* It would be cleaner to use :focus, but IE<8 doesn't support it */
 #tabbody-contents A.focusedlink:link,
 #tabbody-contents A.focusedlink:visited {
-	color: HighlightText;
-	background-color: Highlight;
-	outline-color: WindowText;   /* needed for focus rect to appear on Firefox (3.5) */
+  color: #000000;
+  background-color: #f0f0f0;
+  outline-color: #282828;   /* needed for focus rect to appear on Firefox (3.5) */
 }
 
 #tabbody-contents TABLE {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 #tabbody-contents TD {
-	padding: 0 0 0.01042in 0;
+  padding: 0 0 0.01042in 0;
 }
 
 #tabbody-contents IMG {
-	width: 0.16666in;
-	height: 0.16666in;
-	border-style: none;
-	padding-right: 0.02083in;
+  width: 0.16666in;
+  height: 0.16666in;
+  border-style: none;
+  padding-right: 0.02083in;
 }
 
 #tabbody-index {
-	padding: 0.041666in 0.02083in;
-	white-space: nowrap;
-	-moz-user-select: none;
-	margin-top: 0.375in;
-	margin-left: 0.052083in;
+  padding: 0.041666in 0.02083in;
+  white-space: nowrap;
+  /*-moz-user-select: none;*/
+  margin-top: 0.01083in;
+  margin-left: 0.08083in;
+  position: fixed;
+  top: 0.41111in;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
 }
 
 #tabbody-index A {
-	display: inline-block;
-	min-width: 100%;
-	overflow: visible;
+  display: inline-block;
+  min-width: 100%;
+  overflow: visible;
 }
 
 #tabbody-index A:link,
 #tabbody-index A:visited,
 #tabbody-index A:active {
-	color: WindowText;
-	background-color: transparent;
-	text-decoration: none;
+  color: #282828;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 #tabbody-index A:hover {
-	color: #0078D4;
-	background-color: transparent;
+  color: #0078d4;
+  background-color: transparent;
 }
 
 #tabbody-index A:focus {
-	color: HighlightText;
-	background-color: Highlight;
-	outline-color: WindowText;   /* needed for focus rect to appear on Firefox (3.5) */
+  color: #000000;
+  background-color: #f0f0f0;
+  outline-color: #282828;   /* needed for focus rect to appear on Firefox (3.5) */
 }
 
 #tabbody-search {
-	/* padding: 0.041666in 0.02083in; */
-	/* white-space: nowrap; */
-	margin-top: 0.375in;
-	margin-left: 0.08333in;
+  /* padding: 0.041666in 0.02083in; */
+  /* white-space: nowrap; */
+  margin-top: 0.375in;
+  margin-left: 0.08333in;
+}
+
+/* ======================================= */
+/* Кнопка переключения темы Светлая/Тёмная */
+.theme-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch__label {
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.theme-icon {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.moon {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.sun {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="dark"] .sun {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.theme-switch__label:hover .theme-icon {
+  transform: scale(1.1);
+}
+
+.theme-switch__label:active .theme-icon {
+  transform: scale(0.95);
+}
+
+[data-theme="light"] .theme-icon {
+  color: #2566aa;
+}
+
+[data-theme="dark"] .theme-icon {
+  color: #d4aa00;
 }

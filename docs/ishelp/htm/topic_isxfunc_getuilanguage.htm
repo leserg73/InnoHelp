@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: GetUILanguage</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,8 +19,8 @@
     <h1 class="topicheading">Программирование: GetUILanguage</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function GetUILanguage:
-          Integer;</tt></p>
+      <p class="prototip1 notopmarginX">function GetUILanguage:
+          Integer;</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает идентификатор языка (LANGID) пользовательского интерфейса
         для текущего пользователя. Идентификатор языка может быть либо языком
@@ -28,8 +29,8 @@
         функция вернёт значение 0 (маловероятно).</p>
       <h2 class="heading">Комментарии</h2>
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
-          target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">Список
-          национальных идентификаторов и языковых групп в MSDN</a><img src="../images/extlink.png" srcset="../images/extlink.svg"
+          target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">список
+          национальных идентификаторов и языковых групп в MSDN</a><img src="../images/extlink.svg"
           alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
@@ -47,5 +48,6 @@ class="hl num">$3FF</span> = <span class="hl num">$09</span> <span class="hl kwb
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

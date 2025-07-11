@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: Параметр "Check"</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -27,11 +28,11 @@
             принимается решение по обработке данной записи. Этой функцией может
             быть либо пользовательская функция, объявленная в секции <tt>[Code]</tt>,
             либо одна из <a href="topic_scriptfunctions.htm">поддерживаемых
-              функций</a>. </p>
+              функций</a>.</p>
           <p>Кроме прямого указания функции, допускается также использовать
             логические выражения. Смотрите примеры логических выражений в
             разделе справки "<a href="topic_componentstasksparams.htm">Параметры
-              секций [Components] и [Tasks]</a>". </p>
+              секций [Components] и [Tasks]</a>".</p>
           <p>Каждая проверочная функция может содержать параметры, разделённые
             запятыми, которые программа установки должна передать для проверки.
             Допустимыми типами параметров являются <tt>String</tt> (<i>строковый</i>),
@@ -44,14 +45,16 @@
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "MYPROG.EXE"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyProgCheck
-<span class="hl kwb">Source</span>: "A\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "A\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: MyDirCheck(ExpandConstant(<span
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\A'</span>)) 
-<span class="hl kwb">Source</span>: "B\MYFILE.TXT"; <span class="hl kwb">DestDir</span>: "<span
+<span class="hl kwb">Source</span>: "B\MyFile.txt"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">Check</span>: DirExists(ExpandConstant(<span
-class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'</span>))</pre>
+class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'</span>))
+
+</pre>
           </div>
         </dd>
       </dl>
@@ -59,11 +62,11 @@ class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'
         <tt>Boolean</tt> (<i>логический</i>). Если проверочная функция (или
         логическое выражение) возвращает значение <tt>True</tt>, запись будет
         обработана, иначе пропущена.</p>
-      <p>Программа установки может вызывать каждую проверочную
-        функцию несколько раз, даже если существует только одна запись,
-        использующая проверку. Если функция выполняет длинный фрагмент кода, её
-        можно оптимизировать, выполнив код только один раз и сохранив результат
-        в глобальную переменную.</p>
+      <p>Для всех секций, за исключением <tt>[Types]</tt> и <tt>[Components]</tt>,
+        программа установки может вызывать каждую проверочную функцию несколько
+        раз, даже если существует только одна запись, использующая проверку.
+        Если функция выполняет длинный фрагмент кода, её можно оптимизировать,
+        выполнив код только один раз и сохранив результат в глобальную переменную.</p>
       <p>Проверочная функция не вызывается, если программа
         установки уже определила, что запись не нуждается в обработке.</p>
       <p>Для записей секции <tt>[Files]</tt> с использованием
@@ -96,7 +99,9 @@ class="hl kwe">IDYES</span>;
 <span class="hl kwb">begin</span>
   Result := DirExists(DirName);
 <span class="hl kwb">end</span>;
+
 </pre>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

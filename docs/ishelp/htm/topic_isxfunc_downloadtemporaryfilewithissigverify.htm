@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: DownloadTemporaryFileWithISSigVerify</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: DownloadTemporaryFileWithISSigVerify</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function
+        DownloadTemporaryFileWithISSigVerify(const Url, IssigUrl, BaseName: String;
+        const AllowedKeysRuntimeIDs: TStringList; const OnDownloadProgress:
+        TOnDownloadProgress): Int64;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Функция аналогична <a
+        href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>,
+        но сначала с адреса URL, указанного в параметре <tt>IssigUrl</tt>, загружает
+        файл подписи .issig, а затем использует его для проверки основного файла,
+        загруженного с адреса URL, заданного параметром <tt>Url</tt>.</p>
+      <p>Если параметр <tt>IssigUrl</tt> – пустая строка, программа установки
+        автоматически дополнит строку из параметра <tt>Url</tt> окончанием
+        ".issig" (без кавычек). Полученный результат будет использоваться в
+        качестве URL-адреса для загрузки файла подписи .issig.</p>        
+      <p>Для проверки используются указанные ключи, поиск которых осуществляется
+        по параметру <tt>RuntimeID</tt> в секции <a
+        href="topic_issigkeyssection.htm">[ISSigKeys]</a>. Чтобы разрешить
+        использование любых ключей, установите для <tt>AllowedKeysRuntimeIDs</tt>
+        значение <tt>nil</tt>.</p>
+      <p>В случае ошибки будет вызвано исключение. Иначе функция вернёт размер
+        загруженных данных в байтах для основного файла. Если основной файл уже
+        был загружен и все ещё проверяется, функция вернёт значение 0.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
+<span class="hl kwb">function</span> <span class="hl kwd">InitializeSetup</span>: <span class="hl kwg">Boolean</span>;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">try</span>
+    <span class="hl kwd">DownloadTemporaryFileWithISSigVerify</span>(
+      <span class="hl sng">&#39;https://jrsoftware.org/download.php/myprog-extrareadmes.7z&#39;</span>, <span class="hl sng">&#39;&#39;</span>,
+      <span class="hl sng">&#39;myprog-extrareadmes.7z&#39;</span>, <span class="hl kwb">nil</span>, <span class="hl kwb">nil</span>);
+    Result := <span class="hl kwg">True</span>;
+  <span class="hl kwb">except</span>
+    <span class="hl kwg">Log</span>(<span class="hl kwg">GetExceptionMessage</span>);
+    Result := <span class="hl kwg">False</span>;
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>;
+
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a><br />
+        <a href="topic_issig.htm">.issig Signatures: Introduction</a><br />
+        <a href="topic_isxfunc_issigverify.htm">ISSigVerify</a>
+      </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Константы</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -42,16 +43,16 @@
         <dd>
           <p>Каталог приложения, которую пользователь выбирает на странице
             мастера "<i>Выбор папки установки</i>".</p>
-          <p>Например: если в сценарии используется запись <tt>{app}\MYPROG.EXE</tt>,
+          <p>Например: если в сценарии используется запись <tt>{app}\MyProg.exe</tt>,
             а в качестве каталога приложения пользователь выбрал "C:\MYPROG", то
-            программа установки преобразует её в "C:\MYPROG\MYPROG.EXE". </p>
+            программа установки преобразует её в "C:\MYPROG\MyProg.exe".</p>
         </dd>
         <dt class="const"><a name="win">{win}</a></dt>
         <dd>
           <p>Каталог операционной системы Windows.</p>
-          <p>Например: если в сценарии используется запись <tt>{win}\MYPROG.INI</tt>,
+          <p>Например: если в сценарии используется запись <tt>{win}\MyProg.ini</tt>,
             а каталогом ОС Windows является "C:\WINDOWS", то программа установки
-            или удаления преобразует её в "C:\WINDOWS\MYPROG.INI".</p>
+            или удаления преобразует её в "C:\WINDOWS\MyProg.ini".</p>
         </dd>
         <dt class="const"><a name="sys">{sys}</a></dt>
         <dd>
@@ -80,7 +81,7 @@
             32-разрядные системные файлы. На 32-разрядных Windows каталога
             SysWOW64 не существует, поэтому эта константа вернёт такой же самый
             каталог, что и константа <tt>{sys}</tt>, если будет там
-            использована. </p>
+            использована.</p>
           <p>Не используйте эту константу, если не требуется получить имя
             фактического каталога, в котором находятся 32-разрядные системные
             файлы. Необоснованное использование константы <tt>{syswow64}</tt> в
@@ -92,22 +93,22 @@
         <dt class="const"><a name="src">{src}</a></dt>
         <dd>
           <p>Каталог, в котором находятся файлы программы установки.<br />
-            Например: если в сценарии используется запись <tt>{src}\MYPROG.EXE</tt>
+            Например: если в сценарии используется запись <tt>{src}\MyProg.exe</tt>
             и пользователь выполняет установку из "D:\Soft", то программа
-            установки преобразует её в "D:\Soft\MYPROG.EXE".</p>
+            установки преобразует её в "D:\Soft\MyProg.exe".</p>
         </dd>
         <dt class="const"><a name="sd">{sd}</a></dt>
         <dd>
           <p>Системный диск, на котором установлена операционная система
             Windows. Обычно диск "C:". Эта константа эквивалентна переменной
-            среды <i>SystemDrive</i>. </p>
+            среды <i>SystemDrive</i>.</p>
         </dd>
         <dt class="const"><a name="commonpf">{commonpf}</a></dt>
         <dd>
           <p>Каталог Program Files, в который обычно выполняется установка
             приложений. Константа <tt>{commonpf}</tt> эквивалентна константе <tt>{commonpf32}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
-              режиме</a>, иначе эквивалентна константе <tt>{commonpf64}</tt>. </p>
+              режиме</a>, иначе эквивалентна константе <tt>{commonpf64}</tt>.</p>
         </dd>
         <dt class="const"><a name="commonpf32">{commonpf32}</a></dt>
         <dd>
@@ -129,7 +130,7 @@
             системных файлов приложений. Константа <tt>{commoncf}</tt>
             эквивалентна константе <tt>{commoncf32}</tt>, если установка не
             работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
-              режиме</a>, иначе эквивалентна константе <tt>{commoncf64}</tt>. </p>
+              режиме</a>, иначе эквивалентна константе <tt>{commoncf64}</tt>.</p>
         </dd>
         <dt class="const"><a name="commoncf32">{commoncf32}</a></dt>
         <dd>
@@ -156,7 +157,7 @@
             подкаталоги в этом каталоге автоматически удаляются, когда программа
             установки или удаления завершает свою работу. При установке эта
             константа обычно используется для извлечения файлов, которые должны
-            быть выполнены в секции [Run], но не нужны после установки. </p>
+            быть выполнены в секции [Run], но не нужны после установки.</p>
         </dd>
         <dt class="const"><a name="commonfonts">{commonfonts}</a></dt>
         <dd>
@@ -166,7 +167,7 @@
         <dt class="const"><a name="dao">{dao}</a></dt>
         <dd>
           <p>Каталог DAO. Константа эквивалентна записи <tt>{commoncf}\Microsoft
-              Shared\DAO</tt>. </p>
+              Shared\DAO</tt>.</p>
         </dd>
         <dt class="const"><a name="dotnet11">{dotnet11}</a></dt>
         <dd>
@@ -179,7 +180,7 @@
           <p>Корневой каталог установки .NET Framework версии 2.0-3.5. Константа
             <tt>{dotnet20}</tt> эквивалентна константе <tt>{dotnet2032}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
-              режиме</a>, иначе эквивалентна константе <tt>{dotnet2064}</tt>. </p>
+              режиме</a>, иначе эквивалентна константе <tt>{dotnet2064}</tt>.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 2.0-3.5, будет вызвано исключение.</p>
         </dd>
@@ -202,7 +203,7 @@
           <p>Корневой каталог установки .NET Framework версии 4.0 и выше.
             Константа <tt>{dotnet40}</tt> эквивалентна константе <tt>{dotnet4032}</tt>,
             если установка не работает в <a href="topic_32vs64bitinstalls.htm">64-разрядном
-              режиме</a>, иначе эквивалентна константе <tt>{dotnet4064}</tt>. </p>
+              режиме</a>, иначе эквивалентна константе <tt>{dotnet4064}</tt>.</p>
           <p>При попытке использования этой константы на системах, на которых
             нет .NET Framework версии 4.0 или выше, будет вызвано исключение.</p>
           <p>См. также <a href="topic_isxfunc_isdotnetinstalled.htm">IsDotNetInstalled</a>.
@@ -240,7 +241,7 @@
             мастера "<i>Выберите папку в меню «Пуск»</i>". Если инсталлятор
             работает в <a href="topic_admininstallmode.htm">режиме не
               административной установки</a>, папка создаётся в профиле текущего
-            пользователя, иначе — в профиле <i>Все пользователи</i>. </p>
+            пользователя, иначе — в профиле <i>Все пользователи</i>.</p>
         </dd>
         <dt class="const"><a name="localappdata">{localappdata}</a></dt>
         <dd>
@@ -256,7 +257,7 @@
           <p>Путь к папке "Common Files" текущего пользователя. Константа <tt>{usercf}</tt>
             поддерживается только в Windows 7 и более поздних версиях. При
             использовании в предыдущих версиях Windows она будет преобразована в
-            <tt>{localappdata}\Programs\Common</tt>. </p>
+            <tt>{localappdata}\Programs\Common</tt>.</p>
         </dd>
         <dt class="const"><a name="userdesktop">{userdesktop}</a>
           и <a name="commondesktop">{commondesktop}</a></dt>
@@ -285,7 +286,7 @@
           <p>Путь к папке "Program Files" текущего пользователя. Константа <tt>{userpf}</tt>
             поддерживается только в Windows 7 и более поздних версиях. При
             использовании в предыдущих версиях Windows она будет преобразована в
-            <tt>{localappdata}\Programs</tt>. </p>
+            <tt>{localappdata}\Programs</tt>.</p>
         </dd>
         <dt class="const"><a name="userprograms">{userprograms}</a>
           и <a name="commonprograms">{commonprograms}</a></dt>
@@ -335,74 +336,74 @@
               <td class="cellright"><u>Не административный</u></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autoappdata">autoappdata</a></tt></td>
-              <td class="cellright"><tt class="nill">commonappdata</tt></td>
-              <td class="cellright"><tt class="nill">userappdata</tt></td>
+              <td class="cellleft"><code><a name="autoappdata">autoappdata</a></code></td>
+              <td class="cellright"><code>commonappdata</code></td>
+              <td class="cellright"><code>userappdata</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autocf">autocf</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf</tt></td>
-              <td class="cellright"><tt class="nill">usercf</tt></td>
+              <td class="cellleft"><code><a name="autocf">autocf</a></code></td>
+              <td class="cellright"><code>commoncf</code></td>
+              <td class="cellright"><code>usercf</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autocf32">autocf32</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf32</tt></td>
-              <td class="cellright"><tt class="nill">usercf</tt></td>
+              <td class="cellleft"><code><a name="autocf32">autocf32</a></code></td>
+              <td class="cellright"><code>commoncf32</code></td>
+              <td class="cellright"><code>usercf</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autocf64">autocf64</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf64</tt></td>
-              <td class="cellright"><tt class="nill">usercf</tt></td>
+              <td class="cellleft"><code><a name="autocf64">autocf64</a></code></td>
+              <td class="cellright"><code>commoncf64</code></td>
+              <td class="cellright"><code>usercf</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autodesktop">autodesktop</a></tt></td>
-              <td class="cellright"><tt class="nill">commondesktop</tt></td>
-              <td class="cellright"><tt class="nill">userdesktop</tt></td>
+              <td class="cellleft"><code><a name="autodesktop">autodesktop</a></code></td>
+              <td class="cellright"><code>commondesktop</code></td>
+              <td class="cellright"><code>userdesktop</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autodocs">autodocs</a></tt></td>
-              <td class="cellright"><tt class="nill">commondocs</tt></td>
-              <td class="cellright"><tt class="nill">userdocs</tt></td>
+              <td class="cellleft"><code><a name="autodocs">autodocs</a></code></td>
+              <td class="cellright"><code>commondocs</code></td>
+              <td class="cellright"><code>userdocs</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autofonts">autofonts</a></tt></td>
-              <td class="cellright"><tt class="nill">commonfonts</tt></td>
-              <td class="cellright"><tt class="nill">userfonts</tt></td>
+              <td class="cellleft"><code><a name="autofonts">autofonts</a></code></td>
+              <td class="cellright"><code>commonfonts</code></td>
+              <td class="cellright"><code>userfonts</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autopf">autopf</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf</tt></td>
-              <td class="cellright"><tt class="nill">userpf</tt></td>
+              <td class="cellleft"><code><a name="autopf">autopf</a></code></td>
+              <td class="cellright"><code>commonpf</code></td>
+              <td class="cellright"><code>userpf</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autopf32">autopf32</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf32</tt></td>
-              <td class="cellright"><tt class="nill">userpf</tt></td>
+              <td class="cellleft"><code><a name="autopf32">autopf32</a></code></td>
+              <td class="cellright"><code>commonpf32</code></td>
+              <td class="cellright"><code>userpf</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autopf64">autopf64</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf64</tt></td>
-              <td class="cellright"><tt class="nill">userpf</tt></td>
+              <td class="cellleft"><code><a name="autopf64">autopf64</a></code></td>
+              <td class="cellright"><code>commonpf64</code></td>
+              <td class="cellright"><code>userpf</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autoprograms">autoprograms</a></tt></td>
-              <td class="cellright"><tt class="nill">commonprograms</tt></td>
-              <td class="cellright"><tt class="nill">userprograms</tt></td>
+              <td class="cellleft"><code><a name="autoprograms">autoprograms</a></code></td>
+              <td class="cellright"><code>commonprograms</code></td>
+              <td class="cellright"><code>userprograms</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autostartmenu">autostartmenu</a></tt></td>
-              <td class="cellright"><tt class="nill">commonstartmenu</tt></td>
-              <td class="cellright"><tt class="nill">userstartmenu</tt></td>
+              <td class="cellleft"><code><a name="autostartmenu">autostartmenu</a></code></td>
+              <td class="cellright"><code>commonstartmenu</code></td>
+              <td class="cellright"><code>userstartmenu</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="autostartup">autostartup</a></tt></td>
-              <td class="cellright"><tt class="nill">commonstartup</tt></td>
-              <td class="cellright"><tt class="nill">userstartup</tt></td>
+              <td class="cellleft"><code><a name="autostartup">autostartup</a></code></td>
+              <td class="cellright"><code>commonstartup</code></td>
+              <td class="cellright"><code>userstartup</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="autotemplates">autotemplates</a></tt></td>
-              <td class="cellright"><tt class="nill">commontemplates</tt></td>
-              <td class="cellright"><tt class="nill">usertemplates</tt></td>
+              <td class="cellleft"><code><a name="autotemplates">autotemplates</a></code></td>
+              <td class="cellright"><code>commontemplates</code></td>
+              <td class="cellright"><code>usertemplates</code></td>
             </tr>
           </tbody>
         </table>
@@ -421,36 +422,36 @@
               <td class="cellright"><u>Новое имя</u></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="cf">cf</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf</tt></td>
+              <td class="cellleft"><code><a name="cf">cf</a></code></td>
+              <td class="cellright"><code>commoncf</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="cf32">cf32</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf32</tt></td>
+              <td class="cellleft"><code><a name="cf32">cf32</a></code></td>
+              <td class="cellright"><code>commoncf32</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="cf64">cf64</a></tt></td>
-              <td class="cellright"><tt class="nill">commoncf64</tt></td>
+              <td class="cellleft"><code><a name="cf64">cf64</a></code></td>
+              <td class="cellright"><code>commoncf64</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="fonts">fonts</a></tt></td>
-              <td class="cellright"><tt class="nill">commonfonts</tt></td>
+              <td class="cellleft"><code><a name="fonts">fonts</a></code></td>
+              <td class="cellright"><code>commonfonts</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="pf">pf</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf</tt></td>
+              <td class="cellleft"><code><a name="pf">pf</a></code></td>
+              <td class="cellright"><code>commonpf</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="pf32">pf32</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf32</tt></td>
+              <td class="cellleft"><code><a name="pf32">pf32</a></code></td>
+              <td class="cellright"><code>commonpf32</code></td>
             </tr>
             <tr class="altcolorrow">
-              <td class="cellleft"><tt class="nill"><a name="pf64">pf64</a></tt></td>
-              <td class="cellright"><tt class="nill">commonpf64</tt></td>
+              <td class="cellleft"><code><a name="pf64">pf64</a></code></td>
+              <td class="cellright"><code>commonpf64</code></td>
             </tr>
             <tr>
-              <td class="cellleft"><tt class="nill"><a name="sendto">sendto</a></tt></td>
-              <td class="cellright"><tt class="nill">usersendto</tt></td>
+              <td class="cellleft"><code><a name="sendto">sendto</a></code></td>
+              <td class="cellright"><code>usersendto</code></td>
             </tr>
           </tbody>
         </table>
@@ -460,7 +461,7 @@
         <dt class="const"><a name="bs">{\}</a></dt>
         <dd>
           <p>Символ обратной косой черты. В начале этой главы описано различие в
-            использовании между <tt>{\}</tt> и <tt>\</tt>. </p>
+            использовании между <tt>{\}</tt> и <tt>\</tt>.</p>
         </dd>
         <dt class="const"><a name="name">{%<i>NAME</i>|<i>DefaultValue</i>}</a></dt>
         <dd>
@@ -495,12 +496,12 @@
           <p>Полный путь к стандартному системному интерпретатору команд. Обычно
             это <i>Windows\System32\</i>cmd.exe. Обратите внимание, что
             переменная среды COMSPEC не используется при расширении этой
-            константы. </p>
+            константы.</p>
         </dd>
         <dt class="const"><a name="computername">{computername}</a></dt>
         <dd>
           <p>Имя компьютера, на котором запущена программа установки или
-            удаления (возвращается функцией <i>GetComputerName</i>). </p>
+            удаления (возвращается функцией <i>GetComputerName</i>).</p>
         </dd>
         <dt class="const"><a name="drive">{drive:<i>Path</i>}</a></dt>
         <dd>
@@ -535,7 +536,7 @@
           <p>Путь к папке в меню «Пуск», которую пользователь выбрал на странице
             мастера "<i>Выберите папку в меню «Пуск»</i>". Эта константа
             отличается от константы <tt>{group}</tt> тем, что содержит только
-            имя папки, а не путь к ней. </p>
+            имя папки, а не путь к ней.</p>
         </dd>
         <dt class="const"><a name="hwnd">{hwnd}</a></dt>
         <dd>
@@ -605,7 +606,7 @@
               Обратите внимание, что закрывающую фигурную скобку константы
               здесь, как описано выше, экранировать <i>не</i> нужно; это
               необходимо только тогда, когда закрывающая скобка используется в
-              другом месте. </li>
+              другом месте.</li>
           </ul>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
@@ -677,7 +678,7 @@
             <pre class="nomargin">{param:Path|{autopf}\My Program}</pre>
           </div>
           <p>В приведенном выше примере, указанная командная строка <tt>/Path="c:\My
-              Program"</tt> преобразуется в <tt>c:\My Program</tt>. </p>
+              Program"</tt> преобразуется в <tt>c:\My Program</tt>.</p>
         </dd>
         <dt class="const"><a name="srcexe">{srcexe}</a></dt>
         <dd>
@@ -690,7 +691,7 @@
             константа чаще всего используется в секции <tt>[Icons]</tt> для
             создания значка деинсталлятора. Константа действительна только в том
             случае, если директиве <tt>Uninstallable</tt> в секции <tt>[Setup]</tt>
-            присвоено значение <tt>yes</tt> (используется по умолчанию). </p>
+            присвоено значение <tt>yes</tt> (используется по умолчанию).</p>
         </dd>
         <dt class="const"><a name="sysuserinfoname">{sysuserinfoname}</a><br />
           <a name="sysuserinfoorg">{sysuserinfoorg}</a></dt>
@@ -707,19 +708,20 @@
             (эту страница может быть включена директивой <tt>UserInfoPage</tt>).
             Обычно эти константы используются в записях секции <tt>[Registry]</tt>
             или <tt>[INI]</tt> для сохранения их значения с целью последующего
-            использования. </p>
+            использования.</p>
         </dd>
         <dt class="const"><a name="username">{username}</a></dt>
         <dd>
           <p>Имя пользователя, выполняющего программу установки или удаления
-            (возвращается функцией <i>GetUserName</i>). </p>
+            (возвращается функцией <i>GetUserName</i>).</p>
         </dd>
         <dt class="const"><a name="log">{log}</a></dt>
         <dd>
           <p>Имя файла отчёта или пустая строка, если <a href="topic_setup_setuplogging.htm">создание
-              файла журнала</a> не включено. </p>
+              файла журнала</a> не включено.</p>
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

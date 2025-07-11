@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: #ifdef, #ifndef, #ifexist, #ifnexist</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -57,15 +58,15 @@
       <p>Директивы <tt>ifdef</tt>,
         <tt>ifndef</tt>, <tt>ifexist</tt>
         и <tt>ifnexist</tt> можно
-        использовать там, где необходимо применить директиву <tt class="nill"><a
-            href="topic_if.htm">if</a></tt>, чтобы обеспечить выполнение участка
+        использовать там, где необходимо применить директиву <code><a
+            href="topic_if.htm">if</a></code>, чтобы обеспечить выполнение участка
         кода только при соблюдении определённых условий. Состояние директивы <tt
          >ifdef</tt> является
         истинным, если указанный идентификатор был определён (найден), и
         наоборот – ложным, если идентификатор не определён или был удалён
-        директивой <tt class="nill"><a href="topic_undef.htm">undef</a></tt>.
+        директивой <code><a href="topic_undef.htm">undef</a></code>.
         Все эти директивы позволяют только проверить наличие или отсутствие
-        идентификаторов, установленных директивой <tt class="nill"><a href="topic_define.htm">define</a></tt>.</p>
+        идентификаторов, установленных директивой <code><a href="topic_define.htm">define</a></code>.</p>
       <p>Директивы <tt>ifexist</tt>
         и <tt>ifnexist</tt>
         позволяют проверить <i>наличие</i> или <i>отсутствие</i> указанного
@@ -103,5 +104,6 @@ class="hl kwc">{app}</span>
       <p class="indent"><a href="topic_fileexists.htm">FileExists</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: Поддерживаемые классы</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -21,10 +22,10 @@
         использованы при создании Pascal-сценариев. Кроме того, поддерживаются
         два объекта, доступные глобально:</p>
       <ul>
-        <li><tt class="nill"><a name="WizardForm">WizardForm</a></tt> — тип <a
+        <li><code><a name="WizardForm">WizardForm</a></code> — тип <a
 
             href="#TWizardForm">TWizardForm</a>.</li>
-        <li><tt class="nill"><a name="UninstallProgressForm">UninstallProgressForm</a></tt>
+        <li><code><a name="UninstallProgressForm">UninstallProgressForm</a></code>
           — тип <a href="#TUninstallProgressForm">TUninstallProgressForm</a>.</li>
       </ul>
       <p>Тип параметра <tt>AnyString</tt> означает, что можно использовать как
@@ -37,12 +38,10 @@
         обёртки для классов VCL, используемых Inno Setup.<br />
         <br />
         &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL"
-
           target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL">http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL</a><img
-
-          src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+          src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <p class="null"><br />
-        <tt class="nill">
+        <code>
           <a name="TObject">TObject</a> = class<br />
           &nbsp;&nbsp;constructor Create;<br />
           &nbsp;&nbsp;procedure Free;<br />
@@ -822,17 +821,21 @@
           <a name="TDownloadWizardPage">TDownloadWizardPage</a> = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
           &nbsp;&nbsp;property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
           &nbsp;&nbsp;property AbortedByUser: Boolean; read;<br />
-          &nbsp;&nbsp;procedure Add(const Url, BaseName, RequiredSHA256OfFile: String);<br />
-          &nbsp;&nbsp;procedure AddEx(const Url, BaseName, RequiredSHA256OfFile, UserName, Password: String);<br />
+          &nbsp;&nbsp;function Add(const Url, BaseName, RequiredSHA256OfFile: String): Integer;<br />
+          &nbsp;&nbsp;function AddWithISSigVerify(const Url, ISSigUrl, BaseName: String; const AllowedKeysRuntimeIDs: <a href="#TStringList">TStringList</a>): Integer;<br />
+          &nbsp;&nbsp;function AddEx(const Url, BaseName, RequiredSHA256OfFile, UserName, Password: String): Integer;<br />
+          &nbsp;&nbsp;function AddExWithISSigVerify(const Url, ISSigUrl, BaseName, UserName, Password: String; const AllowedKeysRuntimeIDs: <a href="#TStringList">TStringList</a>: Integer;<br />
           &nbsp;&nbsp;procedure Clear;<br />
           &nbsp;&nbsp;function Download: Int64;<br />
+          &nbsp;&nbsp;property LastBaseNameOrUrl: String; read;<br />
           &nbsp;&nbsp;property ShowBaseNameInsteadOfUrl: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TExtractionWizardPage">TExtractionWizardPage</a> = class(<a href="#TOutputProgressWizardPage">TOutputProgressWizardPage</a>)<br />
           &nbsp;&nbsp;property AbortButton: <a href="#TNewButton">TNewButton</a>; read;<br />
           &nbsp;&nbsp;property AbortedByUser: Boolean; read;<br />
-          &nbsp;&nbsp;procedure Add(const ArchiveFileName, DestDir: String; const FullPaths: Boolean);<br />
+          &nbsp;&nbsp;function Add(const ArchiveFileName, DestDir: String; const FullPaths: Boolean): Integer;<br />
+          &nbsp;&nbsp;function AddEx(const ArchiveFileName, DestDir, Password: String; const FullPaths: Boolean): Integer;<br />
           &nbsp;&nbsp;procedure Clear;<br />
           &nbsp;&nbsp;procedure Extract;<br />
           &nbsp;&nbsp;property ShowArchiveInsteadOfFile: Boolean; read write;<br />
@@ -958,24 +961,26 @@
           &nbsp;&nbsp;property Bevel: <a href="#TBevel">TBevel</a>; read;<br />
           &nbsp;&nbsp;property CancelButton: <a href="#TNewButton">TNewButton</a>; read;<br />
           end;<br />
-        </tt></p>
+        </code></p>
       <h2 class="heading">См. также:</h2>
       <p class="null" style="text-indent: 0;">
-        <tt class="nill">function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>: TSetupForm;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const AfterID: Integer; const ACaption, ADescription: String): TWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>(const ACaption, ADescription: String; const OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; AAppendDir: Boolean; ANewFolderName: String): TInputDirWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputFileWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; Exclusive, ListBox: Boolean): TInputOptionWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputQueryWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; const AMsg: AnsiString): TOutputMsgMemoWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const AfterID: Integer; const ACaption, ADescription, AMsg: String): TOutputMsgWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const ACaption, ADescription: String): TOutputProgressWizardPage;</tt><br />
-        <br />
-        <tt class="nill">function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const ID: Integer): TWizardPage;</tt><br />
-        <tt class="nill">function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const Filename: String; const Font: TFont; MaxLen: Integer): String;</tt><br />
+        <code>
+          function <a href="topic_isxfunc_createcustomform.htm">CreateCustomForm</a>: TSetupForm;</tt><br />
+          function <a href="topic_isxfunc_createcustompage.htm">CreateCustomPage</a>(const AfterID: Integer; const ACaption, ADescription: String): TWizardPage;<br />
+          function <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>(const ACaption, ADescription: String; const OnDownloadProgress: TOnDownloadProgress): TDownloadWizardPage;<br />
+          function <a href="topic_isxfunc_createinputdirpage.htm">CreateInputDirPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; AAppendDir: Boolean; ANewFolderName: String): TInputDirWizardPage;<br />
+          function <a href="topic_isxfunc_createinputfilepage.htm">CreateInputFilePage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputFileWizardPage;<br />
+          function <a href="topic_isxfunc_createinputoptionpage.htm">CreateInputOptionPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; Exclusive, ListBox: Boolean): TInputOptionWizardPage;<br />
+          function <a href="topic_isxfunc_createinputquerypage.htm">CreateInputQueryPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String): TInputQueryWizardPage;<br />
+          function <a href="topic_isxfunc_createoutputmarqueeprogresspage.htm">CreateOutputMarqueeProgressPage</a>(const ACaption, ADescription: String): TOutputMarqueeProgressWizardPage;<br />
+          function <a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a>(const AfterID: Integer; const ACaption, ADescription, ASubCaption: String; const AMsg: AnsiString): TOutputMsgMemoWizardPage;<br />
+          function <a href="topic_isxfunc_createoutputmsgpage.htm">CreateOutputMsgPage</a>(const AfterID: Integer; const ACaption, ADescription, AMsg: String): TOutputMsgWizardPage;<br />
+          function <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>(const ACaption, ADescription: String): TOutputProgressWizardPage;<br />
+          <br />
+          function <a href="topic_isxfunc_pagefromid.htm">PageFromID</a>(const ID: Integer): TWizardPage;<br />
+          function <a href="topic_isxfunc_minimizepathname.htm">MinimizePathName</a>(const Filename: String; const Font: TFont; MaxLen: Integer): String;</code><br />
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

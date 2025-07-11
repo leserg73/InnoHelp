@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Параметры командной строки инсталлятора</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -217,8 +218,8 @@
             предлагается на странице "<i>Выбор папки установки</i>". Необходимо
             указывать полный путь. Может содержать приставку "expand:", которая
             указывает программе установки заменить любые константы в имени на
-            соответствующие им значения. Например: <tt class="nill">/DIR=expand:{autopf}\My
-              Program</tt>.</p>
+            соответствующие им значения. Например: <code>/DIR=expand:{autopf}\My
+              Program</code>.</p>
         </dd>
         <dt class="cmdline"><a name="GROUP">/GROUP=</a>"<i>folder name</i>"</dt>
         <dd>
@@ -237,7 +238,7 @@
         <dt class="cmdline"><a name="TYPE">/TYPE=</a><i>type name</i></dt>
         <dd>
           <p>Переопределяет заданный по умолчанию <a href="topic_typessection.htm">тип
-              установки</a>. </p>
+              установки</a>.</p>
           <p>Если указанный тип существует и не является пользовательским, любой
             параметр <tt>/COMPONENTS</tt> будет проигнорирован.</p>
         </dd>
@@ -247,31 +248,31 @@
           <p>Переопределяет заданный по умолчанию выбор <a href="topic_componentssection.htm">компонентов</a>.
             При использовании этого параметра командной строки программа
             установки автоматически выбирает пользовательский тип. Если
-            пользовательский тип не определён, этот параметр не учитывается. </p>
+            пользовательский тип не определён, этот параметр не учитывается.</p>
           <p>Только указанные компоненты будут выбраны; выбор остальных будет
             отменён.</p>
           <p>Если имя компонента начинается символом "*", также будут выбраны
             все дочерние компоненты (за исключением тех, которые имеют флаг <tt>dontinheritcheck</tt>).
             Если же имя компонента начинается символом "!", то его выбор будет
-            отменён. </p>
+            отменён.</p>
           <p>Этот параметр не может изменить состояние компонентов, которые
-            содержат флаг <tt>fixed</tt>. </p>
+            содержат флаг <tt>fixed</tt>.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех компонентов и выбираются только "help" и
             "plugins":
-            <tt class="nill">/COMPONENTS="help,plugins"</tt><br /><br /></div><br />
+            <code>/COMPONENTS="help,plugins"</code><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех компонентов и выбирается родительский со всеми
             дочерними компонентами за исключением одного:
-            <tt class="nill">/COMPONENTS="*parent,!parent\child"</tt><br /><br /></div>
+            <code>/COMPONENTS="*parent,!parent\child"</code><br /><br /></div>
         </dd>
         <dt class="cmdline"><a name="TASKS">/TASKS=</a>"<i>разделённый
               запятыми перечень задач</i>"</dt>
         <dd>
           <p>Определяет перечень <a href="topic_taskssection.htm">задач</a>,
-            которые должны быть изначально выбраны. </p>
+            которые должны быть изначально выбраны.</p>
           <p>Будут выбраны только указанные задачи, остальные будут отменены.
             Если необходимо сохранить заданные по умолчанию задачи и только
             выбрать/отменить некоторые из них, используйте параметр <tt>/MERGETASKS</tt>
@@ -279,17 +280,17 @@
           <p>Если имя задачи начинается символом "*", также будут выбраны все
             дочерние задачи (за исключением тех, которые имеют флаг <tt>dontinheritcheck</tt>).
             Если же имя задачи начинается символом "!", то его выбор будет
-            отменён. </p>
+            отменён.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех задач и выбираются только "desktopicon" и
             "fileassoc":
-            <tt class="nill">/TASKS="desktopicon,fileassoc"</tt><br /><br /></div><br />
+            <code>/TASKS="desktopicon,fileassoc"</code><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Отменяется выбор всех задач и выбирается родительская со всеми
             дочерними задачами за исключением одной:
-            <tt class="nill">/TASKS="*parent,!parent\child"</tt><br /><br /></div>
+            <code>/TASKS="*parent,!parent\child"</code><br /><br /></div>
         </dd>
         <dt class="cmdline"><a name="MERGETASKS">/MERGETASKS=</a>"<i>разделённый
               запятыми перечень задач</i>"</dt>
@@ -299,26 +300,27 @@
             случае были бы выбраны по умолчанию.</p>
           <p>Если <a href="topic_setup_useprevioustasks.htm">UsePreviousTasks</a>
             имеет значение <tt>yes</tt>, то указанные задачи будут
-            выбраны/отменены после восстановления всех предыдущих задач. </p>
+            выбраны/отменены после восстановления всех предыдущих задач.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Сохраняются выбранные по умолчанию задачи, но дополнительно ещё
             выбираются "desktopicon" и "fileassoc":
-            <tt class="nill">/MERGETASKS="desktopicon,fileassoc"</tt><br /><br /></div><br />
+            <code>/MERGETASKS="desktopicon,fileassoc"</code><br /><br /></div><br />
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             Сохраняются выбранные по умолчанию задачи, но выбор задачи
             "desktopicon" отменяется:
-            <tt class="nill">/MERGETASKS="!desktopicon"</tt><br /><br /></div>
+            <code>/MERGETASKS="!desktopicon"</code><br /><br /></div>
         </dd>
         <dt class="cmdline"><a name="PASSWORD">/PASSWORD=</a><i>password</i></dt>
         <dd>
           <p>Определяет пароль для использования в установке. Если в секции <tt>[Setup]</tt>
             параметр <tt>Password</tt> не указан, этот параметр командной
-            строки не учитывается. </p>
+            строки не учитывается.</p>
           <p>Если указан неверный пароль, этот параметр также не учитывается.</p>
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

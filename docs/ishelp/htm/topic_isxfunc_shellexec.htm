@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: ShellExec</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,10 +19,10 @@
     <h1 class="topicheading">Программирование: ShellExec</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
+      <p class="prototip1 notopmarginX">function
           ShellExec(const Verb, Filename, Params, WorkingDir: String; const
           ShowCmd: Integer; const Wait: TExecWait; var ErrorCode: Integer):
-          Boolean;</tt></p>
+          Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Открывает указанный файл или выполняет другое действие, заданное
         параметром <tt>Verb</tt>, используя те же учетные данные, что и
@@ -37,7 +38,7 @@
         Используйте вызов <tt>SysErrorMessage(ErrorCode)</tt>, чтобы получить
         описание ошибки.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Класс <code>TExecWait</code> представлен следующими значениями:</p>
+      <p>Класс <tt>TExecWait</tt> представлен следующими значениями:</p>
       <pre class="indent">TExecWait = (ewNoWait, ewWaitUntilTerminated, ewWaitUntilIdle);</pre>
       <p>Обратите внимание, что передача параметром <tt>Wait</tt> значения
         отличного от <tt>ewNoWait</tt>, не будет иметь никакого эффекта, если в
@@ -47,7 +48,7 @@
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
 
           target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+          системных ошибок в библиотеке MSDN</a><img src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <p>Эта функция не может использоваться для запуска самой программы установки
         до тех пор, пока не начнётся процесс установки.</p>
       <h2 class="heading">Пример</h2>
@@ -68,5 +69,6 @@ class="hl kwb">then</span>
       <p class="indent"><a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
  <head>
   <meta http-equiv="Content-Language" content="ru" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,16 +8,36 @@
   <script language="JavaScript" src="../js/search.js"></script>
   <!-- You can change the fonts, text colors, and styles of your search results with the CSS below -->
   <link rel="stylesheet" type="text/css" href="../css/search.css" />
+  <link rel="stylesheet" type="text/css" href="../css/shared.css" />
 </head>
 
 <body onload="if (document.getElementById('zoom_searchbox')) {document.getElementById('zoom_searchbox').focus();}">
   <div id="loadingmsg" align="center"><img src="../images/load_ani.gif" style="border:none" alt="Загрузка..." /></div>
-  <p style="margin-left: 0.0520833in; padding-top: 0.0416667in;">
+  <p style="margin-left: 0.0520833in;">
   Введите ключевое слово для поиска<br />
   (используйте знаки подстановки '*' и '?'):
   </p>
   <!-- This is where the search form and results will appear -->
     <script language="JavaScript">ZoomSearch();</script>
   <noscript>You must have JavaScript enabled to use this version of the search engine.</noscript>
+  <script>
+    // Обработчик сообщений для contents_search.htm
+    window.addEventListener('message', function(event) {
+      if (event.data.type === 'SET_THEME') {
+        document.documentElement.setAttribute('data-theme', event.data.theme);
+      }
+    });
+
+    // Проверяем тему при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+
+      // Запрашиваем тему у родителя, если мы во фрейме
+      if (window.parent !== window) {
+        window.parent.postMessage({ type: 'GET_THEME' }, '*');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: DownloadTemporaryFile</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,9 +19,9 @@
     <h1 class="topicheading">Программирование: DownloadTemporaryFile</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX"><tt class="nill">function
-          DownloadTemporaryFile(const Url, FileName, RequiredSHA256OfFile:
-          String; const OnDownloadProgress: TOnDownloadProgress): Int64;</tt></p>
+      <p class="prototip1 notopmarginX">function
+          DownloadTemporaryFile(const Url, BaseName, RequiredSHA256OfFile:
+          String; const OnDownloadProgress: TOnDownloadProgress): Int64;</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет загрузку файла по указанному <tt>URL</tt>-адресу во
         временный каталог. Для определения расположения временного каталога
@@ -40,7 +41,7 @@
         будет передавать информацию о ходе загрузки, или значение <tt>nil</tt>,
         если в этом нет необходимости.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Класс <code>TOnDownloadProgress</code> представлен следующей функцией:</p>
+      <p>Класс <tt>TOnDownloadProgress</tt> представлен следующей функцией:</p>
       <pre class="indent">TOnDownloadProgress = function(const Url, FileName: String; const Progress, ProgressMax: Int64): Boolean;</pre>
       <p>Параметр <tt>ProgressMax</tt> будет равен 0, если размер файла
         по-прежнему неизвестен. Функция возвращает значение <tt>True</tt>,
@@ -79,19 +80,20 @@ class="hl kwb">then</span>
 <span class="hl kwb">end</span>;
 
 </pre>
-      <p>Также смотрите в файле <i>CodeDownloadFiles.iss</i> другой пример с
+      <p>Смотрите в файле <i>CodeDownloadFiles.iss</i> другой пример с
         использованием <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>.</p>
+      <p>Также смотрите пример сценария <i>DownloadFiles.iss</i>, который показывает
+        возможность загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a>
-        <br />
-        <a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a>
-        <br />
-        <a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a>
-        <br />
-        <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a> <br />
-        <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a> <br />
-        <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a>
+      <p class="indent"><a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a><br />
+        <a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a><br />
+        <a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a><br />
+        <a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a><br />
+        <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a><br />
+        <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a><br />
+        <a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

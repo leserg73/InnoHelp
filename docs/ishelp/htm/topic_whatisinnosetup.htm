@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Что такое Inno Setup?</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -21,11 +22,11 @@
 <p style="background: #ffa0a0; color: black; padding: 6px; border: 1px solid black">You are running an old version of Internet Explorer. Consequently, you may encounter problems viewing the documentation. It is recommended that you upgrade to Internet Explorer 6.0 or later.
 </p><![endif]-->
       <p style="text-indent: 0;">
-        <b>Inno Setup версия 6.4.3</b><br />
+        <b>Inno Setup версия 6.5.0-dev</b><br />
         <b>Авторские права © 1997-2025 Jordan Russell. Все права защищены.</b><br />
         <b>Смежные авторские права © 2000-2025 Martijn Laan. Все права защищены.</b><br />
         <a href="https://jrsoftware.org/" target="_blank" title="https://jrsoftware.org/">Домашняя
-          страница Inno Setup</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />
+          страница Inno Setup</a><img src="../images/extlink.svg" alt=" [внешняя ссылка]" />
       </p>
       <p>Inno Setup - это <i>бесплатный</i> установщик для
         программ Windows, разработанный Jordan Russell и Martijn Laan. Первая
@@ -43,35 +44,35 @@
           не требуются.)</li>
         <li>Обширная поддержка установки <a href="topic_32vs64bitinstalls.htm">64-разрядных</a>
           приложений на 64-разрядные версии Windows. Также поддерживаются
-          архитектуры x64 и Arm64. </li>
+          архитектуры x64 и Arm64.</li>
         <li>Обширная поддержка как для административных, так и для <a href="topic_admininstallmode.htm">не
-            административных</a> установок. </li>
+            административных</a> установок.</li>
         <li>Поддержка создания одного EXE-файла программы установки для удобного
           распространения в сети Интернет. Также поддерживается <a href="topic_setup_diskspanning.htm">разбивка
-            на диски</a>. </li>
+            на диски</a>.</li>
         <li>Изменяемый размер стандартного окна мастера установки.</li>
         <li>Создание настраиваемого <a href="topic_typessection.htm">типа</a>
-          установки, например: Полная, Минимальная, Выборочная. </li>
+          установки, например: Полная, Минимальная, Выборочная.</li>
         <li>Возможность создания <a href="topic_setup_uninstallable.htm">деинсталлятора</a>
-          (программы удаления). </li>
+          (программы удаления).</li>
         <li>Установка <a href="topic_filessection.htm">файлов</a>:<br />
           Включает интегрированную поддержку для "deflate", bzip2, and 7-Zip
           LZMA/LZMA2 методов <a href="topic_setup_compression.htm">сжатия</a>
           файлов. Программа установки также может сравнивать версии файлов,
           выполнять замену используемых/занятых файлов, назначать применение
           общих файлов, регистрировать DLL/OCX и другие типы библиотек,
-          устанавливать шрифты. </li>
+          устанавливать шрифты, загружать файлы и извлекать содержимое архивов.</li>
         <li>Создание <a href="topic_iconssection.htm">ярлыков</a> в любом
-          месте, в том числе в меню "Пуск" и на Рабочем столе. </li>
+          месте, в том числе в меню "Пуск" и на Рабочем столе.</li>
         <li>Создание записей в <a href="topic_registrysection.htm">реестре</a>
-          и файлах <a href="topic_inisection.htm">INI</a>. </li>
+          и файлах <a href="topic_inisection.htm">INI</a>.</li>
         <li>Возможность <a href="topic_runsection.htm">запуска</a> сторонних
           программ перед началом, в течении и после окончания установки.</li>
         <li>Поддержка <a href="topic_languagessection.htm">многоязычных</a>
-          программ установок, в том числе с языком справа налево. </li>
+          программ установок, в том числе с языком справа налево.</li>
         <li>Поддержка <a href="topic_setup_password.htm">защищенных паролем</a>
           и <a href="topic_setup_encryption.htm">шифрованных</a> программ
-          установок. </li>
+          установок.</li>
         <li>Создание программ установок и удаления с <a href="topic_setup_signtool.htm">цифровой
             подписью</a>.</li>
         <li><a href="topic_setupcmdline.htm#SILENT">Тихая установка</a> и <a href="topic_uninstcmdline.htm#SILENT">тихое
@@ -81,18 +82,18 @@
           (препроцессор).</li>
         <li>Встроенный компилятор <a href="topic_scriptintro.htm">сценариев на
             языке Pascal</a>, позволяющего расширить функции и возможности
-          программ установок и удаления. </li>
+          программ установок и удаления.</li>
         <li>Полностью открытый исходный код, доступный на ресурсе <a href="https://github.com/jrsoftware/issrc"
             target="_blank" title="https://github.com/jrsoftware/issrc">GitHub</a><img
-            src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />. </li>
-        <li>Небольшой размер модуля установки: всего лишь 1,77 Мб со всеми
+            src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</li>
+        <li>Небольшой размер модуля установки: всего лишь 1,78 Мб со всеми
           функциями.</li>
         <li>Все функции полностью документированы.</li>
         <li>Используется <a href="https://code.visualstudio.com" target="_blank"
             title="https://code.visualstudio.com">Microsoft Visual Studio Code</a><img
-            src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /> и <a href="https://www.embarcadero.com/products/delphi"
+            src="../images/extlink.svg" alt=" [внешняя ссылка]" /> и <a href="https://www.embarcadero.com/products/delphi"
             target="_blank" title="https://www.embarcadero.com/products/delphi">Embarcardero
-            Delphi</a><img src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />. </li>
+            Delphi</a><img src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</li>
       </ul>
       <br />
       <p><b><i>Inno Setup действительно полностью бесплатная программа, даже для
@@ -104,5 +105,6 @@
         является общественным достоянием. Некоторые ограничения о использовании
         и распространении смотрите в файле лицензии LICENSE.TXT.)</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Unicode Inno Setup</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -37,11 +38,11 @@
           обязательным. Кодировка UTF-16 не поддерживается.</li>
         <li>Любые существующие языковые .isl файлы в кодировке ANSI во время
           компиляции автоматически преобразуются с использованием языкового
-          параметра <tt>LanguageCodePage</tt>. </li>
+          параметра <tt>LanguageCodePage</tt>.</li>
         <li>Любые записи <tt>[Messages]</tt> и <tt>[CustomMessages]</tt> в
           существующих ANSI .iss сценариях должны быть вручную преобразованы в
           кодировку Unicode, если язык использует особое значение <tt>LanguageCodePage</tt>.
-        </li>
+       </li>
         <li>Unicode версия Inno Setup поддерживает в файлах .txt для <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> кодировку UTF-8 и
           UTF-16LE. Начиная с Inno Setup 6.3 маркер BOM больше не является
@@ -49,9 +50,9 @@
         <li>Любой язык простых текстовых файлов в кодировке ANSI для <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> или <tt>InfoAfterFile</tt> во время
           компиляции автоматически преобразуется с использованием языкового
-          параметра <tt>LanguageCodePage</tt>. </li>
+          параметра <tt>LanguageCodePage</tt>.</li>
         <li>Директива <tt>ShowUndisplayableLanguages</tt> в секции <tt>[Setup]</tt>
-          игнорируется Unicode версией Inno Setup. </li>
+          игнорируется Unicode версией Inno Setup.</li>
         <li>Существующие инсталляции ваших программ, выполненные ANSI версией
           программы установки, могут быть легко обновлены Unicode версией
           программы установки и наоборот.</li>
@@ -67,13 +68,13 @@
               <tt>CreateOutputMsgMemoPage</tt>, <tt>RegQueryBinaryValue</tt>, <tt>RegWriteBinaryValue</tt>,
               <tt>OemToCharBuff</tt>, <tt>CharToOemBuff</tt>, <tt>LoadStringFromfile</tt>,
               <tt>SaveStringToFile</tt> и <tt>GetMD5OfString</tt> теперь
-              используют тип AnsiString вместо String. </li>
+              используют тип AnsiString вместо String.</li>
             <li>Добавлена поддержка новых функций <tt>SaveStringsToUTF8File</tt>
-              и <tt>GetMD5OfUnicodeString</tt>. </li>
+              и <tt>GetMD5OfUnicodeString</tt>.</li>
             <li>Добавлен новый тип данных "Int64", который поддерживается
               функцией <tt>IntToStr</tt>. Также добавлены новые функции <tt>StrToInt64</tt>,
-              <tt>StrToInt64Def</tt> и <tt>GetSpaceOnDisk64</tt>. </li>
-            <li>Добавлен новый класс <tt>TStringStream</tt>. </li>
+              <tt>StrToInt64Def</tt> и <tt>GetSpaceOnDisk64</tt>.</li>
+            <li>Добавлен новый класс <tt>TStringStream</tt>.</li>
             <li>Если вы хотите скомпилировать сценарий, в котором используются
               вызовы ANSI версии функций API Windows с помощью Unicode версии
               компилятора, либо обновите вызываемые функции на Unicode версию,
@@ -82,7 +83,7 @@
               сделает ваш код в секции <tt>[Code]</tt> совместимым с обеими
               версиями компилятора, Unicode и ANSI.</li>
           </ul>
-        </li>
+       </li>
       </ul>
       <p>Примечание: Unicode версия Inno Setup может создавать
         только Unicode версии программ установок и, аналогично, ANSI версия Inno
@@ -91,5 +92,6 @@
         компьютере, вам необходимо установить обе версии Inno Setup, но в разные
         папки.</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

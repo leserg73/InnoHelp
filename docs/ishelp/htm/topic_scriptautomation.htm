@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: Использование COM-объектов</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -33,19 +34,19 @@
           <p>Функция <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
             используется для создания нового COM-объекта с указанным именем
             класса. В случае успеха возвращает переменную типа <tt>Variant</tt>,
-            иначе вызывает исключение. </p>
+            иначе вызывает исключение.</p>
           <p>Функция <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>
             используется для подключения к существующему COM-объекту с указанным
             именем класса. В случае успеха возвращает переменную типа <tt>Variant</tt>,
             иначе вызывает исключение. Для некоторых программ такой результат
             можно использовать в качестве признака их выполнения (работает или
-            нет). </p>
+            нет).</p>
           <p>Значение, возвращаемое функцией <a href="topic_isxfunc_createoleobject.htm">CreateOleObject</a>
             или <a href="topic_isxfunc_getactiveoleobject.htm">GetActiveOleObject</a>
             затем можно использовать для доступа к свойствам и методам
             COM-объекта. Доступ осуществляется посредством "позднего
             связывания", который означает, что вызов запрашиваемых методов или
-            свойств невозможен до момента выполнения программы установки. </p>
+            свойств невозможен до момента выполнения программы установки.</p>
           <p>Для получения доступа к свойству или методу, имя которого является
             зарезервированным словом, используйте функцию <a href="topic_isxfunc_idispatchinvoke.htm">IDispatchInvoke</a>.
           </p>
@@ -57,7 +58,7 @@
             начиная с Inno Setup 5.5.9, попробуйте в сценарии перед созданием
             COM-объекта поместить следующую строку: <tt>LoadDLL(ExpandConstant('{sys}\mscoree.dll'),
               ErrorCode);</tt> и добавьте переменную <tt>ErrorCode</tt> с типом
-            <tt>Integer</tt>. </p>
+            <tt>Integer</tt>.</p>
         </dd>
         <h2 class="heading">Интерфейс <span class="comidispatch">IUnknown</span></h2>
         <dd>
@@ -71,7 +72,7 @@
             приведения к желаемому интерфейсу. Доступ осуществляется посредством
             "раннего связывания", который означает, что необходимый интерфейс
             должен быть определён ещё в сценарии, т.е. до компиляции, в отличии
-            от интерфейса IDispatch. </p>
+            от интерфейса IDispatch.</p>
           <p>Используйте функцию <a href="topic_isxfunc_stringtoguid.htm">StringToGUID</a>
             для преобразования строкового значения GUID в "реальный" GUID. А
             функцию <a href="topic_isxfunc_olecheck.htm">OleCheck</a> для
@@ -97,9 +98,10 @@
             а затем, после использования, нуждается в удалении, убедитесь, что к
             этим библиотекам нет больше ссылок, затем вызовите функцию <a href="topic_isxfunc_cofreeunusedlibraries.htm">CoFreeUnusedLibraries</a>.
             Эта функция попытается выгрузить библиотеку, чтобы её можно было
-            безопасно удалить. </p>
+            безопасно удалить.</p>
         </dd>
       </dl>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

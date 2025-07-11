@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: FindFirst</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,13 +19,13 @@
     <h1 class="topicheading">Препроцессор Inno Setup: FindFirst</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>int</b> FindFirst(<b>str</b>, <b>int</b>)</tt></p>
+      <p class="prototip1 notopmarginX null"><b>int</b> FindFirst(<b>str</b>, <b>int</b>)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет поиск файла в указанной папке согласно заданному имени
         (первый параметр) и атрибуту файла (второй параметр). Если файл найден,
         то возвращает его дескриптор, который должен быть использован в
-        последующих вызовах функций <tt class="nill"><a href="topic_findgetfilename.htm">FindGetFileName</a></tt>,
-        <tt class="nill"><a href="topic_findnext.htm">FindNext</a></tt> и <tt class="nill"><a href="topic_findclose.htm">FindClose</a></tt>.
+        последующих вызовах функций <code><a href="topic_findgetfilename.htm">FindGetFileName</a></code>,
+        <code><a href="topic_findnext.htm">FindNext</a></code> и <code><a href="topic_findclose.htm">FindClose</a></code>.
         В противном случае функция вернёт значение 0.</p>
       <p><i>Первый параметр</i> (<b>str</b>) устанавливает маску имени
         папки/файла, включая символы подстановки. Например, строка вида <tt>'<b>.\*.*</b>'</tt>
@@ -36,42 +37,42 @@
       <table>
         <tbody>
           <tr>
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faReadOnly</tt></td>
+            <td class="cellleft"><code><b>faReadOnly</b></code></td>
             <td class="cellright">файлы только для чтения</td>
             <td class="cellright">0x00000001</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faHidden</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code><b>faHidden</b></code></td>
             <td class="cellright">скрытые файлы</td>
             <td class="cellright">0x00000002</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faSysFile</tt></td>
+            <td class="cellleft"><code><b>faSysFile</b></code></td>
             <td class="cellright">системные файлы</td>
             <td class="cellright">0x00000004</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faVolumeID</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code><b>faVolumeID</b></code></td>
             <td class="cellright">файлы ID-тома</td>
             <td class="cellright">0x00000008</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faDirectory</tt></td>
+            <td class="cellleft"><code><b>faDirectory</b></code></td>
             <td class="cellright">файлы каталога</td>
             <td class="cellright">0x00000010</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faArchive</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code><b>faArchive</b></code></td>
             <td class="cellright">архивные файлы</td>
             <td class="cellright">0x00000020</td>
           </tr>
           <tr>
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faSymLink</tt></td>
+            <td class="cellleft"><code><b>faSymLink</b></code></td>
             <td class="cellright">файлы символьных ссылок</td>
             <td class="cellright">0x00000040</td>
           </tr>
-          <tr class="altcolorrow"">
-            <td class="cellleft"><tt class="nill" style="font-weight: bold;">faAnyFile</tt></td>
+          <tr class="altcolorrow">
+            <td class="cellleft"><code><b>faAnyFile</b></code></td>
             <td class="cellright">любые файлы</td>
             <td class="cellright">0x0000003F</td>
           </tr>
@@ -118,12 +119,13 @@ class="hl opt">)</span>
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><tt class="nill"><a href="topic_define.htm">define</a></tt>
+      <p class="indent"><code><a href="topic_define.htm">define</a></code>
       <br />
-      <tt class="nill"><a href="topic_sub.htm">sub</a></tt>
+      <code><a href="topic_sub.htm">sub</a></code>
       <br />
-      <tt class="nill"><a href="topic_if.htm">if</a></tt>
+      <code><a href="topic_if.htm">if</a></code>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

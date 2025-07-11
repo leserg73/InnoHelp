@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Программирование: CreateExtractionPage</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,12 +19,19 @@
     <h1 class="topicheading">Программирование: CreateExtractionPage</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-        <p class="prototip1 notopmarginX"><tt class="nill">function
+        <p class="prototip1 notopmarginX">function
           CreateExtractionPage(const ACaption, ADescription: String; const
-          OnExtractionProgress: TOnExtractionProgress): ExtractionWizardPage;</tt></p>
+          OnExtractionProgress: TOnExtractionProgress): TExtractionWizardPage;</p>
       <h2 class="heading">Описание</h2>
-        <p>Выполняет создание страницы для мастера установки, которая позволяет
-          распаковывать архивы 7-Zip и отображать ход выполнения.</p>
+        <p>Выполняет создание страницы для мастера установки для извлечения архивов
+          и отображения прогресса выполнения.</p>
+        <p>Поддерживаемые форматы архивов, помимо .7z, а также поддержка защищённых
+          паролем и многотомных архивов, зависят от значения директивы <a
+          href="topic_setup_archiveextraction.htm">ArchiveExtraction</a> в секции
+          <tt>[Setup]</tt>.</p>
+        <p>Чтобы разрешить извлечение архивов с пользовательскими расширениями,
+          например самораспаковывающихся архивов, используйте вызов <a
+          href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a>.</p>
         <p>Для параметра <tt>OnExtractionProgress</tt> укажите функцию, которая
           будет передавать информацию о ходе загрузки, или значение <tt>nil</tt>,
           если в этом нет необходимости.</p>
@@ -40,26 +48,32 @@
           конструкции <tt>try..finally</tt>, как это показано в примере
           <i>CodeDownloadFiles.iss</i>. Если не вызвать <tt>Hide</tt>, то
           мастер установки навсегда застрянет на странице с ходом выполнения.</p>
-        <p>Чтобы распаковать новый архив, используйте вызов метода <tt>Add</tt>.
-          Перед добавлением первого архива всегда вызывайте метод <tt>Clear</tt>.</p>
+        <p>Чтобы распаковать новый архив, используйте вызов метода <tt>Add</tt>
+          или метод <tt>AddEx</tt>, если архив защищён паролем. Перед добавлением
+          первого архива всегда вызывайте метод <tt>Clear</tt>.</p>
         <p>Для запуска распаковки вызовите метод <tt>Extract</tt>. В случае
           возникновения ошибки будет вызвано исключение. Иначе <tt>Extract</tt>
           вернёт количество распакованных архивов.</p>
         <p>Установите для свойства <tt>ShowArchiveInsteadFile</tt> значение
           <tt>True</tt>, чтобы показать пользователю имя распаковываемого архива
           вместо имён файлов, которые находятся внутри архива.</p>
-        <p>Другие определения <tt>TOnExtractionProgress</tt> смотрите в разделе
-          <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a>
+        <p>Объявление класса <tt>TOnExtractionProgress</tt> смотрите в разделе
+          <a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a>
           настоящей справки.</p>
       <h2 class="heading">Пример</h2>
-        <p>Смотрите файл <i>CodeDownloadFiles.iss</i> с примером страницы
-          <tt>CreateDownloadPage</tt>, которая во многом похожа на страницу
-          <tt>CreateExtractionPage</tt>.</p>
+        <p>Смотрите сценарий <i>CodeDownloadFiles.iss</i> с функцией
+          <tt>CreateDownloadPage</tt>, которая подобна <tt>CreateExtractionPage</tt>,
+          и примером распаковки архива с использованием записи в секции
+          <tt>[Files]</tt>.</p>
+      <p>Также смотрите пример сценария <i>DownloadFiles.iss</i>, который показывает
+        возможность загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
     <h2 class="heading">См. также:</h2>
       <p class="indent"><a href="topic_scriptclasses.htm#TExtractionWizardPage">TExtractionWizardPage</a><br />
-        <a href="topic_isxfunc_extract7ziparchive.htm">Extract7ZipArchive</a><br />
+        <a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a><br />
+        <a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a><br />
         <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

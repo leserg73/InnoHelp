@@ -1,4 +1,4 @@
-![ISPP Logo](https://leserg73.github.io/InnoHelp/ishelp/images/innka.png)
+![ISPP Logo](https://leserg73.github.io/InnoHelp/ishelp/images/innka.svg)
 
 [![Latest Version](https://img.shields.io/github/release/leserg73/InnoHelp.svg)](https://github.com/leserg73/InnoHelp/releases/latest)
 [![Total Downloads](https://img.shields.io/github/downloads/leserg73/InnoHelp/total.svg)](https://github.com/leserg73/InnoHelp/releases)
@@ -16,6 +16,7 @@
 - [6.2.0 - 6.2.2](https://leserg73.github.io/InnoHelp/ishistory/whatsnew62.htm)
 - [6.3.0 - 6.3.3](https://leserg73.github.io/InnoHelp/ishistory/whatsnew63.htm)
 - [6.4.0 - 6.4.3](https://leserg73.github.io/InnoHelp/ishistory/whatsnew64.htm)
+- [6.5.0-dev](https://leserg73.github.io/InnoHelp/ishistory/whatsnew65.htm)
 
 -----------------------
 

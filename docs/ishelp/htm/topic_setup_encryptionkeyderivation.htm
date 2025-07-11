@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>[Setup]: EncryptionKeyDerivation</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -24,8 +25,9 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt class="nill">pbkdf2</tt><br />
-              или от <tt class="nill">pbkdf2/1</tt> до <tt class="nill">pbkdf2/2147483647</tt></div>
+              <div class="margined"><code>pbkdf2</code><br />
+              или от <code>pbkdf2/1</code> до
+              <code>pbkdf2/2147483647</code></div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -33,7 +35,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><tt class="nill">pbkdf2/200000</tt> </div>
+              <div class="margined"><code>pbkdf2/220000</code></div>
             </td>
           </tr>
         </tbody>
@@ -46,10 +48,11 @@
         <p><tt>pbkdf2</tt> – это функция шифрования PBKDF2-HMAC-SHA256 с 128-разрядным
           псевдослучайным значением соли, которая для дополнительной безопасности
           позволяет увеличить количество её итераций. Если число итераций не указано,
-          то по умолчанию принимается значение 200000.</p>
+          то по умолчанию принимается значение 220000.</p>
       <h2 class="heading">См. также:</h2>
         <p class="indent"><a href="topic_setup_encryption.htm">Encryption</a>
       </p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

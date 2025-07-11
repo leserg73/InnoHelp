@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Language" content="ru" />
@@ -7,6 +7,7 @@
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
     <title>Препроцессор Inno Setup: FileEof</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
@@ -18,13 +19,14 @@
     <h1 class="topicheading">Препроцессор Inno Setup: FileEof</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><tt class="nill"><b>int</b> FileEof(<b>int</b>)</tt></p>
+      <p class="prototip1 notopmarginX null"><b>int</b> FileEof(<b>int</b>)</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает нулевое значение, если указатель файла не установлен в
         позиции конца файла. Если функция вернула ненулевое значение, то
-        последующие вызовы функции <tt class="nill"><a href="topic_fileread.htm">FileRead</a></tt>
+        последующие вызовы функции <code><a href="topic_fileread.htm">FileRead</a></code>
         будут завершены ошибкой. Принимается только дескриптор файла, который
-        возвращает функция <tt class="nill"><a href="topic_fileopen.htm">FileOpen</a></tt>.</p>
+        возвращает функция <code><a href="topic_fileopen.htm">FileOpen</a></code>.</p>
     </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>
