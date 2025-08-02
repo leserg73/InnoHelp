@@ -27,6 +27,11 @@
         с целевым расширением (например, <b>.exe</b>) будут обрабатываться как
         архивы с исходным расширением (например, <b>.7z</b>).</p>
       <p>В случае ошибки будет вызвано исключение.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Вызовы этой функции игнорируются, если директива <a href=
+        "topic_setup_archiveextraction.htm">ArchiveExtraction</a> секции
+        <tt>[Setup]</tt> имеет значение <tt>basic</tt>. В этом случае файлы
+        всегда извлекаются как .7z, независимо от расширения.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
  <span class="hl kwb">Source</span>: &quot;<span class="hl kwc">{src}</span>\My7ZipSFX.exe; <span class="hl kwb">DestDir</span>: &quot;<span class="hl kwc">{app}</span>&quot;; <span class="hl kwb">Flags</span>: <span class="hl kwe">external extractarchive recursesubdirs createallsubdirs ignoreversion</span>

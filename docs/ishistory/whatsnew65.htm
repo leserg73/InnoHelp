@@ -12,20 +12,24 @@
           --main-bg-color: light-dark(white, #1f1f1f);
           --link-fg-color: light-dark(hsl(206, 100%, 37%), hsl(206, 100%, 50%));
           --link-hover-fg-color: light-dark(hsl(206, 100%, 27%), hsl(206, 100%, 43%));
-          --code-bg-color: light-dark(#f0f0f0, #403e41);
+          --code-bg-color: light-dark(#f0f0f0, #353135);
         }
         body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: var(--main-fg-color); background-color: var(--main-bg-color) }
         a:link, a:visited { color: var(--link-fg-color); background-color: transparent; text-decoration: none }
         a[href]:hover { color: var(--link-hover-fg-color); text-decoration: underline }
         tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: var(--code-bg-color) }
         tt           { padding: 2px 4px; border-radius: 4px }
-        pre          { line-height: normal; padding: 10px; border-radius: 6px }
+        pre          { line-height: normal; padding: 10px; border-radius: 6px; overflow-x: auto }
         li, div.limargins { margin-block: calc(5rem/16) }
         div.bluehead { text-align: center; color: white; background-color: hsl(206, 100%, 30%); padding: 5px; font-weight: bold; line-height: normal }
         .date        { font-size: calc(11rem/16); font-weight: bold }
         .head1       { font-size: calc(32rem/16) }
         .head2       { font-size: calc(20rem/16) }
         .ver         { font-size: calc(20rem/16); font-weight: bold }
+        code.innosetup .sec { font-weight: bold }
+        code.innosetup .key { color: #0078d4 }
+        code.innosetup .com { color: #339933 }
+        code.innosetup .con { color: #9262a8 }
     </style>
 </head>
   <body>
@@ -40,11 +44,10 @@
       на рассылку о новых выпусках Inno Setup.</p>
     <p><a name="6.5.0"></a><span class="ver">6.5.0-dev </span><span class="date">(?)</span></p>
     <span class="head2">Обработка архивов</span>
-    <p>Улучшена поддержка извлечения загруженных архивов. Теперь возможно извлечение
-      архивов, защищенных паролем, многотомных архивов и архивов другого формата,
-      отличных от .7z, например .zip. Это также позволяет снизить требования к
-      памяти при распаковке .7z-архивов с большими файлами. Кроме того, в секции
-      <tt>[Files]</tt> добавлена возможность извлечения файлов из архивов.</p>
+    <p>Теперь возможна распаковка архивов, защищённых паролем, многотомных архивов
+      и архивов другого формата, например .zip.</p>
+    <p>Добавлена возможность распаковки архивов напрямую из секции <tt>[Files]</tt>.
+      Теперь нет необходимости писать Pascal-код для распаковки архивов.</p>
     <p>Использование этих функций необязательно и <i>не</i> увеличивают размер
       программы установки, если не используются.</p>
     <ul>
@@ -96,13 +99,12 @@
             удаление извлеченных файлов, возможна комбинация с другими флагами и
             параметрами.</li>
           <li>Пример:
-            <pre style="white-space: pre-wrap;"><span style="color:#000000; font-weight:bold">[Setup]</span>
-<span style="color:#0000ff">ArchiveExtraction</span>=<span style="color:#0060c0">enhanced</span>/<span style="color:#0060c0">nopassword</span>
+            <pre><code class="innosetup"><span class="sec">[Setup]</span>
+<span class="key">ArchiveExtraction</span>=enhanced/nopassword
 
-<span style="color:#000000; font-weight:bold">[Files]</span>
-<span style="color:#0000ff">Source</span>: &quot;<span style="color:#8000cc">{tmp}</span>\MyProg-ExtraReadmes<span style="color:#800000">.7</span>z&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">external extractarchive recursesubdirs createallsubdirs ignoreversion</span>
-</pre>
+<span class="sec">[Files]</span>
+<span class="key">Source</span>: "<span class="con">{tmp}</span>\MyProg-ExtraReadmes.7z"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"</span>; \
+  <span class="key">Flags</span>: external extractarchive recursesubdirs createallsubdirs ignoreversion</code></pre>
           </li>
         </ul>
        </li>
@@ -160,12 +162,13 @@
             В этом случае значение параметра <tt>DestName</tt> используется для
             определения формата архива, отображения и ведения журнала установки.</li>
           <li>Пример:
-          <pre style="white-space: pre-wrap;"><span style="color:#000000; font-weight:bold">[Files]</span>
-<span style="color:#0000ff">Source</span>: <span style="color:#000066; font-style:italic">&quot;https://jrsoftware.org/download.php/is.exe?dontcount=1&quot;</span>; <span style="color:#0000ff">DestName</span>: &quot;innosetup-latest.exe&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">ExternalSize</span>: <span style="color:#800000">7_000_000</span>; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">external download ignoreversion</span>
-<span style="color:#0000ff">Source</span>: &quot;<span style="color:#000066; font-style:italic">https://jrsoftware.org/download.php/myprog-extrareadmes.7z&quot;</span>; <span style="color:#0000ff">DestName</span>: &quot;MyProg.ExtraReadmes.7z&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}&quot;</span>; \
-  <span style="color:#0000ff">ExternalSize</span>: <span style="color:#800000">275</span>; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">external download extractarchive ignoreversion</span>
-</pre>
+            <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/is.exe?dontcount=1"; \
+  <span class="key">DestName</span>: "innosetup-latest.exe"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ExternalSize</span>: 7_000_000; <span class="key">Flags</span>: external download ignoreversion
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/myprog-extrareadmes.7z"; \
+  <span class="key">DestName</span>: "MyProg.ExtraReadmes.7z"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ExternalSize</span>: 275; <span class="key">Flags</span>: external download extractarchive ignoreversion</code></pre>
           </li>
           <li>Добавлен пример сценария "<i>DownloadFiles.iss</i>",
             демонстрирующий загрузку файла посредством всего лишь одной записи
@@ -203,15 +206,14 @@
         <li>Файлы подписей имеют читаемый формат и могут быть созданы с помощью
           инструмента подписи "Inno Setup Signature Tool" (см. ниже).</li>
         <li>Пример секции:
-        <pre style="white-space: pre-wrap;"><span style="color:#000000; font-weight:bold">[ISSigKeys]</span>
-<span style="color:#0000ff">Name</span>: anna: <span style="color:#0000ff">KeyFile</span>: &quot;anna.ispublickey&quot;; <span style="color:#0000ff">Group</span>: exesigner
-<span style="color:#0000ff">Name</span>: ryan; <span style="color:#0000ff">KeyFile</span>: &quot;ryan.ispublickey&quot;; <span style="color:#0000ff">Group</span>: exesigner
-<span style="color:#0000ff">Name</span>: ivan; <span style="color:#0000ff">KeyFile</span>: &quot;ivan.ispublickey&quot;; <span style="color:#0000ff">Group</span>: docsigner
-<span style="color:#006600; font-style:italic">; &quot;max&quot; является доверенным для подписания как exe, так и doc</span>
-<span style="color:#0000ff">Name</span>: <span style="color:#0060c0">max</span>; <span style="color:#0000ff">KeyFile</span>: &quot;<span style="color:#0060c0">max</span>.ispublickey&quot;; <span style="color:#0000ff">Group</span>: exesigner docsigner
-<span style="color:#006600; font-style:italic">; &quot;boss&quot; также имеет ключ</span>
-<span style="color:#0000ff">Name</span>: bosskey; <span style="color:#0000ff">KeyFile</span>: &quot;boss.ispublickey&quot;
-</pre>
+          <pre><code class="innosetup"><span class="sec">[ISSigKeys]</span>
+<span class="key">Name</span>: anna; <span class="key">KeyFile</span>: "anna.ispublickey"; <span class="key">Group</span>: exesigner
+<span class="key">Name</span>: ryan; <span class="key">KeyFile</span>: "ryan.ispublickey"; <span class="key">Group</span>: exesigner
+<span class="key">Name</span>: ivan; <span class="key">KeyFile</span>: "ivan.ispublickey"; <span class="key">Group</span>: docsigner
+<span class="com">; max is trusted for both exe and doc signing</span>
+<span class="key">Name</span>: max; <span class="key">KeyFile</span>: "max.ispublickey"; <span class="key">Group</span>: exesigner docsigner
+<span class="com">; the boss also has a key</span>
+<span class="key">Name</span>: bosskey; <span class="key">KeyFile</span>: "boss.ispublickey"</code></pre>
          </li>
       </ul>
     </li>
@@ -248,18 +250,18 @@
        <tt>sign</tt> или <tt>signonce</tt>. Вместо них используйте флаг
        <tt>signcheck</tt>.</li>
       <li>Пример секции:
-      <pre style="white-space: pre-wrap;"><span style="color:#000000; font-weight:bold">[Files]</span>
-<span style="color:#0000ff">Source</span>: &quot;MyProg.exe&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">ISSigAllowedKeys</span>: &quot;exesigner bosskey&quot;; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">issigverify</span> 
-<span style="color:#0000ff">Source</span>: &quot;MyProg.chm&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">ISSigAllowedKeys</span>: &quot;docsigner bosskey&quot;; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">issigverify</span>
-<span style="color:#0000ff">Source</span>: &quot;<span style="color:#8000cc">{src}</span>\Extra\*.chm&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">ISSigAllowedKeys</span>: &quot;docsigner bosskey&quot;; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">issigverify external</span>; \
-  <span style="color:#0000ff">Excludes</span>: &quot;*.issig&quot;
-<span style="color:#0000ff">Source</span>: &quot;<span style="color:#000066; font-style:italic">https://jrsoftware.org/download.php/is.exe?dontcount=1</span>&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  <span style="color:#0000ff">ISSigAllowedKeys</span>: &quot;exesigner bosskey&quot;; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">issigverify</span> <span style="color:#0060c0">external download ignoreversion</span>; \
-  <span style="color:#0000ff">DestName</span>: &quot;innosetup-latest.exe&quot;; <span style="color:#0000ff">ExternalSize</span>: <span style="color:#800000">7_000_000</span>
-</pre>
+        <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "MyProg.exe"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "exesigner bosskey"; <span class="key">Flags</span>: issigverify 
+<span class="key">Source</span>: "MyProg.chm"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "docsigner bosskey"; <span class="key">Flags</span>: issigverify
+<span class="key">Source</span>: "<span class="con">{src}</span>\Extra\*.chm"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "docsigner bosskey"; <span class="key">Flags</span>: issigverify external; \
+  <span class="key">Excludes</span>: "*.issig"
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/is.exe?dontcount=1"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "exesigner bosskey"; \
+  <span class="key">Flags</span>: issigverify external download ignoreversion; \
+  <span class="key">DestName</span>: "innosetup-latest.exe"; <span class="key">ExternalSize</span>: 7_000_000</code></pre>
       </li>
     </ul>
     </li>
@@ -271,10 +273,10 @@
       <li>Предоставляет команды для подписи и проверки файлов, экспорта открытых
         ключей и генерации закрытых ключей.</li>
       <li>Примеры использования:
-      <pre>issigtool --key-file="MyKey.isprivatekey" generate-private-key
+      <pre><code>issigtool --key-file="MyKey.isprivatekey" generate-private-key
 issigtool --key-file="MyKey.isprivatekey" sign "MyProg.dll"
 issigtool --key-file="MyKey.isprivatekey" export-public-key "MyKey.ispublickey"
-issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</pre>
+issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
       </li>
     </ul>
     </li>
@@ -298,11 +300,11 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</pre>
         SHA-256 вместо полной проверки подписи, в качестве альтернативы
         использованию флага <tt>issigverify</tt>.<br/>
         Пример:
-      <pre style="white-space: pre-wrap;"><span style="color:#000000; font-weight:bold">[Files]</span>
-<span style="color:#0000ff">Source</span>: &quot;<span style="color:#000066; font-style:italic">https://jrsoftware.org/download.php/iscrypt.dll?dontcount=1</span>&quot;; <span style="color:#0000ff">DestName</span>: &quot;ISCrypt.dll&quot;; <span style="color:#0000ff">DestDir</span>: &quot;<span style="color:#8000cc">{app}</span>&quot;; \
-  Hash: &quot;<span style="color:#800000">2f6294f9aa09f59a574b5dcd33be54e16b39377984f3d5658cda44950fa0f8fc</span>&quot;; \
-  <span style="color:#0000ff">ExternalSize</span>: <span style="color:#800000">2560</span>; <span style="color:#0000ff">Flags</span>: <span style="color:#0060c0">external download ignoreversion</span>
-</pre>
+        <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/iscrypt.dll?dontcount=1"; \
+  <span class="key">DestName</span>: "ISCrypt.dll"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">Hash</span>: "2f6294f9aa09f59a574b5dcd33be54e16b39377984f3d5658cda44950fa0f8fc"; \
+  <span class="key">ExternalSize</span>: 2560; <span class="key">Flags</span>: external download ignoreversion</code></pre>
     </li>
       <li>Изменения в Pascal Scripting:
         <ul>
@@ -322,20 +324,22 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</pre>
         <ul>
           <li>Список с результатами поиска "<i>Найти в файлах</i>" теперь будет
             обновлять номера строк в случае добавления или удаления строк.</li>
-        <li>Опция "<i>Подсвечивать вхождения текущего слова</i>" (по умолчанию
-          отключена) больше не выделяет имена директив, параметров и ключевых
-          слов языка Паскаль. Опция "<i>Подсвечивать вхождения текущего выделения</i>"
-          (по умолчанию включена) работает в прежнем режиме.</li>
-        <li>Улучшена поддержка тёмного режима.</li>
+          <li>Опция "<i>Подсвечивать вхождения текущего слова</i>" (по умолчанию
+            отключена) больше не выделяет имена директив, параметров и ключевых
+            слов языка Паскаль. Опция "<i>Подсвечивать вхождения текущего выделения</i>"
+            (по умолчанию включена) работает в прежнем режиме.</li>
+          <li>Повсеместная поддержка тёмного режима.</li>
+          <li>Улучшена поддержка тем с высокой контрастностью.</li>
+          <li>Улучшена поддержка программ чтения с экрана.</li>
         </ul>
       </li>
       <li>Параметр <tt>Excludes</tt> в секции <tt>[Files]</tt> теперь можно
         комбинировать с флагом <tt>external</tt>.</li>
+      <li>Максимальное значение директивы <tt>LZMANumBlockThreads</tt>в секции
+        <tt>[Setup]</tt> увеличено с 32 до 256.</li>
       <li>Параметры <tt>ExternalSize</tt>, <tt>ExtraDiskSpaceRequired</tt> и
         <tt>UninstallDisplaySize</tt> теперь поддерживают разделители цифр.
-        Пример: <tt>UninstallDisplaySize=1_073_741_824</tt>.<br/>Также это
-        относится к параметру <tt>ValueData</tt> в секции <tt>[Registry]</tt>,
-        если <tt>ValueType</tt> имеет значение <tt>qword</tt>.</li>
+        Пример: <tt>UninstallDisplaySize=1_073_741_824</tt>.</li>
       <li>Изменения в ISPP:
         <ul>
           <li>Добавлена переменная <tt>__DIR__</tt>. Возвращает каталог текущего
@@ -351,10 +355,16 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</pre>
       </li>
       <li>Изменения в Pascal Scripting:
         <ul>
+          <li>Добавлен новый класс <tt>TBitmapButton</tt>, который работает также,
+            как <tt>TBitmapImage</tt>, но доступен для управления с клавиатуры и
+            совместим с программами чтения с экрана. Обязательно указывайте
+            свойство <tt>Caption</tt>, даже если оно не отображается. Смотрите
+            обновленный пример сценария <i>CodeClasses.iss</i>.</li>
+          <li>Добавлены новые функции <tt>InitializeBitmapButtonFromIcon</tt> и
+            <tt>GetSHA256OfStream</tt>.</li>
           <li>Добавлено новое свойство <tt>LastBaseNameOrUrl</tt> в классе
             <tt>TDownloadWizardPage</tt>. Смотрите обновленный пример сценария
             "<i>CodeDownloadFiles.iss</i>".</li>
-          <li>Добавлена функция <tt>GetSHA256OfStream</tt>.</li>
           <li><i>Исправлено:</i> функция события <tt>CurPageChanged</tt> теперь
             всегда срабатывает только при изменении текущей страницы. Ранее она
             для <tt>wpPreparing</tt> вызывалась дважды, если сценарий содержал
