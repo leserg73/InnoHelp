@@ -42,7 +42,34 @@
     </p>
     <p><b>Хотите получать уведомления об обновлениях?</b> <a href="ismail.php">Подпишитесь</a>
       на рассылку о новых выпусках Inno Setup.</p>
-    <p><a name="6.5.0"></a><span class="ver">6.5.0-dev </span><span class="date">(?)</span></p>
+    <p><a name="6.5.1"></a><span class="ver">6.5.1-dev </span><span class="date">(?)</span></p>
+      <ul>
+        <li><i>Исправлено:</i> использование параметра командной строки <tt>/CC</tt>
+          в IDE компилятора для сборки сценария приводило к ошибке.</li>
+      </ul>
+    <p><a name="6.5.0"></a><span class="ver">6.5.0 </span><span class="date">(2025-08-12)</span></p>
+    <span class="head2">Внедрение коммерческих лицензий</span>
+    <p>За долгие годы существования Inno Setup многие пользователи неоднократно
+      выражали своё желание, чтобы их компании поддержали развитие проекта.
+      Однако корпоративные правила в большинстве случаев не позволяли оформлять
+      пожертвования. Введение коммерческой лицензии даёт организациям простой и
+      легальный способ поддержать проект.</p>
+    <p>Кроме того, многие организации предпочитают иметь официальные лицензии на
+      всё используемое ими программное обеспечение, поскольку это облегчает
+      проведение аудитов и внутренних проверок на соответствие требованиям.</p>
+    <p>Наконец, ваша поддержка в виде покупки лицензий напрямую помогает нам
+      улучшать и поддерживать Inno Setup.</p>
+    <p>По этим причинам мы вводим коммерческие лицензии. Если вы или ваша
+      организация используете Inno Setup в коммерческих целях, мы просим вас
+      приобрести лицензию. Ваша поддержка поможет обеспечить дальнейшее развитие
+      программы.</p>
+    <p>Лицензии можно приобрести на нашем сайте, <a 
+      href="https://jrsoftware.org/isorder.php">в разделе заказов</a>, где также
+      приведена пояснительная информация. Все коммерческие лицензии являются
+      бессрочными и требуют единоразовой оплаты. В них входят два года обновлений,
+      включая как основных, так и второстепенных версий. По истечении этого
+      периода ваша текущая версия останется лицензированной и будет работать
+      как есть.</p>
     <span class="head2">Обработка архивов</span>
     <p>Теперь возможна распаковка архивов, защищённых паролем, многотомных архивов
       и архивов другого формата, например .zip.</p>
@@ -77,7 +104,7 @@
           для уменьшения её размера. Кроме того, реализована поддержка многотомных
           архивов.</li>
         </ul>
-        Различия между этими методами смотрите в разделе документации "<a
+        Различия между этими методами смотрите в разделе документации "<a 
         href="https://jrsoftware.org/ishelp/index.php?topic=setup_archiveextraction">ArchiveExtraction</a>".
       </li>
       <li>В секции <tt>[Files]</tt> добавлен флаг <tt>extractarchive</tt> и
@@ -170,7 +197,8 @@
   <span class="key">DestName</span>: "MyProg.ExtraReadmes.7z"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
   <span class="key">ExternalSize</span>: 275; <span class="key">Flags</span>: external download extractarchive ignoreversion</code></pre>
           </li>
-          <li>Добавлен пример сценария "<i>DownloadFiles.iss</i>",
+          <li>Добавлен пример сценария "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/DownloadFiles.iss">DownloadFiles.iss</a></i>",
             демонстрирующий загрузку файла посредством всего лишь одной записи
             в секции <tt>[Files]</tt>, а также загрузку, верификацию и распаковку
             архива.</li>
@@ -242,7 +270,8 @@
       <li>Может использоваться для проверки загруженных файлов, обеспечивая гибкость
         по сравнению с проверкой SHA-256, поскольку не требует изменения сценария
         при обновлении файлов. В качестве примера смотрите новый сценарий
-        "<i>DownloadFiles.iss</i>".</li>
+        "<i><a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/DownloadFiles.iss">DownloadFiles.iss</a></i>".</li>
       <li>Добавлен необязательный параметр <tt>ISSigAllowedKeys</tt>, предназначенный
         для ограничения ключей или групп ключей из секции <tt>[ISSigKeys]</tt>,
         используемых при проверке проверки подписи с флагом <tt>issigverify</tt>.</li>
@@ -311,7 +340,8 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
           <li>Добавлена функции <tt>ISSigVerify</tt> и <tt>DownloadTemporaryFileWithISSigVerify</tt>.</li>
           <li>Добавлены функции <tt>AddWithISSigVerify</tt> и <tt>AddExWithISSigVerify</tt>
             для поддержки класса <tt>TDownloadWizardPage</tt>. В качестве примера
-            смотрите обновленный файл сценария "<i>CodeDownloadFiles.iss</i>".
+            смотрите обновленный файл сценария "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>".
           </li>
         </ul>
       </li>
@@ -333,10 +363,14 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
           <li>Улучшена поддержка программ чтения с экрана.</li>
         </ul>
       </li>
-      <li>Параметр <tt>Excludes</tt> в секции <tt>[Files]</tt> теперь можно
-        комбинировать с флагом <tt>external</tt>.</li>
+      <li>Для директивы <tt>Encryption</tt> в секции <tt>[Setup]</tt> теперь
+        может быть установлено значение <tt>full</tt>, что приведёт к полному
+        шифрованию программы установки и потребует указание пароля при помощи
+        параметра командной строки /PASSWORD=.</li>
       <li>Максимальное значение директивы <tt>LZMANumBlockThreads</tt>в секции
         <tt>[Setup]</tt> увеличено с 32 до 256.</li>
+      <li>Параметр <tt>Excludes</tt> в секции <tt>[Files]</tt> теперь можно
+        комбинировать с флагом <tt>external</tt>.</li>
       <li>Параметры <tt>ExternalSize</tt>, <tt>ExtraDiskSpaceRequired</tt> и
         <tt>UninstallDisplaySize</tt> теперь поддерживают разделители цифр.
         Пример: <tt>UninstallDisplaySize=1_073_741_824</tt>.</li>
@@ -359,12 +393,14 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
             как <tt>TBitmapImage</tt>, но доступен для управления с клавиатуры и
             совместим с программами чтения с экрана. Обязательно указывайте
             свойство <tt>Caption</tt>, даже если оно не отображается. Смотрите
-            обновленный пример сценария <i>CodeClasses.iss</i>.</li>
+            обновленный пример сценария <i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeDownloadFiles.iss">CodeDownloadFiles.iss</a></i>.</li>
           <li>Добавлены новые функции <tt>InitializeBitmapButtonFromIcon</tt> и
             <tt>GetSHA256OfStream</tt>.</li>
           <li>Добавлено новое свойство <tt>LastBaseNameOrUrl</tt> в классе
             <tt>TDownloadWizardPage</tt>. Смотрите обновленный пример сценария
-            "<i>CodeDownloadFiles.iss</i>".</li>
+            "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>".</li>
           <li><i>Исправлено:</i> функция события <tt>CurPageChanged</tt> теперь
             всегда срабатывает только при изменении текущей страницы. Ранее она
             для <tt>wpPreparing</tt> вызывалась дважды, если сценарий содержал
@@ -372,6 +408,16 @@ issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
             пустую строку, чтобы дать команду программе установки остановиться.</li>
         </ul>
       </li>
+      <li>Если есть возможность, программа установки теперь получает путь к
+        временному каталогу при помощи функции API <tt>GetTempPath2</tt>, которая
+        впервые была введена в Windows 11, а позже интегрирована в Windows 10 и
+        Windows Server 2016 посредством месячных обновлений. При запуске под
+        учётной записью SYSTEM функция <tt>GetTempPath2</tt> возвращает частный
+        каталог (обычно <tt>C:\Windows\SystemTemp</tt>), что потенциально повышает
+        безопасность. На более старых версиях Windows или системах, которые не
+        были обновлены, программа установки возвращается к исходной функции API
+        <tt>GetTempPath</tt>. (Такое изменение делает защиту более глубокой, но
+        не устраняет известную уязвимость.)</li>
       <li>В Inno Setup 6.4.3 максимальная ширина всех диалоговых окон задач была
         увеличена примерно на 50%, что помогло решить проблему сокращения длинных
         строк, которые содержали путь. Теперь это происходит только в том случае,
