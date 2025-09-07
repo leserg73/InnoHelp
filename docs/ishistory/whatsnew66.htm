@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="author" content="Перевод на русский: Sergii Leonov">
+    <title>История версий Inno Setup 6</title>
+    <base href="https://jrsoftware.org/">
+    <style type="text/css">
+        :root {
+          color-scheme: light dark;
+          --main-fg-color: light-dark(#282828, #d6d6d6);
+          --main-bg-color: light-dark(white, #1f1f1f);
+          --link-fg-color: light-dark(hsl(206, 100%, 37%), hsl(206, 100%, 50%));
+          --link-hover-fg-color: light-dark(hsl(206, 100%, 27%), hsl(206, 100%, 43%));
+          --code-bg-color: light-dark(#f0f0f0, #353135);
+        }
+        body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: var(--main-fg-color); background-color: var(--main-bg-color) }
+        a:link, a:visited { color: var(--link-fg-color); background-color: transparent; text-decoration: none }
+        a[href]:hover { color: var(--link-hover-fg-color); text-decoration: underline }
+        tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: var(--code-bg-color) }
+        tt           { padding: 2px 4px; border-radius: 4px }
+        pre          { line-height: normal; padding: 10px; border-radius: 6px; overflow-x: auto }
+        li, div.limargins { margin-block: calc(5rem/16) }
+        div.bluehead { text-align: center; color: white; background-color: hsl(206, 100%, 30%); padding: 5px; font-weight: bold; line-height: normal }
+        .date        { font-size: calc(11rem/16); font-weight: bold }
+        .head1       { font-size: calc(32rem/16) }
+        .head2       { font-size: calc(20rem/16) }
+        .ver         { font-size: calc(20rem/16); font-weight: bold }
+        code.innosetup .sec { font-weight: bold }
+        code.innosetup .key { color: #0078d4 }
+        code.innosetup .com { color: #339933 }
+        code.innosetup .con { color: #9262a8 }
+    </style>
+</head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br>
+      <span class="head2">История версий</span></div>
+    <p>Авторские права © 1997-2025 <a href="./">Jordan Russell</a>. Все права
+      защищены.<br>
+      Смежные авторские права © 2000-2025 Martijn Laan. Все права защищены.<br>
+      Условия распространения и использования смотрите в <a href="files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a href="ismail.php">Подпишитесь</a>
+      на рассылку о новых выпусках Inno Setup.</p>
+    <p><a name="6.5.2"></a><span class="ver">6.6.0-dev </span><span class="date">(?)</span></p>
+    <p>Спасибо всем, кто уже приобрел лицензию! Ваша поддержка очень важна для
+        нашего дальнейшего развития.</p>
+    <span class="head2">Модернизация графики в инсталляторе/деинсталляторе</span>
+    <p>Программа установки и удаления теперь поддерживает тёмную тему:
+      принудительно или автоматически.</p>
+    <p>Все эти параметры являются дополнительными, имеют обратную совместимость
+      и <i>НЕ</i> увеличивают размер инсталлятора, если не используются.</p>
+    <ul>
+      <li>В секции <tt>[Setup]</tt> директива <tt>WizardStyle</tt> дополнена
+        новыми параметрами:
+      <ul>
+        <li>Добавлены режимы внешнего вида: <tt>light</tt> (по умолчанию, стандартная
+          светлая тема, что и в предыдущих версиях), <tt>dark</tt> (принудительная
+          тёмная тема, новый внешний вид) и <tt>dynamic</tt> (автоматическая
+          установка темы в зависимости от системных настроек темы Windows).</li>
+        <li>Например, чтобы использовать современный стиль с автоматическим выбором
+          между светлой и тёмной темами в зависимости от настроек Windows, следует
+          указать директиву со следующим значением:
+        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic</code></pre>
+        </li>
+        <li>Тёмная тема автоматически заменяет значки, изображения мастера и
+          настраивает цвета, сохраняя при этом единообразный интерфейс. Также
+          по-прежнему доступна настройка главного значка, изображений мастера
+          и цветов. Включает поддержку стилизации диалоговых окон задач.<br />
+        <a href="https://jrsoftware.org/images/is-welcome-dark-org-175.png">Скриншот
+          окна инсталлятора с тёмным стилем при DPI 175%</a>.<br />
+        <a href="https://jrsoftware.org/images/is-taskdialog-dark-org-125.png">Скриншот
+          диалога задач с тёмным стилем при DPI 125%</a>.
+        </li>
+        <li>Для получения дополнительной информации смотрите обновленный раздел
+          справки с описанием директивы <a 
+          href="https://jrsoftware.org/ishelp/index.php?topic=setup_wizardstyle">WizardStyle</a>.</li>
+      </ul>
+      <li>Добавлена новые директивы <tt>DynamicDark</tt> в секции <tt>[Setup]</tt>
+        для указания отдельных пользовательских изображений и цветов, которые
+        специально будут использоваться в режиме <tt>dynamic</tt> при переключении
+        на тёмную тему.</li>
+      <ul>
+        <li>Например, укажите два пользовательских цвета: один для светлой темы,
+          а другой для тёмной:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic
+<span class="key">WizardImageBackColor</span>=$ffffff
+<span class="key">WizardImageBackColorDynamicDark</span>=$2b2b2b</code></pre>
+        Примечание: принудительная установка тёмной темы (<tt>classic/dark</tt>
+        или <tt>modern/dark</tt>) не использует настройки <tt>DynamicDark</tt>;
+        она использует стандартные настройки. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dark
+<span class="key">WizardImageBackColor</span>=$2b2b2b</code></pre>
+        </li>
+      </ul>
+      <li>Стиль по умолчанию можно заменить на другой файл VCL-стиля с помощью
+        новой директивы <tt>WizardStyleFile</tt> и директивы <tt>DynamicDark</tt>.<br/>
+      <ul>
+        <li>Например, чтобы использовать другие стили для светлой и тёмной тем,
+          укажите соответствующие файлы стилей:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic
+<span class="key">WizardStyleFile</span>=Windows11_Polar_Light.vsf
+<span class="key">WizardStyleFileDynamicDark</span>=Windows11_Polar_Dark.vsf</code></pre>
+        <a href="https://jrsoftware.org/images/is-welcome-polarlight-org-175.png">Скриншот
+          инсталлятора со стилем Polar Light при DPI 175%</a>.<br/>
+        <a href="https://jrsoftware.org/images/is-welcome-polardark-org-175.png">Скриншот
+          инсталлятора со стилем Polar Dark при DPI 175%</a>.<br/>
+        <a href="https://jrsoftware.org/images/is-taskdialog-zircon-org-125.png">Скриншот
+          диалога задач со стилем Zircon при DPI 125%</a>.
+        </li>
+        <li>Если принудительно активирована светлая (<tt>light</tt>) тема или
+          <tt>dynamic</tt> тёмная (<tt>dynamic</tt> с Windows в светлом режиме),
+          стилем по умолчанию является встроенная системная светлая тема. В
+          противном случае – встроенная пользовательская тёмная тема.</li>
+        <li>Если активен пользовательский стиль (включая встроенную пользовательскую
+          тёмную тему), все текстовые метки, за исключением метки, связанной с
+          сообщением <tt>BeveledLabel</tt>, имеют прозрачный фон.</li>
+      </ul>
+      <li>Программирование на языке Паскаль: добавлены функции <tt>IsWinDark</tt> и <tt>IsDarkInstallMode</tt>.</li>
+    </ul>
+    <span class="head2">Другие изменения</span>
+    <ul>
+      <li>Программирование на языке Паскаль: добавлена поддержка кнопок командных ссылок (стиль кнопок, используемый в диалоговых окнах задач). Смотрите пример в сценарии <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+    </ul>
+    <p>Используете Inno Setup в коммерческих целях? Пожалуйста, <a 
+        href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/whatsnew65.htm">История
+      версий Inno Setup 6.5</a></p>
+  </body>
+</html>
