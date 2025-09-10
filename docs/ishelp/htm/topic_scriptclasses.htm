@@ -37,8 +37,8 @@
         поскольку приведенные ниже классы в основном представляют собой простые
         обёртки для классов VCL, используемых Inno Setup.<br />
         <br />
-        &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL"
-          target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL">http://docwiki.embarcadero.com/RADStudio/Alexandria/en/VCL</a><img
+        &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL"
+          target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL">http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL</a><img
           src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <p class="null"><br />
         <code>
@@ -212,6 +212,12 @@
           &nbsp;&nbsp;property AlphaFormat: <a href="#TAlphaFormat">TAlphaFormat</a>; read write;<br />
           &nbsp;&nbsp;property Canvas: <a href="#TCanvas">TCanvas</a>; read write;<br />
           &nbsp;&nbsp;property Handle: <a href="#HBITMAP">HBITMAP</a>; read write;<br />
+          end;<br />
+          <br />
+          <a name="TPngImage">TPngImage</a> = class(<a href="#TGraphic">TGraphic</a>)<br />
+          &nbsp;&nbsp;procedure LoadFromStream(Stream: <a href="#TStream">TStream</a>);<br />
+          &nbsp;&nbsp;procedure SaveToStream(Stream: <a href="#TStream">TStream</a>);<br />
+          &nbsp;&nbsp;property Canvas: <a href="#TCanvas">TCanvas</a>; read write;<br />
           end;<br />
           <br />
           <a name="TAlign">TAlign</a> = (alNone, alTop, alBottom, alLeft, alRight, alClient);<br />
@@ -715,9 +721,10 @@
           &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
           &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
           &nbsp;&nbsp;property BackColor: <a href="#TColor">TColor</a>; read write;<br />
+          &nbsp;&nbsp;property Bitmap: <a href="#TBitmap">TBitmap</a>; read write;<br />
           &nbsp;&nbsp;property Caption: Boolean; read write;<br />
           &nbsp;&nbsp;property Center: Boolean; read write;<br />
-          &nbsp;&nbsp;property Bitmap: <a href="#TBitmap">TBitmap</a>; read write;<br />
+          &nbsp;&nbsp;property PngImage: <a href="#TPngImage">TPngImage</a>; read write;<br />
           &nbsp;&nbsp;property ReplaceColor: <a href="#TColor">TColor</a>; read write;<br />
           &nbsp;&nbsp;property ReplaceWithColor: <a href="#TColor">TColor</a>; read write;<br />
           &nbsp;&nbsp;property Stretch: Boolean; read write;<br />
@@ -729,8 +736,9 @@
           &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
           &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
           &nbsp;&nbsp;property BackColor: <a href="#TColor">TColor</a>; read write;<br />
-          &nbsp;&nbsp;property Center: Boolean; read write;<br />
           &nbsp;&nbsp;property Bitmap: <a href="#TBitmap">TBitmap</a>; read write;<br />
+          &nbsp;&nbsp;property Center: Boolean; read write;<br />
+          &nbsp;&nbsp;property PngImage: <a href="#TPngImage">TPngImage</a>; read write;<br />
           &nbsp;&nbsp;property ReplaceColor: <a href="#TColor">TColor</a>; read write;<br />
           &nbsp;&nbsp;property ReplaceWithColor: <a href="#TColor">TColor</a>; read write;<br />
           &nbsp;&nbsp;property Stretch: Boolean; read write;<br />

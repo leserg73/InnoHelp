@@ -25,7 +25,7 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined">от <code>262144</code> до <code>2100000000</code>,
+              <div class="margined">от <code>262144</code> до <code>9223372036800000000</code>,
                 или <code>max</code> </div>
             </td>
           </tr>
@@ -34,39 +34,30 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><code>max</code> (2100000000)</div>
+              <div class="margined"><code>2100000000</code> </div>
             </td>
           </tr>
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>Определяет максимальное количество байт на сегмент
-        диска (файл SETUP-*.BIN). Обычно это значение должно быть равно общему
-        количеству байтов, доступных на дисковом носителе, делённому на значение
-        директивы <tt>SlicesPerDisk</tt> секции <tt>[Setup]</tt>, которая по
-        умолчанию имеет значение 1.</p>
-      <p>Эта директива не учитывается, если не включено
-        разделение данных на диски при помощи <tt>DiskSpanning</tt> в секции <tt>[Setup]</tt>.</p>
-      <p>Чтобы оптимально заполнить DVD диск размером 4,7 Гб,
-        используйте:</p>
+      <p>Определяет максимальное количество байт на сегмент диска (файл Setup-*.bin).
+        Обычно это значение должно быть равно общему количеству байтов, доступных
+        на дисковом носителе, делённому на значение директивы <tt>SlicesPerDisk</tt>
+        секции <tt>[Setup]</tt>, которая по умолчанию имеет значение 1.</p>
+      <p>Эта директива не учитывается, если не включено разделение данных на диски
+        при помощи <tt>DiskSpanning</tt> в секции <tt>[Setup]</tt>.</p>
+      <p>Чтобы оптимально заполнить DVD диск размером 4,7 Гб, используйте:</p>
       <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
 class="hl num">3</span>
 <span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1566000000</span></pre>
-      <p>Чтобы оптимально заполнить DVD диск размером 8,5 Гб
-        (двухслойный), используйте:</p>
+      <p>Чтобы оптимально заполнить DVD диск размером 8,5 Гб (двухслойный), используйте:</p>
       <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
 class="hl num">5</span>
 <span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1708200000</span></pre>
-      <p>Чтобы оптимально заполнить CD диск размером 700 Мб
-        (80-минут), используйте:</p>
+      <p>Чтобы оптимально заполнить CD диск размером 700 Мб (80-минут), используйте:</p>
       <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
 class="hl num">1</span>
 <span class="hl kwb">DiskSliceSize</span>=<span class="hl num">736000000</span></pre>
-      <p>Чтобы оптимально заполнить дискету размером 1,44 Мб,
-        используйте:</p>
-      <pre class="indent examplebox"><span class="hl kwb">SlicesPerDisk</span>=<span
-class="hl num">1</span>
-<span class="hl kwb">DiskSliceSize</span>=<span class="hl num">1457664</span></pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

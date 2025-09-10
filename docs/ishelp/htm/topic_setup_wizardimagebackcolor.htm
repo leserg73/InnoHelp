@@ -18,14 +18,43 @@
   <body>
     <h1 class="topicheading">[Setup]: WizardImageBackColor</h1>
     <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Цвет в формате <code>$<i>bbggrr</i></code>, где
+                <code>bb</code>, <code>gg</code> и <code>rr</code> определяют
+                интенсивности (в шестнадцатеричном формате) для синего, зеленого
+                и красного цветов соответственно. Или это может быть одно из следующих
+                предопределённых названий цветов: <code>clBlack</code>, <code>clMaroon</code>,
+                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>, <code>clPurple</code>,
+                <code>clTeal</code>, <code>clGray</code>, <code>clSilver</code>, <code>clRed</code>,
+                <code>clLime</code>, <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
+                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>, <code>clWindow</code>.
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><code>$f9f3e8</code> (синевато-серый),
+                если используется встроенное изображение мастера, в противном
+                случае — <code>clWindow</code>.
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <h2 class="heading">Описание</h2>
-      <p><i>Устаревшая директива с версии 5.5.7.</i> Ранее эта
-        директива определяла цвет фона, которым заполнялась вся неиспользуемая
-        область вокруг изображения мастера установки, когда для <a href="topic_setup_wizardimagestretch.htm">WizardImageStretch</a>
-        было установлено значение <tt>no</tt>. Теперь всё неиспользуемое
-        пространство заполняется стандартным цветом окна (обычно белым). Если
-        вам необходимо создать рамку вокруг изображения другим цветом,
-        воспользуйтесь графическим редактором и измените изображение.</p>
+      <p>Эта директива устанавливает цвет фона, используемого для заполнения
+        всех неиспользуемых или прозрачных областей в изображении мастера
+        установки, которое задаётся директивой <a 
+        href="topic_setup_wizardimagefile.htm">WizardImageFile</a>.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
