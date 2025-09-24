@@ -61,7 +61,7 @@
         <li>Например, чтобы использовать современный стиль с автоматическим выбором
           между светлой и тёмной темами в зависимости от настроек Windows, следует
           указать директиву со следующим значением:
-        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic</code></pre>
+        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic</code></pre>
         </li>
         <li>Тёмная тема автоматически заменяет значки, изображения мастера и
           настраивает цвета, сохраняя при этом единообразный интерфейс. Также
@@ -83,14 +83,14 @@
       <ul>
         <li>Например, укажите два пользовательских цвета: один для светлой темы,
           а другой для тёмной:
-          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic
-<span class="key">WizardImageBackColor</span>=$ffffff
-<span class="key">WizardImageBackColorDynamicDark</span>=$2b2b2b</code></pre>
-        Примечание: принудительная установка тёмной темы (<tt>classic/dark</tt>
-        или <tt>modern/dark</tt>) не использует настройки <tt>DynamicDark</tt>;
-        она использует стандартные настройки. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic
+<span class="key">WizardImageBackColor</span>=clWhite
+<span class="key">WizardImageBackColorDynamicDark</span>=#2b2b2b</code></pre>
+        Примечание: принудительная установка тёмной темы (<tt>dark</tt>) не
+        использует настройки <tt>DynamicDark</tt>, а использует стандартные
+        настройки. Например:
           <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dark
-<span class="key">WizardImageBackColor</span>=$2b2b2b</code></pre>
+<span class="key">WizardImageBackColor</span>=#2b2b2b</code></pre>
         </li>
       </ul>
       <li>Стиль по умолчанию можно заменить на другой файл VCL-стиля с помощью
@@ -98,9 +98,9 @@
       <ul>
         <li>Например, чтобы использовать другие стили для светлой и тёмной тем,
           укажите соответствующие файлы стилей:
-          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dynamic
-<span class="key">WizardStyleFile</span>=Windows11_Polar_Light.vsf
-<span class="key">WizardStyleFileDynamicDark</span>=Windows11_Polar_Dark.vsf</code></pre>
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic
+<span class="key">WizardStyleFile</span>=MyStyleLight.vsf
+<span class="key">WizardStyleFileDynamicDark</span>=MyStyleDark.vsf</code></pre>
         <a href="https://jrsoftware.org/images/is-welcome-polarlight-org-175.png">Скриншот
           инсталлятора со стилем Polar Light при DPI 175%</a>.<br/>
         <a href="https://jrsoftware.org/images/is-welcome-polardark-org-175.png">Скриншот
@@ -108,19 +108,45 @@
         <a href="https://jrsoftware.org/images/is-taskdialog-zircon-org-125.png">Скриншот
           диалога задач со стилем Zircon при DPI 125%</a>.
         </li>
-        <li>Если принудительно активирована светлая (<tt>light</tt>) тема или
-          <tt>dynamic</tt> тёмная (<tt>dynamic</tt> с Windows в светлом режиме),
-          стилем по умолчанию является встроенная системная светлая тема. В
-          противном случае – встроенная пользовательская тёмная тема.</li>
         <li>Если активен пользовательский стиль (включая встроенную пользовательскую
           тёмную тему), все текстовые метки, за исключением метки, связанной с
           сообщением <tt>BeveledLabel</tt>, имеют прозрачный фон.</li>
+
+        <li>Показанный выше стиль "Polar" является встроенным и напрямую
+          поддерживается директивой <tt>WizardStyle</tt> напрямую. Например:
+        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar</code></pre>
+        </li>
+        <li>Дополнительно доступно ещё два встроенных стиля, поддерживаемых
+          директивой <tt>WizardStyle</tt>: <tt>slate</tt> и <tt>zircon</tt>.
+          Стиль <tt>slate</tt> использует средне-серый цвет как для светлого,
+          так и для тёмного оформления, а <tt>zircon</tt> – это альтернативный
+          светлый стиль с голубыми акцентами, показанный выше. Например:
+        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern zircon</code></pre>
+        </li>
+        <li>Также поддерживается модификатор <tt>includetitlebar</tt>: позволяет
+          настраивать стили заголовков и границ. По умолчанию вместо них используется
+          системный светлый или тёмный заголовок. Например:
+        <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar includetitlebar</code></pre>
+        </li>
       </ul>
-      <li>Программирование на языке Паскаль: добавлены функции <tt>IsWinDark</tt> и <tt>IsDarkInstallMode</tt>.</li>
+      <li>IDE компилятора: в мастер создания нового сценария добавлена страница
+        <i>Wizard Style</i>, которая позволяет выбрать стиль и увидеть его пример.</li>
+      </ul>
+      <li>Программирование на языке Паскаль: добавлены функции <tt>IsWinDark</tt>
+      и <tt>IsDarkInstallMode</tt>.</li>
     </ul>
     <span class="head2">Другие изменения</span>
     <ul>
-      <li>Программирование на языке Паскаль: добавлена поддержка кнопок командных ссылок (стиль кнопок, используемый в диалоговых окнах задач). Смотрите пример в сценарии <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+      <li>Директива <tt>WizardImageBackColor</tt> в секции <tt>[Setup]</tt> и
+        три другие директивы <tt>BackColor</tt> теперь может принимать цвет в
+        формате <tt>#rrggbb</tt> дополнительно к формату <tt>$bbggrr</tt>.</li>
+      <li>Программирование на языке Паскаль: добавлена поддержка кнопок командных
+        ссылок (стиль кнопок, используемый в диалоговых окнах задач). Смотрите
+        пример в сценарии <i><a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+      <li>Улучшен алгоритм создания случайных имён для временных каталогов при
+        установке и деинсталляции.</li>
+      <li>Другие улучшения и исправления.</li>
     </ul>
     <p>Используете Inno Setup в коммерческих целях? Пожалуйста, <a 
         href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
