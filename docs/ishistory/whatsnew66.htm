@@ -76,10 +76,11 @@
           справки с описанием директивы <a 
           href="https://jrsoftware.org/ishelp/index.php?topic=setup_wizardstyle">WizardStyle</a>.</li>
       </ul>
+      </li>
       <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>DynamicDark</tt> 
         для указания отдельных пользовательских изображений и цветов, которые
         специально будут использоваться в режиме <tt>dynamic</tt> при переключении
-        на тёмную тему.</li>
+        на тёмную тему.
       <ul>
         <li>Например, укажите два пользовательских цвета: один для светлой темы,
           а другой для тёмной:
@@ -89,12 +90,13 @@
         Примечание: принудительная установка тёмной темы (<tt>dark</tt>) не
         использует настройки <tt>DynamicDark</tt>, а использует стандартные
         настройки. Например:
-          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern/dark
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dark
 <span class="key">WizardImageBackColor</span>=#2b2b2b</code></pre>
         </li>
       </ul>
+      </li>
       <li>Стиль по умолчанию можно заменить на другой файл VCL-стиля с помощью
-        новой директивы <tt>WizardStyleFile</tt> и директивы <tt>DynamicDark</tt>.<br/>
+        новой директивы <tt>WizardStyleFile</tt> и директивы <tt>DynamicDark</tt>.
       <ul>
         <li>Например, чтобы использовать другие стили для светлой и тёмной тем,
           укажите соответствующие файлы стилей:
@@ -117,11 +119,12 @@
           поддерживается директивой <tt>WizardStyle</tt> напрямую. Например:
         <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar</code></pre>
         </li>
-        <li>Дополнительно доступно ещё два встроенных стиля, поддерживаемых
-          директивой <tt>WizardStyle</tt>: <tt>slate</tt> и <tt>zircon</tt>.
-          Стиль <tt>slate</tt> использует средне-серый цвет как для светлого,
-          так и для тёмного оформления, а <tt>zircon</tt> – это альтернативный
-          светлый стиль с голубыми акцентами, показанный выше. Например:
+        <li>Дополнительно доступно ещё три встроенных стиля, поддерживаемых
+          директивой <tt>WizardStyle</tt>: <tt>slate</tt>, <tt>windows11</tt> и
+          <tt>zircon</tt>. Стиль <tt>slate</tt> использует средне-серый цвет как
+          для светлого, так и для тёмного оформления, <tt>windows11</tt> является
+          светлым аналогом встроенного тёмного стиля, а <tt>zircon</tt> – это
+          альтернативный светлый стиль с голубыми акцентами, показанный выше. Например:
         <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern zircon</code></pre>
         </li>
         <li>Также поддерживается модификатор <tt>includetitlebar</tt>: позволяет
@@ -130,23 +133,43 @@
         <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar includetitlebar</code></pre>
         </li>
       </ul>
+      </li>
       <li>IDE компилятора: в мастер создания нового сценария добавлена страница
         <i>Wizard Style</i>, которая позволяет выбрать стиль и увидеть его пример.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлены функции <tt>IsWinDark</tt> и <tt>IsDarkInstallMode</tt>.</li>
+        <li>Добавлены свойства <tt>StyleElements</tt> и <tt>StyleName</tt> для
+          класса <tt>TControl</tt>. В качестве примера смотрите сценарий 
+          <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>,
+          где также демонстрируется использование <tt>IsDarkInstallMode</tt>.</li>
       </ul>
-      <li>Программирование на языке Паскаль: добавлены функции <tt>IsWinDark</tt>
-      и <tt>IsDarkInstallMode</tt>.</li>
+      </li>
     </ul>
     <span class="head2">Другие изменения</span>
     <ul>
-      <li>IDE компилятора: улучшен коэффициент контрастности для различных цветов
-        подсветки синтаксиса, особенно в темном режиме.</li>
+      <li>IDE компилятора:
+      <ul>
+        <li>улучшен коэффициент контрастности для различных цветов
+          подсветки синтаксиса, особенно в темном режиме</li>
+        <li>Шрифт диалоговых окон обновлен с 8pt Segoe UI на 9pt Segoe UI.</li>
+      </ul>
+      </li>
       <li>Директива <tt>WizardImageBackColor</tt> в секции <tt>[Setup]</tt> и
         три другие директивы <tt>BackColor</tt> теперь может принимать цвет в
         формате <tt>#rrggbb</tt> дополнительно к формату <tt>$bbggrr</tt>.</li>
-      <li>Программирование на языке Паскаль: добавлена поддержка кнопок командных
-        ссылок (стиль кнопок, используемый в диалоговых окнах задач). Смотрите
-        пример в сценарии <i><a 
-        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлена поддержка кнопок командных ссылок (стиль кнопок, который
+          используется в диалоговых окнах задач). Смотрите пример в сценарии <i><a 
+          href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+        <li>Добавлены функции <tt>Round</tt>, <tt>Trunc</tt>, <tt>Int</tt> и
+          <tt>MulDiv</tt>.</li>
+        <li>Добавлена функция <tt>StrToColor</tt>.</li>
+        <li>Отменены изменения, сделанные в функции события <tt>CurPageChanged</tt>
+          с версии 6.5.0.</li>
+      </ul>
+      </li>
       <li>Улучшен алгоритм создания случайных имён для временных каталогов при
         установке и деинсталляции.</li>
       <li>Другие улучшения и исправления.</li>
