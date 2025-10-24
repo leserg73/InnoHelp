@@ -64,11 +64,11 @@
         <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic</code></pre>
         </li>
         <li>Тёмная тема автоматически заменяет значки, изображения мастера и
-          настраивает цвета, сохраняя при этом единообразный интерфейс. Также
-          по-прежнему доступна настройка главного значка, изображений мастера
-          и цветов. Включает поддержку стилизации диалоговых окон задач.<br />
-        <a href="https://jrsoftware.org/images/is-welcome-dark-org-175.png">Скриншот
-          окна инсталлятора с тёмным стилем при DPI 175%</a>.<br />
+          цвета, сохраняя при этом единообразный интерфейс. Также по-прежнему
+          доступна настройка главного значка, изображений мастера и цветов.
+          Включает поддержку стилизации диалоговых окон задач.<br />
+        <a href="https://jrsoftware.org/images/is-welcome-dark-org-150.png">Скриншот
+          окна инсталлятора с тёмным стилем при DPI 150%</a>.<br />
         <a href="https://jrsoftware.org/images/is-taskdialog-dark-org-125.png">Скриншот
           диалога задач с тёмным стилем при DPI 125%</a>.
         </li>
@@ -103,10 +103,10 @@
           <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic
 <span class="key">WizardStyleFile</span>=MyStyleLight.vsf
 <span class="key">WizardStyleFileDynamicDark</span>=MyStyleDark.vsf</code></pre>
-        <a href="https://jrsoftware.org/images/is-welcome-polarlight-org-175.png">Скриншот
-          инсталлятора со стилем Polar Light при DPI 175%</a>.<br/>
-        <a href="https://jrsoftware.org/images/is-welcome-polardark-org-175.png">Скриншот
-          инсталлятора со стилем Polar Dark при DPI 175%</a>.<br/>
+        <a href="https://jrsoftware.org/images/is-welcome-polarlight-org-150.png">Скриншот
+          инсталлятора со стилем Polar Light при DPI 150%</a>.<br/>
+        <a href="https://jrsoftware.org/images/is-welcome-polardark-org-150.png">Скриншот
+          инсталлятора со стилем Polar Dark при DPI 150%</a>.<br/>
         <a href="https://jrsoftware.org/images/is-taskdialog-zircon-org-125.png">Скриншот
           диалога задач со стилем Zircon при DPI 125%</a>.
         </li>
@@ -146,15 +146,69 @@
       </ul>
       </li>
     </ul>
+    <span class="head2">Изменения во внешнем виде и работе программы установки</span>
+    <ul>
+      <li>Теперь вместо пользовательских значков используются высококачественные.
+        Это касается страниц мастера "<i>Выбор папки установки</i>" и "<i>Подготовка
+        к установке</i>", а также диалога "<i>Необходимо вставить следующий диск</i>".
+      </li>
+      <li>Стандартный шрифт, используемый на страницах мастера установки и
+        удаления, был изменён с 8-point <i>Tahoma</i> на 9-point <i>Segoe UI</i>
+        без изменения масштаба, чтобы соответствовать современному внешнему виду.<br />
+        Чтобы снова использовать шрифт 8-point <i>Tahoma</i>, используйте
+        следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">DialogFontName</span>=Tahoma
+<span class="key">DialogFontSize</span>=8
+<span class="key">DialogFontBaseScaleHeight</span>=13
+<span class="key">DialogFontBaseScaleWidth</span>=6</code></pre>
+        Если до этого использовался шрифт 9-point <i>Segoe UI</i>, то после
+        обновления вы заметите изменения в масштабировании. Чтобы использовать
+        предыдущее масштабирование, примените следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">DialogFontName</span>=Segoe UI
+<span class="key">DialogFontSize</span>=9
+<span class="key">DialogFontBaseScaleHeight</span>=13
+<span class="key">DialogFontBaseScaleWidth</span>=6</code></pre>
+      </li>
+      <li>Стандартный шрифт заголовков, используемый на страницах мастера
+        "<i>Приветствие</i>" и "<i>Установка завершена</i>", был изменён с
+        12-point <i>Verdana</i> на 14-point <i>Segoe UI</i>, чтобы соответствовать
+        современному внешнему виду.<br />
+        Чтобы снова использовать шрифт 12-point <i>Verdana</i>, используйте
+        следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">WelcomeFontName</span>=Verdana
+<span class="key">WelcomeFontSize</span>=12</code></pre>
+      </li>
+      <li>Программирование на языке Паскаль:
+    <ul>
+    <li>Добавлены функции <tt>InitializeBitmapButtonFromStockIcon</tt> и
+      <tt>InitializeBitmapImageFromStockIcon</tt>, которые могут использоваться
+      для отображения различных высококачественных системных значков во всех
+      версиях Windows. В качестве примера смотрите сценарий <i><a 
+      href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>,
+      а также перечень всех доступных значков на портале <a 
+      href="https://learn.microsoft.com/en-us/windows/win32/api/shellapi/ne-shellapi-shstockiconid#constants">Microsoft Learn</a>.<br />
+      <a href="https://jrsoftware.org/images/is-codeclasses-stockicons-125.png">Скриншот
+      примера CodeClasses.iss при DPI 125% и темном режиме</a>.
+    </li>
+  </ul>
+  </li>
+</ul>
     <span class="head2">Другие изменения</span>
     <ul>
       <li>IDE компилятора:
       <ul>
-        <li>улучшен коэффициент контрастности для различных цветов
-          подсветки синтаксиса, особенно в темном режиме</li>
-        <li>Шрифт диалоговых окон обновлен с 8pt Segoe UI на 9pt Segoe UI.</li>
+        <li>Улучшен коэффициент контрастности для различных цветов
+          подсветки синтаксиса, особенно в темном режиме.</li>
+        <li>Шрифт диалоговых окон обновлен с 8-point <i>Segoe UI</i> на 9-point
+          <i>Segoe UI</i>.</li>
       </ul>
       </li>
+      <li>Директива <tt>WizardSizePercent</tt> в секции <tt>[Setup]</tt> теперь
+        поддерживается деинсталлятором. Это означает, что при использовании
+        <tt>WizardStyle=modern</tt> размер окна деинсталлятора увеличится на 20%.</li>
       <li>Директива <tt>WizardImageBackColor</tt> в секции <tt>[Setup]</tt> и
         три другие директивы <tt>BackColor</tt> теперь может принимать цвет в
         формате <tt>#rrggbb</tt> дополнительно к формату <tt>$bbggrr</tt>.</li>
