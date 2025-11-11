@@ -25,7 +25,19 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><code>classic</code> или <code>modern</code> </div>
+              <div class="margined">Перечень
+                следующих значений, разделённых пробелами:<br />
+                <code>classic</code> <br />
+                <code>modern</code> <br />
+                <code>light</code> <br />
+                <code>dark</code> <br />
+                <code>dynamic</code> <br />
+                <code>polar</code> <br />
+                <code>slate</code> <br />
+                <code>windows11</code> <br />
+                <code>zircon</code> <br />
+                <code>includetitlebar</code> <br />
+                <code>excludelightbuttons</code></div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -39,17 +51,156 @@
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>При указании этой директивы со значением <tt>modern</tt> внешний вид
-        программы установки и удаления примет более современный вид. Отдельно для
-        программы установки также изменятся значения по умолчанию у директив
-        <a href="topic_setup_wizardresizable.htm">WizardResizable</a> и
-        <a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a> на
-        <tt>yes</tt> и <tt>120,120</tt> соответственно.</p>
-      <p>Чтобы добавить полную поддержку <tt>WizardResizable</tt>
-        и <tt>WizardSizePercent</tt> для всех пользовательских элементов
-        управления и страниц мастера, если таковые имеются, используйте свойства
-        <tt>Anchors</tt> и <tt>KeepSizeY</tt>. В качестве примера смотрите файл
-        сценария <i>CodeClasses.iss</i>.</p>
+        <p>Эта директива управляет визуальным стилем и внешним видом программы
+          установки и удаления.</p>
+        <p>Базовые стили:</p>
+        <ul>
+          <li><tt>classic</tt>: использует на страницах мастера фон серого цвета
+            и применяется по умолчанию, если не указан.</li>
+          <li><tt>modern</tt>: использует на страницах мастера фон белого цвета
+            и скрывает горизонтальную линии между панелью заголовка и содержимым
+            страниц.</li>
+        </ul>
+        <p>Также поддерживаются дополнительные визуальные стили:</p>
+        <ul>
+          <li><tt>light</tt>: принудительно использует светлый стиль оформления
+            и применяется по умолчанию, если не указан.</li>
+        <li><tt>dark</tt>: принудительно использует тёмный стиль оформления.</li>
+        <li><tt>dynamic</tt>: автоматически переключается между светлым и тёмным
+          стилями в зависимости от системных настроек Windows.</li>
+        </ul>
+        <p>Дополнительно поддерживаются предустановленные стили:</p>
+        <ul>
+          <li><tt>polar</tt>: использует светло-голубой вместо серого или белого
+            для светлого внешнего вида и тёмно-голубой вместо чёрного для тёмного
+            внешнего вида.</li>
+          <li><tt>slate</tt>: использует средне-серый цвет как для светлого, так
+            и для тёмного внешнего вида.</li>
+          <li><tt>windows11</tt>: включает светлый аналог для предустановленного
+            тёмного стиля.</li>
+          <li><tt>zircon</tt>: альтернативный стиль только для светлого внешнего
+            вида с акцентами голубого цвета.</li>
+        </ul>
+        <p>Также поддерживаются следующие модификаторы:</p>
+        <ul>
+          <li><tt>includetitlebar</tt>: включает стилевое оформление для заголовка
+            и границ окон программы установки (не-клиентская область), если
+            активен пользовательский стиль (по умолчанию используется светлый или
+            тёмный стиль системы).</li>
+          <li><tt>excludelightbuttons</tt>: отключает стилизацию всех кнопок
+            (включая кнопки командных ссылок, используемые в диалоговых окнах
+            задач), когда активен светлый стиль.</li>
+        </ul>
+        <p><b>Примеры:</b></p>
+        <p><tt>WizardStyle=modern dynamic</tt> – будет использоваться современный
+          внешний вид, а стиль будет автоматически адаптирован к настройкам
+          светлого или тёмного режима системы.</p>
+        <p><tt>WizardStyle=modern dark polar includetitlebar</tt> – будет
+          использоваться современный внешний вид, тёмная тема, предустановленный
+          стиль <tt>polar</tt>, включая заголовок и границы окна.</p>
+      <h2 class="heading">Поведение в тёмном режиме</h2>
+        <p>Если принудительно используется тёмный (<tt>dark</tt>) или динамический
+          тёмный (<tt>dynamic</tt> с тёмным режимом Windows) стиль, происходят
+          следующие изменения:</p>
+        <ul>
+          <li>Основной значок программы установки и удаления заменяется своей
+            тёмной версией, если он не был переопределён директивой <a 
+            href="topic_setup_setupiconfile.htm">SetupIconFile</a>.<br/>
+            Примечание: Windows может временно отображать другой значок из-за
+            кэширования значков, это нормально.</li>
+          <li>Другие значки в программе установки и удаления также заменяются
+            своими версиями для тёмного стиля. На них не влияет кэш значков
+            Windows.</li>
+          <li>Изображение мастера заменяется своей тёмной версией, если оно не
+            были переопределено с помощью директивы <a 
+            href="topic_setup_wizardimagefile.htm">WizardImageFile</a>.</li>
+          <li>Цвет фона изображения мастера настраивается для тёмного стиля,
+            если он не был переопределён пользовательскими значениями директивой
+            <a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a>.</li>
+          <li>Малое изображение мастера заменяется своей тёмной версией, если
+            оно не были переопределено с помощью директивы <a 
+            href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>.</li>
+          <li>Все цвета в файлах RTF удаляются и заменяются цветами тёмного стиля.</li>
+          <li>Если <tt>includetitlebar</tt> не используется: заголовок и границы
+            становятся тёмными, чтобы соответствовать внешнему виду системы,
+            если система это позволяет.</li>
+        </ul>
+      <h2 class="heading">Особенности динамического режима</h2>
+        <p>При использовании режима <tt>dynamic</tt> необходимо учитывать
+          следующие дополнительные моменты:</p>
+        <ul>
+          <li>Основной значок, отображаемый Windows, всегда будет светлой версией.</li>
+          <li>Настройка светлого или тёмного стиля системы проверяется только
+            один раз, при запуске.</li>
+          <li>Для указания изображений и цветов, используемых специально для
+            динамического тёмного стиля, доступны следующие директивы:
+          <ul>
+            <li><a href="topic_setup_wizardimagefiledynamicdark.htm">WizardImageFileDynamicDark</a>
+              и <a href="topic_setup_wizardimagebackcolordynamicdark.htm">WizardImageBackColorDynamicDark</a>.</li>
+            <li><a href="topic_setup_wizardsmallimagefiledynamicdark.htm">WizardSmallImageFileDynamicDark</a>
+              и <a href="topic_setup_wizardsmallimagebackcolordynamicdark.htm">WizardSmallImageBackColorDynamicDark</a>.</li>
+            <li><a href="topic_setup_wizardstylefiledynamicdark.htm">WizardStyleFileDynamicDark</a></li>
+          </ul>
+          Стандартные директивы <tt>WizardImageFile</tt>, <tt>WizardSmallImageFile</tt>,
+          <tt>WizardImageBackColor</tt>, <tt>WizardSmallImageBackColor</tt> и
+          <tt>WizardStyleFile</tt> используются для настройки динамического
+          светлого стиля.<br /><br />
+          Примечание: принудительная установка тёмного стиля (<tt>dark</tt>) 
+          <i>НЕ</i> используется настройки <tt>DynamicDark</tt>, а использует
+          стандартные настройки.</li>
+        </ul>
+      <h2 class="heading">Другие особенности</h2>
+        <ul>
+          <li>Стиль по умолчанию можно настроить, указав файл VCL стиля с помощью
+            директивы <a href="topic_setup_wizardstylefile.htm">WizardStyleFile</a>.
+            Когда активен принудительный светлый (<tt>light</tt>) или динамический
+            тёмный (<tt>dynamic</tt> со светлым режимом Windows) стиль, стилем по
+            умолчанию будет системный светлый стиль. В противном случае стилем по
+            умолчанию будет предустановленный тёмный стиль.</li>
+          <li>Пользовательские стили (включая предустановленный тёмный стиль)
+            <i>НЕ</i> активируются, если в системе пользователя используется
+            высококонтрастная тема или используется параметр командной строки
+            '<code>/NOSTYLE</code>'.</li>
+          <li>Когда активен пользовательский стиль (включая предустановленный
+            тёмный стиль), происходит три дополнительных события. Во-первых, все
+            текстовые надписи, за исключением той, которая связана с сообщением
+            <tt>BeveledLabel</tt>, получают прозрачный фон вместо непрозрачного.
+            Во-вторых, программа установки и удаления использует собственную
+            реализацию окон сообщений Windows и диалоговых окон задач. В-третьих,
+            свойства цвета, установленные с помощью программирования в секции
+            <tt>[Code]</tt>, обычно игнорируются, поскольку приоритет имеют цвета
+            стиля.</li>
+          <li>Включение принудительного тёмного стиля (<tt>dark</tt>) увеличивает
+            размер файла установки примерно на 220 КБ. Включение динамического
+            тёмного стиля (<tt>dynamic</tt>) добавляет ещё примерно 75 КБ.
+            Включение динамического тёмного стиля и добавление настраиваемого
+            светлого стиля (например, <tt>dynamic windows11</tt>) добавляет
+            примерно 120 КБ.</li>
+          <li>Сообщения, отображаемые так называемым "загрузчиком", никогда не
+            будут стилизованы. Обычно такие сообщения не отображаются, если
+            только не был включён запрос на запуск с помощью директивы <a 
+            href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a>.</li>
+        </ul>
+      <h2 class="heading">Примеры скриншотов</h2>
+        <p><tt>classic</tt><br/><br/><img src="../images/wizardstyle-classic.png" /></p>
+        <p><tt>classic dark</tt><br/><br/><img src="../images/wizardstyle-classic-dark.png" /></p>
+        <p><tt>modern</tt><br/><br/><img src="../images/wizardstyle-modern.png" /></p>
+        <p><tt>modern windows11</tt><br/><br/><img src="../images/wizardstyle-modern-windows11.png" /></p>
+        <p><tt>modern windows11 excludelightbuttons</tt><br/><br/><img src="../images/wizardstyle-modern-windows11-excludelightbuttons.png" /></p>
+        <p><tt>modern dark</tt> (такой же, как <tt>modern dark windows11</tt>)<br/><br/><img src="../images/wizardstyle-modern-dark.png" /></p>
+        <p><tt>modern polar</tt><br/><br/><img src="../images/wizardstyle-modern-polar.png" /></p>
+        <p><tt>modern polar includetitlebar</tt><br/><br/><img src="../images/wizardstyle-modern-polar-includetitlebar.png" /></p>
+        <p><tt>modern dark polar</tt><br/><br/><img src="../images/wizardstyle-modern-dark-polar.png" /></p>
+        <p><tt>modern slate</tt><br/><br/><img src="../images/wizardstyle-modern-slate.png" /></p>
+        <p><tt>modern slate includetitlebar</tt><br/><br/><img src="../images/wizardstyle-modern-slate-includetitlebar.png" /></p>
+        <p><tt>modern zircon</tt><br/><br/><img src="../images/wizardstyle-modern-zircon.png" /></p>
+        <p><tt>modern zircon includetitlebar</tt><br/><br/><img src="../images/wizardstyle-modern-zircon-includetitlebar.png" /></p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a><br />
+          <a href="topic_setup_wizardstylefile.htm">WizardStyleFile</a><br />
+          <a href="topic_isxfunc_isdarkinstallmode.htm">IsDarkInstallMode</a><br />
+          <a href="topic_isxfunc_highcontrastactive.htm">HighContrastActive</a>
+        </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

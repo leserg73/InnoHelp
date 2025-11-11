@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: WizardStyleFile</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: WizardStyleFile</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><i>(пустое)</i></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+        <p>Эта директива определяет пользовательский файл VCL стиля (.vsf).
+          Рекомендуется использовать стили только с поддержкой высокого DPI.</p>
+        <p>При использовании <a href="topic_setup_wizardstyle.htm">WizardStyle</a>
+          с параметром <tt>light</tt> или <tt>dynamic</tt> указанный стиль должен
+          использовать светлую цветовую схему (например, преимущественно белый
+          или другие светлые цвета). При использовании параметра <tt>dark</tt>
+          стиль должен быть с тёмной цветовой схемой (например, преимущественно
+          чёрный или другие тёмные цвета).</p>
+        <p>Применение пользовательского файла стиля увеличивает размер установщика,
+          за исключением случаев, когда используется режим <tt>dark</tt> и файл
+          стиля, размер которого меньше встроенного и составляет не более 199 КБ
+          до сжатия.</p>
+        <p>Также вместо файла можно указать <tt>builtin:polar</tt>,
+          <tt>builtin:slate</tt> или <tt>builtin:zircon</tt>, чтобы использовать
+          один из предустановленных стилей. Дополнительную информацию смотрите в
+          разделе <a href="topic_setup_wizardstyle.htm">WizardStyle</a>.</p>
+        <p>Файлы VCL стилей можно найти и загрузить и таких источников, как
+          <a href="https://getitnow.embarcadero.com/category/styles" target="_blank" 
+          title="https://getitnow.embarcadero.com/category/styles">GetIt</a><img 
+          class="extlink" src="images/extlink.png" srcset="images/extlink.svg" 
+          alt=" [внешняя ссылка]" /> (бесплатно, если в поле "<i>Subscription"</i> 
+          указано "<i>Not Required</i>"; для загрузки требуется также установка
+          среды разработчика Delphi, например, в редакции "Community Edition" для
+          бесплатных стилей) и <a href="https://www.delphistyles.com/vcl" target="_blank" 
+          title="https://www.delphistyles.com/vcl">DelphiStyles</a><img 
+          class="extlink" src="images/extlink.png" srcset="images/extlink.svg" 
+          alt=" [внешняя ссылка]" /> (не бесплатно).</p>
+        <p>Файлы стилей FireMonkey (FMX) не поддерживаются.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardstyle.htm">WizardStyle</a><br />
+          <a href="topic_setup_wizardstylefiledynamicdark.htm">WizardStyleFileDynamicDark</a>
+        </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

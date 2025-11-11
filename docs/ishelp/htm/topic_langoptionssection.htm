@@ -28,19 +28,16 @@
         Inno Setup.</p>
       <p>Ниже представлен пример секции <tt>[LangOptions]</tt>
         (все перечисленные здесь параметры используются по умолчанию).</p>
-      <pre class="indent examplebox"><span class="hl kwa">[LangOptions]</span>
+        <pre class="indent examplebox"><span class="hl kwa">[LangOptions]</span>
 <span class="hl kwb">LanguageName</span>=English
 <span class="hl kwb">LanguageID</span>=<span class="hl num">$0409</span>
 <span class="hl kwb">LanguageCodePage</span>=<span class="hl num">0</span>
 <span class="hl kwb">DialogFontName</span>=
-<span class="hl kwb">DialogFontSize</span>=<span class="hl num">8</span>
-<span class="hl kwb">WelcomeFontName</span>=Verdana
-<span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">12</span>
-<span class="hl kwb">TitleFontName</span>=Arial
-<span class="hl kwb">TitleFontSize</span>=<span class="hl num">29</span>
-<span class="hl kwb">CopyrightFontName</span>=Arial
-<span class="hl kwb">CopyrightFontSize</span>=<span class="hl num">8</span>
-<span class="hl kwb">RightToLeft</span>=<span class="hl kwe">no</span></pre>
+<span class="hl kwb">DialogFontSize</span>=<span class="hl num">9</span>
+<span class="hl kwb">DialogFontBaseScaleWidth</span>=<span class="hl num">7</span>
+<span class="hl kwb">DialogFontBaseScaleHeight</span>=<span class="hl num">15</span>
+<span class="hl kwb">WelcomeFontName</span>=Segoe UI
+<span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">14</span></pre>
       <p><b><a name="LanguageName">LanguageName</a></b> —
         собственное имя языка (но не имя на английском). Оно отображается в
         списке доступных языков в диалоге "<i>Выбор языка</i>" при многоязычной
@@ -48,7 +45,7 @@
       <p><b><a name="LanguageID">LanguageID</a></b> —
         числовой идентификатор языка. Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
         target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">список
-        действительных идентификаторов языка на портале MSDN</a><img src="../images/extlink.svg"
+        действительных идентификаторов языка на портале MSDN</a><img class="extlink" src="../images/extlink.svg"
         alt=" [внешняя ссылка]" />. Этот параметр, наряду с <tt>LanguageCodePage</tt>,
         применяется для автоматического определения наиболее подходящего языка,
         используемого по умолчанию, поэтому убедитесь, что он установлен
@@ -70,38 +67,43 @@
         имеет значение ноль, но в одном из языковых файлов используется не
         Unicode-текст, то для его преобразования в кодировку Unicode будет
         использоваться системная кодовая страница.</p>
-      <p><b><a name="DialogFontName">DialogFontName</a></b> и <b><a
-        name="DialogFontSize">DialogFontSize</a></b> — определяют имя и
-        размер шрифта, используемого в диалогах. Если параметр <tt>DialogFontName</tt>
-        отсутствует, то для имени шрифта используется значение директивы <a
+      <p><b><a name="DialogFontName">DialogFontName</a></b>, <b><a
+        name="DialogFontSize">DialogFontSize</a></b>, <b><a 
+        name="DialogFontBaseScaleWidth">DialogFontBaseScaleWidth</span></b> и
+        <b><a name="DialogFontBaseScaleHeight">DialogFontBaseScaleHeight</span></b>
+        — определяют имя и размер шрифта, используемого в диалогах. Если параметр
+        <tt>DialogFontName</tt> отсутствует, то для имени шрифта используется
+        значение директивы <a
         href="topic_setup_defaultdialogfontname.htm">DefaultDialogFontName</a>
         секции <tt>[Setup]</tt>. Если же указанный шрифт в системе пользователя
         не существует или параметр содержит пустую строку, будет сделана подмена
-        на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 8
-        пунктов.</p>
+        на <i>Segoe UI</i> размером 9-point.</p>
+      <p>До Inno Setup 6.6 по умолчанию использовался шрифт <i>Tahoma</i> размером
+        8-point. Теперь используется шрифт <i>Segoe UI</i> размером 9-point.
+        Чтобы снова использовать предыдущий шрифт без изменения масштабирования,
+        выполните следующее:</p>
+        <pre class="indent examplebox"><span class="hl kwb">DialogFontName</span>=Tahoma
+<span class="hl kwb">DialogFontSize</span>=<span class="hl num">8</span>
+<span class="hl kwb">DialogFontBaseScaleHeight</span>=<span class="hl num">13</span>
+<span class="hl kwb">DialogFontBaseScaleWidth</span>=<span class="hl num">6</span></pre>
+      <p>Если до Inno Setup 6.6 уже использовался шрифт <i>Segoe UI</i> с размером
+        9-point, то после обновления изменится масштабирование. Чтобы использовать
+        предыдущее масштабирование, выполните следующее:</p>
+        <pre class="indent examplebox"><span class="hl kwb">DialogFontName</span>=Segoe UI
+<span class="hl kwb">DialogFontSize</span>=<span class="hl num">9</span>
+<span class="hl kwb">DialogFontBaseScaleHeight</span>=<span class="hl num">13</span>
+<span class="hl kwb">DialogFontBaseScaleWidth</span>=<span class="hl num">6</span></pre>
       <p><b><a name="WelcomeFontName">WelcomeFontName</a></b> и
         <b><a name="WelcomeFontSize">WelcomeFontSize</a></b> — определяют имя и
         размер шрифта, используемого в заголовках на страницах <i>Приветствие</i>
         и <i>Установка завершена</i>. Если указанный шрифт в системе
         пользователя не существует или параметр содержит пустую строку, будет
-        сделана подмена на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i>
-        размером 12 пунктов.</p>
-      <p><b><a name="TitleFontName">TitleFontName</a></b> и <b><a
-        name="TitleFontSize">TitleFontSize</a></b> — определяют имя и размер
-        шрифта для вывода имени приложения в фоновом окне установки (только если
-        <tt>WindowVisible=yes</tt>). Если указанный шрифт в системе пользователя
-        не существует, будет сделана подмена на <i>Arial</i> размером 29
-        пунктов. Если же параметр содержит пустую строку, будет сделана подмена
-        на <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 29
-        пунктов.</p>
-      <p><b><a name="CopyrightFontName">CopyrightFontName</a></b>
-        и <b><a name="CopyrightFontSize">CopyrightFontSize</a></b> — определяет
-        имя и размер шрифта для вывода сообщения <tt>AppCopyright</tt> в
-        фоновом окне установки (только если <tt>WindowVisible=yes</tt>). Если
-        указанный шрифт в системе пользователя не существует, будет сделана
-        подмена на <i>Arial</i> размером 8 пунктов. Если же параметр содержит
-        пустую строку, будет сделана подмена на <i>Microsoft Sans Serif</i> или
-        <i>MS Sans Serif</i> размером 8 пунктов.</p>
+        сделана подмена на шрифт <i>Segoe UI</i> размером 14-point.</p>
+      <p>До Inno Setup 6.6 по умолчанию использовался шрифт <i>Verdana</i> размером
+        12-point. Теперь используется шрифт <i>Segoe UI</i> размером 14-point.
+        Чтобы снова использовать предыдущий шрифт, выполните следующее:</p>
+        <pre class="indent examplebox"><span class="hl kwb">WelcomeFontName</span>=Verdana
+<span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">12</span></pre>
       <p><b><a name="RightToLeft">RightToLeft</a></b> —
         определяет направление письма справа налево. При значении <tt>yes</tt>
         выравнивание текста и направление письма будут инвертированы (с
@@ -116,6 +118,24 @@
         разделительной точкой. Например:</p>
       <pre class="indent examplebox">en.LanguageName=English
 </pre>
+      <h2 class="heading">Устаревший функционал</h2>
+      <p><i>Параметр удалён в 6.4.</i>
+        <b><a name="TitleFontName">TitleFontName</a></b> и <b><a
+        name="TitleFontSize">TitleFontSize</a></b> — определяют имя и размер
+        шрифта для вывода имени приложения в фоновом окне установки (только если
+        <tt>WindowVisible=yes</tt>). Если указанный шрифт в системе пользователя
+        не существует, будет сделана подмена на <i>Arial</i> размером 29-point.
+        Если же параметр содержит пустую строку, будет сделана подмена на
+        <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 29-point.</p>
+      <p><i>Параметр удалён в 6.4.</i>
+        <b><a name="CopyrightFontName">CopyrightFontName</a></b>
+        и <b><a name="CopyrightFontSize">CopyrightFontSize</a></b> — определяет
+        имя и размер шрифта для вывода сообщения <tt>AppCopyright</tt> в
+        фоновом окне установки (только если <tt>WindowVisible=yes</tt>). Если
+        указанный шрифт в системе пользователя не существует, будет сделана
+        подмена на <i>Arial</i> размером 8-point. Если же параметр содержит
+        пустую строку, будет сделана подмена на <i>Microsoft Sans Serif</i> или
+        <i>MS Sans Serif</i> размером 8-point.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

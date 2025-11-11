@@ -44,34 +44,28 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><code>120,120</code>, если <a href="topic_setup_wizardstyle.htm">WizardStyle</a>=<code>modern</code>,
-                иначе <code>100,100</code></div>
+              <div class="margined"><code>120,120</code> </div>
             </td>
           </tr>
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>Позволяет увеличить стандартный размер всех окон
-        мастера установки без увеличения размера шрифта. К примеру,
-        значение 120 означает увеличение размеров на 20%.</p>
-      <p>Если в директиве указано только одно значение, то оно
-        будет использовано для изменения размера как по горизонтали, так и по
-        вертикали.</p>
+      <p>Позволяет увеличить стандартный размер всех окон программы установки
+        и удаления без увеличения размера шрифта. К примеру, значение 120
+        означает увеличение размеров на 20%.</p>
+      <p>Если в директиве указано только одно значение, то оно будет использовано
+        для изменения размера как по горизонтали, так и по вертикали.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">WizardSizePercent</span>=<span
-class="hl num">120</span></pre>
+class="hl num">130</span></pre>
       </div>
-      <p>Чтобы добавить полную поддержку <tt>WizardResizable</tt>
-        и <tt>WizardSizePercent</tt> для всех пользовательских элементов
-        управления и страниц мастера, если таковые имеются, используйте свойства
-        <tt>Anchors</tt> и <tt>KeepSizeY</tt>. В качестве примера смотрите файл
-        сценария <i>CodeClasses.iss</i>.</p>
-      <p>Примечание: некоторые окна мастера, такие как "<i>Выбор
-          языка</i>", будут увеличиваться только по горизонтали.</p>
+      <p>Примечание: некоторые окна, такие как "<i>Выбор языка</i>", будут
+        увеличиваться только по горизонтали.</p>
       <h2 class="heading">См. также:</h2>
-        <p class="indent"><a href="topic_setup_wizardresizable.htm">WizardResizable</a><br />
-        <a href="topic_langoptionssection.htm#DialogFontSize">DialogFontSize</a></p>
+        <p class="indent"><a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a><br />
+          <a href="topic_langoptionssection.htm#DialogFontSize">DialogFontSize</a>
+        </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: IsDarkInstallMode</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: IsDarkInstallMode</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+        <p class="prototip1 notopmarginX">function IsDarkInstallMode: Boolean;</p>
+      <h2 class="heading">Описание</h2>
+        <p>Возвращает значение <tt>True</tt>, если инсталлятор или деинсталлятор
+          запущен с использованием <a href="topic_setup_wizardstyle.htm">тёмного
+          стиля</a>.</p>
+      <h2 class="heading">Комментарии</h2>
+        <p>Может возвращать значение <tt>True</tt>, даже если <a 
+          href="topic_isxfunc_iswindark.htm">IsWinDark</a> возвращает <tt>False</tt>.</p>
+        <p>Может не возвращать значение <tt>True</tt>, если <a 
+          href="topic_isxfunc_highcontrastactive.htm">HighContrastActive</a>
+          возвращает <tt>True</tt>.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_isxfunc_iswindark.htm">IsWinDark</a><br />
+          <a href="topic_isxfunc_highcontrastactive.htm">HighContrastActive</a>
+        </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>
+

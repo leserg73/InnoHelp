@@ -29,10 +29,13 @@
         для прозрачных частей изображения.</p>
       <p>Растровое изображение <tt>BitmapImage</tt> уже должно быть
         масштабировано и тогда функция загрузит наиболее подходящий под
-        указанные размеры значок. После загрузки функция установит размеры
-        растрового изображения согласно размерам значка.</p>
+        указанные в массиве размеры значок. После загрузки функция установит
+        размеры растрового изображения согласно размерам значка.</p>
       <p>Все значения в массиве <tt>AscendingTrySizes</tt> должны быть
         отсортированы от наименьшего размера к наибольшему.</p>
+      <p>Если в массиве не будет найдено соответствующее совпадение (например,
+        потому что он пустой), в качестве размера будет использоваться минимальная
+        ширина и высота растрового изображения.</p>
       <p>Функция возвращает значение <tt>True</tt>, если значок может быть
         успешно загружен, в противном случае — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
@@ -43,9 +46,9 @@ class="hl kwd">InitializeWizard</span>;
   Page: TWizardPage;
   BitmapImage: TBitmapImage;
 <span class="hl kwb">begin</span>
-  Page := CreateCustomPage(<span class="hl kwe">wpWelcome</span>, <span class="hl str">"Test"</span>, <span
+  Page := CreateCustomPage(<span class="hl kwe">wpWelcome</span>, <span class="hl str">'Test'</span>, <span
 
-class="hl str">"Test"</span>);
+class="hl str">'Test'</span>);
 
   BitmapImage := TBitmapImage.Create(Page);
   
@@ -55,11 +58,14 @@ class="hl str">"Test"</span>);
     Parent := Page.Surface;
   <span class="hl kwb">end</span>;
 
-  InitializeBitmapImageFromIcon(BitmapImage, <span class="hl str">"MyProg.ico"</span>, clNone, [<span
+  InitializeBitmapImageFromIcon(BitmapImage, <span class="hl str">'MyProg.ico'</span>, clNone, [<span
 
 class="hl num">32</span>, <span class="hl num">48</span>, <span class="hl num">64</span>]);   
 <span class="hl kwb">end</span>;
 </pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_initializebitmapimagefromstockicon.htm">InitializeBitmapImageFromStockIcon</a>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

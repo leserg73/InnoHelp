@@ -59,6 +59,16 @@ p {
   text-align: justify;
 }
 
+img {
+  border-style: none;
+}
+
+img.extlink {
+  width: 16px;
+  height: 16px;
+  padding-left: 2px;
+}
+
 .null {
   text-align: left;
 }

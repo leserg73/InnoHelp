@@ -39,7 +39,7 @@
         <br />
         &nbsp;&nbsp;См. документацию <a href="http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL"
           target="_blank" title="http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL">http://docwiki.embarcadero.com/RADStudio/Athens/en/VCL</a><img
-          src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+          class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <p class="null"><br />
         <code>
           <a name="TObject">TObject</a> = class<br />
@@ -230,6 +230,10 @@
           <br />
           { Значения <a href="#TCursor">TCursor</a>: crDefault, crNone, crArrow, crCross, crIBeam, crSizeNESW, crSizeNS, crSizeNWSE, crSizeWE, crUpArrow, crHourGlass, crDrag, crNoDrop, crHSplit, crVSplit, crMultiDrag, crSQLWait, crNo, crAppStart, crHelp, crHandPoint, crSizeAll, crHand }<br />
           <br />
+          <a name="TStyleElement">TStyleElement</a> = (seFont, seClient, seBorder);<br />
+          <br />
+          <a name="TStyleElements">TStyleElements</a> = set of <a href="#TStyleElement">TStyleElement</a>;<br />
+          <br />
           <a name="TControl">TControl</a> = class(<a href="#TComponent">TComponent</a>)<br />
           &nbsp;&nbsp;constructor Create(AOwner: <a href="#TComponent">TComponent</a>);<br />
           &nbsp;&nbsp;procedure BringToFront;<br />
@@ -253,6 +257,8 @@
           &nbsp;&nbsp;property Visible: Boolean; read write;<br />
           &nbsp;&nbsp;property Enabled: Boolean; read write;<br />
           &nbsp;&nbsp;property Cursor: <a href="#TCursor">TCursor</a>; read write;<br />
+          &nbsp;&nbsp;property StyleElements: <a href="#TStyleElements">TStyleElements</a>; read write;<br />
+          &nbsp;&nbsp;property StyleName: String; read write;<br />
           end;<br />
           <br />
           <a name="TWinControl">TWinControl</a> = class(<a href="#TControl">TControl</a>)<br />
@@ -471,17 +477,23 @@
           <a name="TButtonControl">TButtonControl</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
           end;<br />
           <br />
+          <a name="TButtonStyle">TButtonStyle</a> = (bsPushButton, bsCommandLink, bsSplitButton);<br />
+          <br />
           <a name="TButton">TButton</a> = class(<a href="#TButtonControl">TButtonControl</a>)<br />
           &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
           &nbsp;&nbsp;property Cancel: Boolean; read write;<br />
           &nbsp;&nbsp;property Caption: String; read write;<br />
+          &nbsp;&nbsp;property CommandLinkHint: String; read write;<br />
           &nbsp;&nbsp;property Default: Boolean; read write;<br />
+          &nbsp;&nbsp;property ElevationRequired: Boolean; read write;<br />
           &nbsp;&nbsp;property Font: <a href="#TFont">TFont</a>; read write;<br />
           &nbsp;&nbsp;property ModalResult: Longint; read write;<br />
+          &nbsp;&nbsp;property Style: <a href="#TButtonStyle">TButtonStyle</a>; read write;<br />
           &nbsp;&nbsp;property OnClick: <a href="#TNotifyEvent">TNotifyEvent</a>; read write;<br />
           end;<br />
           <br />
           <a name="TNewButton">TNewButton</a> = class(<a href="#TButton">TButton</a>)<br />
+          &nbsp;&nbsp;function AdjustHeightIfCommandLink: Integer;<br />
           end;<br />
           <br />
           <a name="TCustomCheckBox">TCustomCheckBox</a> = class(<a href="#TButtonControl">TButtonControl</a>)<br />
@@ -772,7 +784,9 @@
           &nbsp;&nbsp;property Surface: <a href="#TNewNotebookPage">TNewNotebookPage</a>; read;<br />
           &nbsp;&nbsp;property SurfaceColor: <a href="#TColor">TColor</a>; read;<br />
           &nbsp;&nbsp;property SurfaceHeight: Integer; read;<br />
+          &nbsp;&nbsp;property SurfaceExtraHeight: Integer; read;<br />
           &nbsp;&nbsp;property SurfaceWidth: Integer; read;<br />
+          &nbsp;&nbsp;property SurfaceExtraWidth: Integer; read;<br />
           &nbsp;&nbsp;property OnActivate: <a href="#TWizardPageNotifyEvent">TWizardPageNotifyEvent</a>; read write;<br />
           &nbsp;&nbsp;property OnBackButtonClick: <a href="#TWizardPageButtonEvent">TWizardPageButtonEvent</a>; read write;<br />
           &nbsp;&nbsp;property OnCancelButtonClick: <a href="#TWizardPageCancelEvent">TWizardPageCancelEvent</a>; read write;<br />
@@ -870,12 +884,15 @@
           &nbsp;&nbsp;function CalculateButtonWidth(const ButtonCaptions: array of String): Integer;<br />
           &nbsp;&nbsp;function ShouldSizeX: Boolean;<br />
           &nbsp;&nbsp;function ShouldSizeY: Boolean;<br />
-          &nbsp;&nbsp;procedure FlipSizeAndCenterIfNeeded(const ACenterInsideControl: Boolean; const CenterInsideControlCtl: <a href="#TWinControl">TWinControl</a>; const CenterInsideControlInsideClientArea: Boolean);<br />
+          &nbsp;&nbsp;procedure FlipAndCenterIfNeeded(const ACenterInsideControl: Boolean; const CenterInsideControlCtl: <a href="#TWinControl">TWinControl</a>; const CenterInsideControlInsideClientArea: Boolean);<br />
+          &nbsp;&nbsp;property CenterOnShow: Boolean; read;<br />
           &nbsp;&nbsp;property ControlsFlipped: Boolean; read;<br />
+          &nbsp;&nbsp;property GetExtraClientWidth: Integer; read;<br />
+          &nbsp;&nbsp;property GetExtraClientHeight: Integer; read;<br />
           &nbsp;&nbsp;property FlipControlsOnShow: Boolean; read write;<br />
-          &nbsp;&nbsp;property KeepSizeY: Boolean; read; write;<br />
+          &nbsp;&nbsp;property KeepSizeX: Boolean; read;<br />
+          &nbsp;&nbsp;property KeepSizeY: Boolean; read;<br />
           &nbsp;&nbsp;property RightToLeft: Boolean; read;<br />
-          &nbsp;&nbsp;property SizeAndCenterOnShow: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TWizardForm">TWizardForm</a> = class(<a href="#TSetupForm">TSetupForm</a>)<br />

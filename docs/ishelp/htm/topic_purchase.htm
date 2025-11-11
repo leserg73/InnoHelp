@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Покупка Inno Setup</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Покупка Inno Setup</h1>
+    <div class="topicbody">
+      <p>Чтобы поддержать наши усилия по разработке и развитии Inno Setup, мы
+        просим всех коммерческих пользователей <a 
+        href="https://jrsoftware.org/isorder.php" target="_blank" 
+        title="https://jrsoftware.org/isorder.php">приобрести лицензии</a><img 
+        class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />,
+        независимо от используемой версии.</p>
+      <p>Благодарим вас за помощь в дальнейшем развитии этого программного
+        обеспечения.</p>
+      <p>После покупки вы получите лицензионный ключ по электронной почте. Если
+        письмо с ключом отсутствует, проверьте папку со спамом или нежелательной
+        почтой. Адрес отправителя: innosetup@mlsoft.nl. Убедитесь, что он не
+        заблокирован вашей почтовой системой.</p>
+      <p>После получения ключа скопируйте его и вставьте в окне "Коммерческая
+        лицензия", которое можно открыть из IDE компилятора посредством пункта
+        "<i>Ввести ключ коммерческой лицензии...</i>" в меню "<i>Помощь</i>".</p>
+      <p>Ваш лицензионный ключ также можно активировать для любого пользователя,
+        записав его как строку в следующий раздел реестра:</p>
+      <ul>
+        <li>Key: <tt>HKEY_CURRENT_USER\Software\Jordan Russell\Inno Setup\License</tt></li>
+        <li>Name: <tt>LicenseKey</tt></li>
+        <li>Type: <tt>REG_SZ</tt></li>
+      </ul>
+      <p>Это можно сделать до или после установки, или даже во время работы
+        Inno Setup.</p>
+      <p>Лицензионный ключ представляет собой строку длиной не менее 108
+        символов, которая начинается с 'in' и заканчивается на 'no' без кавычек.
+        Пользователям ключ поставляется в виде многострочного текста по 28
+        символов в каждой.</p>
+      <p>Обратите внимание, что инсталляторы, созданные без лицензии, не
+        помечаются явно как нелицензионные. Это означает, что вы можете не
+        устанавливать лицензионный ключ на CI-машине, даже если мы попросим вас
+        назначить ей лицензию.</p>
+      <p>См. также раздел <a href="topic_donate.htm">Поддержка Inno Setup</a>.</p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

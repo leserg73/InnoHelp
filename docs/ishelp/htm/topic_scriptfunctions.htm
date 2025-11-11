@@ -91,6 +91,11 @@
         <code>
         &nbsp;&nbsp;function <a href="topic_isxfunc_isadmin.htm">IsAdmin</a>: Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_isadmininstallmode.htm">IsAdminInstallMode</a>: Boolean;<br />
+        <br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_iswindark.htm">IsWinDark</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_isdarkinstallmode.htm">IsDarkInstallMode</a>: Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_highcontrastactive.htm">HighContrastActive</a>: Boolean;<br />
+        <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getwindowsversion.htm">GetWindowsVersion</a>: Cardinal;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_getwindowsversionex.htm">GetWindowsVersionEx</a>(var Version: TWindowsVersion);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getwindowsversionstring.htm">GetWindowsVersionString</a>: String;<br />
@@ -180,6 +185,7 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a>(S: String; Def: Int64): Int64;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_strtoint64.htm">StrToInt64</a>(S: String): Int64;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_strtofloat.htm">StrToFloat</a>(S: String): Extended;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_strtocolor.htm">StrToColor</a>(S: String): TColor;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_inttostr.htm">IntToStr</a>(I: Int64): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_floattostr.htm">FloatToStr</a>(E: Extended): String;<br />
         <br />
@@ -432,6 +438,8 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_scaley.htm">ScaleY</a>(Y: Integer): Integer;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_initializebitmapbuttonfromicon.htm">InitializeBitmapButtonFromIcon</a>(const BitmapButton: TBitmapButton; const IconFilename: String; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;</tt><br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_initializebitmapimagefromicon.htm">InitializeBitmapImageFromIcon</a>(const BitmapImage: TBitmapImage; const IconFilename: String; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_initializebitmapbuttonfromstockicon.htm">InitializeBitmapButtonFromStockIcon</a>(const BitmapButton: TBitmapButton; const Siid: Integer; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_initializebitmapimagefromstockicon.htm">InitializeBitmapImageFromStockIcon</a>(const BitmapImage: TBitmapImage; const Siid: Integer; const BkColor: TColor; const AscendingTrySizes: TArrayOfInteger): Boolean;<br />
         </code>
       </p>
       <p class="null"><br />
@@ -480,6 +488,11 @@
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_sleep.htm">Sleep</a>(const Milliseconds: Longint);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_random.htm">Random</a>(const Range: Integer): Integer;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_beep.htm">Beep</a>;<br />
+        <br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_round.htm">Round</a>(const E: Extended): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_trunc.htm">Trunc</a>(const E: Extended): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_int.htm">Int</a>(const E: Extended): Extended;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_muldiv.htm">MulDiv</a>(const Number, Numerator, Denominator: Integer): Integer;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_set8087cw.htm">Set8087CW</a>(NewCW: Word);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_get8087cw.htm">Get8087CW</a>: Word;<br />
         <br />

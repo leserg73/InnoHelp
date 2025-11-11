@@ -33,12 +33,8 @@
 class="hl kwd">FileRead</span><span class="hl opt">(</span>FileHandle<span class="hl opt">)</span>
   <span class="hl kwf">#pragma</span> <span class="hl kwd">message</span> FileLine
 <span class="hl kwf">#endsub</span>
-<span class="hl kwf">#for</span> {FileHandle <span class="hl opt">=</span> <span
-class="hl kwd">FileOpen</span><span class="hl opt">(</span><span class="hl str">"c:</span><span
-class="hl str">\autoexec.bat"</span><span class="hl opt">);</span> \
-      FileHandle <span class="hl opt">&amp;&amp; </span><span class="hl kwf">!</span><span
-class="hl kwd">FileEof</span><span class="hl opt">(</span>FileHandle<span class="hl opt">);</span> <span
-class="hl str">""</span>} \
+<span class="hl kwf">#for</span> {FileHandle = <span class="hl kwd">FileOpen</span>(<span class="hl kwd">AddBackslash</span>(CompilerPath) + "whatsnew.htm"); \
+  FileHandle &amp;&amp; !<span class="hl kwd">FileEof</span>(FileHandle); ""} \
       ProcessFileLine
 <span class="hl kwf">#if</span> FileHandle
   <span class="hl kwf">#expr</span> <span class="hl kwd">FileClose</span><span class="hl opt">(</span>FindHandle<span

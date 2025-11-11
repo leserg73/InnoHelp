@@ -25,15 +25,18 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined">Цвет в формате <code>$<i>bbggrr</i></code>, где
-                <code>bb</code>, <code>gg</code> и <code>rr</code> определяют
-                интенсивности (в шестнадцатеричном формате) для синего, зеленого
-                и красного цветов соответственно. Или это может быть одно из следующих
-                предопределённых названий цветов: <code>clBlack</code>, <code>clMaroon</code>,
-                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>, <code>clPurple</code>,
-                <code>clTeal</code>, <code>clGray</code>, <code>clSilver</code>, <code>clRed</code>,
-                <code>clLime</code>, <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
-                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>, <code>clWindow</code>.
+              <div class="margined">Цвет в формате <code>#<i>rrggbb</i></code>
+                или <code>$<i>bbggrr</i></code>, где <code>bb</code>, <code>gg</code>
+                и <code>rr</code> определяют интенсивности (в шестнадцатеричном
+                формате) для синего, зеленого и красного цветов соответственно.
+                Или это может быть одно из следующих предопределённых названий
+                цветов: <code>clBlack</code>, <code>clMaroon</code>,
+                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>,
+                <code>clPurple</code>, <code>clTeal</code>, <code>clGray</code>,
+                <code>clSilver</code>, <code>clRed</code>, <code>clLime</code>,
+                <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
+                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>,
+                <code>clWindow</code>.
               </div>
             </td>
           </tr>
@@ -53,7 +56,9 @@
       <p>Эта директива устанавливает цвет фона, используемого для заполнения
         всех неиспользуемых или прозрачных областей в малом изображении мастера
         установки, которое задаётся директивой <a 
-        href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>.</p>
+        href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>.
+        Использование значения <tt>clNone</tt> в качестве цвета заливки сохраняет
+        прозрачность.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

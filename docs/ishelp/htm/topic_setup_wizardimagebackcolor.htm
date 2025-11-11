@@ -25,15 +25,18 @@
               <p>Допустимые значения:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined">Цвет в формате <code>$<i>bbggrr</i></code>, где
-                <code>bb</code>, <code>gg</code> и <code>rr</code> определяют
-                интенсивности (в шестнадцатеричном формате) для синего, зеленого
-                и красного цветов соответственно. Или это может быть одно из следующих
-                предопределённых названий цветов: <code>clBlack</code>, <code>clMaroon</code>,
-                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>, <code>clPurple</code>,
-                <code>clTeal</code>, <code>clGray</code>, <code>clSilver</code>, <code>clRed</code>,
-                <code>clLime</code>, <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
-                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>, <code>clWindow</code>.
+              <div class="margined">Цвет в формате <code>#<i>rrggbb</i></code>
+                или <code>$<i>bbggrr</i></code>, где <code>bb</code>, <code>gg</code>
+                и <code>rr</code> определяют интенсивности (в шестнадцатеричном
+                формате) для синего, зеленого и красного цветов соответственно.
+                Или это может быть одно из следующих предопределённых названий
+                цветов: <code>clBlack</code>, <code>clMaroon</code>,
+                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>,
+                <code>clPurple</code>, <code>clTeal</code>, <code>clGray</code>,
+                <code>clSilver</code>, <code>clRed</code>, <code>clLime</code>,
+                <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
+                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>,
+                <code>clWindow</code>.
               </div>
             </td>
           </tr>
@@ -42,10 +45,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><code>$f9f3e8</code> (синевато-серый),
-                если используется встроенное изображение мастера, в противном
-                случае — <code>clWindow</code>.
-              </div>
+              <div class="margined"><i>(см. ниже)</i></div>
             </td>
           </tr>
         </tbody>
@@ -54,7 +54,22 @@
       <p>Эта директива устанавливает цвет фона, используемого для заполнения
         всех неиспользуемых или прозрачных областей в изображении мастера
         установки, которое задаётся директивой <a 
-        href="topic_setup_wizardimagefile.htm">WizardImageFile</a>.</p>
+        href="topic_setup_wizardimagefile.htm">WizardImageFile</a>. Использование
+        значения <tt>clNone</tt> в качестве цвета заливки сохраняет прозрачность.</p>
+      <p>Если используется пользовательское изображение, то по умолчанию
+        эта директива принимает значение <tt>clWindow</tt> (обычно белый).</p>
+      <p>Если используется предустановленный стиль <tt>slate</tt>, то по
+        умолчанию для этой директивы устанавливается значение <tt>#bcd2e2</tt>
+        (светло-серовато-синий).</p>
+      <p>Если используется предустановленный стиль <tt>zircon</tt>, то по
+        умолчанию устанавливается значение <tt>#d0eaee</tt> (светло-серовато-голубой).</p>
+      <p>Если принудительно используется тёмный стиль – по умолчанию
+        <tt>#2e3a3f</tt> (очень тёмно-синий).</p>
+      <p>В противном случае – <tt>#e8f3f9</tt> (светло-серовато-синий).</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />
+          <a href="topic_setup_wizardstyle.htm">WizardStyle</a>
+        </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
