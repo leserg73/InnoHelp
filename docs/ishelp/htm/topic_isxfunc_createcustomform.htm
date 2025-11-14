@@ -20,7 +20,8 @@
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX">function
-          CreateCustomForm: TSetupForm;</p>
+          CreateCustomForm(const ClientWidth, ClientHeight: Integer; const
+          KeepSizeX, KeepSizeY: Boolean): TSetupForm;</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет создание формы. По умолчанию форма является пустой, поэтому
         вам нужно будет ещё создать собственные элементы управления и поместить
@@ -36,6 +37,35 @@
         и <tt>DialogFontSize</tt>, определяют шрифт, используемый формой, и, по
         умолчанию, шрифт дочерних элементов управления, размещённых на этой
         форме.</p>
+      <p>Для масштабирования желаемой ширины и высоты клиентской области формы
+        до соответствующих значений следует использовать функции <a 
+        href="topic_isxfunc_scalex.htm">ScaleX</a> и <a 
+        href="topic_isxfunc_scaley.htm">ScaleY</a>. Ширина и высота клиентской
+        области формы — это полная ширина и высота формы за вычетом её границ.</p>
+      <p>Параметры <tt>KeepSizeX</tt> и <tt>KeepSizeY</tt> позволяют определить,
+        должна ли форма увеличиваться по горизонтали и вертикали при изменении
+        размера клиентской области, если используется директива <a 
+        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a>. в
+        секции <code>[Setup]</code>.</p>
+      <p>С версии 6.6.0 изменился формат функции <tt>CreateCustomForm</tt>.
+        Теперь значения ширины и высоты должны быть указаны заранее (после
+        создания формы эти свойства будут доступны <i>только для чтения</i>).
+        Раньше код создания формы выглядел примерно так:</p>
+      <pre class="indent examplebox">
+  Form := <span class="hl kwd">CreateCustomForm</span>;
+  Form.Caption := <span class="hl sng">&#39;TSetupForm&#39;</span>;
+  Form.ClientWidth := <span class="hl kwd">ScaleX</span>(<span class="hl num">256</span>);
+  Form.ClientHeight := <span class="hl kwd">ScaleY</span>(<span class="hl num">128</span>);
+</pre>
+      <p>Начиная с версии 6.6.0 этот код следует изменить на следующий:</p>
+      <pre class="indent examplebox">
+  Form := <span class="hl kwd">CreateCustomForm</span>(<span class="hl kwd">ScaleX</span>(<span class="hl num">256</span>), <span class="hl kwd">ScaleY</span>(<span class="hl num">128</span>), <span class="hl kwg">False</span>, <span class="hl kwg">False</span>);
+  Form.Caption := <span class="hl sng">&#39;TSetupForm&#39;</span>;
+</pre>
+      <p>Аналогичные изменения коснулись также свойств <tt>KeepSizeX</tt> и
+        <tt>KeepSizeY</tt>, которые до версии 6.6.0 были обычными <i>свойствами</i>,
+        доступными для записи, но теперь указываются в качестве параметров при
+        вызове <tt>CreateCustomForm</tt> и доступны <i>только для чтения</i>.</p>
       <h2 class="heading">Пример</h2>
       <p>Смотрите файл <i>CodeClasses.iss</i> из папки "Examples" в каталоге
         установки Inno Setup.</p>
