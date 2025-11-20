@@ -45,25 +45,29 @@
         href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a> для
         настройки цвета фона. Возможно использование .bmp файлов с прозрачностью
         (дополнительную информацию смотрите в разделе <a 
-        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a>).</p>
+        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a>)
+        Также можно использовать директиву <a 
+        href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a> для
+        изменения прозрачности.</p>
       <p>Размер области, в которой выводится изображение, зависит от системных
-        настроек DPI и используемых <a href="topic_langoptionssection.htm">параметров шрифта</a>.
+        настроек DPI и используемых <a href="topic_langoptionssection.htm">параметров шрифта</a>,
+        а также значений директив <a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a>
+        и <a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a>.
         Во всех случаях сохраняется соотношение сторон 164:314. Если используются
         другие изображения, их соотношение сторон должно быть таким же.</p>
       <p>Можно использовать изображение любого размера. Если изображения слишком
         малы или слишком велики, чтобы поместиться в область вывода изображения,
         то они будут растянуты или сжаты. Рекомендуется указывать изображение
-        размером более 164x314 пикселей. Это позволяет избежать размытости и
+        размером более 202x386 пикселей. Это позволяет избежать размытости и
         нечеткости изображения на системах с высоким уровнем PDI. По умолчанию
         размер встроенного изображения составляет 240x459 пикселей.</p>
       <p>Если одно изображение большого размера при разных настройках DPI не даёт
         удовлетворительного результата, можно указать несколько файлов, разделив
         их запятыми. Программа установки автоматически выберет из них то, которое
         лучше всего соответствует размеру области изображения. При условии
-        использования настроек шрифта и параметра <a 
-        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a> по
-        умолчанию размер области изображения с различными настройками DPI
-        будет составлять (в пикселях):</p>
+        использования настроек шрифта, значений <tt>WizardSizePercent</tt> и
+        <tt>WizardKeepAspectRatio</tt> по умолчанию размер области изображения с
+        различными настройками DPI будет составлять (в пикселях):</p>
       <table>
         <tbody>
           <tr>
@@ -148,6 +152,7 @@
         <p class="indent"><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a><br />
         <a href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a><br />
         <a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a><br />
+        <a href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a><br />
         <a href="topic_setup_wizardimagestretch.htm">WizardImageStretch</a></p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
