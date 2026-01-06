@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: WizardSetBackImage</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: WizardSetBackImage</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">procedure WizardSetBackImage(const
+        BackImages: TArrayOfGraphic; const Stretch, Center: Boolean; const
+        Opacity: Byte);</p>
+      <h2 class="heading">Описание</h2>
+      <p>Устанавливает фоновое изображение мастера. Если указано несколько
+        изображений, будет выбрано наиболее подходящее. Если изображения не
+        указаны, любое существующее фоновое изображение удаляется, а остальные
+        параметры функции игнорируются.</p>
+      <p>Если параметр <tt>Stretch</tt> имеет значение <tt>True</tt>, изображение
+        будет растянуто или сжато, если его размеры больше или меньше требуемых.
+        Если <tt>Stretch</tt> имеет значение <tt>False</tt>, а параметр
+        <tt>Center</tt> равен <tt>True</tt>, то изображение, меньшее по размеру,
+        будет центрировано в окне мастера, а большее — обрезано. В противном
+        случае изображение будет расположено в левом верхнем углу в своём
+        исходном размере.</p>
+      <p>Рекомендуемые размеры изображений смотрите в разделе справки <a
+        href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a>.</p>
+      <p>Параметр <tt>Opacity</tt> определяет непрозрачность изображения от
+        <tt>0</tt> (полностью прозрачное) до <tt>255</tt> (непрозрачное).</p>
+      <p>Вызывает исключение, если пользовательский фон мастера установки ещё не
+        активирован. Активация пользовательского фона возможна с использованием
+        директив <a href="topic_setup_wizardbackcolor.htm">WizardBackColor</a>,
+        <a href="topic_setup_wizardbackcolordynamicdark.htm">WizardBackColorDynamicDark</a>,
+        <a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a> или
+        <a href="topic_setup_wizardbackimagefiledynamicdark.htm">WizardBackImageFileDynamicDark</a>.</p>
+      <p>Чтобы отображать одно изображение в течение всего времени установки, не
+        используйте эту функцию. Вместо этого установите <a
+        href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a> и,
+        при желании, <a href="topic_setup_wizardbackimagefiledynamicdark.htm">WizardBackImageFileDynamicDark</a>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">WizardStyle</span>=<span class="hl kwe">modern dynamic</span>
+<span class="hl kwb">WizardBackColor</span>=<span class="hl kwf">#f3f3f3</span>
+<span class="hl kwb">WizardBackColorDynamicDark</span>=<span class="hl kwf">#202020</span>
+
+<span class="hl kwa">[Files]</span>
+<span class="hl slc">; Если при деинсталляции изображения не нужны, замените параметры DestDir</span>
+<span class="hl slc">; флагами со следующими значениями:</span>
+<span class="hl slc">; Flags: dontcopy noencryption</span>
+<span class="hl kwb">Source</span>: &quot;MyImageNormal.png&quot;; <span class="hl kwb">DestDir</span>: &quot;<span class="hl kwc">{app}</span>&quot;
+<span class="hl kwb">Source</span>: &quot;MyImageLarge.png&quot;; <span class="hl kwb">DestDir</span>: &quot;<span class="hl kwc">{app}</span>&quot;
+
+<span class="hl kwa">[Code]</span>
+<span class="hl slc">; Показываем изображение только на странице установки</span>
+&lt;<span class="hl kwd">event</span>(<span class="hl sng">&#39;CurStepChanged&#39;</span>)&gt;
+<span class="hl kwb">procedure</span> <span class="hl kwd">CurStepChanged_UpdateBackImage</span>(CurStep: TSetupStep);
+<span class="hl kwb">var</span>
+  PngImages: TArrayOfGraphic; 
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if</span> CurStep = <span class="hl kwe">ssInstall</span> <span class="hl kwb">then begin</span>
+    <span class="hl kwd">SetLength</span>(PngImages, <span class="hl num">2</span>);
+    PngImages[<span class="hl num">0</span>] := TPngImage.Create;
+    PngImages[<span class="hl num">1</span>] := TPngImage.Create;
+    <span class="hl kwb">try</span>
+      <span class="hl kwd">ExtractTemporaryFile</span>(<span class="hl sng">&#39;MyImageNormal.png&#39;</span>);
+      PngImages[<span class="hl num">0</span>].<span class="hl kwd">LoadFromFile</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">&#39;{tmp}\MyImageNormal.png&#39;</span>));
+      <span class="hl kwd">ExtractTemporaryFile</span>(<span class="hl sng">&#39;MyImageLarge.png&#39;</span>);
+      PngImages[<span class="hl num">1</span>].<span class="hl kwd">LoadFromFile</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">&#39;{tmp}\MyImageLarge.png&#39;</span>));
+      <span class="hl kwd">WizardSetBackImage</span>(PngImages, <span class="hl kwg">True</span>, <span class="hl kwg">True</span>, <span class="hl num">150</span>);
+    <span class="hl kwb">finally</span>
+      PngImages[<span class="hl num">1</span>].Free;
+      PngImages[<span class="hl num">0</span>].Free;
+    <span class="hl kwb">end</span>;
+  <span class="hl kwb">end else if</span> CurStep = <span class="hl kwe">ssPostInstall</span> <span class="hl kwb">then</span>
+    <span class="hl kwd">WizardSetBackImage</span>([], <span class="hl kwg">True</span>, <span class="hl kwg">True</span>, <span class="hl num">150</span>);
+<span class="hl kwb">end</span>;
+
+<span class="hl slc">; Показываем изображение в процессе деинсталляции</span>
+&lt;<span class="hl kwd">event</span>(<span class="hl sng">&#39;InitializeUninstallProgressForm&#39;</span>)&gt;
+<span class="hl kwb">procedure</span> InitializeUninstallProgressForm_UpdateBackImage;
+<span class="hl kwb">var</span>
+  PngImages: TArrayOfGraphic;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">try</span>
+    <span class="hl kwd">SetLength</span>(PngImages, <span class="hl num">2</span>);
+    PngImages[<span class="hl num">0</span>] := TPngImage.Create;
+    PngImages[<span class="hl num">1</span>] := TPngImage.Create;
+    <span class="hl kwb">try</span>
+      PngImages[<span class="hl num">0</span>].<span class="hl kwd">LoadFromFile</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">&#39;{app}\MyImageNormal.png&#39;</span>));
+      PngImages[<span class="hl num">1</span>].<span class="hl kwd">LoadFromFile</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">&#39;{app}\MyImageLarge.png&#39;</span>));
+      <span class="hl kwd">WizardSetBackImage</span>(PngImages, <span class="hl kwg">True</span>, <span class="hl kwg">False</span>, <span class="hl num">150</span>);
+    <span class="hl kwb">finally</span>
+      PngImages[<span class="hl num">1</span>].Free;
+      PngImages[<span class="hl num">0</span>].Free;
+    <span class="hl kwb">end</span>;
+  <span class="hl kwb">except</span>
+    <span class="hl kwg">LogFmt</span>(<span class="hl sng">&#39;Could not enable background image: %s&#39;</span>, [<span class="hl kwg">GetExceptionMessage</span>]);
+  <span class="hl kwb">end</span>;
+<span class="hl kwb">end</span>; 
+
+<span class="hl slc">; См. другой пример в CodeClasses.iss.</span></pre>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

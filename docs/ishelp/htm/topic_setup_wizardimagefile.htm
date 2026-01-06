@@ -25,7 +25,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><i>(пустое)</i></div>
+              <div class="margined"><i>(см. ниже)</i></div>
             </td>
           </tr>
         </tbody>
@@ -45,10 +45,10 @@
         href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a> для
         настройки цвета фона. Возможно использование .bmp файлов с прозрачностью
         (дополнительную информацию смотрите в разделе <a 
-        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a>)
+        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a>).
         Также можно использовать директиву <a 
         href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a> для
-        изменения прозрачности.</p>
+        увеличения прозрачности.</p>
       <p>Размер области, в которой выводится изображение, зависит от системных
         настроек DPI и используемых <a href="topic_langoptionssection.htm">параметров шрифта</a>,
         а также значений директив <a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a>
@@ -104,9 +104,11 @@
         в 100%. Это обусловлено тем, что коэффициент масштабирования основан на
         размере шрифта, который используется при настройке DPI, а не на самом
         DPI).</p>
-      <p>Если эта директива не указана или имеет пустое значение, то будет
-        использоваться одном встроенное изображение мастера с размерами 240x459
-        пикселей, которое будет сжато или растянуто до необходимых размеров.</p>
+      <p>Если эта директива не указана, то будет использоваться одно встроенное
+        изображение мастера с размерами 240x459 пикселей, которое будет сжато
+        или растянуто до необходимых размеров.</p>
+      <p>Если для директивы указано пустое значение, изображение мастера
+        использоваться не будет. Это не изменяет компоновку страниц мастера.</p>
       <p>Если используются настройки по умолчанию, установленные до версии
         Inno Setup 6.6.0, размер области изображения при различных настройках
         DPI будет следующим (в пикселях):</p>
@@ -149,7 +151,8 @@
         <pre class="nomargin"><span class="hl kwb">WizardImageFile</span>=myimage.bmp,myimage2.bmp</pre>
       </div>
       <h2 class="heading">См. также:</h2>
-        <p class="indent"><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a><br />
+        <p class="indent"><a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a><br />
+        <a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a><br />
         <a href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a><br />
         <a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a><br />
         <a href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a><br />

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: RedirectionGuard</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: RedirectionGuard</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><a href="topic_yesnonotes.htm"><code>yes</code>
+                  или <code>no</code></a> </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><code>yes</code> </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива предписывает программе установки сделать попытку включить
+        для своего процесса защитную функцию Windows – RedirectionGuard. Программа
+        удаления (деинсталлятор) также включает защиту RedirectionGuard для своего
+        процесса, если она была успешно активирована во время последней установки
+        приложения. Это позволяет предотвратить уязвимости безопасности, связанные
+        с перенаправлением путей.</p>
+      <p><a href="https://www.microsoft.com/en-us/msrc/blog/2025/06/redirectionguard-mitigating-unsafe-junction-traversal-in-windows" target="_blank"
+        title="https://www.microsoft.com/en-us/msrc/blog/2025/06/redirectionguard-mitigating-unsafe-junction-traversal-in-windows">Защитная
+        функция RedirectionGuard</a><img class="extlink" src="../images/extlink.png"
+        srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />доступна в Windows
+        11 и Windows 10 начиная с версии 22H2, блокирует обход точек NTFS-соединений
+        и символических ссылок, созданных непривилегированными пользователями (или
+        любыми процессами без повышенных прав).</p>
+      <p>RedirectionGuard особенно полезен для установщиков, которые читают или
+        записывают файлы в каталогах, доступных для записи непривилегированными
+        пользователями, например, в папке <tt>{commonappdata}</tt>. К примеру,
+        если известно, что установщик обращается к <tt>{commonappdata}\YourApp</tt>,
+        непривилегированный пользователь может создать в этом месте символическую
+        ссылку, чтобы перенаправить все обращения к <tt>{commonappdata}\YourApp</tt>
+        по другому, произвольно выбранному пути. Если установщик не включает
+        RedirectionGuard, эта ссылка может обмануть установщик и заставить его
+        создавать или изменять файлы в каталоге, к которому сам непривилегированный
+        пользователь не имеет доступа. Это представляет собой повышение привилегий
+        и потенциально может позволить непривилегированному пользователю получить
+        полный контроль над системой.</p>
+      <p>Однако наилучшей практикой является по возможности избегать доступа к
+        общедоступным для записи каталогам, таким как <tt>{commonappdata}</tt>.
+        Файлы конфигурации и данные, предназначенные для записи только
+        установщиком или администраторами, следует размещать в <tt>{app}</tt>
+        (т.е. в "Program Files"), но не в <tt>{commonappdata}</tt>.</p>
+      <p>Обратите внимание, что этот параметр влияет только на собственный
+        процесс установки/удаления. Он не наследуется дочерними процессами и не
+        включает RedirectionGuard для устанавливаемого приложения. Приложениям,
+        обращающимся к файлам в общедоступных для записи папках, следует
+        рассмотреть возможность самостоятельного включения RedirectionGuard для
+        своего процесса или проверки атрибута точки повторного анализа
+        (<tt>FILE_ATTRIBUTE_REPARSE_POINT</tt>) для каждого открываемого каталога
+        и файла.</p>
+      <p>Когда RedirectionGuard блокирует доступ к пути, любое отображаемое или
+        регистрируемое сообщение об ошибке обычно будет содержать код ошибки 448.
+        Если выяснится, что заблокированная точка соединения была создана для
+        какой-то безобидной цели, то рекомендуется удалить и создать точку
+        соединения заново с правами администратора (запустив команду <tt>MKLINK</tt>
+        из командной строки с повышенными правами). Отключение RedirectionGuard,
+        как правило, не требуется.</p>
+      <p>Для включения или отключения функции программа установки и удаления
+        также поддерживают параметры командной строки <code>/NOREDIRECTIONGUARD</code>
+        и <code>/REDIRECTIONGUARD</code>, которые имеют приоритет над настройкой
+        этой директивы.</p>
+      <p>Статус RedirectionGuard отмечается в журнале, что позволяет проверить,
+       была ли защитная функция активна в процессе установки или удаления.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setupcmdline.htm">Параметры командной строки инсталлятора</a><br />
+        <a href="topic_uninstcmdline.htm">Параметры командной строки деинсталлятора</a></p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

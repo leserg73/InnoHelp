@@ -25,7 +25,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><i>(пустое)</i></div>
+              <div class="margined"><i>(см. ниже)</i></div>
             </td>
           </tr>
         </tbody>
@@ -102,9 +102,11 @@
       <p>Примечание об обратной совместимости: если указано одно изображение
         размером менее 58x58 пикселей, оно не будет растягиваться, чтобы заполнить
         всю область вывода изображения; вместо этого оно будет выровнено по центру.</p>
-      <p>Если эта директива не указана или имеет пустое значение, то будет
-        использоваться одном встроенное изображение мастера с размерами 147x147
-        пикселей, которое будет сжато или растянуто до необходимых размеров.</p>
+      <p>Если эта директива не указана, то будет использоваться одном встроенное
+        изображение мастера с размерами 147x147 пикселей, которое будет сжато или
+        растянуто до необходимых размеров.</p>
+      <p>Если для директивы указано пустое значение, изображение мастера
+        использоваться не будет. Это не изменяет компоновку страниц мастера.</p>
       <p>Если используются настройки по умолчанию, установленные до версии
         Inno Setup 6.6.0, размер области изображения при различных настройках
         DPI будет следующим (в пикселях):</p>
@@ -147,7 +149,8 @@
         <pre class="nomargin"><span class="hl kwb">WizardSmallImageFile</span>=mysmallimage.bmp,mysmallimage2.bmp</pre>
       </div>
       <h2 class="heading">См. также:</h2>
-        <p class="indent"><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />
+        <p class="indent"><a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a><br />
+        <a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />
         <a href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a><br />
         <a href="topic_setup_wizardsmallimagebackcolor.htm">WizardSmallImageBackColor</a><br />
         <a href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a><br />

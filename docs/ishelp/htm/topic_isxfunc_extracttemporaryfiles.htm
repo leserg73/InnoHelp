@@ -31,9 +31,9 @@
         из-за наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
         будет вызвано исключение.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Используйте <tt>Flags: dontcopy</tt> в секции <tt>[Files]</tt>, чтобы
-        указать программе установки пропустить данный файл на этапе копирования
-        файлов.</p>
+      <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции <tt>[Files]</tt>,
+        чтобы программа установки пропустила файлы на этапе обычного копирования
+        файлов и обеспечила возможность их извлечения до ввода пароля.</p>
       <p>Если включено непрерывное (<i>solid</i>) сжатие, обязательно
         перечислите все временные файлы в самом начале секции <tt>[Files]</tt>.
         Причиной этого является то, что для получения доступа к произвольному
@@ -46,7 +46,7 @@
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
 
-class="hl kwe">dontcopy</span>
+class="hl kwe">dontcopy noencryption</span>
 <span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
 
 class="hl kwc">{app}</span>"

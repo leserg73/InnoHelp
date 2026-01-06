@@ -27,17 +27,19 @@
             <td class="setuphdrr">
               <div class="margined">Перечень
                 следующих значений, разделённых пробелами:<br />
-                <code>classic</code> <br />
-                <code>modern</code> <br />
-                <code>light</code> <br />
-                <code>dark</code> <br />
-                <code>dynamic</code> <br />
-                <code>polar</code> <br />
-                <code>slate</code> <br />
-                <code>windows11</code> <br />
-                <code>zircon</code> <br />
-                <code>includetitlebar</code> <br />
-                <code>excludelightbuttons</code></div>
+                <code>classic</code><br />
+                <code>modern</code><br />
+                <code>light</code><br />
+                <code>dark</code><br />
+                <code>dynamic</code><br />
+                <code>polar</code><br />
+                <code>slate</code><br />
+                <code>windows11</code><br />
+                <code>zircon</code><br />
+                <code>excludelightbucodeons</code><br />
+                <code>excludelightcontrols</code><br />
+                <code>hidebevels</code><br />
+                <code>includetitlebar</code></div>
             </td>
           </tr>
           <tr class="setuphdrtr2">
@@ -58,8 +60,8 @@
           <li><tt>classic</tt>: использует на страницах мастера фон серого цвета
             и применяется по умолчанию, если не указан.</li>
           <li><tt>modern</tt>: использует на страницах мастера фон белого цвета
-            и скрывает горизонтальную линии между панелью заголовка и содержимым
-            страниц.</li>
+            и скрывает разделитель (горизонтальную линию) между панелью заголовка
+            и содержимым страниц.</li>
         </ul>
         <p>Также поддерживаются дополнительные визуальные стили:</p>
         <ul>
@@ -83,13 +85,19 @@
         </ul>
         <p>Также поддерживаются следующие модификаторы:</p>
         <ul>
+          <li><tt>excludelightbuttons</tt>: отключает стилизацию всех кнопок
+            (включая кнопки командных ссылок, используемые в диалоговых окнах
+            задач), когда активен светлый стиль.</li>
+          <li><tt>excludelightcontrols</tt>: отключает стилизацию для всех элементов
+            управления (включая кнопки), когда активна светлая тема, за исключением
+            случаев, когда стиль необходим для достижения прозрачности.</li>
+          <li><tt>hidebevels</tt>: скрывает все разделители (горизонтальные линии)
+            в мастере инсталлятора и деинсталлятора, за исключением системных
+            диалогов.</li>
           <li><tt>includetitlebar</tt>: включает стилевое оформление для заголовка
             и границ окон программы установки (не-клиентская область), если
             активен пользовательский стиль (по умолчанию используется светлый или
             тёмный стиль системы).</li>
-          <li><tt>excludelightbuttons</tt>: отключает стилизацию всех кнопок
-            (включая кнопки командных ссылок, используемые в диалоговых окнах
-            задач), когда активен светлый стиль.</li>
         </ul>
         <p><b>Примеры:</b></p>
         <p><tt>WizardStyle=modern dynamic</tt> – будет использоваться современный
@@ -135,16 +143,18 @@
           <li>Для указания изображений и цветов, используемых специально для
             динамического тёмного стиля, доступны следующие директивы:
           <ul>
+            <li><a href="topic_setup_wizardbackimagefiledynamicdark.htm">WizardBackImageFileDynamicDark</a>
+              и <a href="topic_setup_wizardbackcolordynamicdark.htm">WizardBackColorDynamicDark</a>.</li>
             <li><a href="topic_setup_wizardimagefiledynamicdark.htm">WizardImageFileDynamicDark</a>
               и <a href="topic_setup_wizardimagebackcolordynamicdark.htm">WizardImageBackColorDynamicDark</a>.</li>
             <li><a href="topic_setup_wizardsmallimagefiledynamicdark.htm">WizardSmallImageFileDynamicDark</a>
               и <a href="topic_setup_wizardsmallimagebackcolordynamicdark.htm">WizardSmallImageBackColorDynamicDark</a>.</li>
             <li><a href="topic_setup_wizardstylefiledynamicdark.htm">WizardStyleFileDynamicDark</a></li>
           </ul>
-          Стандартные директивы <tt>WizardImageFile</tt>, <tt>WizardSmallImageFile</tt>,
-          <tt>WizardImageBackColor</tt>, <tt>WizardSmallImageBackColor</tt> и
-          <tt>WizardStyleFile</tt> используются для настройки динамического
-          светлого стиля.<br /><br />
+          Стандартные директивы <tt>WizardBackImageFile</tt>, <tt>WizardBackColor</tt>,
+          <tt>WizardImageFile</tt>, <tt>WizardImageBackColor</tt>, <tt>WizardSmallImageFile</tt>,
+          <tt>WizardSmallImageBackColor</tt> и <tt>WizardStyleFile</tt> используются
+          для настройки динамического светлого стиля.<br /><br />
           Примечание: принудительная установка тёмного стиля (<tt>dark</tt>) 
           <i>НЕ</i> используется настройки <tt>DynamicDark</tt>, а использует
           стандартные настройки.</li>

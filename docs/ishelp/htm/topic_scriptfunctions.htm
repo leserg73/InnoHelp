@@ -12,7 +12,7 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/highlight.js"></script>
     <script type="text/javascript">
-      $(document).ready(&nbsp;&nbsp;function(){highlight();});
+      $(document).ready(function(){highlight();});
     </script>
   </head>
   <body>
@@ -46,10 +46,8 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardsetuptype.htm">WizardSetupType</a>(const Description: Boolean): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a>(const Descriptions: Boolean): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a>(const Components: String): Boolean;<br />
-        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselectcomponents.htm">WizardSelectComponents</a>(const Components: String);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardselectedtasks.htm">WizardSelectedTasks</a>(const Descriptions: Boolean): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardistaskselected.htm">WizardIsTaskSelected</a>(const Tasks: String): Boolean;<br />
-        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselecttasks.htm">WizardSelectTasks</a>(const Tasks: String);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_wizardsilent.htm">WizardSilent</a>: Boolean;<br />
         <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_isuninstaller.htm">IsUninstaller</a>: Boolean;<br />
@@ -72,6 +70,15 @@
         <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getwizardform.htm">GetWizardForm</a>: TWizardForm;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getuninstallprogressform.htm">GetUninstallProgressForm</a>: TUninstallProgressForm;<br />
+        </code>
+      </p>
+      <p class="null"><br />
+        <b>Функции обновления мастера</b><br />
+        <br />
+        <code>
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselectcomponents.htm">WizardSelectComponents</a>(const Components: String);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardselecttasks.htm">WizardSelectTasks</a>(const Tasks: String);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_wizardsetbackimage.htm">WizardSetBackImage</a>(const BackImages: TArrayOfGraphic; const Stretch, Center: Boolean; const Opacity: Byte);<br />
         </code>
       </p>
       <p class="null"><br />
@@ -150,16 +157,17 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_ord.htm">Ord</a>(C: Char): Byte;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_copy.htm">Copy</a>(S: AnyString; Index, Count: Integer): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_length.htm">Length</a>(S: AnyString): Longint;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_lowercase.htm">Lowercase</a>(S: AnyString): String;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_uppercase.htm">Uppercase</a>(S: AnyString): String;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_ansilowercase.htm">AnsiLowercase</a>(S: AnyString): String;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_ansiuppercase.htm">AnsiUppercase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_lowercase.htm">LowerCase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_uppercase.htm">UpperCase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ansilowercase.htm">AnsiLowerCase</a>(S: AnyString): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_ansiuppercase.htm">AnsiUpperCase</a>(S: AnyString): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_stringofchar.htm">StringOfChar</a>(C: Char; I : Longint): String;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_delete.htm">Delete</a>(var S: AnyString; Index, Count: Integer);<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_insert.htm">Insert</a>(Source: AnyString; var Dest: AnyString; Index: Integer);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_stringchange.htm">StringChange</a>(var S: String; const FromStr, ToStr: String): Integer;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_stringchangeex.htm">StringChangeEx</a>(var S: String; const FromStr, ToStr: String; const SupportDBCS: Boolean): Integer;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_pos.htm">Pos</a>(SubStr, S: AnyString): Integer;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_rpos.htm">RPos</a>(SubStr, S: String): Integer;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_addquotes.htm">AddQuotes</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_removequotes.htm">RemoveQuotes</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_convertpercentstr.htm">ConvertPercentStr</a>(var S: String): Boolean;<br />
@@ -194,6 +202,13 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_addbackslash.htm">AddBackslash</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_removebackslashunlessroot.htm">RemoveBackslashUnlessRoot</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_removebackslash.htm">RemoveBackslash</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathcombine.htm">PathCombine</a>(const Dir, Filename: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathhasinvalidcharacters.htm">PathHasInvalidCharacters</a>(const S: String; const AllowDriveLetterColon: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathisrooted.htm">PathIsRooted</a>(const Filename: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathnormalizeslashes.htm">PathNormalizeSlashes</a>(const S: String): String;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathsame.htm">PathSame</a>(const S1, S2: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathstartswith.htm">PathStartsWith</a>(const S, AStartsWith: String; const IgnoreCase: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pathendswith.htm">PathEndsWith</a>(const S, AEndsWith: String; const IgnoreCase: Boolean): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_changefileext.htm">ChangeFileExt</a>(const FileName, Extension: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_extractfileext.htm">ExtractFileExt</a>(const FileName: String): String;<br />

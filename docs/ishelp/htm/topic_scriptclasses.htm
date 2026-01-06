@@ -414,6 +414,9 @@
           <a name="TNewEdit">TNewEdit</a> = class(<a href="#TEdit">TEdit</a>)<br />
           end;<br />
           <br />
+          <a name="TNewPathEdit">TNewPathEdit</a> = class(<a href="#TNewEdit">TNewEdit</a>)<br />
+          end;<br />
+          <br />
           <a name="TCustomMemo">TCustomMemo</a> = class(<a href="#TCustomEdit">TCustomEdit</a>)<br />
           &nbsp;&nbsp;property Lines: <a href="#TStrings">TStrings</a>; read write;<br />
           end;<br />
@@ -814,7 +817,7 @@
           <a name="TInputDirWizardPage">TInputDirWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
           &nbsp;&nbsp;function Add(const APrompt: String): Integer;<br />
           &nbsp;&nbsp;property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>; read;<br />
-          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>; read;<br />
+          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TNewPathEdit">TNewPathEdit</a>; read;<br />
           &nbsp;&nbsp;property NewFolderName: String; read write;<br />
           &nbsp;&nbsp;property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />
           &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />
@@ -824,7 +827,7 @@
           <a name="TInputFileWizardPage">TInputFileWizardPage</a> = class(<a href="#TWizardPage">TWizardPage</a>)<br />
           &nbsp;&nbsp;function Add(const APrompt, AFilter, ADefaultExtension: String): Integer;<br />
           &nbsp;&nbsp;property Buttons[Index: Integer]: <a href="#TNewButton">TNewButton</a>; read;<br />
-          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TEdit">TEdit</a>; read;<br />
+          &nbsp;&nbsp;property Edits[Index: Integer]: <a href="#TNewPathEdit">TNewPathEdit</a>; read;<br />
           &nbsp;&nbsp;property PromptLabels[Index: Integer]: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />
           &nbsp;&nbsp;property SubCaptionLabel: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />
           &nbsp;&nbsp;property Values[Index: Integer]: String; read write;<br />
@@ -917,7 +920,7 @@
           &nbsp;&nbsp;property InstallingPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>; read;<br />
           &nbsp;&nbsp;property InfoAfterPage: <a href="#TNewNotebookPage">TNewNotebookPage</a>; read;<br />
           &nbsp;&nbsp;property DiskSpaceLabel: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />
-          &nbsp;&nbsp;property DirEdit: <a href="#TEdit">TEdit</a>; read;<br />
+          &nbsp;&nbsp;property DirEdit: <a href="#TNewPathEdit">TNewPathEdit</a>; read;<br />
           &nbsp;&nbsp;property GroupEdit: <a href="#TNewEdit">TNewEdit</a>; read;<br />
           &nbsp;&nbsp;property NoIconsCheck: <a href="#TNewCheckBox">TNewCheckBox</a>; read;<br />
           &nbsp;&nbsp;property PasswordLabel: <a href="#TNewStaticText">TNewStaticText</a>; read;<br />

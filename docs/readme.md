@@ -18,6 +18,7 @@
 - [6.4.0 - 6.4.3](https://leserg73.github.io/InnoHelp/ishistory/whatsnew64.htm)
 - [6.5.0 - 6.5.4](https://leserg73.github.io/InnoHelp/ishistory/whatsnew65.htm)
 - [6.6.0 - 6.6.1](https://leserg73.github.io/InnoHelp/ishistory/whatsnew66.htm)
+- [6.7.0](https://leserg73.github.io/InnoHelp/ishistory/whatsnew67.htm)
 
 -----------------------
 

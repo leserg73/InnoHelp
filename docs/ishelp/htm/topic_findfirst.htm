@@ -92,10 +92,10 @@
 <span class="hl kwf">#sub</span> ProcessFoundFile
   <span class="hl kwf">#define</span> FileName <span class="hl kwd">FindGetFileName</span><span
 class="hl opt">(</span>FindHandle<span class="hl opt">)</span>
-  <span class="hl kwf">#if</span> <span class="hl kwd">LowerCase</span><span class="hl opt">(</span><span
-class="hl kwd">Copy</span><span class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
+  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span
+class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
 class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">4</span><span
-class="hl opt">)) ==</span> <span class="hl str">"ispp"</span>
+class="hl opt">) ==</span> <span class="hl str">"ispp"</span>
     FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
 class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
 class="hl kwc">{app}</span>\ispp
@@ -111,7 +111,8 @@ class="hl opt">=</span> <span class="hl kwd">FindFirst</span><span class="hl opt
 class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">);</span> FindResult<span
 class="hl opt">;</span> \
       FindResult <span class="hl opt">=</span> <span class="hl kwd">FindNext</span><span
-class="hl opt">(</span>FindHandle<span class="hl opt">)</span>} ProcessFoundFile
+class="hl opt">(</span>FindHandle<span class="hl opt">)</span>}
+ProcessFoundFile
 <span class="hl kwf">#if</span> FindHandle
   <span class="hl kwf">#expr</span> <span class="hl kwd">FindClose</span><span class="hl opt">(</span>FindHandle<span
 class="hl opt">)</span>

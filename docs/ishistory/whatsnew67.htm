@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 6</title>
+    <base href="https://jrsoftware.org/" />
+    <style type="text/css">
+        :root {
+          color-scheme: light dark;
+          --main-fg-color: light-dark(#282828, #d6d6d6);
+          --main-bg-color: light-dark(white, #1f1f1f);
+          --link-fg-color: light-dark(hsl(206, 100%, 37%), hsl(206, 100%, 50%));
+          --link-hover-fg-color: light-dark(hsl(206, 100%, 27%), hsl(206, 100%, 43%));
+          --code-bg-color: light-dark(#f0f0f0, #353135);
+        }
+        body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: var(--main-fg-color); background-color: var(--main-bg-color) }
+        a:link, a:visited { color: var(--link-fg-color); background-color: transparent; text-decoration: none }
+        a[href]:hover { color: var(--link-hover-fg-color); text-decoration: underline }
+        tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: var(--code-bg-color) }
+        tt           { padding: 2px 4px; border-radius: 4px }
+        pre          { line-height: normal; padding: 10px; border-radius: 6px; overflow-x: auto }
+        li, li > p, div.limargins { margin-block: calc(5rem/16) }
+        div.bluehead { text-align: center; color: white; background-color: hsl(206, 100%, 30%); padding: 5px; font-weight: bold; line-height: normal }
+        details      { margin-block: 1em }
+        summary      { font-size: calc(20rem/16); font-weight: bold; color: inherit; background-color: var(--code-bg-color);
+                       padding: 0.25em 0.5em; border-radius: 6px; box-shadow: 0 1px 2px #808080; cursor: pointer; user-select: none }
+        .date        { font-size: calc(11rem/16); font-weight: bold }
+        .head1       { font-size: calc(32rem/16) }
+        .head2       { font-size: calc(20rem/16) }
+        .ver         { font-size: calc(20rem/16); font-weight: bold }
+        code.innosetup .sec { font-weight: bold }
+        code.innosetup .key { color: #0078d4 }
+        code.innosetup .com { color: #339933 }
+        code.innosetup .con { color: #9262a8 }
+    </style>
+</head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
+      <span class="head2">История версий</span></div>
+    <p>Авторские права © 1997-2026 <a href="./">Jordan Russell</a>. Все права
+      защищены.<br />
+      Смежные авторские права © 2000-2026 Martijn Laan. Все права защищены.<br />
+      Условия распространения и использования смотрите в <a 
+      href="files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a 
+      href="ismail.php">Подпишитесь</a> на рассылку о новых выпусках Inno Setup.</p>
+
+    <p><a name="6.7.0"></a><span class="ver">6.7.0 </span><span class="date">(2026-01-06)</span></p>
+
+    <p>Используете Inno Setup в коммерческих целях? Пожалуйста, <a 
+        href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
+    <p>Спасибо всем, кто уже приобрел лицензию! Ваша поддержка очень важна для
+        нашего дальнейшего развития.</p>
+
+    <span class="head2">Настройка фона мастера (цвет и изображения)</span>
+    <p>Теперь в настройках можно указать собственный цвет фона и, по желанию, также фоновое изображение. Поддерживается смешивание цвета и изображения, а также, по желанию, использование отдельного цвета фона и изображения, если активна тёмная тема.</p>
+    <p>Настройка цвета фона также поддерживается программой удаления.</p>
+    <p>Эти изменения имеют обратную совместимость: если вы не будете использовать ни одну из новых директив, то ваши инсталляторы и деинсталляторы будут выглядеть также, как и раньше.</p>
+    <ul>
+      <li>Для директивы <tt>WizardStyle</tt> добавлен новый модификатор <tt>excludelightcontrols</tt>. Выполняет отключение настраиваемого стиля для всех элементов управления (включая кнопки), когда активна светлая тема, за исключением случаев, когда стиль необходим для достижения прозрачности.</li>
+      <li>Для директивы <tt>WizardStyle</tt> добавлен новый модификатор <tt>hidebevels</tt>. Позволяет скрыть все разделители (горизонтальные линии) в мастере инсталлятора и деинсталлятора, за исключением системных диалогов.</li>
+      <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>WizardBackColor</tt> и <tt>WizardBackColorDynamicDark</tt> для указания пользовательских цветов фона на всех страницах мастера установки и удаления, включая встроенные диалоги, такие как "<i>Выбор языка</i>" и другие.<br/>
+          Если вы установите эту директиву, но не укажите пользовательский стиль, автоматически будет активирован стиль <tt>windows11</tt> с модификатором <tt>excludelightcontrols</tt>.</li>
+      <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>WizardBackImageFile</tt> и <tt>WizardBackImageFileDynamicDark</tt> для указания пользовательских изображений фона на всех страницах мастера установки, но не удаления.<br/>
+          Поддерживается указание нескольких файлов для получения высококачественных результатов при любых настройках DPI.<br/>
+          Если вы установите эту директиву, но не укажите пользовательский стиль, автоматически будет активирован стиль <tt>windows11</tt> с модификаторами <tt>excludelightcontrols</tt> и <tt>hidebevels</tt>.<br/>
+          Обратите внимание, что в светлой теме стиль <tt>windows11</tt> использует не совсем белый цвет. Чтобы изменить его на чистый белый, укажите для директивы <tt>WizardBackColor</tt> значение <tt>white</tt>.<br/>
+          <a href="https://jrsoftware.org/images/is-welcome-dark-backimage-org-150.png">Скриншот инсталлятора с фоновым изображением в тёмной теме при DPI 150%</a>.<br/>
+          <a href="https://jrsoftware.org/images/is-welcome-backimage-org-150.png">Скриншот инсталлятора с фоновым изображением в светлой теме при DPI 150%</a>.<br/>
+          <a href="https://jrsoftware.org/images/is-taskdialog-backcolor-org-125.png">Скриншот диалога задач с фоновым цветом при DPI 125%</a>.
+      </li>
+      <li>В секции <tt>[Setup]</tt> для директив <tt>WizardImageFile</tt> и <tt>WizardSmallImageFile</tt> теперь можно указать пустые значения, если вы хотите, чтобы фоновое изображение (или цвет) оставалось самостоятельным. Это не изменит макет мастера.<br/>
+          В качестве альтернативы укажите директиву <tt>WizardImageOpacity</tt>, чтобы смешать изображения мастера с изображением фона (или цвета). Можно также использовать встроенные изображения мастера.</li>
+      <li>В секции <tt>[Setup]</tt> добавлена новая директива <tt>WizardBackImageOpacity</tt> для указания непрозрачности фонового изображения.<br/>
+          Это даёт возможность использовать обычное и <tt>DynamicDark</tt> фоновое изображение.</li>
+      <li>Примеры:
+    <pre><code class="innosetup"><span class="com">; Использование раздельных изображений фона для светлой и тёмной темы</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage_Dark.png
+<span class="com">; Скрываем большое и малое изображения мастера</span>
+<span class="key">WizardImageFile</span>=
+<span class="key">WizardSmallImageFile</span>=
+
+<span class="com">; Использование одного изображения фона для светлой и тёмной темы</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage.png
+<span class="com">; Применяем прозрачность к изображению фона, чтобы оно</span>
+<span class="com">; хорошо смотрелось как в светлой, так и в тёмной теме</span>
+<span class="key">WizardBackImageOpacity</span>=150
+<span class="com">; Оставляем большое и малое изображения мастера, применив прозрачность,</span>
+<span class="com">; чтобы они равномерно сливались с изображением фона</span>
+<span class="key">WizardImageOpacity</span>=150
+
+<span class="com">; Использование фонового изображения в мастере установки,</span>
+<span class="com">; а также фонового цвета в других окнах и деинсталляторе</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage.png
+<span class="key">WizardBackColor</span>=#ffc0cb
+<span class="key">WizardBackColorDynamicDark</span>=#570c22
+<span class="com">; На страницах мастера смешиваем изображение фона и цвет</span>
+<span class="key">WizardBackImageOpacity</span>=150</code></pre></li>
+      <li>Программирование на языке Паскаль: добавлена функция <tt>WizardSetBackImage</tt> для установки, обновления или удаления фонового изображения во время выполнения. Может быть использована как для инсталлятора, так для деинсталлятора.<br/>
+          Смотрите пример в <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_wizardsetbackimage">справке</a>, а также в сценарии <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i> при вызове функции <tt>BackImageButtonOnClick</tt>.</li>
+    </ul>
+
+    <span class="head2">Улучшения IDE компилятора</span>
+    <p>Функция автозавершения теперь быстрее работает для директив в секции <tt>[Setup]</tt>, а вкладки #include стали более удобными в управлении даже в крупных проектах.</p>
+    <ul>
+      <li>Добавлена поддержка автозавершения в секции <tt>[Setup]</tt> для значений директив с фиксированными значениями, таких как <tt>yes</tt>/<tt>no</tt> и другими, например для директивы <tt>WizardStyle</tt>.</li>
+      <li>IDE компилятора теперь обеспечивает открытие до 50 файлов #include вместо 20.</li>
+      <li>Добавлен новый параметр "<i>Не открывать новые файлы #include</i>", отключенный по умолчанию.<br/>
+          При включении этой функции вновь обнаруженные при компиляции файлы #include будут закрыты, пока вы явно не откроете их вкладки, например, через меню "<i>View</i>".</li>
+      <li>В меню "<i>Правка</i>" добавлен пункт "<i>Перейти в файл</i>" для перехода в файл (горячие клавиши Ctrl+F12 или Ctrl+P).</li>
+      <li>При открытии файла, который является файлом #include для текущего главного файла сценария, с помощью пункта "<i>Открыть</i>" в главном меню "<i>File</i>", IDE предложит перейти на его вкладку вместо открытия его в качестве нового главного файла сценария.</li>
+      <li>Комбинация Ctrl+W теперь закрывает текущую вкладку (в дополнение к Ctrl+F4), что согласуется с другими современными редакторами. Ранее Ctrl+W была назначена на команду "<i>Отладка Uninstall</i>" в меню "<i>Отладка</i>". Теперь для этого используется комбинация Alt+Q.</li>
+    </ul>
+
+    <span class="head2">Улучшения в области безопасности</span>
+    <p>Рекомендуется выполнить обновление, даже если вы пока не планируете использовать новые функции и другие возможности. Мы постоянно работаем над повышением безопасности и надёжностью ваших программ установок. В этой версии:</p>
+    <ul>
+      <li><p>Программа установки и деинсталляции теперь по умолчанию самостоятельно пытаются включить для своих процессов защитную функцию Windows — RedirectionGuard. Данная функция, доступная в Windows 11 и Windows 10 начиная с версии 22H2, блокирует обход NTFS-соединений и символических ссылок, созданных непривилегированными пользователями (или любыми процессами без повышенных прав), обеспечивая защиту от атак, связанных с перенаправлением путей, которые могут привести к повышению привилегий.</p>
+          <p>Для получения дополнительной информации обратитесь к <a href="https://jrsoftware.org/ishelp/index.php?topic=setup_redirectionguard">справке</a> с описанием новой директивы <tt>RedirectionGuard</tt> в секции <tt>[Setup]</tt>. Также поддерживаются новые параметры командной строки <tt>/NOREDIRECTIONGUARD</tt> и <tt>/REDIRECTIONGUARD</tt>, которые имеют приоритет над настройкой директивы <tt>RedirectionGuard</tt>.</p>
+      </li>
+    </ul>
+
+    <span class="head2">Другие изменения</span>
+    <ul>
+      <li>Добавлены механизмы повторных попыток сборки программы установки, чтобы сделать процесс компиляции более устойчивым к временным проблемам доступа к файлам, например, когда антивирусное программное обеспечение или другие процессы временно блокируют выходные файлы.</li>
+      <li><i>Исправлено:</i> в Windows Server при попытке программы установки перезагрузить компьютер могло отображаться сообщение об ошибке "Невозможно перезагрузить компьютер". Это было связано с тем, что перезагрузка инициировалась из процесса без повышенных прав, что по умолчанию не допускается системой Windows Server. Теперь перезагрузка инициируется из процесса с повышенными правами, что решает проблему, при условии что установщик запрашивает повышение прав. Если для параметра <tt>PrivilegesRequired</tt> установлено значение <tt>lowest</tt> вместо <tt>admin</tt>, то ни один из процессов установки не будет повышен (если только установщик не был запущен с помощью команды "Запуск от имени администратора"), и сообщение об ошибке может по-прежнему отображаться.</li>
+      <li>В секции <tt>[Setup]</tt> такие директивы как <tt>WizardImageBackColor</tt> и <tt>WizardBackColor</tt> теперь также принимают название цвета, например, <tt>white</tt> и <tt>black</tt>, в дополнение к текущим значениям <tt>clWhite</tt>, <tt>clBlack</tt>, <tt>#ffffff</tt> и <tt>#000000</tt>.</li>
+      <li><i>Исправлено:</i> элементы управления файлами и каталогами в программе установки должны всегда использовать порядок чтения слева направо, даже если активен язык с направлением письма справа налево, но с версии 6.5.2 это не так.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>В секции <tt>[Setup]</tt> такие директивы как <tt>UsePreviousAppDir</tt>, <tt>UsePreviousGroup</tt>, <tt>UsePreviousSetupType</tt>, <tt>UsePreviousTasks</tt> и <tt>UsePreviousUserInfo</tt> теперь могут принимать логическое выражение, которое может содержать вызовы проверочных функций. Например: <tt>UsePreviousAppDir=not PortableCheck</tt>.</li>
+        <li>Добавлены функции <tt>PathCombine</tt>, <tt>PathEndsWith</tt>, <tt>PathHasInvalidCharacters</tt>, <tt>PathIsRooted</tt>, <tt>PathNormalizeSlashes</tt>, <tt>PathSame</tt> и <tt>PathStartsWith</tt>, которые позволяют упростить обработку путей.</li>
+        <li>Добавлен класс <tt>TNewPathEdit</tt>, потомок <tt>TNewEdit</tt>, который теперь всегда использует порядок чтения слева направо и обеспечивает автозаполнение.<br/>
+            Для управления файлами и каталогами вы должны использовать <tt>TNewPathEdit</tt> вместо <tt>TNewEdit</tt>, но вместо прямого применения класса рекомендуется использовать <tt>TInputFileWizardPage</tt> и <tt>TInputDirWizardPage</tt>.
+        </li>
+        <li>Добавлена функция <tt>RPos</tt>.</li>
+      </ul>
+      </li>
+      <li>Препроцессор Inno Setup:
+      <ul>
+        <li>Добавлена функция <tt>Is64BitPEImage</tt>.</li>
+        <li><i>Исправлено:</i> функция <tt>SameStr</tt> теперь чувствительна к регистру символов.</li>
+        <li><i>Исправлено:</i> функция <tt>RPos</tt> теперь правильно возвращает 0 для пустых подстрок.</li>
+        <li>Использование функции <tt>ExtractFileDir</tt> больше не вызывает появление предупреждения о <tt>RemoveBackslash</tt>.</li>
+      </ul>
+      </li>
+      <li>Из параметров директивы <tt>DisablePrecompiledFileVerifications</tt> в секции <tt>[Setup]</tt> были удалены суффиксы <tt>dll</tt>/<tt>e32</tt>/<tt>exe</tt>. Параметры <tt>setupldre32</tt> и <tt>setuplde64</tt> были объединены в один <tt>setupldr</tt>.</li>
+      <li><i>Экспериментально</i>: добавлена поддержка 64-разрядной версии загрузчика для программы установки путём указания для директивы <tt>UseSetupLdr</tt> в секции <tt>[Setup]</tt> значения <tt>x64</tt>.<br/>
+          Использование <tt>x64</tt> не означает, что сама программу установки также будет 64-разрядной: в настоящее время программа установки всегда собирается как 32-разрядный двоичный файл x86.<br/>
+          Использование <tt>x64</tt> в любом случае имеет несколько преимуществ: ваш установщик изначально представляет себя как нативный 64-разрядный исполняемый файл, а 64-разрядный загрузчик имеет включенную ASLR с высокой энтропией. Кроме того, это может помочь удовлетворить требования политики безопасности или сторонних разработчиков, которые требуют 64-разрядные установщики, даже если основная программа установки по-прежнему является 32-разрядной.<br/>
+          Недостатком является то, что ваш установщик больше не будет загружаться на системах под управлением Windows x86.
+      </li>
+      <li>Если Inno Setup ещё не установлен, программа установки снова предложит вам выбрать режим установки (для всех пользователей или только для текущего пользователя) с помощью диалогового окна, которое можно скрыть. Начиная с версии 6.1.1 этот выбор был доступен только через параметры командной строки <tt>/ALLUSERS</tt> и <tt>/CURRENTUSER</tt>.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/whatsnew66.htm">История
+      версий Inno Setup 6.6</a></p>
+  </body>
+</html>

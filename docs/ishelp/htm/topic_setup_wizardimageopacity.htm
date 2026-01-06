@@ -40,13 +40,19 @@
       </table>
       <h2 class="heading">Описание</h2>
       <p>Эта директива устанавливает непрозрачность изображений мастера. При
-        указании значения <tt>0</tt> изображения мастера будут полностью прозрачными.
-        При указании значения <tt>255</tt> – полностью непрозрачными.</p>
+        указании значения <tt>0</tt> изображения мастера, заданные с помощью
+        <a href="topic_setup_wizardimagefile.htm">WizardImageFile</a> и
+        <a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>
+        будут полностью прозрачными. При указании значения <tt>255</tt> –
+        полностью непрозрачными.</p>
       <p>Эта функция может пригодиться, если, к примеру, необходимо использовать
-        одни и те же изображения как для обычного стиля, так и для тёмного, с
-        директивами <tt>DynamicDark</tt>. Тогда при установке значения <tt>150</tt>
-        можно добиться частичной прозрачности изображений, что они одинаково
-        гармонировали как со светлой темой, так и с тёмной.</p>
+        одни и те же изображения мастера как для обычного стиля, так и для тёмного, с
+        директивами <tt>DynamicDark</tt> или хотите использовать их в сочетании
+        с фоновым изображение, установленным при помощи директивы <a
+        href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a>.
+        Тогда при установке значения <tt>150</tt> можно добиться частичной
+        прозрачности изображений, чтобы они одинаково гармонировали как со
+        светлой темой, так и с тёмной.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">WizardStyle</span>=<span class="hl kwe">modern dynamic</span>
@@ -56,6 +62,9 @@
 <span class="hl kwb">WizardSmallImageFileDynamicDark</span>=MySmallImage.png
 <span class="hl kwb">WizardImageOpacity</span>=<span class="hl num">150</span></pre>
       </div>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardbackimageopacity.htm">WizardBackImageOpacity</a>
+        </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

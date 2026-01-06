@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>[Setup]: WizardBackColor</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">[Setup]: WizardBackColor</h1>
+    <div class="topicbody">
+      <table class="setuphdr">
+        <tbody>
+          <tr class="setuphdrtr1">
+            <td class="setuphdrl">
+              <p>Допустимые значения:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined">Цвет в формате <code>#<i>rrggbb</i></code>
+                или <code>$<i>bbggrr</i></code>, где <code>bb</code>, <code>gg</code>
+                и <code>rr</code> определяют интенсивности (в шестнадцатеричном
+                формате) для синего, зеленого и красного цветов соответственно.
+                Или это может быть одно из следующих предопределённых названий
+                цветов: <code>black</code>, <code>maroon</code>, <code>green</code>,
+                <code>olive</code>, <code>navy</code>, <code>purple</code>,
+                <code>teal</code>, <code>gray</code>, <code>silver</code>,
+                <code>red</code>, <code>lime</code>, <code>yellow</code>,
+                <code>blue</code>, <code>fuchsia</code>, <code>aqua</code>,
+                <code>white</code>, <code>none</code>, <code>window</code>.
+              </div>
+            </td>
+          </tr>
+          <tr class="setuphdrtr2">
+            <td class="setuphdrl">
+              <p>Значение по умолчанию:</p>
+            </td>
+            <td class="setuphdrr">
+              <div class="margined"><i>(см. ниже)</i></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="heading">Описание</h2>
+      <p>Эта директива устанавливает цвет фона на страницах мастера установки и
+        удаления, а также на всех других связанных окон, например, таких как
+        диалог "<i>Выбор языка</i>".</p>
+      <p>Если используется фоновое изображение, указанное с помощью директивы
+        <a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a>,
+        то по умолчанию для этой директивы устанавливается значение <tt>window</tt>,
+        а установка значения <tt>none</tt> не допускается.<br />
+        В противном случае по умолчанию принимается значение <tt>none</tt>.</p>
+      <p>Использование значения <tt>window</tt> без указания фонового изображения
+        не даёт никакого эффекта.</p>
+      <p>Установка значения <tt>none</tt> отключает эту функцию, поэтому будут
+        использоваться родные цвета фона, определённые системой или стилем.</p>
+      <p>Если эта функция включена, а цвет установлен на значение, отличное от
+        <tt>window</tt>, то все панели станут прозрачными. Чтобы отключить
+        видимость всех разделителей (горизонтальные линии) в программе установки
+        и удаления, добавьте в директиве <a
+        href="topic_setup_wizardstyle.htm">WizardStyle</a> модификатор
+        <tt>hidebevels</tt>.</p>
+      <p>Кроме того, если эта функция включена, но в директиве <a
+        href="topic_setup_wizardstyle.htm">WizardStyle</a> не указан стиль,
+        автоматически будет активирован стиль <tt>windows11</tt> с модификатором
+        <tt>excludelightcontrols</tt>.</p>
+      <h2 class="heading">См. также:</h2>
+        <p class="indent"><a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a><br />
+        <a href="topic_setup_wizardstyle.htm">WizardStyle</a>
+        </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

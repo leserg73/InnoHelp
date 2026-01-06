@@ -60,14 +60,15 @@
             <li>Компилятор Unicode рассматривает тип "String" как строку
               Unicode, а тип "Char" как символ Unicode. Тип "AnsiString" не
               изменился и по прежнему является строкой ANSI. Тип "PChar" был
-              переименован в "PAnsiChar".</li>
+              переименован в "PAnsiChar" и в настоящее время его использование
+              в целом не рекомендуется.</li>
             <li>Компилятор Unicode более требовательный в отношении правильного
               использования ";". Недостающие символы ";" считаются ошибкой.</li>
             <li>Изменён прототип некоторых функций: некоторые параметры функций
-              <tt>CreateOutputMsgMemoPage</tt>, <tt>RegQueryBinaryValue</tt>, <tt>RegWriteBinaryValue</tt>,
-              <tt>OemToCharBuff</tt>, <tt>CharToOemBuff</tt>, <tt>LoadStringFromfile</tt>,
-              <tt>SaveStringToFile</tt> и <tt>GetMD5OfString</tt> теперь
-              используют тип AnsiString вместо String.</li>
+              <tt>CreateOutputMsgMemoPage</tt>, <tt>RegQueryBinaryValue</tt>,
+              <tt>RegWriteBinaryValue</tt>, <tt>OemToCharBuff</tt>, <tt>CharToOemBuff</tt>,
+              <tt>LoadStringFromfile</tt>, <tt>SaveStringToFile</tt> и <tt>GetMD5OfString</tt>
+              теперь используют тип AnsiString вместо String.</li>
             <li>Добавлена поддержка новых функций <tt>SaveStringsToUTF8File</tt>
               и <tt>GetMD5OfUnicodeString</tt>.</li>
             <li>Добавлен новый тип данных "Int64", который поддерживается
@@ -76,20 +77,12 @@
             <li>Добавлен новый класс <tt>TStringStream</tt>.</li>
             <li>Если вы хотите скомпилировать сценарий, в котором используются
               вызовы ANSI версии функций API Windows с помощью Unicode версии
-              компилятора, либо обновите вызываемые функции на Unicode версию,
-              заменив "A" на "W", либо измените их параметры с типом "String"
-              или "PChar" на "AnsiString". Метод с использованием "AnsiString"
-              сделает ваш код в секции <tt>[Code]</tt> совместимым с обеими
-              версиями компилятора, Unicode и ANSI.</li>
+              компилятора, либо обновите вызываемые функции на Unicode версии
+              с индексом "W" и используя тип "String", либо сохраните вызовы
+              функций ANSI с индексом "A" и используйте тип "AnsiString".</li>
           </ul>
        </li>
       </ul>
-      <p>Примечание: Unicode версия Inno Setup может создавать
-        только Unicode версии программ установок и, аналогично, ANSI версия Inno
-        Setup может создавать только ANSI версии программ установок. Если вы
-        хотите создавать программы установок Unicode и ANSI версий на одном
-        компьютере, вам необходимо установить обе версии Inno Setup, но в разные
-        папки.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

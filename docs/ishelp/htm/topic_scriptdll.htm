@@ -103,11 +103,11 @@
         до загрузки первой библиотеки DLL. Например:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "MyDll.dll"; <span class="hl kwb">Flags</span>: <span
-class="hl kwe">dontcopy</span>
+class="hl kwe">dontcopy noencryption</span>
 <span class="hl kwb">Source</span>: "A.dll"; <span class="hl kwb">Flags</span>: <span
-class="hl kwe">dontcopy</span>
+class="hl kwe">dontcopy noencryption</span>
 <span class="hl kwb">Source</span>: "B.dll"; <span class="hl kwb">Flags</span>: <span
-class="hl kwe">dontcopy</span>
+class="hl kwe">dontcopy noencryption</span>
 
 <span class="hl kwa">[Code]</span>
 <span class="hl kwb">procedure</span> MyDllFunc(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal);

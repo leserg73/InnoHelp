@@ -30,13 +30,12 @@
                 и <code>rr</code> определяют интенсивности (в шестнадцатеричном
                 формате) для синего, зеленого и красного цветов соответственно.
                 Или это может быть одно из следующих предопределённых названий
-                цветов: <code>clBlack</code>, <code>clMaroon</code>,
-                <code>clGreen</code>, <code>clOlive</code>, <code>clNavy</code>,
-                <code>clPurple</code>, <code>clTeal</code>, <code>clGray</code>,
-                <code>clSilver</code>, <code>clRed</code>, <code>clLime</code>,
-                <code>clYellow</code>, <code>clBlue</code>, <code>clFuchsia</code>,
-                <code>clAqua</code>, <code>clWhite</code>, <code>clNone</code>,
-                <code>clWindow</code>.
+                цветов: <code>black</code>, <code>maroon</code>, <code>green</code>,
+                <code>olive</code>, <code>navy</code>, <code>purple</code>,
+                <code>teal</code>, <code>gray</code>, <code>silver</code>,
+                <code>red</code>, <code>lime</code>, <code>yellow</code>,
+                <code>blue</code>, <code>fuchsia</code>, <code>aqua</code>,
+                <code>white</code>, <code>none</code>, <code>window</code>.
               </div>
             </td>
           </tr>
@@ -45,9 +44,7 @@
               <p>Значение по умолчанию:</p>
             </td>
             <td class="setuphdrr">
-              <div class="margined"><code>clNone</code>, если используется
-                встроенное изображение мастера, в противном случае — <code>clWindow</code>.
-              </div>
+              <div class="margined"><i>(см. ниже)</i></div>
             </td>
           </tr>
         </tbody>
@@ -57,8 +54,17 @@
         всех неиспользуемых или прозрачных областей в малом изображении мастера
         установки, которое задаётся директивой <a 
         href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>.
-        Использование значения <tt>clNone</tt> в качестве цвета заливки сохраняет
+        Использование значения <tt>none</tt> в качестве цвета заливки сохраняет
         прозрачность.</p>
+      <p>Если используется фоновое изображение, указанное с помощью директивы
+        <a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a>, то
+        по умолчанию для этой директивы устанавливается значение <tt>none</tt>.</p>
+      <p>Если же для <a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>
+        указано пустое значение, то по умолчанию также принимается значение
+        <tt>none</tt>.</p>
+      <p>Если используется пользовательское изображение мастера, то по умолчанию
+        эта директива принимает значение <tt>window</tt> (обычно белый).</p>
+      <p>Во всех остальных случаях по умолчанию используется значение <tt>none</tt>.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
