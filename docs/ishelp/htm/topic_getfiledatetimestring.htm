@@ -19,15 +19,16 @@
     <h1 class="topicheading">Препроцессор Inno Setup: GetFileDateTimeString</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>str</b> GetFileDateTimeString(<b>str</b>,
-          <b>str</b>, <b>str</b>, <b>str</b>)</p>
+      <p class="prototip1 notopmarginX null"><b>str</b> GetFileDateTimeString(<b>str</b> Filename,
+        <b>str</b> DateTimeFormat, <b>str</b>? DateSeparator, <b>str</b>? TimeSeparator)</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает строковое значение даты и времени для заданного файла.</p>
       <p><i>Первый параметр</i> является именем файла (вместе с расширением). <i>Второй
-          параметр</i> определяет формат даты и времени. <i>Третий и четвертый
-          параметры</i> устанавливают символ разделителя для компонентов даты (<tt>DateSeparator</tt>)
-        и времени (<tt>TimeSeparator</tt>) соответственно. Спецификаторы формата
-        даты и времени подробно изложены в разделе <a href="topic_getdatetimestring.htm">GetDateTimeString</a>.</p>
+        параметр</i> определяет формат даты и времени. <i>Третий и четвертый
+        параметры</i> являются необязательными и устанавливают символ разделителя
+        для компонентов даты (<tt>DateSeparator</tt>) и времени (<tt>TimeSeparator</tt>)
+        соответственно. Спецификаторы формата даты и времени подробно изложены в
+        разделе <a href="topic_getdatetimestring.htm">GetDateTimeString</a>.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">// Объявляем переменную MyFileDatetimeString и присваиваем ей строковое значение</span>
@@ -37,6 +38,9 @@ class="hl opt">(</span><span class="hl str">'myfile.txt'</span><span class="hl o
 class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span class="hl str">'-'</span><span
 class="hl opt">,</span> <span class="hl str">':'</span><span class="hl opt">);</span>
 </pre> </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_getdatetimestring.htm">GetDateTimeString</a>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

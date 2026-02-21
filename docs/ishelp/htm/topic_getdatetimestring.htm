@@ -19,14 +19,14 @@
     <h1 class="topicheading">Препроцессор Inno Setup: GetDateTimeString</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>str</b> GetDateTimeString(<b>str</b>,
-          <b>str</b>, <b>str</b>)</p>
+      <p class="prototip1 notopmarginX null"><b>str</b> GetDateTimeString(<b>str</b> DateTimeFormat,
+        <b>str</b>? DateSeparator, <b>str</b>? TimeSeparator)</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает строковое значение текущей даты и времени в указанном
         формате.</p>
       <p><i>Первый параметр</i> определяет формат строки. <i>Второй</i> и <i>третий</i>
-        параметры устанавливают разделители для составляющих даты <tt>DateSeparator</tt>
-        и времени <tt>TimeSeparator</tt>.</p>
+        параметры являются необязательными и устанавливают разделители для
+        составляющих даты <tt>DateSeparator</tt> и времени <tt>TimeSeparator</tt>.</p>
       <p>Поддерживаются следующие спецификаторы формата:</p>
       <table>
         <tbody>
@@ -159,17 +159,17 @@
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> MyDateTimeString <span
 class="hl kwd">GetDateTimeString</span><span class="hl opt">(</span><span class="hl str">'ddddd'</span><span
-class="hl opt">,</span> <span class="hl str">''</span><span class="hl opt">,</span> <span
-class="hl str">''</span><span class="hl opt">)</span>
-<span class="hl kwf">#define</span> MyDateTimeString <span class="hl kwd">GetDateTimeString</span><span
-class="hl opt">(</span><span class="hl str">'ddddd tt'</span><span class="hl opt">,</span> <span
-class="hl str">''</span><span class="hl opt">,</span> <span class="hl str">''</span><span
 class="hl opt">)</span>
+<span class="hl kwf">#define</span> MyDateTimeString <span class="hl kwd">GetDateTimeString</span><span
+class="hl opt">(</span><span class="hl str">'ddddd tt'</span><span class="hl opt">)</span>
 <span class="hl kwf">#define</span> MyDateTimeString <span class="hl kwd">GetDateTimeString</span><span
 class="hl opt">(</span><span class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span
 class="hl str">'-'</span><span class="hl opt">,</span> <span class="hl str">':'</span><span
 class="hl opt">)</span>
 </pre> </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_getfiledatetimestring.htm">GetFileDateTimeString</a>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 7</title>
+    <base href="https://jrsoftware.org/" />
+    <style type="text/css">
+        :root {
+          color-scheme: light dark;
+          --main-fg-color: light-dark(#282828, #d6d6d6);
+          --main-bg-color: light-dark(white, #1f1f1f);
+          --link-fg-color: light-dark(hsl(206, 100%, 37%), hsl(206, 100%, 50%));
+          --link-hover-fg-color: light-dark(hsl(206, 100%, 27%), hsl(206, 100%, 43%));
+          --code-bg-color: light-dark(#f0f0f0, #353135);
+        }
+        body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: var(--main-fg-color); background-color: var(--main-bg-color) }
+        a:link, a:visited { color: var(--link-fg-color); background-color: transparent; text-decoration: none }
+        a[href]:hover { color: var(--link-hover-fg-color); text-decoration: underline }
+        tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: var(--code-bg-color) }
+        tt           { padding: 2px 4px; border-radius: 4px }
+        pre          { line-height: normal; padding: 10px; border-radius: 6px; overflow-x: auto }
+        li, li > p, div.limargins { margin-block: calc(5rem/16) }
+        div.bluehead { text-align: center; color: white; background-color: hsl(206, 100%, 30%); padding: 5px; font-weight: bold; line-height: normal }
+        div.bodyblck { margin-left: 1em; margin-right: 1em }
+        details      { margin-block: 1em }
+        summary      { font-size: calc(20rem/16); font-weight: bold; color: inherit; background-color: var(--code-bg-color);
+                       padding: 0.25em 0.5em; border-radius: 6px; box-shadow: 0 1px 2px #808080; cursor: pointer; user-select: none }
+        .date        { font-size: calc(11rem/16); font-weight: bold }
+        .head1       { font-size: calc(32rem/16) }
+        .head2       { font-size: calc(20rem/16) }
+        .ver         { font-size: calc(20rem/16); font-weight: bold }
+        code.innosetup .sec { font-weight: bold }
+        code.innosetup .key { color: #0078d4 }
+        code.innosetup .com { color: #339933 }
+        code.innosetup .con { color: #9262a8 }
+    </style>
+</head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 7</span><br />
+      <span class="head2">История версий</span></div>
+    <div class="bodyblck">
+    <p>Авторские права © 1997-2026 <a href="./">Jordan Russell</a>. Все права защищены.<br />
+      Смежные авторские права © 2000-2026 Martijn Laan. Все права защищены.<br />
+      Условия распространения и использования смотрите в <a href="files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a href="ismail.php">Подпишитесь</a> на рассылку о новых выпусках Inno Setup.</p>
+
+    <details open="">
+    <summary>Inno Setup 7.0</summary>
+
+    <p><a name="7.0.0"></a><span class="ver">7.0.0-preview-1 </span><span class="date">(2026-02-17)</span></p>
+
+    <p>Мы с гордостью представляем Inno Setup 7, который включает в себя как 64-разрядную версию, так и 32-разрядную.</p>
+
+    <p>Обе версии Inno Setup 7 могут создавать 32-разрядные или 64-разрядные установщики, их можно устанавливать параллельно и они могут сосуществовать вместе с Inno Setup 6.</p>
+
+    <p>Кроме того, добавлена поддержка длинных путей, что устраняет ограничения <tt>MAX_PATH</tt>.</p>
+
+    <p>Большое внимание было уделено обеспечению максимальной обратной совместимости с Inno Setup 6, включая обратную совместимость с поддержкой длинных путей и совместимость между 32-разрядными и 64-разрядными установщиками.</p>
+
+    <p>Эта работа была бы <b>невозможна</b> без поддержки, оказанной путем приобретения коммерческих лицензий. <b>Используете Inno Setup в коммерческих целях?</b> Пожалуйста, <a href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
+
+    <span class="head2">64-разрядные установщики</span>
+
+    <p>Чтобы создать 64-разрядный установщик вместо 32-разрядного, установите в секции <tt>[Setup]</tt> для директивы <tt>SetupArchitecture</tt> значение <tt>x64</tt>. Это также изменит значения директив <tt>ArchitecturesAllowed</tt> и <tt>ArchitecturesInstallIn64BitMode</tt> на <tt>x64compatible</tt>, в результате чего 64-разрядные установщики по умолчанию будут работать в <link topic="32vs64bitinstalls">64-разрядном режиме установки</link>.</p>
+
+    <p>Основные преимущества и отличия:</p>
+    <ul>
+      <li>64-разрядные установщики позволяют использовать максимальный размер словаря для методов сжатия <tt>lzma</tt> и <tt>lzma2</tt> в 3,8 ГБ вместо 1 ГБ. Перед использованием больших размеров словаря ознакомьтесь с требованиями к памяти, указанными в разделе справки <a href="https://jrsoftware.org/ishelp/index.php?topic=setup_compression">Compression</a>.</li>
+      <li>В 64-разрядных установщиках по умолчанию включена функция ASLR с высокой энтропией. Это помогает соответствовать корпоративным политикам или требованиям сторонних организаций, предписывающим использование 64-разрядных исполняемых файлов.</li>
+      <li>64-разрядные установщики полностью поддерживают <a href="https://jrsoftware.org/ishelp/index.php?topic=32vs64bitinstalls">32-разрядный режим установки</a>. Чтобы использовать 64-разрядный установщик, оставаясь в 32-разрядном режиме установки (например, потому что вы непреднамеренно развертывали 64-разрядные приложения в 32-разрядном режиме), установите для директивы <tt>ArchitecturesInstallIn64BitMode</tt> пустое значение, что переопределит значение по умолчанию.</li>
+      <li>Существующие инсталляторы, выполненные 32-разрядными программами установки, могут быть без проблем обновлены 64-разрядными программами установки и наоборот.</li>
+      <li>Особенности 64-разрядного программирования на языке Паскаль:
+      <ul>
+        <li>В 32-разрядных установщиках тип <tt>Extended</tt> имеет размер 10 байт, тогда как в 64-разрядных установщиках он занимает 8 байт и является лишь псевдонимом типа <tt>Double</tt>.</li>
+        <li>В 32-разрядных установщиках типы <tt>NativeInt</tt> и <tt>NativeUInt</tt> имеют размер 4 байта, тогда как в 64-разрядных установщиках — 8 байт. То же относится ко всем производным от них типам, например <tt>HWND</tt>.<br/>
+            В примере <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeDll.iss">CodeDll.iss</a></i> демонстрируется, как реализовать поддержку 32- и 64-разрядных установщиков в одном сценарии.<br/>
+            Обратите внимание: хотя такие типы, как <tt>HWND</tt>, в 64-разрядных процессах имеют размер 8 байт (64 бита), <a href="https://learn.microsoft.com/en-us/windows/win32/winprog64/interprocess-communication">в 64-разрядной Windows для совместимости используются 32-разрядные значения дескрипторов</a>. При передаче дескриптора между 32- и 64-разрядными приложениями значимыми являются только младшие 32 бита, поэтому допустимо усечение с 64 до 32 бит или знаковое расширение с 32 до 64 бит.</li>
+        <li>Невозможно загрузить 32-разрядные DLL в 64-разрядных установщиках, так как Windows не разрешает 64-разрядным процессам загружать 32-разрядные DLL (и наоборот). Однако всегда можно запускать как 32-разрядные, так и 64-разрядные EXE-файлы с помощью функции <tt>Exec</tt> или через секцию <tt>[Run]</tt>.</li>
+      </ul>
+      </li>
+      <li>64-разрядные библиотеки COM-интерфейсов (.tlb) теперь могут быть зарегистрированы или удалены только 64-разрядными установщиками, 32-разрядные библиотеки – только 32-разрядными установщиками.<br/>
+          Регистрация и удаление 64-разрядных библиотек из 32-разрядных установщиков больше не поддерживается.</li>
+      <li>Константа <tt>{sysnative}</tt> недоступна 64-разрядным установщикам или любым другим 64-разрядным приложениям, поэтому её значение следует использовать только, например, для передачи 32-разрядному приложению.</li>
+      <li>На данный момент 64-разрядные установщики всё ещё требуют наличия WOW64, поэтому запуск на Windows Server Core без WOW64 пока не поддерживается.</li>
+    </ul>
+
+    <p>Связанные изменения, внесенные в обе версии:</p>
+    <ul>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Удалена функция <tt>EnableFsRedirection</tt>. Вместо неё теперь следует использовать функцию <tt>ApplyPathRedirRulesForCurrentProcess</tt> или 64-разрядный установщик. Для 32-разрядных установщиков также можно использовать значение <tt>{sysnative}</tt>.<br/>
+            Чтобы из 32-разрядного установщика запускать исполняемые файлы из 64-разрядной системной папки, используйте функции <tt>ExecWithNativeSysDir</tt>, <tt>ExecAndLogOutputWithNativeSysDir</tt> или <tt>ExecAndCaptureOutputWithNativeSysDir</tt>.</li>
+        <li>Из функции <tt>RegisterExtraCloseApplicationsResource</tt> удален параметр <tt>DisableFsRedir</tt>. Для регистрации 64-разрядного файла из 32-разрядного установщика (или наоборот) используйте функцию <tt>ApplyPathRedirRulesForCurrentProcess</tt>.</li>
+        <li>Добавлены функции <tt>ApplyPathRedirRules</tt> и <tt>IsCurrentProcess64Bit</tt>.</li>
+        <li>Добавлены типы <tt>UInt64</tt>, <tt>NativeInt</tt>, <tt>NativeUInt</tt>, <tt>THandle</tt>, <tt>HWND</tt>, <tt>HDC</tt>, <tt>HBITMAP</tt>, <tt>HFONT</tt>, <tt>HKEY</tt>, <tt>HMODULE</tt>, <tt>LRESULT</tt>, <tt>WPARAM</tt> и <tt>LPARAM</tt>.</li>
+      </ul>
+      </li>
+    </ul>
+
+    <span class="head2">64-разрядные IDE компилятора и ISCC</span>
+
+    <p>Чтобы использовать 64-разрядные версии IDE компилятора и ISCC, установите 64-разрядную версию Inno Setup 7. Обе версии одинаково читают сценарии, используют одни и те же настройки и могут компилировать 32- и 64-разрядные установщики.</p>
+
+    <p>Чтобы узнать, какую версию вы установили, запустите IDE компилятор сценариев. 32-разрядная версия в строке заголовка будет иметь надпись "32-bit", а 64-разрядная нет.</p>
+
+    <p>Рекомендуется использовать 64-разрядную версию.</p>
+
+    <p>Основные преимущества и отличия:</p>
+    <ul>
+      <li>Любая из версий может собирать установщики любой архитектуры: 32-разрядные компиляторы могут создавать 64-разрядные установщики и наоборот.</li>
+      <li>Обе версии могут быть установлены параллельно и включают в себя одинаковые примеры и файлы справки.</li>
+      <li>64-разрядные компиляторы, как правило, обеспечивают более быстрое сжатие LZMA при полной совместимости с существующими сценариями.<br/>
+          В Windows 11 на базе Arm64 они используют двоичный файл ARM64EC (<tt>islzma-Arm64EC.dll</tt>) для обеспечения родной (<i>native</i>) производительности.</li>
+      <li>Директива <tt>LZMAUseSeparateProcess</tt> в секции <tt>[Setup]</tt> 64-разрядными компиляторами игнорируется, поскольку 64-разрядные процессы могут напрямую выделять больше памяти, что устраняет необходимость в использовании отдельного процесса сжатия.</li>
+    </ul>
+
+    <span class="head2">Поддержка длинных путей</span>
+
+    <p>Программа установки и удаления теперь поддерживают пути с расширенной длиной (так называемые суперпути), устраняя ограничения <tt>MAX_PATH</tt>.</p>
+
+    <p>Это относится как к 32-разрядным, так и к 64-разрядным установщикам.</p>
+
+    <p>Связанные изменения:</p>
+    <ul>
+      <li>Зарегистрированные пути теперь являются путями расширенной длины. Конечному пользователю по-прежнему отображаются обычные пути.<br/>
+      К примеру, обычный путь выглядит так: <tt>c:\Program Files\My Program</tt><br/>
+      Расширенная версия того же самого пути будет следующей: <tt>\\?\c:\Program Files\My Program</tt></li>
+      <li>Константы <tt>{app}</tt>, <tt>{autopf}</tt> и <tt>{tmp}</tt> по-прежнему возвращают обычные пути.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлены функции <tt>PathConvertNormalToSuper</tt> и <tt>PathConvertSuperToNormal</tt>.</li>
+      </ul>
+      </li>
+    </ul>
+
+    <span class="head2">Другие изменения</span>
+
+    <p>Кроме того, в обеих редакциях были внесены следующие изменения:</p>
+    <ul>
+      <li>Файл IDE компилятора был переименован с <tt>Compil32.exe</tt> в <tt>ISIDE.exe</tt>.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Функция <tt>Chr</tt> теперь корректно принимает значения, превышающие 255.</li>
+        <li>Функция <tt>FloatToStr</tt> больше не выводит лишние нули в конце числа.</li>
+        <li>Использование оператора <tt>Exit</tt> в блоке <tt>try..finally</tt> теперь работает корректно, если в блоке <tt>finally</tt> содержатся вызовы функций.</li>
+        <li>В блоке <tt>else</tt> оператора <tt>case</tt> теперь можно размещать несколько операторов без обязательного использования <tt>begin</tt>/<tt>end</tt>.</li>
+        <li>Добавлена возможность указывать соглашение о вызовах <tt>safecall</tt> в интерфейсах. Это упрощает объявления методов и избавляет от необходимости ручного вызова <tt>OleCheck</tt>. Смотрите обновленый пример сценария <i>CodeAutomation2.iss</i>.</li>
+        <li>Исправлена ошибка несоответствия типов во время выполнения при присваивании открытых и динамических массивов.</li>
+      </ul>
+      </li>
+      <li>Исходный код Inno Setup теперь содержит метаданные SPDX SBOM.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+
+    </details>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/is6-whatsnew.htm">История версий Inno Setup 6</a></p>
+    </div>
+  </body>
+</html>

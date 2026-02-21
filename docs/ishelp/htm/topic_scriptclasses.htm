@@ -415,6 +415,7 @@
           end;<br />
           <br />
           <a name="TNewPathEdit">TNewPathEdit</a> = class(<a href="#TNewEdit">TNewEdit</a>)<br />
+          &nbsp;&nbsp;property AutoCompleteFiles: Boolean; read write;<br />
           end;<br />
           <br />
           <a name="TCustomMemo">TCustomMemo</a> = class(<a href="#TCustomEdit">TCustomEdit</a>)<br />
@@ -621,6 +622,7 @@
           <br />
           <a name="TNewStaticText">TNewStaticText</a> = class(<a href="#TWinControl">TWinControl</a>)<br />
           &nbsp;&nbsp;function AdjustHeight: Integer;<br />
+          &nbsp;&nbsp;property Alignment: <a href="#TAlignment">TAlignment</a>; read write;<br />
           &nbsp;&nbsp;property Anchors: <a href="#TAnchors">TAnchors</a>; read write;<br />
           &nbsp;&nbsp;property AutoSize: Boolean; read write;<br />
           &nbsp;&nbsp;property Caption: String; read write;<br />

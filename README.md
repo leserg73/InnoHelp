@@ -4,22 +4,26 @@
 [![Total Downloads](https://img.shields.io/github/downloads/leserg73/InnoHelp/total.svg)](https://github.com/leserg73/InnoHelp/releases)
 [![Latest Release Downloads](https://img.shields.io/github/downloads/leserg73/InnoHelp/latest/total.svg)](https://github.com/leserg73/InnoHelp/releases/latest)
 
-Документация Inno Setup 6
------------------------
+# Документация Inno Setup
+---
 
 - [Руководство пользователя](https://leserg73.github.io/InnoHelp/ishelp/index.htm)
 
-### История версий
+### История версий Inno Setup 6
 
-- [6.0.0 - 6.0.5](https://leserg73.github.io/InnoHelp/ishistory/whatsnew60.htm)
-- [6.1.0 - 6.1.2](https://leserg73.github.io/InnoHelp/ishistory/whatsnew61.htm)
-- [6.2.0 - 6.2.2](https://leserg73.github.io/InnoHelp/ishistory/whatsnew62.htm)
-- [6.3.0 - 6.3.3](https://leserg73.github.io/InnoHelp/ishistory/whatsnew63.htm)
-- [6.4.0 - 6.4.3](https://leserg73.github.io/InnoHelp/ishistory/whatsnew64.htm)
-- [6.5.0 - 6.5.4](https://leserg73.github.io/InnoHelp/ishistory/whatsnew65.htm)
-- [6.6.0 - 6.6.1](https://leserg73.github.io/InnoHelp/ishistory/whatsnew66.htm)
-- [6.7.0](https://leserg73.github.io/InnoHelp/ishistory/whatsnew67.htm)
+- [6.0.0 - 6.0.5](https://leserg73.github.io/InnoHelp/ishistory/is6.0-whatsnew.htm)
+- [6.1.0 - 6.1.2](https://leserg73.github.io/InnoHelp/ishistory/is6.1-whatsnew.htm)
+- [6.2.0 - 6.2.2](https://leserg73.github.io/InnoHelp/ishistory/is6.2-whatsnew.htm)
+- [6.3.0 - 6.3.3](https://leserg73.github.io/InnoHelp/ishistory/is6.3-whatsnew.htm)
+- [6.4.0 - 6.4.3](https://leserg73.github.io/InnoHelp/ishistory/is6.4-whatsnew.htm)
+- [6.5.0 - 6.5.4](https://leserg73.github.io/InnoHelp/ishistory/is6.5-whatsnew.htm)
+- [6.6.0 - 6.6.1](https://leserg73.github.io/InnoHelp/ishistory/is6.6-whatsnew.htm)
+- [6.7.0 - 6.7.1](https://leserg73.github.io/InnoHelp/ishistory/is6.7-whatsnew.htm)
 
------------------------
+### История версий Inno Setup 7
+
+- [7.0.0-dev](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
+
+---
 
 Справка в формате [CHM](https://github.com/leserg73/InnoHelp/releases) для различных версий Inno Setup.

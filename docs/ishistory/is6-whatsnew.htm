@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="author" content="Перевод на русский: Sergii Leonov" />
+    <title>История версий Inno Setup 6</title>
+    <base href="https://jrsoftware.org/" />
+    <style type="text/css">
+        :root {
+          color-scheme: light dark;
+          --main-fg-color: light-dark(#282828, #d6d6d6);
+          --main-bg-color: light-dark(white, #1f1f1f);
+          --link-fg-color: light-dark(hsl(206, 100%, 37%), hsl(206, 100%, 50%));
+          --link-hover-fg-color: light-dark(hsl(206, 100%, 27%), hsl(206, 100%, 43%));
+          --code-bg-color: light-dark(#f0f0f0, #353135);
+        }
+        body         { font: calc(14rem/16)/1.5 "Segoe UI", sans-serif; color: var(--main-fg-color); background-color: var(--main-bg-color) }
+        a:link, a:visited { color: var(--link-fg-color); background-color: transparent; text-decoration: none }
+        a[href]:hover { color: var(--link-hover-fg-color); text-decoration: underline }
+        tt, pre      { font: calc(13rem/16)/calc(21rem/16) monospace; color: inherit; background-color: var(--code-bg-color) }
+        tt           { padding: 2px 4px; border-radius: 4px }
+        pre          { line-height: normal; padding: 10px; border-radius: 6px; overflow-x: auto }
+        li, li > p, div.limargins { margin-block: calc(5rem/16) }
+        div.bluehead { text-align: center; color: white; background-color: hsl(206, 100%, 30%); padding: 5px; font-weight: bold; line-height: normal }
+        div.bodyblck { margin-left: 1em; margin-right: 1em }
+        details      { margin-block: 1em }
+        summary      { font-size: calc(20rem/16); font-weight: bold; color: inherit; background-color: var(--code-bg-color);
+                       padding: 0.25em 0.5em; border-radius: 6px; box-shadow: 0 1px 2px #808080; cursor: pointer; user-select: none }
+        .date        { font-size: calc(11rem/16); font-weight: bold }
+        .head1       { font-size: calc(32rem/16) }
+        .head2       { font-size: calc(20rem/16) }
+        .ver         { font-size: calc(20rem/16); font-weight: bold }
+        code.innosetup .sec { font-weight: bold }
+        code.innosetup .key { color: #0078d4 }
+        code.innosetup .com { color: #339933 }
+        code.innosetup .con { color: #9262a8 }
+    </style>
+</head>
+  <body>
+    <div class="bluehead"><span class="head1">Inno Setup 6</span><br />
+      <span class="head2">История версий</span></div>
+    <div class="bodyblck">
+    <p>Авторские права © 1997-2026 <a href="./">Jordan Russell</a>. Все права защищены.<br />
+      Смежные авторские права © 2000-2026 Martijn Laan. Все права защищены.<br />
+      Условия распространения и использования смотрите в <a href="files/is/license.txt">LICENSE.TXT</a>.
+    </p>
+    <p><b>Хотите получать уведомления об обновлениях?</b> <a href="ismail.php">Подпишитесь</a> на рассылку о новых выпусках Inno Setup.</p>
+
+  <details open="">
+    <summary>Inno Setup 6.7</summary>
+
+    <p><a name="6.7.1"></a><span class="ver">6.7.1 </span><span class="date">(2026-02-17)</span></p>
+
+    <p>Используете Inno Setup в коммерческих целях? Пожалуйста, <a href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
+    <p>Спасибо всем, кто уже приобрел лицензию! Ваша поддержка очень важна для нашего дальнейшего развития.</p>
+
+    <span class="head2">Общие улучшения</span>
+
+    <ul>
+      <li>Компилятор:
+      <ul>
+        <li>При использовании <tt>WizardBackImageFile</tt> компилятор теперь также проверяет, был ли указан пользовательский стиль в директиве <tt>WizardStyleFile</tt>.</li>
+        <li>Механизм повторных попыток компилятора теперь применяется и к первичному копированию файла E32 в создаваемый EXE.</li>
+      </ul>
+      </li>
+      <li>IDE компилятора:
+      <ul>
+        <li>Улучшено сворачивание секций, а также целых функций и процедур в секции <tt>[Code]</tt>.</li>
+        <li>Добавлена новый параметр "<i>Умный режим [Home]</i>", который включен по умолчанию и позволяет выполнить переход к первому непустому символу строки, а не строго в начало.</li>
+        <li>Добавлен баннер, который появится только в апреле 2026 и пригласит вас поделиться своими идеями или высказать свое мнение по другим предложениям. Акция продлится только один месяц.</li>
+      </ul>
+      </li>
+      <li>Программа установки:
+        <ul>
+          <li>Улучшено перечисление значения реестра Windows <i>PendingFileRenameOperations</i>.<br />
+              Если в секции <tt>[Files]</tt> вы используете флаг <tt>restartreplace</tt>, рекомендуется выполнить обновление.</li>
+          <li>Элементы управления полей ввода, которые принимают пути к каталогам, теперь исключают имена файлов из своих списков автозаполнения.</li>
+          <li>Добавлено временное решение проблемы медленного открытия папок в Windows 11 25H2</li>
+        </ul>
+      </li>
+    </ul>
+
+    <span class="head2">Другие изменения</span>
+
+    <ul>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлено новое свойство <tt>Alignment</tt> для класса <tt>TNewStaticText</tt>. Смотрите пример в обновленном сценарии <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+        <li>Добавлено новое свойство <tt>AutoCompleteFiles</tt> для класса <tt>TNewPathEdit</tt>. Если свойство имеет значение <tt>False</tt> (установлено по умолчанию), в список автозаполнения включаются только имена каталогов. При значении <tt>True</tt> – также имена файлов.</li>
+      </ul>
+      </li>
+      <li>Препроцессор Inno Setup:
+      <ul>
+        <li>Разделители даты и времени в функциях <tt>GetDateTimeString</tt> и <tt>GetFileDateTimeString</tt> теперь являются необязательными и не требуют указания пустых строк.</li>
+        <li>Добавлена новая функция <tt>EmitLanguagesSection</tt>, которая создаёт секцию <tt>[Languages]</tt> со всеми доступными официальными языковыми файлами, включая английский. Например: <tt>#expr EmitLanguagesSection</tt>.<br />
+            При создании новых сценариев с помощью мастера IDE компилятора эта функция по возможности всегда будет использоваться.</li>
+      </ul>
+      </li>
+      <li>Добавлен официальный перевод на Тайский язык.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+
+    <p><a name="6.7.0"></a><span class="ver">6.7.0 </span><span class="date">(2026-01-06)</span></p>
+
+    <span class="head2">Настройка фона мастера (цвет и изображения)</span>
+
+    <p>Теперь в настройках можно указать собственный цвет фона и, по желанию, также фоновое изображение. Поддерживается смешивание цвета и изображения, а также, по желанию, использование отдельного цвета фона и изображения, если активна тёмная тема.</p>
+    <p>Настройка цвета фона также поддерживается программой удаления.</p>
+    <p>Эти изменения имеют обратную совместимость: если вы не будете использовать ни одну из новых директив, то ваши инсталляторы и деинсталляторы будут выглядеть также, как и раньше.</p>
+    <ul>
+      <li>Для директивы <tt>WizardStyle</tt> добавлен новый модификатор <tt>excludelightcontrols</tt>. Выполняет отключение настраиваемого стиля для всех элементов управления (включая кнопки), когда активна светлая тема, за исключением случаев, когда стиль необходим для достижения прозрачности.</li>
+      <li>Для директивы <tt>WizardStyle</tt> добавлен новый модификатор <tt>hidebevels</tt>. Позволяет скрыть все разделители (горизонтальные линии) в мастере инсталлятора и деинсталлятора, за исключением системных диалогов.</li>
+      <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>WizardBackColor</tt> и <tt>WizardBackColorDynamicDark</tt> для указания пользовательских цветов фона на всех страницах мастера установки и удаления, включая встроенные диалоги, такие как "<i>Выбор языка</i>" и другие.<br />
+          Если вы установите эту директиву, но не укажите пользовательский стиль, автоматически будет активирован стиль <tt>windows11</tt> с модификатором <tt>excludelightcontrols</tt>.</li>
+      <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>WizardBackImageFile</tt> и <tt>WizardBackImageFileDynamicDark</tt> для указания пользовательских изображений фона на всех страницах мастера установки, но не удаления.<br />
+          Поддерживается указание нескольких файлов для получения высококачественных результатов при любых настройках DPI.<br />
+          Если вы установите эту директиву, но не укажите пользовательский стиль, автоматически будет активирован стиль <tt>windows11</tt> с модификаторами <tt>excludelightcontrols</tt> и <tt>hidebevels</tt>.<br />
+          Обратите внимание, что в светлой теме стиль <tt>windows11</tt> использует не совсем белый цвет. Чтобы изменить его на чистый белый, укажите для директивы <tt>WizardBackColor</tt> значение <tt>white</tt>.<br />
+          <a href="https://jrsoftware.org/images/is-welcome-dark-backimage-org-150.png">Скриншот инсталлятора с фоновым изображением в тёмной теме при DPI 150%</a>.<br />
+          <a href="https://jrsoftware.org/images/is-welcome-backimage-org-150.png">Скриншот инсталлятора с фоновым изображением в светлой теме при DPI 150%</a>.<br />
+          <a href="https://jrsoftware.org/images/is-taskdialog-backcolor-org-125.png">Скриншот диалога задач с фоновым цветом при DPI 125%</a>.
+      </li>
+      <li>В секции <tt>[Setup]</tt> для директив <tt>WizardImageFile</tt> и <tt>WizardSmallImageFile</tt> теперь можно указать пустые значения, если вы хотите, чтобы фоновое изображение (или цвет) оставалось самостоятельным. Это не изменит макет мастера.<br />
+          В качестве альтернативы укажите директиву <tt>WizardImageOpacity</tt>, чтобы смешать изображения мастера с изображением фона (или цвета). Можно также использовать встроенные изображения мастера.</li>
+      <li>В секции <tt>[Setup]</tt> добавлена новая директива <tt>WizardBackImageOpacity</tt> для указания непрозрачности фонового изображения.<br />
+          Это даёт возможность использовать обычное и <tt>DynamicDark</tt> фоновое изображение.</li>
+      <li>Примеры:
+    <pre><code class="innosetup"><span class="com">; Использование раздельных изображений фона для светлой и тёмной темы</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage_Dark.png
+<span class="com">; Скрываем большое и малое изображения мастера</span>
+<span class="key">WizardImageFile</span>=
+<span class="key">WizardSmallImageFile</span>=
+
+<span class="com">; Использование одного изображения фона для светлой и тёмной темы</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage.png
+<span class="com">; Применяем прозрачность к изображению фона, чтобы оно</span>
+<span class="com">; хорошо смотрелось как в светлой, так и в тёмной теме</span>
+<span class="key">WizardBackImageOpacity</span>=150
+<span class="com">; Оставляем большое и малое изображения мастера, применив прозрачность,</span>
+<span class="com">; чтобы они равномерно сливались с изображением фона</span>
+<span class="key">WizardImageOpacity</span>=150
+
+<span class="com">; Использование фонового изображения в мастере установки,</span>
+<span class="com">; а также фонового цвета в других окнах и деинсталляторе</span>
+<span class="key">WizardBackImageFile</span>=MyBackImage.png
+<span class="key">WizardBackImageFileDynamicDark</span>=MyBackImage.png
+<span class="key">WizardBackColor</span>=#ffc0cb
+<span class="key">WizardBackColorDynamicDark</span>=#570c22
+<span class="com">; На страницах мастера смешиваем изображение фона и цвет</span>
+<span class="key">WizardBackImageOpacity</span>=150</code></pre></li>
+      <li>Программирование на языке Паскаль: добавлена функция <tt>WizardSetBackImage</tt> для установки, обновления или удаления фонового изображения во время выполнения. Может быть использована как для инсталлятора, так для деинсталлятора.<br />
+          Смотрите пример в <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_wizardsetbackimage">справке</a>, а также в сценарии <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i> при вызове функции <tt>BackImageButtonOnClick</tt>.</li>
+    </ul>
+
+    <span class="head2">Улучшения IDE компилятора</span>
+
+    <p>Функция автозавершения теперь быстрее работает для директив в секции <tt>[Setup]</tt>, а вкладки #include стали более удобными в управлении даже в крупных проектах.</p>
+    <ul>
+      <li>Добавлена поддержка автозавершения в секции <tt>[Setup]</tt> для значений директив с фиксированными значениями, таких как <tt>yes</tt>/<tt>no</tt> и другими, например для директивы <tt>WizardStyle</tt>.</li>
+      <li>IDE компилятора теперь обеспечивает открытие до 50 файлов #include вместо 20.</li>
+      <li>Добавлен новый параметр "<i>Не открывать новые файлы #include</i>", отключенный по умолчанию.<br />
+          При включении этой функции вновь обнаруженные при компиляции файлы #include будут закрыты, пока вы явно не откроете их вкладки, например, через меню "<i>View</i>".</li>
+      <li>В меню "<i>Правка</i>" добавлен пункт "<i>Перейти в файл</i>" для перехода в файл (горячие клавиши Ctrl+F12 или Ctrl+P).</li>
+      <li>При открытии файла, который является файлом #include для текущего главного файла сценария, с помощью пункта "<i>Открыть</i>" в главном меню "<i>File</i>", IDE предложит перейти на его вкладку вместо открытия его в качестве нового главного файла сценария.</li>
+      <li>Комбинация Ctrl+W теперь закрывает текущую вкладку (в дополнение к Ctrl+F4), что согласуется с другими современными редакторами. Ранее Ctrl+W была назначена на команду "<i>Отладка Uninstall</i>" в меню "<i>Отладка</i>". Теперь для этого используется комбинация Alt+Q.</li>
+    </ul>
+
+    <span class="head2">Улучшения в области безопасности</span>
+
+    <p>Рекомендуется выполнить обновление, даже если вы пока не планируете использовать новые функции и другие возможности. Мы постоянно работаем над повышением безопасности и надёжностью ваших программ установок. В этой версии:</p>
+    <ul>
+      <li><p>Программа установки и деинсталляции теперь по умолчанию самостоятельно пытаются включить для своих процессов защитную функцию Windows — RedirectionGuard. Данная функция, доступная в Windows 11 и Windows 10 начиная с версии 22H2, блокирует обход NTFS-соединений и символических ссылок, созданных непривилегированными пользователями (или любыми процессами без повышенных прав), обеспечивая защиту от атак, связанных с перенаправлением путей, которые могут привести к повышению привилегий.</p>
+          <p>Для получения дополнительной информации обратитесь к <a href="https://jrsoftware.org/ishelp/index.php?topic=setup_redirectionguard">справке</a> с описанием новой директивы <tt>RedirectionGuard</tt> в секции <tt>[Setup]</tt>. Также поддерживаются новые параметры командной строки <tt>/NOREDIRECTIONGUARD</tt> и <tt>/REDIRECTIONGUARD</tt>, которые имеют приоритет над настройкой директивы <tt>RedirectionGuard</tt>.</p>
+      </li>
+    </ul>
+
+    <span class="head2">Другие изменения</span>
+
+    <ul>
+      <li>Добавлены механизмы повторных попыток сборки программы установки, чтобы сделать процесс компиляции более устойчивым к временным проблемам доступа к файлам, например, когда антивирусное программное обеспечение или другие процессы временно блокируют выходные файлы.</li>
+      <li><i>Исправлено:</i> в Windows Server при попытке программы установки перезагрузить компьютер могло отображаться сообщение об ошибке "Невозможно перезагрузить компьютер". Это было связано с тем, что перезагрузка инициировалась из процесса без повышенных прав, что по умолчанию не допускается системой Windows Server. Теперь перезагрузка инициируется из процесса с повышенными правами, что решает проблему, при условии что установщик запрашивает повышение прав. Если для параметра <tt>PrivilegesRequired</tt> установлено значение <tt>lowest</tt> вместо <tt>admin</tt>, то ни один из процессов установки не будет повышен (если только установщик не был запущен с помощью команды "Запуск от имени администратора"), и сообщение об ошибке может по-прежнему отображаться.</li>
+      <li>В секции <tt>[Setup]</tt> такие директивы как <tt>WizardImageBackColor</tt> и <tt>WizardBackColor</tt> теперь также принимают название цвета, например, <tt>white</tt> и <tt>black</tt>, в дополнение к текущим значениям <tt>clWhite</tt>, <tt>clBlack</tt>, <tt>#ffffff</tt> и <tt>#000000</tt>.</li>
+      <li><i>Исправлено:</i> элементы управления файлами и каталогами в программе установки должны всегда использовать порядок чтения слева направо, даже если активен язык с направлением письма справа налево, но с версии 6.5.2 это не так.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>В секции <tt>[Setup]</tt> такие директивы как <tt>UsePreviousAppDir</tt>, <tt>UsePreviousGroup</tt>, <tt>UsePreviousSetupType</tt>, <tt>UsePreviousTasks</tt> и <tt>UsePreviousUserInfo</tt> теперь могут принимать логическое выражение, которое может содержать вызовы проверочных функций. Например: <tt>UsePreviousAppDir=not PortableCheck</tt>.</li>
+        <li>Добавлены функции <tt>PathCombine</tt>, <tt>PathEndsWith</tt>, <tt>PathHasInvalidCharacters</tt>, <tt>PathIsRooted</tt>, <tt>PathNormalizeSlashes</tt>, <tt>PathSame</tt> и <tt>PathStartsWith</tt>, которые позволяют упростить обработку путей.</li>
+        <li>Добавлен класс <tt>TNewPathEdit</tt>, потомок <tt>TNewEdit</tt>, который теперь всегда использует порядок чтения слева направо и обеспечивает автозаполнение.<br />
+            Для управления файлами и каталогами вы должны использовать <tt>TNewPathEdit</tt> вместо <tt>TNewEdit</tt>, но вместо прямого применения класса рекомендуется использовать <tt>TInputFileWizardPage</tt> и <tt>TInputDirWizardPage</tt>.
+        </li>
+        <li>Добавлена функция <tt>RPos</tt>.</li>
+      </ul>
+      </li>
+      <li>Препроцессор Inno Setup:
+      <ul>
+        <li>Добавлена функция <tt>Is64BitPEImage</tt>.</li>
+        <li><i>Исправлено:</i> функция <tt>SameStr</tt> теперь чувствительна к регистру символов.</li>
+        <li><i>Исправлено:</i> функция <tt>RPos</tt> теперь правильно возвращает 0 для пустых подстрок.</li>
+        <li>Использование функции <tt>ExtractFileDir</tt> больше не вызывает появление предупреждения о <tt>RemoveBackslash</tt>.</li>
+      </ul>
+      </li>
+      <li>Из параметров директивы <tt>DisablePrecompiledFileVerifications</tt> в секции <tt>[Setup]</tt> были удалены суффиксы <tt>dll</tt>/<tt>e32</tt>/<tt>exe</tt>. Параметры <tt>setupldre32</tt> и <tt>setuplde64</tt> были объединены в один <tt>setupldr</tt>.</li>
+      <li><i>Экспериментально</i>: добавлена поддержка 64-разрядной версии загрузчика для программы установки путём указания для директивы <tt>UseSetupLdr</tt> в секции <tt>[Setup]</tt> значения <tt>x64</tt>.<br />
+          Использование <tt>x64</tt> не означает, что сама программу установки также будет 64-разрядной: в настоящее время программа установки всегда собирается как 32-разрядный двоичный файл x86.<br />
+          Использование <tt>x64</tt> в любом случае имеет несколько преимуществ: ваш установщик изначально представляет себя как нативный 64-разрядный исполняемый файл, а 64-разрядный загрузчик имеет включенную ASLR с высокой энтропией. Кроме того, это может помочь удовлетворить требования политики безопасности или сторонних разработчиков, которые требуют 64-разрядные установщики, даже если основная программа установки по-прежнему является 32-разрядной.<br />
+          Недостатком является то, что ваш установщик больше не будет загружаться на системах под управлением Windows x86.
+      </li>
+      <li>Если Inno Setup ещё не установлен, программа установки снова предложит вам выбрать режим установки (для всех пользователей или только для текущего пользователя) с помощью диалогового окна, которое можно скрыть. Начиная с версии 6.1.1 этот выбор был доступен только через параметры командной строки <tt>/ALLUSERS</tt> и <tt>/CURRENTUSER</tt>.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Inno Setup 6.6</summary>
+
+    <p><a name="6.6.1"></a><span class="ver">6.6.1 </span><span class="date">(2025-11-20)</span></p>
+    <ul>
+      <li>Изменения, связанные с применением стилей:
+      <ul>
+        <li>Ранее при отображении любого текста RTF с применением пользовательских стилей (включая встроенные стили в тёмном оформлении) все цвета переднего плана заменялись цветом переднего плана стиля. Такое поведение было улучшено и теперь заменяются только цвета по умолчанию, а заданные пользователем сохраняются.</li>
+        <li>Добавлена новая директива в секции <tt>[Setup]</tt> – <tt>WizardImageOpacity</tt>, с помощью которой можно указать непрозрачность изображений мастера. Она даёт возможность использовать одни и те же изображения мастера как для светлого, так и для тёмного стилей оформления. К примеру, установите значение <tt>150</tt> для получения частичной прозрачности. По умолчанию установлено значение полной непрозрачности.</li>
+        <li>Теперь компилятор сохраняет одинаковые изображения мастера и изображения директив <tt>DynamicDark</tt> только один раз.</li>
+        <li><i>Исправлено:</i> был изменён прототип функции <tt>CreateCustomForm</tt>, но в <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_createcustomform">документации</a> соответствующая информация не была обновлена. Теперь это исправлено.</li>
+      </ul>
+      </li>
+      <li>Улучшение безопасности:
+      <ul>
+        <li>В секции <tt>[Files]</tt> добавлен новый флаг <tt>notimestamp</tt>, препятствующий сохранению файла с меткой времени. Используйте этот флаг, чтобы сделать сборки воспроизводимыми, даже если вы не можете сохранить отметки времени в исходных файлах.</li>
+      </ul>
+      </li>
+      <li>Другие незначительные улучшения.</li>
+    </ul>
+
+    <p><a name="6.6.0"></a><span class="ver">6.6.0 </span><span class="date">(2025-11-11)</span></p>
+
+    <span class="head2">Модернизация графики в инсталляторе/деинсталляторе</span>
+
+    <p>Программа установки и удаления теперь поддерживает тёмную тему: принудительно или автоматически.</p>
+    <p>Все эти параметры являются дополнительными, имеют обратную совместимость и <i>НЕ</i> увеличивают размер инсталлятора, если не используются.</p>
+    <ul>
+      <li>В секции <tt>[Setup]</tt> директива <tt>WizardStyle</tt> дополнена новыми параметрами:
+      <ul>
+        <li>Добавлены режимы внешнего вида: <tt>light</tt> (по умолчанию, стандартная светлая тема, что и в предыдущих версиях), <tt>dark</tt> (принудительная тёмная тема, новый внешний вид) и <tt>dynamic</tt> (автоматическая установка темы в зависимости от системных настроек темы Windows).</li>
+        <li>Например, чтобы использовать современный стиль с автоматическим выбором между светлой и тёмной темами в зависимости от настроек Windows, следует указать директиву со следующим значением:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic</code></pre>
+        </li>
+        <li>Тёмная тема автоматически заменяет значки, изображения мастера и цвета, сохраняя при этом единообразный интерфейс. Также по-прежнему доступна настройка главного значка, изображений мастера и цветов. Включает поддержку стилизации диалоговых окон задач.<br />
+          <a href="https://jrsoftware.org/images/is-welcome-dark-org-150.png">Скриншот окна инсталлятора с тёмным стилем при DPI 150%</a>.<br />
+          <a href="https://jrsoftware.org/images/is-taskdialog-dark-org-125.png">Скриншот диалога задач с тёмным стилем при DPI 125%</a>.
+        </li>
+        <li>Для получения дополнительной информации смотрите обновленный раздел справки с описанием директивы <a href="https://jrsoftware.org/ishelp/index.php?topic=setup_wizardstyle">WizardStyle</a>.</li>
+      </ul>
+      </li>
+      <li>В секции <tt>[Setup]</tt> добавлены новые директивы <tt>DynamicDark</tt> для указания отдельных пользовательских изображений и цветов, которые специально будут использоваться в режиме <tt>dynamic</tt> при переключении на тёмную тему.
+      <ul>
+        <li>Например, укажите два пользовательских цвета: один для светлой темы, а другой для тёмной:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic
+<span class="key">WizardImageBackColor</span>=clWhite
+<span class="key">WizardImageBackColorDynamicDark</span>=#2b2b2b</code></pre>
+          Примечание: принудительная установка тёмной темы (<tt>dark</tt>) не использует настройки <tt>DynamicDark</tt>, а использует стандартные настройки. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dark
+<span class="key">WizardImageBackColor</span>=#2b2b2b</code></pre>
+        </li>
+      </ul>
+      </li>
+      <li>Стиль по умолчанию можно заменить на другой файл VCL-стиля с помощью новой директивы <tt>WizardStyleFile</tt> и директивы <tt>DynamicDark</tt>.
+      <ul>
+        <li>Например, чтобы использовать другие стили для светлой и тёмной тем, укажите соответствующие файлы стилей:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic
+<span class="key">WizardStyleFile</span>=MyStyleLight.vsf
+<span class="key">WizardStyleFileDynamicDark</span>=MyStyleDark.vsf</code></pre>
+          <a href="https://jrsoftware.org/images/is-welcome-polarlight-org-150.png">Скриншот инсталлятора со стилем Polar Light при DPI 150%</a>.<br />
+          <a href="https://jrsoftware.org/images/is-welcome-polardark-org-150.png">Скриншот инсталлятора со стилем Polar Dark при DPI 150%</a>.<br />
+          <a href="https://jrsoftware.org/images/is-taskdialog-zircon-org-125.png">Скриншот диалога задач со стилем Zircon при DPI 125%</a>.
+        </li>
+        <li>Если активен пользовательский стиль (включая встроенную тёмную тему), все текстовые метки, за исключением метки, связанной с сообщением <tt>BeveledLabel</tt>, имеют прозрачный фон. Кроме того, программа установки и удаления использует индивидуальную реализацию диалоговых окон Windows.</li>
+        <li>Показанный выше стиль "Polar" является встроенным и напрямую поддерживается директивой <tt>WizardStyle</tt> напрямую. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar</code></pre>
+        </li>
+        <li>Дополнительно доступно ещё три встроенных стиля, поддерживаемых директивой <tt>WizardStyle</tt>: <tt>slate</tt>, <tt>windows11</tt> и <tt>zircon</tt>. Стиль <tt>slate</tt> использует средне-серый цвет как для светлого, так и для тёмного оформления, <tt>windows11</tt> является светлым аналогом встроенного тёмного стиля, а <tt>zircon</tt> – это альтернативный светлый стиль с голубыми акцентами, показанный выше. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern zircon</code></pre>
+        </li>
+        <li>Добавлен модификатор <tt>includetitlebar</tt>: позволяет настраивать стили заголовков и границ. По умолчанию вместо них используется системный светлый или тёмный заголовок. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic polar includetitlebar</code></pre>
+        </li>
+        <li>Добавлен модификатор <tt>excludelightbuttons</tt>: отключает стилизацию всех кнопок (включая кнопки командных ссылок, используемые в диалоговых окнах задач), когда активен светлый стиль. Например:
+          <pre><code class="innosetup"><span class="key">WizardStyle</span>=modern dynamic windows11 excludelightbuttons</code></pre>
+        </li>
+      </ul>
+      </li>
+      <li>Пользовательские стили (включая встроенный тёмный стиль) <i>НЕ</i> активируются, если в системе пользователя установлена высококонтрастная тема или используется новый параметр командной строки '<tt>/NOSTYLE</tt>'.</li>
+      <li>IDE компилятора: в мастер создания нового сценария добавлена страница <i>Wizard Style</i>, которая позволяет выбрать стиль и увидеть его пример.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлены функции <tt>IsWinDark</tt> и <tt>IsDarkInstallMode</tt>.</li>
+        <li>Добавлены свойства <tt>StyleElements</tt> и <tt>StyleName</tt> для класса <tt>TControl</tt>. В качестве примера смотрите сценарий <i><a href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>, где также демонстрируется использование <tt>IsDarkInstallMode</tt>.</li>
+      </ul>
+      </li>
+    </ul>
+
+    <span class="head2">Изменения во внешнем виде и работе программы установки и удаления</span>
+
+    <p>Стандартный внешний вид и функциональность программы установки и удаления
+      был дополнительно модернизирован за счёт перехода на шрифт <i>Segoe UI</i>
+      и других улучшений.</p>
+    <ul>
+      <li>Значение директивы <tt>WizardSizePercent</tt> в секции <tt>[Setup]</tt>
+        теперь по умолчанию всегда равно <tt>120,120</tt>, а не только при
+        использовании <tt>WizardStyle=modern</tt>. В результате, если применяется
+        <tt>WizardStyle=classic</tt>, размеры окон программы установки по
+        умолчанию теперь увеличены на 20%.</li>
+      <li>Директива <tt>WizardSizePercent</tt> в секции <tt>[Setup]</tt> теперь
+        поддерживается деинсталлятором. В результате размеры окна программы
+        удаления по умолчанию теперь увеличены на 20%.</li>
+      <li>Программа установки и удаления теперь сохраняют исходное соотношение
+        сторон своих окон после изменения масштабирования DPI. В результате окна
+        установки и удаления при DPI 125% и выше будут на 16% шире.<br />
+        Такое поведение можно отключить, установив в секции <tt>[Setup]</tt> для
+        директивы <tt>WizardKeepAspectRatio</tt> значение <tt>no</tt>.</li>
+      <li>Поддержка директивы <tt>WizardResizable</tt> в секции <tt>[Setup]</tt>
+        прекращена, поэтому пользователь больше не сможет изменять размеры
+        главного окна мастера установки.</li>
+      <li>Теперь вместо пользовательских значков используются высококачественные.
+        Это касается страниц мастера "<i>Выбор папки установки</i>" и "<i>Подготовка
+        к установке</i>", а также диалога "<i>Необходимо вставить следующий диск</i>".
+      </li>
+      <li>Стандартный шрифт, используемый на страницах мастера установки и
+        удаления, был изменён с 8-point <i>Tahoma</i> на 9-point <i>Segoe UI</i>,
+        для единообразия с современным интерфейсом Windows.<br />
+        Чтобы снова использовать шрифт 8-point <i>Tahoma</i>, используйте
+        следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">DialogFontName</span>=Tahoma
+<span class="key">DialogFontSize</span>=8
+<span class="key">DialogFontBaseScaleHeight</span>=13
+<span class="key">DialogFontBaseScaleWidth</span>=6</code></pre>
+        Если до этого использовался шрифт 9-point <i>Segoe UI</i>, то после
+        обновления вы заметите изменения в масштабировании. Чтобы использовать
+        предыдущее масштабирование, примените следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">DialogFontName</span>=Segoe UI
+<span class="key">DialogFontSize</span>=9
+<span class="key">DialogFontBaseScaleHeight</span>=13
+<span class="key">DialogFontBaseScaleWidth</span>=6</code></pre>
+      </li>
+      <li>Стандартный шрифт заголовков, используемый на страницах мастера
+        "<i>Приветствие</i>" и "<i>Установка завершена</i>", был изменён с
+        12-point <i>Verdana</i> на 14-point <i>Segoe UI</i>, чтобы соответствовать
+        современному внешнему виду.<br />
+        Чтобы снова использовать шрифт 12-point <i>Verdana</i>, используйте
+        следующие параметры:
+        <pre><code class="innosetup"><span class="sec">[LangOptions]</span>
+<span class="key">WelcomeFontName</span>=Verdana
+<span class="key">WelcomeFontSize</span>=12</code></pre>
+      </li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+      <li>Добавлены функции <tt>InitializeBitmapButtonFromStockIcon</tt> и
+        <tt>InitializeBitmapImageFromStockIcon</tt>, которые могут использоваться
+        для отображения различных высококачественных системных значков во всех
+        версиях Windows.<br />
+        В качестве примера смотрите сценарий <i><a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>,
+        а также перечень всех доступных значков на портале <a 
+        href="https://learn.microsoft.com/en-us/windows/win32/api/shellapi/ne-shellapi-shstockiconid#constants">Microsoft Learn</a>.<br />
+        <a href="https://jrsoftware.org/images/is-codeclasses-stockicons-125.png">Скриншот
+        примера CodeClasses.iss при DPI 125% и темном режиме</a>.
+      </li>
+      <li>Изменение формы мастера для <tt>WizardSizePercent</tt> в соответствии с
+        системным значение масштабирования DPI или пользовательским значением
+        <tt>DialogFontSize</tt> теперь выполняется до вызова функции
+        <tt>InitializeWizard</tt>, а не после.<br />
+        Если в вашем сценарии имеются элементы управления, которые должны
+        увеличиваться в соответствии с <tt>WizardSizePercent</tt>, и для достижения
+        этой цели эти элементы управления используют свойство <tt>Anchors</tt> (то
+        есть у них установлены значения <tt>akLeft</tt> и <tt>akRight</tt> или
+        <tt>akTop</tt> и <tt>akBottom</tt>), но не используют свойство
+        <tt>SurfaceWidth</tt> или <tt>SurfaceHeight</tt>, вам необходимо либо
+        начать использовать новые свойства <tt>SurfaceExtraWidth</tt> и
+        <tt>SurfaceExtraHeight</tt> (как показано в сценарии <a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a>)
+        либо перейти на использование свойств <tt>SurfaceWidth</tt> и
+        <tt>SurfaceHeight</tt>.<br />
+        Существующий код, который выполняет назначение свойств <tt>Anchors</tt>,
+        из ваших сценарий может быть удалён.
+      </li>
+      <li>Изменён прототип функции <tt>CreateCustomForm</tt>. Также изменён класс
+        <tt>TSetupForm</tt>: функция <tt>FlipSizeAndCenterIfNeeded</tt> была
+        переименована в <tt>FlipAndCenterIfNeeded</tt>, свойство
+        <tt>SizeAndCenterOnShow</tt> переименовано в <tt>CenterOnShow</tt>,
+        а свойство <tt>KeepSizeX</tt> теперь доступно только для чтения.
+        Смотрите пример сценария <i><a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>
+        с обновленными <tt>CreateCustomForm</tt>/<tt>TSetupForm</tt>.
+      </li>
+      </ul>
+      </li>
+    </ul>
+
+    <span class="head2">Улучшения в области безопасности</span>
+
+    <p>Рекомендуется выполнить обновление, даже если вы пока не планируете
+      использовать новые функции и другие возможности. Мы постоянно работаем
+      над повышением безопасности и надёжностью ваших программ установок.
+      В этой версии:</p>
+    <ul>
+      <li>В именах временных каталогов/файлов количество случайных цифр в
+        системе счисления с основанием 36 было удвоено с 5 до 10 и теперь цифры
+        генерируются с помощью функции
+        <abbr title="Cryptographically Secure Pseudorandom Number Generator">CSPRNG</abbr>
+        (<tt>BCryptGenRandom</tt>). Это сделано для защиты от атак, которые
+        могут зависеть от предсказуемости создаваемых имен.</li>
+      <li>Теперь программа удаления вместо попытки повторного использования
+        фиксированного имени для временного каталога (обычно iu-14D2N.tmp в
+        предыдущих версиях) использует имя, созданное случайным образом
+        (<tt>is-XXXXXXXXXX-uninstall.tmp</tt>). Это в первую очередь предназначено
+        для обеспечения глубокой защиты. Кроме того, это изменение устраняет
+        проблему, не связанную с безопасностью, но которая имела место в
+        предыдущих версиях (хотя на практике она возникала крайне редко): если
+        два деинсталлятора запускались почти одновременно, один из них мог
+        перезаписать временный файл другого.</li>
+      <li>В предыдущих версиях перед удалением существующего временного каталога
+        (обычно с именем <tt>iu-14D2N.tmp</tt>) деинсталлятор проверял атрибут
+        <tt>FILE_ATTRIBUTE_REPARSE_POINT</tt>, чтобы убедиться, что каталог не
+        является точкой повторной обработки или символической ссылкой. Однако
+        эта проверка имела проблему <abbr title="Time-of-Check to Time-of-Use">TOCTOU</abbr>
+        &mdash; теоретически было возможно, что в интервале между проверкой и
+        удалением каталог мог быть изменён на точку повторной обработки или
+        символическую ссылку. Нам неизвестны какие-либо способы практической
+        эксплуатации этой уязвимости, но эта проблема потенциально актуальна
+        только в том случае, если другие, недоверенные пользователи, имеют доступ
+        записи во временный каталог, что не является обычным явлением. (До Inno
+        Setup 6.5, когда инсталлятор/деинсталлятор запускался под учётной записью
+        <tt>SYSTEM</tt>, часто использовался каталог <tt>C:\Windows\Temp</tt> с
+        общим доступом на запись, но начиная с Inno Setup 6.5 в Windows 11 и
+        обновленных системах Windows 10 вместо него используется
+        <tt>C:\Windows\SystemTemp</tt>.)</li>
+    </ul>
+    <p>В настоящее время мы также работаем над тем, чтобы в будущей версии
+      включить функцию Windows <tt>RedirectionGuard</tt> в программе установке
+      и удалении.</p>
+
+    <span class="head2">Другие изменения</span>
+
+    <ul>
+      <li>IDE компилятора:
+      <ul>
+        <li>Улучшен коэффициент контрастности для различных цветов
+          подсветки синтаксиса, особенно в темном режиме.</li>
+        <li>Шрифт диалоговых окон обновлен с 8-point <i>Segoe UI</i> на 9-point
+          <i>Segoe UI</i>.</li>
+          <li>Включена поддержка тёмного режима для меню в Windows 11 версии
+            25H2 (обновление 2025).</li>
+      </ul>
+      </li>
+      <li>Директива <tt>WizardImageBackColor</tt> в секции <tt>[Setup]</tt> и
+        три другие директивы <tt>BackColor</tt> теперь может принимать цвет в
+        формате <tt>#rrggbb</tt> дополнительно к формату <tt>$bbggrr</tt>.</li>
+      <li>Программирование на языке Паскаль:
+      <ul>
+        <li>Добавлена поддержка кнопок командных ссылок (стиль кнопок, который
+          используется в диалоговых окнах задач). Смотрите пример в сценарии <i><a 
+          href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>.</li>
+        <li>Добавлены функции <tt>Round</tt>, <tt>Trunc</tt>, <tt>Int</tt> и
+          <tt>MulDiv</tt>.</li>
+        <li>Добавлена функция <tt>StrToColor</tt>.</li>
+        <li>Отменены изменения, сделанные в функции события <tt>CurPageChanged</tt>
+          с версии 6.5.0.</li>
+      </ul>
+      </li>
+      <li>Если Windows возвращает <a 
+        href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/shell-experience/temp-folder-with-logon-session-id-deleted">несуществующий
+        временный каталог</a>, программа установки и удаления будет пытаться
+        создать его заново, но только при обнаружении конкретного сценария,
+        описанного в статье по ссылке. Начиная с версии 6.5.0, программы установки
+        и удаления не могли работать по этому сценарию. До версии 6.5.0 они
+        выбирали другой временный каталог, что также было нежелательно.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Inno Setup 6.5</summary>
+
+    <p><a name="6.5.4"></a><span class="ver">6.5.4 </span><span class="date">(2025-09-24)</span></p>
+    <ul>
+      <li><i>Исправлено:</i> использование функции события <tt>CurInstallProgressChanged</tt> приводило к ошибкам во время выполнения.</li>
+    </ul>
+
+    <p><a name="6.5.3"></a><span class="ver">6.5.3 </span><span class="date">(2025-09-11)</span></p>
+    <ul>
+      <li><i>Исправлено:</i> мастер создания нового сценария для параметра <tt>ExternalSize</tt> в секции <tt>[Files]</tt> формировал записи со случайными значениями.</li>
+    </ul>
+
+    <p><a name="6.5.2"></a><span class="ver">6.5.2 </span><span class="date">(2025-09-10)</span></p>
+
+    <span class="head2">Модернизация графики</span>
+
+    <p>В программу установки и удаления добавлена поддержка изображений в формате .png, включая использование прозрачности.</p>
+    <ul>
+    <li>Добавлена поддержка .png файлов в секции <tt>[Setup]</tt> для директив
+      <tt>WizardImageFile</tt> и <tt>WizardSmallImageFile</tt>.</li>
+    <li>Улучшена поддержка преобразования 32-разрядных файлов .bmp с прозрачностью.</li>
+    <li>Встроенные изображения и значки мастера теперь имеют прозрачный фон, что
+      позволяет снова настраивать их фоновые цвета в секции <tt>[Setup]</tt> с
+      помощью директив <tt>WizardImageBackColor</tt> и <tt>WizardSmallImageBackColor</tt>,
+      которые больше не являются устаревшими.<br />
+      По умолчанию значения этих директив соответствуют ранее использовавшимся
+      цветам, поэтому внешний вид всех изображений и значков остался неизменным.</li>
+    <li>Программирование на языке Паскаль:
+    <ul>
+      <li>Добавлен новый класс <tt>TPngImage</tt>.</li>
+      <li>Добавлено новое свойство <tt>PngImage</tt> в классы <tt>TBitmapButton</tt>
+        и <tt>TBitmapImage</tt>.</li>
+    </ul>
+    </li>
+    </ul>
+
+    <span class="head2">Отмена ограничений на размер</span>
+
+    <p>Ограничение размера в 2 ГБ для одного файла Setup.exe и для дисковых сегментов было упразднено.</p>
+    <ul>
+      <li>Максимальный размер исполняемого файла установки без разделения на
+        диски увеличен с почти 2 ГБ до 4 ГБ, что является максимально поддерживаемым
+        на системах Windows.<br />
+        Однако для больших файлов установки по-прежнему рекомендуется использовать
+        разделение на диски из-за медленного запуска, вызванного защитными механизмами
+        Windows, особенно если исполняемые файлы имеют цифровую подпись.</li>
+      <li>При использовании разделения максимальный размер сегмента увеличен
+        с приблизительно 2 ГБ до практически неограниченного (9223 ПБ).<br />
+        По умолчанию размер сегмента по прежнему составляет <tt>2100000000</tt>,
+        что соответствует размеру 2 ГБ. Для обновления просто укажите в секции
+        <tt>[Setup]</tt> директиву <tt>DiskSliceSize</tt> со значением <tt>max</tt>.</li>
+    </ul>
+
+    <span class="head2">Улучшенная загрузка и извлечение архивов</span>
+
+    <ul>
+      <li>Все функции загрузки теперь поддерживают протокол передачи данных
+        TLS 1.3, если он доступен. Поддержка TLS 1.0 и 1.1 была удалена во всех
+        версиях Windows.</li>
+      <li>Функция извлечения архивов теперь поддерживает формат RAR5. Для этого
+        необходимо, чтобы для директивы <tt>ArchiveExtraction</tt> в секции
+        <tt>Setup</tt> было установлено значение <tt>full</tt>.</li>
+      <li><i>Исправлено:</i> использование флагов <tt>download</tt> и
+        <tt>extractarchive</tt> в секции <tt>[Files]</tt>, которые содержат
+        параметр <tt>Tasks</tt>, теперь работают так, как и ожидалось.</li>
+    </ul>
+    <span class="head2">Другие изменения</span>
+    <ul>
+      <li>IDE компилятора:
+      <ul>
+      <li>Добавлены параметры "<i>Automatically reload files</i>"
+        (Автоматически перезагружать файлы) и "<i>Allow Undo after reload</i>"
+        (Разрешать отмену после перезагрузки). Оба параметра включены по умолчанию,
+        что соответствует большинству современных редакторов кода и улучшает
+        интеграцию с такими инструментами, как Claude Code.</li>
+        <li>Добавлена поддержка тёмного режима для параметров командной строки
+          /cc и /wizard.</li>
+      </ul>
+      </li>
+      <li>Программирование на языке Паскаль: добавлены функции <tt>HighContrastActive</tt>
+        и <tt>LogFmt</tt>.</li>
+      <li>Другие улучшения и исправления.</li>
+    </ul>
+    <p><a name="6.5.1"></a><span class="ver">6.5.1 </span><span class="date">(2025-08-18)</span></p>
+    <ul>
+      <li>Загрузка теперь выполняется отдельным потоком, как и в случае с
+        извлечением архивов в предыдущей версии. Это обеспечивает отзывчивость
+        программы установки, даже если система не сообщает о ходе выполнения.</li>
+      <li><i>Исправлено:</i> использование параметра командной строки <tt>/cc</tt>
+        в IDE компилятора для сборки сценария приводило к ошибке.</li>
+      <li>Незначительные улучшения.</li>
+    </ul>
+
+    <p><a name="6.5.0"></a><span class="ver">6.5.0 </span><span class="date">(2025-08-12)</span></p>
+    <span class="head2">Внедрение коммерческих лицензий</span>
+    <p>За долгие годы существования Inno Setup многие пользователи неоднократно
+      выражали своё желание, чтобы их компании поддержали развитие проекта.
+      Однако корпоративные правила в большинстве случаев не позволяли оформлять
+      пожертвования. Введение коммерческой лицензии даёт организациям простой и
+      легальный способ поддержать проект.</p>
+    <p>Кроме того, многие организации предпочитают иметь официальные лицензии на
+      всё используемое ими программное обеспечение, поскольку это облегчает
+      проведение аудитов и внутренних проверок на соответствие требованиям.</p>
+    <p>Наконец, ваша поддержка в виде покупки лицензий напрямую помогает нам
+      улучшать и поддерживать Inno Setup.</p>
+    <p>По этим причинам мы вводим коммерческие лицензии. Если вы или ваша
+      организация используете Inno Setup в коммерческих целях, мы просим вас
+      приобрести лицензию. Ваша поддержка поможет обеспечить дальнейшее развитие
+      программы.</p>
+    <p>Лицензии можно приобрести на нашем сайте, <a 
+      href="https://jrsoftware.org/isorder.php">в разделе заказов</a>, где также
+      приведена пояснительная информация. Все коммерческие лицензии являются
+      бессрочными и требуют единоразовой оплаты. В них входят два года обновлений,
+      включая как основных, так и второстепенных версий. По истечении этого
+      периода ваша текущая версия останется лицензированной и будет работать
+      как есть.</p>
+    <span class="head2">Обработка архивов</span>
+    <p>Теперь возможна распаковка архивов, защищённых паролем, многотомных архивов
+      и архивов другого формата, например .zip.</p>
+    <p>Добавлена возможность распаковки архивов напрямую из секции <tt>[Files]</tt>.
+      Теперь нет необходимости писать Pascal-код для распаковки архивов.</p>
+    <p>Использование этих функций необязательно и <i>не</i> увеличивают размер
+      программы установки, если не используются.</p>
+    <ul>
+      <li>Обновление секций <tt>[Setup]</tt> и <tt>[Files]</tt>:
+        <ul>
+          <li>В секции <tt>[Setup]</tt> добавлена директива <tt>ArchiveExtraction</tt> 
+           для указания метода извлечения архива, используемого флагом
+          <tt>extractarchive</tt> в секции <tt>[Files]</tt> (см. ниже) и функциями
+          <tt>ExtractArchive</tt> и <tt>CreateExtractionPage</tt>:
+        <ul>
+        <li><tt>basic</tt> (по умолчанию) – метод, впервые реализованный в Inno
+          Setup 6.4.0. Работает только с архивами .7z не защищённые паролем.</li>
+        <li><tt>enhanced/nopassword</tt> использует внешнюю библиотеку 7zxr.dll,
+          собранную на базе исходного кода 7-Zip (автор – Игорь Павлов) с минимальными
+          изменениями: добавлена цифровая подпись и файл переименован в is7zxr.dll.
+          По сравнению с методом <tt>basic</tt>, предлагает более эффективное
+          использование памяти при работе с архивами, содержащими крупные файлы, но
+          приводит к увеличению размера установочного пакета. Важно отметить, что
+          данный метод поддерживает исключительно архивы .7z без парольной защиты.</li>
+        <li><tt>enhanced</tt> использует библиотеку 7zxa.dll вместо 7zxr.dll. Файл
+          библиотеки собран заново, подписан цифровым сертификатом и переименован в
+          is7zxa.dll. Поддерживает только архивы .7z, включая защищённые паролем.</li>
+        <li><tt>full</tt> вместо библиотеки 7zxa.dll использует 7z.dll. Данная
+          библиотека была перекомпилирована, подписана и переименована в is7z.dll.
+          Поддерживает наиболее популярные форматы архивов (такие как .7z, .zip, .rar
+          и другие), но не все по сравнению с оригинальной 7z.dll — это было сделано
+          для уменьшения её размера. Кроме того, реализована поддержка многотомных
+          архивов.</li>
+        </ul>
+        Различия между этими методами смотрите в разделе документации "<a 
+        href="https://jrsoftware.org/ishelp/index.php?topic=setup_archiveextraction">ArchiveExtraction</a>".
+      </li>
+      <li>В секции <tt>[Files]</tt> добавлен флаг <tt>extractarchive</tt> и
+        параметр <tt>ExtractArchivePassword</tt>, предназначенный для прямой
+        интеграции и извлечения архивов.
+        <ul>
+          <li>Поддерживаемые форматы архивов, помимо .7z, а также поддержка
+            защищённых паролем и многотомных архивов зависят от вышеупомянутой
+            директивы <tt>ArchiveExtraction</tt>, значение которой должно
+            отличаться от <tt>basic</tt>.</li>
+          <li>Флаг <tt>extractarchive</tt> следует использовать в сочетании с
+            флагами <tt>external</tt> и <tt>ignoreversion</tt>. Обычно он также
+            комбинируется с флагами <tt>recursesubdirs</tt> и <tt>createallsubdirs</tt>.</li>
+          <li>Не рекомендуется использовать непрерывный архив, поскольку скорость
+            извлечения данных может снижаться в зависимости от размера непрерывного
+            блока.</li>
+          <li>Во всех остальных случаях извлечение архива выполняется так же, как
+            и копирование внешних файлов. Например, поддерживается автоматическое
+            удаление извлеченных файлов, возможна комбинация с другими флагами и
+            параметрами.</li>
+          <li>Пример:
+            <pre><code class="innosetup"><span class="sec">[Setup]</span>
+<span class="key">ArchiveExtraction</span>=enhanced/nopassword
+
+<span class="sec">[Files]</span>
+<span class="key">Source</span>: "<span class="con">{tmp}</span>\MyProg-ExtraReadmes.7z"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"</span>; \
+  <span class="key">Flags</span>: external extractarchive recursesubdirs createallsubdirs ignoreversion</code></pre>
+          </li>
+        </ul>
+       </li>
+      <li>Извлечение из архива теперь учитывает состояние перенаправления файловой
+         системы, установленное 64-разрядным режимом установки и функцией
+         <tt>EnableFsRedirection</tt>.</li>
+      </ul>
+      </li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Устаревшая функция<tt>Extract7ZipArchive</tt> заменена на новую
+            <tt>ExtractArchive</tt>, в которую был добавлен дополнительный
+            параметр для указания пароля, если требуется.</li>
+          <li>Теперь функции <tt>ExtractArchive</tt> и <tt>CreateExtractionPage</tt>
+            без предупреждения перезаписывают существующие в целевом каталоге файлы,
+            доступные только для чтения. Ранее это приводило к ошибке извлечения.</li>
+          <li>Добавлена функция <tt>MapArchiveExtensions</tt>, которая позволяет
+            распаковывать архивы с пользовательскими расширениями, например,
+            самораспаковывающиеся архивы.</li>
+          <li>Добавлена функция <tt>AddEx</tt> (класс <tt>TExtractionWizardPage</tt>)
+            для добавления архивов, защищенных паролем.</li>
+        </ul>
+      </li>
+    </ul>
+    <span class="head2">Загрузка файлов</span>
+    <p>Реализована встроенная поддержка загрузки файлов: теперь секция <tt>[Files]</tt>
+      позволяет загружать файлы напрямую, без необходимости использования Pascal
+      Script. Новый метод загрузки более эффективен, так как исключает создание
+      временных файлов, которые требовались при работе со скриптами.</p>
+    <ul>
+      <li>Секция <tt>[Files]</tt>:
+        <ul>
+          <li>Добавлен новый флаг <tt>download</tt> в секции <tt>[Files]</tt> и
+            параметры <tt>DownloadUserName</tt>/<tt>DownloadPassword</tt>,
+            предназначенные для автоматической интеграции загружаемых файлов.</li>
+          <li>Поддерживаются протоколы HTTPS (кроме просроченных и самоподписанных
+            сертификатов) и HTTP. Перенаправления обрабатываются автоматически,
+            настройки прокси применяются автоматически. Безопасно при вызове из
+            служб (<i>сервисов)</i>.</li>
+          <li>Флаг <tt>download</tt> должен использоваться совместно с флагами
+            <tt>external</tt> и <tt>ignoreversion</tt>. Также необходимо задавать
+            параметры <tt>DestName</tt> и <tt>ExternalSize</tt>.<br />
+            Может комбинироваться с новым флагом <tt>issigverify</tt> (см. ниже)
+            для эффективной и высоконадежной проверки загружаемых файлов.<br />
+            Несовместим с флагами <tt>comparetimestamp</tt>, <tt>recursesubdirs</tt>
+            и <tt>skipifsourcedoesntexist</tt>.</li>
+          <li>В остальном загрузка файлов работает аналогично копированию внешних
+            файлов. Например, поддерживается автоматическое удаление загруженных
+            файлов при деинсталляции и совместимость с другими аналогичными флагами
+            и параметрами.</li>
+          <li>В сочетании с флагом <tt>extractarchive</tt> (см. выше) архив будет
+            загружен и, если также указан <tt>issigverify</tt>, проверен на этапе
+            "<i>Подготовка к установке</i>". Затем во время фактического процесса
+            установки этот архив распаковывается обычным образом.<br />
+            В этом случае значение параметра <tt>DestName</tt> используется для
+            определения формата архива, отображения и ведения журнала установки.</li>
+          <li>Пример:
+            <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/is.exe?dontcount=1"; \
+  <span class="key">DestName</span>: "innosetup-latest.exe"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ExternalSize</span>: 7_000_000; <span class="key">Flags</span>: external download ignoreversion
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/myprog-extrareadmes.7z"; \
+  <span class="key">DestName</span>: "MyProg.ExtraReadmes.7z"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ExternalSize</span>: 275; <span class="key">Flags</span>: external download extractarchive ignoreversion</code></pre>
+          </li>
+          <li>Добавлен пример сценария "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/DownloadFiles.iss">DownloadFiles.iss</a></i>",
+            демонстрирующий загрузку файла посредством всего лишь одной записи
+            в секции <tt>[Files]</tt>, а также загрузку, верификацию и распаковку
+            архива.</li>
+        </ul>
+      </li>
+    </ul>
+    <span class="head2">Функция проверки подлинности файлов</span>
+    <p>Inno Setup теперь включает встроенную проверку подлинности ваших файлов,
+      которая может быть выполнена при компиляции – перед включением файлов в
+      установочный пакет или во время установки – перед копированием файлов в
+      систему пользователя.</p>
+    <p>Любой тип файла может быть подписан и проверен, а для создания подписей
+      <i>не</i> требуется сертификат от центра сертификации, что делает этот
+      процесс совершенно бесплатным.</p>
+    <p>Однако эти подписи не могут быть использованы для устранения предупреждения
+      «Неизвестный издатель», которое отображает ОС Windows при запуске программы
+      установки или другого EXE-файла. Для этого требуется совершенно другой тип
+      подписи (Authenticode), встроенной в EXE-файл с помощью инструмента
+      <tt>signtool.exe</tt> от Microsoft, а также цифровой сертификат, полученный
+      от центра сертификации.</p>
+    <p>Описание:</p>
+    <ul>
+      <li>Секция <tt>[ISSigKeys]</tt>:
+      <ul>
+        <li>Добавлена необязательная секция <tt>[ISSigKeys]</tt> для объявления
+          ключей, используемых компилятором и программой установки для проверки
+          подписей файлов.</li>
+        <li>Поддерживаются параметры <tt>Name</tt> (обязательный) и <tt>Group</tt>
+          для идентификации ключей, параметры <tt>KeyFile</tt>, <tt>PublicX</tt>
+          и <tt>PublicY</tt> для указания значений ключей, параметр <tt>KeyID</tt>
+          для двойной проверки значений ключей и параметр <tt>RuntimeID</tt> для
+          идентификации ключа во время выполнения.</li>
+        <li>Файлы подписей имеют читаемый формат и могут быть созданы с помощью
+          инструмента подписи "Inno Setup Signature Tool" (см. ниже).</li>
+        <li>Пример секции:
+          <pre><code class="innosetup"><span class="sec">[ISSigKeys]</span>
+<span class="key">Name</span>: anna; <span class="key">KeyFile</span>: "anna.ispublickey"; <span class="key">Group</span>: exesigner
+<span class="key">Name</span>: ryan; <span class="key">KeyFile</span>: "ryan.ispublickey"; <span class="key">Group</span>: exesigner
+<span class="key">Name</span>: ivan; <span class="key">KeyFile</span>: "ivan.ispublickey"; <span class="key">Group</span>: docsigner
+<span class="com">; max is trusted for both exe and doc signing</span>
+<span class="key">Name</span>: max; <span class="key">KeyFile</span>: "max.ispublickey"; <span class="key">Group</span>: exesigner docsigner
+<span class="com">; the boss also has a key</span>
+<span class="key">Name</span>: bosskey; <span class="key">KeyFile</span>: "boss.ispublickey"</code></pre>
+         </li>
+      </ul>
+    </li>
+    <li>Секция <tt>[Files]</tt>:
+    <ul>
+      <li>Добавлен новый флаг <tt>issigverify</tt> для принудительной проверки
+        криптографической подписи исходных файлов с использованием ключа из секции
+        <tt>[ISSigKeys]</tt>, что повышает безопасность как при компиляции, так
+        и при установке.</li>
+      <li>Если флаг <tt>external</tt> не указан, проверка выполняется во время
+        компиляции, и в случае неудачи процесс прерывается. Если же флаг <tt>external</tt>
+        установлен, проверка происходит во время установки, что гарантирует
+        целостность файлов при их копировании.</li>
+      <li>Обязательное требование: файл подписи <tt>.issig</tt> должен находиться
+        в том же каталоге, что и исходный файл. Файлы подписей имеют читаемый
+        формат и могут быть созданы с помощью инструмента подписи "Inno Setup
+        Signature Tool".</li>
+      <li>Оказывает небольшое влияние на производительность, поскольку проверка
+        происходит во время сжатия/копирования исходных файлов, а содержимое
+        файлов считывается только один раз; единственная дополнительная операция
+        I/O происходит при чтении небольших файлов <tt>.issig</tt>. Повторно
+        считываются только архивы и загруженные файлы.</li>
+      <li>Процесс проверки защищён от уязвимости <a 
+        href="https://www.securityvision.ru/education/cyberwiki/t/time-of-check-to-time-of-use-toctou/">Time-Of-Check
+        to Time-Of-Use (TOCTOU)</a>.</li>
+      <li>Может использоваться для проверки загруженных файлов, обеспечивая гибкость
+        по сравнению с проверкой SHA-256, поскольку не требует изменения сценария
+        при обновлении файлов. В качестве примера смотрите новый сценарий
+        "<i><a 
+        href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/DownloadFiles.iss">DownloadFiles.iss</a></i>".</li>
+      <li>Добавлен необязательный параметр <tt>ISSigAllowedKeys</tt>, предназначенный
+        для ограничения ключей или групп ключей из секции <tt>[ISSigKeys]</tt>,
+        используемых при проверке проверки подписи с флагом <tt>issigverify</tt>.</li>
+      <li>Примечание: флаг <tt>issigverify</tt> нельзя комбинировать с флагами
+       <tt>sign</tt> или <tt>signonce</tt>. Вместо них используйте флаг
+       <tt>signcheck</tt>.</li>
+      <li>Пример секции:
+        <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "MyProg.exe"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "exesigner bosskey"; <span class="key">Flags</span>: issigverify 
+<span class="key">Source</span>: "MyProg.chm"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "docsigner bosskey"; <span class="key">Flags</span>: issigverify
+<span class="key">Source</span>: "<span class="con">{src}</span>\Extra\*.chm"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "docsigner bosskey"; <span class="key">Flags</span>: issigverify external; \
+  <span class="key">Excludes</span>: "*.issig"
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/is.exe?dontcount=1"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">ISSigAllowedKeys</span>: "exesigner bosskey"; \
+  <span class="key">Flags</span>: issigverify external download ignoreversion; \
+  <span class="key">DestName</span>: "innosetup-latest.exe"; <span class="key">ExternalSize</span>: 7_000_000</code></pre>
+      </li>
+    </ul>
+    </li>
+    <li>Инструмент подписи "Inno Setup Signature Tool":
+    <ul>
+      <li>Добавлен <tt>ISSigTool.exe</tt>&nbsp;&#8211;&nbsp;инструмент командной
+        строки, предназначенный для подписания файлов с помощью криптографических
+        алгоритмов ECDSA P-256.</li>
+      <li>Предоставляет команды для подписи и проверки файлов, экспорта открытых
+        ключей и генерации закрытых ключей.</li>
+      <li>Примеры использования:
+      <pre><code>issigtool --key-file="MyKey.isprivatekey" generate-private-key
+issigtool --key-file="MyKey.isprivatekey" sign "MyProg.dll"
+issigtool --key-file="MyKey.isprivatekey" export-public-key "MyKey.ispublickey"
+issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"</code></pre>
+      </li>
+    </ul>
+    </li>
+    <li>Обновлена документация:
+    <ul>
+      <li>Добавлен раздел описания <a href="https://jrsoftware.org/ishelp/index.php?topic=issigkeyssection">секции [ISSigKeys]</a>.</li>
+      <li>Обновлен раздел <a href="https://jrsoftware.org/ishelp/index.php?topic=filessection">секции [Files]</a>.</li>
+      <li>Добавлен раздел "<a href="https://jrsoftware.org/ishelp/index.php?topic=issig">Подписи .issig: Введение</a>".</li>
+      <li>Добавлен раздел "<a href="https://jrsoftware.org/ishelp/index.php?topic=issigtool">Инструмент подписи</a>".</li>
+    </ul>
+    </li>
+    <li>Прочие изменения:
+    <ul>
+      <li>Теперь компилятор проверяет подлинность предварительно скомпилированных
+        файлов, таких как <i>Setup.e32</i> и <i>SetupLdr.e32</i>, перед их
+        непосредственным использованием. Эту проверку можно отключить с помощью
+        директивы <tt>DisablePrecompiledFileVerifications</tt> в секции <tt>[Setup]</tt>.
+        Но делать это крайне <i>не</i> рекомендуется!</li>
+      <li>Добавлен параметр <tt>Hash</tt> в секции <tt>[Files]</tt>. Указывает
+        компилятору или программе установки выполнять простую проверку хэша
+        SHA-256 вместо полной проверки подписи, в качестве альтернативы
+        использованию флага <tt>issigverify</tt>.<br />
+        Пример:
+        <pre><code class="innosetup"><span class="sec">[Files]</span>
+<span class="key">Source</span>: "https://jrsoftware.org/download.php/iscrypt.dll?dontcount=1"; \
+  <span class="key">DestName</span>: "ISCrypt.dll"; <span class="key">DestDir</span>: "<span class="con">{app}</span>"; \
+  <span class="key">Hash</span>: "2f6294f9aa09f59a574b5dcd33be54e16b39377984f3d5658cda44950fa0f8fc"; \
+  <span class="key">ExternalSize</span>: 2560; <span class="key">Flags</span>: external download ignoreversion</code></pre>
+    </li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Добавлена функции <tt>ISSigVerify</tt> и <tt>DownloadTemporaryFileWithISSigVerify</tt>.</li>
+          <li>Добавлены функции <tt>AddWithISSigVerify</tt> и <tt>AddExWithISSigVerify</tt>
+            для поддержки класса <tt>TDownloadWizardPage</tt>. В качестве примера
+            смотрите обновленный файл сценария "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>".
+          </li>
+        </ul>
+      </li>
+    </ul>
+    </li>
+    </ul>
+    <span class="head2">Другие изменения</span>
+    <ul>
+      <li>IDE компилятора:
+        <ul>
+          <li>Список с результатами поиска "<i>Найти в файлах</i>" теперь будет
+            обновлять номера строк в случае добавления или удаления строк.</li>
+          <li>Опция "<i>Подсвечивать вхождения текущего слова</i>" (по умолчанию
+            отключена) больше не выделяет имена директив, параметров и ключевых
+            слов языка Паскаль. Опция "<i>Подсвечивать вхождения текущего выделения</i>"
+            (по умолчанию включена) работает в прежнем режиме.</li>
+          <li>Повсеместная поддержка тёмного режима.</li>
+          <li>Улучшена поддержка тем с высокой контрастностью.</li>
+          <li>Улучшена поддержка программ чтения с экрана.</li>
+        </ul>
+      </li>
+      <li>Для директивы <tt>Encryption</tt> в секции <tt>[Setup]</tt> теперь
+        может быть установлено значение <tt>full</tt>, что приведёт к полному
+        шифрованию программы установки и потребует указание пароля при помощи
+        параметра командной строки /PASSWORD=.</li>
+      <li>Максимальное значение директивы <tt>LZMANumBlockThreads</tt>в секции
+        <tt>[Setup]</tt> увеличено с 32 до 256.</li>
+      <li>Параметр <tt>Excludes</tt> в секции <tt>[Files]</tt> теперь можно
+        комбинировать с флагом <tt>external</tt>.</li>
+      <li>Параметры <tt>ExternalSize</tt>, <tt>ExtraDiskSpaceRequired</tt> и
+        <tt>UninstallDisplaySize</tt> теперь поддерживают разделители цифр.
+        Пример: <tt>UninstallDisplaySize=1_073_741_824</tt>.</li>
+      <li>Изменения в ISPP:
+        <ul>
+          <li>Добавлена переменная <tt>__DIR__</tt>. Возвращает каталог текущего
+            include-файла.</li>
+          <li>Переменная <tt>__FILE__</tt> переименована в <tt>__FILENAME__</tt>,
+            а <tt>ISPPCC_INVOKED</tt> в <tt>ISCC_INVOKED</tt>. При этом поддержка
+            старых имён сохранена.</li>
+          <li>Функция <tt>RemoveBackslash</tt> переименована в
+            <tt>RemoveBackslashUnlessRoot</tt>. Поддержка старого имени сохранена.</li>
+          <li><i>Исправлено:</i> возвращаемое значение функции <tt>ExtractFilePath</tt>
+            не всегда содержало обратную косую черту, как предполагалось.</li>
+        </ul>
+      </li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Добавлен новый класс <tt>TBitmapButton</tt>, который работает также,
+            как <tt>TBitmapImage</tt>, но доступен для управления с клавиатуры и
+            совместим с программами чтения с экрана. Обязательно указывайте
+            свойство <tt>Caption</tt>, даже если оно не отображается. Смотрите
+            обновленный пример сценария <i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeDownloadFiles.iss">CodeDownloadFiles.iss</a></i>.</li>
+          <li>Добавлены новые функции <tt>InitializeBitmapButtonFromIcon</tt> и
+            <tt>GetSHA256OfStream</tt>.</li>
+          <li>Добавлено новое свойство <tt>LastBaseNameOrUrl</tt> в классе
+            <tt>TDownloadWizardPage</tt>. Смотрите обновленный пример сценария
+            "<i><a 
+            href="https://raw.githubusercontent.com/jrsoftware/issrc/refs/heads/main/Examples/CodeClasses.iss">CodeClasses.iss</a></i>".</li>
+          <li><i>Исправлено:</i> функция события <tt>CurPageChanged</tt> теперь
+            всегда срабатывает только при изменении текущей страницы. Ранее она
+            для <tt>wpPreparing</tt> вызывалась дважды, если сценарий содержал
+            функцию события <tt>PrepareToInstall</tt>, которая возвращала не
+            пустую строку, чтобы дать команду программе установки остановиться.</li>
+        </ul>
+      </li>
+      <li>Если есть возможность, программа установки теперь получает путь к
+        временному каталогу при помощи функции API <tt>GetTempPath2</tt>, которая
+        впервые была введена в Windows 11, а позже интегрирована в Windows 10 и
+        Windows Server 2016 посредством месячных обновлений. При запуске под
+        учётной записью SYSTEM функция <tt>GetTempPath2</tt> возвращает частный
+        каталог (обычно <tt>C:\Windows\SystemTemp</tt>), что потенциально повышает
+        безопасность. На более старых версиях Windows или системах, которые не
+        были обновлены, программа установки возвращается к исходной функции API
+        <tt>GetTempPath</tt>. (Такое изменение делает защиту более глубокой, но
+        не устраняет известную уязвимость.)</li>
+      <li>В Inno Setup 6.4.3 максимальная ширина всех диалоговых окон задач была
+        увеличена примерно на 50%, что помогло решить проблему сокращения длинных
+        строк, которые содержали путь. Теперь это происходит только в том случае,
+        если содержимое диалога задачи действительно содержит путь.</li>
+      <li>Во всех официальных переводах в кодировке UTF-8, где ещё оставался
+        маркер BOM, он был удалён. Начиная с Inno Setup 6.3.0 использование
+        маркера BOM в файлах в кодировке UTF-8 больше не требуется и не
+        рекомендуется.</li>
+      <li>Сборка Inno Setup теперь выполняется в Delphi 12.3 Athens вместо Delphi
+        12.1 Athens. Спасибо Ian Barker из Embarcadero за предоставление лицензии!</li>
+      <li>Доработка и улучшение документации.</li>
+      <li>Незначительные изменения.</li>
+    </ul>
+    <p>В этой версии некоторые сообщения были удалены и добавлены новые (<a
+      href="https://github.com/jrsoftware/issrc/commit/a1d6aecc">см.
+      различия в Default.isl</a>):</p>
+    <ul>
+      <li><b>Новые сообщения:</b>
+        <ul>
+          <li>DownloadingLabel2, ExtractingLabel.</li>
+          <li>ArchiveIncorrectPassword, ArchiveIsCorrupted, ArchiveUnsupportedFormat.</li>
+          <li>RetryCancelSelectAction, RetryCancelRetry, RetryCancelCancel.</li>
+          <li>StatusDownloadFiles.</li>
+          <li>SourceVerificationFailed, VerificationSignatureDoesntExist,
+            VerificationSignatureInvalid, VerificationKeyNotFound,
+            VerificationFileNameIncorrect, VerificationFileTagIncorrect,
+            VerificationFileSizeIncorrect, VerificationFileHashIncorrect.</li>
+          <li>ErrorDownloading, ErrorExtracting.</li>
+        </ul>
+      </li>
+      <li><b>Удаленные сообщения:</b>
+        <ul>
+          <li>ErrorFileHash1, ErrorFileHash2.</li>
+          <li>DownloadingLabel, ExtractionLabel.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Официальная поддержка <a href=
+      "https://raw.github.com/jrsoftware/issrc/main/Files/Languages/Unofficial/Icelandic.isl">Исландского</a>
+       язык была переведена в разряд неофициальных из-за отсутствия сопровождающего.</p>
+  </details>
+
+  <details>
+    <summary>Inno Setup 6.4</summary>
+
+    <p><a name="6.4.3"></a><span class="ver">6.4.3 </span><span class="date">(2025-05-03)</span></p>
+    <ul>
+      <li>Изменения в IDE компилятора: теперь имеется возможность восстанавливать
+        выделения при операциях отмены и повтора.</li>
+      <li>В Inno Setup добавлен новый инструмент командной строки ISSigTool.exe.
+        Он предназначен для подписания файлов с помощью криптографических алгоритмов
+        ECDSA P-256. Компоненты Compil32, ISCC и ISCmplr используют эти подписи для
+        проверки ряда DLL файлов перед их загрузкой. Это "предварительный этап",
+        который может быть изменён (например, все подписи, которые были созданы
+        сейчас, могут быть созданы заново при обновлении до следующей версии).<br />
+        <u>Примечание</u>: ISSigTool.exe никоим образом не заменяет инструмент
+        signtool.exe от Microsoft и вообще не имеет никакого отношения к технологии
+        Authenticode Code Signing.</li>
+      <li><i>Исправлено:</i> начиная с версии 6.1.1 не работала функция
+        автозаполнения для имен параметров в секциях <tt>[Components]</tt> и
+        <tt>[Dirs]</tt>.</li>
+      <li><i>Исправлено:</i> сценарная функция <tt>Extract7ZipArchive</tt>,
+        добавленная с версии 6.4.0, на старых версиях Windows (известны случаи
+        на Windows 8.1 и Windows Server 2016) завершалась ошибкой с кодом
+        выхода 11.</li>
+      <li>Максимальная ширина всех диалоговых окон задач была увеличена примерно
+        на 50 %, что позволяет избежать сокращения строк путем добавления многоточия.
+        Это было сделано с помощью установки флага <tt>TDF_SIZE_TO_CONTENT</tt>.</li>
+      <li>Обновление документации.</li>
+    </ul>
+
+    <p><a name="6.4.2"></a><span class="ver">6.4.2 </span><span class="date">(2025-03-13)</span></p>
+    <ul>
+      <li>Для секции <tt>[Setup]</tt> добавлена директива <tt>CloseApplicationsFilterExcludes</tt>.</li>
+      <li>Сборка Inno Setup теперь выполняется в Delphi 12.1 Athens вместо
+        Delphi 11.3 Alexandria.</li>
+      <li>Цифровая подпись Inno Setup выполнена с использованием нового сертификата.</li>
+    </ul>
+    <p><a name="6.4.1"></a><span class="ver">6.4.1</span> <span class="date">(2025-02-12)</span></p>
+    <p><span class="head2">Изменения в IDE компилятора</span></p>
+    <ul>
+      <li>Добавлены всплывающие подсказки для всех поддерживаемых функций и членов
+        класса, отображающих их прототип. При этом выводятся все доступные члены
+        класса, а не только те, что относятся к текущему объекту.</li>
+      <li>Списки автозавершения теперь используют такой же шрифт, что и редактор.</li>
+      <li><i>Исправлено:</i> при первом запуске IDE на системе с настройками DPI
+        более 100% начальный размер шрифта редактора был больше, чем ожидалось.</li>
+    </ul>
+    <p><span class="head2">Другие изменения:</span></p>
+    <ul>
+      <li>Для констант {reg:...} добавлена поддержка записей значений реестра
+        с типом REG_DWORD.</li>
+      <li><i>Исправлено:</i> в версии 6.4.0 для параметра <tt>HotKey</tt> в
+        секции [Icons] не работает ключ &quot;Shift+&quot; и вместо него следует
+        указывать просто &quot;Shift&quot;. Так, например, вместо сочетания
+        &quot;Ctrl+Shift+M&quot; необходимо указать &quot;Ctrl+ShiftM&quot;.</li>
+      <li><i>Исправлено:</i> в версии 6.4.0 пользовательская форма, созданная
+        с использованием <tt>[Code]</tt>, не имела кнопки на панели задач, если
+        окно мастера в этот момент ещё не отображалось.</li>
+      <li>Добавлен официальный перевод на Арабский язык.</li>
+      <li>Различные доработки и улучшения.</li>
+    </ul>
+
+    <p><a name="6.4.0"></a><span class="ver">6.4.0</span> <span class="date">(2025-01-09)</span></p>
+    <p><span class="head2">Изменения в IDE компилятора:</span></p>
+    <p>Компонент редактора Scintilla, используемый в компиляторе, был обновлен
+      до последней версии.</p>
+    <p>Улучшено редактирование при множественном выделении:</p>
+    <ul>
+      <li>В меню "<i>Edit</i>" (Правка) добавлен новый пункт "<i>Add Next
+          Occurrence</i>" (Добавить следующее вхождение) для добавления
+        следующего вхождения текущего слова или выделенного текста в качестве
+        дополнительного выделения (Shift+Alt+. или Ctrl+D, см. ниже).</li>
+      <li>В меню "<i>Edit</i>" (Правка) добавлен новый пункт "<i>Select All
+          Occurrences</i>" (Выделить все вхождения), позволяющий выделить все
+        вхождения текущего слова или выделенного текста (Shift+Alt+; или
+        Ctrl+Shift+L).</li>
+      <li>В меню "<i>Edit</i>" (Правка) добавлен новый пункт "<i>Select All Find
+          Matches</i>" (Выделить все найденные вхождения), позволяющий выделить
+        все вхождения последнего искомого текста (Alt+Enter).<br>
+        Кроме того, диалоговые окна "<i>Найти</i>" (Ctrl+F) и "<i>Заменить</i>"
+        (Ctrl+H) теперь поддерживают закрытие по команде Alt+Enter для
+        непосредственного выделения всех вхождений.</li>
+      <li>Добавлены комбинации клавиш для перемещения курсора или выделения
+        вверх (Ctrl+Alt+Up) или вниз (Ctrl+Alt+Down). Для многострочных
+        выделений область выделения расширяется вверх или вниз и никогда не
+        уменьшается.</li>
+      <li>Добавлены комбинации клавиш для добавления курсоров в концы выделенных
+        строк (Shift+Alt+I). Действие аналогично редактору Visual Studio Code и,
+        например, ничего не происходит, если выделение строк отсутствует.</li>
+      <li>Добавлены комбинации клавиш для добавления слова или строки в качестве
+        дополнительного выделения (Ctrl+Двойной клик и Ctrl+Тройной клик или
+        Alt+Двойной клик и Alt+Тройной клик).</li>
+      <li>Добавлена комбинация клавиш для удаления выделения по клику
+        (Ctrl+Клик или Alt+Клик).</li>
+      <li>Множественное выделение теперь работает с командами навигации "Home" и
+        "End", а также перемещения при помощи клавиш со стрелками "Влево",
+        "Вправо", "Вверх", "Вниз".</li>
+      <li>Множественное выделение теперь работает с командами удаления слов и
+        строк, а также с вставкой конца строки.</li>
+      <li>Улучшена работа множественного выделения с командами копирования и
+        вставки.</li>
+      <li>Теперь возможна навигация клавишами "Влево", "Вправо" и т.д. с
+        выделенным блоком.</li>
+      <li>В диалогах поиска и замены, а также других инструментах из меню "<i>Tools</i>"
+        (Инструменты), которые генерируют текст сценария, улучшена работа при
+        наличии множественного выделения.</li>
+    </ul>
+    <p>Другие изменения редактора:</p>
+    <ul>
+      <li>Добавлена поддержка комбинаций клавиш в стиле Visual Studio Code,
+        таких как Ctrl+D для добавления следующей строки, Ctrl+Shift+K для
+        удаления строки и Alt+Click для добавления дополнительного курсора
+        или снятия выделения.<br>
+        Чтобы включить эту функцию, выберите в настройках редактора для
+        параметра "<i>Keys</i>" (Клавиши) группу "<i>Visual Studio Code</i>".<br>
+        Обновлен раздел справки "<a href="https://jrsoftware.org/ishelp/index.php?topic=compformshortcuts">Сочетания
+          клавиш и управление мышкой</a>", в котором указаны все различия по
+        сравнению с классическими сочетаниями клавиш.</li>
+      <li>Добавлены новые комбинации клавиш, доступные только в том случае, если
+        в редакторе активированы команды в стиле Visual Studio Code:
+        Shift+Alt+Down – копирование строки вниз; Ctrl+] – добавление отступа
+        строк; Ctrl+[ – удаление отступа строк.</li>
+      <li>Реализованы подсказки параметров для всех поддерживаемых функций,
+        позволяющие получить быстрый доступ к именам параметров и типам функции,
+        а также порядок их объявления. Подсказки могут быть вызваны вручную,
+        если нажать комбинацию клавиш Ctrl+Shift+Space, или же автоматически,
+        используя новый параметр редактора "<i>Invoke parameter hints
+          automatically</i>" (Показывать подсказки параметров автоматически),
+        который по умолчанию активен.</li>
+      <li>Добавлено автозавершение для всех поддерживаемых функций, типов,
+        констант и т.д. при создании кода на языке Паскаль. Существующий
+        параметр редактора "<i>Invoke autocompletion automatically</i>"
+        (Использовать функцию автозавершения) управляет отображением
+        предлагаемых вариантов автозавершения или автоматически, или только
+        вручную, используя комбинации клавиш Ctrl+Space или Ctrl+I.</li>
+      <li>Добавлено автозавершение для всех поддерживаемых членов и свойств
+        класса при создании кода на языке Паскаль. Предлагаемый список
+        автозавершения отображает все доступные члены и свойства классов, а не
+        только те, что относятся к текущему объекту.</li>
+      <li>Добавлена поддержка автозавершения для всех параметров функций событий
+        при создании кода на языке Паскаль. Список отображает все доступные
+        параметры, а не только те, что относятся к текущей функции.</li>
+      <li>Добавлена поддержка автозавершения для секции <tt>[Messages]</tt>.</li>
+      <li>Добавлен новый параметр "<i>Enable section folding</i>"
+        (Включить сворачивание секций), который позволяет при редактировании
+        сценария временно скрывать содержимое секций. По умолчанию этот параметр
+        включен.</li>
+      <li>В поле редактора слева теперь отображается история изменений,
+        позволяющая отслеживать сохранённые и не сохранённые изменения в
+        сценарии.</li>
+      <li>Теперь по умолчанию в редакторе используется шрифт Consolas, если он
+        доступен, что характерно для большинства современных редакторов.</li>
+      <li>Теперь в редакторе возможно прокручивание текста не вертикально, а
+        горизонтально, удерживая клавишу Shift и вращая колесико мышки.</li>
+      <li>Команды вырезания (Ctrl+X или Shift+Delete) и копирования (Ctrl+C или
+        Ctrl+Insert) теперь выполняются для всей строки, если какое-либо
+        выделение отсутствует, что характерно для большинства современных
+        редакторов.</li>
+      <li>Добавлены комбинации клавиш для перемещения выделенных строк выше или
+        ниже (Alt+Up и Alt+Down).</li>
+      <li>Добавлена комбинация клавиш и соответствующий пункт в меню "<i>Edit</i>"
+        (Правка) для переключения комментирования строк (Ctrl+/).</li>
+      <li>Добавлена комбинация клавиш и соответствующий пункт в меню "<i>Edit</i>"
+        (Правка) для перехода к парной скобке (Ctrl+Shift+\).</li>
+      <li>Параметр "<i>Word Wrap</i>" (Перенос по словам) перемещён в меню "<i>View</i>"
+        (Вид) и для него добавлена комбинация клавиш (Alt+Z).</li>
+      <li>В колонке точек останова добавлено контекстное меню, доступное по
+        клику правой кнопки мышки.</li>
+      <li>Добавлена поддержка тёмной темы для списка с вариантами
+        автозавершения.</li>
+      <li>Добавлен параметр "<i>Show whitespace</i>" (Показывать пробелы).
+        По умолчанию отключен.</li>
+      <li>Улучшена подсветка скобок.</li>
+      <li>Исправлена проблема, когда включены два параметра "<i>Auto indent mode</i>"
+        (Режим автоматического отступа) и "<i>Allow cursor to move beyond end of
+          lines</i>" (Перемещать каретку за пределы конца строк).</li>
+    </ul>
+    <p>Другие изменения в IDE компилятора:</p>
+    <ul>
+      <li>Для навигации вперед и назад теперь всегда используются комбинации
+        клавиш Alt+Стрелка влево и Alt+Стрелка вправо, даже если были
+        активированы команды меню в стиле Visual Studio.<br>
+        По этой причине комбинация Alt+Стрелка вправо больше не работает для
+        запуска автозавершения. Вместо неё следует использовать альтернативную
+        команду Ctrl+Space или Ctrl+I.</li>
+      <li>Список последних файлов в меню "<i>Files</i>" (Файл) перемещён в
+        подменю пункта "<i>Open Recent</i>" (Последние файлы).</li>
+      <li>В меню "<i>Edit</i>" (Правка) добавлен новый параметр "<i>Use Regular
+          Expressions</i>" (Использовать регулярные выражения) для включения или
+        отключения функции регулярных выражений при выполнении операций поиска
+        или замены, также добавлена комбинация клавиш (Ctrl+Alt+R или Alt+R).
+        Также в строку состояния добавлена панель для отображения текущего
+        состояния.</li>
+      <li>В диалогах поиска и замены добавлена поддержка временного поиска в
+        обратном направлении при использовании комбинации клавиш Shift+Enter.</li>
+      <li>Добавлены комбинации клавиш для выбора вкладок (Ctrl+1 ÷ Ctrl+9).</li>
+      <li>В меню "<i>Build</i>" (Сборка) добавлена альтернативная комбинация
+        клавиш для пункта "<i>Compile</i>" (Компилировать) (Shift+F9 или F7).</li>
+      <li>В меню "<i>Tools</i>" (Инструменты) для пункта "<i>Options</i>"
+        добавлена комбинация клавиш (Ctrl+,).</li>
+      <li>Убрано ограничение на длину строки при вводе команды цифровой подписи
+        и увеличена высота элемента.</li>
+      <li>Добавлена панель со ссылкой на историю версий Inno Setup, который
+        отображается для любого пользователя после каждого обновления.</li>
+      <li>Включена поддержка тёмного режима в меню на Windows 11 24H2.</li>
+    </ul>
+    <p><span class="head2">Другие изменения:</span></p>
+    <ul>
+      <li>Обновление LZMA SDK, используемого Inno Setup, до последней версии.
+        Это позволило увеличить скорость сжатия и распаковки LZMA и LZMA2
+        (соответственно на 21% и 11% в тесте с настройками по умолчанию) без
+        изменения степени сжатия. Требования к памяти для сжатия увеличились
+        примерно на 4 %. Также добавлена поддержка извлечения из архивов 7-Zip.</li>
+      <li>Для повышения безопасности функция получения ключа и алгоритм шифрования,
+        используемый в Inno Setup, обновлены до PBKDF2 и XChaCha20 соответственно.
+        Этот код теперь встроен в Inno Setup, а используемая ранее отдельная
+        библиотека шифрования ISCrypt.dll больше не требуется и при обновлении
+        будет автоматически удалена.</li>
+      <li>В секцию <tt>[Setup]</tt> добавлена директива <tt>EncryptionKeyDerivation</tt>,
+        которая позволяет изменить заданное количество итераций PBKDF2-HMAC-SHA256
+        на другое значение. По умолчанию используется 200000.</li>
+      <li>Все используемые хеши MD5 и SHA-1 заменены на SHA-256. При этом их
+        поддержка в функциях ISPP и коде сценариев на языке Паскаль сохранена.</li>
+      <li>Наконец-то по прошествии сравнительно долгого времени эскиз окна мастера
+        установки отображается на панели задач. Также при сворачивании и восстановлении
+        окна мастера исправлено его поведение и анимация. В рамках этих изменений
+        поддержка давно устаревшей директивы <tt>WindowVisible</tt> из секции
+        <tt>[Setup]</tt> была прекращена. Ранее эта директива использовалась для
+        включения градиентной заливки фона в стиле 1990-х годов. По этой же
+        причине была удалена поддержка объекта <tt>MainForm</tt>.</li>
+      <li>Соотношение сторон больших и малых изображений мастера установки
+        (указанных в <tt>WizardImageFile</tt> и <tt>WizardSmallImageFile</tt>)
+        теперь при масштабировании окна установки сохраняется неизменным.
+        Ранее в зависимости от используемого шрифта и его размера изображения
+        могли быть искажены.</li>
+      <li>Размер области для малого изображения мастера установки было увеличено
+        до 58&times;58 (при стандартном DPI и шрифте по умолчанию). В предыдущих
+        версиях использовался не квадратный размер 55&times;58 пикселей, что
+        приводило к небольшому искажению изображения.</li>
+      <li>Если включено разделение на диски и программа установки не может найти
+        нужный файл сегмента (например, <tt>setup-2.bin</tt>) в исходном каталоге,
+        она больше не ищет его автоматически в каталоге с именем <tt>DISKx</tt>
+        на один уровень выше, где <tt>x</tt> — номер диска. Хотя это и соответствовало
+        старым установщикам 16-битной эпохи, такое поведение не было задокументировано.</li>
+      <li>Мастер новых сценариев теперь устанавливает директиву <tt>UninstallDisplayIcon</tt>,
+         если в качестве главного исполняемого файла выбран формат .exe.</li>
+      <li>Документация по препроцессору Inno Setup объединена с основной
+        документацией.</li>
+      <li>Добавлена версия документации в тёмном стиле, которая будет
+        автоматически использована IDE компилятором, если в нём включен тёмный
+        режим.</li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Добавлена новая функция <tt>Extract7ZipArchive</tt> для извлечения
+            файлов из архива 7-Zip. Функция базируется на "7z ANSI-C Decoder"
+            из библиотеки LZMA SDK (автор Igor Pavlov). Для получения
+            дополнительной информацию об этой функции и ограничениях, связанных
+            с ней, смотрите соответствующий <a
+            href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_extract7ziparchive">раздел
+            справки</a>.<br />Добавлена новая функция <tt>CreateExtractionPage</tt>,
+            позволяющая отобразить процесс извлечения для пользователя.</li>
+          <li>Добавлена новая функция <tt>ExecAndCaptureOutput</tt> для запуска
+            программы или пакетного файла с возможностью захвата данных вывода
+            <i>stdout</i> и <i>stderr</i> по отдельности.</li>
+          <li>Добавлены новые функции <tt>StringJoin</tt>, <tt>StringSplit</tt>
+            и <tt>StringSplitEx</tt>.</li>
+          <li>В протокол вывода добавлен вызов исключения, если при настройке
+            перенаправления вывода произошла ошибка (что может произойти в
+            довольно редких случаях). Пример сценария <i>PowerShell.iss</i> был
+            обновлен для демонстрации перехвата исключения.</li>
+          <li>В класс <tt>TInputDirWizardPage</tt> добавлено новое свойство
+            <tt>NewFolderName</tt> для изменения начального значения каталога,
+            передаваемого на странице <tt>CreateInputDirPage</tt>.</li>
+           <li>В класс <tt>TForm</tt> добавлены новые свойства <tt>PopupMode</tt>
+            и <tt>PopupParent</tt>.</li>
+          <li>Задокументированы функции <tt>VarArrayGet</tt> и <tt>VarArraySet</tt>,
+            которые были доступны, но не опубликованы.</li>
+          <li>Функция <tt>FileCopy</tt> была переименована в <tt>CopyFile</tt>.
+            Поддержка первоначального имени была оставлена, но мы настоятельно
+            рекомендуем изменить его на новое. Если вы этого не сделаете, то
+            компилятор выдаст предупреждение.</li>
+          <li>Исправлена работа функции <tt>TStream.CopyFrom</tt>. Был добавлен
+            отсутствующий параметр <tt>BufferSize</tt>. Для него рекомендуется
+            использовать значение <tt>$100000</tt>.</li>
+          <li>Ограничено протоколирование импорта функций DLL.</li>
+          <li>Добавлена функция <tt>Debugging</tt>.</li>
+        </ul>
+      </li>
+      <li>Изменения ISPP: добавлена поддержка функций <tt>GetSHA256OfFile</tt>,
+        <tt>GetSHA256OfString</tt> и <tt>GetSHA256OfUnicodeString</tt>.</li>
+      <li><a href="https://github.com/jrsoftware/issrc" target="_blank">Исходный
+        код</a> Inno Setup был полностью реорганизован для использования с
+        бесплатной версией <a href="https://www.embarcadero.com/products/delphi/starter/free-download">Delphi
+        Community Edition</a>, что значительно должно облегчить с ним работу тем,
+        кто желает внести вклад в развитие и поддержку Inno Setup.</li>
+      <li>Добавлен официальный перевод на Шведский и Тамильский языки.</li>
+      <li>Различные доработки и улучшения.</li>
+    </ul>
+    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>:
+      благодарим Sergii Leonov, John Stevenson и jogo- за вклад в развитии Inno
+      Setup.</p>
+    <p>Спасибо Neil Hodgson и Igor Pavlov за их постоянную поддержку Scintilla
+      и LZMA SDK!</p>
+    <p>Некоторые сообщения в этой версии были добавлены и изменены:
+      (<a href="https://github.com/jrsoftware/issrc/commit/d18bab1c9234aa8bba6c8e277121e562724d331c">различия с Default.isl</a>.)</p>
+    <ul>
+      <li><b>Новые сообщения:</b>
+        <ul>
+          <li>ExtractionLabel, ButtonStopExtraction, StopExtraction, ErrorExtractionAborted, ErrorExtractionFailed.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Примечание: на текущий момент с учётом этих изменений ещё не был обновлен
+      официальный перевод на Исландский язык.</p>
+  </details>
+
+  <details>
+    <summary>Inno Setup 6.3</summary>
+
+    <p><a name="6.3.3"></a><span class="ver">6.3.3 </span><span class="date">(2024-07-12)</span></p>
+    <ul>
+      <li>Улучшена поддержка ASLR (<i>Случайное Размещение Адресного Пространства</i>).</li>
+    </ul>
+
+    <p><a name="6.3.2"></a><span class="ver">6.3.2 </span><span class="date">(2024-06-28)</span></p>
+    <ul>
+      <li>Программирование на языке Паскаль: исправлена работа функции <tt>TStream.Seek</tt>.</li>
+    </ul>
+
+    <p><a name="6.3.1"></a><span class="ver">6.3.1</span> <span class="date">(2024-06-10)</span></p>
+    <ul>
+      <li>Исправлена ошибка запуска компилятора IDE на системах с очень высоким
+        масштабированием (DPI).</li>
+    </ul>
+
+    <p><a name="6.3.0"></a><span class="ver">6.3.0</span> <span class="date">(2024-06-09)</span></p>
+    <p><span class="head2">Улучшена поддержка файлов в кодировке UTF-8</span></p>
+    <ul>
+      <li>Добавлена поддержка кодировки UTF-8 без маркера BOM для файлов
+        сценариев .iss, файлов сообщений .isl, файлов <tt>LicenseFile</tt>, <tt>InfoBeforeFile</tt>,
+        <tt>InfoAfterFile</tt> и файлов, подключаемых директивой <tt>#file</tt>
+        ISPP.</li>
+      <li>Изменения в IDE компилятора:
+        <ul>
+          <li>Новые файлы сценариев теперь по умолчанию сохраняются в кодировке
+            UTF-8 без BOM, что позволило привести IDE в соответствие с
+            большинством других текстовых редакторов. Существующие файлы
+            сохраняются в прежнем виде до тех пор, пока кодировка сохранения не
+            будет изменена вручную с помощью команды "<i>Save Encoding</i>"
+            (Сохранить в кодировке) в меню "<i>File</i>" (Файл).</li>
+          <li>В подменю "<i>Save Encoding</i>" (Сохранить в кодировке) добавлен
+            новый пункт "<i>UTF-8 with BOM</i>" для записи новых файлов с
+            маркером BOM.</li>
+        </ul>
+      </li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Функция <tt>LoadStringsFromFile</tt> теперь также поддерживает
+            файлы в кодировке UTF-8 без BOM.</li>
+          <li>Добавлена новая функция <tt>SaveStringsToUTF8FileWithoutBOM</tt>.</li>
+        </ul>
+      </li>
+      <li>Изменения ISPP: вывод препроцессора, сохраняемый с помощью <tt>SaveToFile</tt>,
+        теперь всегда выполняется в кодировке UTF-8 без маркера BOM.</li>
+    </ul>
+    <p><span class="head2">Улучшена поддержка систем Arm64 и внесены
+        сопутствующие изменения</span></p>
+    <ul>
+      <li>Теперь программа установки официально поддерживает установку 64-бит
+        приложений на системы Windows 11 с архитектурой Arm64, которые могут
+        запускать 64-бит исполняемые файлы посредством эмуляции. Чтобы
+        обеспечить корректную работу программ установок 64-бит приложений на
+        системах Windows 11 с архитектурой Arm64, в существующие сценарии
+        потребуется внести незначительные изменения. Самое главное:
+        <ol>
+          <li>В директивах <tt>ArchitecturesAllowed</tt> и <tt>ArchitecturesInstallIn64BitMode</tt>
+            значение <tt>x64</tt> следует заменить на <tt>x64compatible</tt>.</li>
+          <li>В параметре <tt>Check</tt> и в секции <tt>[Code]</tt> любое
+            обращение к функции <tt>IsX64</tt> следует заменить на функцию <tt>IsX64Compatible</tt>.</li>
+          <li>В секции <tt>[Code]</tt>, если используются сравнения вида <tt>ProcessorArchitecture
+              = paX64</tt>, заменить их на вызов функции <tt>IsX64Compatible</tt>.</li>
+        </ol>
+        <div class="limargins">Ключевое различие между <tt>x64</tt>/<tt>IsX64</tt>
+          и новым <tt>x64compatible</tt>/<tt>IsX64Compatible</tt> заключается в
+          том, что последний соответствует как Windows 64-бит, так и Windows 11
+          на платформе Arm64.</div>
+        В большинстве случае <b>следует сделать указанные выше изменения</b>,
+        иначе пользователи систем Arm64 не смогут запустить ваши программы
+        установки. К примеру, настройка <tt>ArchitecturesAllowed=x64</tt>
+        позволит запустить инсталлятор только на системе Windows 64-бит — но не
+        на системе Arm64 Windows 11. Или, если программа установки содержит обе
+        разрядности приложения, как 32-бит, так 64-бит, то при запуске на
+        системе Arm64 Windows 11 автоматически может быть выбрана 32-бит версия
+        приложения вместо ожидаемой 64-бит.</li>
+      <li>Были улучшены директивы <tt>ArchitecturesAllowed</tt> и <tt>ArchitecturesInstallIn64BitMode</tt>
+        в секции <tt>[Setup]</tt>:
+        <ul>
+          <li>Введены шесть новых идентификаторов архитектуры. Кратко:
+            <ul>
+              <li><tt>arm32compatible</tt> соответствует системам, способным
+                запускать 32-бит двоичные файлы Arm.</li>
+              <li><tt>x64compatible</tt> соответствует системам, способным
+                запускать 64-бит исполняемые файлы.</li>
+              <li><tt>x64os</tt> соответствует системам, работающим только по
+                управлением Windows 64-бит (равнозначно существующему
+                идентификатору <tt>x64</tt>, который теперь устарел).</li>
+              <li><tt>x86compatible</tt> соответствует системам, способным
+                запускать 32-бит исполняемые файлы.</li>
+              <li><tt>x86os</tt> соответствует системам, работающим только по
+                управлением Windows 32-бит (равнозначно существующему
+                идентификатору <tt>x86</tt>).</li>
+              <li><tt>win64</tt> соответствует системам, работающим по
+                управлением Windows 64-бит, независимо от архитектуры.</li>
+            </ul>
+            Более подробно о каждом идентификаторе см. раздел справки "<a href="ishelp/index.php?topic=archidentifiers"><i>Идентификаторы
+                архитектуры</i></a>".</li>
+          <li>Теперь поддерживаются логические выражения. Например, с помощью
+            оператора <tt>and</tt> можно затребовать одновременного совпадения
+            двух идентификаторов архитектуры. Примеры использования см. в
+            разделе справки "<a href="ishelp/index.php?topic=setup_architecturesallowed"><i>ArchitecturesAllowed</i></a>".</li>
+        </ul>
+      </li>
+      <li>Идентификатор архитектуры <tt>x64</tt> теперь устарел. Если он
+        используется, компилятор выдаст предупреждение и заменит его на <tt>x64os</tt>,
+        который имеет тот же эффект. Но, как уже говорилось ранее, в большинстве
+        случаев <b>следует использовать</b> <tt>x64compatible</tt>, поскольку
+        он соответствует как Windows 64-бит, так и Arm64 Windows 11.</li>
+      <li>Все 64-разрядные примеры сценариев <tt>64Bit*.iss</tt>, были
+        обновлены для использования <tt>x64compatible</tt> в качестве
+        предпочтительного варианта. </li>
+      <li>Некоторые 64-разрядные функции, которые раньше работали только в
+        Windows 64-бит, теперь работают и в Windows 11 на платформе Arm64. К ним
+        относятся:
+        <ul>
+          <li>Параметр <tt>Permissions</tt> в секции <tt>[Dirs]</tt> при
+            запуске в 64-разрядном режиме установки;</li>
+          <li>Параметр <tt>Permissions</tt> в секции <tt>[Files]</tt> при
+            запуске в 64-разрядном режиме установки или когда используется флаг
+            <tt>64bit</tt>;</li>
+          <li>Параметр <tt>Permissions</tt> в секции <tt>[Registry]</tt> при
+            запуске в 64-разрядном режиме установки или когда значение параметра
+            <tt>Root</tt> завершается на <tt>64</tt>;</li>
+          <li>Флаг <tt>regtypelib</tt> в секции <tt>[Files]</tt> при запуске в
+            64-разрядном режиме установки или когда используется флаг <tt>64bit</tt>.</li>
+        </ul>
+        Обратите внимание, что всё вышеперечисленное по-прежнему не
+        поддерживается в Windows 10 на платформе Arm64.</li>
+      <li>Теперь при установке ведётся журнал типов машин, поддерживаемых
+        системой, т.е. какие типы ЕХЕ-файлов могут быть выполнены как напрямую,
+        так и посредством эмуляции. Например, при запуске на системе Arm64
+        Windows 11 в журнале появится запись: <tt>Machine types supported by
+          system: x86 x64 Arm32 Arm64</tt>.</li>
+      <li>Сообщение <tt>OnlyOnTheseArchitectures</tt> больше не используется.
+        Вместо него теперь выводится сообщение <tt>WindowsVersionNotSupported</tt>,
+        когда Setup запускается на архитектуре, которая не разрешена выражением
+        <tt>ArchitecturesAllowed</tt>. (Но, пожалуйста, не удаляйте это
+        сообщение из файлов перевода).</li>
+      <li>Программирование на языке Паскаль: добавлены новые функции <tt>IsArm32Compatible</tt>,
+        <tt>IsX64Compatible</tt>, <tt>IsX64OS</tt>, <tt>IsX86Compatible</tt> и
+        <tt>IsX86OS</tt>. Функция <tt>IsX64</tt> все ещё существует, но уже
+        устарела, как объяснялось выше. Ниже показан пример проверки всех
+        идентификаторов архитектуры:
+        <pre style="color:#000000; background-color:#f8f8f8;"><span style="color:#000000; font-weight:bold">[Code]</span>
+<span style="color:#0000ff">function</span> <span style="color:#000050; font-weight:bold">InitializeSetup</span>: Boolean;
+<span style="color:#0000ff">begin</span>
+  <span style="color:#0000ff">if</span> IsArm32Compatible <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsArm32Compatible'</span>);
+  <span style="color:#0000ff">if</span> IsArm64 <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsArm64'</span>);
+  <span style="color:#0000ff">if</span> IsX64OS <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsX64OS'</span>);
+  <span style="color:#0000ff">if</span> IsX64Compatible <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsX64Compatible'</span>);
+  <span style="color:#0000ff">if</span> IsX86 <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsX86'</span>);
+  <span style="color:#0000ff">if</span> IsX86OS <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsX86OS'</span>);
+  <span style="color:#0000ff">if</span> IsX86Compatible <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsX86Compatible'</span>);
+  <span style="color:#0000ff">if</span> IsWin64 <span style="color:#0000ff">then</span> Log(<span
+
+style="color:#800000">'IsWin64'</span>);
+  Result := True;
+<span style="color:#0000ff">end</span>;
+</pre> </li>
+    </ul>
+    <p><span class="head2">Улучшена поддержка файлов #include</span></p>
+    <ul>
+      <li>Теперь IDE компилятор может открыть во вкладках до 20 файлов #include
+        вместо 10.</li>
+      <li>Добавлена возможность закрытия вкладок с открытыми файлами #include: в
+        меню "<i>View</i>" (Вид) добавлены новые пункты "<i>Close Tab</i>"
+        (Ctrl+F4) (Закрыть вкладку), "<i>Reopen Tab</i>" (Переоткрыть вкладку) и
+        "<i>Reopen All Tabs</i>" (Переоткрыть все вкладки), которые также
+        доступны в контекстном меню при клике по панели вкладок.</li>
+      <li>На выбранной вкладке (или при наведении мышки) с файлом #include
+        теперь отображается кнопка закрытия.</li>
+      <li>В строку состояния добавлена кликабельная панель, показывающая
+        количество закрытых вкладок, если таковые имеются.</li>
+      <li>Устранено мерцание (особенно заметное в темном режиме) при
+        переключении вкладок.</li>
+    </ul>
+    <p><span class="head2">Удалена поддержка Windows Vista, Windows Server 2008
+        и архитектуры Itanium</span></p>
+    <ul>
+      <li><b>Изменения в требованиях ОС:</b> Windows Vista и Windows Server 2008
+        больше не поддерживаются. Windows 7 и Windows Server 2008 R2 теперь
+        являются минимальными поддерживаемыми системами. Директива <tt>MinVersion</tt>
+        в секции <tt>[Setup]</tt> по умолчанию все ешё имеет значение <tt>6.1sp1</tt>,
+        поэтому по умолчанию программа установки все также не будет работать
+        Windows 7 и Windows Server 2008 R2, которые не были обновлены.</li>
+      <li>Устаревшая архитектура Itanium больше не поддерживается. Идентификатор
+        архитектуры <tt>ia64</tt> был удалён и теперь при запуске на системе
+        Itanium программа установки будет выдавать сообщение об ошибке <tt>WindowsVersionNotSupported</tt>.</li>
+      <li>В секции <tt>[Icons]</tt> удалён флаг <tt>foldershortcut</tt>,
+        который и так игнорировался, за исключением случаев работы на Windows
+        Vista или Windows Server 2008, так как ярлыки папок в меню "Пуск" больше
+        не раскрываются.</li>
+    </ul>
+    <p><span class="head2">Изменения в IDE компилятора:</span></p>
+    <ul>
+      <li>На панель инструментов добавлены кнопки и горячие клавиши для
+        навигации назад (Alt+Left) и вперед (Alt+Right). Также поддерживается
+        навигация при помощи нажатия Х-кнопок мышки. Элемент навигации
+        добавляется при смене вкладок или перемещении на 11 и более строк
+        одновременно, аналогично Visual Studio 2022.<br>
+        В связи с тем, что клавиши Alt+Right больше не могут использоваться для
+        инициирования автозавершения, теперь вместо них следует использовать
+        существующую комбинацию Ctrl+Space или альтернативную Ctrl+I. Чтобы
+        по-прежнему использовать комбинацию Alt+Right, активируйте горячие
+        клавиши в стиле Visual Studio, см. ниже.</li>
+      <li>В меню "<i>Build</i>" (Сборка) и "<i>Run</i>" (Отладка) добавлена
+        поддержка горячих клавиш в стиле Visual Studio (например, Ctrl+- для
+        перехода назад, Ctrl+B для компиляции и F5 для запуска). Для активации
+        этой функции воспользуйтесь пунктом "<i>Options</i>" (Настройки) меню "<i>Tools</i>"
+        (Инструменты) и выберите в новом параметре <i>Key Map</i> (Клавиатурные
+        команды) опцию <i>Visual Studio</i>.</li>
+      <li>Добавлена поддержка множественного выделения (Ctrl+Клик или
+        Ctrl+Перетаскивание). Операции ввода, возврата, удаления, отмены,
+        повтора, копирования и вставки – все это работает с множественными
+        выделениями, добавленными таким образом, или с помощью уже существующей
+        поддержки выделения блоков текста (Alt+Shift+Стрелки или
+        Alt+Перетаскивание).</li>
+      <li>Добавлена комбинация клавиш для преобразования множественного
+        выделения в одно или одного выделения в пустое (Esc).</li>
+      <li>Добавлена поддержка тёмной темы в заголовок окна на Windows 10 версии
+        2004 и выше.</li>
+      <li>Добавлена поддержка тёмной темы в главное меню на всех версиях
+        Windows.</li>
+      <li>Добавлена поддержка тёмной темы в контекстное меню на Windows 10
+        версии 1903 и более поздних версиях вплоть до Windows 11 версии 23H2,
+        которая на данный момент является последней версией Windows 11. </li>
+      <li>Обновлены значки редактора, используемые в поле справа от номера
+        строки, включая автоматический выбор значков высокого качества при более
+        высоких настройках DPI.</li>
+      <li>Строки с установленными точками останова теперь отображаются в виде
+        обычных строк вместо текста белого цвета на красном фоне.</li>
+      <li>Точки останова теперь сохраняются между сессиями для каждого файла.</li>
+      <li>В меню "<i>Run</i>" (Отладка) добавлен новый пункт "<i>Delete All
+          Breakpoints</i>" (Shift+Ctrl+F5) (Удалить все точки останова).</li>
+      <li>Добавлены значки для элементов меню.</li>
+      <li>Добавлены новые параметры "<i>Highlight occurrences of current
+          selection</i>" (Подсвечивать совпадения текущего выделения) и "<i>Highlight
+          occurrences of current word</i>" (Подсвечивать совпадения текущего
+        слова). По умолчанию первый параметр включен, а второй отключен.</li>
+      <li>Параметр "<i>Allow cursor to move beyond end of lines</i>" (Перемещать
+        каретку за пределы конца строк) теперь по умолчанию отключен, как и в
+        большинстве других редакторов.</li>
+      <li>Если параметр "<i>Allow cursor to move beyond end of lines</i>"
+        (Перемещать каретку за пределы конца строк) включен, то нажатие клавиши
+        со стрелкой влево, когда курсор находится в начале строки, больше не
+        перемещает курсор в конец предыдущей строки, если не нажата клавиша
+        Ctrl, как в Notepad++, Visual Studio и RAD Studio.</li>
+      <li>Мастер создания нового сценария теперь предлагает возможность
+        импортировать .reg-файл реестра Windows.</li>
+      <li>Мастер создания нового скрипта теперь автоматически устанавливает
+        значения директив <tt>ArchitecturesInstallIn64BitMode</tt> и <tt>ArchitecturesAllowed</tt>
+        на <tt>x64compatible</tt>, если обнаруживает, что выбранный основной
+        исполняемый файл является 64-разрядным. Основным исполняемым файлом по
+        умолчанию теперь является 64-разрядный исполняемый файл примера
+        MyProg-x64.exe, а не 32-разрядный файл MyProg.exe.</li>
+      <li>В меню "<i>Tools</i>" (Инструменты) добавлен новый пункт "<i>Generate
+          [Registry] Entries...</i>" (Ctrl+Shift+R) для импорта в секцию <tt>[Registry]</tt>
+        данных из файла реестра Windows (.reg). Если секция <tt>[Registry]</tt>
+        не существует, она будет создана.</li>
+      <li>В меню "<i>Tools</i>" (Инструменты) добавлен новый пункт "<i>Generate
+          [Files] Entries...</i>" (Ctrl+Shift+I) для вставки в секцию <tt>[Files]</tt>
+        дополнительных записей о файлах и/или папках. Если секция <tt>[Files]</tt>
+        не существует, она будет создана.</li>
+      <li>Инструмент "<i>Generate MsgBox/TaskDialogMsgBox Call...</i>"
+        (Ctrl+Shift+M) (ранее известный как <i>MsgBox/TaskDialogMsgBox Designer</i>)
+        теперь учитывает настройки ширины и символов табуляции редактора, делает
+        соответствующие отступы в генерируемом Pascal-сценарии и предупреждает,
+        если позиция курсора находится не в секции <tt>[Code]</tt>.</li>
+      <li>Небольшая коррекция цвета темы, например, другой цвет фона для
+        выделенного текста.</li>
+    </ul>
+    <p><span class="head2">Улучшена поддержка ведения журнала</span></p>
+    <ul>
+      <li>Добавлен новый флаг <tt>logoutput</tt> для секций <tt>[Run]</tt> и <tt>[UninstallRun]</tt>.
+        Он указывает программе установки/удаления вести протокол запускаемой
+        программы или пакетного файла. Это флаг нельзя комбинировать с флагами <tt>nowait</tt>,
+        <tt>runasoriginaluser</tt>, <tt>shellexec</tt> и <tt>waituntilidle</tt>.
+        Он не имеет никакого действия, если ведение журнала не включено.</li>
+      <li>В секции <tt>[Setup]</tt> добавлена новая директива <tt>UninstallLogging</tt>
+        со значением по умолчанию <tt>no</tt>. При значении <tt>yes</tt>,
+        программа удаления всегда будет создавать файл отчёта, если её запуск
+        был выполнен из панели управления "<i>Добавление/Удаление программ</i>".
+        Эквивалентна передаваемому в командной строке параметру /LOG.</li>
+      <li>Изменения цифровой подписи: инструмент цифровой подписи теперь всегда
+        регистрирует свои события в IDE компилятора на панели "Сообщения
+        компилятора", что облегчает отладку проблем. В связи с этим инструменты,
+        являющиеся консольными программами, теперь всегда будут запускаться
+        скрыто, так как их вывод перехватывается, и они ничего не будут
+        отображать в своем окне.</li>
+      <li>Программирование на языке Паскаль: добавлена новая функция <tt>ExecAndLogOutput</tt>.
+        Может быть использована для записи протокола запускаемой программы или
+        пакетного файла в журнал программы установки/удаления или для получения
+        построчного результата в собственной функции из секции <tt>[Code]</tt>,
+        как показано в справочной документации.</li>
+      <li>Изменения ISPP:
+        <ul>
+          <li>Протокол о запуске программ или пакетных файлов, выполненных при
+            помощи функции <tt>Exec</tt>, теперь по умолчанию всегда
+            регистрируется в IDE компилятора на панели "Сообщения компилятора".
+            Его можно отключить при помощи нового аргумента функции.</li>
+          <li>Добавлена новая функция <tt>ExecAndGetFirstLine</tt> для запуска
+            программы или пакетного файла и чтения первой непустой строки из
+            протокола запуска, которая может быть использована в сценарии, как
+            показано в примере сценария <i>PowerShell.iss</i>.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><span class="head2">Другие изменения</span></p>
+    <ul>
+      <li>Изменения в консольном компиляторе (ISCC): добавлена поддержка вывода
+        в кодировке Unicode.</li>
+      <li>В секции <tt>[Files]</tt> добавлен новый флаг <tt>signcheck</tt>.
+        Указывает компилятору проверять наличие цифровой подписи в исходных
+        файлах перед их добавлением в пакет установки.</li>
+      <li>Ранее программа установки в процессе своей работы всегда запрашивала
+        Windows создавать все недостающие папки <tt>{usercf}</tt>, <tt>{userpf}</tt>
+        и <tt>{usersavedgames}</tt>. Теперь же она не будет этого делать до тех
+        пор, пока из сценария не поступит запрос для папки. Обратите внимание,
+        что сценарии, запущенные в административном режиме установки, не должны
+        этого делать, поскольку это нарушает соглашение об <a href="ishelp/index.php?topic=setup_useduserareaswarning">используемых
+          пользовательских областях</a>.</li>
+      <li>Предприняты дополнительные меры для предотвращения атак с
+        предварительной загрузкой DLL.</li>
+      <li>Добавлена поддержка идентификаторов группы пользователей IIS (<tt>iisiusrs</tt>)
+        для использования в параметре <tt>Permissions</tt>.</li>
+      <li>Изменения ISPP:
+        <ul>
+          <li>Добавлена новая функция <tt>AddQuotes</tt> для заключения строки
+            в кавычки, если она содержит пробелы или ещё не была заключена в
+            кавычки.</li>
+          <li>Функция <tt>Exec</tt> больше не требует, чтобы параметр имени
+            файла был заключен в кавычки, если строка содержит пробелы. Кроме
+            того, теперь функция может принимать "&gt;" в качестве имени файла и
+            включает специальную поддержку .bat и .cmd файлов.</li>
+        </ul>
+      </li>
+      <li>Программирование на языке Паскаль:
+        <ul>
+          <li>Добавлены вспомогательные функции <tt>UTF8Encode</tt> и <tt>UTF8Decode</tt>
+            для кодирования строк Unicode в строки ANSI с кодировкой UTF-8 и
+            наоборот.</li>
+          <li>Добавлены функции <tt>LoadStringFromLockedFile</tt> и <tt>LoadStringsFromLockedFile</tt>
+            для чтения строк из файла, который занят другим приложением,
+            например, открыт для записи в другой программе.</li>
+          <li>Добавлен класс <tt>TNewLinkLabel</tt>, который может отображать
+            многострочный текст со встроенными ссылками и внутренне использует
+            элемент управления Windows SysLink. Пример использования см. в
+            сценарии <i>CodeClasses.iss</i>.</li>
+          <li><tt>TWizardForm</tt>: добавлена новая функция <tt>AdjustLinkLabelHeight</tt>.</li>
+          <li><tt>TDownloadPage</tt>: добавлено новое свойство <tt>ShowBaseNameInsteadOfUrl</tt>.</li>
+          <li>Теперь возможна запись вида <tt>var S: set of AnsiChar; begin S
+              := ['a', 'b']; end;</tt>. В предыдущих версиях это приводило к
+            ошибке несоответствия типов.</li>
+          <li>Теперь возможна запись вида <tt>Stream.ReadBuffer(S, Length(S));</tt>,
+            когда <tt>S</tt> имеет тип <tt>AnsiString</tt>. В предыдущих
+            версиях эта команда компилировалась, но не работала во время
+            выполнения программы установки. То же самое относится к функциям <tt>Read</tt>,
+            <tt>Write</tt> и <tt>WriteBuffer</tt>. Теперь эти четыре функции
+            принимают строки любого типа.</li>
+          <li>В сценарий <i>CodeAutomation.iss</i> добавлен пример загрузки и
+            распаковки архива Zip.</li>
+          <li>тип <tt>TShellFolderID</tt> был удален, поскольку не
+            использовался ни одной вспомогательной функцией.</li>
+        </ul>
+      </li>
+      <li>Исправлено отображение значков в диалоге <i>Выбор языка</i> и
+        страницах мастера <i>Выбор папки установки</i>, <i>Выбор папки в меню
+          "Пуск"</i> и <i>Подготовка к установке</i> при масштабе 150% DPI и
+        200% DPI.</li>
+      <li>Добавлены новые значки для примеров исполняемых файлов "MyProg" и их
+        сборка выполнена в Visual Studio 2022.</li>
+      <li>Добавлен официальный перевод на Корейский язык.</li>
+      <li>Сборка Inno Setup теперь выполняется в Delphi 11.3 Alexandria вместо
+        Delphi 10.3 Rio.</li>
+      <li>Delphi-проекты Inno Setup были вновь созданы как новые чистые проекты
+        и добавлены в группу проектов <i>Projects\Projects.groupproj</i>. Это
+        значительно облегчает начало работы с исходным кодом Inno Setup и
+        внесение вклада, даже при использовании бесплатной версии Delphi
+        Community Edition.</li>
+      <li>Обновление документации и исправление неточностей.</li>
+    </ul>
+    <p>Разработка в <a href="https://github.com/jrsoftware/issrc" target="_blank">GitHub</a>:
+      благодарим Achim Stuy, ser163, Jens Geyer и Sergii Leonov за вклад в
+      развитии Inno Setup.</p>
+  </details>
+    <p><a href="https://leserg73.github.io/InnoHelp/ishistory/is6.2-whatsnew.htm">История версий Inno Setup 6.2</a></p>
+    </div>
+  </body>
+</html>
