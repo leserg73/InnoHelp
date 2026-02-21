@@ -6,4 +6,4 @@
 + Inno Setup - dark (ISetup-dark.chm)
 + Inno Setup - dark (ISetup-dark-V2.chm)
 
-2020-2026 (c) Sergii Leonov a.k.a. Leserg.
+2020-2026 © Sergii Leonov a.k.a. Leserg.
