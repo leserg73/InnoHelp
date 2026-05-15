@@ -22,7 +22,7 @@
 
 ### История версий Inno Setup 7
 
-- [7.0.0-dev](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
+- [7.0.0-beta](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
 
 ---
 
