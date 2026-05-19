@@ -20,58 +20,55 @@
     <div class="topicbody">
       <ul>
         <li>
-          <p style="text-indent: 0;">Другой вариант сборки сценариев — это использовать консольную
-            версию компилятора, ISCC.exe. Общий вид использования командной
-            строки следующий:</p>
-          <div>
-            <p>iscc <i>[параметры]</i> <i>&lt;имя сценария&gt;</i> </p>
-            <p>Или выполнять чтение из стандартного ввода:</p>
-            <p>iscc <i>[параметры]</i> - </p>
-            <div class="examplebox">
-              <div class="exampleheader">Пример:</div>
-              iscc "c:\isetup\samples\my script.iss"<br /><br /></div>
+          <p style="text-indent: 0;">Другой вариант сборки сценариев — это
+            использовать консольную версию компилятора, файл <tt>ISCC.exe</tt>.
+            Общий вид использования командной строки следующий:</p>
+          <pre class="indent examplebox">iscc <i>[options]</i> <i>&lt;script name&gt;</i></pre>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">iscc "c:\isetup\samples\my script.iss"</pre>
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
           <div class="null">Допустимые параметры:
-          <table>
+          <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Параметр</th><th>Назначение</th></tr>
             <tr>
-              <td class="cellleft"><b>/O(+|-)</b></td>
-              <td class="cellright">Включает (+) или отключает (-) параметр вывода
+              <td class="nowrap"><tt>/O+</tt><br/><tt>/O-</tt></td>
+              <td>Включает (+) или отключает (-) параметр вывода
                 (замещает в сценарии команду <tt>Output</tt>)</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>/O&lt;path&gt;</b></td>
-              <td class="cellright">Устанавливает путь вывода файла (замещает в
+              <td class="nowrap"><tt>/O<i>&lt;path&gt;</i></tt></td>
+              <td>Устанавливает путь вывода файла (замещает в
                 сценарии команду <tt>OutputDir</tt>)</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>/F&lt;filename&gt;</b></td>
-              <td class="cellright">Устанавливает выходное имя файла (замещает в
+              <td class="nowrap"><tt>/F<i>&lt;filename&gt;</i></tt></td>
+              <td>Устанавливает выходное имя файла (замещает в
                 сценарии команду <tt>OutputBaseFilename</tt>)</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>/S&lt;name&gt;=&lt;command&gt;</b></td>
-              <td class="cellright">Устанавливает инструмент цифровой подписи с
+              <td class="nowrap"><tt>/S<i>&lt;name&gt;</i>=<i>&lt;command&gt;</i></tt></td>
+              <td>Устанавливает инструмент цифровой подписи с
                 указанным именем и параметрами (все инструменты цифровой подписи,
                 настроенные в IDE компилятора, будут указаны автоматически)</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>/Q</b></td>
-              <td class="cellright">Тихая компиляция (будут показаны только
+              <td class="nowrap"><tt>/Q</tt></td>
+              <td>Тихая компиляция (будут показаны только
                 сообщения об ошибках)</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>/Qp</b></td>
-              <td class="cellright">Тихая компиляция с отображением прогресса
+              <td class="nowrap"><tt>/Qp</tt></td>
+              <td>Тихая компиляция с отображением прогресса
                 выполнения</td>
             </tr>
           </table>
-          <div>
-            <div class="examplebox">
-              <div class="exampleheader">Пример:</div>
-              iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p
-              "c:\isetup\samples\my script.iss"<br /><br /></div>
+          </div>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p "c:\isetup\samples\my script.iss"</pre>
           </div>
           <p>Другие параметры смотрите в разделе <a
 
@@ -89,11 +86,10 @@
         <li>
           <p style="text-indent: 0;">Компиляцию сценариев также можно выполнить из командной строки.
             Общий вид использования командной строки следующий:</p>
-          <div>
-            <p>compil32 /cc <i>&lt;имя сценария&gt;</i> </p>
-            <div class="examplebox">
-              <div class="exampleheader">Пример:</div>
-              compil32 /cc "c:\isetup\samples\my script.iss"<br /><br /></div>
+          <pre class="indent examplebox">iside /cc <i>&lt;script name&gt;</i></pre>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">iside /cc "c:\isetup\samples\my script.iss"</pre>
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
@@ -113,12 +109,10 @@
           <p style="text-indent: 0;">Мастер создания сценария также может быть
             запущен из командной строки. Общий вид использования командной строки
             следующий:</p>
-          <div>
-            <p>compil32 /wizard <i>&lt;название мастера&gt; &lt;имя
-                сценария&gt;</i> </p>
-            <div class="examplebox">
-              <div class="exampleheader">Пример:</div>
-              compil32 /wizard "MyProg Script Wizard" "c:\temp.iss"<br /><br /></div>
+          <pre class="indent examplebox">iside /wizard <i>&lt;wizard name&gt; &lt;script name&gt;</i></pre>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin">iside /wizard "MyProg Script Wizard" "c:\temp.iss"</pre>
           </div>
           <p>Обратите внимание, если имена файлов и название мастера содержит
             пробелы, то они должны заключаться в кавычки.</p>
@@ -135,11 +129,9 @@
             &nbsp;&nbsp;&nbsp;2 — не удалось сохранить созданный файл сценария.</div>
           <br />
           Если пользователь отменит работу мастера, будет возвращён код выхода 0
-          и сценарий не сохранится.
-          <br />
+          и сценарий не сохранится.<br /><br />
         </li>
       </ul>
-      <br />
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -19,15 +19,13 @@
     <h1 class="topicheading">Программирование: RegWriteExpandStringValue</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">function
-          RegWriteExpandStringValue(const RootKey: Integer; const SubKeyName,
-          ValueName, Data: String): Boolean;</p>
+      <p class="prototip1 notopmarginX">function RegWriteExpandStringValue(const RootKey: Integer; const SubKeyName, ValueName, Data: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Записывает в реестр указанное значение с типом REG_EXPAND_SZ. В случае
         успеха функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  RegWriteStringValue(<span class="hl kwe">HKEY_CURRENT_USER</span>, <span class="hl str">'Software\My Company\My Program'</span>,
+  RegWriteExpandStringValue(<span class="hl kwe">HKEY_CURRENT_USER</span>, <span class="hl str">'Software\My Company\My Program'</span>,
     <span class="hl str">'UserName'</span>, <span class="hl str">'%UserName%'</span>);
 <span class="hl kwb">end</span>;</pre>
     </div>

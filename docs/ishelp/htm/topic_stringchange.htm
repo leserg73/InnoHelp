@@ -19,12 +19,10 @@
     <h1 class="topicheading">Препроцессор Inno Setup: StringChange</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>str</b> StringChange(<b>str</b>,
-          <b>str</b>, <b>str</b>)</p>
+      <p class="prototip1 notopmarginX null"><b>str</b> StringChange(<b>str</b> S, <b>str</b> OldPattern, <b>str</b> NewPattern)</p>
       <h2 class="heading">Описание</h2>
-      <p>Возвращает копию строки (<i>первый параметр</i>), в которой искомое
-        вхождение (<i>второй параметр</i>) заменено на другую строку (<i>третий
-          параметр</i>).</p>
+      <p>Возвращает копию строки <tt>S</tt>, в которой все подстроки <tt>OldPattern</tt>
+        заменены на новые подстроки <tt>NewPattern</tt>.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl slc">; Объявляем переменную MyString2 и присваиваем ей значение 'a ca c'</span>

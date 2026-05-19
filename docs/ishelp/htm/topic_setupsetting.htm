@@ -19,13 +19,12 @@
     <h1 class="topicheading">Препроцессор Inno Setup: SetupSetting</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>str</b> SetupSetting(<b>str</b>)</p>
+      <p class="prototip1 notopmarginX null"><b>str</b> SetupSetting(<b>str</b> DirectiveName)</p>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет синтаксический анализ секции <a href="topic_setupsection.htm"
-          title="Секция [Setup]">[Setup]</a> в данных <a href="topic_current-translation.htm"
-
-         >текущего вывода препроцессора</a> с целью поиска ключа,
-        имя которого задано в качестве параметра функции (<tt style="font-weight: bold;">str</tt>).
+      <p>Выполняет синтаксический анализ секции
+        <a href="topic_setupsection.htm">[Setup]</a> в данных
+        <a href="topic_current-translation.htm">текущего вывода препроцессора</a>
+        с целью поиска ключа, заданного параметром <tt>DirectiveName</tt>.
         Функция возвращает значение этого ключа, если он найден, или пустую
         строку, если ключ не найден.</p>
     </div>

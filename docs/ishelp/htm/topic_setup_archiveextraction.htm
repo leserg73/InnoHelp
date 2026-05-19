@@ -69,52 +69,50 @@
       для уменьшения её размера. Кроме того, реализована поддержка многотомных
       архивов.</p>
     <p>В следующей таблице приведены различия между этими методами.</p>
-    <div class="indent">
-      <table>
-        <tr>
-          <td class="cellleft"></td>
-          <td class="cellright"><u>Требования к памяти</u></td>
-          <td class="cellright"><u>Архивы под паролем</u></td>
-          <td class="cellright"><u>Увеличение инсталлятора</u></td>
-          <td class="cellright"><u>Формат архивов</u></td>
-        </tr>
-        <tr>
-          <td class="cellleft"><tt>basic</tt> (по умолчанию)</td>
-          <td class="cellright">Высокие для больших файлов<b>*</b></td>
-          <td class="cellright">Нет</td>
-          <td class="cellright">0 Кб</td>
-          <td class="cellright">.7z</td>
-        </tr>
-        <tr>
-          <td class="cellleft"><tt>enhanced/nopassword</tt></td>
-          <td class="cellright">Нормальные</td>
-          <td class="cellright">Нет</td>
-          <td class="cellright">100 Кб</td>
-          <td class="cellright">.7z</td>
-        </tr>
-        <tr>
-          <td class="cellleft"><tt>enhanced</tt></td>
-          <td class="cellright">Нормальные</td>
-          <td class="cellright">Да</td>
-          <td class="cellright">123 Кб</td>
-          <td class="cellright">.7z</td>
-        </tr>
-        <tr>
-          <td class="cellleft"><tt>full</tt></td>
-          <td class="cellright">Нормальные</td>
-          <td class="cellright">Да</td>
-          <td class="cellright">458 Кб</td>
-          <td class="cellright">.7z, .zip, .gz, .bz2, .xz, .tar, .rar, .iso,
-            .msi, .cab, .rpm, .vhd, .vhdx, .vdi, .vmdk, .wim, .dmg, .001</td>
-        </tr>
-      </table>
-      <p>* = При извлечении файла всегда будет выделен достаточный объём памяти,
-        чтобы вместить <b>весь</b> файл, независимо от размера блока. Например,
-        для извлечения файла размером 1 ГБ с использованием метода <tt>basic</tt>
-        потребуется не менее 1 ГБ оперативной памяти. Однако для 7z-архивов с
-        крупными файлами рекомендуется использовать альтернативный метод: в таком
-        случае потребление памяти зависит исключительно от размера словаря.</p>
-    </div>
+    <table style="margin-top: 1.0em" border="1">
+      <tr>
+        <th>Метод</th>
+        <th>Требования к памяти</th>
+        <th>Архивы под паролем</th>
+        <th>Увеличение инсталлятора*</th>
+        <th>Формат архивов</th>
+      </tr>
+      <tr>
+          <td><tt>basic</tt> (по умолчанию)</td>
+        <td>Высокие для больших файлов<b>**</b></td>
+        <td>Нет</td>
+        <td>0 КБ</td>
+        <td>.7z</td>
+      </tr>
+      <tr>
+        <td><tt>enhanced/nopassword</tt></td>
+        <td>Нормальные</td>
+        <td>Нет</td>
+        <td>100 КБ</td>
+        <td>.7z</td>
+      </tr>
+      <tr>
+        <td><tt>enhanced</tt></td>
+        <td>Нормальные</td>
+        <td>Да</td>
+        <td>123 КБ</td>
+        <td>.7z</td>
+      </tr>
+      <tr>
+        <td><tt>full</tt></td>
+        <td>Нормальные</td>
+        <td>Да</td>
+        <td>458 КБ</td>
+        <td>.7z, .zip, .gz, .bz2, .xz, .tar, .rar, .iso,
+          .msi, .cab, .rpm, .vhd, .vhdx, .vdi, .vmdk, .wim, .dmg, .001</td>
+      </tr>
+    </table>
+    <p>* = При извлечении файла всегда будет выделен достаточный объём памяти,
+      чтобы вместить <b>весь</b> файл, независимо от размера блока. Например,
+      для извлечения файла размером 1 ГБ с использованием метода <tt>basic</tt>
+      потребуется не менее 1 ГБ оперативной памяти. Однако для 7z-архивов с
+      крупными файлами рекомендуется использовать альтернативный метод: в таком
+      случае потребление памяти зависит исключительно от размера словаря.</p>
     <p>Все методы автоматически перезаписывают существующие в целевой папке файлы
       (даже с атрибутом "<i>только для чтения</i>") без предупреждения пользователя.</p>
     <p>Все методы восстанавливают из архива следующие свойства файлов, если они

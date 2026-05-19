@@ -19,64 +19,54 @@
     <h1 class="topicheading">Препроцессор Inno Setup: FindFirst</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>int</b> FindFirst(<b>str</b>, <b>int</b>)</p>
+      <p class="prototip1 notopmarginX null"><b>int</b> FindFirst(<b>str</b> Pattern, <b>int</b> Attrs)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет поиск файла в указанной папке согласно заданному имени
-        (первый параметр) и атрибуту файла (второй параметр). Если файл найден,
+        (<i>первый параметр</i>) и атрибуту файла (<i>второй параметр</i>). Если файл найден,
         то возвращает его дескриптор, который должен быть использован в
         последующих вызовах функций <code><a href="topic_findgetfilename.htm">FindGetFileName</a></code>,
         <code><a href="topic_findnext.htm">FindNext</a></code> и <code><a href="topic_findclose.htm">FindClose</a></code>.
         В противном случае функция вернёт значение 0.</p>
-      <p><i>Первый параметр</i> (<b>str</b>) устанавливает маску имени
+      <p>Параметр <tt>Pattern</tt> (<b>str</b>) устанавливает маску имени
         папки/файла, включая символы подстановки. Например, строка вида <tt>'<b>.\*.*</b>'</tt>
         определяет все файлы в текущем каталоге.</p>
-      <p><i>Второй параметр</i> (<b>int</b>) устанавливает атрибут файлов,
+      <p>Параметр <tt>Attrs</tt> (<b>int</b>) устанавливает атрибут файлов,
         которые должны быть включены в поиск помимо обычных файлов. Выберите
         необходимый атрибут или соответствующую ему константу, которые
         определены в файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>:</p>
-      <table>
-        <tbody>
+      <table style="margin-top: 1.0em" border="1">
           <tr>
-            <td class="cellleft"><code><b>faReadOnly</b></code></td>
-            <td class="cellright">файлы только для чтения</td>
-            <td class="cellright">0x00000001</td>
+            <td><code><b>faReadOnly</b></code></td>
+            <td>файлы только для чтения</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code><b>faHidden</b></code></td>
-            <td class="cellright">скрытые файлы</td>
-            <td class="cellright">0x00000002</td>
+            <td><code><b>faHidden</b></code></td>
+            <td>скрытые файлы</td>
           </tr>
           <tr>
-            <td class="cellleft"><code><b>faSysFile</b></code></td>
-            <td class="cellright">системные файлы</td>
-            <td class="cellright">0x00000004</td>
+            <td><code><b>faSysFile</b></code></td>
+            <td>системные файлы</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code><b>faVolumeID</b></code></td>
-            <td class="cellright">файлы ID-тома</td>
-            <td class="cellright">0x00000008</td>
+            <td><code><b>faVolumeID</b></code></td>
+            <td>файлы ID-тома</td>
           </tr>
           <tr>
-            <td class="cellleft"><code><b>faDirectory</b></code></td>
-            <td class="cellright">файлы каталога</td>
-            <td class="cellright">0x00000010</td>
+            <td><code><b>faDirectory</b></code></td>
+            <td>файлы каталога</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code><b>faArchive</b></code></td>
-            <td class="cellright">архивные файлы</td>
-            <td class="cellright">0x00000020</td>
+            <td><code><b>faArchive</b></code></td>
+            <td>архивные файлы</td>
           </tr>
           <tr>
-            <td class="cellleft"><code><b>faSymLink</b></code></td>
-            <td class="cellright">файлы символьных ссылок</td>
-            <td class="cellright">0x00000040</td>
+            <td><code><b>faSymLink</b></code></td>
+            <td>файлы символьных ссылок</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code><b>faAnyFile</b></code></td>
-            <td class="cellright">любые файлы</td>
-            <td class="cellright">0x0000003F</td>
+            <td><code><b>faAnyFile</b></code></td>
+            <td>любые файлы</td>
           </tr>
-        </tbody>
       </table>
       <p>Атрибуты можно комбинировать между собой, используя логическую операцию
         "ИЛИ" как для значений, так и для констант. Например, для поиска также

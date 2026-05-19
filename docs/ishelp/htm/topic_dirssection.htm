@@ -35,7 +35,7 @@
         подкаталога.</p>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Name">Name</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Name">Name</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Имя создаваемого каталога, которое обычно начинается с одной из
             констант каталога.</p>
@@ -44,7 +44,7 @@
             <pre class="nomargin"><span class="hl kwb">Name</span>: "<span class="hl kwc">{app}</span>\MyDir"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Attribs">Attribs</a></b></dt>
+        <dt class="paramlist"><b><span id="Attribs">Attribs</span></b></dt>
         <dd class="paramlist">
           <p>Определяет дополнительные атрибуты для каталога. Допустимыми
             атрибутами являются следующие: <tt>readonly</tt>, <tt>hidden</tt>,
@@ -58,7 +58,7 @@
             <pre class="nomargin"><span class="hl kwb">Attribs</span>: <span class="hl kwe">hidden system</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Permissions">Permissions</a></b></dt>
+        <dt class="paramlist"><b><span id="Permissions">Permissions</span></b></dt>
         <dd class="paramlist">
           <p>Определяет дополнительные разрешения для доступа к каталогу на
             основе ACL (список управления доступом). Не рекомендуется
@@ -93,7 +93,7 @@
           </div>
           <p>В секции [Dirs] поддерживаются следующие типы доступа:</p>
           <dl>
-            <dt class="flaglist"><a name="full">full</a></dt>
+            <dt class="flaglist"><span id="full">full</span></dt>
             <dd>
               <p>Предоставляет разрешение "Полное управление", аналогичное <tt>modify</tt>
                 (см. ниже), но дополнительно позволяет указанному
@@ -101,13 +101,13 @@
                 разрешения. Используйте как можно реже; обычно <tt>modify</tt>
                 будет достаточно.</p>
             </dd>
-            <dt class="flaglist"><a name="modify">modify</a></dt>
+            <dt class="flaglist"><span id="modify">modify</span></dt>
             <dd>
               <p>Предоставляет разрешение "Изменить", которое позволяет
                 указанному пользователю/группе читать, выполнять, создавать,
                 изменять и удалять файлы в каталоге и его подкаталогах.</p>
             </dd>
-            <dt class="flaglist"><a name="readexec">readexec</a></dt>
+            <dt class="flaglist"><span id="readexec">readexec</span></dt>
             <dd>
               <p>Предоставляет разрешение "Чтение и запуск", которое позволяет
                 указанному пользователю/группе читать и выполнять файлы в
@@ -119,13 +119,13 @@
             <pre class="nomargin"><span class="hl kwb">Permissions</span>: users-modify</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="deleteafterinstall">deleteafterinstall</a></dt>
+            <dt class="flaglist"><span id="deleteafterinstall">deleteafterinstall</span></dt>
             <dd>
               <p>Указывает программе установки создать обычный каталог, но
                 затем, когда установка будет завершена (или прервана), удалить
@@ -135,7 +135,7 @@
               <p>Этот флаг не приведёт к удалению каталогов, которые уже
                 существовали до установки.</p>
             </dd>
-            <dt class="flaglist"><a name="setntfscompression">setntfscompression</a></dt>
+            <dt class="flaglist"><span id="setntfscompression">setntfscompression</span></dt>
             <dd>
               <p>Указывает программе установки включить NTFS сжатие каталога.
                 Если по какой-либо причине применить состояние сжатия не удалось
@@ -144,20 +144,20 @@
               <p>Если каталог уже существует, то состояние сжатия любых файлов,
                 находящихся в каталоге, не будет изменено.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsalwaysuninstall">uninsalwaysuninstall</a></dt>
+            <dt class="flaglist"><span id="uninsalwaysuninstall">uninsalwaysuninstall</span></dt>
             <dd>
               <p>Указывает программе удаления всегда выполнять попытку удаления
                 каталога, если он пуст. Обычно деинсталлятор пытается удалить
                 каталог только в том случае, если он не существовал до начала
                 установки.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsneveruninstall">uninsneveruninstall</a></dt>
+            <dt class="flaglist"><span id="uninsneveruninstall">uninsneveruninstall</span></dt>
             <dd>
               <p>Указывает программе удаления не выполнять попытку удаления
                 каталога. По умолчанию деинсталлятор удаляет любой каталог,
                 указанный в секции <tt>[Dirs]</tt>, если он пуст.</p>
             </dd>
-            <dt class="flaglist"><a name="unsetntfscompression">unsetntfscompression</a></dt>
+            <dt class="flaglist"><span id="unsetntfscompression">unsetntfscompression</span></dt>
             <dd>
               <p>Указывает программе установки отключить NTFS сжатие каталога.
                 Если по какой-либо причине применить состояние сжатия не удалось

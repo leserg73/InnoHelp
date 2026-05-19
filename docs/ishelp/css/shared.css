@@ -26,9 +26,9 @@
   --archid-color: #084825;
   --cmdline-bg: #ffecd8;
   --cmdline-color: #663300;
-  --th-bg-color: #4c98af;
+  --th-bg-color: #f0f0f0;
   --th-color: #ffffff;
-  --th-borderleft: #ffffff;
+  --th-borderleft: #e0e0e0;
   --alink-color: #006bbd;
   --alink-hover-color: #004e8a;
   --alink-highlighted-bg-color: #ffff00;
@@ -89,7 +89,7 @@
   --highlight-bg: #ffff40;
   --highlight-color: #282828;
   --highlight-border-color: #ffff40;
-  --altcolorrow-bg-color: #eeeeee;
+  --altcolorrow-bg-color: #fcfcfc;
   --comidispatch-color: #990000;
   --isppflags-color: #663300;
   --isppborder-border: #d6d6d6;
@@ -174,17 +174,17 @@
   --prototip1-bg-color: #1a3a4a;
   --sintax-bg-color: #5e4f22;
   --sintax1-bg-color: #3a3200;
-  --func-bg: #1a2c3d;
-  --func-color: #0078d4;
-  --const-bg: #2a1a3a;
-  --const-color: #ba8aff;
-  --archid-bg: #284028;
-  --archid-color: #47bb47;
-  --cmdline-bg: #3a2a1a;
-  --cmdline-color: #ffb366;
-  --th-bg-color: #2a5d6e;
+  --func-bg: #202427;
+  --func-color: #60b0ec;
+  --const-bg: #242227;
+  --const-color: #c094ff;
+  --archid-bg: #202520;
+  --archid-color: #5dc35d;
+  --cmdline-bg: #23201e;
+  --cmdline-color: #e3994d;
+  --th-bg-color: #353535;
   --th-color: #ffffff;
-  --th-borderleft: #444444;
+  --th-borderleft: #403e41;
   --alink-color: #5d9cff;
   --alink-hover-color: #7ab2ff;
   --alink-highlighted-bg-color: #ffd700;
@@ -205,10 +205,10 @@
   --hl-ipl-color: #ba8aff;
   --hl-lin-color: #707070;
   --hl-kwa-color: #cccccc;
-  --hl-kwb-color: #0078d4;
+  --hl-kwb-color: #3695df;
   --hl-kwc-color: #ba8aff;
-  --hl-kwd-color: #0078d4;
-  --hl-kwe-color: #5d9cff;
+  --hl-kwd-color: #3695df;
+  --hl-kwe-color: #80abee;
   --hl-kwf-color: #d65363;
 
   /* Заголовки, примеры, параметры, флаги */
@@ -218,9 +218,9 @@
   --examplebox-bg: #282828;
   --examplebox-color: #e0e0e0;
   --examplebox-border: #444444;
-  --dt-paramlist-color: #0078d4;
+  --dt-paramlist-color: #5daeff;
   --dt-paramlist-linegadient: #121212;
-  --dt-flaglist-color: #5d9cff;
+  --dt-flaglist-color: #80abee;
   --td-setuphdrr-color: #e0e0e0;
 
   /* Таблицы */
@@ -245,7 +245,7 @@
   --highlight-bg: #ffd700;
   --highlight-color: #000000;
   --highlight-border-color: #ffd700;
-  --altcolorrow-bg-color: #252525;
+  --altcolorrow-bg-color: #242424;
   --comidispatch-color: #ff6b6b;
   --isppflags-color: #ffb366;
   --isppborder-border: #444444;
@@ -374,10 +374,18 @@ tt {
   color: var(--cmdline-color);
 }
 
+table {
+  border-color: var(--th-borderleft);
+}
+
 th {
   background-color: var(--th-bg-color);
-  color: var(--th-color);
-  border-left: 0.0104in solid var(--th-borderleft);
+  /*color: var(--th-color);*/
+  border: 0.0104in solid var(--th-borderleft);
+}
+
+td {
+  border: 0.0104in solid var(--th-borderleft);
 }
 
 a:link, a:visited {
@@ -386,6 +394,12 @@ a:link, a:visited {
 
 a[href]:hover {
   color: var(--alink-hover-color);
+}
+
+span:target {
+  background-color: var(--alink-highlighted-bg-color);
+  color: var(--alink-highlighted-color);
+  border-bottom: 0.0204in solid var(--alink-highlighted-bg-color);
 }
 
 a.highlighted {

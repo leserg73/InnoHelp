@@ -18,7 +18,7 @@
 - [6.4.0 - 6.4.3](https://leserg73.github.io/InnoHelp/ishistory/is6.4-whatsnew.htm)
 - [6.5.0 - 6.5.4](https://leserg73.github.io/InnoHelp/ishistory/is6.5-whatsnew.htm)
 - [6.6.0 - 6.6.1](https://leserg73.github.io/InnoHelp/ishistory/is6.6-whatsnew.htm)
-- [6.7.0 - 6.7.1](https://leserg73.github.io/InnoHelp/ishistory/is6.7-whatsnew.htm)
+- [6.7.0 - 6.7.2](https://leserg73.github.io/InnoHelp/ishistory/is6.7-whatsnew.htm)
 
 ### История версий Inno Setup 7
 

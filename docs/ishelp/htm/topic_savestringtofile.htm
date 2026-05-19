@@ -19,21 +19,20 @@
     <h1 class="topicheading">Препроцессор Inno Setup: SaveStringToFile</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>int</b> SaveStringToFile(<b>str</b>
-          Filename, <b>str</b> S, <b>int</b>? Append, <b>int</b>? UTF8)</p>
+      <p class="prototip1 notopmarginX null"><b>int</b> SaveStringToFile(<b>str</b> Filename, <b>str</b> S, <b>int</b>? Append, <b>int</b>? UTF8)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет запись заданной строки в указанный файл. Если параметр <tt>Append</tt>
         имеет ненулевое значение или опущен, а указанный файл уже
         существует, строка будет добавлена вместо перезаписи. Если параметр <tt>UTF8</tt>
         имеет ненулевое значение или опущен, строка будет записана в
-        кодировке UTF8 вместо ASCII. В случае успеха функция возвращает ненулевое
+        кодировке UTF8 с меткой BOM вместо ASCII. В случае успеха функция возвращает ненулевое
         значение, иначе ноль.</p>
-      <p>Эта функция автоматически не записывает разрыв строки до и после
+      <p>Эта функция не вставляет автоматически символ переноса строки до и после
         заданной строки. Если параметр <tt>Append</tt> имеет ненулевое значение
-        или опущен, а существующий файл не содержит в конце разрыв строки,
-        функция просто дополнит последнюю строку в файле. Во избежание этого
-        вставить символы разрыва строки (используя <code><a href="topic_predefinedvars.htm">NewLine</a></code>)
-        до и/или после заданной строки.</p>
+        или опущен, а существующий файл не заканчивается символом переноса строки,
+        функция фактически добавит строку к последней строке файла. Во избежание
+        этого можно вставить символы переноса строки (используя <code><a href="topic_predefinedvars.htm">NewLine</a></code>)
+        до и/или после указанной строки.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveStringToFile</span><span

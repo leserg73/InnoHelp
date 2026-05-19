@@ -22,7 +22,7 @@
         поддерживаемый всеми секциями, записи которых представляют собой набор
         параметров. Этим параметром является:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Check">Check</a></b></dt>
+        <dt class="paramlist"><b><span id="Check">Check</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя проверочной функции, по результату которой
             принимается решение по обработке данной записи. Этой функцией может
@@ -84,7 +84,7 @@ class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B'
   MyProgChecked: Boolean;
   MyProgCheckResult: Boolean;
 
-<span class="hl kwb">function</span> MyProgCheck(): Boolean;
+<span class="hl kwb">function</span> MyProgCheck: Boolean;
 <span class="hl kwb">begin</span>
   <span class="hl kwb">if not</span> MyProgChecked <span class="hl kwb">then begin</span>
     MyProgCheckResult := MsgBox(<span class="hl str">'Вы хотите установить MyProg.exe в '</span> + ExtractFilePath(CurrentFileName) + <span

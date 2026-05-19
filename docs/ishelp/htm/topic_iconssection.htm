@@ -30,7 +30,7 @@ class="hl kwb">WorkingDir</span>: "<span class="hl kwc">{app}</span>"
 class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pre>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Name">Name</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Name">Name</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя и размещение создаваемого ярлыка. В этом параметре
             можно использовать любые константы служебных папок или каталогов.</p>
@@ -48,7 +48,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{commonstartup}</span>\My Program"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Filename">Filename</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Filename">Filename</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Этот параметр определяет путь к файлу, на который ссылается ярлык.
             Обычно начинается с константы каталога.</p>
@@ -74,7 +74,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
 <span class="hl kwb">Filename</span>: "http://www.example.com/"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Parameters">Parameters</a></b></dt>
+        <dt class="paramlist"><b><span id="Parameters">Parameters</span></b></dt>
         <dd class="paramlist">
           <p>Необязательный параметр, с помощью которого можно передать
             программе ключи командной строки. Может содержать константы.</p>
@@ -83,7 +83,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
             <pre class="nomargin"><span class="hl kwb">Parameters</span>: "/play filename.mid"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="WorkingDir">WorkingDir</a></b></dt>
+        <dt class="paramlist"><b><span id="WorkingDir">WorkingDir</span></b></dt>
         <dd class="paramlist">
           <p>Определяет рабочий (или <i>начальный</i>) каталог программы, на
             которую ссылается ярлык. Этот параметр может содержать константы.</p>
@@ -97,7 +97,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
 class="hl kwc">{app}</span>"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="HotKey">HotKey</a></b></dt>
+        <dt class="paramlist"><b><span id="HotKey">HotKey</span></b></dt>
         <dd class="paramlist">
           <p>С помощью этого параметра можно назначить "Горячие клавиши",
             представляющие собой сочетание клавиш, которые позволяют запустить
@@ -111,7 +111,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">HotKey</span>: "Ctrl+Alt+K"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Comment">Comment</a></b></dt>
+        <dt class="paramlist"><b><span id="Comment">Comment</span></b></dt>
         <dd class="paramlist">
           <p>Позволяет задать <i>комментарий</i> (или "описание"), текст
             которого отображается во всплывающей подсказке при наведении на
@@ -121,7 +121,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Comment</span>: "This is my program"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="IconFilename">IconFilename</a></b></dt>
+        <dt class="paramlist"><b><span id="IconFilename">IconFilename</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя файла пользовательского значка, расположенного в
             системе пользователя. Это может быть файл с расширением .exe или
@@ -140,7 +140,7 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             64-бит ОС Windows: в ней происходит замена на значение
             "%ProgramFiles%\", что является неверным.</p>
         </dd>
-        <dt class="paramlist"><b><a name="IconIndex">IconIndex</a></b></dt>
+        <dt class="paramlist"><b><span id="IconIndex">IconIndex</span></b></dt>
         <dd class="paramlist">
           <p>Определяет начинающийся с нуля индекс значка, используемого в файле
             и указанном в параметре <tt>IconFilename</tt>. Значением по
@@ -153,7 +153,7 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             <pre class="nomargin"><span class="hl kwb">IconIndex</span>: <span class="hl num">0</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="AppUserModelID">AppUserModelID</a></b></dt>
+        <dt class="paramlist"><b><span id="AppUserModelID">AppUserModelID</span></b></dt>
         <dd class="paramlist">
           <p>Задает идентификатор пользовательской модели приложения Windows 7
             (или выше). В более ранних версиях Windows не учитывается. Этот
@@ -163,7 +163,7 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             <pre class="nomargin"><span class="hl kwb">AppUserModelID</span>: "MyCompany.MyProg"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="AppUserModelToastActivatorCLSID">AppUserModelToastActivatorCLSID</a></b></dt>
+        <dt class="paramlist"><b><span id="AppUserModelToastActivatorCLSID">AppUserModelToastActivatorCLSID</span></b></dt>
         <dd class="paramlist">
           <p>В ОС Windows 10 (или выше) определяет для ярлыка Application User
             Model Toast Activator CLSID. На предыдущих версиях Windows не
@@ -173,13 +173,13 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             <pre class="nomargin"><span class="hl kwb">AppUserModelToastActivatorCLSID</span>: "B784B1A4-D682-4FE6-BDBA-21EDDAE42795"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="closeonexit">closeonexit</a></dt>
+            <dt class="flaglist"><span id="closeonexit">closeonexit</span></dt>
             <dd>
               <p>Устанавливает флажок "Закрыть при выходе" в свойствах ярлыка.
                 Этот флаг действует только в том случае, если ярлык указывает на
@@ -188,26 +188,26 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
                 установки не будет пытаться изменить свойство "Закрыть при
                 выходе".</p>
             </dd>
-            <dt class="flaglist"><a name="createonlyiffileexists">createonlyiffileexists</a></dt>
+            <dt class="flaglist"><span id="createonlyiffileexists">createonlyiffileexists</span></dt>
             <dd>
               <p>Предписывает программе установки создать ярлык только в том
                 случае, если указанный в параметре <tt>Filename</tt> файл
                 существует.</p>
             </dd>
-            <dt class="flaglist"><a name="dontcloseonexit">dontcloseonexit</a></dt>
+            <dt class="flaglist"><span id="dontcloseonexit">dontcloseonexit</span></dt>
             <dd>
               <p>Аналогичен флагу <tt>closeonexit</tt>, за исключением того,
                 что программа установки снимает флажок "Закрыть при выходе" в
                 свойствах ярлыка.</p>
             </dd>
-            <dt class="flaglist"><a name="excludefromshowinnewinstall">excludefromshowinnewinstall</a></dt>
+            <dt class="flaglist"><span id="excludefromshowinnewinstall">excludefromshowinnewinstall</span></dt>
             <dd>
               <p>Запрещает выделение нового ярлыка в меню «Пуск» в Windows 7 и,
                 кроме того, предотвращает автоматическое закрепление нового
                 ярлыка на начальном экране Windows 8 (и выше). В более ранних
                 версиях Windows не учитывается.</p>
             </dd>
-            <dt class="flaglist"><a name="preventpinning">preventpinning</a></dt>
+            <dt class="flaglist"><span id="preventpinning">preventpinning</span></dt>
             <dd>
               <p>Запрещает привязку элемента меню «Пуск» к панели задач или меню
                 «Пуск» в Windows 7 (или выше). Также исключает возможность
@@ -215,23 +215,23 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
                 приложений (MFU) меню «Пуск». В более ранних версиях Windows не
                 учитывается.</p>
             </dd>
-            <dt class="flaglist"><a name="runmaximized">runmaximized</a></dt>
+            <dt class="flaglist"><span id="runmaximized">runmaximized</span></dt>
             <dd>
               <p>Устанавливает в свойствах ярлыка параметр "Развернутое на весь
                 экран", чтобы при запуске окно программы первоначально было
                 развернуто.</p>
             </dd>
-            <dt class="flaglist"><a name="runminimized">runminimized</a></dt>
+            <dt class="flaglist"><span id="runminimized">runminimized</span></dt>
             <dd>
               <p>Устанавливает в свойствах ярлыка параметр "Свернутое в значок",
                 чтобы при запуске окно программы первоначально было свернуто.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsneveruninstall">uninsneveruninstall</a></dt>
+            <dt class="flaglist"><span id="uninsneveruninstall">uninsneveruninstall</span></dt>
             <dd>
               <p>Предписывает программе деинсталляции не выполнять удаление
                 ярлыка.</p>
             </dd>
-            <dt class="flaglist"><a name="useapppaths">useapppaths</a></dt>
+            <dt class="flaglist"><span id="useapppaths">useapppaths</span></dt>
             <dd>
               <p>Сообщает программе установки произвести поиск пути в разделе
                 реестра

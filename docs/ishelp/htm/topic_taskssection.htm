@@ -45,7 +45,7 @@ class="hl kwe">unchecked</span>
 </pre>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Name">Name</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Name">Name</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет внутреннее имя задачи.</p>
           <p>Общее количество символов \ или / в имени задачи определяет её
@@ -66,7 +66,7 @@ class="hl kwe">unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Name</span>: "desktopicon"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Description">Description</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Description">Description</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Описание задачи (может содержать константы). Это описание
             отображается во время установки.</p>
@@ -75,7 +75,7 @@ class="hl kwe">unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Description</span>: "Создать ярлык на Рабочем столе"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="GroupDescription">GroupDescription</a></b></dt>
+        <dt class="paramlist"><b><span id="GroupDescription">GroupDescription</span></b></dt>
         <dd class="paramlist">
           <p>Описание группы задач (может содержать константы). Перечень задач с
             одинаковым описанием будут сгруппированы в одну текстовую метку.
@@ -85,7 +85,7 @@ class="hl kwe">unchecked</span>
             <pre class="nomargin"><span class="hl kwb">GroupDescription</span>: "Дополнительные ярлыки"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Components">Components</a></b></dt>
+        <dt class="paramlist"><b><span id="Components">Components</span></b></dt>
         <dd class="paramlist">
           <p>Разделённый пробелами список компонентов, к которым принадлежит
             данная задача. Если пользователь выберет компонент из этого списка,
@@ -96,13 +96,13 @@ class="hl kwe">unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Components</span>: main</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="checkablealone">checkablealone</a></dt>
+            <dt class="flaglist"><span id="checkablealone">checkablealone</span></dt>
             <dd>
               <p>Указывает, что задача может быть выбрана, если ни одна из её
                 дочерних задач не выбрана. По умолчанию, если ни один параметр
@@ -110,7 +110,7 @@ class="hl kwe">unchecked</span>
                 отмена выбора у всех дочерних задач приведёт к отмене выбора
                 родительской задачи.</p>
             </dd>
-            <dt class="flaglist"><a name="checkedonce">checkedonce</a></dt>
+            <dt class="flaglist"><span id="checkedonce">checkedonce</span></dt>
             <dd>
               <p>Указывает программе установки отменить изначальный выбор данной
                 задачи, если инсталлятор обнаружит, что предыдущая версия <a href="topic_sameappnotes.htm">того
@@ -118,20 +118,20 @@ class="hl kwe">unchecked</span>
               <p>Если директива <tt>UsePreviousTasks</tt> в секции <tt>[Setup]</tt>
                 имеет значение <tt>no</tt>, то этот флаг не учитывается.</p>
             </dd>
-            <dt class="flaglist"><a name="dontinheritcheck">dontinheritcheck</a></dt>
+            <dt class="flaglist"><span id="dontinheritcheck">dontinheritcheck</span></dt>
             <dd>
               <p>Указывает, что задача не должна быть выбрана автоматически,
                 если выбирается родительская задача. Не влияет на задачи
                 верхнего уровня и не может быть объединён с флагом <tt>exclusive</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="exclusive">exclusive</a></dt>
+            <dt class="flaglist"><span id="exclusive">exclusive</span></dt>
             <dd>
               <p>Указывает программе установки, что данная задача является
                 взаимоисключающей среди задач одного уровня, также имеющих флаг
                 <tt>exclusive</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="restart">restart</a></dt>
+            <dt class="flaglist"><span id="restart">restart</span></dt>
             <dd>
               <p>Указывает программе установки, чтобы при выборе данной задачи,
                 когда установка будет завершена, необходимо перезапустить
@@ -140,7 +140,7 @@ class="hl kwe">unchecked</span>
                 Действует также, как и директива <a href="topic_setup_alwaysrestart.htm">AlwaysRestart</a>,
                 но только для задачи.</p>
             </dd>
-            <dt class="flaglist"><a name="unchecked">unchecked</a></dt>
+            <dt class="flaglist"><span id="unchecked">unchecked</span></dt>
             <dd>
               <p>Указывает программе установки, что данная задача изначально не
                 должна быть выбранной.</p>

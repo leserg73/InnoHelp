@@ -18,7 +18,7 @@
   <body>
     <h1 class="topicheading">Секция [LangOptions]</h1>
     <div class="topicbody">
-      <p>Секция <a name="LangOptions">[LangOptions]</a>
+      <p>Секция <span id="LangOptions">[LangOptions]</span>
         используется для объявления специфических для языка параметров, таких
         как шрифты, используемых программой установки и удаления. Как правило,
         создавать секцию <tt>[LangOptions]</tt> в главном сценарии не нужно,
@@ -38,14 +38,14 @@
 <span class="hl kwb">DialogFontBaseScaleHeight</span>=<span class="hl num">15</span>
 <span class="hl kwb">WelcomeFontName</span>=Segoe UI
 <span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">14</span></pre>
-      <p><b><a name="LanguageName">LanguageName</a></b> —
+      <p><b><span id="LanguageName">LanguageName</span></b> —
         собственное имя языка (но не имя на английском). Оно отображается в
         списке доступных языков в диалоге "<i>Выбор языка</i>" при многоязычной
         установке.</p>
-      <p><b><a name="LanguageID">LanguageID</a></b> —
+      <p><b><span id="LanguageID">LanguageID</span></b> —
         числовой идентификатор языка. Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
         target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">список
-        действительных идентификаторов языка на портале MSDN</a><img class="extlink" src="../images/extlink.svg"
+        действительных идентификаторов языка на портале MSDN</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg"
         alt=" [внешняя ссылка]" />. Этот параметр, наряду с <tt>LanguageCodePage</tt>,
         применяется для автоматического определения наиболее подходящего языка,
         используемого по умолчанию, поэтому убедитесь, что он установлен
@@ -53,7 +53,7 @@
         идентификаторы языка представлены в шестнадцатеричном формате. Если для
         нужного языка идентификатор языка ещё не существует, укажите значение
         ноль.</p>
-      <p><b><a name="LanguageCodePage">LanguageCodePage</a></b>
+      <p><b><span id="LanguageCodePage">LanguageCodePage</span></b>
         — определяет "кодовую страницу" (набор символов), используемую
         компилятором для преобразования любого не Unicode-текста языковых файлов
         в текст Unicode. Обратите внимание, что любой текст в файле .iss,
@@ -67,10 +67,10 @@
         имеет значение ноль, но в одном из языковых файлов используется не
         Unicode-текст, то для его преобразования в кодировку Unicode будет
         использоваться системная кодовая страница.</p>
-      <p><b><a name="DialogFontName">DialogFontName</a></b>, <b><a
+      <p><b><span id="DialogFontName">DialogFontName</span></b>, <b><a
         name="DialogFontSize">DialogFontSize</a></b>, <b><a 
         name="DialogFontBaseScaleWidth">DialogFontBaseScaleWidth</span></b> и
-        <b><a name="DialogFontBaseScaleHeight">DialogFontBaseScaleHeight</span></b>
+        <b><span id="DialogFontBaseScaleHeight">DialogFontBaseScaleHeight</span></b>
         — определяют имя и размер шрифта, используемого в диалогах. Если параметр
         <tt>DialogFontName</tt> отсутствует, то для имени шрифта используется
         значение директивы <a
@@ -93,8 +93,8 @@
 <span class="hl kwb">DialogFontSize</span>=<span class="hl num">9</span>
 <span class="hl kwb">DialogFontBaseScaleHeight</span>=<span class="hl num">13</span>
 <span class="hl kwb">DialogFontBaseScaleWidth</span>=<span class="hl num">6</span></pre>
-      <p><b><a name="WelcomeFontName">WelcomeFontName</a></b> и
-        <b><a name="WelcomeFontSize">WelcomeFontSize</a></b> — определяют имя и
+      <p><b><span id="WelcomeFontName">WelcomeFontName</span></b> и
+        <b><span id="WelcomeFontSize">WelcomeFontSize</span></b> — определяют имя и
         размер шрифта, используемого в заголовках на страницах <i>Приветствие</i>
         и <i>Установка завершена</i>. Если указанный шрифт в системе
         пользователя не существует или параметр содержит пустую строку, будет
@@ -104,7 +104,7 @@
         Чтобы снова использовать предыдущий шрифт, выполните следующее:</p>
         <pre class="indent examplebox"><span class="hl kwb">WelcomeFontName</span>=Verdana
 <span class="hl kwb">WelcomeFontSize</span>=<span class="hl num">12</span></pre>
-      <p><b><a name="RightToLeft">RightToLeft</a></b> —
+      <p><b><span id="RightToLeft">RightToLeft</span></b> —
         определяет направление письма справа налево. При значении <tt>yes</tt>
         выравнивание текста и направление письма будут инвертированы (с
         некоторыми преднамеренными исключениями), а элементы управления будут
@@ -120,7 +120,7 @@
 </pre>
       <h2 class="heading">Устаревший функционал</h2>
       <p><i>Параметр удалён в 6.4.</i>
-        <b><a name="TitleFontName">TitleFontName</a></b> и <b><a
+        <b><span id="TitleFontName">TitleFontName</span></b> и <b><a
         name="TitleFontSize">TitleFontSize</a></b> — определяют имя и размер
         шрифта для вывода имени приложения в фоновом окне установки (только если
         <tt>WindowVisible=yes</tt>). Если указанный шрифт в системе пользователя
@@ -128,8 +128,8 @@
         Если же параметр содержит пустую строку, будет сделана подмена на
         <i>Microsoft Sans Serif</i> или <i>MS Sans Serif</i> размером 29-point.</p>
       <p><i>Параметр удалён в 6.4.</i>
-        <b><a name="CopyrightFontName">CopyrightFontName</a></b>
-        и <b><a name="CopyrightFontSize">CopyrightFontSize</a></b> — определяет
+        <b><span id="CopyrightFontName">CopyrightFontName</span></b>
+        и <b><span id="CopyrightFontSize">CopyrightFontSize</span></b> — определяет
         имя и размер шрифта для вывода сообщения <tt>AppCopyright</tt> в
         фоновом окне установки (только если <tt>WindowVisible=yes</tt>). Если
         указанный шрифт в системе пользователя не существует, будет сделана

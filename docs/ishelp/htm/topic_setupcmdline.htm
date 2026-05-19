@@ -25,21 +25,21 @@
       <p>Смотрите также раздел "<a href="topic_uninstcmdline.htm">Параметры
         командной строки деинсталлятора</a>".</p>
       <dl>
-        <dt class="cmdline"><a name="HELP">/HELP</a>, <a name="HELP2">/?</a></dt>
+        <dt class="cmdline"><span id="HELP">/HELP</span>, <span id="HELP2">/?</span></dt>
         <dd>
           <p>Выводит справочную информацию по параметрам командной строки.
             Игнорируется, если директива <tt>UseSetupLdr</tt> в секции <tt>[Setup]</tt>
             имеет значение <tt>no</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="SP-">/SP-</a></dt>
+        <dt class="cmdline"><span id="SP-">/SP-</span></dt>
         <dd>
           <p>Отключает сообщение "<i>Данная программа установит.., продолжить?</i>"
             при запуске программы установки. Игнорируется, если директива
             <tt>DisableStartupPrompt</tt> в секции <tt>[Setup]</tt> имеет значение
             <tt>yes</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="SILENT">/SILENT</a>,
-            <a name="VERYSILENT">/VERYSILENT</a></dt>
+        <dt class="cmdline"><span id="SILENT">/SILENT</span>,
+            <span id="VERYSILENT">/VERYSILENT</span></dt>
         <dd>
           <p>Предписывает программе установке работать в тихом или очень тихом
             режиме. При тихой установке окно мастера и фоновое окно не
@@ -56,49 +56,49 @@
               сейчас?</i>". При очень тихой установке перезагрузка будет
             выполнена автоматически, без уведомления.</p>
         </dd>
-        <dt class="cmdline"><a name="NOSTYLE">/NOSTYLE</span></a></dt>
+        <dt class="cmdline"><span id="NOSTYLE">/NOSTYLE</span></span></dt>
         <dd>
           <p>Отключает активацию пользовательских стилей в программе установки
             (включая встроенный тёмный стиль).</p>
         </dd>
-        <dt class="cmdline"><a name="SUPPRESSMSGBOXES">/SUPPRESSMSGBOXES</a></dt>
+        <dt class="cmdline"><span id="SUPPRESSMSGBOXES">/SUPPRESSMSGBOXES</span></dt>
         <dd>
           <p>Предписывает программе установки подавлять окна сообщений.
             Эффективно использовать только в сочетании с командой <tt>/SILENT</tt>
             или <tt>/VERYSILENT</tt>.</p>
           <p>В ситуациях, в которых предусматривается сделать выбор, по
             умолчанию принимаются следующие ответы:</p>
-          <ul>
-            <li class="compact"><tt>Да</tt> в ситуации "<i>Сохранить
+          <ul class="compact">
+            <li><tt>Да</tt> в ситуации "<i>Сохранить
                 существующий файл?</i>".</li>
-            <li class="compact"><tt>Нет</tt> в ситуации "<i>Заменить
+            <li><tt>Нет</tt> в ситуации "<i>Заменить
                 существующий файл?</i>".</li>
-            <li class="compact"><tt>Прервать</tt> в ситуации <i>Прервать&nbsp;/&nbsp;Повторить</i>.</li>
-            <li class="compact"><tt>Отмена</tt> в ситуации <i>Повторить&nbsp;/&nbsp;Отмена</i>.</li>
-            <li class="compact"><tt>Да</tt> (=продолжить) в ситуации <i>DiskSpaceWarning
+            <li><tt>Прервать</tt> в ситуации <i>Прервать&nbsp;/&nbsp;Повторить</i>.</li>
+            <li><tt>Отмена</tt> в ситуации <i>Повторить&nbsp;/&nbsp;Отмена</i>.</li>
+            <li><tt>Да</tt> (=продолжить) в ситуации <i>DiskSpaceWarning
                 / DirExists / DirDoesntExist / NoUninstallWarning /
                 ExitSetupMessage / ConfirmUninstall</i>.</li>
-            <li class="compact"><tt>Да</tt> (=перезапустить) в ситуации <i>FinishedRestartMessage
+            <li><tt>Да</tt> (=перезапустить) в ситуации <i>FinishedRestartMessage
                 / UninstalledAndNeedsRestart</i>.</li>
-            <li class="compact"><tt>Рекомендуемый</tt> вариант в ситуации <i>PrivilegesRequiredOverridesAllowed=dialog</i>.</li>
+            <li><tt>Рекомендуемый</tt> вариант в ситуации <i>PrivilegesRequiredOverridesAllowed=dialog</i>.</li>
           </ul>
           <p>Для следующих 5-ти сообщений подавление не предусмотрено:</p>
-          <ul>
-            <li class="compact">Окно сообщения "<i>О программе</i>".</li>
-            <li class="compact">Окно сообщения "<i>Выйти из программы установки?</i>".</li>
-            <li class="compact">Окно сообщения <i>FileNotInDir2</i>, когда при
+          <ul class="compact">
+            <li>Окно сообщения "<i>О программе</i>".</li>
+            <li>Окно сообщения "<i>Выйти из программы установки?</i>".</li>
+            <li>Окно сообщения <i>FileNotInDir2</i>, когда при
               установке требуется вставить новый диск, который не был найден.</li>
-            <li class="compact">Любое окно сообщения (ошибка), которое может
+            <li>Любое окно сообщения (ошибка), которое может
               быть показано прежде, чем программа установки (или удаления)
               прочитает параметры командной строки.</li>
-            <li class="compact">Любой диалог задач или окно сообщения,
+            <li>Любой диалог задач или окно сообщения,
               показываемых при помощи функций <tt>TaskDialogMsgBox</tt> и <tt>MsgBox</tt>
               в секции <tt>[Code]</tt> (вместо этих функций используйте соответственно <a 
               href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>
               и <a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a>).</li>
           </ul>
         </dd>
-        <dt class="cmdline"><a name="ALLUSERS">/ALLUSERS</a></dt>
+        <dt class="cmdline"><span id="ALLUSERS">/ALLUSERS</span></dt>
         <dd>
           <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">административной установки</a>.
@@ -106,7 +106,7 @@
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
             со значением <tt>commandline</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="CURRENTUSER">/CURRENTUSER</a></dt>
+        <dt class="cmdline"><span id="CURRENTUSER">/CURRENTUSER</span></dt>
         <dd>
           <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">не административной установки</a>.
@@ -114,7 +114,7 @@
             используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
             со значением <tt>commandline</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="LOG">/LOG</a></dt>
+        <dt class="cmdline"><span id="LOG">/LOG</span></dt>
         <dd>
           <p>Предписывает программе установки создать в пользовательском
             каталоге TEMP детальный отчёт установки файлов и действий <tt>[Run]</tt>,
@@ -131,7 +131,7 @@
             Формат файла не предназначен для машинного анализа и может быть
             изменён без предварительного уведомления.</p>
         </dd>
-        <dt class="cmdline"><a name="LOG2">/LOG=</a>"<i>filename</i>"</dt>
+        <dt class="cmdline"><span id="LOG2">/LOG=</span>"<i>filename</i>"</dt>
         <dd>
           <p>Тоже самое, что и параметр <tt>/LOG</tt>, но в отличие от него
             позволяет указать путь и имя файла, которые будут использованы при
@@ -139,20 +139,20 @@
             перезаписан. Если же файл не может быть создан, программа установки
             будет прервана с сообщением об ошибке.</p>
         </dd>
-        <dt class="cmdline"><a name="NOCANCEL">/NOCANCEL</a></dt>
+        <dt class="cmdline"><span id="NOCANCEL">/NOCANCEL</span></dt>
         <dd>
           <p>Предотвращает отмену процесса установки путём отключения кнопки
             "Отмена" и игнорируя нажатия по кнопке "Закрыть". Целесообразно
             использовать вместе с командой <tt>/SILENT</tt> или <tt>/VERYSILENT</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="NORESTART">/NORESTART</a></dt>
+        <dt class="cmdline"><span id="NORESTART">/NORESTART</span></dt>
         <dd>
           <p>Предотвращает перезагрузку системы после успешного завершения
             установки или после сбоя на этапе <i>Подготовка к установке</i>,
             требующего перезагрузки. Обычно используется вместе с командой <tt>/SILENT</tt>
             или <tt>/VERYSILENT</tt>.</p>
         </dd>
-        <dt class="cmdline"><a name="RESTARTEXITCODE">/RESTARTEXITCODE=</a><i>exit
+        <dt class="cmdline"><span id="RESTARTEXITCODE">/RESTARTEXITCODE=</span><i>exit
               code</i></dt>
         <dd>
           <p>Определяет дополнительный код выхода, который должна возвращать
@@ -162,69 +162,69 @@
             См. также: <a href="topic_setupexitcodes.htm">Коды выхода программы
               установки</a>.</p>
         </dd>
-        <dt class="cmdline"><a name="CLOSEAPPLICATIONS">/CLOSEAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="CLOSEAPPLICATIONS">/CLOSEAPPLICATIONS</span></dt>
         <dd>
           <p>Предписывает программе установки по возможности закрыть приложения,
             которые используют файлы, нуждающиеся в обновлении.</p>
         </dd>
-        <dt class="cmdline"><a name="NOCLOSEAPPLICATIONS">/NOCLOSEAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="NOCLOSEAPPLICATIONS">/NOCLOSEAPPLICATIONS</span></dt>
         <dd>
           <p>Запрещает программе установки закрывать приложения, которые
             используют файлы, нуждающиеся в обновлении. Если также используется
             команда <tt>/CLOSEAPPLICATIONS</tt>, этот параметр не учитывается.</p>
         </dd>
-        <dt class="cmdline"><a name="FORCECLOSEAPPLICATIONS">/FORCECLOSEAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="FORCECLOSEAPPLICATIONS">/FORCECLOSEAPPLICATIONS</span></dt>
         <dd>
           <p>Предписывает программе установки принудительно закрывать
             приложения.</p>
         </dd>
-        <dt class="cmdline"><a name="NOFORCECLOSEAPPLICATIONS">/NOFORCECLOSEAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="NOFORCECLOSEAPPLICATIONS">/NOFORCECLOSEAPPLICATIONS</span></dt>
         <dd>
           <p>Запрещает программе установки принудительно закрывать приложения.
             Если также используется команда <tt>/FORCECLOSEAPPLICATIONS</tt>,
             этот параметр не учитывается.</p>
         </dd>
-        <dt class="cmdline"><a name="LOGCLOSEAPPLICATIONS">/LOGCLOSEAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="LOGCLOSEAPPLICATIONS">/LOGCLOSEAPPLICATIONS</span></dt>
         <dd>
           <p>Предписывает программе установки при закрытии приложений создавать
             дополнительный отчёт в целях отладки.</p>
         </dd>
-        <dt class="cmdline"><a name="RESTARTAPPLICATIONS">/RESTARTAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="RESTARTAPPLICATIONS">/RESTARTAPPLICATIONS</span></dt>
         <dd>
           <p>Предписывает программе установки перезапустить приложения, если это
             возможно.</p>
         </dd>
-        <dt class="cmdline"><a name="NORESTARTAPPLICATIONS">/NORESTARTAPPLICATIONS</a></dt>
+        <dt class="cmdline"><span id="NORESTARTAPPLICATIONS">/NORESTARTAPPLICATIONS</span></dt>
         <dd>
           <p>Запрещает программе установки перезапускать приложения. Если также
             используется команда <tt>/RESTARTAPPLICATIONS</tt>, этот параметр
             не учитывается.</p>
         </dd>
-        <dt class="cmdline"><a name="REDIRECTIONGUARD">/REDIRECTIONGUARD</a></dt>
+        <dt class="cmdline"><span id="REDIRECTIONGUARD">/REDIRECTIONGUARD</span></dt>
         <dd>
           <p>Предписывает программе установки включить механизм RedirectionGuard,
             если это возможно.</p>
         </dd>
-        <dt class="cmdline"><a name="NOREDIRECTIONGUARD">/NOREDIRECTIONGUARD</a></dt>
+        <dt class="cmdline"><span id="NOREDIRECTIONGUARD">/NOREDIRECTIONGUARD</span></dt>
         <dd>
           <p>Запрещает программе установки включать механизм RedirectionGuard.
             Если уже был использован параметр /REDIRECTIONGUARD, этот параметр
             командной строки игнорируется.</p>
         </dd>
-        <dt class="cmdline"><a name="LOADINF">/LOADINF=</a>"<i>filename</i>"</dt>
+        <dt class="cmdline"><span id="LOADINF">/LOADINF=</span>"<i>filename</i>"</dt>
         <dd>
           <p>Предписывает программе установки загрузить настройки инсталляции из
             указанного файла. Этот файл может быть создан при помощи команды <tt>/SAVEINF=</tt>,
             описанной ниже.</p>
           <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.</p>
         </dd>
-        <dt class="cmdline"><a name="SAVEINF">/SAVEINF=</a>"<i>filename</i>"</dt>
+        <dt class="cmdline"><span id="SAVEINF">/SAVEINF=</span>"<i>filename</i>"</dt>
         <dd>
           <p>Предписывает программе установки сохранить настройки инсталляции в
             указанный файл.</p>
           <p>Не забывайте использовать кавычки, если имя файла содержит пробелы.</p>
         </dd>
-        <dt class="cmdline"><a name="LANG">/LANG=</a><i>language</i></dt>
+        <dt class="cmdline"><span id="LANG">/LANG=</span><i>language</i></dt>
         <dd>
           <p>Определяет используемый язык мастера установки. В качестве <i>language</i>
             необходимо указать внутренне имя языка, заданного в записях секции <tt>[Languages]</tt>.
@@ -232,7 +232,7 @@
           <p>При использовании действительного значения параметра <tt>/LANG</tt>,
             диалог "<i>Выбор языка</i>" показан не будет.</p>
         </dd>
-        <dt class="cmdline"><a name="DIR">/DIR=</a>"<i>x</i>:\<i>dirname</i>"</dt>
+        <dt class="cmdline"><span id="DIR">/DIR=</span>"<i>x</i>:\<i>dirname</i>"</dt>
         <dd>
           <p>Переопределяет заданное по умолчанию имя каталога, который
             предлагается на странице "<i>Выбор папки установки</i>". Необходимо
@@ -241,7 +241,7 @@
             соответствующие им значения. Например: <code>/DIR=expand:{autopf}\My
               Program</code>.</p>
         </dd>
-        <dt class="cmdline"><a name="GROUP">/GROUP=</a>"<i>folder name</i>"</dt>
+        <dt class="cmdline"><span id="GROUP">/GROUP=</span>"<i>folder name</i>"</dt>
         <dd>
           <p>Переопределяет заданное по умолчанию имя папки, которая
             предлагается на странице "<i>Выбор папки в меню «Пуск»</i>". Может
@@ -249,20 +249,20 @@
             Если директива <tt>DisableProgramGroupPage</tt> в секции <tt>[Setup]</tt>
             имеет значение <tt>yes</tt>, эта команда не учитывается.</p>
         </dd>
-        <dt class="cmdline"><a name="NOICONS">/NOICONS</a></dt>
+        <dt class="cmdline"><span id="NOICONS">/NOICONS</span></dt>
         <dd>
           <p>Предписывает программе установки изначально отметить опцию "<i>Не
               создавать папку в меню «Пуск»</i>" на странице мастера "<i>Выбор
               папки в меню «Пуск»</i>".</p>
         </dd>
-        <dt class="cmdline"><a name="TYPE">/TYPE=</a><i>type name</i></dt>
+        <dt class="cmdline"><span id="TYPE">/TYPE=</span><i>type name</i></dt>
         <dd>
           <p>Переопределяет заданный по умолчанию <a href="topic_typessection.htm">тип
               установки</a>.</p>
           <p>Если указанный тип существует и не является пользовательским, любой
             параметр <tt>/COMPONENTS</tt> будет проигнорирован.</p>
         </dd>
-        <dt class="cmdline"><a name="COMPONENTS">/COMPONENTS=</a>"<i>разделённый
+        <dt class="cmdline"><span id="COMPONENTS">/COMPONENTS=</span>"<i>разделённый
               запятыми перечень компонентов</i>"</dt>
         <dd>
           <p>Переопределяет заданный по умолчанию выбор <a href="topic_componentssection.htm">компонентов</a>.
@@ -288,7 +288,7 @@
             дочерними компонентами за исключением одного:
             <code>/COMPONENTS="*parent,!parent\child"</code><br /><br /></div>
         </dd>
-        <dt class="cmdline"><a name="TASKS">/TASKS=</a>"<i>разделённый
+        <dt class="cmdline"><span id="TASKS">/TASKS=</span>"<i>разделённый
               запятыми перечень задач</i>"</dt>
         <dd>
           <p>Определяет перечень <a href="topic_taskssection.htm">задач</a>,
@@ -312,7 +312,7 @@
             дочерними задачами за исключением одной:
             <code>/TASKS="*parent,!parent\child"</code><br /><br /></div>
         </dd>
-        <dt class="cmdline"><a name="MERGETASKS">/MERGETASKS=</a>"<i>разделённый
+        <dt class="cmdline"><span id="MERGETASKS">/MERGETASKS=</span>"<i>разделённый
               запятыми перечень задач</i>"</dt>
         <dd>
           <p>Подобен параметру <tt>/TASKS</tt>, за исключением того, что
@@ -332,7 +332,7 @@
             "desktopicon" отменяется:
             <code>/MERGETASKS="!desktopicon"</code><br /><br /></div>
         </dd>
-        <dt class="cmdline"><a name="PASSWORD">/PASSWORD=</a><i>password</i></dt>
+        <dt class="cmdline"><span id="PASSWORD">/PASSWORD=</span><i>password</i></dt>
         <dd>
           <p>Определяет пароль для использования в установке. Если в секции <tt>[Setup]</tt>
             параметр <tt>Password</tt> не указан, этот параметр командной

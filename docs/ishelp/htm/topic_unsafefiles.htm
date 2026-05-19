@@ -52,16 +52,16 @@
             распространяемой, скопируйте её в исходную папку с вашим сценарием и
             используйте только оттуда.</p>
         </dd>
-        <dt><b>ADVAPI32.DLL, COMDLG32.DLL, GDI32.DLL, KERNEL32.DLL,
-            RICHED32.DLL, SHELL32.DLL, USER32.DLL, UXTHEME.DLL</b></dt>
+        <dt><b>ADVAPI32.dll, COMDLG32.dll, GDI32.dll, KERNEL32.dll,
+            RICHED32.dll, SHELL32.dll, USER32.dll, UXTHEME.dll</b></dt>
         <dd>
           <p>Все эти файлы являются основными компонентами Windows и никогда не
             должны развёртываться при помощи программы установки. Пользователи
             могут получать новые версии этих библиотек только при установке
             новой версии Windows, пакета обновления или исправления для Windows.</p>
         </dd>
-        <dt><b>COMCAT.DLL, MSVBVM50.DLL,
-            MSVBVM60.DLL, OLEAUT32.DLL, OLEPRO32.DLL, STDOLE2.TLB</b>
+        <dt><b>COMCAT.dll, MSVBVM50.dll,
+            MSVBVM60.dll, OLEAUT32.dll, OLEPRO32.dll, STDOLE2.tlb</b>
             <i>(в особых случаях)</i></dt>
         <dd>
           <p>Если значение <tt>DestDir</tt> <i>отличается</i> от <tt>{sys}</tt>
@@ -75,19 +75,19 @@
             Кроме того, если ваши копии файлов были удалены, то другие
             приложения перестанут работать.</p>
         </dd>
-        <dt><b>COMCTL32.DLL</b></dt>
+        <dt><b>COMCTL32.dll</b></dt>
         <dd>
-          <p>Microsoft не разрешает отдельное перераспределение COMCTL32.DLL (и
+          <p>Microsoft не разрешает отдельное перераспределение COMCTL32.dll (и
             это правильно - файл между платформами отличается), поэтому никогда
-            не следует помещать COMCTL32.DLL в секцию <tt>[Files]</tt>. Однако
+            не следует помещать COMCTL32.dll в секцию <tt>[Files]</tt>. Однако
             можно направить пользователей <a
             href="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en"
             target="_blank" title="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en">на
-            загрузку обновления COMCTL32 с сайта Microsoft</a><img class="extlink" src="../images/extlink.svg"
+            загрузку обновления COMCTL32 с сайта Microsoft</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg"
             alt=" [внешняя ссылка]" /> или добавить обновление COMCTL32 к вашей
             программе.</p>
         </dd>
-        <dt><b>SHDOCVW.DLL, SHLWAPI.DLL, URLMON.DLL, WININET.DLL</b></dt>
+        <dt><b>SHDOCVW.dll, SHLWAPI.dll, URLMON.dll, WININET.dll</b></dt>
         <dd>
           <p>Эти файлы являются компонентами ядра Internet Explorer, а также
             используются проводником Windows. Их замена может помешать запуску
@@ -95,7 +95,7 @@
             их последней версии, то вашим пользователям нужно будет установить
             последнюю версию Internet Explorer, чтобы получить их.</p>
         </dd>
-        <dt><b>MSCOREE.DLL</b></dt>
+        <dt><b>MSCOREE.dll</b></dt>
         <dd>
           <p>Этот файл является частью Microsoft .NET Framework. Невозможно
             безопасно установить или обновить .NET Framework, включив этот файл

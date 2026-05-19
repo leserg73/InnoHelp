@@ -23,93 +23,82 @@
         <a href="topic_issig.htm">подписей</a> с использованием алгоритма
         ECDSA P-256.</p>
       <p>Синтаксис использования инструмента следующий:</p>
-      <div class="indent">
-        <p>issigtool [<i>параметры</i>] <i>&lt;команда&gt;</i> <i>&lt;аргументы&gt;</i></p>
-      </div>
+      <pre class="indent examplebox">
+issigtool <i>[options]</i> <i>&lt;команда&gt;</i> <i>&lt;аргументы&gt;</i>
+</pre>
       <p>Доступные <tt>команды</tt>:</p>
-      <div class="indent">
-        <table>
-          <tbody>
+      <div>
+        <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Команда</th><th>Назначение</th></tr>
             <tr>
-              <td class="cellleft"><b>sign</b> <i>&lt;имена файлов&gt;</i></td>
-              <td class="cellright">Выполняет подпись каждого указанного файла.
-                Требуется закрытый ключ.</td>
+              <td class="nowrap"><tt>sign <i>&lt;имена файлов&gt;</i></tt></td>
+              <td>Выполняет подпись каждого указанного файла. Требуется закрытый
+                ключ.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>verify</b> <i>&lt;имена файлов&gt;</i></td>
-              <td class="cellright">Проверяет подпись каждого указанного файла
-                закрытым ключом.</td>
+              <td class="nowrap"><tt>verify <i>&lt;имна файлов&gt;</i></tt></td>
+              <td>Проверяет подпись каждого указанного файла закрытым ключом.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>export-public-key</b> <i>&lt;имя
-                  файла&gt;</i></td>
-              <td class="cellright">Выполняет экспорт публичного ключа, который
-                используется в процессе подписи, в указанный файл.</td>
+              <td class="nowrap"><tt>export-public-key <i>&lt;имя файла&gt;</i></tt></td>
+              <td>Выполняет экспорт публичного ключа, который используется в
+                процессе подписи, в указанный файл.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>generate-private-key</b></td>
-              <td class="cellright">Формирует новый закрытый ключ для операций
-                подписи.</td>
+              <td class="nowrap"><tt>generate-private-key</tt></td>
+              <td>Формирует новый закрытый ключ для операций подписи.</td>
             </tr>
-          </tbody>
         </table>
       </div>
       <p>Допустимые <tt>параметры</tt>:</p>
-      <div class="indent">
-        <table>
-          <tbody>
+      <div>
+        <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Параметр</th><th>Назначение</th></tr>
             <tr>
-              <td class="cellleft"><b>--key-file=</b>&lt;filename&gt;</td>
-              <td class="cellright">Определяет имя файла закрытого ключа,
-                который используется для подписи. Этот параметр переопределяет
-                переменную окружения <tt>ISSIGTOOL_KEY_FILE</tt>, которая также
-                может использоваться для установки файла закрытого ключа.</td>
+              <td class="nowrap"><tt>--key-file=<i>&lt;filename&gt;</i></tt></td>
+              <td>Определяет имя файла закрытого ключа, который используется для
+                подписи. Этот параметр переопределяет переменную окружения
+                <tt>ISSIGTOOL_KEY_FILE</tt>, которая также может использоваться
+                для установки файла закрытого ключа.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>--allow-overwrite</b>, <b>-o</b></td>
-              <td class="cellright">Перезапись существующих файлов.</td>
+              <td class="nowrap"><tt>--allow-overwrite</tt>, <tt>-o</tt></td>
+              <td>Перезапись существующих файлов.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>--quiet</b>, <b>-q</b></td>
-              <td class="cellright">Подавление вывода стандартных сообщений
-                инструмента.</td>
+              <td class="nowrap"><tt>--quiet</tt>, <tt>-q</tt></td>
+              <td>Подавление вывода стандартных сообщений инструмента.</td>
             </tr>
             <tr>
-              <td class="cellleft"><b>--help</b>, <b>-?</b></td>
-              <td class="cellright">Вывод информации о параметрах командной
-                строки.</td>
+              <td class="nowrap"><tt>--help</tt>, <tt>-?</tt></td>
+              <td>Вывод информации о параметрах командной строки.</td>
             </tr>
-          </tbody>
         </table>
       </div>
       <p>Примеры:</p>
-      <div class="indent">
-        <div class="examplebox">
-          issigtool --key-file="MyKey.isprivatekey" generate-private-key<br>
-          issigtool --key-file="MyKey.isprivatekey" sign "MyProg.dll"<br>
-          issigtool --key-file="MyKey.isprivatekey" export-public-key "MyKey.ispublickey"<br>
-          issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"<br>
-          <br>
-        </div>
-      </div>
+      <pre class="indent examplebox">
+issigtool --key-file="MyKey.isprivatekey" generate-private-key
+issigtool --key-file="MyKey.isprivatekey" sign "MyProg.dll"
+issigtool --key-file="MyKey.isprivatekey" export-public-key "MyKey.ispublickey"
+issigtool --key-file="MyKey.ispublickey" verify "MyProg.dll"
+</pre>
       <p>Коды выхода:</p>
-      <div class="indent">
-        <table>
-          <tbody>
+      <div>
+        <table style="margin-top: 1.0em" border="1">
+            <tr><th>Код</th><th>Описание</th></tr>
             <tr>
-              <td class="cellleft"><strong>0</strong></td>
-              <td class="cellright">Успех</td>
+              <td><strong>0</strong></td>
+              <td>Успех</td>
             </tr>
             <tr>
-              <td class="cellleft"><strong>1</strong></td>
-              <td class="cellright">Проверка подписи завершилась неудачно</td>
+              <td><strong>1</strong></td>
+              <td>Проверка подписи завершилась неудачно</td>
             </tr>
             <tr>
-              <td class="cellleft"><strong>2</strong></td>
-              <td class="cellright">Недопустимые параметры командной строки или
+              <td><strong>2</strong></td>
+              <td>Недопустимые параметры командной строки или
                 произошла фатальная ошибка</td>
             </tr>
-          </tbody>
         </table>
       </div>
       <p>Примечания:</p>

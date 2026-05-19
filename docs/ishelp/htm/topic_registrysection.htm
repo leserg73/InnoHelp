@@ -36,47 +36,41 @@ class="hl kwb">ValueType</span>: string; <span class="hl kwb">ValueName</span>: 
 class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Root">Root</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Root">Root</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя корневого раздела реестра. Допустимые значения:</p>
-          <div class="indent">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="cellleft"><code>HKCU</code></td>
-                  <td class="cellright">(HKEY_CURRENT_USER)</td>
-                </tr>
-                <tr>
-                  <td class="cellleft"><code>HKLM</code></td>
-                  <td class="cellright">(HKEY_LOCAL_MACHINE)</td>
-                </tr>
-                <tr>
-                  <td class="cellleft"><code>HKCR</code></td>
-                  <td class="cellright">(HKEY_CLASSES_ROOT)</td>
-                </tr>
-                <tr>
-                  <td class="cellleft"><code>HKU</code></td>
-                  <td class="cellright">(HKEY_USERS)</td>
-                </tr>
-                <tr>
-                  <td class="cellleft"><code>HKCC</code></td>
-                  <td class="cellright">(HKEY_CURRENT_CONFIG)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table style="margin-top: 1.0em" border="1">
+            <tr><th>Значение</th><th>Описание</th></tr>
+            <tr>
+              <td><code>HKCU</code></td>
+              <td>Сокращение от HKEY_CURRENT_USER</td>
+            </tr>
+            <tr>
+              <td><code>HKLM</code></td>
+              <td>Сокращение от HKEY_LOCAL_MACHINE</td>
+            </tr>
+            <tr>
+              <td><code>HKCR</code></td>
+              <td>Сокращение от HKEY_CLASSES_ROOT</td>
+            </tr>
+            <tr>
+              <td><code>HKU</code></td>
+              <td>Сокращение от HKEY_USERS</td>
+            </tr>
+            <tr>
+              <td><code>HKCC</code></td>
+              <td>Сокращение от HKEY_CURRENT_CONFIG</td>
+            </tr>
+          </table>
           <p>Ещё одно специальное значение:</p>
-          <div class="indent">
-            <table>
-              <tbody>
-                <tr>
-                  <td class="cellleft"><code>HKA</code></td>
-                  <td class="cellright">(в <a href="topic_admininstallmode.htm">режиме
-                      административной установки</a> равен HKLM, иначе HKCU) </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table style="margin-top: 1.0em" border="1">
+            <tr>
+              <td><code>HKA</code></td>
+              <td>(в <a href="topic_admininstallmode.htm">режиме
+                административной установки</a> равен <tt>HKLM</tt>, иначе
+                <tt>HKCU</tt>)</td>
+            </tr>
+          </table>
           <p>Значения <tt>HKCU</tt> и <tt>HKA</tt> следует использовать только
             для настроек, совместимых с перемещаемыми профилями.</p>
           <p>Использовать <tt>HKCR</tt> не рекомендуется. Вместо него
@@ -104,7 +98,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Root</span>: <span class="hl kwe">HKLM</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Subkey">Subkey</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Subkey">Subkey</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя подраздела реестра; может содержать константы.</p>
           <div class="examplebox">
@@ -112,53 +106,52 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Subkey</span>: "Software\My Company\My Program"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ValueType">ValueType</a></b></dt>
+        <dt class="paramlist"><b><span id="ValueType">ValueType</span></b></dt>
         <dd class="paramlist">
           <p>Определяет тип данных значения. Поддерживаются следующие типы
             данных:</p>
-          <table>
-            <tbody>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>none</code></span></td>
-                <td class="cellright">(по умолчанию) параметр реестра <i>без</i>
-                  значения.<br />
-                  В этом случае параметр <tt>ValueData</tt> игнорируется.</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>string</code></span></td>
-                <td class="cellright">строковое значение (REG_SZ).</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>expandsz</code></span></td>
-                <td class="cellright">расширяемое строковое значение
-                  (REG_EXPAND_SZ).</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>multisz</code></span></td>
-                <td class="cellright">многостроковое значение (REG_MULTI_SZ).</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>dword</code></span></td>
-                <td class="cellright">32-разрядное числовое значение
-                  (REG_DWORD).</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>qword</code></span></td>
-                <td class="cellright">64-разрядное числовое значение
-                  (REG_QWORD).</td>
-              </tr>
-              <tr>
-                <td class="cellleft"><span style="font-weight: bold;"><code>binary</code></span></td>
-                <td class="cellright">двоичное значение (REG_BINARY).</td>
-              </tr>
-            </tbody>
+          <table style="margin-top: 1.0em" border="1">
+            <tr><th>Тип</th><th>Назначение</th></tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>none</code></span></td>
+              <td>(по умолчанию) параметр реестра <i>без</i>
+                значения.<br />
+                В этом случае параметр <tt>ValueData</tt> игнорируется.</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>string</code></span></td>
+              <td>строковое значение (REG_SZ).</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>expandsz</code></span></td>
+              <td>расширяемое строковое значение
+                (REG_EXPAND_SZ).</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>multisz</code></span></td>
+              <td>многостроковое значение (REG_MULTI_SZ).</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>dword</code></span></td>
+              <td>32-разрядное числовое значение
+                (REG_DWORD).</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>qword</code></span></td>
+              <td>64-разрядное числовое значение
+                (REG_QWORD).</td>
+            </tr>
+            <tr>
+              <td><span style="font-weight: bold;"><code>binary</code></span></td>
+              <td>двоичное значение (REG_BINARY).</td>
+            </tr>
           </table>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">ValueType</span>: string</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ValueName">ValueName</a></b></dt>
+        <dt class="paramlist"><b><span id="ValueName">ValueName</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя параметра; может содержать константы. Если имя
             является пустой строкой, будет использоваться параметр с именем
@@ -168,7 +161,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">ValueName</span>: "Version"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ValueData">ValueData</a></b></dt>
+        <dt class="paramlist"><b><span id="ValueData">ValueData</span></b></dt>
         <dd class="paramlist">
           <p>Определяет значение параметра. Если параметр <tt>ValueType</tt>
             имеет значение <tt>string</tt>, <tt>expandsz</tt> или <tt>multisz</tt>,
@@ -199,7 +192,7 @@ class="hl kwb">ValueData</span>: "<span class="hl kwc">{app}</span>"</pre>
 class="hl num">1.0</span>"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Permissions">Permissions</a></b></dt>
+        <dt class="paramlist"><b><span id="Permissions">Permissions</span></b></dt>
         <dd class="paramlist">
           <p>Определяет дополнительные разрешения для получения доступа в раздел
             реестра, защищенного ACL (списки управления доступом). Не
@@ -227,7 +220,7 @@ class="hl num">1.0</span>"</pre>
           <p>Для секции <tt>[Registry]</tt> поддерживаются следующие типы
             доступа:</p>
           <dl>
-            <dt class="flaglist"><a name="full">full</a></dt>
+            <dt class="flaglist"><span id="full">full</span></dt>
             <dd>
               <p>Предоставляет разрешение "Полный доступ", аналогичное типу <tt>modify</tt>
                 (см. ниже), но дополнительно позволяет указанному
@@ -235,13 +228,13 @@ class="hl num">1.0</span>"</pre>
                 его разрешения. Используется редко; как правило <tt>modify</tt>
                 вполне достаточно.</p>
             </dd>
-            <dt class="flaglist"><a name="modify">modify</a></dt>
+            <dt class="flaglist"><span id="modify">modify</span></dt>
             <dd>
               <p>Предоставляет разрешение "Модификация", которое позволяет
                 указанному пользователю/группе читать, создавать, изменять и
                 удалять значения и подразделы реестра.</p>
             </dd>
-            <dt class="flaglist"><a name="read">read</a></dt>
+            <dt class="flaglist"><span id="read">read</span></dt>
             <dd>
               <p>Предоставляет разрешение "Чтение", которое позволяет указанному
                 пользователю/группе читать значения и подразделы реестра.</p>
@@ -252,20 +245,20 @@ class="hl num">1.0</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Permissions</span>: users-modify</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="createvalueifdoesntexist">createvalueifdoesntexist</a></dt>
+            <dt class="flaglist"><span id="createvalueifdoesntexist">createvalueifdoesntexist</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки создаст параметр <i>только</i>
                 тогда, когда параметра с таким же именем ещё не существует. Этот
                 флаг не работает, если тип данных <tt>none</tt> или указан флаг
                 <tt>deletevalue</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="deletekey">deletekey</a></dt>
+            <dt class="flaglist"><span id="deletekey">deletekey</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки сначала попытается
                 удалить весь раздел реестра, если он существует, включая все
@@ -276,14 +269,14 @@ class="hl num">1.0</span>"</pre>
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты.</p>
             </dd>
-            <dt class="flaglist"><a name="deletevalue">deletevalue</a></dt>
+            <dt class="flaglist"><span id="deletevalue">deletevalue</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки сначала попытается
                 удалить параметр, если он существует. Затем, если параметр <tt>ValueType</tt>
                 не имеет значения <tt>none</tt>, будет создан новый раздел,
                 если он ещё не существует, а после новый параметр.</p>
             </dd>
-            <dt class="flaglist"><a name="dontcreatekey">dontcreatekey</a></dt>
+            <dt class="flaglist"><span id="dontcreatekey">dontcreatekey</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки не будет пытаться
                 создать раздел или какой-либо параметр, если раздел в системе
@@ -293,13 +286,13 @@ class="hl num">1.0</span>"</pre>
                 для удаления разделов в процессе деинсталляции, но не их
                 создания во время установки.</p>
             </dd>
-            <dt class="flaglist"><a name="noerror">noerror</a></dt>
+            <dt class="flaglist"><span id="noerror">noerror</span></dt>
             <dd>
               <p>Этот флаг отключает сообщение об ошибке, если программе
                 установке по каким-либо причинам не удаётся создать раздел или
                 параметр.</p>
             </dd>
-            <dt class="flaglist"><a name="preservestringtype">preservestringtype</a></dt>
+            <dt class="flaglist"><span id="preservestringtype">preservestringtype</span></dt>
             <dd>
               <p>Применяется только в том случае, если параметр <tt>ValueType</tt>
                 имеет значение <tt>string</tt> или <tt>expandsz</tt>. Если
@@ -310,13 +303,14 @@ class="hl num">1.0</span>"</pre>
                 заменён значением с тем же типом данных, что и предыдущее
                 значение.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsclearvalue">uninsclearvalue</a></dt>
+            <dt class="flaglist"><span id="uninsclearvalue">uninsclearvalue</span></dt>
             <dd>
               <p>После деинсталляции программы, устанавливает для данных
                 параметра пустую строку (тип REG_SZ). Этот флаг нельзя
-                использовать вместе с флагом <tt>uninsdeletekey</tt>.</p>
+                использовать вместе с флагом <tt>uninsdeletekey</tt> или
+                <tt>uninsdeletevalue</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeletekey">uninsdeletekey</a></dt>
+            <dt class="flaglist"><span id="uninsdeletekey">uninsdeletekey</span></dt>
             <dd>
               <p>После деинсталляции программы, выполняет удаление всего
                 раздела, включая все параметры и подразделы в нём. Очевидно, что
@@ -327,7 +321,7 @@ class="hl num">1.0</span>"</pre>
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeletekeyifempty">uninsdeletekeyifempty</a></dt>
+            <dt class="flaglist"><span id="uninsdeletekeyifempty">uninsdeletekeyifempty</span></dt>
             <dd>
               <p>После деинсталляции программы выполняет удаление раздела
                 реестра, если в нём больше не осталось никаких параметров или
@@ -337,7 +331,7 @@ class="hl num">1.0</span>"</pre>
                 если параметр <tt>Subkey</tt> является пустым или содержит
                 только символы обратной косой черты.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeletevalue">uninsdeletevalue</a></dt>
+            <dt class="flaglist"><span id="uninsdeletevalue">uninsdeletevalue</span></dt>
             <dd>
               <p>После деинсталляции программы выполняет удаление параметра.
                 Этот флаг нельзя использовать вместе с флагом <tt>uninsdeletekeyifempty.</tt>

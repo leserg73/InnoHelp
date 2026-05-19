@@ -38,7 +38,7 @@ class="hl kwc">{app}</span>"</pre>
         (которые игнорируются компилятором), поместив точку с запятой в начале
         строки. Например:</p>
       <pre class="indent examplebox"><span class="hl slc">; Это комментарий. Здесь можно дать пояснение команде или коду...</span></pre>
-      <p>Поддерживается C-подобная директива <a name="include"><tt>#include</tt></a>,
+      <p>Поддерживается C-подобная директива <span id="include"><tt>#include</tt></span>,
         которая позволяет вставить в сценарий строки из указанного файла в
         позицию директивы <tt>#include</tt>. Её синтаксис следующий:</p>
       <pre class="indent examplebox"><span class="hl kwf">#include</span> <span
@@ -48,23 +48,23 @@ class="hl str">"filename.txt"</span></pre>
         который содержит директиву <tt>#include</tt>. В имени файла можно
         указать приставку "<tt>compiler:</tt>", тогда поиск файла будет выполнен
         в каталоге компилятора.</p>
-      <p>Также поддерживается директива <a name="preproc"><tt>#preproc</tt></a>,
-        которая определяет использование встроенного препроцессора,
-        поддерживающего только вышеуказанную директиву <tt>#include</tt>, или
-        же использование препроцессора Inno Setup (ISPP), который поддерживает
-        множество других директив. Её синтаксис следующий:</p>
+      <p>Также поддерживается директива <span id="preproc"><tt>#preproc</tt></span>,
+        которая должна быть размещена в первой строке файла. Она указывает,
+        следует ли использовать встроенный препроцессор, поддерживающий только
+        вышеуказанную директиву <tt>#include</tt>, или использовать препроцессор
+        Inno Setup (ISPP), который поддерживает гораздо больше директив. Её
+        синтаксис следующий:</p>
       <pre class="indent examplebox"><span class="hl kwf">#preproc</span> builtin
 <span class="hl kwf">#preproc</span> ispp</pre>
-      <p>По умолчанию сценарии используют ISPP, если он
-        доступен, а файлы .isl использует встроенный препроцессор.</p>
+      <p>По умолчанию сценарии используют ISPP, если он доступен. Но в файлах
+        сообщений (<tt>.isl</tt>) использование каких-либо директив запрещено.</p>
       <p>Если используется Unicode, то файлы сценариев обязательно
         должны быть в кодировке <b>UTF-8</b>.</p>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><a href="topic_params.htm">Параметры в секциях</a><br />
         <a href="topic_consts.htm">Константы</a><br />
         <a href="topic_commonparams.htm">Общие параметры</a><br />
-        <a href="topic_componentstasksparams.htm">Параметры секций [Components]
-          и [Tasks]</a><br />
+        <a href="topic_componentstasksparams.htm">Параметры секций [Components] и [Tasks]</a><br />
         <a href="topic_setupsection.htm">Секция [Setup]</a><br />
         <a href="topic_typessection.htm">Секция [Types]</a><br />
         <a href="topic_componentssection.htm">Секция [Components]</a><br />

@@ -50,7 +50,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
 </pre>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Filename">Filename</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Filename">Filename</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет программу для выполнения или файл/папку, который следует
             открыть. Если параметр <tt>Filename</tt> не содержит исполняемого
@@ -62,7 +62,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\Init.exe"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Description">Description</a></b></dt>
+        <dt class="paramlist"><b><span id="Description">Description</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр действителен только для секции <tt>[Run]</tt>.
             Позволяет указать описание записи; может содержать константы. Обычно
@@ -75,7 +75,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Description</span>: "View the README file"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Parameters">Parameters</a></b></dt>
+        <dt class="paramlist"><b><span id="Parameters">Parameters</span></b></dt>
         <dd class="paramlist">
           <p>Определяет параметры командной строки для запуска программы; может
             содержать константы.</p>
@@ -84,7 +84,7 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             <pre class="nomargin"><span class="hl kwb">Parameters</span>: "/x"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="WorkingDir">WorkingDir</a></b></dt>
+        <dt class="paramlist"><b><span id="WorkingDir">WorkingDir</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр определяет начальный каталог запускаемой программы.
             Если параметр не указан или является пустым, будет использоваться
@@ -97,9 +97,9 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
 class="hl kwc">{app}</span>"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="StatusMsg">StatusMsg</a></b></dt>
+        <dt class="paramlist"><b><span id="StatusMsg">StatusMsg</span></b></dt>
         <dd class="paramlist">
-          <p>Этот параметр действителен только в секции <tt>[Run]</tt>.
+          <p>Не оказывает никакого эффекта в секции <tt>[UninstallRun]</tt>.
             Определяет сообщение, которое будет показано мастером в процессе
             выполнения программы. Если этот параметр не указан или является
             пустым, будет использоваться сообщение по умолчанию "Завершение
@@ -109,7 +109,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">StatusMsg</span>: "Установка BDE..."</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="RunOnceId">RunOnceId</a></b></dt>
+        <dt class="paramlist"><b><span id="RunOnceId">RunOnceId</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр действителен только в секции <tt>[UninstallRun]</tt>.
             Если <a href="topic_sameappnotes.htm">то же приложение</a>
@@ -131,7 +131,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">RunOnceId</span>: "DelService"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Verb">Verb</a></b></dt>
+        <dt class="paramlist"><b><span id="Verb">Verb</span></b></dt>
         <dd class="paramlist">
           <p>Определяет действие, которое будет выполнено с файлом. Следует
             использовать вместе с флагом <tt>shellexec</tt>. Стандартными
@@ -143,13 +143,13 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Verb</span>: "print"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="32bit">32bit</a></dt>
+            <dt class="flaglist"><span id="32bit">32bit</span></dt>
             <dd>
               <p>Приводит к сопоставлению константы <tt>{sys}</tt> с 32-битным
                 каталогом System, если используется в параметрах <tt>Filename</tt>
@@ -159,7 +159,7 @@ class="hl kwc">{app}</span>"</pre>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>shellexec</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="64bit">64bit</a></dt>
+            <dt class="flaglist"><span id="64bit">64bit</span></dt>
             <dd>
               <p>Приводит к сопоставлению константы <tt>{sys}</tt> с
                 64-разрядным каталогом System, если используется в параметрах <tt>Filename</tt>
@@ -176,24 +176,24 @@ class="hl kwc">{app}</span>"</pre>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>shellexec</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="dontlogparameters">dontlogparameters</a></dt>
+            <dt class="flaglist"><span id="dontlogparameters">dontlogparameters</span></dt>
             <dd>
               <p>Если указан этот флаг, параметры командной строки программы не
                 будут добавлены в файл журнала.</p>
             </dd>
-            <dt class="flaglist"><a name="hidewizard">hidewizard</a></dt>
+            <dt class="flaglist"><span id="hidewizard">hidewizard</span></dt>
             <dd>
               <p>Если указан этот флаг, окно мастера установки будет скрыто при
                 выполнения программы.</p>
             </dd>
-            <dt class="flaglist"><a name="logoutput">logoutput</a></dt>
+            <dt class="flaglist"><span id="logoutput">logoutput</span></dt>
             <dd>
               <p>Если указан этот флаг, выходные данные программы будут включены
                 в файл журнала.</p>
               <p>Этот флаг нельзя использовать вместе с флагами <tt>nowait</tt>,
                 <tt>runasoriginaluser</tt>, <tt>shellexec</tt> и <tt>waituntilidle</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="nowait">nowait</a></dt>
+            <dt class="flaglist"><span id="nowait">nowait</span></dt>
             <dd>
               <p>При указании этого флага программа установки не будет ожидать
                 завершения запущенного процесса, прежде чем перейти к следующей
@@ -201,7 +201,7 @@ class="hl kwc">{app}</span>"</pre>
                 флаг нельзя использовать вместе с флагом <tt>waituntilidle</tt>
                 или <tt>waituntilterminated</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="postinstall">postinstall</a></dt>
+            <dt class="flaglist"><span id="postinstall">postinstall</span></dt>
             <dd>
               <p>Этот флаг действителен только в секции <tt>[Run]</tt>.
                 Указывает программе установки создать флажок на странице мастера
@@ -223,7 +223,7 @@ class="hl kwc">{app}</span>"</pre>
                 запускает файл README и содержит флаги <tt>shellexec</tt>, <tt>skipifdoesntexist</tt>,
                 <tt>postinstall</tt> и <tt>skipifsilent</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="runascurrentuser">runascurrentuser</a></dt>
+            <dt class="flaglist"><span id="runascurrentuser">runascurrentuser</span></dt>
             <dd>
               <p>При указании этого флага порождённый процесс унаследует учётные
                 полномочия пользователя, который запустил программу
@@ -233,7 +233,7 @@ class="hl kwc">{app}</span>"</pre>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>runasoriginaluser</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="runasoriginaluser">runasoriginaluser</a></dt>
+            <dt class="flaglist"><span id="runasoriginaluser">runasoriginaluser</span></dt>
             <dd>
               <p>Этот флаг действителен только в секции <tt>[Run]</tt>. При
                 указании этого флага порождённый процесс будет выполняться с
@@ -256,23 +256,23 @@ class="hl kwc">{app}</span>"</pre>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>runascurrentuser</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="runhidden">runhidden</a></dt>
+            <dt class="flaglist"><span id="runhidden">runhidden</span></dt>
             <dd>
               <p>Если указан этот флаг, программа будет запущена в скрытом окне.
                 Никогда не используйте этот флаг при выполнении программы,
                 которая может запрашивать у пользователя ввод данных.</p>
             </dd>
-            <dt class="flaglist"><a name="runmaximized">runmaximized</a></dt>
+            <dt class="flaglist"><span id="runmaximized">runmaximized</span></dt>
             <dd>
               <p>Если указан этот флаг, программа или документ будут запущены в
                 развёрнутом окне.</p>
             </dd>
-            <dt class="flaglist"><a name="runminimized">runminimized</a></dt>
+            <dt class="flaglist"><span id="runminimized">runminimized</span></dt>
             <dd>
               <p>Если указан этот флаг, программа или документ будут запущены в
                 свёрнутом окне.</p>
             </dd>
-            <dt class="flaglist"><a name="shellexec">shellexec</a></dt>
+            <dt class="flaglist"><span id="shellexec">shellexec</span></dt>
             <dd>
               <p>Этот флаг следует указывать, если параметр <tt>Filename</tt>
                 не содержит исполняемый файл (*.exe или *.com). В этом случае
@@ -288,7 +288,7 @@ class="hl kwc">{app}</span>"</pre>
                 если новый процесс не был создан, например, если в параметре <tt>Filename</tt>
                 указана папка.</p>
             </dd>
-            <dt class="flaglist"><a name="skipifdoesntexist">skipifdoesntexist</a></dt>
+            <dt class="flaglist"><span id="skipifdoesntexist">skipifdoesntexist</span></dt>
             <dd>
               <p>При указании этого флага в секции <tt>[Run]</tt> программа
                 установки не будет показывать сообщение об ошибке, если <tt>Filename</tt>
@@ -300,19 +300,19 @@ class="hl kwc">{app}</span>"</pre>
               <p>Когда используется этот флаг, параметр <tt>Filename</tt>
                 должен содержать абсолютный путь.</p>
             </dd>
-            <dt class="flaglist"><a name="skipifnotsilent">skipifnotsilent</a></dt>
+            <dt class="flaglist"><span id="skipifnotsilent">skipifnotsilent</span></dt>
             <dd>
               <p>Этот флаг действителен только в секции <tt>[Run]</tt>.
                 Указывает программе установки пропустить данную запись при
                 работе в обычном режиме.</p>
             </dd>
-            <dt class="flaglist"><a name="skipifsilent">skipifsilent</a></dt>
+            <dt class="flaglist"><span id="skipifsilent">skipifsilent</span></dt>
             <dd>
               <p>Этот флаг действителен только в секции <tt>[Run]</tt>.
                 Указывает программе установки пропустить данную запись при
                 работе в тихом режиме.</p>
             </dd>
-            <dt class="flaglist"><a name="unchecked">unchecked</a></dt>
+            <dt class="flaglist"><span id="unchecked">unchecked</span></dt>
             <dd>
               <p>Этот флаг действителен только в секции <tt>[Run]</tt>.
                 Указывает программе установки снять флажок. Пользователь по
@@ -320,7 +320,7 @@ class="hl kwc">{app}</span>"</pre>
                 запись была обработана. Этот флаг игнорируется, если флаг <tt>postinstall</tt>
                 также не указан.</p>
             </dd>
-            <dt class="flaglist"><a name="waituntilidle">waituntilidle</a></dt>
+            <dt class="flaglist"><span id="waituntilidle">waituntilidle</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки будет ожидать
                 завершения пользовательского ввода, вместо завершения
@@ -328,7 +328,7 @@ class="hl kwc">{app}</span>"</pre>
                 Этот флаг нельзя использовать вместе с флагом <tt>nowait</tt>
                 или <tt>waituntilterminated</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="waituntilterminated">waituntilterminated</a></dt>
+            <dt class="flaglist"><span id="waituntilterminated">waituntilterminated</span></dt>
             <dd>
               <p>Если указан этот флаг, программа установки будет ожидать
                 полного завершения запущенного процесса. Заметьте, что такое

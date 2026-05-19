@@ -19,26 +19,25 @@
     <h1 class="topicheading">Препроцессор Inno Setup: Встроенные переменные</h1>
     <div class="topicbody">
       <p><b>ISPP</b> содержит следующие встроенные переменные:</p>
-      <table>
-        <tbody>
+      <table style="margin-top: 1.0em" border="1">
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>__COUNTER__</code>
+            <td style="vertical-align: middle;"><code>__COUNTER__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>int</b></code>
+            <td>Тип переменной: <code><b>int</b></code>
               (целочисленная). Автоматически увеличивает свое значение на
               единицу при каждом последующем использовании.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>__FILENAME__</code>
+            <td style="vertical-align: middle;"><code>__FILENAME__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Подобна __PATHFILENAME__, но возвращает только имя
               файла.</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>__INCLUDE__</code>
+            <td style="vertical-align: middle;"><code>__INCLUDE__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Возвращает текущий путь, заданный директивой <code><span
                  >#include</span></code>
               (или несколько путей, разделённых точкой с запятой) установленный
@@ -46,18 +45,18 @@
                 include</code>.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>__LINE__</code>
+            <td style="vertical-align: middle;"><code>__LINE__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>int</b></code>
+            <td>Тип переменной: <code><b>int</b></code>
               (целочисленная). Возвращает номер строки в текущем файле (не в
               данных <a href="topic_translation.htm">вывода
                 препроцессора</a>), где используется переменная (или
               пользовательская функция, в которой вызывается эта переменная).</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>__OPT_<span
+            <td style="vertical-align: middle;"><code>__OPT_<span
                   style="font-weight: bold;">X</span>__</code> </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная содержит значение флага, установленного
               с помощью директивы <code><span>#pragma</span>
                 option -x+</code>. Вместо символа "<b>Х</b>" может быть
@@ -66,24 +65,24 @@
               проверки объявления переменной.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>__DIR__</code>
+            <td style="vertical-align: middle;"><code>__DIR__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Подобна __PATHFILENAME__, но возвращает только каталог,
               исключая завершающий символ обратной косой черты (кроме корневого
               каталога).</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>__PATHFILENAME__</code>
+            <td style="vertical-align: middle;"><code>__PATHFILENAME__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Возвращает полный путь к текущему <i>include</i>-файлу.
               Если файл является корневым, то возвращается пустая строка.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>__POPT_<span
+            <td style="vertical-align: middle;"><code>__POPT_<span
                   style="font-weight: bold;">X</span>__</code> </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная содержит значение флага, установленного с
               помощью директивы <code><b>#pragma</b> parseroption -x+</code>.
               Вместо символа "<b>Х</b>" может быть использована любая буква
@@ -91,79 +90,78 @@
               для проверки объявления переменной.</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>__WIN32__</code>
+            <td style="vertical-align: middle;"><code>__WIN32__</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная является всегда объявленной.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>ISPP_INVOKED</code>
+            <td style="vertical-align: middle;"><code>ISPP_INVOKED</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная является всегда объявленной.</td>
           </tr>
           <tr>
-            <td class="cellleft"><code>ISCC_INVOKED</code> </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td><code>ISCC_INVOKED</code> </td>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Определяет консольный режим компиляции, который был
               выполнен при помощи ISCC.exe.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>PREPROCVER</code>
+            <td style="vertical-align: middle;"><code>PREPROCVER</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>int</b></code>
+            <td>Тип переменной: <code><b>int</b></code>
               (целочисленная). Возвращает версию ISPP в 32-бит кодировке.
               Старший байт содержит основную версию, а младший байт обычно равен
               нулю.</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>WINDOWS</code>
+            <td style="vertical-align: middle;"><code>WINDOWS</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная является всегда объявленной.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>UNICODE</code>
+            <td style="vertical-align: middle;"><code>UNICODE</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>void</b></code>
+            <td>Тип переменной: <code><b>void</b></code>
               (пустая). Переменная является всегда объявленной.</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>CompilerPath</code>
+            <td style="vertical-align: middle;"><code>CompilerPath</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Содержит путь к каталогу, в которой находится
               компилятор.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>SourcePath</code>
+            <td style="vertical-align: middle;"><code>SourcePath</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Содержит путь к каталогу, в которой находится корневой
               (главный) сценарий. Если сценарий является новым и ещё не был сохранён,
               то путь указывает на каталог "Мои документы".</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>Ver</code> </td>
-            <td class="cellright">Тип переменной: <code><b>int</b></code>
+            <td style="vertical-align: middle;"><code>Ver</code> </td>
+            <td>Тип переменной: <code><b>int</b></code>
               (целочисленная). Возвращает версию компилятора <i>Inno Setup</i>
               в 32-бит кодировке. Старший байт содержит основную версию, а
               младший байт младшую версию.</td>
           </tr>
           <tr class="altcolorrow">
-            <td style="vertical-align: middle;" class="cellleft"><code>NewLine</code>
+            <td style="vertical-align: middle;"><code>NewLine</code>
             </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Возвращает символ новой строки. Объявлена в файле <a
                 href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>.</td>
           </tr>
           <tr>
-            <td style="vertical-align: middle;" class="cellleft"><code>Tab</code> </td>
-            <td class="cellright">Тип переменной: <code><b>str</b></code>
+            <td style="vertical-align: middle;"><code>Tab</code> </td>
+            <td>Тип переменной: <code><b>str</b></code>
               (строковая). Возвращает символ табуляции. Объявлена в файле <a href="topic_builtinsiss.htm"
                >ISPPBuiltins.iss</a>. </td>
           </tr>
-        </tbody>
       </table>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

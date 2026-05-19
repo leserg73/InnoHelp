@@ -19,9 +19,7 @@
     <h1 class="topicheading">Программирование: ISSigVerify</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">function ISSigVerify(const
-        AllowedKeysRuntimeIDs: TStringList; const Filename: String; const
-        VerifyFilename: Boolean; const KeepOpen: Boolean): TFileStream;</p>
+      <p class="prototip1 notopmarginX">function ISSigVerify(const AllowedKeysRuntimeIDs: TStringList; const Filename: String; const VerifyFilename: Boolean; const KeepOpen: Boolean): TFileStream;</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет проверку подписи указанного файла с использованием разрешённых
         ключей, поиск которых осуществляется по параметру <tt>RuntimeID</tt> из
@@ -40,12 +38,12 @@
         чего-либо ещё после выполнения проверки. В противном случае вы рискуете
         создать уязвимость <a 
         href="https://www.securityvision.ru/education/cyberwiki/t/time-of-check-to-time-of-use-toctou/">Time-Of-Check
-        to Time-Of-Use (TOCTOU)</a><img class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+        to Time-Of-Use (TOCTOU)</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   F: TFileStream;
 <span class="hl kwb">begin</span>
-  F := <span class="hl kwg">ISSigVerify</span>([], <span class="hl kwb">Filename</span>, <span class="hl kwg">True</span>);
+  F := <span class="hl kwg">ISSigVerify</span>(nil, <span class="hl kwb">Filename</span>, <span class="hl kwg">True</span>, <span class="hl kwg">True</span>);
   <span class="hl kwb">try</span>
     <span class="hl slc">// Операции с файлом</span>
   <span class="hl kwb">finally</span>

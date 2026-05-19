@@ -19,12 +19,11 @@
     <h1 class="topicheading">Препроцессор Inno Setup: SetSetupSetting</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип функции</h2>
-      <p class="prototip1 notopmarginX null"><b>void</b> SetSetupSetting(<b>str</b>
-          1, <b>str</b> 2)</p>
+      <p class="prototip1 notopmarginX null"><b>void</b> SetSetupSetting(<b>str</b> DirectiveName, <b>str</b> Value)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет создание или изменение в секции <tt>[Setup]</tt>
-        директивы с заданным ключом (<i>первый параметр</i>) и его значением (<i>второй
-          параметр</i>).</p>
+        директивы с заданным ключом <tt>DirectiveName</tt> и его значением
+        <tt>Value</tt>.</p>
       <p>Если секция <tt>[Setup]</tt>
         в данных <a href="topic_current-translation.htm">текущего
           вывода препроцессора</a> отсутствует (в случае, если вызов этой
@@ -33,8 +32,8 @@
       <p>Пожалуйста, при использовании функции <tt>SetSetupSetting</tt> будьте
         предельно осторожны. Не допускается её применение, когда директивы
         передаются <b>ISPP</b> <i>встроенным методом</i> (т.е. после
-        использования директивы <code><a href="topic_insert.htm">#insert</a></code>).
-        </p> </div>
+        использования директивы <code><a href="topic_insert.htm">#insert</a></code>).</p>
+    </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>
 </html>

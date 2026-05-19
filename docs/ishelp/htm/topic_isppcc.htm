@@ -23,84 +23,79 @@
         (файл <i>ISCC.exe</i>) автоматически предоставляет
         дополнительные параметры для управления процессом предварительной
         обработки сценариев <i>Inno Setup</i>.</p>
-      <p>Использование: <code>iscc
-          [параметры] scriptfile.iss</code></p>
-      <p>Или посредством стандартного ввода: <code>iscc
-          [параметры] -</code></p>
+      <p>Использование: <code>iscc [параметры] scriptfile.iss</code></p>
       <p>где параметры могут быть следующие:</p>
-      <table>
-        <tbody>
+      <table style="margin-top: 1.0em" border="1">
           <tr>
-            <td class="cellleft"><code>/O(+|-)</code> </td>
-            <td class="cellright">Включает (+) или отключает (-) параметр вывода
+            <td><code>/O(+|-)</code> </td>
+            <td>Включает (+) или отключает (-) параметр вывода
               (замещает в сценарии команду <i>Output</i>)</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/O&lt;path&gt;</code></td>
-            <td class="cellright">Устанавливает путь вывода файла (замещает в
+            <td><code>/O&lt;path&gt;</code></td>
+            <td>Устанавливает путь вывода файла (замещает в
               сценарии команду <i>OutputDir</i>)</td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/F&lt;filename&gt;</code></td>
-            <td class="cellright">Устанавливает выходное имя файла (замещает в
+            <td><code>/F&lt;filename&gt;</code></td>
+            <td>Устанавливает выходное имя файла (замещает в
               сценарии команду <i>OutputBaseFilename</i>)</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/S&lt;name&gt;=&lt;command&gt;</code></td>
-            <td class="cellright">Устанавливает цифровую подпись с указанным
+            <td><code>/S&lt;name&gt;=&lt;command&gt;</code></td>
+            <td>Устанавливает цифровую подпись с указанным
               именем и параметрами</td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/Q</code></td>
-            <td class="cellright">Тихая компиляция (будут показаны только
+            <td><code>/Q</code></td>
+            <td>Тихая компиляция (будут показаны только
               сообщения об ошибках)</td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/Qp</code> </td>
-            <td class="cellright">Тихая компиляция с отображением прогресса
+            <td><code>/Qp</code> </td>
+            <td>Тихая компиляция с отображением прогресса
               выполнения</td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/D&lt;name&gt;[=&lt;value&gt;]</code></td>
-            <td class="cellright">Эмулирует <code><span>#define</span>
+            <td><code>/D&lt;name&gt;[=&lt;value&gt;]</code></td>
+            <td>Эмулирует <code><span>#define</span>
                 public &lt;name&gt; &lt;value&gt;</code></td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/$&lt;letter&gt;(+|-)</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/$&lt;letter&gt;(+|-)</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 option -&lt;letter&gt;(+|-)</code></td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/P&lt;letter&gt;(+|-)</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/P&lt;letter&gt;(+|-)</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 parseroption -&lt;letter&gt;(+|-)</code></td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/I&lt;paths&gt;</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/I&lt;paths&gt;</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 include -&lt;paths&gt;</code></td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/J&lt;filename&gt;</code></td>
-            <td class="cellright">Эмулирует <code><span>#include</span>
+            <td><code>/J&lt;filename&gt;</code></td>
+            <td>Эмулирует <code><span>#include</span>
                 -&lt;filename&gt;</code></td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/{#&lt;string&gt;</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/{#&lt;string&gt;</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 inlinestart -&lt;string&gt;</code></td>
           </tr>
           <tr>
-            <td class="cellleft"><code>/}&lt;string&gt;</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/}&lt;string&gt;</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 inlineend -&lt;string&gt;</code></td>
           </tr>
           <tr class="altcolorrow">
-            <td class="cellleft"><code>/V&lt;number&gt;</code></td>
-            <td class="cellright">Эмулирует <code><span>#pragma</span>
+            <td><code>/V&lt;number&gt;</code></td>
+            <td>Эмулирует <code><span>#pragma</span>
                 verboselevel -&lt;number&gt;</code></td>
           </tr>
-        </tbody>
       </table>
       <p style="text-align: left;"><br />
         <b>Пример</b>:<br />

@@ -227,21 +227,30 @@ ol, ul, dd {
 table {
   border-collapse: collapse;
   margin-left: 1.0em;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border: 0;
 }
 
 th {
   font-weight: bold;
-  padding-top: 0.125in;
-  padding-bottom: 0.125in;
+  padding: 0.125in;
   text-align: center;
-  background-color: #4c98af;
-  color: #ffffff;
-  border-left: 0.0104in solid #ffffff;
+  background-color: #f0f0f0; /* for IE */
+  border: 0.0104in solid #e0e0e0; /* for IE */
 }
 
 td {
-  padding: 0.0521in;
+  padding-top: 0.0521in;
+  padding-bottom: 0.0521in;
+  padding-left: 0.125in;
+  padding-right: 0.125in;
   vertical-align: baseline;
+  border: 0.0104in solid #e0e0e0; /* for IE */
+}
+
+th.nowrap, td.nowrap {
+  white-space: nowrap;
 }
 
 a:link, a:visited {
@@ -253,6 +262,12 @@ a:link, a:visited {
 a[href]:hover {
   color: #004e8a; /* for IE */
   text-decoration: underline;
+}
+
+span:target {
+  background-color: #ffff00;
+  color: black;
+  border-bottom: 0.0204in solid #ffff00;
 }
 
 a.highlighted {
@@ -506,10 +521,12 @@ dt.flaglist:before {
 
 td.cellleft {
   white-space: nowrap;
+  border: 0;
 }
 
 td.cellright {
   padding-left: 2em;
+  border: 0;
 }
 
 table.setuphdr {
@@ -528,11 +545,13 @@ td.setuphdrl {
   white-space: nowrap;
   padding-left: 1.2em;
   width: 2.0833in;
+  border: 0;
 }
 
 td.setuphdrr {
   padding-left: 1em;
   color: #282828;
+  border: 0;
 }
 
 /* only for Firefox */
@@ -592,7 +611,7 @@ li {
 }
 
 .altcolorrow {
-  background-color: #eeeeee;
+  background-color: #fcfcfc;
 }
 
 span.comidispatch {

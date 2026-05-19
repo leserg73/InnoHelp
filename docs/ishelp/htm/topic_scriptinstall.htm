@@ -24,7 +24,7 @@
         параметров, за исключением секций <tt>[Languages]</tt>, <tt>[Types]</tt>,
         <tt>[Components]</tt> и <tt>[Tasks]</tt>. Этими параметрами являются:</p>
       <dl>
-        <dt class="paramlist"><b><a name="BeforeInstall">BeforeInstall</a></b></dt>
+        <dt class="paramlist"><b><span id="BeforeInstall">BeforeInstall</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя функции, которая будет вызвана непосредственно перед
             установкой записи. Эта функция должна быть либо пользовательской и
@@ -52,10 +52,10 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: MyBefor
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MyFile.txt'</span>)   
 <span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">BeforeInstall</span>: Log(<span
-class="hl str">'Before MYPROG.CHM Install'</span>)</pre>
+class="hl str">'Before MyProg.chm Install'</span>)</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="AfterInstall">AfterInstall</a></b></dt>
+        <dt class="paramlist"><b><span id="AfterInstall">AfterInstall</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя функции, которая будет вызвана сразу после установки
             записи. Эта функция должна быть либо пользовательской и описана в
@@ -83,7 +83,7 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: MyAfterI
 class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\B\MyFile.txt'</span>)   
 <span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
 class="hl kwc">{app}</span>"; <span class="hl kwb">AfterInstall</span>: Log(<span
-class="hl str">'After MYPROG.CHM Install'</span>)</pre>
+class="hl str">'After MyProg.chm Install'</span>)</pre>
           </div>
         </dd>
       </dl>
@@ -102,7 +102,7 @@ class="hl str">'After MYPROG.CHM Install'</span>)</pre>
         и <tt>Log</tt> являются <a href="topic_scriptfunctions.htm">поддерживаемыми
           функциями</a>, и поэтому не включены в эту секцию <tt>[Code]</tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
-<span class="hl kwb">procedure</span> MyBeforeInstall();
+<span class="hl kwb">procedure</span> MyBeforeInstall;
 <span class="hl kwb">begin</span>
   MsgBox(<span class="hl str">'Будет установлен MyProg.exe как '</span> + CurrentFileName + <span
 class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
@@ -114,7 +114,7 @@ class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span clas
 class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);   
 <span class="hl kwb">end</span>;
 
-<span class="hl kwb">procedure</span> MyAfterInstall();
+<span class="hl kwb">procedure</span> MyAfterInstall;
 <span class="hl kwb">begin</span>
   MsgBox(<span class="hl str">'MyProg.exe уже установлен как '</span> + CurrentFileName + <span
 class="hl str">'.'</span>, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);

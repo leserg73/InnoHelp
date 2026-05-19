@@ -30,7 +30,7 @@ class="hl kwb">Key</span>: "InstallPath"; <span class="hl kwb">String</span>: "<
 class="hl kwc">{app}</span>"</pre>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Filename">Filename</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Filename">Filename</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя файла .INI, который программа установки должна
             создать или изменить; может содержать константы. Если этот параметр
@@ -42,7 +42,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.ini"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Section">Section</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Section">Section</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя секции, в которой необходимо создать запись; может
             содержать константы.</p>
@@ -51,7 +51,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Section</span>: "Settings"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Key">Key</a></b></dt>
+        <dt class="paramlist"><b><span id="Key">Key</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя ключа, который должен быть создан или изменён; может
             содержать константы. Если этот параметр не указан или является
@@ -61,7 +61,7 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Key</span>: "Version"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="String">String</a></b></dt>
+        <dt class="paramlist"><b><span id="String">String</span></b></dt>
         <dd class="paramlist">
           <p>Определяет значение, которое будет присвоено ключу; может содержать
             константы. Если этот параметр не указан или является пустым, ключ
@@ -71,26 +71,26 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">String</span>: "<span class="hl num">1.0</span>"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="createkeyifdoesntexist">createkeyifdoesntexist</a></dt>
+            <dt class="flaglist"><span id="createkeyifdoesntexist">createkeyifdoesntexist</span></dt>
             <dd>
               <p>Указывает программе установки присвоить значение ключу <i>только</i>
                 в том случае, если ключ в файле ещё не существует. Если этот
                 флаг <i>не</i> указан, запись ключа будет выполнена независимо
                 от того, существовал ли он ранее.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeleteentry">uninsdeleteentry</a></dt>
+            <dt class="flaglist"><span id="uninsdeleteentry">uninsdeleteentry</span></dt>
             <dd>
               <p>Выполняет удаление записи при деинсталляции программы. Этот
                 флаг может быть использован совместно с флагом <tt>uninsdeletesectionifempty</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeletesection">uninsdeletesection</a></dt>
+            <dt class="flaglist"><span id="uninsdeletesection">uninsdeletesection</span></dt>
             <dd>
               <p>Предписывает программе деинсталляции при удалении программы
                 выполнить удаление всей секции. Не рекомендуется использовать
@@ -98,7 +98,7 @@ class="hl kwc">{app}</span>"</pre>
                 Windows (например, в файле WIN.INI). Следует использовать этот
                 флаг только для собственных секций вашего приложения.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsdeletesectionifempty">uninsdeletesectionifempty</a></dt>
+            <dt class="flaglist"><span id="uninsdeletesectionifempty">uninsdeletesectionifempty</span></dt>
             <dd>
               <p>Аналогичен флагу <tt>uninsdeletesection</tt>, за исключением
                 того, что удаление секции будет выполнено только в том случае,

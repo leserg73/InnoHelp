@@ -20,11 +20,12 @@
     <div class="topicbody">
       <p>Существует два необязательных <a href="topic_params.htm">параметра</a>,
         поддерживаемых всеми секциями, записи которых содержат перечисляемые
-        параметры, кроме секций <tt>[Types]</tt>, <tt>[Components]</tt> и <tt>[Tasks]</tt>.
+        параметры, за исключением случаев, указанных ниже.
         Вот эти параметры:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Components">Components</a></b></dt>
+        <dt class="paramlist"><b><span id="Components">Components</span></b></dt>
         <dd class="paramlist">
+          <p>Поддерживается всеми секциями, кроме <tt>[Types]</tt> и <tt>[Components]</tt>.</p>
           <p>Разделённый пробелами список с именами компонентов, указывающий
             программе установки, к каким компонентам относится запись. Если
             пользователь выберет компонент из этого списка, запись будет
@@ -45,8 +46,9 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">Components</span>: help
 class="hl kwc">{app}</span>"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Tasks">Tasks</a></b></dt>
+        <dt class="paramlist"><b><span id="Tasks">Tasks</span></b></dt>
         <dd class="paramlist">
+          <p>Поддерживается всеми секциями, кроме <tt>[Types]</tt>, <tt>[Components]</tt> и <tt>[Tasks]</tt>.</p>
           <p>Разделённый пробелами список с именами задач, указывающий программе
             установки, к какой задаче относится запись. Если пользователь
             выберет задачу из этого списка, то запись будет обработана

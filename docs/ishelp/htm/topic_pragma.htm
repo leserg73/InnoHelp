@@ -144,107 +144,99 @@
         устанавливает их уровень детализации, который управляет важностью
         сообщений (см. ниже). Наименее значимые сообщения будут показаны только
         при установке самого высокого уровня.</p>
-      <p>Ключ <tt>pragma include</tt> устанавливает переменную пути окружения.
+      <p>Ключ <tt>pragma-include</tt> устанавливает переменную пути окружения.
         Выражение может содержать несколько путей, разделенных между собой
         точкой с запятой. Список этих каталогов используется ISPP при поиске
         файлов, указанных директивой <code><a href="topic_include.htm">include</a></code>.</p>
-      <p>Ключ <tt>pragma spansymbol</tt> устанавливает символ разделения
+      <p>Ключ <tt>pragma-spansymb</tt> устанавливает символ разделения
         длинных строк на более короткие. Выражение не должно возвращать пустую
         строку, из которой принимается только первый символ.</p>
       <h2 class="heading">Параметры ISPP</h2>
-      <table class="isppborder">
-        <tbody>
-          <tr class="isppborder">
-            <td class="cellleft"><b>c</b></td>
-            <td class="cellright">Указывает на то, что данные <a href="topic_translation.htm">вывода
+      <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+          <tr>
+            <td><b>c</b></td>
+            <td>Указывает на то, что данные <a href="topic_translation.htm">вывода
                 препроцессора</a> должны передаваться компилятору после
               завершения предварительной обработки. По умолчанию: on (вкл.).</td>
           </tr>
-          <tr class="isppborder">
-            <td class="cellleft"><b>e</b></td>
-            <td class="cellright">Указывает режим обработки пустых строк или
+          <tr>
+            <td><b>e</b></td>
+            <td>Указывает режим обработки пустых строк или
               строк с пробелами, должны ли они передаваться на <a
-
                 href="topic_translation.htm">выход препроцессора</a>. По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr class="isppborder">
-            <td class="cellleft"><b>v</b></td>
-            <td class="cellright">Включение/Отключение подробного режима вывода
+          <tr>
+            <td><b>v</b></td>
+            <td>Включение/Отключение подробного режима вывода
               сообщений. По умолчанию: off (откл.).</td>
           </tr>
-        </tbody>
       </table>
       <h2 class="heading">Параметры синтаксического анализа</h2>
-      <table class="isppborder">
-        <tbody>
-          <tr class="isppborder">
-            <td class="cellleft"><b>b</b></td>
-            <td class="cellright">Упрощенная оценка логических операторов. По
+      <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+          <tr>
+            <td><b>b</b></td>
+            <td>Упрощенная оценка логических операторов. По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr class="isppborder">
-            <td class="cellleft"><b>m</b></td>
-            <td class="cellright">Упрощенная оценка оператора умножения.
+          <tr>
+            <td><b>m</b></td>
+            <td>Упрощенная оценка оператора умножения.
               (Выражение вида "<tt>0 * A</tt>" не будет вычисляться, т.к.
               результат уже и так известен - ноль.) По умолчанию: off (откл.).</td>
           </tr>
-          <tr class="isppborder">
-            <td class="cellleft"><b>p</b></td>
-            <td class="cellright">Паскалевский стиль представления строк (<span
-
+          <tr>
+            <td><b>p</b></td>
+            <td>Паскалевский стиль представления строк (<span
                 style="font-style: italic;">Pascal strings</span>). Если
               параметр отключен (off), то используется Си стиль представления
               строк (вместе с <i>escape</i>-последовательностями). По
               умолчанию: on (вкл.).</td>
           </tr>
-          <tr class="isppborder">
-            <td class="cellleft"><b>u</b></td>
-            <td class="cellright">Разрешить не объявленные идентификаторы. Если
+          <tr>
+            <td><b>u</b></td>
+            <td>Разрешить не объявленные идентификаторы. Если
               встречается неизвестный идентификатор, то ISPP выводит сообщение
               об ошибке. В противном случае, когда параметр включен, автономный
               идентификатор (который не является вызовом функции) будет пустым.
               По умолчанию: off (откл.).</td>
           </tr>
-        </tbody>
       </table>
       <h2 class="heading">Уровни сообщений</h2>
-      <table>
-        <tbody>
+      <table style="margin-top: 1.0em" border="1">
           <tr>
-            <td class="cellleft">0</td>
-            <td class="cellright">Только основные сообщения</td>
+            <td>0</td>
+            <td>Только основные сообщения</td>
           </tr>
           <tr>
-            <td class="cellleft">1</td>
-            <td class="cellright">Сообщения о временных файлах, созданных #file</td>
+            <td>1</td>
+            <td>Сообщения о временных файлах, созданных <code>#file</code></td>
           </tr>
           <tr>
-            <td class="cellleft">2</td>
-            <td class="cellright">Сообщения #insert и #append</td>
+            <td>2</td>
+            <td>Сообщения <code>#insert</code> и <code>#append</code></td>
           </tr>
           <tr>
-            <td class="cellleft">4</td>
-            <td class="cellright">Сообщения #dim, #define и #undef</td>
+            <td>4</td>
+            <td>Сообщения <code>#dim</code>, <code>#define</code> и <code>#undef</code></td>
           </tr>
           <tr>
-            <td class="cellleft">6</td>
-            <td class="cellright">Сообщения об условном включении</td>
+            <td>6</td>
+            <td>Сообщения об условном включении</td>
           </tr>
           <tr>
-            <td class="cellleft">8</td>
-            <td class="cellright">Сообщения #emit</td>
+            <td>8</td>
+            <td>Сообщения <code>#emit</code></td>
           </tr>
           <tr>
-            <td class="cellleft">9</td>
-            <td class="cellright">Сообщения вызова макросов и функций</td>
+            <td>9</td>
+            <td>Сообщения вызова макросов и функций</td>
           </tr>
           <tr>
-            <td class="cellleft">10</td>
-            <td class="cellright">Сообщения о размещении <tt>Local</tt> массива
+            <td>10</td>
+            <td>Сообщения о размещении <tt>Local</tt> массива
               макросов</td>
           </tr>
-        </tbody>
       </table>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">

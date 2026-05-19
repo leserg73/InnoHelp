@@ -20,8 +20,7 @@
       MapArchiveExtensions</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">procedure
-          MapArchiveExtensions(const DestExt, SourceExt: String);</p>
+      <p class="prototip1 notopmarginX">procedure MapArchiveExtensions(const DestExt, SourceExt: String);</p>
       <h2 class="heading">Описание</h2>
       <p>Позволяет задать соответствие расширений файлов для распаковки: файлы
         с целевым расширением (например, <b>.exe</b>) будут обрабатываться как
@@ -34,12 +33,15 @@
         всегда извлекаются как .7z, независимо от расширения.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
- <span class="hl kwb">Source</span>: &quot;<span class="hl kwc">{src}</span>\My7ZipSFX.exe; <span class="hl kwb">DestDir</span>: &quot;<span class="hl kwc">{app}</span>&quot;; <span class="hl kwb">Flags</span>: <span class="hl kwe">external extractarchive recursesubdirs createallsubdirs ignoreversion</span>
+<span class="hl kwb">Source</span>: "<span class="hl kwc">{src}</span>\My7ZipSFX.exe"; \
+  <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{app}</span>"; \
+  <span class="hl kwb">Flags</span>: <span class="hl kwe">external extractarchive recursesubdirs createallsubdirs ignoreversion</span>
 
 <span class="hl kwa">[Code]</span>
 <span class="hl kwb">function</span> <span class="hl kwd">InitializeSetup</span>: <span class="hl kwg">Boolean</span>;
 <span class="hl kwb">begin</span>
-  <span class="hl kwd">MapArchiveExtensions</span>(<span class="hl sng">&#39;.exe&#39;</span>, <span class="hl sng">&#39;.7z&#39;</span>);
+  <span class="hl kwd">MapArchiveExtensions</span>(<span class="hl sng">'.exe'</span>, <span class="hl sng">'.7z'</span>);
+  Result := True;
 <span class="hl kwb">end</span>;
 </pre>
     <h2 class="heading">См. также:</h2>

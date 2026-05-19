@@ -33,7 +33,7 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">Flags</span>: <span class="hl
         этого раздела.</p>
       <p>Ниже приведен список поддерживаемых <a href="topic_params.htm">параметров</a>:</p>
       <dl>
-        <dt class="paramlist"><b><a name="Source">Source</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="Source">Source</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
           <p>Определяет имя <i>исходного файла</i>. Компилятор самостоятельно
             добавит <a href="topic_sourcedirectorynotes.htm">исходный каталог</a>
@@ -56,8 +56,9 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">Flags</span>: <span class="hl
 <span class="hl kwb">Source</span>: "Files\*"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="DestDir">DestDir</a></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
+        <dt class="paramlist"><b><span id="DestDir">DestDir</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
+          <p>Не требуется, если используется флаг <tt>dontcopy</tt>.</p>
           <p>Определяет каталог, в который будет установлен файл на системе
             пользователя. Обычно всегда начинается с одной из констант
             каталогов. Если в системе пользователя указанный путь ещё не
@@ -69,7 +70,7 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">Flags</span>: <span class="hl
 <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{app}</span>\subdir"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="DestName">DestName</a></b></dt>
+        <dt class="paramlist"><b><span id="DestName">DestName</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр определяет новое имя, которое будет присвоено файлу
             после его установки в системе пользователя. По умолчанию программа
@@ -80,7 +81,7 @@ class="hl kwc">{app}</span>"; <span class="hl kwb">Flags</span>: <span class="hl
             <pre class="nomargin"><span class="hl kwb">DestName</span>: "MyProg2.exe"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Excludes">Excludes</a></b></dt>
+        <dt class="paramlist"><b><span id="Excludes">Excludes</span></b></dt>
         <dd class="paramlist">
           <p>Определяет список файлов/папок по маске для исключения из программы
             установки. Для разделения масок в списке используется запятая.</p>
@@ -109,7 +110,7 @@ class="hl kwb">Excludes</span>: "*.~*"
 class="hl kwb">Flags</span>: <span class="hl kwe">recursesubdirs</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ExternalSize">ExternalSize</a></b></dt>
+        <dt class="paramlist"><b><span id="ExternalSize">ExternalSize</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр должен использоваться вместе с флагом <tt>external</tt>
             и определяет размер внешнего файла в байтах. Если этот параметр не
@@ -131,7 +132,7 @@ class="hl kwb">Flags</span>: <span class="hl kwe">recursesubdirs</span></pre>
 class="hl num">1_048_576</span>; <span class="hl kwb">Flags</span>: <span class="hl kwe">external</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Attribs">Attribs</a></b></dt>
+        <dt class="paramlist"><b><span id="Attribs">Attribs</span></b></dt>
         <dd class="paramlist">
           <p>Определяет дополнительные атрибуты для файла. Может содержать один
             или несколько атрибутов: <tt>readonly</tt> - только для чтения, <tt>hidden</tt>
@@ -144,7 +145,7 @@ class="hl num">1_048_576</span>; <span class="hl kwb">Flags</span>: <span class=
             <pre class="nomargin"><span class="hl kwb">Attribs</span>: <span class="hl kwe">hidden system</span></pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Permissions">Permissions</a></b></dt>
+        <dt class="paramlist"><b><span id="Permissions">Permissions</span></b></dt>
         <dd class="paramlist">
           <p>Позволяет указать дополнительные разрешения для файла в ACL (<b>A</b>ccess
             <b>C</b>ontrol <b>L</b>ist - <i>список контроля доступа</i>). Не
@@ -171,7 +172,7 @@ class="hl num">1_048_576</span>; <span class="hl kwb">Flags</span>: <span class=
           </div>
           <p>В секции <tt>[Files]</tt> поддерживаются следующие типы доступа:</p>
           <dl>
-            <dt class="flaglist"><a name="full">full</a></dt>
+            <dt class="flaglist"><span id="full">full</span></dt>
             <dd>
               <p>Предоставляет разрешение "Полный доступ", которое совпадает с
                 разрешением <tt>modify</tt> (см. ниже), но дополнительно
@@ -179,13 +180,13 @@ class="hl num">1_048_576</span>; <span class="hl kwb">Flags</span>: <span class=
                 и изменить его полномочия. Используйте этот тип как можно реже;
                 как правило, <tt>modify</tt> будет достаточно.</p>
             </dd>
-            <dt class="flaglist"><a name="modify">modify</a></dt>
+            <dt class="flaglist"><span id="modify">modify</span></dt>
             <dd>
               <p>Предоставляет разрешение "Модификация", которое позволяет
                 указанному пользователю/группе читать, выполнять, изменять и
                 удалять файл.</p>
             </dd>
-            <dt class="flaglist"><a name="readexec">readexec</a></dt>
+            <dt class="flaglist"><span id="readexec">readexec</span></dt>
             <dd>
               <p>Предоставляет разрешение "Чтение и выполнение", что позволяет
                 указанному пользователю/группе читать и запускать исполняемый
@@ -197,7 +198,7 @@ class="hl num">1_048_576</span>; <span class="hl kwb">Flags</span>: <span class=
             <pre class="nomargin"><span class="hl kwb">Permissions</span>: users-modify</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="FontInstall">FontInstall</a></b></dt>
+        <dt class="paramlist"><b><span id="FontInstall">FontInstall</span></b></dt>
         <dd class="paramlist">
           <p>Сообщает программе установки, что файл является шрифтом, который
             необходимо установить. Значением этого параметра является имя
@@ -224,7 +225,7 @@ class="hl kwe">onlyifdoesntexist uninsneveruninstall</span>
 </pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="StrongAssemblyName">StrongAssemblyName</a></b></dt>
+        <dt class="paramlist"><b><span id="StrongAssemblyName">StrongAssemblyName</span></b></dt>
         <dd class="paramlist">
           <p>Определяет файл сборки со строгим именем. Используется только
             программой удаления.</p>
@@ -237,7 +238,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
 </pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ISSigAllowedKeys">ISSigAllowedKeys</a></b></dt>
+        <dt class="paramlist"><b><span id="ISSigAllowedKeys">ISSigAllowedKeys</span></b></dt>
         <dd class="paramlist">
           <p>Список имен ключей или групп из <a href="topic_issigkeyssection.htm">секции [ISSigKeys]</a>,
             разделённых пробелами, который определяет разрешенные ключи для проверки
@@ -247,7 +248,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             <pre class="nomargin"><span class="hl kwb">ISSigAllowedKeys</span>: "exesigner bosskey"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="Hash">Hash</a></b></dt>
+        <dt class="paramlist"><b><span id="Hash">Hash</span></b></dt>
         <dd class="paramlist">
           <p>Указывает компилятору или программе установки выполнять простую
             проверку хэша SHA-256 вместо полной проверки подписи, в качестве
@@ -259,7 +260,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             <pre class="nomargin"><span class="hl kwb">Hash</span>: "2f6294f9aa09f59a574b5dcd33be54e16b39377984f3d5658cda44950fa0f8fc"</pre>
           </div>
         </dd>
-        <dt class="paramlist"><b><a name="ExtractArchivePassword">ExtractArchivePassword</a></b></dt>
+        <dt class="paramlist"><b><span id="ExtractArchivePassword">ExtractArchivePassword</span></b></dt>
         <dd class="paramlist">
           <p>Определяет пароль архива и может содержать константы. Имейте в виду,
             что в целевом файле программы установки этот пароль хранится в
@@ -267,7 +268,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             директивы <tt>Encryption</tt> в секции <tt>[Setup]</tt>).</p>
           <p>Этот параметр игнорируется, если не указан флаг <tt>extractarchive</tt>.</p>
         </dd>
-        <dt class="paramlist"><b><a name="DownloadISSigSource">DownloadISSigSource</a></b></dt>
+        <dt class="paramlist"><b><span id="DownloadISSigSource">DownloadISSigSource</span></b></dt>
         <dd class="paramlist">
           <p>Определяет URL-адрес загружаемого файла подписи .issig и может
             содержать константы. Этот файл используется для проверки файла,
@@ -280,13 +281,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             кавычек). Полученный результат будет использован в качестве URL-адреса
             для загрузки файла подписи .issig.</p>
         </dd>
-        <dt class="paramlist"><b><a name="DownloadUserName">DownloadUserName</a></b></dt>
+        <dt class="paramlist"><b><span id="DownloadUserName">DownloadUserName</span></b></dt>
         <dd class="paramlist">
           <p>Определяет основное имя пользователя для авторизации при загрузке
             файла. Может содержать константы.</p>
           <p>Этот параметр игнорируется, если флаг <tt>download</tt> не указан.</p>
         </dd>
-        <dt class="paramlist"><b><a name="DownloadPassword">DownloadPassword</a></b></dt>
+        <dt class="paramlist"><b><span id="DownloadPassword">DownloadPassword</span></b></dt>
         <dd class="paramlist">
           <p>Определяет основной пароль для авторизации при загрузке файла. Может
             содержать константы. Обратите внимание, что этот пароль хранится в
@@ -294,13 +295,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
             <tt>Encryption</tt> в секции <tt>[Setup]</tt>.</p>
           <p>Этот параметр игнорируется, если флаг <tt>download</tt> не указан.</p>
         </dd>
-        <dt class="paramlist"><b><a name="Flags">Flags</a></b></dt>
+        <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
             Допускается использовать несколько опций, разделяя их пробелами.
             Поддерживаются следующие опции:</p>
           <dl>
-            <dt class="flaglist"><a name="32bit">32bit</a></dt>
+            <dt class="flaglist"><span id="32bit">32bit</span></dt>
             <dd>
               <p>Приводит к сопоставлению константы <tt>{sys}</tt> с
                 32-разрядным каталогом System, если используется в параметрах <tt>Source</tt>
@@ -310,7 +311,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 используется по умолчанию в <a href="topic_32vs64bitinstalls.htm">32-разрядном
                 режиме установки</a>.</p>
             </dd>
-            <dt class="flaglist"><a name="64bit">64bit</a></dt>
+            <dt class="flaglist"><span id="64bit">64bit</span></dt>
             <dd>
               <p>Приводит к сопоставлению константы <tt>{sys}</tt> с
                 64-разрядным каталогом System, если используется в параметрах <tt>Source</tt>
@@ -320,14 +321,14 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 используется по умолчанию в <a href="topic_32vs64bitinstalls.htm">64-разрядном
                 режиме установки</a>.</p>
             </dd>
-            <dt class="flaglist"><a name="allowunsafefiles">allowunsafefiles</a></dt>
+            <dt class="flaglist"><span id="allowunsafefiles">allowunsafefiles</span></dt>
             <dd>
               <p>Отключает автоматическую проверку компилятором <a
                 href="topic_unsafefiles.htm">небезопасных файлов</a>. Настоятельно
                 рекомендуется НЕ использовать этот флаг, если не уверены в своих
                 действиях.</p>
             </dd>
-            <dt class="flaglist"><a name="comparetimestamp">comparetimestamp</a></dt>
+            <dt class="flaglist"><span id="comparetimestamp">comparetimestamp</span></dt>
             <dd>
               <p><i>(Не рекомендуется; см. ниже)</i><br />
                 Указывает программе установки выполнять сравнение отметок
@@ -358,12 +359,12 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 заменены, или наоборот, пользователь ожидает замену файлов, но
                 она не происходит.</p>
             </dd>
-            <dt class="flaglist"><a name="confirmoverwrite">confirmoverwrite</a></dt>
+            <dt class="flaglist"><span id="confirmoverwrite">confirmoverwrite</span></dt>
             <dd>
               <p>Формирует для пользователя запрос с подтверждением замены
                 существующего файла.</p>
             </dd>
-            <dt class="flaglist"><a name="createallsubdirs">createallsubdirs</a></dt>
+            <dt class="flaglist"><span id="createallsubdirs">createallsubdirs</span></dt>
             <dd>
               <p>По умолчанию компилятор пропускает пустые каталоги, когда
                 выполняет рекурсивный обход вложенных каталогов, согласно
@@ -374,7 +375,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>Этот флаг следует комбинировать с флагом <tt>recursesubdirs</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="deleteafterinstall">deleteafterinstall</a></dt>
+            <dt class="flaglist"><span id="deleteafterinstall">deleteafterinstall</span></dt>
             <dd>
               <p>Предписывает программе установки выполнить обычную установку
                 файла, но затем удалить его после завершения установки (или
@@ -386,7 +387,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 <tt>regserver</tt>, <tt>regtypelib</tt>, <tt>restartreplace</tt>,
                 <tt>sharedfile</tt> или <tt>uninsneveruninstall</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="dontcopy">dontcopy</a></dt>
+            <dt class="flaglist"><span id="dontcopy">dontcopy</span></dt>
             <dd>
               <p>Указывает программе установки не копировать файл в систему
                 пользователя, а только включить в инсталлятор. Этот флаг
@@ -396,14 +397,14 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 и в этом случае его следует комбинировать с флагом <tt>noencryption</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="dontverifychecksum">dontverifychecksum</a></dt>
+            <dt class="flaglist"><span id="dontverifychecksum">dontverifychecksum</span></dt>
             <dd>
               <p>Запрещает программе установки проверять контрольную сумму файла
                 после извлечения. Используйте этот флаг для файлов, которые
                 необходимо изменить уже после компиляции программы установки.</p>
               <p>Этот флаг следует комбинировать с флагом <tt>nocompression</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="download">download</a></dt>
+            <dt class="flaglist"><span id="download">download</span></dt>
             <dd>
               <p>Этот флаг указывает программе установки выполнить загрузку
                 файла вместо его копирования. Если при этом необходимо пройти
@@ -426,7 +427,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                  настройки прокси применяются автоматически. Безопасно при вызове из
                  служб (<i>сервисов)</i>.</p>
             </dd>
-            <dt class="flaglist"><a name="external">external</a></dt>
+            <dt class="flaglist"><span id="external">external</span></dt>
             <dd>
               <p>Этот флаг предписывает Inno Setup не компилировать файл,
                 заданный параметром <tt>Source</tt>, в установочные файлы, а
@@ -437,7 +438,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 <tt>extractarchive</tt>, программа установки будет загружать или
                 распаковывать файл.</p>
             </dd>
-            <dt class="flaglist"><a name="extractarchive">extractarchive</a></dt>
+            <dt class="flaglist"><span id="extractarchive">extractarchive</span></dt>
             <dd>
               <p>Данный флаг предписывает программе установки вместо копирования
                 существующего архив выполнить его распаковку. Если архив защищён
@@ -461,13 +462,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 скорость извлечения данных может снижаться пропорционально размеру
                 непрерывного блока.</p>
             </dd>
-            <dt class="flaglist"><a name="fontisnttruetype">fontisnttruetype</a></dt>
+            <dt class="flaglist"><span id="fontisnttruetype">fontisnttruetype</span></dt>
             <dd>
               <p>Сообщает программе установки, что устанавливаемый файл шрифта,
                 указанный в параметре <tt>FontInstall</tt>, <i>не является
                 шрифтом TrueType</i>.</p>
             </dd>
-            <dt class="flaglist"><a name="gacinstall">gacinstall</a></dt>
+            <dt class="flaglist"><span id="gacinstall">gacinstall</span></dt>
             <dd>
               <p>Предписывает установку файла в глобальный кэш сборок .NET. При
                 использовании в сочетании с флагом <tt>sharedfile</tt>, файл
@@ -478,7 +479,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>При попытке использования этой константы в системе без .NET
                 Framework будет вызвано исключение.</p>
             </dd>
-            <dt class="flaglist"><a name="ignoreversion">ignoreversion</a></dt>
+            <dt class="flaglist"><span id="ignoreversion">ignoreversion</span></dt>
             <dd>
               <p>Указывает программе установки не выполнять сравнение версий.
                 Замена существующих файлов будет происходить независимо от их
@@ -487,7 +488,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 приложения, но <i>не</i> для общих системных файлов.</p>
               <p>Данный флаг нельзя комбинировать с флагом <tt>replacesameversion</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="issigverify">issigverify</a></dt>
+            <dt class="flaglist"><span id="issigverify">issigverify</span></dt>
             <dd>
               <p>Указывает компилятору или программе установки проверить подпись
                 исходного файла с использованием ключа из <a 
@@ -542,7 +543,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>Этот флаг нельзя комбинировать с флагами <tt>sign</tt> или
                 <tt>signonce</tt>. Вместо них используйте флаг <tt>signcheck</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="isreadme">isreadme</a></dt>
+            <dt class="flaglist"><span id="isreadme">isreadme</span></dt>
             <dd>
               <p>Сообщает программе установки, что файл является файлом
                 "README". Этот флаг может иметь только <i>один</i> файл в
@@ -559,7 +560,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 то пользователю не будет предоставлена возможность просмотра
                 файла "README".</p>
             </dd>
-            <dt class="flaglist"><a name="nocompression">nocompression</a></dt>
+            <dt class="flaglist"><span id="nocompression">nocompression</span></dt>
             <dd>
               <p>Запрещает компилятору выполнять сжатие файла. Используйте этот
                 флаг для типов файлов, сжатие которых не принесет существенной
@@ -568,7 +569,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 байт в конечном файле установки.</p>
               <p>Этот флаг не действует в сочетании с флагом <tt>external</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="noencryption">noencryption</a></dt>
+            <dt class="flaglist"><span id="noencryption">noencryption</span></dt>
             <dd>
               <p>Запрещает компилятору выполнять шифрование файла. Используйте
                 этот флаг, если включено шифрование (в секции <tt>[Setup]</tt>
@@ -588,13 +589,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 и <tt>touch</tt>.</p>
               <p>Не действует в сочетании с флагом <tt>external</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="noregerror">noregerror</a></dt>
+            <dt class="flaglist"><span id="noregerror">noregerror</span></dt>
             <dd>
               <p>В комбинации с любым из флагов <tt>regserver</tt> или <tt>regtypelib</tt>
                 инсталлятор не выдаст сообщение о том, что регистрация не
                 состоялась.</p>
             </dd>
-            <dt class="flaglist"><a name="onlyifdestfileexists">onlyifdestfileexists</a></dt>
+            <dt class="flaglist"><span id="onlyifdestfileexists">onlyifdestfileexists</span></dt>
             <dd>
               <p>Файл с этим флагом будет установлен только в том случае, если
                 файл с таким же именем в системе пользователя уже существует.
@@ -602,18 +603,18 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 исправлением для уже установленного приложения, и не требуется
                 устанавливать файлы, которых у пользователя ещё нет.</p>
             </dd>
-            <dt class="flaglist"><a name="onlyifdoesntexist">onlyifdoesntexist</a></dt>
+            <dt class="flaglist"><span id="onlyifdoesntexist">onlyifdoesntexist</span></dt>
             <dd>
               <p>Файл с этим флагом будет установлен только в том в случае, если
                 он в системе пользователя не существует.</p>
             </dd>
-            <dt class="flaglist"><a name="overwritereadonly">overwritereadonly</a></dt>
+            <dt class="flaglist"><span id="overwritereadonly">overwritereadonly</span></dt>
             <dd>
               <p>Предписывает программе установки всегда выполнять замену файла
                 с атрибутом "только для чтения". Без этого флага программа
                 установки выдаст пользователю запрос на перезапись такого файла.</p>
             </dd>
-            <dt class="flaglist"><a name="promptifolder">promptifolder</a></dt>
+            <dt class="flaglist"><span id="promptifolder">promptifolder</span></dt>
             <dd>
               <p>По умолчанию, если устанавливаемый файл имеет более раннюю
                 версию (или более раннюю отметку времени, если используется флаг
@@ -623,13 +624,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 установки выдаст пользователю запрос на его замену, но по
                 умолчанию будет предложено оставить существующий файл.</p>
             </dd>
-            <dt class="flaglist"><a name="recursesubdirs">recursesubdirs</a></dt>
+            <dt class="flaglist"><span id="recursesubdirs">recursesubdirs</span></dt>
             <dd>
               <p>Указывает компилятору или программе установки выполнять поиск
                 заданного в <tt>Source</tt> имени файла/маски также в
                 подкаталогах папки <tt>Source</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="regserver">regserver</a></dt>
+            <dt class="flaglist"><span id="regserver">regserver</span></dt>
             <dd>
               <p>Выполняет регистрацию DLL/OCX файла. При указании флага
                 программа установки вызовет функцию DllRegisterServer,
@@ -646,7 +647,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>Для получения дополнительных сведений см. <i>замечания</i> в
                 конце страницы.</p>
             </dd>
-            <dt class="flaglist"><a name="regtypelib">regtypelib</a></dt>
+            <dt class="flaglist"><span id="regtypelib">regtypelib</span></dt>
             <dd>
               <p>Выполняет регистрацию библиотеки типов (.tlb). При удалении
                 файла программа деинсталляции выполнит отмену регистрации
@@ -663,7 +664,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>Для получения дополнительных сведений см. <i>замечания</i> в
                 конце страницы.</p>
             </dd>
-            <dt class="flaglist"><a name="replacesameversion">replacesameversion</a></dt>
+            <dt class="flaglist"><span id="replacesameversion">replacesameversion</span></dt>
             <dd>
               <p>Предписывает программе установки выполнить замену существующего
                 файла той же версии, что и устанавливаемый файл, если их
@@ -674,7 +675,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 если используется для файла, не имеющего номера версии.</p>
               <p>Этот флаг нельзя комбинировать с флагом <tt>ignoreversion</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="restartreplace">restartreplace</a></dt>
+            <dt class="flaglist"><span id="restartreplace">restartreplace</span></dt>
             <dd>
               <p>Если во время установки необходимо заменить существующий файл,
                 но он в это время используется другим процессом (заблокирован),
@@ -690,7 +691,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>
                 в секции <tt>[Setup]</tt> оставить значение <tt>admin</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="setntfscompression">setntfscompression</a></dt>
+            <dt class="flaglist"><span id="setntfscompression">setntfscompression</span></dt>
             <dd>
               <p>Указывает программе установки включить для файла сжатие NTFS
                 (даже если файл не был заменен). Если по какой-либо причине не
@@ -698,7 +699,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 поддерживается файловой системой), сообщение об ошибке не
                 выводится.</p>
             </dd>
-            <dt class="flaglist"><a name="sharedfile">sharedfile</a></dt>
+            <dt class="flaglist"><span id="sharedfile">sharedfile</span></dt>
             <dd>
               <p>Сообщает программе установки, что файл является общим для
                 нескольких приложений, и может быть удалён, если другие
@@ -740,7 +741,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 <tt>DestDir</tt> и дополнительно включите флаг <tt>32bit</tt>.
               </p>
             </dd>
-            <dt class="flaglist"><a name="sign">sign</a></dt>
+            <dt class="flaglist"><span id="sign">sign</span></dt>
             <dd>
               <p>Этот флаг указывает компилятору выполнить цифровую подпись
                 исходных файлов прежде, чем они будут добавлены в пакет
@@ -750,12 +751,12 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>Этот флаг нельзя комбинировать с флагом <tt>issigverify</tt>.
                 Используйте флаг <tt>signcheck</tt> вместо него.</p>
             </dd>
-            <dt class="flaglist"><a name="signcheck">signcheck</a></dt>
+            <dt class="flaglist"><span id="signcheck">signcheck</span></dt>
             <dd>
               <p>Этот флаг указывает компилятору проверить наличие цифровой подписи
                 в исходных файлах перед их добавлением в пакет установки.</p>
             </dd>
-            <dt class="flaglist"><a name="signonce">signonce</a></dt>
+            <dt class="flaglist"><span id="signonce">signonce</span></dt>
             <dd>
               <p>Этот флаг указывает компилятору выполнить цифровую подпись
                 исходных файлов прежде, чем они будут добавлены в пакет
@@ -765,13 +766,13 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                <p>Этот флаг нельзя комбинировать с флагом <tt>issigverify</tt>.
                  Используйте флаг <tt>signcheck</tt> вместо него.</p>
             </dd>
-            <dt class="flaglist"><a name="skipifsourcedoesntexist">skipifsourcedoesntexist</a></dt>
+            <dt class="flaglist"><span id="skipifsourcedoesntexist">skipifsourcedoesntexist</span></dt>
             <dd>
               <p>Предписывает компилятору (или программе установки, если также
                 используется флаг <tt>external</tt>) молча пропустить запись,
                 если файл не существует, вместо вывода сообщения об ошибке.</p>
             </dd>
-            <dt class="flaglist"><a name="solidbreak">solidbreak</a></dt>
+            <dt class="flaglist"><span id="solidbreak">solidbreak</span></dt>
             <dd>
               <p>Если включен параметр <a
                 href="topic_setup_solidcompression.htm">непрерывного сжатия</a>,
@@ -783,7 +784,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 многокомпонентных инсталляторах, когда много времени уходит на
                 распаковку компонентов, установка которых не выбрана.</p>
             </dd>
-            <dt class="flaglist"><a name="sortfilesbyextension">sortfilesbyextension</a></dt>
+            <dt class="flaglist"><span id="sortfilesbyextension">sortfilesbyextension</span></dt>
             <dd>
               <p>Этот флаг указывает компилятору выполнить сжатие
                 отсортированных по расширению файлов прежде, чем они будут
@@ -791,7 +792,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 размер программы установки, если используется <a
                 href="topic_setup_solidcompression.htm">непрерывное сжатие</a>.</p>
             </dd>
-            <dt class="flaglist"><a name="sortfilesbyname">sortfilesbyname</a></dt>
+            <dt class="flaglist"><span id="sortfilesbyname">sortfilesbyname</span></dt>
             <dd>
               <p>Этот флаг указывает компилятору выполнить сжатие
                 отсортированных по имени файлов прежде, чем они будут
@@ -801,7 +802,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 Если ещё применяется флаг <tt>sortfilesbyextension</tt>, то
                 сначала файлы сортируются по расширению.</p>
             </dd>
-            <dt class="flaglist"><a name="touch">touch</a></dt>
+            <dt class="flaglist"><span id="touch">touch</span></dt>
             <dd>
               <p>Предписывает программе установки задать установленным файлам
                 отметку времени, указанную в параметрах <a href="topic_setup_touchdate.htm">TouchDate</a>
@@ -810,18 +811,18 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
               <p>В комбинации с флагом <tt>external</tt> этот флаг не
                 учитывается.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsnosharedfileprompt">uninsnosharedfileprompt</a></dt>
+            <dt class="flaglist"><span id="uninsnosharedfileprompt">uninsnosharedfileprompt</span></dt>
             <dd>
               <p>Выполняет отключение подтверждения на удаление общего файла,
                 если счётчик ссылок общего доступа достиг нуля. Этот флаг должен
                 использоваться совместно с флагом <tt>sharedfile</tt>.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsremovereadonly">uninsremovereadonly</a></dt>
+            <dt class="flaglist"><span id="uninsremovereadonly">uninsremovereadonly</span></dt>
             <dd>
               <p>Указывает программе деинсталляции перед попыткой удалением
                 файла выполнить в нём отключение атрибута "только-для-чтения".</p>
             </dd>
-            <dt class="flaglist"><a name="uninsrestartdelete">uninsrestartdelete</a></dt>
+            <dt class="flaglist"><span id="uninsrestartdelete">uninsrestartdelete</span></dt>
             <dd>
               <p>Предписывает программе деинсталляции выполнить удаление
                 заблокированного файла после перезагрузки системы. В случае
@@ -832,7 +833,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 программными средствами. Обратите внимание, что для успешной
                 работы этого флага требуются права администратора.</p>
             </dd>
-            <dt class="flaglist"><a name="uninsneveruninstall">uninsneveruninstall</a></dt>
+            <dt class="flaglist"><span id="uninsneveruninstall">uninsneveruninstall</span></dt>
             <dd>
               <p>Запрещает программе деинсталляции выполнять удаление файла. Этот
                 флаг может быть полезен при установке очень распространенных
@@ -842,7 +843,7 @@ class="hl num">1.0.0.0</span>, Culture=neutral, PublicKeyToken=abcdef123456, Pro
                 файл не будет удалён, но счётчик ссылок всё равно будет
                 уменьшен.</p>
             </dd>
-            <dt class="flaglist"><a name="unsetntfscompression">unsetntfscompression</a></dt>
+            <dt class="flaglist"><span id="unsetntfscompression">unsetntfscompression</span></dt>
             <dd>
               <p>Указывает программе установки отключить для файла сжатие NTFS
                 (даже если файл не был заменен). Если по какой-либо причине не
