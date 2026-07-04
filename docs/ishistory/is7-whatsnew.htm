@@ -49,7 +49,7 @@
     <details open="">
     <summary>Inno Setup 7.0</summary>
 
-    <p><a name="7.0.2"></a><span class="ver">7.0.2 </span><span class="date">(2026-06-29)</span></p>
+    <p><a name="7.0.2"></a><span class="ver">7.0.2 </span><span class="date">(2026-07-13)</span></p>
 
     <p>Используете Inno Setup в коммерческих целях? Пожалуйста, <a href="https://jrsoftware.org/isorder.php">купите лицензию</a>.</p>
     <p>Спасибо всем, кто уже приобрел лицензию! Ваша поддержка очень важна для нашего дальнейшего развития.</p>
@@ -58,6 +58,7 @@
       <li>Добавлен новый раздел справки "<a href="https://jrsoftware.org/ishelp/index.php?topic=securitymeasures">Меры безопасности</a>", который также содержит подраздел "<a href="https://jrsoftware.org/ishelp/index.php?topic=securitymeasures&amp;anchor=supplychain">Безопасность цепочки поставок</a>" и ссылку на нашу страницу "<a href="https://jrsoftware.org/isdl-verify.php">Verifying Inno Setup Downloads</a>" (Проверка загруженных файлов Inno Setup).<br/>
           Меры безопасности, обеспечение безопасности цепочки поставок и проверка загружаемых файлов — это не нововведения, однако теперь они задокументированы и сведены воедино.</li>
       <li>Теперь компиляция завершится с ошибкой, если файл <tt>.iss</tt> или <tt>.isl</tt> содержит байт или последовательность байтов, недопустимые для кодовой страницы (набора символов) этого файла. Ранее такие недопустимые байты интерпретировались как символы <tt>U+FFFD</tt> (символ замены в Unicode).</li>
+      <li>Программирование на языке Паскаль: обновлена документация по функциям <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_registerserver">RegisterServer</a>, <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_registertypelibrary">RegisterTypeLibrary</a>, <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_incrementsharedcount">IncrementSharedCount</a> и <a href="https://jrsoftware.org/ishelp/index.php?topic=isxfunc_applypathredirrules">ApplyPathRedirRules</a>, включая пояснения и примеры.</li>
       <li><i>Исправлено:</i>
       <ul>
         <li>ISCC: чтобы прочитать сценарий из стандартного ввода, укажите <tt>-</tt> в качестве имени сценария. Подразумевается, что такой сценарий имеет кодировку UTF-8.</li>
@@ -69,7 +70,8 @@
         <li>Программирование на языке Паскаль: выделенный элемент <tt>TNewCheckListBox</tt> с установленным <tt>ItemFontStyle</tt> или <tt>SubItemFontStyle</tt> больше не теряет цвет после потери списком фокуса (проблема возникла с версии 6.2.0). Спасибо Sergii Leonov за исправление ошибки.</li>
       </ul>
       </li>
-      <li>Добавлены официальные переводы на упрощенный и традиционный китайский языки.</li>
+      <li>Исходный код 7-Zip и LZMA SDK, используемый Inno Setup, обновлен на актуальную версию.</li>
+      <li>Добавлены официальные переводы на литовский язык, упрощенный и традиционный китайский.</li>
       <li>Улучшения и исправления во всех остальных официальных переводах.</li>
     </ul>
 
