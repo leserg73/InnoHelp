@@ -57,6 +57,10 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             (.exe или .com) или пакетного (.bat или .cmd) файла, следует <i>обязательно</i>
             использовать флаг <tt>shellexec</tt>. Этот параметр может содержать
             константы.</p>
+          <p>Если флаг <tt>shellexec</tt> <i>не</i> указан, то к указанному пути
+            применяется <a href="topic_pathredir.htm">перенаправление системного
+            пути</a>. Любые удлиненные пути, также известные как суперпути, всегда
+            преобразуются обратно в обычные пути.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\Init.exe"</pre>
@@ -91,6 +95,10 @@ class="hl kwe">postinstall nowait skipifsilent unchecked</span>
             каталог из параметра <tt>Filename</tt>; если же параметр <tt>Filename</tt>
             не содержит путь, будет использоваться каталог по умолчанию. Может
             содержать константы.</p>
+          <p>Если флаг <tt>shellexec</tt> <i>не</i> указан, то к указанному пути
+            применяется <a href="topic_pathredir.htm">перенаправление системного
+            пути</a>. Любые удлиненные пути, также известные как суперпути, всегда
+            преобразуются обратно в обычные пути.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">WorkingDir</span>: "<span
@@ -143,6 +151,19 @@ class="hl kwc">{app}</span>"</pre>
             <pre class="nomargin"><span class="hl kwb">Verb</span>: "print"</pre>
           </div>
         </dd>
+        <dt class="paramlist"><b><span id="OnLog">OnLog</span></b></dt>
+        <dd class="paramlist">
+          <p>Этот параметр действует только в секции <tt>[Run]</tt>. Определяет
+            имя процедуры в секции <tt>[Code]</tt>, которая будет вызываться для
+            каждой строк вывода программы. Должен использоваться в сочетании с
+            флагом <tt>logoutput</tt>. Дополнительную информацию смотрите в
+            разделе справки "<a href="topic_scriptonlog.htm">Программирование:
+            Параметр OnLog</a>.</p>
+          <div class="examplebox">
+            <div class="exampleheader">Пример:</div>
+            <pre class="nomargin"><span class="hl kwb">OnLog</span>: MyOnLog</pre>
+          </div>
+        </dd>
         <dt class="paramlist"><b><span id="Flags">Flags</span></b></dt>
         <dd class="paramlist">
           <p>Этот параметр представляет собой набор дополнительных опций.
@@ -151,21 +172,15 @@ class="hl kwc">{app}</span>"</pre>
           <dl>
             <dt class="flaglist"><span id="32bit">32bit</span></dt>
             <dd>
-              <p>Приводит к сопоставлению константы <tt>{sys}</tt> с 32-битным
-                каталогом System, если используется в параметрах <tt>Filename</tt>
-                и <tt>WorkingDir</tt>. Такое поведение используется по
-                умолчанию в <a href="topic_32vs64bitinstalls.htm">32-разрядном
-                  режиме установки</a>.</p>
+              <p>Устанавливает <a href="topic_entrybitness.htm">разрядность записи</a>
+                на значение 32-бит, переопределяя значение по умолчанию.</p>
               <p>Этот флаг нельзя использовать вместе с флагом <tt>shellexec</tt>.
               </p>
             </dd>
             <dt class="flaglist"><span id="64bit">64bit</span></dt>
             <dd>
-              <p>Приводит к сопоставлению константы <tt>{sys}</tt> с
-                64-разрядным каталогом System, если используется в параметрах <tt>Filename</tt>
-                и <tt>WorkingDir</tt>. Такое поведение используется по
-                умолчанию <a href="topic_32vs64bitinstalls.htm">64-разрядном
-                  режиме установки</a>.</p>
+              <p>Устанавливает <a href="topic_entrybitness.htm">разрядность записи</a>
+                на значение 64-бит, переопределяя значение по умолчанию.</p>
               <p>Этот флаг можно использовать только при работе программы
                 установки в 64-разрядной системе Windows, иначе произойдёт
                 ошибка. При создании инсталлятора, поддерживающего обе
@@ -189,7 +204,8 @@ class="hl kwc">{app}</span>"</pre>
             <dt class="flaglist"><span id="logoutput">logoutput</span></dt>
             <dd>
               <p>Если указан этот флаг, выходные данные программы будут включены
-                в файл журнала.</p>
+                в файл журнала. Если также указан параметр <tt>OnLog</tt>, то
+                вывод передаётся в процедуру <tt>OnLog</tt>.</p>
               <p>Этот флаг нельзя использовать вместе с флагами <tt>nowait</tt>,
                 <tt>runasoriginaluser</tt>, <tt>shellexec</tt> и <tt>waituntilidle</tt>.</p>
             </dd>

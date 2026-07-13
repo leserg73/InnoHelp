@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Программирование: Использование DLL и .NET сборок</title>
+    <title>Программирование: Использование DLL файлов</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
@@ -16,21 +16,18 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Программирование: Использование DLL и .NET сборок</h1>
+    <h1 class="topicheading">Программирование: Использование DLL файлов</h1>
     <div class="topicbody">
       <p>При помощи Pascal-сценариев можно вызывать функции из
-        внешних библиотек DLL. Сюда относятся как стандартные функции API Win32
+        внешних библиотек DLL. Сюда относятся как стандартные функции Windows API
         из системных библиотек Windows, так и пользовательские функции из
-        пользовательских библиотек DLL. Кроме того, поддерживается вызов .NET
-        сборок.</p>
+        пользовательских библиотек DLL.</p>
       <p>Пример использования внешних библиотек DLL показан в
         файле сценария "<i>CodeDll.iss</i>" из папки "Examples" по месту
         установки Inno Setup.</p>
-      <p>Папка "Examples" также содержит три примера проекта
-        создания пользовательских DLL: один для Microsoft Visual C++, один для
-        Microsoft Visual C# и один для Borland Delphi. Проект для C#
-        демонстрирует пример создания .NET сборки, совместимой с
-        Pascal-сценарием.</p>
+      <p>Папка "Examples" также содержит два примера проекта создания
+        пользовательских DLL: один для Microsoft Visual C++ и один для Embarcadero
+        Delphi.</p>
       <p>Для вызова функции из библиотеки DLL сначала, как
         обычно, следует записать прототип функции, но вместо тела функции
         необходимо использовать ключевое слово 'external' и указать DLL. Если, к
@@ -45,15 +42,17 @@
 
 <span class="hl kwb">function</span> A(B: Integer): Integer;
 <span class="hl kwb">external</span> <span class="hl str">'&lt;dllfunctionname&gt;@&lt;dllfilename&gt; &lt;callingconvention&gt; &lt;options&gt;'</span>;</pre>
-      <p><i>Первая форма</i> определяет вызов DLL-функции с
-        использованием соглашения о вызовах по умолчанию, т.е. 'stdcall'. Все
-        стандартные функции API Win32 и большинство пользовательских DLL-функций
-        используют 'stdcall'.</p>
-      <p><i>Вторая форма</i> определяет вызов DLL-функции с
-        использованием специального соглашения о вызовах. Допустимыми
-        соглашениями о вызовах являются: 'stdcall' (по умолчанию), 'cdecl',
-        'pascal' и 'register'.</p>
-      <p><i>Третья форма</i> определяет один или несколько
+      <p><i>Первая форма</i> определяет вызов DLL-функции с использованием
+        соглашения о вызовах по умолчанию.</p>
+      <p><i>Вторая форма</i> определяет вызов DLL-функции с использованием
+        специального соглашения о вызовах. Допустимыми соглашениями о вызовах
+        являются: 'stdcall' (по умолчанию), 'cdecl', 'pascal' и 'register'.
+        Все стандартные 32-разрядные функции Windows API используют 'stdcall', как
+        и многие пользовательские 32-разрядные функции DLL. Для 64-разрядных
+        функций Windows API и пользовательских файлов DLL соглашение об вызове все
+        ещё может быть указано, но оно игнорируется, поскольку все 64-разрядные
+        функции всегда используют одно и то же соглашение об вызовах.</p>
+      <p><i>Третья форма</i> определяет один или несколько дополнительных
         параметров загрузки DLL, разделённых пробелами:</p>
       <div class="indent">
         <dl>
@@ -110,10 +109,10 @@ class="hl kwe">dontcopy noencryption</span>
 class="hl kwe">dontcopy noencryption</span>
 
 <span class="hl kwa">[Code]</span>
-<span class="hl kwb">procedure</span> MyDllFunc(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal);
+<span class="hl kwb">procedure</span> MyDllFunc(hWnd: HWND; lpText, lpCaption: AnsiString; uType: Cardinal);
 <span class="hl kwb">external</span> <span class="hl str">'MyDllFunc@files:MyDll.dll stdcall'</span>;
 
-<span class="hl kwb">procedure</span> ADllFunc(hWnd: Integer; lpText, lpCaption: AnsiString; uType: Cardinal);
+<span class="hl kwb">procedure</span> ADllFunc(hWnd: HWND; lpText, lpCaption: AnsiString; uType: Cardinal);
 <span class="hl kwb">external</span> <span class="hl str">'ADllFunc@files:A.dll,B.dll stdcall loadwithalteredsearchpath'</span>; <span
 class="hl slc">//A.dll зависит от B.dll</span>   
 </pre>
@@ -127,6 +126,15 @@ class="hl slc">//A.dll зависит от B.dll</span>
       <p>Используйте <a href="topic_isxfunc_createcallback.htm">CreateCallback</a>
         для выполнения вызова из DLL-функций напрямую в функции вашего сценария
         (подобно функциям API Windows).</p>
+      <p>Помимо <tt>THandle</tt>, для вызова функций Windows API доступны следующие
+        встроенные типы:<br/>
+        <tt>DWORD</tt>, <tt>UINT</tt>, <tt>BOOL</tt>, <tt>LONG</tt>, <tt>ULONG</tt>,
+        <tt>HANDLE</tt>, <tt>COLORREF</tt>, <tt>INT_PTR</tt>, <tt>LONG_PTR</tt>,
+        <tt>DWORD_PTR</tt>, <tt>UINT_PTR</tt>, <tt>ULONG_PTR</tt>, <tt>LRESULT</tt>,
+        <tt>HKEY</tt>, <tt>HINSTANCE</tt>, <tt>HMODULE</tt>, <tt>WPARAM</tt>,
+        <tt>LPARAM</tt>, <tt>SIZE_T</tt>, <tt>SSIZE_T</tt>, <tt>TFileTime</tt>,
+        <tt>HResult</tt>, <tt>TGUID</tt>, <tt>TCLSID</tt>, <tt>TIID</tt>,
+        <tt>HBITMAP</tt>, <tt>HDC</tt>, <tt>HFONT</tt>, and <tt>HWND</tt>.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

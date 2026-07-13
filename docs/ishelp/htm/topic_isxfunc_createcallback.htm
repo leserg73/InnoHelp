@@ -20,18 +20,24 @@
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX">function
-          CreateCallback(Method: AnyMethod): Longword;</p>
+          CreateCallback(Method: AnyMethod): NativeInt;</p>
       <h2 class="heading">Описание</h2>
       <p>Позволяет выполнять обратные вызовы из функций DLL (<i>подобно функциям
           API Windows</i>) напрямую в функции сценария.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>В <a href="topic_64bit.htm">32-разрядных установщиках</a> параметры
+        обратного вызова, передаваемые по значению, не поддерживаются, если их
+        тип превышает 4 байта, например, <tt>Int64</tt>, <tt>Double</tt>,
+        <tt>Extended</tt> и <tt>Currency</tt>. <a href="topic_64bit.htm">64-разрядные
+        установщики</a> не имеют такого ограничения.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">function</span> SetTimer(hWnd, nIDEvent, uElapse, lpTimerFunc: Longword): Longword;
+      <pre class="indent examplebox"><span class="hl kwb">function</span> SetTimer(hWnd: HWND; nIDEvent: UINT_PTR; uElapse: UINT; lpTimerFunc: NativeInt): UINT_PTR;
 <span class="hl kwb">external</span> <span class="hl str">'SetTimer@user32.dll stdcall'</span>;
 
 <span class="hl kwb">var</span>
   TimerCount: Integer;
 
-<span class="hl kwb">procedure</span> MyTimerProc(Arg1, Arg2, Arg3, Arg4: Longword);
+<span class="hl kwb">procedure</span> MyTimerProc(Arg1: HWND; Arg2: UINT; Arg3: UINT_PTR; Arg4: DWORD);
 <span class="hl kwb">begin</span>
   Inc(TimerCount);
   WizardForm.BeveledLabel.Caption := <span class="hl str">' Timer! '</span> + IntToStr(TimerCount);

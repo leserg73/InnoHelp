@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: PathConvertNormalToSuper</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: PathConvertNormalToSuper</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function PathConvertNormalToSuper(const Filename: String): Boolean;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Выполняет преобразование обычного пути в полный удлинённый путь (также
+        известный как "суперпуть"). Никакой ошибки не будет, если указанный путь
+        уже является удлиненным путём.</p>
+      <p>Если входные данные представляют собой пустую строку или содержат только
+        пробелы, возвращается пустая строка.</p>
+      <p>В случае сбоя генерируется исключение; известно, что это происходит только
+        в том случае, если длина входного или выходного пути превышает 32 КБ.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  SuperPath: <span class="hl kwb">String</span>;
+<span class="hl kwb">begin</span>
+  SuperPath := <span class="hl kwd">PathConvertNormalToSuper</span>(<span class="hl sng">'C:\Windows'</span>) <span class="hl kwb">then</span>
+  <span class="hl kwg">Log</span>(SuperPath);  <span class="hl slc">// Logs '\\?\C:\Windows'</span>
+
+  SuperPath := <span class="hl kwd">PathConvertNormalToSuper</span>(<span class="hl sng">'\\server\share\filename'</span>) <span class="hl kwb">then</span>
+  <span class="hl kwg">Log</span>(SuperPath);  <span class="hl slc">// Logs '\\?\UNC\server\share\filename'</span>
+<span class="hl kwb">end</span>;
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a>
+        <br />
+        <a href="topic_isxfunc_pathconvertsupertonormal.htm">PathConvertSuperToNormal</a></p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

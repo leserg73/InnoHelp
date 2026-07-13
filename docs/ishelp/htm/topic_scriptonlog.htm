@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: Параметр "OnLog"</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: Параметр "OnLog"</h1>
+    <div class="topicbody">
+      <p>В секции <tt>[Run]</tt> поддерживается один дополнительный <a
+        href="topic_params.htm">параметр</a>. Этот параметр следующий:</p>
+      <dl>
+        <dt class="paramlist"><b><span id="OnLog">OnLog</span></b></dt>
+        <dd class="paramlist">
+        <p>В сочетании с флагом <tt>logoutput</tt> этот параметр определяет имя
+          функции, которая будет вызываться для каждой строки вывода программы
+          вместо непосредственного включения её в файл журнала.</p>
+        <p>Сама функция должна быть объявлена в секции <tt>[Code]</tt> и прототип
+          её следующий:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<tt>procedure MyOnLog(const S: String; const
+          Error, FirstLine: Boolean);</tt>.</p>
+        <p>См. описание функции <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>,
+          где поясняются параметры <tt>S</tt>, <tt>Error</tt> и <tt>FirstLine</tt>.</p>
+        <div class="examplebox">
+          <div class="exampleheader">Пример:</div>
+          <pre class="nomargin"><span class="hl kwa">[Run]</span>
+<span class="hl kwb">Filename</span>: &quot;<span class="hl kwc">{app}</span>\MyConsoleProg.exe&quot;; <span class="hl kwb">OnLog</span>: MyOnLog; <span class="hl kwb">Flags</span>: <span class="hl kwe">logoutput</span></pre>
+        </div>
+        </dd>
+      </dl>
+      <p>Ниже показан пример секции <tt>[Code]</tt>, в котором приведена используемая
+        выше процедура. Функция <tt>Log</tt> является <a
+        href="topic_scriptfunctions.htm">вспомогательной</a> и не включена в эту
+        секцию [Code].</p>
+      <pre class="indent examplebox">
+<span class="hl kwa">[Code]</span>
+<span class="hl kwb">procedure</span> <span class="hl kwd">MyOnLog</span>(<span class="hl kwb">const</span> S: String; <span class="hl kwb">const</span> Error, FirstLine: Boolean);
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if not</span> Error <span class="hl kwb">and</span> FirstLine <span class="hl kwb">then</span>
+    <span class="hl kwg">Log</span>(<span class="hl sng">'Output:'</span>);
+  <span class="hl kwg">Log</span>(S);
+<span class="hl kwb">end</span>;
+</pre>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

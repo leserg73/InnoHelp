@@ -400,6 +400,10 @@ pre.hl {
   font-weight: bold;
 }
 
+.hl.kwg {
+  color:#000080;
+}
+
 li.compact {
   margin-bottom: 0.0208in;
 }

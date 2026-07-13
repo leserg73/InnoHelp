@@ -42,6 +42,35 @@
         существует. (Такое поведение соответствует требованиям Microsoft).</p>
       <p>Если раздел реестра не может быть открыт для записи, будет вызвано
         исключение.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Имя файла в параметре <tt>Filename</tt> должно быть доступно в <i>текущем
+        процессе</i>. Это означает, например, что 32-разрядный установщик, который
+        хочет зарегистрировать DLL в нативном 64-разрядном каталоге <tt>{sys}</tt>,
+        должен передать путь <tt>Sysnative</tt>. Используйте функцию
+        <tt>ApplyPathRedirRules</tt>, как показано в примере ниже, чтобы выполнить
+        эту настройку автоматически. (Вызов <tt>ApplyPathRedirRules</tt> для DLL,
+        которые находятся вне <tt>{sys}</tt>, не является обязательным, но в любом
+        случае не повредит.)</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  File64Bit, AlreadyExisted: <span class="hl kwg">Boolean</span>;
+<span class="hl kwb">begin</span>
+  <span class="hl slc">// Увеличение счётчика TestIncSharedCount.dll, находящегося в каталоге System.</span>
+
+  <span class="hl slc">// Укажите для File64Bit...</span>
+  <span class="hl slc">// - False, чтобы обновить 32-разрядный ключ SharedDLLs</span>
+  <span class="hl slc">// - True, чтобы обновить 64-разрядный ключ SharedDLLs</span>
+  <span class="hl slc">// - Значение Is64BitInstallMode укажет установщику обновить соответствующий ключ</span>
+  File64Bit := <span class="hl kwg">Is64BitInstallMode</span>;
+
+  <span class="hl slc">// Параметр AlreadyExisted должен иметь True, если файл существовал до установки</span>
+  AlreadyExisted := <span class="hl kwg">False</span>;
+
+  <span class="hl kwg">IncrementSharedCount</span>(File64Bit,
+    <span class="hl kwd">ApplyPathRedirRules</span>(File64Bit, <span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{sys}\TestIncSharedCount.dll'</span>), tpCurrent),
+    AlreadyExisted);
+<span class="hl kwb">end</span>;
+</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

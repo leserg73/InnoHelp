@@ -54,6 +54,7 @@
   --hl-kwd-color: #000050;
   --hl-kwe-color: #0060c0;
   --hl-kwf-color: #990000;
+  --hl-kwg-color: #000080;
 
   /* Заголовки, примеры, параметры, флаги */
   --topicheading-bg: #e0e0e0;
@@ -210,6 +211,7 @@
   --hl-kwd-color: #3695df;
   --hl-kwe-color: #80abee;
   --hl-kwf-color: #d65363;
+  --hl-kwg-color: #7bbae7;
 
   /* Заголовки, примеры, параметры, флаги */
   --topicheading-bg: #403e41;
@@ -483,6 +485,10 @@ pre.hl {
 
 .hl.kwf {
   color: var(--hl-kwf-color);
+}
+
+.hl.kwg {
+  color: var(--hl-kwg-color);
 }
 
 .topicheading {

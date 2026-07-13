@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Разрядность записи</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Разрядность записи</h1>
+    <div class="topicbody">
+      <p>В таблице ниже перечислены секции, в которых записи могут быть либо
+        "32-бит", либо "64-бит".</p>
+      <p>По умолчанию разрядность записей соответствует <a
+        href="topic_32vs64bitinstalls.htm">режиму установки</a> установщика и
+        программы удаления: 32-бит в 32-разрядном режиме установки и 64-бит в
+        64-разрядном режиме установки. При этом для каждой записи возможна
+        индивидуальная установка разрядности.</p>
+      <div>
+        <table>
+          <tr>
+            <th>Секция</th>
+            <th>На что влияет разрядность записи</th>
+            <th>Как переопределить</th>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_dirssection.htm">[Dirs]</a></tt></td>
+            <td>Парметр <tt>Name</tt>: <a href="topic_pathredir.htm">перенаправление системного пути</a>.</td>
+            <td>Невозможно</td>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_filessection.htm">[Files]</a></tt></td>
+            <td>
+              <ul class="compact">
+                <li>Параметры <tt>Source</tt> и <tt>DestDir</tt>: <a href="topic_pathredir.htm">перенаправление системного пути</a>.</li>
+                <li>Флаг <tt>regserver</tt>: каким файлом <tt>regsvr32.exe</tt> регистрируется файл.</li>
+                <li>Флаг <tt>regtypelib</tt>: в каком представлении реестра регистрируется библиотека типов.</li>
+                <li>Флаг <tt>sharedfile</tt>: в каком представлении реестра обновляется ключ <tt>SharedDLLs</tt>.</li>
+              </ul>
+            </td>
+            <td>Использовать флаг <tt>32bit</tt> или <tt>64bit</tt>.</td>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_iconssection.htm">[Icons]</a></tt></td>
+            <td>Флаг <tt>useapppaths</tt>: к какому представлению реестра осуществляется доступ.</td>
+            <td>Невозможно</td>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_installdeletesection.htm">[InstallDelete]</a></tt><br/><tt><a href="topic_uninstalldeletesection.htm">[UninstallDelete]</a></tt></td>
+            <td>Параметр <tt>Name</tt>: <a href="topic_pathredir.htm">перенаправление системного пути</a>.</td>
+            <td>Невозможно</td>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_registrysection.htm">[Registry]</a></tt></td>
+            <td>К какому представлению реестра осуществляется доступ.</td>
+            <td>Для параметров <tt>Root</tt> использовать суффикс <tt>32</tt> или <tt>64</tt>.</td>
+          </tr>
+          <tr>
+            <td><tt><a href="topic_runsection.htm">[Run]</a></tt><br/><tt><a href="topic_runsection.htm">[UninstallRun]</a></tt></td>
+            <td>Параметры <tt>Filename</tt> и <tt>WorkingDir</tt>: <a href="topic_pathredir.htm">перенаправление системного пути</a>.</td>
+            <td>Использовать флаг <tt>32bit</tt> или <tt>64bit</tt>.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ApplyPathRedirRules</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ApplyPathRedirRules</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function ApplyPathRedirRules(const Path64Bit: Boolean; const Path: String; const TargetProcess: TPathRedirTargetProcess): String;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Применяет <a href="topic_pathredir.htm">перенаправление системного пути</a>
+        к указанному пути и возвращает перезаписанный путь.</p>
+      <p>Параметр <tt>Path64Bit</tt> определяет текущую разрядность пути <tt>Path</tt>:
+        <tt>True</tt> — 64-бит, а <tt>False</tt> — 32-бит. Параметр <tt>TargetProcess</tt>
+        определяет разрядность процесса, который в конечном итоге будет обращаться
+        к преобразованному пути. В таблице раздела справки "<a href="topic_pathredir.htm">Перенаправление
+        системного пути</a>" это, соответственно, "разрядность записи" и "разрядность
+        целевого процесса".</p>
+      <p>Перед перезаписью путь раскрывается с помощью функции <a
+        href="topic_isxfunc_expandfilename.htm">ExpandFileName</a> и преобразуется
+        в удлиненный путь (также известный как "суперпуть").</p>
+      <p>Раскрытие пути и преобразование в удлиненный путь выполняются всегда,
+        даже если ничего не перезаписывается.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>На системах под управлением Windows 32-бит параметр <tt>Path64Bit</tt>
+        должен быть равен <tt>False</tt>, в противном случае будет сгенерировано
+        исключение.</p>
+      <p>Класс <tt>TPathRedirTargetProcess</tt> — это перечисляемый тип и объявлен
+        следующим образом:</p>
+      <pre class="indent">TPathRedirTargetProcess = (tpCurrent, tpNativeBit, tp32Bit, tp32BitPreferSystem32);</pre>
+      <table style="margin-top: 1.0em; margin-right: 0.8em" border="1">
+      <tr>
+        <th>Значение</th>
+        <th>Разрядность целевого процесса</th>
+      </tr>
+      <tr>
+        <td><tt>tpCurrent</tt></td>
+        <td>64-бит в <a href="topic_64bit.htm">64-разрядном установщике</a>, или
+          32-бит в 32-разрядном установщике</td>
+      </tr>
+      <tr>
+        <td><tt>tpNativeBit</tt></td>
+        <td>64-бит при запуске на Windows 64-бит или 32-бит на Windows 32-бит</td>
+      </tr>
+      <tr>
+        <td><tt>tp32Bit</tt></td>
+        <td>32-бит</td>
+      </tr>
+      <tr>
+        <td><tt>tp32BitPreferSystem32</tt></td>
+        <td>32-бит, в преобразованном пути используется <tt>System32</tt> вместо
+          <tt>SysWOW64</tt> (см. главу "<a href="topic_pathredir.htm">Перенаправление
+            системного пути</a>")</td>
+      </tr>
+      </table>
+      <h2 class="heading">Пример:</h2>
+        <pre class="indent examplebox"><span class="hl kwb">var</span>
+  InPath, OutPath: <span class="hl kwb">String</span>;
+<span class="hl kwb">begin</span>
+  InPath := <span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{sys}\MyLibrary.dll'</span>);
+  <span class="hl kwg">Log</span>(InPath);
+  <span class="hl slc">// Обычно записывается путь: C:\Windows\System32\MyLibrary.dll</span>
+
+  <span class="hl slc">// Преобразование 64-разрядного пути в путь, доступный в текущем процессе</span>
+  <span class="hl kwb">if</span> <span class="hl kwg">IsWin64</span> <span class="hl kwb">then</span>
+  <span class="hl kwb">begin</span>
+    OutPath := <span class="hl kwd">ApplyPathRedirRules</span>(<span class="hl kwg">True</span>, InPath, tpCurrent);
+    <span class="hl kwg">Log</span>(OutPath);
+    <span class="hl slc">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\Sysnative\MyLibrary.dll</span>
+    <span class="hl slc">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\System32\MyLibrary.dll</span>
+  <span class="hl kwb">end</span>;
+
+  <span class="hl slc">// Преобразование 32-разрядного пути в путь, доступный в текущем процессе</span>
+  OutPath := <span class="hl kwd">ApplyPathRedirRules</span>(<span class="hl kwg">False</span>, InPath, tpCurrent);
+  <span class="hl kwg">Log</span>(OutPath);
+  <span class="hl slc">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
+  <span class="hl slc">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
+<span class="hl kwb">end</span>
+</pre>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><a href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a><br />
+        <a href="topic_isxfunc_pathconvertsupertonormal.htm">PathConvertSuperToNormal</a></p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

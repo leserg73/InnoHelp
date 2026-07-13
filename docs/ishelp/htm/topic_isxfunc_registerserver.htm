@@ -19,27 +19,40 @@
     <h1 class="topicheading">Программирование: RegisterServer</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">procedure
-          RegisterServer(const Is64Bit: Boolean; const Filename: String; const
-          FailCriticalErrors: Boolean);</p>
+      <p class="prototip1 notopmarginX">procedure RegisterServer(const Is64Bit: Boolean; const Filename: String; const Reserved: Boolean);</p>
       <h2 class="heading">Описание</h2>
       <p>Регистрирует библиотеку DLL/OCX с указанным именем файла <tt>Filename</tt>.
-        Если для параметра <tt>Is64Bit</tt> указано значение <tt>True</tt>, то
-        файл библиотеки будет зарегистрирован в 64-разрядном процессе. При
-        значении <tt>True</tt> в параметре <tt>FailCriticalErrors</tt> система
-        не будет показывать никаких сообщений о критических ошибках. В случае
-        неудачи будет вызвано исключение.</p>
+         В случае неудачи будет вызвано исключение.</p>
+      <p>Параметр <tt>Is64Bit</tt> указывает разрядность DLL/OCX. Если 64-разрядная,
+        то <tt>True</tt>, если же 32-разрядная — то <tt>False</tt>.</p>
+      <p>Параметр <tt>Reserved</tt> игнорируется, но его все равно необходимо
+        указать.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Имя файла в параметре <tt>Filename</tt> должно быть доступно в <i>текущем
+        процессе</i>. Это означает, например, что 32-разрядный установщик, который
+        хочет зарегистрировать DLL в нативном 64-разрядном каталоге <tt>{sys}</tt>,
+        должен передать путь <tt>Sysnative</tt>. Используйте функцию
+        <tt>ApplyPathRedirRules</tt>, как показано в примере ниже, чтобы выполнить
+        эту настройку автоматически. (Вызов <tt>ApplyPathRedirRules</tt> для DLL,
+        которые находятся вне <tt>{sys}</tt>, не является обязательным, но в любом
+        случае не повредит.)</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl kwb">begin</span>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  File64Bit: <span class="hl kwg">Boolean</span>;
+<span class="hl kwb">begin</span>
   <span class="hl slc">// Регистрация hhctrl.ocx, находящейся в каталоге System.</span>
-  RegisterServer(Is64BitInstallMode, ExpandConstant(<span class="hl str">'{sys}\hhctrl.ocx'</span>), False);
-<span class="hl kwb">end</span>;</pre>
-      <p>В примере выше, первым параметром мы указали функцию <tt>Is64BitInstallMode</tt>.
-        Таким образом, если программа установки будет запущена в 64-разрядной
-        системе, то функция зарегистрирует файл как 64-разрядную библиотеку OCX
-        в 64-разрядном каталоге System. В противном случае файл будет
-        зарегистрирован как 32-разрядная библиотека OCX в 32-разрядном каталоге
-        System.</p>
+
+  <span class="hl slc">// Укажите для File64Bit...</span>
+  <span class="hl slc">// - False, если хотите зарегистрировать 32-разрядную OCX в 32-разрядном каталоге System</span>
+  <span class="hl slc">// - True, если хотите зарегистрировать 64-разрядную OCX в 64-разрядном каталоге System</span>
+  <span class="hl slc">// - Значение Is64BitInstallMode укажет установщику зарегистрировать соответствующую разрядность</span>
+  File64Bit := <span class="hl kwg">Is64BitInstallMode</span>;
+
+  <span class="hl kwg">RegisterServer</span>(File64Bit,
+    <span class="hl kwd">ApplyPathRedirRules</span>(File64Bit, <span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{sys}\hhctrl.ocx'</span>), tpCurrent),
+    <span class="hl kwg">False</span>);
+<span class="hl kwb">end</span>;
+</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

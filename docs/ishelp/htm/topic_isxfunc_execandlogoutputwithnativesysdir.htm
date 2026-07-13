@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ExecAndLogOutputWithNativeSysDir</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ExecAndLogOutputWithNativeSysDir</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function ExecAndLogOutputWithNativeSysDir(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer; const OnLog: TOnLog): Boolean;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Используйте эту функцию вместо <a
+        href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
+        для запуска исполняемого файла, расположенного в 64-разрядном системном
+        каталоге, из 32-разрядного установщика.</p>
+      <p>Эта функция позволяет избежать проблемы, связанной с тем, что функция
+        <tt>ExecAndLogOutput</tt> в 32-разрядном установщике может запускать
+        такой исполняемый файл только с помощью псевдонима Sysnative, который
+        недоступен для 64-разрядных приложений. Для этого функция временно
+        отключает перенаправление файловой системы WOW64.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>В 32-разрядной Windows или в 64-разрядном установщике эта функция
+        является просто псевдонимом для <tt>ExecAndLogOutput</tt>.</p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

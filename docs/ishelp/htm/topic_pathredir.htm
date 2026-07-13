@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Перенаправление системного пути</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Перенаправление системного пути</h1>
+    <div class="topicbody">
+      <p>В 64-разрядной Windows есть два системных каталога: один содержит
+        64-разрядные DLL/EXE-файлы и называется "<tt>System32</tt>", а другой
+        содержит 32-разрядные DLL/EXE-файлы и называется "<tt>SysWOW64</tt>".</p>
+      <p><i>Перенаправление системных путей</i> применяется к значениям определённых
+        параметров, принимающих пути — полный список см. в разделе "<a
+        href="topic_entrybitness.htm">Разрядность записи</a>". Пути, начинающиеся
+        с <tt>{sys}</tt> (или другого значения, расширяющегося до
+        <tt><i>x</i>:\Windows\System32</tt>), при необходимости автоматически
+        перезаписываются так, чтобы 64-разрядные записи получали доступ к
+        64-разрядному системному каталогу, а 32-разрядные записи — к 32-разрядному
+        системному каталогу.</p>
+      <p>Например, на системе Windows 64-бит в данном случае:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MyLibrary.dll"; <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{sys}</span>"; <span class="hl kwb">Flags</span>: <span class="hl kwe">32bit</span>
+</pre>
+      <p>файл на самом деле устанавливается в <tt>SysWOW64</tt> (32-бит), а не в <tt>System32</tt> (64-бит). Но вот в таком случае:</p>
+      <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
+<span class="hl kwb">Source</span>: "MyLibrary.dll"; <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{sys}</span>"; <span class="hl kwb">Flags</span>: <span class="hl kwe">64bit</span>
+</pre>
+      <p>файл устанавливается в <tt>System32</tt> (64-бит). Однако в фоновом
+        режиме <a href="topic_64bit.htm">32-разрядные установщики</a> обращаются
+        к этой папке под псевдонимом <tt>Sysnative</tt> (как показано в таблице ниже).</p>
+      <p>В системах под управлением 32-разрядной версии Windows перезапись не
+        происходит. "<tt>SysWOW64</tt>" не существует, а псевдоним <tt>Sysnative</tt>
+        не поддерживается.</p>
+      <p>В секции <tt>[Code]</tt> функцию <tt><a href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a></tt>
+        можно использовать для программного применения правил перенаправления
+        к строкам, содержащим пути.</p>
+      <p>Перезапись путей выполняется по следующими правилами:</p>
+      <div>
+        <table>
+        <tr>
+          <th><a href="topic_entrybitness.htm">Разрядность записи</a><sup>[1]</sup></th>
+          <th>Разрядность целевого процесса<sup>[2]</sup></th>
+          <th>Производимая замена</th>
+          <th>Объяснение</th>
+        </tr>
+        <tr>
+          <td>64-бит</td>
+          <td>32-бит</td>
+          <td class="nowrap"><tt>System32</tt> &rarr; <tt>Sysnative</tt></td>
+          <td>32-разрядные процессы должны использовать псевдоним <tt>Sysnative</tt>,
+            чтобы получить доступ к <i>настоящему</i> 64-разрядному каталогу <tt>System32</tt>.</td>
+        </tr>
+        <tr>
+          <td>32-бит</td>
+          <td>64-бит</td>
+          <td class="nowrap"><tt>System32</tt> &rarr; <tt>SysWOW64</tt></td>
+          <td>
+            <p class="null" style="text-indent: 0;">64-разрядные процессы могут
+             получить доступ к 32-разрядному системному каталогу только через
+             <tt>SysWOW64</tt>.</p>
+            <p class="null" style="text-indent: 0;">Все подкаталоги также
+             перенаправляются; исключений нет.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>32-бит</td>
+          <td>32-бит</td>
+          <td class="nowrap"><tt>System32</tt> &rarr; <tt>SysWOW64</tt><br/>(за
+            исключением особых случаев)</td>
+          <td>
+            <p class="null" style="text-indent: 0;">В 32-разрядных процессах функция <a
+              href="https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector" target="_blank"
+              title="https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector">перенаправления
+              файловой системы WOW64</a><img class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />
+              уже направляет каталог <tt>System32</tt> в <tt>SysWOW64</tt>, но некоторые
+              подкаталоги исключаются (один из примеров: <tt>System32\drivers\etc</tt>).
+              Явное изменение <tt>System32</tt> &rarr; <tt>SysWOW64</tt> обходит эти
+              исключения, сохраняя перенаправление в соответствии с правилом
+              64-разрядного целевого процесса, указанным выше.</p>
+            <p class="null" style="text-indent: 0;">В некоторых особых случаях
+              это правило отключается, и вместо него выполняется подстановка
+              <tt>SysWOW64</tt> &rarr; <tt>System32</tt>. См. ниже описание этого
+              правила.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>64-бит</td>
+          <td>64-бит</td>
+          <td class="nowrap"><tt>System32</tt> &rarr; <i>не изменяется</i></td>
+          <td>Каталог <tt>System32</tt> является корректным, если запись и
+            целевой процесс являются 64-разрядными.</td>
+        </tr>
+        <tr>
+          <td>Любая</td>
+          <td>32-бит</td>
+          <td class="nowrap">Только в особых случаях:<br/><tt>SysWOW64</tt> &rarr; <tt>System32</tt></td>
+          <td>
+            <p class="null" style="text-indent: 0;">Эти правила применяются только
+              в особых случаях. Такими случаями являются:</p>
+            <ul class="compact">
+              <li>установка значений в 32-разрядном ключе реестра
+                <tt>SharedDLLs</tt>, поскольку <tt>SysWOW64</tt> там не используется;</li>
+              <li>передача путей в 32-разрядную программу
+                <tt>regsvr32.exe</tt>, поскольку DLL-библиотеки, как правило,
+                регистрируются с путём <tt>System32</tt>;</li>
+              <li>при регистрации и отмене регистрации библиотек
+                COM-объектов в 32-разрядном инсталляторе/деинсталляторе, поскольку
+                библиотеки типов, как правило, регистрируются с путём <tt>System32</tt>;</li>
+              <li>при вызове функции <tt><a
+                href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a></tt>
+                с параметром <tt>tp32BitPreferSystem32</tt> для целевого процесса.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Любая</td>
+          <td>64-бит</td>
+          <td class="nowrap"><tt>Sysnative</tt> &rarr; <tt>System32</tt></td>
+          <td>
+            <p class="null" style="text-indent: 0;">64-разрядные процессы не могут
+              использовать псевдоним <tt>Sysnative</tt>; он доступен только в
+              32-разрядных процессах.</p>
+            <p class="null sinfix1" style="text-indent: 0;">Хотя данное правило
+              применяется как к 32-разрядным, так и к 64-разрядным записям,
+              использование псевдонима <tt>Sysnative</tt> <i>допустимо</i> только
+              в 32-разрядных записях.</p>
+          </td>
+        </tr>
+        </table>
+        <p><sup>[1]</sup> В функции <tt><a
+          href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a></tt>
+          параметр <tt>Path64Bit</tt> определяет "разрядность записи".</p>
+        <p><sup>[2]</sup> "Целевой процесс" — это процесс, который в конечном итоге
+          будет обращаться к преобразованному пути. В большинстве случаев доступ
+          к путям осуществляется самим инсталлятором или деинсталлятором, поэтому
+          разрядность целевого процесса совпадает с разрядностью программы установки
+          и программы удаления (задаётся директивой <tt><a
+          href="topic_setup_setuparchitecture.htm">SetupArchitecture</a></tt>).</p>
+      </div>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

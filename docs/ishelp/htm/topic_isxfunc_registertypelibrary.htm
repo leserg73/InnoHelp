@@ -23,20 +23,20 @@
           RegisterTypeLibrary(const Is64Bit: Boolean; const Filename: String);</p>
       <h2 class="heading">Описание</h2>
       <p>Регистрирует библиотеку типов с указанным именем файла <tt>Filename</tt>.
-        Если для параметра <tt>Is64Bit</tt> указано значение <tt>True</tt>, то
-        файл библиотеки будет зарегистрирован в 64-разрядном процессе. В случае
-        неудачи будет вызвано исключение.</p>
+        В случае неудачи будет вызвано исключение.</p>
+      <p>Если для параметра <tt>Is64Bit</tt> указано значение <tt>True</tt>, то
+        файл библиотеки будет зарегистрирован в 64-разрядном представлении реестра.
+        Если же указано значение <tt>False</tt> — в 32-разрядном представлении
+        реестра. В Inno Setup версии 7.0 и выше этот параметр должен совпадать с
+        разрядностью <a href="topic_64bit.htm">программы установки/удаления</a>,
+        поэтому необходимо передавать значение <tt>IsCurrentProcess64Bit</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   <span class="hl slc">// Регистрация stdole2.tlb, находящейся в каталоге System.</span>
-  RegisterTypeLibrary(Is64BitInstallMode, ExpandConstant(<span class="hl str">'{sys}\stdole2.tlb'</span>));
+  <span class="hl slc">// - Если SetupArchitecture=x64, регистрация будет выполнена в 64-разрядном представлении реестра.</span>
+  <span class="hl slc">// - Если SetupArchitecture=x86, регистрация будет выполнена в 32-разрядном представлении реестра.</span>
+  RegisterTypeLibrary(IsCurrentProcess64Bit, ExpandConstant(<span class="hl str">'{sys}\stdole2.tlb'</span>));
 <span class="hl kwb">end</span>;</pre>
-      <p>В примере выше, первым параметром мы указали функцию <tt>Is64BitInstallMode</tt>.
-        Таким образом, если программа установки будет запущена в 64-разрядной
-        системе, то функция зарегистрирует файл как 64-разрядную библиотеку
-        типов в 64-разрядном каталоге System. В противном случае файл будет
-        зарегистрирован как 32-разрядная библиотека типов в 32-разрядном
-        каталоге System.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

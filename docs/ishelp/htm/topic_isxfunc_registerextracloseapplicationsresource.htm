@@ -21,14 +21,19 @@
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX">function
-          RegisterExtraCloseApplicationsResource(const DisableFsRedir: Boolean;
-          const AFilename: String): Boolean;</p>
+          RegisterExtraCloseApplicationsResource(const AFilename: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет регистрацию дополнительного файла, который программа
         установки должна проверить на предмет использования. Вызов функции <tt>RegisterExtraCloseApplicationsResource</tt>
         необходимо выполнять внутри события <tt>RegisterExtraCloseApplicationsResources</tt>
         для каждого файла. При этом фильтр <a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a>
         не учитывается. В случае успеха функция возвращает значение <tt>True</tt>.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>Ранее эта функция имела параметр <tt>DisableFsRedir</tt>, который был
+        удален в версии 7.0. Вместо него используйте <a
+        href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a>
+        для регистрации 64-разрядного файла из <a href="topic_64bit.htm">32-разрядного
+        установщика</a> или наоборот.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

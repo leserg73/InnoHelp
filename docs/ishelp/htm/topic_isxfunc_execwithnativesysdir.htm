@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Программирование: ExecWithNativeSysDir</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Программирование: ExecWithNativeSysDir</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип</h2>
+      <p class="prototip1 notopmarginX">function ExecWithNativeSysDir(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer): Boolean;</p>
+      <h2 class="heading">Описание</h2>
+      <p>Используйте эту функцию вместо <a href="topic_isxfunc_exec.htm">Exec</a>
+        для запуска исполняемого файла, расположенного в 64-разрядном системном
+        каталоге, из 32-разрядного установщика.</p>
+      <p>Эта функция позволяет избежать проблемы, связанной с тем, что функция
+        <tt>Exec</tt> в 32-разрядном установщике может запускать
+        такой исполняемый файл только с помощью псевдонима Sysnative, который
+        недоступен для 64-разрядных приложений. Для этого функция временно
+        отключает перенаправление файловой системы WOW64.</p>
+      <h2 class="heading">Комментарии</h2>
+      <p>В 32-разрядной Windows или в 64-разрядном установщике эта функция
+        является просто псевдонимом для <tt>Exec</tt>.</p>
+      <h2 class="heading">Пример</h2>
+      <pre class="indent examplebox"><span class="hl kwb">var</span>
+  ResultCode: <span class="hl kwg">Integer</span>;
+<span class="hl kwb">begin</span>
+  <span class="hl kwb">if</span> <span class="hl kwg">IsWin64</span> <span class="hl kwb">then begin</span>
+    <span class="hl com">{ Эта команда запустит 32-бит версию cmd.exe в 32-разрядном установщике</span>
+<span class="hl com">      а 64-бит версию cmd.exe в 64-разрядном установщике. }</span>
+    <span class="hl kwg">Exec</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{cmd}'</span>), <span class="hl sng">''</span>, <span class="hl sng">''</span>, <span class="hl kwe">SW_SHOWNORMAL</span>, ewNoWait, ResultCode);
+
+    <span class="hl com">{ Эта команда запустит 64-бит версию cmd.exe как 32-разрядном установщике,</span>
+<span class="hl com">      так и в 64-разрядном установщике. }</span>
+    <span class="hl kwd">ExecWithNativeSysDir</span>(<span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{cmd}'</span>), <span class="hl sng">''</span>, <span class="hl sng">''</span>, <span class="hl kwe">SW_SHOWNORMAL</span>, ewNoWait, ResultCode);
+    
+    <span class="hl com">{ НЕПРАВИЛЬНО: эта команда также запустила бы 64-бит версию cmd.exe в 32-разрядном установщике,</span>
+<span class="hl com">      но она использовала бы псевдоним Sysnative, по которому 64-бит версия cmd.exe недоступна. }</span> 
+    <span class="hl slc">// Exec(ApplyPathRedirRulesForCurrentProcess(True, ExpandConstant('{cmd}')), '', '', SW_SHOWNORMAL, ewNoWait, ResultCode);</span>
+<span class="hl kwb">end</span>;
+</pre>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

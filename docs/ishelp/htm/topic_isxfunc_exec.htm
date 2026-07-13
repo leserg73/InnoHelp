@@ -53,10 +53,10 @@
         (Обратите внимание, что в этом случае поддержка файлов .bat и .cmd
         отключается; просто указанная командная строка передается в <tt>CreateProcess</tt>
         без какой-либо обработки.)</p>
-      <p>По умолчанию, когда программа установки/удаления выполняется в <a href="topic_32vs64bitinstalls.htm">64-разрядном
-          режиме установки</a>, при вызове <tt>CreateProcess</tt> эта функция
-        отключает перенаправление файловой системы в WOW64. Это можно
-        переопределить, вызвав функцию <a href="topic_isxfunc_enablefsredirection.htm">EnableFsRedirection</a>.</p>
+      <p>Для запуска 64-разрядного исполняемого файла, расположенного в системном
+        каталоге, из 32-разрядного установщика используйте константу <tt>{sysnative}</tt>
+        или <a href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a>
+        для перезаписи пути. В 64-разрядном установщике перезапись не требуется.</p>
       <p>Эта функция не может использоваться для запуска самой программы установки
         до тех пор, пока не начнётся процесс установки.</p>
       <p><u>Внимание!</u> По сравнению с функцией <tt>Exec</tt> в ISPP
@@ -89,6 +89,8 @@ class="hl kwe">SW_SHOWNORMAL</span>,
         <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>
         <br />
         <a href="topic_isxfunc_execasoriginaluser.htm">ExecAsOriginalUser</a>
+        <br />
+        <a href="topic_isxfunc_execwithnativesysdir.htm">ExecWithNativeSysDir</a>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
