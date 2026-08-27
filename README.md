@@ -16,7 +16,7 @@
 
 ### История версий Inno Setup 7
 
-- [7.0.0 - 7.0.2](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
+- [7.0.0 - 7.1.0](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
 
 ---
 
