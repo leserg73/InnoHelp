@@ -26,12 +26,12 @@
       <p>Выполняет регистрацию дополнительного файла, который программа
         установки должна проверить на предмет использования. Вызов функции <tt>RegisterExtraCloseApplicationsResource</tt>
         необходимо выполнять внутри события <tt>RegisterExtraCloseApplicationsResources</tt>
-        для каждого файла. При этом фильтр <a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a>
+        для каждого файла. При этом фильтр <tt><a href="topic_setup_closeapplicationsfilter.htm">CloseApplicationsFilter</a></tt>
         не учитывается. В случае успеха функция возвращает значение <tt>True</tt>.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Ранее эта функция имела параметр <tt>DisableFsRedir</tt>, который был
-        удален в версии 7.0. Вместо него используйте <a
-        href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a>
+        удален в версии 7.0. Вместо него используйте <tt><a
+        href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a></tt>
         для регистрации 64-разрядного файла из <a href="topic_64bit.htm">32-разрядного
         установщика</a> или наоборот.</p>
     </div>

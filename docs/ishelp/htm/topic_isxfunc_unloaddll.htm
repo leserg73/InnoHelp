@@ -22,28 +22,30 @@
       <p class="prototip1 notopmarginX">procedure
           UnloadDLL(Filename: String);</p>
       <h2 class="heading">Описание</h2>
-      <p>Выгружает указанный файл DLL, который был загружен секцией <tt>[Code]</tt>
-        с использованием директивы "external". Функция может быть полезной,
-        когда необходимо удалить файл DLL.</p>
+      <p>Выгружает указанный файл DLL, который был загружен секцией
+        <tt><a href="topic_scriptcreating.htm">[Code]</a></tt> с использованием
+        директивы <tt>external</tt>. Функция может быть полезной, когда необходимо
+        удалить файл DLL.</p>
       <p>Регистр символов в имени файла и пути должен строго соответствовать
         регистру импортируемой функции. Перед передачей файла в <tt>UnloadDLL</tt>
         необходимо самостоятельно развернуть все константы в имени файла.</p>
-      <p>Если при импорте функции использовался префикс "files:", добавьте
-        значение константы <tt>{tmp}</tt> к имени файла (например, <code>ExpandConstant('{tmp}\filename.dll')</code>).</p>
+      <p>Если при импорте функции использовался префикс <tt>files:</tt>, добавьте
+        значение константы <tt>{tmp}</tt> к имени файла (например,
+        <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}\filename.dll')</tt>).</p>
       <h2 class="heading">Комментарии</h2>
       <p>Не рекомендуется экспериментировать, но если вы попытаетесь вызвать
         функцию из файла DLL, который уже был выгружен, то этот файл DLL будет
         перезагружен.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  <span class="hl slc">// Вызываем функцию DllFunc из MyDll.dll</span>
+  <span class="hl com">// Вызываем функцию DllFunc из MyDll.dll</span>
   DllFunc;
 
-  <span class="hl slc">// Выгружаем библиотеку DLL</span>
+  <span class="hl com">// Выгружаем библиотеку DLL</span>
   UnloadDLL(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
 class="hl str">\MyDll.dll'</span>));
 
-  <span class="hl slc">// Теперь можем удалить библиотеку DLL</span>
+  <span class="hl com">// Теперь можем удалить библиотеку DLL</span>
   DeleteFile(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
 class="hl str">\MyDll.dll'</span>));
 <span class="hl kwb">end</span>;</pre>

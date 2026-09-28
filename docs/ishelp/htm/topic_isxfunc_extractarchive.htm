@@ -26,26 +26,30 @@
       <p>Выполняет распаковку указанного архива в заданный каталог с сохранением
         или без сохранения полных путей.</p>
       <p>В случае возникновения ошибки будет вызвано исключение.</p>
-      <p>Поддерживаемые форматы архивов, помимо .7z, а также поддержка защищённых
-        паролем и многотомных архивов, зависят от значения директивы <a
-        href="topic_setup_archiveextraction.htm">ArchiveExtraction</a>
-        в секции <tt>[Setup]</tt>.</p>
+      <p>Поддерживаемые форматы архивов, помимо <tt>.7z</tt>, а также поддержка
+        защищённых паролем и многотомных архивов, зависят от значения директивы
+        <tt><a href="topic_setup_archiveextraction.htm">ArchiveExtraction</a></tt>
+        в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.</p>
       <p>Используйте значение <tt>OnExtractionProgress</tt> для получения информации
         о ходе выполнения распаковки, в противном случае укажите <tt>nil</tt>.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Класс <tt>TOnExtractionProgress</tt> представлен следующей функцией:</p>
       <pre class="indent">TOnExtractionProgress = function(const ArchiveName, FileName: String; const Progress, ProgressMax: Int64): Boolean;</pre>
       <p>Возвращает значение <tt>True</tt>, что позволяет продолжить распаковку,
-        иначе - <tt>False</tt>.</p>
+        иначе — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
-      <p>Смотрите сценарий <i>DownloadFiles.iss</i>, в котором показана возможность
-        загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
+      <p>Смотрите сценарий <tt>DownloadFiles.iss</tt>, в котором показана возможность
+        загрузки файла при помощи записи в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a><br />
-        <a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a><br />
-        <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a><br />
-        <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a><br />
-        <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+      <p class="indent"><code><a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a></code>
+        <br />
+        <code><a href="topic_isxfunc_maparchiveextensions.htm">MapArchiveExtensions</a></code>
+        <br />
+        <code><a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a></code>
+        <br />
+        <code><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></code>
+        <br />
+        <code><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

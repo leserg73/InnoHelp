@@ -54,7 +54,7 @@ class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pr
             Обычно начинается с константы каталога.</p>
           <p>Помимо имен файлов и папок, могут быть также указаны URL-адреса
             (адреса веб-сайтов). Если указан URL-адрес, программа установки
-            создаст файл "Internet Shortcut" (.url) и проигнорирует параметры
+            создаст файл "Internet Shortcut" (<tt>.url</tt>) и проигнорирует параметры
             ярлыка <tt>Parameters</tt>, <tt>WorkingDir</tt>, <tt>HotKey</tt>
             и <tt>Comment</tt>.</p>
           <p>Следует отметить, что в 64-разрядной ОС Windows константа <tt>{sys}</tt>
@@ -124,11 +124,11 @@ class="hl kwc">{app}</span>"</pre>
         <dt class="paramlist"><b><span id="IconFilename">IconFilename</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя файла пользовательского значка, расположенного в
-            системе пользователя. Это может быть файл с расширением .exe или
-            .dll, содержащий значки, или файл значка .ico. Если этот параметр не
-            указан или является пустым, по умолчанию Windows будет использовать
-            значок файла, на который ссылается ярлык. Этот параметр может
-            содержать константы.</p>
+            системе пользователя. Это может быть файл с расширением <tt>.exe</tt>
+            или <tt>.dll</tt>, содержащий значки, или файл значка <tt>.ico</tt>.
+            Если этот параметр не указан или является пустым, по умолчанию Windows
+            будет использовать значок файла, на который ссылается ярлык. Этот
+            параметр может содержать константы.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">IconFilename</span>: "<span
@@ -136,9 +136,9 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
           </div>
           <p>Примечание: если программа установки запущена в 64-разрядной ОС
             Windows, то она автоматически заменит значение <tt>{commonpf32}\</tt>
-            в имени файла на значение "%ProgramFiles(x86)%\" для обхода ошибки в
-            64-бит ОС Windows: в ней происходит замена на значение
-            "%ProgramFiles%\", что является неверным.</p>
+            в имени файла на значение <tt>%ProgramFiles(x86)%\</tt> для обхода
+            ошибки в 64-бит ОС Windows: в ней происходит замена на значение
+            <tt>%ProgramFiles%\</tt>, что является неверным.</p>
         </dd>
         <dt class="paramlist"><b><span id="IconIndex">IconIndex</span></b></dt>
         <dd class="paramlist">
@@ -183,8 +183,8 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             <dd>
               <p>Устанавливает флажок "Закрыть при выходе" в свойствах ярлыка.
                 Этот флаг действует только в том случае, если ярлык указывает на
-                приложение MS-DOS (ярлык имеет расширение .pif). Если ни этот
-                флаг, ни флаг <tt>dontcloseonexit</tt> не указаны, программа
+                приложение MS-DOS (ярлык имеет расширение <tt>.pif</tt>). Если ни
+                этот флаг, ни флаг <tt>dontcloseonexit</tt> не указаны, программа
                 установки не будет пытаться изменить свойство "Закрыть при
                 выходе".</p>
             </dd>
@@ -233,12 +233,10 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
             </dd>
             <dt class="flaglist"><span id="useapppaths">useapppaths</span></dt>
             <dd>
-              <p>Сообщает программе установки произвести поиск пути в разделе
-                реестра
-                "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App
-                Paths" и автоматически добавить его к имени файла. При этом в
-                параметре <tt>Filename</tt> достаточно указать только имя файла
-                (без пути к нему).</p>
+              <p>Сообщает программе установки произвести поиск пути в разделе реестра<br />
+                &nbsp;&nbsp;&nbsp;<tt>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App&nbsp;Paths</tt><br />
+                и автоматически добавить его к имени файла. При этом в параметре
+                <tt>Filename</tt> достаточно указать только имя файла (без пути к нему).</p>
             </dd>
           </dl>
           <div class="examplebox">
@@ -247,8 +245,7 @@ class="hl kwc">{app}</span>\myicon.ico"</pre>
           </div>
         </dd>
       </dl>
-      <p><b><a href="topic_componentstasksparams.htm">Параметры секций
-            [Components] и [Tasks]</a></b></p>
+      <p><b><a href="topic_componentstasksparams.htm">Параметры секций [Components] и [Tasks]</a></b></p>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

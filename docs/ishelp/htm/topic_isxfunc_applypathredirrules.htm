@@ -29,8 +29,8 @@
         к преобразованному пути. В таблице раздела справки "<a href="topic_pathredir.htm">Перенаправление
         системного пути</a>" это, соответственно, "разрядность записи" и "разрядность
         целевого процесса".</p>
-      <p>Перед перезаписью путь раскрывается с помощью функции <a
-        href="topic_isxfunc_expandfilename.htm">ExpandFileName</a> и преобразуется
+      <p>Перед перезаписью путь раскрывается с помощью функции <tt><a
+        href="topic_isxfunc_expandfilename.htm">ExpandFileName</a></tt> и преобразуется
         в удлиненный путь (также известный как "суперпуть").</p>
       <p>Раскрытие пути и преобразование в удлиненный путь выполняются всегда,
         даже если ничего не перезаписывается.</p>
@@ -38,6 +38,7 @@
       <p>На системах под управлением Windows 32-бит параметр <tt>Path64Bit</tt>
         должен быть равен <tt>False</tt>, в противном случае будет сгенерировано
         исключение.</p>
+      <p>Параметр <tt>Path</tt> не должен быть пустым, иначе будет вызвано исключение.</p>
       <p>Класс <tt>TPathRedirTargetProcess</tt> — это перечисляемый тип и объявлен
         следующим образом:</p>
       <pre class="indent">TPathRedirTargetProcess = (tpCurrent, tpNativeBit, tp32Bit, tp32BitPreferSystem32);</pre>
@@ -72,27 +73,28 @@
 <span class="hl kwb">begin</span>
   InPath := <span class="hl kwg">ExpandConstant</span>(<span class="hl sng">'{sys}\MyLibrary.dll'</span>);
   <span class="hl kwg">Log</span>(InPath);
-  <span class="hl slc">// Обычно записывается путь: C:\Windows\System32\MyLibrary.dll</span>
+  <span class="hl com">// Обычно записывается путь: C:\Windows\System32\MyLibrary.dll</span>
 
-  <span class="hl slc">// Преобразование 64-разрядного пути в путь, доступный в текущем процессе</span>
+  <span class="hl com">// Преобразование 64-разрядного пути в путь, доступный в текущем процессе</span>
   <span class="hl kwb">if</span> <span class="hl kwg">IsWin64</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     OutPath := <span class="hl kwd">ApplyPathRedirRules</span>(<span class="hl kwg">True</span>, InPath, tpCurrent);
     <span class="hl kwg">Log</span>(OutPath);
-    <span class="hl slc">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\Sysnative\MyLibrary.dll</span>
-    <span class="hl slc">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\System32\MyLibrary.dll</span>
+    <span class="hl com">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\Sysnative\MyLibrary.dll</span>
+    <span class="hl com">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\System32\MyLibrary.dll</span>
   <span class="hl kwb">end</span>;
 
-  <span class="hl slc">// Преобразование 32-разрядного пути в путь, доступный в текущем процессе</span>
+  <span class="hl com">// Преобразование 32-разрядного пути в путь, доступный в текущем процессе</span>
   OutPath := <span class="hl kwd">ApplyPathRedirRules</span>(<span class="hl kwg">False</span>, InPath, tpCurrent);
   <span class="hl kwg">Log</span>(OutPath);
-  <span class="hl slc">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
-  <span class="hl slc">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
+  <span class="hl com">// В 32-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
+  <span class="hl com">// В 64-разрядном установщике записывается путь: \\?\C:\Windows\SysWOW64\MyLibrary.dll</span>
 <span class="hl kwb">end</span>
 </pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a><br />
-        <a href="topic_isxfunc_pathconvertsupertonormal.htm">PathConvertSuperToNormal</a></p>
+      <p class="indent"><code><a href="topic_isxfunc_applypathredirrulesforcurrentprocess.htm">ApplyPathRedirRulesForCurrentProcess</a></code>
+        <br />
+        <code><a href="topic_isxfunc_pathconvertsupertonormal.htm">PathConvertSuperToNormal</a></p></code>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

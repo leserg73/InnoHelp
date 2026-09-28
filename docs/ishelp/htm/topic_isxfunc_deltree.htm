@@ -41,14 +41,14 @@
         обработки, но не будет рекурсивно удалять файлы/каталоги внутри них.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  <span class="hl slc">// Удаление каталога C:\Test со всем содержимым, включая подкаталоги</span>
+  <span class="hl com">// Удаление каталога C:\Test со всем содержимым, включая подкаталоги</span>
   DelTree(<span class="hl str">'C:\Test'</span>, True, True, True);
 
-  <span class="hl slc">// Удаление файлов в соответствии с маской C:\Test\*.tmp</span>
+  <span class="hl com">// Удаление файлов в соответствии с маской C:\Test\*.tmp</span>
   DelTree(<span class="hl str">'C:\Test\*.tmp'</span>, False, True, False);
 
-  <span class="hl slc">// Удаление всех файлов и подкаталогов внутри C:\Test</span>
-  <span class="hl slc">// кроме самого каталога</span>
+  <span class="hl com">// Удаление всех файлов и подкаталогов внутри C:\Test</span>
+  <span class="hl com">// кроме самого каталога</span>
   DelTree(<span class="hl str">'C:\Test\*'</span>, False, True, True);
 <span class="hl kwb">end</span>;</pre>
     </div>

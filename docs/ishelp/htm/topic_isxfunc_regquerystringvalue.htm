@@ -23,9 +23,9 @@
           RegQueryStringValue(const RootKey: HKEY; const SubKeyName,
           ValueName: String; var ResultStr: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Запрашивает в указанном разделе реестра значение с типом REG_SZ или
-        REG_EXPAND_SZ и возвращает данные в параметре <tt>ResultStr</tt>. В
-        случае успеха функция возвращает значение <tt>True</tt>. Если функция
+      <p>Запрашивает в указанном разделе реестра значение с типом <tt>REG_SZ</tt> или
+        <tt>REG_EXPAND_SZ</tt> и возвращает данные в параметре <tt>ResultStr</tt>.
+        В случае успеха функция возвращает значение <tt>True</tt>. Если функция
         возвращает <tt>False</tt>, то данные <tt>ResultStr</tt> остаются без
         изменений.</p>
       <h2 class="heading">Пример</h2>
@@ -36,7 +36,7 @@
 class="hl str">'Control Panel\International'</span>,
      <span class="hl str">'sCountry'</span>, Country) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// Успешно получили значение</span>
+    <span class="hl com">// Успешно получили значение</span>
     MsgBox(<span class="hl str">'Ваша страна: '</span> + Country, <span class="hl kwe">mbInformation</span>, <span
 class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;

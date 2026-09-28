@@ -37,25 +37,26 @@
         файлы изображений должны находиться в <a
         href="topic_sourcedirectorynotes.htm">исходном каталоге</a> сценария, в
         противном случае к изображениям необходимо указывать полные пути. При
-        использовании приставки "compiler:", компилятор будет искать эти файлы в
-        собственном каталоге.</p>
-      <p>Поддерживаются изображения в формате .bmp и .png, включая прозрачность
-        в этих изображениях. Используйте директиву <a
-        href="topic_setup_wizardbackcolor.htm">WizardBackColor</a> для
-        настройки цвета фона. Возможно использование .bmp файлов с прозрачностью
-        (дополнительную информацию смотрите в разделе <a
-        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a>).
-        Также можно использовать директиву <a
-        href="topic_setup_wizardbackimageopacity.htm">WizardBackImageOpacity</a>
+        использовании приставки "<tt>compiler:</tt>", компилятор будет искать эти
+        файлы в собственном каталоге.</p>
+      <p>Поддерживаются изображения в формате <tt>.bmp</tt> и <tt>.png</tt>,
+        включая прозрачность в этих изображениях. Используйте директиву <tt><a
+        href="topic_setup_wizardbackcolor.htm">WizardBackColor</a></tt> для
+        настройки цвета фона. Возможно использование <tt>.bmp</tt> файлов с
+        прозрачностью (дополнительную информацию смотрите в разделе <tt><a
+        href="topic_setup_wizardimagealphaformat.htm">WizardImageAlphaFormat</a></tt>).
+        Также можно использовать директиву <tt><a
+        href="topic_setup_wizardbackimageopacity.htm">WizardBackImageOpacity</a></tt>
         для увеличения прозрачности.</p>
       <p>Размер области, в которой выводится изображение, зависит от системных
         настроек DPI и используемых <a href="topic_langoptionssection.htm">параметров
-        шрифта</a>, а также значений директив <a
-        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a> и
-        <a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a>.
-        Если для <tt>WizardKeepAspectRatio</tt> установлено значение <tt>yes</tt>
-        (по умолчанию), сохраняется соотношение сторон 497:360. Указанное изображение
-        должно иметь такое же соотношение сторон.</p>
+        шрифта</a>, а также значений директив <tt><a
+        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></tt> и
+        <tt><a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a></tt>.
+        Если для <tt><a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a></tt>
+        установлено значение <tt>yes</tt> (по умолчанию), сохраняется соотношение
+        сторон 497:360. Указанное изображение должно иметь такое же соотношение
+        сторон.</p>
       <p>Можно использовать изображение любого размера. Если изображения слишком
         малы или слишком велики, чтобы поместиться в заданные границы, то они
         будут растянуты или сжаты. Рекомендуется указывать изображение размером
@@ -65,9 +66,11 @@
         удовлетворительного результата, можно указать несколько файлов, разделив
         их запятыми. Программа установки автоматически выберет из них то, которое
         лучше всего соответствует размеру области изображения. При условии
-        использования настроек шрифта, значений <tt>WizardSizePercent</tt> и
-        <tt>WizardKeepAspectRatio</tt> по умолчанию размер области изображения с
-        различными настройками DPI будет составлять (в пикселях):</p>
+        использования настроек шрифта, значений <tt><a
+        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></tt> и
+        <tt><a href="topic_setup_wizardkeepaspectratio.htm">WizardKeepAspectRatio</a></tt>
+        по умолчанию размер области изображения с различными настройками DPI будет
+        составлять (в пикселях):</p>
       <table style="margin-top: 1.0em" border="1">
       <tr><th>DPI</th><th>Размер области<br />изображения</th></tr>
       <tr><td>100%</td><td>596x432</td></tr>
@@ -84,49 +87,50 @@
         DPI).</p>
       <p>Если для директивы задано пустое значение, фоновое изображение не
         используется.</p>
-      <p>В противном случае, если для директивы <a
-        href="topic_setup_wizardstyle.htm">WizardStyle</a> или <a
-        href="topic_setup_wizardstylefile.htm">WizardStyleFile</a> не указан стиль,
+      <p>В противном случае, если для директивы <tt><a
+        href="topic_setup_wizardstyle.htm">WizardStyle</a></tt> или <tt><a
+        href="topic_setup_wizardstylefile.htm">WizardStyleFile</a></tt> не указан стиль,
         автоматически активируется стиль <tt>windows11</tt> с модификаторами
         <tt>excludelightcontrols</tt> и <tt>hidebevels</tt>. Заметьте, что
         в светлом режиме стиль <tt>windows11</tt> использует для фона не совсем
-        белый цвет. Чтобы вернуть прежний вид, установите для <tt>WizardBackColor</tt>
+        белый цвет. Чтобы вернуть прежний вид, установите для
+        <tt><a href="topic_setup_wizardbackcolor.htm">WizardBackColor</a></tt>
         значение <tt>white</tt>.</p>
       <p>Чтобы скрыть изображения мастера и оставить только изображение фона,
-        укажите директивам <a href="topic_setup_wizardimagefile.htm">WizardImageFile</a>
-        и <a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>
+        укажите директивам <tt><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a></tt>
+        и <tt><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a></tt>
         пустые значения. В качестве альтернативы установите для директивы
-        <a href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a>,
+        <tt><a href="topic_setup_wizardimageopacity.htm">WizardImageOpacity</a></tt>,
         например, значение <tt>150</tt>, что сделает эти изображения частично
         прозрачными.</p>
-      <p>Используйте функцию <a href="topic_isxfunc_wizardsetbackimage.htm">WizardSetBackImage</a>
+      <p>Используйте функцию <tt><a href="topic_isxfunc_wizardsetbackimage.htm">WizardSetBackImage</a></tt>
         для установки, обновления или удаления фонового изображения во время
         выполнения.</p>
       <h2 class="heading">Пример</h2>
-      <pre class="indent examplebox"><span class="hl slc">; Использование раздельных изображений фона для светлой и тёмной темы</span>
+      <pre class="indent examplebox"><span class="hl com">; Использование раздельных изображений фона для светлой и тёмной темы</span>
 <span class="hl kwb">WizardBackImageFile</span>=MyBackImage.png
 <span class="hl kwb">WizardBackImageFileDynamicDark</span>=MyBackImage_Dark.png
-<span class="hl slc">; Скрываем большое и малое изображения мастера</span>
+<span class="hl com">; Скрываем большое и малое изображения мастера</span>
 <span class="hl kwb">WizardImageFile</span>=
 <span class="hl kwb">WizardSmallImageFile</span>=
 
-<span class="hl slc">; Использование одного изображения фона для светлой и тёмной темы</span>
+<span class="hl com">; Использование одного изображения фона для светлой и тёмной темы</span>
 <span class="hl kwb">WizardBackImageFile</span>=MyBackImage.png
 <span class="hl kwb">WizardBackImageFileDynamicDark</span>=MyBackImage.png
-<span class="hl slc">; Применяем прозрачность к изображению фона, чтобы оно</span>
-<span class="hl slc">; хорошо смотрелось как в светлой, так и в тёмной теме</span>
+<span class="hl com">; Применяем прозрачность к изображению фона, чтобы оно</span>
+<span class="hl com">; хорошо смотрелось как в светлой, так и в тёмной теме</span>
 <span class="hl kwb">WizardBackImageOpacity</span>=<span class="hl num">150</span>
-<span class="hl slc">; Оставляем большое и малое изображения мастера, применив прозрачность,</span>
-<span class="hl slc">; чтобы они равномерно сливались с изображением фона</span>
+<span class="hl com">; Оставляем большое и малое изображения мастера, применив прозрачность,</span>
+<span class="hl com">; чтобы они равномерно сливались с изображением фона</span>
 <span class="hl kwb">WizardImageOpacity</span>=<span class="hl num">150</span>
 
-<span class="hl slc">; Использование фонового изображения в мастере установки,</span>
-<span class="hl slc">; а также фонового цвета в других окнах и деинсталляторе</span>
+<span class="hl com">; Использование фонового изображения в мастере установки,</span>
+<span class="hl com">; а также фонового цвета в других окнах и деинсталляторе</span>
 <span class="hl kwb">WizardBackImageFile</span>=MyBackImage.png
 <span class="hl kwb">WizardBackImageFileDynamicDark</span>=MyBackImage.png
 <span class="hl kwb">WizardBackColor</span>=<span class="hl kwf">#ffc0cb</span>
 <span class="hl kwb">WizardBackColorDynamicDark</span>=<span class="hl kwf">#570c22</span>
-<span class="hl slc">; На страницах мастера смешиваем изображение фона и цвет</span>
+<span class="hl com">; На страницах мастера смешиваем изображение фона и цвет</span>
 <span class="hl kwb">WizardBackImageOpacity</span>=<span class="hl num">150</span></pre>
       <h2 class="heading">См. также:</h2>
         <p class="indent"><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a><br />

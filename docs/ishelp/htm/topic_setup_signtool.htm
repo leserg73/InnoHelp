@@ -32,24 +32,36 @@
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>Определяет имя и параметры инструмента цифровой
-        подписи, который используется для подписи:</p>
+      <p>Определяет имя и параметры инструмента цифровой подписи, который
+        используется для подписи:</p>
       <ul class="compact">
         <li>программы установки (инсталлятор)</li>
-        <li>программы удаления (деинсталлятор), если <a
-          href="topic_setup_signeduninstaller.htm">SignedUninstaller</a>=<tt>yes</tt></li>
-        <li>исходных файлов в секции <a
-          href="topic_filessection.htm">[Files]</a>, если используется флаг
+        <li>программы удаления (деинсталлятор) и любых временных копий установщика,
+          кроме случаев, когда <tt><a href="topic_setup_signeduninstaller.htm">SignedUninstaller</a></tt>
+          имеет значение <tt>no</tt></li>
+        <li>исходных файлов в секции <tt><a
+          href="topic_filessection.htm">[Files]</a></tt>, если используется флаг
           <tt>sign</tt> или <tt>signonce</tt></li>
       </ul>
-      <p>Когда инсталлятор содержит действительную цифровую
-        подпись, тогда при его запуске пользователь не получит предупреждение о
-        неизвестном издателе.</p>
+      <p>Когда инсталлятор содержит действительную цифровую подпись, тогда при его
+        запуске пользователь не получит предупреждение о неизвестном издателе.</p>
+      <p><i>Замечание:</i> при запуске инсталлятора могут использоваться временные
+        копии самой программы установки. Если вы самостоятельно подписываете программу
+        установки цифровой подписью уже после компиляции, а не используете инструмент
+        цифровой подписи, то эти копии по умолчанию <b>не</b> подписываются. В
+        результате программы безопасности могут заблокировать запуск этих копий,
+        что приведёт к сбою запуска вашего инсталлятора. Одним из примеров такой
+        блокировки является механизм Microsoft Defender "Снижение площади атаки"
+        (ASR) с правилом "<a href="https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference#block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion" target="_blank">Блокировать
+        запуск исполняемых файлов, если они не соответствуют критериям
+        распространенности, возраста или списка доверенных файлов</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.
+        Если вы не можете использовать <tt>SignTool</tt>, по крайней мере установите
+        для параметра <tt>SignedUninstaller</tt> значение <tt>yes</tt>.</p>
       <p>Имя и параметры инструмента цифровой подписи должны
         быть указаны в IDE компилятора (меню <i>Инструменты | Настройка
         цифровой подписи...</i>) или в <a href="topic_compilercmdline.htm">командной
-        строке компилятора</a> (при помощи ключа "/S"), иначе произойдёт
-        ошибка.</p>
+        строке компилятора</a> (при помощи ключа <tt>--signtool</tt> или <tt>-s</tt>),
+        иначе произойдёт ошибка.</p>
       <p>В параметра и командах инструмента цифровой подписи
         можно использовать следующие специальные указатели:</p>
       <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$f</tt>
@@ -62,16 +74,16 @@
         экранирования ключей командной строки, содержащих кавычки.</p>
       <p style="text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;<tt>$$</tt>
         — заменяется на один символ <tt>$</tt>.</p>
+      <p>Предположим, в среде разработки (IDE) или в <a href="topic_compilercmdline.htm">командной
+        строке</a> компилятора определены следующие инструменты цифровой подписи:</p>
+      <ul class="compact">
+        <li><code>mystandard=signtool.exe sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f</code></li>
+        <li><code>mycustom=signtool.exe $p</code></li>
+        <li><code>byparam=$p</code></li>
+      </ul>
+      <p>тогда в сценарии может быть использован один из следующих вариантов:</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
-        <p>Предположим, в IDE компилятора определены следующие
-          параметры цифровой подписи:</p>
-        <pre class="nomargin">mystandard=signtool.exe sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f
-mycustom=signtool.exe $p
-byparam=$p
-</pre>
-        <p>тогда в сценарии может быть использован один
-          следующих вариантов:</p>
         <pre class="nomargin"><span class="hl kwa">[Setup]</span>
 <span class="hl kwb">SignTool</span>=mystandard
 
@@ -80,13 +92,13 @@ byparam=$p
 
 <span class="hl kwa">[Setup]</span>
 <span class="hl kwb">SignTool</span>=byparam signtool.exe sign /a /n $qMy Common Name$q /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f</pre>
-        <p>В секции <tt>[Setup]</tt> может быть указано
-          несколько параметров SignTool, которые буду выполнены в порядке их
-          следования. Это можно использовать для двойной подписи (SHA1 &amp;
-          SHA256) инсталлятора и деинсталлятора:</p>
+        <p>В секции <tt>[Setup]</tt> может быть указано несколько директив
+          <tt>SignTool</tt>, которые буду выполнены в порядке их следования. Это
+          можно использовать для двойной подписи (SHA1 &amp; SHA256) инсталлятора
+          и деинсталлятора:</p>
         <pre class="nomargin"><span class="hl kwa">[Setup]</span>
 <span class="hl kwb">SignTool</span>=mycustom sign /a /n $qMy Common Name$q /fd sha1 /t http://timestamp.comodoca.com/authenticode /d $qMy Program$q $f
-<span class="hl slc">; параметр /as в следующей строке SignTool необходим для последней версии signtool.exe и сертификата SHA256 (SHA-2)</span>
+<span class="hl com">; параметр /as в следующей строке SignTool необходим для последней версии signtool.exe и сертификата SHA256 (SHA-2)</span>
 <span class="hl kwb">SignTool</span>=mycustom sign /a /n $qMy Common Name$q /as /fd sha256 /td sha256 /tr http://timestamp.comodoca.com/rfc3161 /d $qMy Program$q $f   </pre>
         <p>Примечание: из соображений безопасности для любых
           параметров, передаваемых посредством <tt>$p</tt>, следует давать
@@ -96,13 +108,12 @@ byparam=$p
         <pre class="nomargin"><span class="hl kwa">[Setup]</span>
 <span class="hl kwb">SignTool</span>=byparam format c:</pre>
       </div>
-      <p>Дальнейшая информация о создании цифровых сертификатов
-        и использовании инструментов подписи выходит за рамки данной
-        документации.</p>
+      <p>Дальнейшая информация о создании цифровых сертификатов и использовании
+        инструментов цифровой подписи выходит за рамки данной документации.</p>
       <p><i>Примечание:</i> если используется инструмент
         цифровой подписи и программа установки содержит большой объём данных,
         рекомендуется задействовать <a href="topic_setup_diskspanning.htm">разделение
-          на диски</a> и указать для директивы <a href="topic_setup_diskslicesize.htm">DiskSliceSize</a>
+          на диски</a> и указать для директивы <tt><a href="topic_setup_diskslicesize.htm">DiskSliceSize</a></tt>
         значение <tt>max</tt>. Если этого не сделать, при запуске программы
         установки может возникнуть длительная задержка, вызванная проверкой
         цифровой подписи. На практике не должно быть снижения безопасности от
@@ -111,6 +122,12 @@ byparam=$p
         что в сценарии не используется флаг <tt>dontverifychecksum</tt>). Хеши
         SHA-256 этих файлов (вместе со всеми другими метаданными) хранятся внутри
         исполняемого файла установки, который защищён цифровой подписью.</p>
+      <p>В качестве альтернативы воспользуйтесь флагом <tt><a href="topic_filessection.htm#download">download</a></tt>
+        в секции <tt><a href="topic_filessection.htm">[Files]</a></tt> для загрузки
+        больших файлов в процессе инсталляции вместо включения их в состав программы
+        установки. Загруженные файлы не проходят эту проверку. Чтобы проверить
+        загруженные файлы, используйте флаг <tt><a href="topic_filessection.htm#issigverify">issigverify</a></tt>
+        или параметр <tt><a href="topic_filessection.htm#Hash">Hash</a></tt>.</p>
       <h2 class="heading">См. также:</h2>
         <p class="indent"><a href="topic_setup_signtoolminimumtimebetween.htm">SignToolMinimumTimeBetween</a><br />
         <a href="topic_setup_signtoolretrycount.htm">SignToolRetryCount</a><br />

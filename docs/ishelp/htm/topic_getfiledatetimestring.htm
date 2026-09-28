@@ -28,18 +28,18 @@
         параметры</i> являются необязательными и устанавливают символ разделителя
         для компонентов даты (<tt>DateSeparator</tt>) и времени (<tt>TimeSeparator</tt>)
         соответственно. Спецификаторы формата даты и времени подробно изложены в
-        разделе <a href="topic_getdatetimestring.htm">GetDateTimeString</a>.</p>
+        разделе <tt><a href="topic_getdatetimestring.htm">GetDateTimeString</a></tt>.</p>
+      <p>Если дату и время указанного файла не удается прочитать, будет выдана
+        ошибка компилятора.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">// Объявляем переменную MyFileDatetimeString и присваиваем ей строковое значение</span>
-<span class="hl slc">// даты и времени файла myfile.txt, которое вернёт функция GetFileDateTimeString.</span>
-<span class="hl kwf">#define</span> MyFileDateTimeString <span class="hl kwd">GetFileDateTimeString</span><span
-class="hl opt">(</span><span class="hl str">'myfile.txt'</span><span class="hl opt">,</span> <span
-class="hl str">'dd/mm/yyyy hh:nn:ss'</span><span class="hl opt">,</span> <span class="hl str">'-'</span><span
-class="hl opt">,</span> <span class="hl str">':'</span><span class="hl opt">);</span>
-</pre> </div>
+        <pre class="hl"><span class="hl com">// Объявляем переменную MyFileDatetimeString и присваиваем ей строковое значение</span>
+<span class="hl com">// даты и времени файла myfile.txt, которое вернёт функция GetFileDateTimeString.</span>
+<span class="hl kwf">#define</span> MyFileDateTimeString GetFileDateTimeString(<span class="hl str">'myfile.txt'</span>, <span class="hl str">'dd/mm/yyyy hh:nn:ss'</span>, <span class="hl str">'-'</span>, <span class="hl str">':'</span>);
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_getdatetimestring.htm">GetDateTimeString</a>
+      <p class="indent"><code><a href="topic_getdatetimestring.htm">GetDateTimeString</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

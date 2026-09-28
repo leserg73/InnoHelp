@@ -28,15 +28,17 @@
         <dt class="cmdline"><span id="HELP">/HELP</span>, <span id="HELP2">/?</span></dt>
         <dd>
           <p>Выводит справочную информацию по параметрам командной строки.
-            Игнорируется, если директива <tt>UseSetupLdr</tt> в секции <tt>[Setup]</tt>
+            Игнорируется, если директива <tt><a href="topic_setup_usesetupldr.htm">UseSetupLdr</a></tt>
+            в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
             имеет значение <tt>no</tt>.</p>
         </dd>
         <dt class="cmdline"><span id="SP-">/SP-</span></dt>
         <dd>
           <p>Отключает сообщение "<i>Данная программа установит.., продолжить?</i>"
             при запуске программы установки. Игнорируется, если директива
-            <tt>DisableStartupPrompt</tt> в секции <tt>[Setup]</tt> имеет значение
-            <tt>yes</tt>.</p>
+            <tt><a href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a></tt>
+            в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt> имеет
+            значение <tt>yes</tt>.</p>
         </dd>
         <dt class="cmdline"><span id="SILENT">/SILENT</span>,
             <span id="VERYSILENT">/VERYSILENT</span></dt>
@@ -49,7 +51,8 @@
             обычно, так, например, отображаются сообщения об ошибках (если они
             не отключены при помощи параметра командной строки <tt>/SUPPRESSMSGBOXES</tt>)
             и уведомление при запуске (если только оно не отключено директивой
-            <tt>DisableStartupPrompt</tt> или командной <tt>/SP-</tt>).</p>
+            <tt><a href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a></tt>
+            или командной <tt>/SP-</tt>).</p>
           <p>Если после установки необходима перезагрузка, а программа установки
             выполняется в тихом режиме и команда <tt>/NORESTART</tt> не
             использовалась, будет показано сообщение "<i>Произвести перезагрузку
@@ -69,55 +72,57 @@
           <p>В ситуациях, в которых предусматривается сделать выбор, по
             умолчанию принимаются следующие ответы:</p>
           <ul class="compact">
-            <li><tt>Да</tt> в ситуации "<i>Сохранить
-                существующий файл?</i>".</li>
-            <li><tt>Нет</tt> в ситуации "<i>Заменить
-                существующий файл?</i>".</li>
+            <li><tt>Да</tt> в ситуации "<i>Сохранить существующий файл?</i>".</li>
+            <li><tt>Нет</tt> в ситуации "<i>Заменить существующий файл?</i>".</li>
             <li><tt>Прервать</tt> в ситуации <i>Прервать&nbsp;/&nbsp;Повторить</i>.</li>
             <li><tt>Отмена</tt> в ситуации <i>Повторить&nbsp;/&nbsp;Отмена</i>.</li>
-            <li><tt>Да</tt> (=продолжить) в ситуации <i>DiskSpaceWarning
-                / DirExists / DirDoesntExist / NoUninstallWarning /
-                ExitSetupMessage / ConfirmUninstall</i>.</li>
-            <li><tt>Да</tt> (=перезапустить) в ситуации <i>FinishedRestartMessage
-                / UninstalledAndNeedsRestart</i>.</li>
-            <li><tt>Рекомендуемый</tt> вариант в ситуации <i>PrivilegesRequiredOverridesAllowed=dialog</i>.</li>
+            <li><tt>Да</tt> (=продолжить) в ситуации <tt>DiskSpaceWarning</tt>&nbsp;/
+                <tt>DirExists</tt>&nbsp;/ <tt>DirDoesntExist</tt>&nbsp;/ <tt>NoUninstallWarning</tt>&nbsp;/
+                <tt>ExitSetupMessage</tt>&nbsp;/ <tt>ConfirmUninstall</tt>.</li>
+            <li><tt>Да</tt> (=перезапустить) в ситуации <tt>FinishedRestartMessage</tt>&nbsp;/
+                <tt>UninstalledAndNeedsRestart</tt>.</li>
+            <li><tt>Рекомендуемый</tt> вариант в ситуации
+              <tt><a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>=dialog</tt>.</li>
           </ul>
           <p>Для следующих 5-ти сообщений подавление не предусмотрено:</p>
           <ul class="compact">
             <li>Окно сообщения "<i>О программе</i>".</li>
             <li>Окно сообщения "<i>Выйти из программы установки?</i>".</li>
-            <li>Окно сообщения <i>FileNotInDir2</i>, когда при
+            <li>Окно сообщения <tt>FileNotInDir2</tt>, когда при
               установке требуется вставить новый диск, который не был найден.</li>
             <li>Любое окно сообщения (ошибка), которое может
               быть показано прежде, чем программа установки (или удаления)
               прочитает параметры командной строки.</li>
-            <li>Любой диалог задач или окно сообщения,
-              показываемых при помощи функций <tt>TaskDialogMsgBox</tt> и <tt>MsgBox</tt>
-              в секции <tt>[Code]</tt> (вместо этих функций используйте соответственно <a 
-              href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a>
-              и <a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a>).</li>
+            <li>Любой диалог задач или окно сообщения, показываемых при помощи
+              функций <tt><a href="topic_isxfunc_taskdialogmsgbox.htm">TaskDialogMsgBox</a></tt>
+              и <tt><a href="topic_isxfunc_msgbox.htm">MsgBox</a></tt> в секции
+              <tt><a href="topic_scriptcreating.htm">[Code]</a></tt> (вместо этих
+              функций используйте соответственно <tt><a 
+              href="topic_isxfunc_suppressibletaskdialogmsgbox.htm">SuppressibleTaskDialogMsgBox</a></tt>
+              и <tt><a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a></tt>).</li>
           </ul>
         </dd>
         <dt class="cmdline"><span id="ALLUSERS">/ALLUSERS</span></dt>
         <dd>
           <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">административной установки</a>.
-            Действует только в том случае, если в секции <tt>[Setup]</tt>
-            используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
+            Действует только в том случае, если в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
+            используется директива <tt><a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a></tt>
             со значением <tt>commandline</tt>.</p>
         </dd>
         <dt class="cmdline"><span id="CURRENTUSER">/CURRENTUSER</span></dt>
         <dd>
           <p>Предписывает программе установки выполнить инсталляцию в режиме <a
               href="topic_admininstallmode.htm">не административной установки</a>.
-            Действует только в том случае, если в секции <tt>[Setup]</tt>
-            используется директива <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
+            Действует только в том случае, если в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
+            используется директива <tt><a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a></tt>
             со значением <tt>commandline</tt>.</p>
         </dd>
         <dt class="cmdline"><span id="LOG">/LOG</span></dt>
         <dd>
           <p>Предписывает программе установки создать в пользовательском
-            каталоге TEMP детальный отчёт установки файлов и действий <tt>[Run]</tt>,
+            каталоге <tt>TEMP</tt> детальный отчёт установки файлов и действий
+            <tt><a href="topic_runsection.htm">[Run]</a></tt>,
             предпринятых в процессе установки. Этот отчёт может быть использован
             для отладки сложных установок. К примеру, если какой-то файл не
             заменяется, в то время, как считается, что он должен быть
@@ -208,7 +213,7 @@
         <dt class="cmdline"><span id="NOREDIRECTIONGUARD">/NOREDIRECTIONGUARD</span></dt>
         <dd>
           <p>Запрещает программе установки включать механизм RedirectionGuard.
-            Если уже был использован параметр /REDIRECTIONGUARD, этот параметр
+            Если уже был использован параметр <tt>/REDIRECTIONGUARD</tt>, этот параметр
             командной строки игнорируется.</p>
         </dd>
         <dt class="cmdline"><span id="LOADINF">/LOADINF=</span>"<i>filename</i>"</dt>
@@ -227,7 +232,8 @@
         <dt class="cmdline"><span id="LANG">/LANG=</span><i>language</i></dt>
         <dd>
           <p>Определяет используемый язык мастера установки. В качестве <i>language</i>
-            необходимо указать внутренне имя языка, заданного в записях секции <tt>[Languages]</tt>.
+            необходимо указать внутренне имя языка, заданного в записях секции
+            <tt><a href="topic_languagessection.htm">[Languages]</a></tt>.
           </p>
           <p>При использовании действительного значения параметра <tt>/LANG</tt>,
             диалог "<i>Выбор языка</i>" показан не будет.</p>
@@ -236,34 +242,35 @@
         <dd>
           <p>Переопределяет заданное по умолчанию имя каталога, который
             предлагается на странице "<i>Выбор папки установки</i>". Необходимо
-            указывать полный путь. Может содержать приставку "expand:", которая
-            указывает программе установки заменить любые константы в имени на
-            соответствующие им значения. Например: <code>/DIR=expand:{autopf}\My
-              Program</code>.</p>
+            указывать полный путь. Может содержать приставку "<tt>expand:</tt>",
+            которая указывает программе установки заменить любые константы в имени
+            на соответствующие им значения. Например:
+            <code>/DIR=expand:{autopf}\My Program</code>.</p>
         </dd>
         <dt class="cmdline"><span id="GROUP">/GROUP=</span>"<i>folder name</i>"</dt>
         <dd>
           <p>Переопределяет заданное по умолчанию имя папки, которая
             предлагается на странице "<i>Выбор папки в меню «Пуск»</i>". Может
-            содержать приставку "expand:" (см. описание команды <tt>/DIR=</tt>).
-            Если директива <tt>DisableProgramGroupPage</tt> в секции <tt>[Setup]</tt>
-            имеет значение <tt>yes</tt>, эта команда не учитывается.</p>
+            содержать приставку "<tt>expand:</tt>" (см. описание команды <tt>/DIR=</tt>).
+            Если директива <tt><a href="topic_setup_disableprogramgrouppage.htm">DisableProgramGroupPage</a></tt>
+            в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
+            имеет значение <tt>yes</tt>, эта команда игнорируется.</p>
         </dd>
         <dt class="cmdline"><span id="NOICONS">/NOICONS</span></dt>
         <dd>
           <p>Предписывает программе установки изначально отметить опцию "<i>Не
-              создавать папку в меню «Пуск»</i>" на странице мастера "<i>Выбор
-              папки в меню «Пуск»</i>".</p>
+            создавать папку в меню «Пуск»</i>" на странице мастера "<i>Выбор
+            папки в меню «Пуск»</i>".</p>
         </dd>
         <dt class="cmdline"><span id="TYPE">/TYPE=</span><i>type name</i></dt>
         <dd>
           <p>Переопределяет заданный по умолчанию <a href="topic_typessection.htm">тип
-              установки</a>.</p>
+            установки</a>.</p>
           <p>Если указанный тип существует и не является пользовательским, любой
             параметр <tt>/COMPONENTS</tt> будет проигнорирован.</p>
         </dd>
         <dt class="cmdline"><span id="COMPONENTS">/COMPONENTS=</span>"<i>разделённый
-              запятыми перечень компонентов</i>"</dt>
+           запятыми перечень компонентов</i>"</dt>
         <dd>
           <p>Переопределяет заданный по умолчанию выбор <a href="topic_componentssection.htm">компонентов</a>.
             При использовании этого параметра командной строки программа
@@ -289,7 +296,7 @@
             <code>/COMPONENTS="*parent,!parent\child"</code><br /><br /></div>
         </dd>
         <dt class="cmdline"><span id="TASKS">/TASKS=</span>"<i>разделённый
-              запятыми перечень задач</i>"</dt>
+           запятыми перечень задач</i>"</dt>
         <dd>
           <p>Определяет перечень <a href="topic_taskssection.htm">задач</a>,
             которые должны быть изначально выбраны.</p>
@@ -318,7 +325,7 @@
           <p>Подобен параметру <tt>/TASKS</tt>, за исключением того, что
             указанные задачи будут объединены с задачами, которые в противном
             случае были бы выбраны по умолчанию.</p>
-          <p>Если <a href="topic_setup_useprevioustasks.htm">UsePreviousTasks</a>
+          <p>Если <tt><a href="topic_setup_useprevioustasks.htm">UsePreviousTasks</a></tt>
             имеет значение <tt>yes</tt>, то указанные задачи будут
             выбраны/отменены после восстановления всех предыдущих задач.</p>
           <div class="examplebox">
@@ -334,10 +341,11 @@
         </dd>
         <dt class="cmdline"><span id="PASSWORD">/PASSWORD=</span><i>password</i></dt>
         <dd>
-          <p>Определяет пароль для использования в установке. Если в секции <tt>[Setup]</tt>
-            параметр <tt>Password</tt> не указан, этот параметр командной
-            строки не учитывается.</p>
-          <p>Если указан неверный пароль, этот параметр также не учитывается.</p>
+          <p>Определяет пароль для использования в установке. Если в секции
+            <tt><a href="topic_setupsection.htm">[Setup]</a></tt> директива
+            <tt><a href="topic_setup_password.htm">Password</a></tt> не указана,
+            этот параметр командной строки игнорируется.</p>
+          <p>Если указан неверный пароль, этот параметр также игнорируется.</p>
         </dd>
       </dl>
     </div>

@@ -87,6 +87,7 @@
         <code>
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_abort.htm">Abort</a>;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_raiseexception.htm">RaiseException</a>(const Msg: String);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_raiselastexception.htm">RaiseLastException</a>;<br />
         <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getexceptionmessage.htm">GetExceptionMessage</a>: String;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_showexceptionmessage.htm">ShowExceptionMessage</a>;<br />
@@ -172,6 +173,7 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_addquotes.htm">AddQuotes</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_removequotes.htm">RemoveQuotes</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_convertpercentstr.htm">ConvertPercentStr</a>(var S: String): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const S: String): String;<br />
         <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_comparetext.htm">CompareText</a>(const S1, S2: String): Integer;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_comparestr.htm">CompareStr</a>(const S1, S2: String): Integer;<br />
@@ -213,7 +215,6 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_pathsame.htm">PathSame</a>(const S1, S2: String): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_pathstartswith.htm">PathStartsWith</a>(const S, AStartsWith: String; const IgnoreCase: Boolean): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_pathendswith.htm">PathEndsWith</a>(const S, AEndsWith: String; const IgnoreCase: Boolean): Boolean;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_addperiod.htm">AddPeriod</a>(const S: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_changefileext.htm">ChangeFileExt</a>(const FileName, Extension: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_extractfileext.htm">ExtractFileExt</a>(const FileName: String): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_extractfiledir.htm">ExtractFileDir</a>(const FileName: String): String;<br />
@@ -480,7 +481,7 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_getopenfilename.htm">GetOpenFileName</a>(const Prompt: String; var FileName: String; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getopenfilenamemulti.htm">GetOpenFileNameMulti</a>(const Prompt: String; const FileNameList: TStrings; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getsavefilename.htm">GetSaveFileName</a>(const Prompt: String; var FileName: String; const InitialDirectory, Filter, DefaultExtension: String): Boolean;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_browseforfolder.htm">BrowseForFolder</a>(const Prompt: String; var Directory: String; const NewFolderButton: Boolean): Boolean;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_browseforfolder.htm">BrowseForFolder</a>(const Prompt: String; var Directory: String; const Reserved: Boolean): Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_exitsetupmsgbox.htm">ExitSetupMsgBox</a>: Boolean;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_selectdisk.htm">SelectDisk</a>(const DiskNumber: Integer; const AFilename: String; var Path: String): Boolean;<br />
         </code>
@@ -520,12 +521,26 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_random.htm">Random</a>(const Range: Integer): Integer;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_beep.htm">Beep</a>;<br />
         <br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_abs.htm">Abs</a>(E: Extended): Extended;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_round.htm">Round</a>(const E: Extended): Int64;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_trunc.htm">Trunc</a>(const E: Extended): Int64;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_int.htm">Int</a>(const E: Extended): Extended;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_muldiv.htm">MulDiv</a>(const Number, Numerator, Denominator: Integer): Integer;<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_set8087cw.htm">Set8087CW</a>(NewCW: Word);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_get8087cw.htm">Get8087CW</a>: Word;<br />
+        <br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_low.htm">Low</a>(var X): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_high.htm">High</a>(var X): Int64;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_sizeof.htm">SizeOf</a>(var X): LongInt;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_assigned.htm">Assigned</a>(var X): Boolean;<br />
+        <br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_inc.htm">Inc</a>(var X: Ordinal);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_dec.htm">Dec</a>(var X: Ordinal);<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_succ.htm">Succ</a>(X: Ordinal): Ordinal;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_pred.htm">Pred</a>(X: Ordinal): Ordinal;<br />
+        <br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_include.htm">Include</a>(var S: Set; I: Ordinal)<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_exclude.htm">Exclude</a>(var S: Set; I: Ordinal);<br />
         <br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_bringtofrontandrestore.htm">BringToFrontAndRestore</a>;
         <br />
@@ -551,19 +566,24 @@
         wpWelcome, wpLicense, wpPassword, wpInfoBefore, wpUserInfo, wpSelectDir,
         wpSelectComponents, wpSelectProgramGroup, wpSelectTasks, wpReady,
         wpPreparing, wpInstalling, wpInfoAfter, wpFinished</p>
-      <p class="indent"> <i>Exec и ShellExec - значения ShowCmd</i><br />
+      <p class="indent"> <tt><a href="topic_isxfunc_exec.htm">Exec</a></tt> и
+        <tt><a href="topic_isxfunc_shellexec.htm">ShellExec</a></tt> - значения
+        <tt>ShowCmd</tt><br />
         SW_SHOW, SW_SHOWNORMAL, SW_SHOWMAXIMIZED, SW_SHOWMINIMIZED,
         SW_SHOWMINNOACTIVE, SW_HIDE</p>
       <p class="indent"> <i>TMsgBoxType</i><br />
         mbInformation, mbConfirmation, mbError, mbCriticalError</p>
-      <p class="indent"> <i>MsgBox - флаги кнопок</i><br />
+      <p class="indent"> <tt><a href="topic_isxfunc_msgbox.htm">MsgBox</a></tt>
+        — <i>флаги кнопок</i> <tt>Buttons</tt><br />
         MB_OK, MB_OKCANCEL, MB_ABORTRETRYIGNORE, MB_YESNOCANCEL, MB_YESNO,
         MB_RETRYCANCEL, MB_DEFBUTTON1, MB_DEFBUTTON2, MB_DEFBUTTON3,
         MB_SETFOREGROUND</p>
-      <p class="indent"> <i>MsgBox - возвращаемые значения</i><br />
+      <p class="indent"> <tt><a href="topic_isxfunc_msgbox.htm">MsgBox</a></tt>
+        — <i>возвращаемые значения</i><br />
         IDOK, IDCANCEL, IDABORT, IDRETRY, IDIGNORE, IDYES, IDNO</p>
-      <p class="indent"> <i>Reg* - значения корневых разделов реестра (см. также
-        <a href="topic_registrysection.htm">Секция [Registry]</a> в справке)</i><br />
+      <p class="indent"> <tt>Reg*</tt> — <i>значения корневых разделов реестра
+        (см. также "<a href="topic_registrysection.htm">Секция [Registry]</a>"
+        в справке)</i><br />
         HKEY_AUTO, HKEY_AUTO_32, HKEY_AUTO_64,<br />
         HKEY_CLASSES_ROOT, HKEY_CLASSES_ROOT_32, HKEY_CLASSES_ROOT_64,<br />
         HKEY_CURRENT_USER, HKEY_CURRENT_USER_32, HKEY_CURRENT_USER_64,<br />

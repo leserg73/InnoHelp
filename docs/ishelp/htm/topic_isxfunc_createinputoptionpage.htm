@@ -49,26 +49,26 @@
 
 ...
 
-<span class="hl slc">// Создаём страницу</span>
+<span class="hl com">// Создаём страницу</span>
 Page := CreateInputOptionPage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Информация о лицензии'</span>, <span class="hl str">'Вы зарегистрированный пользователь?'</span>,
   <span class="hl str">'Если вы зарегистрированный пользователь, отметьте опцию ниже и нажмите "Далее".'</span>,
   False, False);
 
-<span class="hl slc">// Добавляем элемент</span>
+<span class="hl com">// Добавляем элемент</span>
 Page.Add(<span class="hl str">'Я зарегистрированный пользователь'</span>);
 
-<span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
+<span class="hl com">// Устанавливаем начальное значение (необязательно)</span>
 Page.Values[<span class="hl num">0</span>] := False;
 
 ...
 
-<span class="hl slc">// Считываем значение в переменную</span>
+<span class="hl com">// Считываем значение в переменную</span>
 IsRegisteredUser := Page.Values[<span class="hl num">0</span>];</pre>
-      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
-        "Examples" в каталоге установки Inno Setup.</p>
+      <p>Смотрите другой пример в файле <tt>AllPagesExample.iss</tt> из папки
+        <tt>Examples</tt> в каталоге установки Inno Setup.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TInputOptionWizardPage">TInputOptionWizardPage</a>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TInputOptionWizardPage">TInputOptionWizardPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

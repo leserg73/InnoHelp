@@ -60,14 +60,14 @@
         Windows 32-бит, программа установки выдаст сообщение об ошибке и завершит
         работу.</p>
       <p>Если ваше приложение работает только на 64-разрядных архитектурах, следует
-        в директиве <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
+        в директиве <tt><a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></tt>
         указать такое же самое значение, как и для этой директивы, чтобы
         предотвратить работу программы установки на Windows 32-бит.</p>
       <div class="examplebox">
          <div class="exampleheader">Примеры:</div>
 <pre class="nomargin">
-<span class="hl slc">; Разрешить запуск инсталлятора на x64-совместимых системах</span>
-<span class="hl slc">; и включить 64-разрядный режим установки:</span>
+<span class="hl com">; Разрешить запуск инсталлятора на x64-совместимых системах</span>
+<span class="hl com">; и включить 64-разрядный режим установки:</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=x64compatible
 <span class="hl kwb">ArchitecturesInstallIn64BitMode</span>=x64compatible
 </pre>

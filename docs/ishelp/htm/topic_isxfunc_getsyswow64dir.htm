@@ -19,11 +19,10 @@
     <h1 class="topicheading">Программирование: GetSysWow64Dir</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">function
-          GetSysWow64Dir: String;</p>
+      <p class="prototip1 notopmarginX">function GetSysWow64Dir: String;</p>
       <h2 class="heading">Описание</h2>
       <p>Эта функция действительна только в 64-разрядной версии Windows.
-        Возвращает полный путь к папке SysWOW64, которая используется для
+        Возвращает полный путь к папке <tt>SysWOW64</tt>, которая используется для
         32-разрядных системных файлов. Функция возвращает пустую строку, если её
         вызов выполняется на 32-разрядной версии Windows, или если по каким-то
         причинам не удаётся получить путь к каталогу на 64-разрядной версии
@@ -33,8 +32,8 @@
   S: <span class="hl kwb">String</span>;
 <span class="hl kwb">begin</span>
   S := GetSysWow64Dir;
-  <span class="hl slc">// Проверяем строку S: если строка пустая,</span>
-  <span class="hl slc">// каталог SysWOW64 не существует.</span>
+  <span class="hl com">// Проверяем строку S: если строка пустая,</span>
+  <span class="hl com">// каталог SysWOW64 не существует.</span>
   <span class="hl kwb">if</span> S &lt;&gt; <span class="hl str">''</span> <span
 class="hl kwb">then</span>
     MsgBox(<span class="hl str">'Каталог SysWOW64: '</span> + S, <span class="hl kwe">mbInformation</span>, <span

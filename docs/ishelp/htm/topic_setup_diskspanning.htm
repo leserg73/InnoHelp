@@ -42,24 +42,25 @@
       <h2 class="heading">Описание</h2>
       <p>При установке значения <tt>yes</tt> активируется
         функция разделения данных. Чтобы не объединять все данные в один сжатый
-        файл Setup.exe, компилятор будет их разбивать на несколько отдельных
-        файлов Setup-*.bin — именуемых "сегментами" — которые потом можно
+        файл <tt>Setup.exe</tt>, компилятор будет их разбивать на несколько отдельных
+        файлов <tt>Setup-*.bin</tt> — именуемых "сегментами" — которые потом можно
         скопировать на дискеты, CD или DVD диски. Каждый созданный сегмент будет
         содержать в своем имени число, указывающее порядковый номер диска, на
-        который он должен быть скопирован. (Например, файл Setup-2.bin следует
-        записать на диск 2.) Созданный файл Setup.exe всегда следует записывать
-        на диск 1 вместе с файлом Setup-1*.bin.</p>
+        который он должен быть скопирован. (Например, файл <tt>Setup-2.bin</tt> следует
+        записать на диск 2.) Созданный файл <tt>Setup.exe</tt> всегда следует записывать
+        на диск 1 вместе с файлом <tt>Setup-1*.bin</tt>.</p>
       <p>Размер каждого сегмента и их количество для каждого
-        диска определяются значениями директив <a href="topic_setup_diskslicesize.htm">DiskSliceSize</a>
-        и <a href="topic_setup_slicesperdisk.htm">SlicesPerDisk</a> в секции <tt>[Setup]</tt>.
+        диска определяются значениями директив <tt><a href="topic_setup_diskslicesize.htm">DiskSliceSize</a></tt>
+        и <tt><a href="topic_setup_slicesperdisk.htm">SlicesPerDisk</a></tt> в
+        секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.
         К другим директивам, связанными с дисками, которые можно изменить,
-        относятся <a href="topic_setup_diskclustersize.htm">DiskClusterSize</a>
-        и <a href="topic_setup_reservebytes.htm">ReserveBytes</a>.</p>
+        относятся <tt><a href="topic_setup_diskclustersize.htm">DiskClusterSize</a></tt>
+        и <tt><a href="topic_setup_reservebytes.htm">ReserveBytes</a></tt>.</p>
       <p>Обратите внимание, что этой директиве обязательно следует присвоить
         значение <tt>yes</tt>, если упакованный размер инсталлятора превышает
         размер <code>4200000000</code> байт, даже если разделение установки на
         диски не планируется. (Установка по-прежнему будет работать корректно,
-        если все файлы Setup-*.bin будут размещены на одном носителе.)</p>
+        если все файлы <tt>Setup-*.bin</tt> будут размещены на одном носителе.)</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

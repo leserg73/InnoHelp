@@ -26,8 +26,8 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет создание ссылки на файл или папку. Возвращает результирующее
         имя файла ссылки, которое может отличаться от <tt>Filename</tt>, если
-        оно было создано с расширением .pif вместо .lnk. В случае ошибки будет
-        создано исключение.</p>
+        оно было создано с расширением <tt>.pif</tt> вместо <tt>.lnk</tt>. В
+        случае ошибки будет создано исключение.</p>
       <p><b>Параметры:</b><br />
       </p>
       <table>
@@ -35,7 +35,7 @@
           <tr>
             <td class="cellleft"><tt>Filename</tt></td>
             <td class="cellright">Имя файла создаваемого ярлыка.<br />
-              Требуется указывать полный путь, включая расширение ".lnk".</td>
+              Требуется указывать полный путь, включая расширение <tt>.lnk</tt>.</td>
           </tr>
           <tr>
             <td class="cellleft"><tt>Description</tt></td>
@@ -54,7 +54,7 @@
             <td class="cellright">Параметры командной строки для передачи
               целевому файлу.<br />
               Параметры, включающие пробелы, должны быть заключены в двойные
-              кавычки. Например, <tt>ExpandConstant('"{app}\foo"').</tt></td>
+              кавычки. Например, <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('"{app}\foo"')</tt>.</tt></td>
           </tr>
           <tr>
             <td class="cellleft"><tt>WorkingDir</tt></td>
@@ -74,13 +74,14 @@
           </tr>
           <tr>
             <td class="cellleft"><tt>ShowCmd</tt></td>
-            <td class="cellright">Одна из констант SW_*.</td>
+            <td class="cellright">Одна из констант <tt>SW_*</tt>.</td>
           </tr>
         </tbody>
       </table>
       <h2 class="heading">Комментарии</h2>
       <p>Скорее всего при деинсталляции возникнет необходимость удалить
-        созданный ярлык. Тогда просто добавьте соответствующую запись в секцию <tt>UninstallDelete</tt>.</p>
+        созданный ярлык. Тогда просто добавьте соответствующую запись в секцию
+        <tt><a href="topic_uninstalldeletesection.htm">[UninstallDelete]</a></tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox">CreateShellLink(
   ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{app}</span><span

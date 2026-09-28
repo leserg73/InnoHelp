@@ -60,29 +60,29 @@
         в зависимости от архитектуры драйверов.</p>
       <div class="examplebox">
         <div class="exampleheader">Примеры:</div>
-        <pre class="nomargin"><span class="hl slc">; Требуется одновременное совпадение двух идентификаторов архитектуры.</span>
-<span class="hl slc">; - Программа установки x64-приложений, включающая некоторые 32-битные двоичные файлы x86:</span>
+        <pre class="nomargin"><span class="hl com">; Требуется одновременное совпадение двух идентификаторов архитектуры.</span>
+<span class="hl com">; - Программа установки x64-приложений, включающая некоторые 32-битные двоичные файлы x86:</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=x64compatible <span class="hl kwb">and</span> x86compatible
-<span class="hl slc">; - Программа установки приложений для Arm64, включающая некоторые исполняемые файлы x64 или Arm64EC:</span>
+<span class="hl com">; - Программа установки приложений для Arm64, включающая некоторые исполняемые файлы x64 или Arm64EC:</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=arm64 <span class="hl kwb">and</span> x64compatible
 
-<span class="hl slc">; Разрешить установку только на системы, не совместимые с x64.</span>
-<span class="hl slc">; Полезно в ситуации, когда у вас есть отдельные программы установки x86 и x64,</span>
-<span class="hl slc">; и вы не хотите, чтобы пользователи x64-совместимых ОС (x64 + Arm64 Win11)</span>
-<span class="hl slc">; ошибочно запускали программу установки x86:</span>
+<span class="hl com">; Разрешить установку только на системы, не совместимые с x64.</span>
+<span class="hl com">; Полезно в ситуации, когда у вас есть отдельные программы установки x86 и x64,</span>
+<span class="hl com">; и вы не хотите, чтобы пользователи x64-совместимых ОС (x64 + Arm64 Win11)</span>
+<span class="hl com">; ошибочно запускали программу установки x86:</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=x86compatible <span class="hl kwb">and not</span> x64compatible
 
-<span class="hl slc">; Разрешить установку на x64-совместимые системы, но запретить Arm64.</span>
-<span class="hl slc">; Полезно, если вы предоставляете отдельную программу установки для систем Arm64.</span>
+<span class="hl com">; Разрешить установку на x64-совместимые системы, но запретить Arm64.</span>
+<span class="hl com">; Полезно, если вы предоставляете отдельную программу установки для систем Arm64.</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=x64compatible <span class="hl kwb">and not</span> arm64
 
-<span class="hl slc">; Вариант "os" уместен при установке того, что не может работать</span>
-<span class="hl slc">; в эмулируемой среде, например, драйвер устройства.</span>
+<span class="hl com">; Вариант "os" уместен при установке того, что не может работать</span>
+<span class="hl com">; в эмулируемой среде, например, драйвер устройства.</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=x64os
 
-<span class="hl slc">; Разрешить установку только на Windows 64-бит, но не проверять архитектуру.</span>
-<span class="hl slc">; (Не используйте этот параметр при установке двоичных файлов,</span>
-<span class="hl slc">; специфичных для конкретной архитектуры.)</span>
+<span class="hl com">; Разрешить установку только на Windows 64-бит, но не проверять архитектуру.</span>
+<span class="hl com">; (Не используйте этот параметр при установке двоичных файлов,</span>
+<span class="hl com">; специфичных для конкретной архитектуры.)</span>
 <span class="hl kwb">ArchitecturesAllowed</span>=win64
 </pre> </div>
       <h2 class="heading">См. также:</h2>

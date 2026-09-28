@@ -22,29 +22,33 @@
       <p class="prototip1 notopmarginX">procedure
           ExtractTemporaryFile(const FileName: String);</p>
       <h2 class="heading">Описание</h2>
-      <p>Извлекает указанный файл <tt>FileName</tt> из секции <tt>[Files]</tt>
-        во временный каталог. Для определения расположения временного каталога
-        используйте <tt>ExpandConstant('{tmp}')</tt>.</p>
+      <p>Извлекает указанный файл <tt>FileName</tt> из секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt> во временный каталог.
+        Для определения расположения временного каталога используйте
+        <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}')</tt>.</p>
       <p>При закрытии программы установки все извлечённые файлы автоматически
         удаляются.</p>
       <p>Если файл не извлечён, не найден или найден, но не был обработан из-за
         наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
         будет вызвано исключение.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции <tt>[Files]</tt>,
-        чтобы программа установки пропустила файл на этапе обычного копирования
-        файлов и обеспечила возможность его извлечения до ввода пароля.</p>
-      <p>Используйте <tt>Flags: noencryption</tt> в секции <tt>[Files]</tt>,
-        если включено шифрование и вызов функции <tt>ExtractTemporaryFile</tt>
-        выполняется прежде, чем пользователь введёт правильный пароль.</p>
+      <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>, чтобы программа
+        установки пропустила файл на этапе обычного копирования файлов и обеспечила
+        возможность его извлечения до ввода пароля.</p>
+      <p>Используйте <tt>Flags: noencryption</tt> в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>, если включено
+        шифрование и вызов функции <tt>ExtractTemporaryFile</tt> выполняется
+        прежде, чем пользователь введёт правильный пароль.</p>
       <p>Если включено непрерывное (<i>solid</i>) сжатие, <u>обязательно</u>
-        перечислите все временные файлы в самом начале секции <tt>[Files]</tt>.
-        Причиной этого является то, что для получения доступа к произвольному
-        файлу в архиве с непрерывным сжатием, программа установки должна сначала
-        распаковать все предыдущие файлы (во временный буфер в памяти). Это
-        может привести к значительной задержке в работе инсталлятора, если в
-        секции <tt>[Files]</tt> перед временно используемыми файлами находится
-        множество других файлов.</p>
+        перечислите все временные файлы в самом начале секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>. Причиной этого
+        является то, что для получения доступа к произвольному файлу в архиве с
+        непрерывным сжатием, программа установки должна сначала распаковать все
+        предыдущие файлы (во временный буфер в памяти). Это может привести к
+        значительной задержке в работе инсталлятора, если в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt> перед временно
+        используемыми файлами находится множество других файлов.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
@@ -56,7 +60,7 @@ class="hl kwe">dontcopy noencryption</span>
 <span class="hl kwb">var</span>
   S: AnsiString;
 <span class="hl kwb">begin</span>
-  <span class="hl slc">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
+  <span class="hl com">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
   ExtractTemporaryFile(<span class="hl str">'Readme.txt'</span>);
   <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
 
@@ -68,9 +72,9 @@ class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span c
   Result := True;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_extracttemporaryfiles.htm">ExtractTemporaryFiles</a>
+      <p class="indent"><code><a href="topic_isxfunc_extracttemporaryfiles.htm">ExtractTemporaryFiles</a></code>
         <br />
-        <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+        <code><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

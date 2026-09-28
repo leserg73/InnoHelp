@@ -19,8 +19,8 @@
     <h1 class="topicheading">[Setup]: LicenseFile</h1>
     <div class="topicbody">
       <h2 class="heading">Описание</h2>
-      <p>Определяет файл лицензионного соглашения в формате .txt
-        или .rtf (текст с разметкой), который будет показан перед выбором папки
+      <p>Определяет файл лицензионного соглашения в формате <tt>.txt</tt>
+        или <tt>.rtf</tt> (текст с разметкой), который будет показан перед выбором папки
         установки приложения. При сборке инсталлятора файл документа должен
         находиться <a href="topic_sourcedirectorynotes.htm">исходном каталоге</a>
         сценария, в противном случае к этому файлу необходимо указать полный
@@ -30,18 +30,20 @@
         параметр <tt>LicenseFile</tt>, эта директива фактически будет
         проигнорирована. Для получения дополнительной информации обратитесь в
         разделу справки "<a href="topic_languagessection.htm">Секция [Languages]</a>".</p>
-      <p>Если используется Unicode файл .txt, он должен быть в кодировке UTF-8
+      <p>Если используется Unicode файл <tt>.txt</tt>, он должен быть в кодировке UTF-8
         (с маркером BOM или без него) или UTF-16LE.</p>
-      <p>При использовании .rtf файлов с пользовательскими цветами в тексте
+      <p>При использовании <tt>.rtf</tt> файлов с пользовательскими цветами в тексте
         обращайте внимание на коэффициенты контрастности, особенно если
         поддерживается <a href="topic_setup_wizardstyle.htm">тёмный стиль</a>.
         Используя инструмент <a href="https://webaim.org/resources/contrastchecker" 
         target="_blank" title="https://webaim.org/resources/contrastchecker">проверки
-        контрастности</a><img class="extlink" src="../images/extlink.svg" 
-        alt=" [внешняя ссылка]" /> постарайтесь достичь как минимум уровня AA
-        для обычного текста. Примеры цветов, которые проходят проверку как на
-        светлом, так и на тёмном фоне: красный <code>#eb0000</code>, зеленый
-        <code>#008a00</code> и синий <code>#6161ff</code>.</p>
+        контрастности</a><img class="extlink" src="../images/extlink.png" 
+        srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /> постарайтесь
+        достичь как минимум уровня AA для обычного текста. Примеры цветов,
+        которые проходят проверку как на светлом, так и на тёмном фоне:
+        <span style="color: #eb0000;">красный</span> – <code>#eb0000</code>,
+        <span style="color: #008a00;">зеленый</span> – <code>#008a00</code> и
+        <span style="color: #6161ff;">синий</span> – <code>#6161ff</code>.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">LicenseFile</span>=license.txt</pre>

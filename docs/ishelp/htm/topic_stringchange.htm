@@ -25,14 +25,13 @@
         заменены на новые подстроки <tt>NewPattern</tt>.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">; Объявляем переменную MyString2 и присваиваем ей значение 'a ca c'</span>
+        <pre class="hl"><span class="hl com">// Объявляем переменную MyString2 и присваиваем ей значение 'a ca c'</span>
 <span class="hl kwf">#define</span> MyString <span class="hl str">"a ca c"</span>
-<span class="hl slc">; Выполняем в строке замену символов ' ' (пробел) на символ 'b'</span>
-<span class="hl kwf">#define</span> MyString2 <span class="hl kwd">StringChange</span><span
-class="hl opt">(</span>MyString<span class="hl opt">,</span> <span class="hl str">" "</span><span
-class="hl opt">,</span> <span class="hl str">"b"</span><span class="hl opt">)</span>
-<span class="hl slc">// Результат: переменная MyString2 = 'abcabc'</span>
-</pre> </div>
+<span class="hl com">// Выполняем в строке замену символов ' ' (пробел) на символ 'b'</span>
+<span class="hl kwf">#define</span> MyString2 StringChange(MyString, <span class="hl str">" "</span>, <span class="hl str">"b"</span>)
+<span class="hl com">// Результат: переменная MyString2 = 'abcabc'</span>
+</pre>
+      </div>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -21,18 +21,16 @@
       <h2 class="heading prototip">Прототип функции</h2>
       <p class="prototip1 notopmarginX null"><b>void</b> SetSetupSetting(<b>str</b> DirectiveName, <b>str</b> Value)</p>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет создание или изменение в секции <tt>[Setup]</tt>
-        директивы с заданным ключом <tt>DirectiveName</tt> и его значением
+      <p>Выполняет создание или изменение в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
+        директивы с указанным именем директивы <tt>DirectiveName</tt> и её значением
         <tt>Value</tt>.</p>
-      <p>Если секция <tt>[Setup]</tt>
-        в данных <a href="topic_current-translation.htm">текущего
-          вывода препроцессора</a> отсутствует (в случае, если вызов этой
-        функции был выполнен до объявления данной секции в сценарии), то такой
-        заголовок (как и сама директива) будет создан автоматически.</p>
-      <p>Пожалуйста, при использовании функции <tt>SetSetupSetting</tt> будьте
-        предельно осторожны. Не допускается её применение, когда директивы
-        передаются <b>ISPP</b> <i>встроенным методом</i> (т.е. после
-        использования директивы <code><a href="topic_insert.htm">#insert</a></code>).</p>
+      <p>Если секция <tt><a href="topic_setupsection.htm">[Setup]</a></tt> в данных
+        <a href="topic_current-translation.htm">текущего вывода препроцессора</a>
+        отсутствует (в случае, если вызов этой функции был выполнен до объявления
+        данной секции в сценарии), то такой заголовок (как и сама директива) будет
+        создан автоматически.</p>
+      <p>Эту функцию не следует вызывать, когда ISPP находится в режиме вставки
+        (т.е. после использования директивы <tt><a href="topic_insert.htm">#insert</a></tt>).</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

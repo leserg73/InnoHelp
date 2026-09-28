@@ -49,7 +49,7 @@
 
 ...
 
-<span class="hl slc">// Создаём страницу</span>
+<span class="hl com">// Создаём страницу</span>
 Page := CreateInputDirPage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Выбор персонального каталога'</span>, <span class="hl str">'Где должны храниться файлы персональных данных?'</span>,
   <span class="hl str">'Файлы личных данных будут храниться в следующей папке.'</span><span
@@ -57,21 +57,21 @@ class="hl kwf">#13#10#13#10</span> +
   <span class="hl str">'Для продолжения нажмите "Далее". Чтобы выбрать другую папку, нажмите кнопку "Обзор".'</span>,
   False, SetupMessage(msgNewFolderName));
 
-<span class="hl slc">// Добавляем элемент (с пустым заголовком)</span>
+<span class="hl com">// Добавляем элемент (с пустым заголовком)</span>
 Page.Add(<span class="hl str">''</span>);
 
-<span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
+<span class="hl com">// Устанавливаем начальное значение (необязательно)</span>
 Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
 class="hl kwc">{userappdata}</span><span class="hl str">\My Company\My Program'</span>);
 
 ...
 
-<span class="hl slc">// Считываем значение в переменную</span>
+<span class="hl com">// Считываем значение в переменную</span>
 DataDir := Page.Values[<span class="hl num">0</span>];</pre>
-      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
-        "Examples" в каталоге установки Inno Setup.</p>
+      <p>Смотрите другой пример в файле <tt>AllPagesExample.iss</tt> из папки
+        <tt>Examples</tt> в каталоге установки Inno Setup.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TInputDirWizardPage">TInputDirWizardPage</a>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TInputDirWizardPage">TInputDirWizardPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

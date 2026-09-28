@@ -36,103 +36,121 @@
           <div class="null">Допустимые параметры:
           <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
             <tr><th>Параметр</th><th>Назначение</th></tr>
-            <tr>
-              <td class="nowrap"><tt>/O+</tt><br/><tt>/O-</tt></td>
-              <td>Включает (+) или отключает (-) параметр вывода
-                (замещает в сценарии команду <tt>Output</tt>)</td>
-            </tr>
-            <tr>
-              <td class="nowrap"><tt>/O<i>&lt;path&gt;</i></tt></td>
-              <td>Устанавливает путь вывода файла (замещает в
-                сценарии команду <tt>OutputDir</tt>)</td>
-            </tr>
-            <tr>
-              <td class="nowrap"><tt>/F<i>&lt;filename&gt;</i></tt></td>
-              <td>Устанавливает выходное имя файла (замещает в
-                сценарии команду <tt>OutputBaseFilename</tt>)</td>
-            </tr>
-            <tr>
-              <td class="nowrap"><tt>/S<i>&lt;name&gt;</i>=<i>&lt;command&gt;</i></tt></td>
-              <td>Устанавливает инструмент цифровой подписи с
-                указанным именем и параметрами (все инструменты цифровой подписи,
-                настроенные в IDE компилятора, будут указаны автоматически)</td>
-            </tr>
-            <tr>
-              <td class="nowrap"><tt>/Q</tt></td>
-              <td>Тихая компиляция (будут показаны только
-                сообщения об ошибках)</td>
-            </tr>
-            <tr>
-              <td class="nowrap"><tt>/Qp</tt></td>
-              <td>Тихая компиляция с отображением прогресса
-                выполнения</td>
-            </tr>
+            <tr><td class="nowrap"><tt>--output=(yes|no)</tt>, <tt>-o(+|-)</tt></td><td>Включает или отключает вывод (переопределяет <tt><a href="topic_setup_output.htm">Output</a></tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--output-dir=<i>&lt;path&gt;</i></tt>, <tt>-o<i>&lt;path&gt;</i></tt></td><td>Устанавливает путь вывода файла (переопределяет <tt><a href="topic_setup_outputdir.htm">OutputDir</a></tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--output-filename=<i>&lt;filename&gt;</i></tt>, <tt>-f<i>&lt;filename&gt;</i></tt></td><td>Устанавливает выходное имя файла (переопределяет <tt><a href="topic_setup_outputbasefilename.htm">OutputBaseFilename</a></tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--signtool=<i>&lt;name&gt;</i>=<i>&lt;command&gt;</i></tt>, <tt>-s<i>&lt;name&gt;</i>=<i>&lt;command&gt;</i></tt></td><td>Устанавливает <tt><a href="topic_setup_signtool.htm">SignTool</a></tt> с указанными именем и командой (инструменты цифровой подписи, настроенные в IDE компилятора, будут добавлены автоматически).</td></tr>
+            <tr><td class="nowrap"><tt>--no-ide-signtools</tt>, <tt>-ni</tt></td><td>Не назначать автоматически инструменты подписи, настроенные с помощью IDE компилятора.</td></tr>
+            <tr><td class="nowrap"><tt>--no-compression</tt>, <tt>-nc</tt></td><td>Отключает сжатие (переопределяет <tt><a href="topic_setup_compression.htm">Compression</a></tt> и <tt><a href="topic_setup_internalcompresslevel.htm">InternalCompressLevel</a></tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--no-signing</tt>, <tt>-ns</tt></td><td>Отключает подписывание (переопределяет <tt><a href="topic_setup_signtool.htm">SignTool</a></tt> и <tt><a href="topic_setup_signeduninstaller.htm">SignedUninstaller</a></tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--no-signcheck</tt>, <tt>-nsc</tt></td><td>Отключает проверку <tt>signcheck</tt>.</td></tr>
+            <tr><td class="nowrap"><tt>--messages-jsonl</tt>, <tt>-mj</tt></td><td>Выводит ошибки и предупреждения в формате JSONL (предупреждения не подавляются флагом <tt>--quiet</tt>, если активен флаг <tt>--messages-jsonl</tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--preprocess</tt>, <tt>-e</tt></td><td>Выводит результат предварительной обработки в стандартный поток вывода (stdout) и подавляет компиляцию.</td></tr>
+            <tr><td class="nowrap"><tt>--quiet</tt>, <tt>-q</tt></td><td>Подавляет сообщения, которые обычно выводятся в стандартный поток вывода (см. <tt>--messages-jsonl</tt>).</td></tr>
+            <tr><td class="nowrap"><tt>--quiet-progress</tt>, <tt>-qp</tt></td><td>Аналогично <tt>--quiet</tt>, но с отображением хода выполнения.</td></tr>
+            <tr><td class="nowrap"><tt>--help</tt>, <tt>-?</tt></td><td>Выводит информацию об использовании..</td></tr>
+            <tr><td class="nowrap"><tt>--version</tt></td><td>Выводит информацию о версии компилятора.</td></tr>
           </table>
           </div>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin">iscc /Qp /O"My Output" /F"MyProgram-1.0" /Sbyparam=$p "c:\isetup\samples\my script.iss"</pre>
+            <pre class="nomargin">iscc --quiet-progress --output-dir="My Output" -f"MyProgram-1.0" -sbyparam=$p "c:\isetup\samples\my script.iss"</pre>
           </div>
-          <p>Другие параметры смотрите в разделе <a
-
-            href="topic_isppcc.htm">Препроцессор Inno Setup: Компиляция в командной строке</a>.</p>
-          <div class="null">ISCC возвращает один из следующих кодов выхода:<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;0 — компиляция прошла успешно;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно или произошла
-            внутренняя ошибка;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;2 — компиляция не удалась.</div>
-          <br />
+          <p>Короткие параметры допускают использование в качестве префикса как
+            <tt>-</tt>, так и <tt>/</tt> и нечувствительны к регистру. Длинные
+            опции (с префиксом <tt>--</tt>) чувствительны к регистру и не
+            допускают использования <tt>//</tt> в качестве префикса.</p>
+          <p>Другие параметры смотрите в разделе
+            "<a href="topic_isppcc.htm">Препроцессор Inno Setup: Компиляция в
+            командной строке</a>".</p>
+          <p>ISCC возвращает один из следующих кодов выхода:</p>
+          <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Код</th><th>Значение</th></tr>
+            <tr>
+            <td>0</td>
+            <td>Компиляция успешна.</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>Параметры командной строки заданы неверно или произошла внутренняя ошибка.</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Компиляция не удалась.</td>
+            </tr>
+          </table>
         </li>
         <li>
-          <p style="text-indent: 0;">Компиляцию сценариев также можно выполнить из командной строки.
-            Общий вид использования командной строки следующий:</p>
-          <pre class="indent examplebox">iside /cc <i>&lt;script name&gt;</i></pre>
+          <p style="text-indent: 0;">Компиляцию сценариев также можно выполнить
+            из командной строки. Общий вид использования командной строки следующий:</p>
+          <pre class="indent examplebox">iside -cc <i>&lt;script name&gt;</i>
+iside --compile <i>&lt;script name&gt;</i></pre>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin">iside /cc "c:\isetup\samples\my script.iss"</pre>
+            <pre class="nomargin">iside -cc "c:\isetup\samples\my script.iss"</pre>
           </div>
           <p>Как показано в примере выше, имена файлов с пробелами должны
             заключаться в кавычки.</p>
-          <p>Запуск компилятора из командной строки не подавляет отображение
-            обычного хода выполнения или сообщения об ошибках.</p>
-          <div class="null">Компилятор возвращает один из следующих кодов
-            выхода:<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;0 — компиляция прошла успешно;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;2 — компиляция не удалась.</div>
-          <br />
+          <p>Короткие параметры допускают использование в качестве префикса как
+            <tt>-</tt>, так и <tt>/</tt> и нечувствительны к регистру. Длинные
+            опции (с префиксом <tt>--</tt>) чувствительны к регистру и не
+            допускают использования <tt>//</tt> в качестве префикса.</p>
+          <p>Запуск компилятора из командной строки не отключает стандартное
+            отображение хода выполнения или сообщения об ошибках.</p>
+          <p>IDE компилятора возвращает один из следующих кодов выхода:</p>
+          <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Код</th><th>Значение</th></tr>
+            <tr>
+            <td>0</td>
+            <td>Компиляция успешна.</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>Параметры командной строки заданы неверно.</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Компиляция не удалась.</td>
+            </tr>
+          </table>
         </li>
         <li>
           <p style="text-indent: 0;">Мастер создания сценария также может быть
             запущен из командной строки. Общий вид использования командной строки
             следующий:</p>
-          <pre class="indent examplebox">iside /wizard <i>&lt;wizard name&gt; &lt;script name&gt;</i></pre>
+          <pre class="indent examplebox">iside -wizard <i>&lt;wizard name&gt; &lt;script name&gt;</i>
+iside --new-script-wizard <i>&lt;wizard name&gt; &lt;script name&gt;</i></pre>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
-            <pre class="nomargin">iside /wizard "MyProg Script Wizard" "c:\temp.iss"</pre>
+            <pre class="nomargin">iside -wizard "MyProg Script Wizard" "c:\temp.iss"</pre>
           </div>
           <p>Обратите внимание, если имена файлов и название мастера содержит
             пробелы, то они должны заключаться в кавычки.</p>
-          <p>Запуск мастера из командной строки не подавляет сообщения об
+          <p>Короткие параметры допускают использование в качестве префикса как
+            <tt>-</tt>, так и <tt>/</tt> и нечувствительны к регистру. Длинные
+            опции (с префиксом <tt>--</tt>) чувствительны к регистру и не
+            допускают использования <tt>//</tt> в качестве префикса.</p>
+          <p>Запуск мастера из командной строки не отключает сообщения об
             ошибках.</p>
-          <div class="null">Мастер создания сценария возвращает один из
-            следующих кодов выхода:<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;0 — какие-либо ошибки отсутствуют и файл сценария успешно
-            сохранён с указанным именем;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;1 — параметры командной строки заданы неверно;<br />
-            <br />
-            &nbsp;&nbsp;&nbsp;2 — не удалось сохранить созданный файл сценария.</div>
-          <br />
-          Если пользователь отменит работу мастера, будет возвращён код выхода 0
-          и сценарий не сохранится.<br /><br />
+          <p>Мастер создания сценария возвращает один из следующих кодов выхода:</p>
+          <table style="margin-top: 1.0em; margin-right: 1.0em" border="1">
+            <tr><th>Код</th><th>Значение</th></tr>
+            <tr>
+            <td>0</td>
+            <td>Какие-либо ошибки отсутствуют и файл сценария успешно
+            сохранён с указанным именем.</td>
+            </tr>
+            <tr>
+            <td>1</td>
+            <td>Параметры командной строки заданы неверно.</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Не удалось сохранить созданный файл сценария.</td>
+            </tr>
+          </table>
+          <p>Если пользователь отменит работу мастера, будет возвращён код выхода
+            0, но сценарий не сохранится.</p>
         </li>
       </ul>
     </div>

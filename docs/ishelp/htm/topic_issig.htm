@@ -37,7 +37,7 @@
       полученный от центра сертификации. Однако вы можете использовать для одного
       файла как <tt>signtool.exe</tt>, так и <tt>ISSigTool.exe</tt>, причем в
       указанном порядке. Дополнительную информацию о <tt>signtool.exe</tt> см. в
-      разделе <a href="topic_setup_signtool.htm">SignTool</a>.</p>
+      разделе <tt><a href="topic_setup_signtool.htm">SignTool</a></tt>.</p>
     <h2 class="heading">Быстрый старт: проверка файлов во время компиляции</h2>
     <p>В командах <tt>issigtool</tt>, показанных ниже, укажите путь к Inno Setup
       и заключите его в кавычки. Например,
@@ -67,9 +67,9 @@ issigtool --key-file="MyKey.isprivatekey" sign "MyFile.txt"
           <tt>MyFile.txt.issig</tt>.</p>
       </li>
       <li>
-        <p style="text-indent: 0;">В сценарии Inno Setup добавьте секцию <a
-          href="topic_issigkeyssection.htm">[ISSigKeys]</a> с записью вашего файла
-          закрытого ключа, а в секции <a href="topic_filessection.htm">[Files]</a>
+        <p style="text-indent: 0;">В сценарии Inno Setup добавьте секцию <tt><a
+          href="topic_issigkeyssection.htm">[ISSigKeys]</a></tt> с записью вашего файла
+          закрытого ключа, а в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>
           для файла <tt>MyFile.txt</tt> укажите флаг <tt>issigverify</tt>:</p>
         <pre class="indent examplebox">
 [ISSigKeys]
@@ -79,8 +79,8 @@ Name: MyKey; KeyFile: "MyKey.isprivatekey"
 Source: "MyFile.txt"; DestDir: "{app}"; Flags: issigverify
 </pre>
         <p style="text-indent: 0;">Примечание: здесь желательно указать файл
-          <i>открытого</i> ключа; см. раздел <a href="topic_issig.htm#tips">Советы
-          и рекомендации</a> ниже.</p>
+          <i>открытого</i> ключа; см. раздел "<a href="topic_issig.htm#tips">Советы
+          и рекомендации</a>" ниже.</p>
       </li>
       <li>
         <p style="text-indent: 0;">Выполните сборку сценария. На вкладке вывода
@@ -110,8 +110,8 @@ Signature is not valid for source file "MyFile.txt": file hash incorrect.
       описанной выше процедуре проверки во время компиляции, за исключением:</p>
     <ul>
       <li>
-        <p style="text-indent: 0;">Запись в секции <tt>[Files]</tt> для параметра
-          <tt>Source</tt> будет содержать путь и включать флаг <tt>external</tt>:</p>
+        <p style="text-indent: 0;">Запись в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>
+          для параметра <tt>Source</tt> будет содержать путь и включать флаг <tt>external</tt>:</p>
         <pre class="indent examplebox">
 [Files]
 Source: "{src}\MyFile.txt"; DestDir: "{app}"; Flags: external issigverify
@@ -128,9 +128,9 @@ Source: "{src}\MyFile.txt"; DestDir: "{app}"; Flags: external issigverify
     <ul>
       <li>
         <p style="text-indent: 0;">Несмотря на то что параметр <tt>KeyFile</tt>
-          в секции <a href="topic_issigkeyssection.htm">[ISSigKeys]</a> указывает
-          на файл закрытого ключа, как показано в примере выше, рекомендуется по
-          возможности указывать файл открытого ключа. В отличие от файла закрытого
+          в секции <tt><a href="topic_issigkeyssection.htm">[ISSigKeys]</a></tt>
+          указывает на файл закрытого ключа, как показано в примере выше, рекомендуется
+          по возможности указывать файл открытого ключа. В отличие от файла закрытого
           ключа, файл открытого ключа не нужно держать в секрете и он может
           безопасно храниться в системе контроля версий.</p>
         <p style="text-indent: 0;">Чтобы создать файл открытого ключа

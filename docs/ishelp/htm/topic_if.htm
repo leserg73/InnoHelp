@@ -24,7 +24,7 @@
           <tbody>
             <tr>
               <td class="cellleft" style="width: 140px;"><i>if-directive:</i></td>
-              <td class="cellright"><b>if</b> &lt;expr&gt;</td>
+              <td class="cellright">(<b>if</b> | <b>?</b>) &lt;expr&gt;</td>
             </tr>
           </tbody>
         </table>
@@ -40,7 +40,7 @@
           <tbody>
             <tr>
               <td class="cellleft" style="width: 140px;"><i>else-directive:</i></td>
-              <td class="cellright"><b>else</b></td>
+              <td class="cellright">(<b>else</b> | <b>^</b>)</td>
             </tr>
           </tbody>
         </table>
@@ -48,7 +48,7 @@
           <tbody>
             <tr>
               <td class="cellleft" style="width: 140px;"><i>endif-directive:</i></td>
-              <td class="cellright"><b>endif</b></td>
+              <td class="cellright">(<b>endif</b> | <b>.</b>)</td>
             </tr>
           </tbody>
         </table>
@@ -94,42 +94,37 @@
         наоборот).</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">// Объявляем переменную Lang.</span>
+        <pre class="hl"><span class="hl com">// Объявляем переменную Lang.</span>
 <span class="hl kwf">#define</span> Lang
 
 <span class="hl kwa">[Tasks]</span>
-<span class="hl slc">// Присваиваем переменной Lang значение считанное из файла</span>
-<span class="hl slc">// (см. выражение после оператора условия ==).</span>
-<span class="hl slc">// Сравниваем строку "English" со значением переменной Lang. </span>
-<span class="hl kwf">#if</span> <span class="hl str">"English"</span> <span class="hl opt">==</span> Lang <span
-class="hl opt">=</span> <span class="hl kwd">ReadIni</span><span class="hl opt">(</span><span
-class="hl kwd">SetupSetting</span><span class="hl opt">(</span><span class="hl str">"MessagesFile"</span><span
-class="hl opt">),</span> \
-    <span class="hl str">"LangOptions"</span><span class="hl opt">,</span> <span
-class="hl str">"LanguageName"</span><span class="hl opt">)</span>
-    <span class="hl slc">// Если результат условия является истинной,</span>
-    <span class="hl slc">// то выполняем следующие команды.</span>
-    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"For all users"</span><span
-class="hl opt">;</span> <span class="hl kwb">Name</span><span class="hl opt">:</span> all
+<span class="hl com">// Присваиваем переменной Lang значение считанное из файла</span>
+<span class="hl com">// (см. выражение после оператора условия ==).</span>
+<span class="hl com">// Сравниваем строку "English" со значением переменной Lang. </span>
+<span class="hl kwf">#if</span> <span class="hl str">"English"</span> == Lang = <a href="topic_readini.htm">ReadIni</a>(<a href="topic_setupsetting.htm">SetupSetting</a>(<span class="hl str">"MessagesFile"</span>), \
+    <span class="hl str">"LangOptions"</span>, <span class="hl str">"LanguageName"</span>)
+    <span class="hl com">// Если результат условия является истинной,</span>
+    <span class="hl com">// то выполняем следующие команды.</span>
+    <span class="hl kwb">Description</span>: <span class="hl str">"For all users"</span>; <span class="hl kwb">Name</span>: all
 
-<span class="hl slc">// Если предыдущее условие ложно </span>
-<span class="hl slc">// (строка "English" не равна значению переменной Lang),</span>
-<span class="hl slc">// то выполняем проверку следующего условия.</span>
-<span class="hl slc">// Сравниваем строку "Russian" со значением переменной Lang.</span>
-<span class="hl kwf">#elif</span> <span class="hl str">"Russian"</span> <span class="hl opt">==</span> Lang
-    <span class="hl slc">// Если результат условия является истинной,</span>
-    <span class="hl slc">// то выполняем следующие команды.</span>
-    <span class="hl kwb">Description</span><span class="hl opt">:</span> <span class="hl str">"Для всех пользователей"</span><span
-class="hl opt">;</span> <span class="hl kwb">Name</span><span class="hl opt">:</span> all
+<span class="hl com">// Если предыдущее условие ложно </span>
+<span class="hl com">// (строка "English" не равна значению переменной Lang),</span>
+<span class="hl com">// то выполняем проверку следующего условия.</span>
+<span class="hl com">// Сравниваем строку "Russian" со значением переменной Lang.</span>
+<span class="hl kwf">#elif</span> <span class="hl str">"Russian"</span> == Lang
+    <span class="hl com">// Если результат условия является истинной,</span>
+    <span class="hl com">// то выполняем следующие команды.</span>
+    <span class="hl kwb">Description</span>: <span class="hl str">"Для всех пользователей"</span>; <span class="hl kwb">Name</span>: all
 
-<span class="hl slc">// Если ни одно из условий не выполняется,</span>
+<span class="hl com">// Если ни одно из условий не выполняется,</span>
 <span class="hl kwf">#else</span>
-    <span class="hl slc">// то выдаем сообщение об ошибке.</span>
+    <span class="hl com">// то выдаем сообщение об ошибке.</span>
     <span class="hl kwf">#error</span> Unsupported language
 
-<span class="hl slc">// Конец условия if.</span>
+<span class="hl com">// Конец условия if.</span>
 <span class="hl kwf">#endif</span>
-</pre> </div>
+</pre>
+      </div>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

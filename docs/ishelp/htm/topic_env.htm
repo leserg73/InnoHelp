@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: #env</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: #env</h1>
+    <div class="topicbody">
+      <h2 class="heading sintax">Синтаксис</h2>
+      <div class="sintax1 notopmarginX">
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td class="cellleft" style="width: 140px;"><i>env-directive:</i></td>
+              <td class="cellright">(<b>env</b> | <b>%</b>)  &lt;ident&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 class="heading">Описание</h2>
+      <p>Заменяет директиву значением указанной переменной окружения.
+        Если переменная окружения не определена, она заменяется пустой строкой.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwa">[Setup]</span>
+<span class="hl kwb">AppName</span>=<span class="hl kwf">{#env</span> MyAppName<span class="hl kwf">}</span>
+<span class="hl kwb">AppVersion</span>=<span class="hl kwf">{#%</span>MyAppVersion<span class="hl kwf">}</span>
+</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><code><a href="topic_getenv.htm">GetEnv</a></code>
+      </p>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

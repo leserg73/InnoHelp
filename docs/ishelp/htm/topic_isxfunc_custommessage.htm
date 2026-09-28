@@ -22,19 +22,20 @@
       <p class="prototip1 notopmarginX">function
           CustomMessage(const MsgName: String): String;</p>
       <h2 class="heading">Описание</h2>
-      <p>Возвращает значение записи <tt>[CustomMessages]</tt> для указанного
-        имени сообщения <tt>MsgName</tt>. Если запись с указанным именем не
-        существует, будет создано исключение.</p>
+      <p>Возвращает значение записи
+        <tt><a href="topic_custommessagessection.htm">[CustomMessages]</a></tt>
+        для указанного имени сообщения <tt>MsgName</tt>. Если запись с указанным
+        именем не существует, будет создано исключение.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   S: String;
 <span class="hl kwb">begin</span>
   S := CustomMessage(<span class="hl str">'CreateDesktopIcon'</span>);
-  <span class="hl slc">// S = 'Создать ярлык на Рабочем столе'</span>
+  <span class="hl com">// S = 'Создать ярлык на Рабочем столе'</span>
 
   S := FmtMessage(CustomMessage(<span class="hl str">'UninstallProgram'</span>), [<span
 class="hl str">'My Program'</span>]);
-  <span class="hl slc">// S = 'Деинсталлировать My Program 1.0'</span>
+  <span class="hl com">// S = 'Деинсталлировать My Program 1.0'</span>
 <span class="hl kwb">end</span>;</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

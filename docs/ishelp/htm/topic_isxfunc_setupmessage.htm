@@ -25,13 +25,14 @@
       <p>Возвращает строку сообщения программы установки, соответствующее
         указанной константе <tt>ID</tt>.</p>
       <p>Класс <tt>TSetupMessageID</tt> объявлен как:</p>
-      <p>&nbsp;&nbsp;&nbsp;'msg' + имя сообщения. Например: <i>SetupMessage(msgSetupAppTitle)</i></p>
+      <p>&nbsp;&nbsp;&nbsp;<tt>msg</tt> + имя сообщения.
+        Например: <tt>SetupMessage(msgSetupAppTitle)</tt></p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   S: String;
 <span class="hl kwb">begin</span>
   S := SetupMessage(msgButtonNext);
-  <span class="hl slc">// Теперь переменная S содержит строку '&amp;Next &gt;'</span>
+  <span class="hl com">// Теперь переменная S содержит строку '&amp;Next &gt;'</span>
 <span class="hl kwb">end</span>;</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

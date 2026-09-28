@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ru" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
+    <title>Препроцессор Inno Setup: Format</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/shared.css" />
+    <script type="text/javascript" src="../js/topic.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/highlight.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){highlight();});
+    </script>
+  </head>
+  <body>
+    <h1 class="topicheading">Препроцессор Inno Setup: Format</h1>
+    <div class="topicbody">
+      <h2 class="heading prototip">Прототип функции</h2>
+      <p class="prototip1 notopmarginX null"><b>str</b> Format(<b>str</b> Format, ...)</p>
+      <h2 class="heading">Описание</h2>
+      <p>Форматирует строку <tt>Format</tt> с использованием последующего ряда
+        аргументов. Форматирование определяется строкой формата <tt>Format</tt>;
+        результаты возвращаются в виде строки. Каждый аргумент должен быть либо
+        целым числом, либо строкой.</p>
+      <p>Будет выдана ошибка компилятора, если указана неправильная строка формата,
+        передано слишком мало аргументов или если какие-либо аргументы имеют
+        неправильный тип.</p>
+      <p>Примечание: в отличие от функции <tt>Format</tt> в Pascal Scripting,
+        аргументы передаются напрямую, а не в массиве.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#define</span> AppName <span class="hl str">"My Program"</span>
+<span class="hl kwf">#define</span> AppVersion <span class="hl str">"1.0"</span>
+<span class="hl kwf">#define</span> OutputBaseFilename Format(<span class="hl str">'%s-%s-setup'</span>, AppName, AppVersion)
+<span class="hl com">// OutputBaseFilename = 'My Program-1.0-setup'</span>
+
+<span class="hl kwf">#define</span> Count <span class="hl num">10</span>
+<span class="hl kwf">#emit</span> Format(<span class="hl str">'Найдено %d файлов'</span>, Count)
+<span class="hl com">// emits 'Найдено 10 файлов'</span>
+</pre>
+      </div>
+    </div>
+  <script type="text/javascript" src="../js/theme_selector.js"></script>
+  </body>
+</html>

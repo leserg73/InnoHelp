@@ -26,7 +26,7 @@
         обращении к данной функции. Имена параметров, определённые в выражении
         функции, обрабатываются как обычные переменные.</p>
       <p>Формальный синтаксис объявления пользовательских функций обеспечивается
-        директивой <code><a href="topic_define.htm">define</a></code>.
+        директивой <tt><a href="topic_define.htm">define</a></tt>.
         В файле <a href="topic_builtinsiss.htm">ISPPBuiltins.iss</a>
         вы найдете множество примеров этих функций.</p>
       <p>Пожалуйста, обратите внимание, что при записи между именем функции и
@@ -34,8 +34,8 @@
       <p>Список формальных параметров может быть пустым; в этом случае функция
         не принимает никаких параметров. Если скобки отсутствуют, вместо
         пользовательской функции определяется переменная.</p>
-      <p>Фактические параметры, объявленные в качестве ссылок, должны быть
-        изменяемыми <b>l</b>-<i>значениями</i> (другими словами, это значение,
+      <p>Фактические параметры, объявленные в качестве ссылок (<tt>*</tt>), должны
+        быть изменяемыми <b>l</b>-<i>значениями</i> (другими словами, это значение,
         полученное при помощи одного или нескольких аргументов операции). Если
         выражение функции изменяет параметр передаваемый по ссылке, то
         переменная, которая передается в качестве этого параметра, также
@@ -46,6 +46,28 @@
         операторы последовательной оценки (comma), операторы присваивания
         (простые и сложные), а также условные операторы (<tt>?:</tt>) могут
         использоваться для построения более сложных функций.</p>
+      <h2 class="heading">Параметры функций и массивов</h2>
+      <p>Параметр, объявленный с идентификатором типа <tt>func</tt>, принимает
+        пользовательскую или встроенную функцию. Параметр, объявленный с
+        идентификатором типа <tt>array</tt>, принимает переменную-массив. При
+        вызове пользовательской функции, имеющей такой параметр, фактический
+        параметр необходимо указывать с помощью оператора <tt>@</tt>, за которым
+        следует имя передаваемого идентификатора. Например:</p>
+      <div class="examplebox">
+      <pre class="hl"><span class="hl kwf">#define</span> Apply(<span class="hl kwf">func</span> Callback, <span class="hl kwf">str</span> Value) Callback(Value)
+<span class="hl kwf">#define</span> Decorate(<span class="hl kwf">str</span> S) <span class="hl str">"("</span> + S + <span class="hl str">")"</span>
+<span class="hl kwf">#emit</span> Apply(@Decorate, <span class="hl str">"hello"</span>) <span class="hl com">; emits "(hello)"</span>
+</pre>
+      </div>
+      <p>И далее:</p>
+      <div class="examplebox">
+      <pre class="hl"><span class="hl kwf">#dim</span> MyData[<span class="hl num">3</span>] {<span class="hl num">10</span>, <span class="hl num">20</span>, <span class="hl num">30</span>}
+<span class="hl kwf">#define</span> Sum3(<span class="hl kwf">array</span> A) A[<span class="hl num">0</span>] + A[<span class="hl num">1</span>] + A[<span class="hl num">2</span>]
+<span class="hl kwf">#emit</span> Sum3(@MyData) <span class="hl com">; emits 60</span>
+<span class="hl kwf">#define</span> GetDim(<span class="hl kwf">array</span> A) <a href="topic_dimof.htm">DimOf</a>(A)
+<span class="hl kwf">#emit</span> GetDim(@MyData) <span class="hl com">; emits 3</span>
+</pre>
+      </div>
       <h2 class="heading">Локальный массив</h2>
       <p>В выражении функции допускается использовать дополнительный массив с
         именем <tt>Local</tt>. Его элементы могут быть задействованы в качестве
@@ -55,22 +77,14 @@
         самой функции, включая их сохранение.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod<span
-class="hl opt">(</span><span class="hl kwd">str</span> <span class="hl opt">*</span>S<span
-class="hl opt">)</span> <span class="hl com">/* объявление пользовательской функции */</span> \
-Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">] =</span> <span
-class="hl kwd">Copy</span><span class="hl opt">(</span>S<span class="hl opt">,</span> <span
-class="hl num">1</span><span class="hl opt">, (</span>Local<span class="hl opt">[</span><span
-class="hl num">0</span><span class="hl opt">] =</span> <span class="hl kwd">Pos</span><span
-class="hl opt">(</span><span class="hl str">"."</span><span class="hl opt">,</span> S<span
-class="hl opt">)) -</span> <span class="hl num">1</span><span class="hl opt">),</span> \
-S <span class="hl opt">=</span> <span class="hl kwd">Copy</span><span class="hl opt">(</span>S<span
-class="hl opt">,</span> Local<span class="hl opt">[</span><span class="hl num">0</span><span
-class="hl opt">] +</span> <span class="hl num">1</span><span class="hl opt">),</span> \
-Local<span class="hl opt">[</span><span class="hl num">1</span><span class="hl opt">]</span>
-</pre> </div>
+        <pre class="hl"><span class="hl kwf">#define</span> DeleteToFirstPeriod(<span class="hl kwf">str</span> *S) <span class="hl com">/* S передается по ссылке */</span> \
+Local[<span class="hl num">1</span>] = <a href="topic_copy.htm">Copy</a>(S, <span class="hl num">1</span>, (Local[<span class="hl num">0</span>] = <a href="topic_pos.htm">Pos</a>(<span class="hl str">"."</span>, S)) - <span class="hl num">1</span>), \
+S = Copy(S, Local[<span class="hl num">0</span>] + <span class="hl num">1</span>), \
+Local[<span class="hl num">1</span>]
+</pre>
+      </div>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_expressions.htm">Синтаксис выражений</a>.</p>
+      <p class="indent"><a href="topic_expressions.htm">Синтаксис выражений</a></p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

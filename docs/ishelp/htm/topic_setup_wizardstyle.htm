@@ -104,35 +104,39 @@
             активен пользовательский стиль (по умолчанию используется светлый или
             тёмный стиль системы).</li>
         </ul>
-        <p><b>Примеры:</b></p>
-        <p><tt>WizardStyle=modern dynamic</tt> – будет использоваться современный
-          внешний вид, а стиль будет автоматически адаптирован к настройкам
-          светлого или тёмного режима системы.</p>
-        <p><tt>WizardStyle=modern dark polar includetitlebar</tt> – будет
-          использоваться современный внешний вид, тёмная тема, предустановленный
-          стиль <tt>polar</tt>, включая заголовок и границы окна.</p>
+        <div class="examplebox">
+        <div class="exampleheader">Примеры:</div>
+        <pre class="nomargin"><span class="hl com">; Используется современный вид, а стиль автоматически настроится</span>
+<span class="hl com">; на светлый или тёмный режима системы</span>
+<span class="hl kwb">WizardStyle</span>=<span class="hl kwe">modern dynamic</span>
+
+<span class="hl com">; Используется современный вид, тёмная тема и встроенный стиль "polar",</span>
+<span class="hl com">; также стиль расширяется на заголовок и границы окна</span>
+<span class="hl kwb">WizardStyle</span>=<span class="hl kwe">modern dark polar includetitlebar</span>
+</pre>
+        </div>
       <h2 class="heading">Поведение в тёмном режиме</h2>
         <p>Если принудительно используется тёмный (<tt>dark</tt>) или динамический
           тёмный (<tt>dynamic</tt> с тёмным режимом Windows) стиль, происходят
           следующие изменения:</p>
         <ul>
           <li>Основной значок программы установки и удаления заменяется своей
-            тёмной версией, если он не был переопределён директивой <a 
-            href="topic_setup_setupiconfile.htm">SetupIconFile</a>.<br/>
+            тёмной версией, если он не был переопределён директивой <tt><a 
+            href="topic_setup_setupiconfile.htm">SetupIconFile</a></tt>.<br/>
             Примечание: Windows может временно отображать другой значок из-за
             кэширования значков, это нормально.</li>
           <li>Другие значки в программе установки и удаления также заменяются
             своими версиями для тёмного стиля. На них не влияет кэш значков
             Windows.</li>
           <li>Изображение мастера заменяется своей тёмной версией, если оно не
-            были переопределено с помощью директивы <a 
-            href="topic_setup_wizardimagefile.htm">WizardImageFile</a>.</li>
+            были переопределено с помощью директивы <tt><a 
+            href="topic_setup_wizardimagefile.htm">WizardImageFile</a></tt>.</li>
           <li>Цвет фона изображения мастера настраивается для тёмного стиля,
             если он не был переопределён пользовательскими значениями директивой
-            <a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a>.</li>
+            <tt><a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a></tt>.</li>
           <li>Малое изображение мастера заменяется своей тёмной версией, если
-            оно не были переопределено с помощью директивы <a 
-            href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a>.</li>
+            оно не были переопределено с помощью директивы <tt><a 
+            href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a></tt>.</li>
           <li>Все цвета в файлах RTF удаляются и заменяются цветами тёмного стиля.</li>
           <li>Если <tt>includetitlebar</tt> не используется: заголовок и границы
             становятся тёмными, чтобы соответствовать внешнему виду системы,
@@ -148,18 +152,22 @@
           <li>Для указания изображений и цветов, используемых специально для
             динамического тёмного стиля, доступны следующие директивы:
           <ul>
-            <li><a href="topic_setup_wizardbackimagefiledynamicdark.htm">WizardBackImageFileDynamicDark</a>
-              и <a href="topic_setup_wizardbackcolordynamicdark.htm">WizardBackColorDynamicDark</a>.</li>
-            <li><a href="topic_setup_wizardimagefiledynamicdark.htm">WizardImageFileDynamicDark</a>
-              и <a href="topic_setup_wizardimagebackcolordynamicdark.htm">WizardImageBackColorDynamicDark</a>.</li>
-            <li><a href="topic_setup_wizardsmallimagefiledynamicdark.htm">WizardSmallImageFileDynamicDark</a>
-              и <a href="topic_setup_wizardsmallimagebackcolordynamicdark.htm">WizardSmallImageBackColorDynamicDark</a>.</li>
-            <li><a href="topic_setup_wizardstylefiledynamicdark.htm">WizardStyleFileDynamicDark</a></li>
+            <li><tt><a href="topic_setup_wizardbackimagefiledynamicdark.htm">WizardBackImageFileDynamicDark</a></tt>
+              и <tt><a href="topic_setup_wizardbackcolordynamicdark.htm">WizardBackColorDynamicDark</a></tt>.</li>
+            <li><tt><a href="topic_setup_wizardimagefiledynamicdark.htm">WizardImageFileDynamicDark</a></tt>
+              и <tt><a href="topic_setup_wizardimagebackcolordynamicdark.htm">WizardImageBackColorDynamicDark</a></tt>.</li>
+            <li><tt><a href="topic_setup_wizardsmallimagefiledynamicdark.htm">WizardSmallImageFileDynamicDark</a></tt>
+              и <tt><a href="topic_setup_wizardsmallimagebackcolordynamicdark.htm">WizardSmallImageBackColorDynamicDark</a></tt>.</li>
+            <li><tt><a href="topic_setup_wizardstylefiledynamicdark.htm">WizardStyleFileDynamicDark</a></tt>.</li>
           </ul>
-          Стандартные директивы <tt>WizardBackImageFile</tt>, <tt>WizardBackColor</tt>,
-          <tt>WizardImageFile</tt>, <tt>WizardImageBackColor</tt>, <tt>WizardSmallImageFile</tt>,
-          <tt>WizardSmallImageBackColor</tt> и <tt>WizardStyleFile</tt> используются
-          для настройки динамического светлого стиля.<br /><br />
+          Стандартные директивы <tt><a href="topic_setup_wizardbackimagefile.htm">WizardBackImageFile</a></tt>,
+          <tt><a href="topic_setup_wizardbackcolor.htm">WizardBackColor</a></tt>,
+          <tt><a href="topic_setup_wizardimagefile.htm">WizardImageFile</a></tt>,
+          <tt><a href="topic_setup_wizardimagebackcolor.htm">WizardImageBackColor</a></tt>,
+          <tt><a href="topic_setup_wizardsmallimagefile.htm">WizardSmallImageFile</a></tt>,
+          <tt><a href="topic_setup_wizardsmallimagebackcolor.htm">WizardSmallImageBackColor</a></tt>
+          и <tt><a href="topic_setup_wizardstylefile.htm">WizardStyleFile</a></tt>
+          используются для настройки динамического светлого стиля.<br /><br />
           Примечание: принудительная установка тёмного стиля (<tt>dark</tt>) 
           <i>НЕ</i> используется настройки <tt>DynamicDark</tt>, а использует
           стандартные настройки.</li>
@@ -167,7 +175,7 @@
       <h2 class="heading">Другие особенности</h2>
         <ul>
           <li>Стиль по умолчанию можно настроить, указав файл VCL стиля с помощью
-            директивы <a href="topic_setup_wizardstylefile.htm">WizardStyleFile</a>.
+            директивы <tt><a href="topic_setup_wizardstylefile.htm">WizardStyleFile</a></tt>.
             Когда активен принудительный светлый (<tt>light</tt>) или динамический
             светлый (<tt>dynamic</tt> со светлым режимом Windows) стиль, стилем по
             умолчанию будет системный светлый стиль. В противном случае стилем по
@@ -175,7 +183,7 @@
           <li>Пользовательские стили (включая предустановленный тёмный стиль)
             <i>НЕ</i> активируются, если в системе пользователя используется
             высококонтрастная тема или используется параметр командной строки
-            '<code>/NOSTYLE</code>'.</li>
+            <tt>/NOSTYLE</tt>.</li>
           <li>Когда активен пользовательский стиль (включая предустановленный
             тёмный стиль), происходит три дополнительных события. Во-первых, все
             текстовые надписи, за исключением той, которая связана с сообщением
@@ -183,8 +191,8 @@
             Во-вторых, программа установки и удаления использует собственную
             реализацию окон сообщений Windows и диалоговых окон задач. В-третьих,
             свойства цвета, установленные с помощью программирования в секции
-            <tt>[Code]</tt>, обычно игнорируются, поскольку приоритет имеют цвета
-            стиля.</li>
+            <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>, обычно
+            игнорируются, поскольку приоритет имеют цвета стиля.</li>
           <li>Включение принудительного тёмного стиля (<tt>dark</tt>) увеличивает
             размер файла установки примерно на 220 КБ. Включение динамического
             тёмного стиля (<tt>dynamic</tt>) добавляет ещё примерно 75 КБ.
@@ -193,8 +201,8 @@
             примерно 120 КБ.</li>
           <li>Сообщения, отображаемые так называемым "загрузчиком", никогда не
             будут стилизованы. Обычно такие сообщения не отображаются, если
-            только не был включён запрос на запуск с помощью директивы <a 
-            href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a>.</li>
+            только не был включён запрос на запуск с помощью директивы <tt><a 
+            href="topic_setup_disablestartupprompt.htm">DisableStartupPrompt</a></tt>.</li>
         </ul>
       <h2 class="heading">Примеры скриншотов</h2>
         <p><tt>classic</tt><br/><br/><img src="../images/wizardstyle-classic.png" /></p>

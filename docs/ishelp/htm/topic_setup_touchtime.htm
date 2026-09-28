@@ -40,15 +40,17 @@
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>Определяет время, используемое в отметке даты/времени
-        для файлов секции <tt>[Files]</tt>, у которых указан флаг <tt>touch</tt>.</p>
-      <p>Значение <tt>current</tt> устанавливает текущее
-        системное время при компиляции программы установки. Значение <tt>none</tt>
-        оставляет время без изменений. В противном случае значение директивы <tt>TouchTime</tt>
+      <p>Определяет время, используемое в отметке даты/времени для файлов секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>, у которых указан
+        флаг <tt>touch</tt>.</p>
+      <p>Значение <tt>current</tt> устанавливает текущее системное время при
+        компиляции программы установки. Значение <tt>none</tt> оставляет время
+        без изменений. В противном случае значение директивы <tt>TouchTime</tt>
         интерпретируется явным образом согласно формата <tt><i>HH</i>:<i>MM</i></tt>
-        или <tt><i>HH</i>:<i>MM</i>:<i>SS</i></tt>. Если для <a href="topic_setup_timestampsinutc.htm">TimeStampsInUTC</a>
-        указано значение <tt>yes</tt>, время устанавливается в соответствии со
-        стандартом UTC.</p>
+        или <tt><i>HH</i>:<i>MM</i>:<i>SS</i></tt>. Если для <tt><a 
+        href="topic_setup_timestampsinutc.htm">TimeStampsInUTC</a></tt> указано
+        значение <tt>yes</tt>, время устанавливается в соответствии со стандартом
+        UTC.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">TouchTime</span>=<span class="hl num">13</span>:<span

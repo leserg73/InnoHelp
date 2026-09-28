@@ -31,22 +31,18 @@
       </div>
       <h2 class="heading">Описание</h2>
       <p>Директива указывает компилятору <i>Inno Setup</i> выдавать сообщение
-        об ошибке. Текст сообщения в параметрах директивы не обрабатывается и
-        подаётся в неизменном виде, поэтому рекомендуется использовать эту
-        директиву вместо директивы <code><a href="topic_pragma.htm">pragma</a></code>,
-        чтобы избежать возможных синтаксических ошибок, которые могут скрыть
-        реальные ошибки сценария.</p>
+        об ошибке. В отличие от директивы <tt>pragma error</tt> текст в директиве
+        <tt>error</tt> не подвергается синтаксическому анализу, поэтому вместо
+        директивы <tt><a href="topic_pragma.htm">pragma</a></tt> рекомендуется
+        использовать именно эту директиву, чтобы избежать возможных, способных
+        скрыть те реальные ошибки, о которых должен был сообщить ваш сценарий.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">; Если значение переменной VER меньше кодированного значения версии 5.4.2</span>
-<span class="hl kwf">#if</span> <a href="topic_predefinedvars.htm">VER</a> <span
-class="hl opt">&lt;</span> <span class="hl kwd">EncodeVer</span><span class="hl opt">(</span><span
-class="hl num">5</span><span class="hl opt">,</span><span class="hl num">4</span><span
-class="hl opt">,</span><span class="hl num">2</span><span class="hl opt">)</span>
-<span class="hl slc">; То выдается сообщение об ошибке</span>
-<span class="hl kwf">#error</span> Для компиляции этого сценария требуется Inno Setup <span
-class="hl num">5.4.2</span><span class="hl opt"> и выше.</span>
-<span class="hl slc">; Конец условия if.</span>
+        <pre class="hl"><span class="hl com">; Если значение переменной VER меньше кодированного значения версии 5.4.2</span>
+<span class="hl kwf">#if</span> <a href="topic_predefinedvars.htm">VER</a> &lt; EncodeVer(<span class="hl num">5</span>,<span class="hl num">4</span>,<span class="hl num">2</span>)
+  <span class="hl com">; То выдается сообщение об ошибке</span>
+  <span class="hl kwf">#error</span> <span class="hl str">Для компиляции этого сценария требуется Inno Setup 5.4.2 и выше</span>
+<span class="hl com">; Конец условия if.</span>
 <span class="hl kwf">#endif</span>
 </pre>
       </div>
@@ -55,7 +51,7 @@ class="hl num">5.4.2</span><span class="hl opt"> и выше.</span>
       <br />
       <code><a href="topic_if.htm">if</a></code>
       <br />
-      <a href="topic_error2.htm">Error</a>
+      <code><a href="topic_error2.htm">Error</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

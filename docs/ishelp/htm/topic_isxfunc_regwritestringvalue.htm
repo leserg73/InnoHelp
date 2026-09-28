@@ -23,12 +23,12 @@
           RegWriteStringValue(const RootKey: HKEY; const SubKeyName,
           ValueName, Data: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Записывает в реестр указанное значение с типом REG_SZ. В случае успеха
-        функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.</p>
+      <p>Записывает в реестр указанное значение с типом <tt>REG_SZ</tt>. В случае
+        успеха функция возвращает значение <tt>True</tt>, иначе — <tt>False</tt>.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Если значение уже существует и имеет тип REG_EXPAND_SZ, новое значение
-        также будет иметь тип REG_EXPAND_SZ. В противном случае будет создано
-        значение с типом REG_SZ.</p>
+      <p>Если значение уже существует и имеет тип <tt>REG_EXPAND_SZ</tt>, новое
+        значение также будет иметь тип <tt>REG_EXPAND_SZ</tt>. В противном случае
+        будет создано значение с типом <tt>REG_SZ</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   RegWriteStringValue(<span class="hl kwe">HKEY_AUTO</span>, <span class="hl str">'Software\My Company\My Program'</span>,

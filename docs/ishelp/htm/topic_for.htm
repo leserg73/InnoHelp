@@ -32,7 +32,7 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Используется для создания многократного выполнения какого-либо участка
+      <p>Используется для создания многократного выполнения части
         кода, т.е. организации циклов. Директива <tt>for</tt>
         состоит из четырёх выражений. <i>Первое выражение</i> (<tt>expr1</tt>)
         — это переменная, которая отвечает за истинность условия. <i>Второе
@@ -54,19 +54,17 @@
       <p>&nbsp;&nbsp;5. Процесс повторяется с шага 2.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">// Вызов пользовательской процедуры AddFile 200 раз</span>
-<span class="hl slc">// Объявляем переменную i с начальным значением 200</span>
-<span class="hl slc">// Сравниваем значение переменной i с 0</span>
-<span class="hl slc">// Уменьшаем значение переменной i на единицу после каждой итерации</span>
-<span class="hl kwf">#for</span> {i <span class="hl opt">=</span> <span class="hl num">200</span><span
-class="hl opt">;</span> i <span class="hl opt">&gt;</span> <span class="hl num">0</span><span
-class="hl opt">;</span> i<span class="hl opt">--</span>} AddFile
+        <pre class="hl"><span class="hl com">// Вызов пользовательской процедуры AddFile 200 раз</span>
+<span class="hl com">// Объявляем переменную i с начальным значением 200</span>
+<span class="hl com">// Сравниваем значение переменной i с 0</span>
+<span class="hl com">// Уменьшаем значение переменной i на единицу после каждой итерации</span>
+<span class="hl kwf">#for</span> {i = <span class="hl num">200</span><span class="hl opt">;</span> i &gt; <span class="hl num">0</span><span class="hl opt">;</span> i--} AddFile
 </pre>
       </div>
       <h2 class="heading">Другие примеры</h2>
-      <p class="indent"><a href="topic_findfirst.htm">FindFirst</a>
+      <p class="indent"><code><a href="topic_findfirst.htm">FindFirst</a></code>
       <br />
-      <a href="topic_fileread.htm">FileRead</a>
+      <code><a href="topic_fileread.htm">FileRead</a></code>
       </p>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><code><a href="topic_sub.htm">sub</a></code>

@@ -24,24 +24,24 @@
       <h2 class="heading">Описание</h2>
       <p>Получает информацию о первом файле, имя которого указано в параметре <tt>FileName</tt>.
         В случае успеха возвращает значение <tt>True</tt>.</p>
-      <p>Объявление структуры <code>TFindRec</code>:</p>
-      <pre class="indent">  TFindRec = record
-    Name: String;               // имя найденного файла (без пути)
-    Attributes: Longword;       // атрибуты файла
-    SizeHigh: Longword;         // размер файла, более 32 бит
-    SizeLow: Longword;          // размер файла, менее 32 бит
-    CreationTime: TFileTime;    // время создания файла
-    LastAccessTime: TFileTime;  // время последнего доступа к файлу
-    LastWriteTime: TFileTime;   // время последнего изменения файла
-    AlternateName: String;      // короткое имя файла (если нет, пустая строка)
-    FindHandle: THandle;        // дескриптор поиска
-  end;
+      <p>Объявление структуры <tt>TFindRec</tt>:</p>
+      <pre class="indent">  TFindRec = <span class="hl kwb">record</span>
+    <span class="hl kwb">Name</span>: <span class="hl kwb">String</span>;               <span class="hl com">// имя найденного файла (без пути)</span>
+    Attributes: Longword;       <span class="hl com">// атрибуты файла</span>
+    SizeHigh: Longword;         <span class="hl com">// размер файла, более 32 бит</span>
+    SizeLow: Longword;          <span class="hl com">// размер файла, менее 32 бит</span>
+    CreationTime: TFileTime;    <span class="hl com">// время создания файла</span>
+    LastAccessTime: TFileTime;  <span class="hl com">// время последнего доступа к файлу</span>
+    LastWriteTime: TFileTime;   <span class="hl com">// время последнего изменения файла</span>
+    AlternateName: <span class="hl kwb">String</span>;      <span class="hl com">// короткое имя файла (если нет, пустая строка)</span>
+    FindHandle: THandle;        <span class="hl com">// дескриптор поиска</span>
+  <span class="hl kwb">end</span>;
 </pre>
-      <p>Объявление структуры <code>TFileTime</code>:</p>
-      <pre class="indent">  TFileTime = record
+      <p>Объявление структуры <tt>TFileTime</tt>:</p>
+      <pre class="indent">  TFileTime = <span class="hl kwb">record</span>
     dwLowDateTime: DWORD;
     dwHighDateTime: DWORD;
-  end;
+  <span class="hl kwb">end</span>;
 </pre>
       <p>Допустимые атрибуты файла следующие:</p>
       <pre class="indent">  FILE_ATTRIBUTE_READONLY
@@ -61,9 +61,9 @@
 </pre>
       <h2 class="heading">Комментарии</h2>
       <p>Если функция <tt>FindFirst</tt> возвращает значение <tt>True</tt>,
-        используйте вызов функции <a href="topic_isxfunc_findnext.htm">FindNext</a>,
+        используйте вызов функции <tt><a href="topic_isxfunc_findnext.htm">FindNext</a></tt>,
         чтобы продолжить поиск. После завершения поиска обязательно вызовите
-        функцию <a href="topic_isxfunc_findclose.htm">FindClose</a>, чтобы
+        функцию <tt><a href="topic_isxfunc_findclose.htm">FindClose</a></tt>, чтобы
         освободить системные ресурсы, занятые процессом поиска.</p>
       <h2 class="heading">Пример</h2>
       <p>В примере ниже подсчитывается количество файлов в системном каталоге
@@ -77,7 +77,7 @@
 class="hl kwc">{sys}</span><span class="hl str">\*'</span>), FindRec) <span class="hl kwb">then begin</span>
     <span class="hl kwb">try</span>
       <span class="hl kwb">repeat</span>
-        <span class="hl slc">// Исключаем из подсчёта каталоги</span>
+        <span class="hl com">// Исключаем из подсчёта каталоги</span>
         <span class="hl kwb">if</span> FindRec.Attributes <span class="hl kwb">and</span> FILE_ATTRIBUTE_DIRECTORY = <span
 class="hl num">0</span> <span class="hl kwb">then</span>
           FilesFound := FilesFound + <span class="hl num">1</span>;
@@ -91,8 +91,10 @@ class="hl str">' файлов.'</span>,
     <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_findnext.htm">FindNext</a> <br />
-        <a href="topic_isxfunc_findclose.htm">FindClose</a> </p>
+      <p class="indent"><code><a href="topic_isxfunc_findnext.htm">FindNext</a></code>
+        <br />
+        <code><a href="topic_isxfunc_findclose.htm">FindClose</a></code>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

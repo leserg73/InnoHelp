@@ -19,155 +19,155 @@
     <h1 class="topicheading">Препроцессор Inno Setup: #define</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
-      <div class="sintax1 notopmarginX">
+       <div class="sintax1 notopmarginX">
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>define-directive:</i></td>
-              <td class="cellright">&lt;variable-definition&gt;</td>
+              <td style="width: 140px;" class="cellleft"><i>define-directive:</i> </td>
+              <td class="cellright"> &lt;variable-definition&gt; </td>
             </tr>
             <tr>
               <td style="width: 140px;" class="cellleft"></td>
-              <td class="cellright">&lt;macro-definition&gt;</td>
+              <td class="cellright"> &lt;function-definition&gt; </td>
             </tr>
             <tr>
               <td style="width: 140px;" class="cellleft"></td>
-              <td class="cellright">&lt;default-visibility-set&gt;</td>
+              <td class="cellright"> &lt;default-visibility-set&gt; </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>variable-definition:</i>
-              </td>
-              <td class="cellright">(<b>define</b> | <b>:</b>) [<b>private</b>
-                | <b>protected</b> | <b>public</b>] &lt;ident&gt; [<b>[</b>
-                &lt;expr&gt; <b>]</b>] [[<b>=</b>] &lt;expr&gt;]</td>
+              <td style="width: 140px;" class="cellleft"> <i>variable-definition:</i> </td>
+              <td class="cellright"> (<b>define</b> | <b>:</b>) [<b>private</b> | <b>protected</b> | <b>public</b>] &lt;ident&gt; [<b>[</b> &lt;expr&gt; <b>]</b>] [[<b>=</b>] &lt;expr&gt;] </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>macro-definition:</i>
-              </td>
-              <td class="cellright">(<b>define</b> | <b>:</b>) [<b>private</b>
-                | <b>protected</b> | <b>public</b>] &lt;ident&gt; <b>(</b>
-                [&lt;formal-macro-args&gt;] <b>)</b> &lt;expr&gt;</td>
+              <td style="width: 140px;" class="cellleft"> <i>function-definition:</i> </td>
+              <td class="cellright"> (<b>define</b> | <b>:</b>) [<b>private</b> | <b>protected</b> | <b>public</b>] &lt;ident&gt; <b>(</b> [&lt;formal-function-args&gt;] <b>)</b> &lt;expr&gt; </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>default-visibility-set:</i>
-              </td>
-              <td class="cellright">(<b>define</b> | <b>:</b>) <b>private</b>
-                | <b>protected</b> | <b>public</b> </td>
+              <td style="width: 140px;" class="cellleft"> <i>default-visibility-set:</i> </td>
+              <td class="cellright"> (<b>define</b> | <b>:</b>) <b>private</b> | <b>protected</b> | <b>public</b> </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>formal-macro-args:</i>
-              </td>
-              <td class="cellright">&lt;formal-macro-arg&gt; [<b>,</b>
-                &lt;formal-macro-arg&gt;]...</td>
+              <td style="width: 140px;" class="cellleft"> <i>formal-function-args:</i> </td>
+              <td class="cellright"> &lt;formal-function-arg&gt; [<b>,</b> &lt;formal-function-arg&gt;]... </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>formal-macro-arg:</i>
-              </td>
-              <td class="cellright"> &lt;by-val-arg&gt; | &lt;by-ref-arg&gt;</td>
+              <td style="width: 140px;" class="cellleft"> <i>formal-function-arg:</i> </td>
+              <td class="cellright"> &lt;by-val-arg&gt; | &lt;by-ref-arg&gt; </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>by-val-arg:</i> </td>
-              <td class="cellright"> [&lt;type-id&gt;] &lt;ident&gt; [<b>=</b>
-                &lt;expr&gt;]</td>
+              <td style="width: 140px;" class="cellleft"> <i>by-val-arg:</i> </td>
+              <td class="cellright"> [&lt;value-type-id&gt;] &lt;ident&gt; [<b>=</b> &lt;expr&gt;] </td>
+            </tr>
+            <tr>
+              <td style="width: 140px;" class="cellleft"></td>
+              <td class="cellright"> &lt;func-or-array-type-id&gt;  &lt;ident&gt; </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>by-ref-arg:</i> </td>
-              <td class="cellright"> [&lt;type-id&gt;] <b>*</b> &lt;ident&gt;</td>
+              <td style="width: 140px;" class="cellleft"> <i>by-ref-arg:</i> </td>
+              <td class="cellright"> [&lt;value-type-id&gt;] <b>*</b> &lt;ident&gt; </td>
             </tr>
           </tbody>
         </table>
         <table class="sinfix1">
           <tbody>
             <tr>
-              <td style="width: 140px;" class="cellleft"><i>type-id:</i> </td>
-              <td class="cellright"> <b>any</b> | <b>int</b> | <b>str</b> | <b>func</b>
-              </td>
+              <td style="width: 140px;" class="cellleft"> <i>value-type-id:</i> </td>
+              <td class="cellright"> <b>any</b> | <b>int</b> | <b>str</b> </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="sinfix1">
+          <tbody>
+            <tr>
+              <td style="width: 140px;" class="cellleft"> <i>func-or-array-type-id:</i> </td>
+              <td class="cellright"> <b>func</b>  |  <b>array</b> </td>
             </tr>
           </tbody>
         </table>
       </div>
       <h2 class="heading">Описание</h2>
       <p>Первый элемент синтаксического выражения ("variable-definition")
-        определяет переменную с именем <tt style="font-style: italic;">ident</tt>
-        (сокр. от <i>identifier</i> - идентификатор), или принимает значение
-        элемента массива с именем <tt style="font-style: italic;">ident</tt>
-        (для объявления переменной массива используйте директиву <code><a
-
-            href="topic_dim.htm">dim</a></code> вместо директивы <tt>define</tt>).
-        Область видимости переменной задаётся одним из ключевых слов <tt
-
-          style="font-style: italic;">public</tt>, <i> <tt>protected</tt></i>
-        или <tt style="font-style: italic;">private</tt>, в противном
-        случае <a href="topic_visibility.htm">область
-          видимости</a> переменной принимается по умолчанию.</p>
-      <p>Второй элемент синтаксического выражения ("macro-definition")
+        определяет переменную с именем <tt>ident</tt> (сокр. от <i>identifier</i>
+        – идентификатор), или принимает значение элемента массива с именем
+        <tt>ident</tt> (для объявления переменной массива используйте директиву
+        <tt><a href="topic_dim.htm">dim</a></tt> вместо директивы <tt>define</tt>).
+        Область видимости переменной задаётся одним из ключевых слов <tt>public</tt>,
+        <tt>protected</tt> или <tt>private</tt>, в противном случае
+        <a href="topic_visibility.htm">область видимости</a> переменной
+        принимается по умолчанию.</p>
+      <p>Второй элемент синтаксического выражения ("function-definition")
         определяет <a href="topic_macros.htm">пользовательскую функцию</a> с
-        именем <tt style="font-style: italic;">ident</tt>. При записи
-        пользовательской функции не должно быть пробела между именем функции и
-        открывающей круглой скобкой, иначе инструкция будет обработана как
-        объявление переменной.</p>
+        именем <tt>ident</tt>. Примечание:</p>
+      <ul>
+        <li>Между именем и открывающей скобкой не должно быть пробела, иначе это
+          будет воспринято как объявление переменной.</li>
+        <li>Перед формальными параметрами может стоять идентификатор типа
+          (type-id): <tt>any</tt>, <tt>int</tt>, <tt>str</tt>, <tt>func</tt> или
+          <tt>array</tt>.</li>
+        <li>Значения по умолчанию могут быть указаны только для параметров без
+          type-id или с type-id: <tt>any</tt>, <tt>int</tt> или <tt>str</tt>.</li>
+        <li>Идентификатор типа (type-id) <tt>func</tt> объявляет, что параметр
+           принимает пользовательскую или встроенную функцию, а type-id <tt>array</tt>
+           объявляет, что он принимает переменную массива. При вызове
+           пользовательской функции фактический параметр для параметра <tt>func</tt>
+           или <tt>array</tt> должен быть указан с помощью оператора <tt>@</tt>
+           (например, <tt>@MyFunc</tt> or <tt>@MyArray</tt>). См. также раздел
+           справки "<a href="topic_macros.htm">Пользовательские функции</a>".</li>
+      </ul>
       <p>Третий элемент синтаксического выражения ("default-visibility-set")
-        устанавливает <a href="topic_visibility.htm">область
-          видимости</a> по умолчанию для всех последующих переменных и
-        пользовательских функций в данном файле сценария. Если область видимости
-        не объявляется, то по умолчанию принимается область видимости <tt style="font-style: italic;">private</tt>.</p>
+        устанавливает <a href="topic_visibility.htm">область видимости</a> по
+        умолчанию для всех последующих переменных и пользовательских функций в
+        данном файле сценария. Если область видимости не объявляется, то по
+        умолчанию принимается область видимости <tt>private</tt>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppName</span>
-<span class="hl slc">; и присваиваем ей значение "My Program".</span>
-<span class="hl kwf">#define</span> MyAppName "My Program"
+        <pre class="hl"><span class="hl com">; Объявляем переменную с именем MyAppName</span>
+<span class="hl com">; и присваиваем ей значение "My Program".</span>
+<span class="hl kwf">#define</span> MyAppName <span class="hl str">"My Program"</span>
 
-<span class="hl slc">; Объявляем переменную с именем MyAppExe</span>
-<span class="hl slc">; и формируем имя исполняемого файла.</span>
-<span class="hl kwf">#define</span> MyAppExe MyAppName + ".exe"
+<span class="hl com">; Объявляем переменную с именем MyAppExe</span>
+<span class="hl com">; и формируем имя исполняемого файла.</span>
+<span class="hl kwf">#define</span> MyAppExe MyAppName + <span class="hl str">".exe"</span>
 
-<span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
-<span class="hl slc">; которое вернёт функция GetFileVersion() (получение версии файла MyAppExe).</span>
-<span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a><span
+<span class="hl com">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
+<span class="hl com">; которое вернёт функция GetFileVersion() (получение версии файла MyAppExe).</span>
+<span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(MyAppExe)
 
-class="hl opt">(MyAppExe)</span>
+<span class="hl com">; Объявляем массив с именем MyArray и</span>
+<span class="hl com">; индексу массива 0 присваиваем значение 15.</span>
+<span class="hl kwf">#define</span> MyArray[<span class="hl num">0</span>] <span class="hl num">15</span>
 
-<span class="hl slc">; Объявляем массив с именем MyArray и</span>
-<span class="hl slc">; индексу массива 0 присваиваем значение 15.</span>
-<span class="hl kwf">#define</span> MyArray<span class="hl opt">[</span><span class="hl num">0</span><span
-
-class="hl opt">]</span> <span class="hl num">15</span>
-
-<span class="hl slc">; Объявляем переменную со значением арифметического действия - умножение.</span>
-<span class="hl slc">; А и В целочисленный тип данных.</span>
-<span class="hl kwf">#define</span> Multiply<span class="hl opt">(</span><span class="hl kwd">int</span> A<span
-
-class="hl opt">,</span> <span class="hl kwd">int</span> B <span class="hl opt">=</span> <span
-
-class="hl num">10</span><span class="hl opt">)</span> A <span class="hl opt">*</span> B
+<span class="hl com">; Объявляем переменную со значением арифметического действия - умножение.</span>
+<span class="hl com">; А и В целочисленный тип данных.</span>
+<span class="hl kwf">#define</span> Multiply(<span class="hl kwf">int</span> A, <span class="hl kwf">int</span> B = <span class="hl num">10</span>) A * B
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>

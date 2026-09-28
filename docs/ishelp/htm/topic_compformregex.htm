@@ -35,13 +35,13 @@
       <ul>
       <li><a href="https://cplusplus.com/reference/regex/ECMAScript/"
          target="_blank" title="https://cplusplus.com/reference/regex/ECMAScript/">https://cplusplus.com/reference/regex/ECMAScript/</a><img
-         class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+         class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
       <li><a href="https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp"
          target="_blank" title="https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp">https://learn.microsoft.com/en-us/cpp/standard-library/regular-expressions-cpp</a><img
-         class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+         class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
       <li><a href="https://regex101.com/r/fYE7S3/1" target="_blank"
          title="https://regex101.com/r/fYE7S3/1">https://regex101.com/r/fYE7S3/1</a><img
-         class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
+         class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /></li>
       </ul>
       <p>При замене с помощью регулярных выражений строка замены может содержать следующие специальные управляющие символы:</p>
       <table style="margin-top: 1.0em" border="1">
@@ -50,27 +50,27 @@
         <th>Толкование</th>
       </tr>
       <tr>
-        <td>от $1 до $9 или от \1 до \9</td>
+        <td>от <tt>$1</tt> до <tt>$9</tt> или от <tt>\1</tt> до <tt>\9</tt></td>
         <td>Содержимое соответствующей группы захвата</td>
       </tr>
       <tr>
-        <td>$&amp; или \0</td>
+        <td><tt>$&amp;</tt> или <tt>\0</tt></td>
         <td>Полное совпадение содержимого</td>
       </tr>
       <tr>
-        <td>$$</td>
-        <td>Литеральный символ '$'</td>
+        <td><tt>$$</tt></td>
+        <td>Литеральный символ <tt>$</tt></td>
       </tr>
       <tr>
-        <td>\\, \a, \b, \f, \r, \n, \t, \v</td>
-        <td>Литералы '\', '\a', '\b' и т.д.</td>
+        <td><tt>\\</tt>, <tt>\a</tt>, <tt>\b</tt>, <tt>\f</tt>, <tt>\r</tt>, <tt>\n</tt>, <tt>\t</tt>, <tt>\v</tt></td>
+        <td>Литералы <tt>\</tt>, <tt>\a</tt>, <tt>\b</tt> и т.д.</td>
       </tr>
       </table>
       <p>Например, если искомая строка содержит выражение <tt>(Ex)(ample)</tt>,
         а строка замены <tt>$2$1</tt>, то при выполнении операции замены весь
         текст "Examples" в сценарии изменится на "<tt>ampleExs</tt>". Или же,
-        если строка замены содержит выражение <tt>$1\r\n$2</tt>, то между "Ex"
-        и "amples" будет вставлена новая строка.
+        если строка замены содержит выражение <tt>$1\r\n$2</tt>, то между <tt>Ex</tt>
+        и <tt>amples</tt> будет вставлена новая строка.
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

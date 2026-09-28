@@ -22,24 +22,28 @@
       <p class="prototip1 notopmarginX null"><b>int</b> SaveStringToFile(<b>str</b> Filename, <b>str</b> S, <b>int</b>? Append, <b>int</b>? UTF8)</p>
       <h2 class="heading">Описание</h2>
       <p>Выполняет запись заданной строки в указанный файл. Если параметр <tt>Append</tt>
-        имеет ненулевое значение или опущен, а указанный файл уже
-        существует, строка будет добавлена вместо перезаписи. Если параметр <tt>UTF8</tt>
-        имеет ненулевое значение или опущен, строка будет записана в
-        кодировке UTF8 с меткой BOM вместо ASCII. В случае успеха функция возвращает ненулевое
-        значение, иначе ноль.</p>
+        имеет ненулевое значение или опущен, а указанный файл уже существует,
+        строка будет добавлена вместо перезаписи. Если параметр <tt>UTF8</tt>
+        имеет ненулевое значение или опущен, строка будет записана в кодировке
+        UTF8 с меткой BOM вместо ASCII. В случае успеха возвращает значение,
+        отличное от нуля, а если файл не удалось открыть для записи — возвращает
+        ноль.</p>
+      <p>Если после открытия файла произойдет сбой при записи в него, будет
+        выведена ошибка компилятора.</p>
       <p>Эта функция не вставляет автоматически символ переноса строки до и после
         заданной строки. Если параметр <tt>Append</tt> имеет ненулевое значение
         или опущен, а существующий файл не заканчивается символом переноса строки,
         функция фактически добавит строку к последней строке файла. Во избежание
-        этого можно вставить символы переноса строки (используя <code><a href="topic_predefinedvars.htm">NewLine</a></code>)
-        до и/или после указанной строки.</p>
+        этого можно вставить символы переноса строки (используя
+        <tt><a href="topic_predefinedvars.htm">NewLine</a></tt>) до и/или после
+        указанной строки.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveStringToFile</span><span
-class="hl opt">(</span><span class="hl str">'c:\filename.txt'</span><span class="hl opt">,</span> NewLine <span
-class="hl opt">+</span> <span class="hl str">'the string'</span> <span class="hl opt">+</span> NewLine<span
-class="hl opt">)</span>
-</pre> </div>
+        <pre class="hl"><span class="hl kwf">#call</span> SaveStringToFile(<span class="hl str">'c:\filename.txt'</span>, NewLine + <span class="hl str">'the string'</span> + NewLine)</pre>
+      </div>
+      <h2 class="heading">См. также:</h2>
+      <p class="indent"><code><a href="topic_savetofile.htm">SaveToFile</a></code>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

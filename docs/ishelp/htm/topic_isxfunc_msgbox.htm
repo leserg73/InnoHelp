@@ -27,10 +27,9 @@
         &nbsp;&nbsp;&nbsp;&nbsp;<tt>Text</tt> — определяет текст сообщения;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;<tt>Typ</tt> — определяет значок, отображаемый в диалоге сообщения;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;<tt>Buttons</tt> — определяет кнопки, включённые в диалог сообщения.</p>
-      <p>Функция возвращает константу ID*, указывающую кнопку, которую нажал
-        пользователь, или 0, если в работе функции произошёл сбой (что
-        маловероятно, за исключением неверно переданных параметров или нехватки
-        системных ресурсов).</p>
+      <p>Функция возвращает константу <tt>ID*</tt>, указывающую кнопку, которую нажал
+        пользователь, или 0, если в работе функции произошёл сбой (что маловероятно,
+        за исключением неверно переданных параметров или нехватки системных ресурсов).</p>
       <h2 class="heading">Комментарии</h2>
       <p>Класс <tt>TMsgBoxType</tt> представлен следующими значениями:</p>
       <pre class="indent">TMsgBoxType = (mbInformation, mbConfirmation, mbError, mbCriticalError);</pre>
@@ -55,31 +54,32 @@ IDYES    - нажата кнопка [Yes]
 IDNO     - нажата кнопка [No]</pre>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  <span class="hl slc">// Простое сообщение с кнопкой OK</span>
+  <span class="hl com">// Простое сообщение с кнопкой OK</span>
   MsgBox(<span class="hl str">'Hello.'</span>, <span class="hl kwe">mbInformation</span>, <span
 class="hl kwe">MB_OK</span>);
 
-  <span class="hl slc">// Запрос к пользователю с кнопками ответа Да/Нет</span>
+  <span class="hl com">// Запрос к пользователю с кнопками ответа Да/Нет</span>
   <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
 class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span>) = <span
 class="hl kwe">IDYES</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// пользователь выбрал "Да"</span>
+    <span class="hl com">// пользователь выбрал "Да"</span>
   <span class="hl kwb">end</span>;
 
-  <span class="hl slc">// Запрос к пользователю с кнопками ответа Да/Нет, по умолчанию выбран "Нет"</span>
+  <span class="hl com">// Запрос к пользователю с кнопками ответа Да/Нет, по умолчанию выбран "Нет"</span>
   <span class="hl kwb">if</span> MsgBox(<span class="hl str">'Are you sure?'</span>, <span
 class="hl kwe">mbConfirmation</span>, <span class="hl kwe">MB_YESNO</span> <span
 class="hl kwb">or</span> <span class="hl kwe">MB_DEFBUTTON2</span>) = <span class="hl kwe">IDYES</span> <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// пользователь выбрал "Да"</span>
+    <span class="hl com">// пользователь выбрал "Да"</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a>
+      <p class="indent"><code><a href="topic_isxfunc_suppressiblemsgbox.htm">SuppressibleMsgBox</a></code>
         <br />
-        <a href="topic_isxfunc_taskdialogmsgbox.htm">TaskDialogMsgBox</a> </p>
+        <code><a href="topic_isxfunc_taskdialogmsgbox.htm">TaskDialogMsgBox</a></code>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

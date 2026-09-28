@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Препроцессор Inno Setup: #expr</title>
+    <title>Препроцессор Inno Setup: #expr, #call</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Препроцессор Inno Setup: #expr</h1>
+    <h1 class="topicheading">Препроцессор Inno Setup: #expr, #call</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
       <div class="sintax1 notopmarginX">
@@ -24,30 +24,24 @@
           <tbody>
             <tr>
               <td class="cellleft" style="width: 140px;"><i>expr-directive:</i></td>
-              <td class="cellright">(<b>expr</b> | <b>!</b>) &lt;expr&gt;</td>
+              <td class="cellright">(<b>expr</b> | <b>call</b> | <b>!</b>) &lt;expr&gt;</td>
             </tr>
           </tbody>
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет указанное выражение, игнорируя полученный результат. Эта
-        директива подобна директиве <code><a href="topic_emit.htm">emit</a></code>
-        за тем исключением, что ничего не передает на <a href="topic_translation.htm"
-         >выход препроцессора</a>.</p>
-      <p>Эта директива предназначена для использования с теми функциями, которые
-        производят побочные эффекты и не возвращают какие-либо существенные
+      <p>Вычисляет выражение, игнорируя его результат. Эта директива действует как
+        <tt><a href="topic_emit.htm">emit</a></tt>, за исключением того, что она
+        не выдаёт ничего на <a href="topic_translation.htm">выход
+        препроцессора</a>.</p>
+      <p>Эта директива предназначена для использования с функциями, которые
+        производят побочные эффекты и не возвращают какого-либо значимого
         значения.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl kwf">#expr</span> <span class="hl kwd">SaveToFile</span><span
-class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span
-class="hl opt">) + (</span><span class="hl str">"Preprocessed.iss"</span><span class="hl opt">),</span> \
-          <a href="topic_exec.htm">Exec</a><span class="hl opt">(</span><span class="hl kwd">AddBackslash</span><span
-class="hl opt">(</span>CompilerPath<span class="hl opt">) +</span> <span class="hl str">"ISIDE.exe"</span><span
-class="hl opt">,</span> \
-          <span class="hl str">""</span><span class="hl str">""</span> <span class="hl opt">+</span> <span
-class="hl kwd">AddBackslash</span><span class="hl opt">(</span>SourcePath<span class="hl opt">) +</span> <span
-class="hl str">"Preprocessed.iss"</span><span class="hl opt">)</span>
+        <pre class="hl"><span class="hl kwf">#call</span> <a href="topic_savetofile.htm">SaveToFile</a>(AddBackslash(SourcePath) + (<span class="hl str">"Preprocessed.iss"</span>), \
+          <a href="topic_exec.htm">Exec</a>(AddBackslash(CompilerPath) + <span class="hl str">"ISIDE.exe"</span>, \
+          <span class="hl str">""""</span> + AddBackslash(SourcePath) + <span class="hl str">"Preprocessed.iss"""</span>)
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>

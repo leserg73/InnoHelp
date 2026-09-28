@@ -19,26 +19,19 @@
     <h1 class="topicheading">[Setup]: DefaultDirName</h1>
     <div class="topicbody">
       <h2 class="heading">Описание</h2>
-      <p>Эта директива является обязательной и определяет имя
-        каталога по умолчанию, в который будет выполнена установка приложения.
-        Значение используется на странице "<i>Выбор папки установки</i>" и
-        обычно начинается с константы.</p>
-      <p>Если директива <a href="topic_setup_usepreviousappdir.htm">UsePreviousAppDir</a>
-        имеет значение <tt>yes</tt> (используется по умолчанию) и программа
-        установки обнаружит уже установленную предыдущую версию <a href="topic_sameappnotes.htm">такого
-          же приложения</a>, вместо заданного по умолчанию каталога будет
-        установлен выбранный ранее каталог.</p>
-      <div class="examplebox">
-        <div class="exampleheader">Примеры:</div>
-        <b>Если задано:</b><br />
-        <pre><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{sd}</span>\MyProg</pre>
-        <b>Программа установки предложит путь:</b><br />
-        C:\MyProg<br />
-        <br />
-        <b>Если задано:</b><br />
-        <pre><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{autopf}</span>\My Program</pre>
-        <b>Программа установки предложит путь:</b><br />
-        C:\Program Files\My Program<br /><br /></div>
+      <p>Эта директива является обязательной и определяет имя каталога по умолчанию,
+        в который будет выполнена установка приложения. Значение используется на
+        странице "<i>Выбор папки установки</i>" и обычно начинается с константы.</p>
+      <p>Например:</p>
+      <ul>
+        <li>Если задано <tt><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{sd}</span>\MyProg</tt>, программа установки предложит путь <tt>C:\MyProg</tt>.</li>
+        <li>Если задано <tt><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{autopf}</span>\My Program</tt>, программа установки предложит путь <tt>C:\Program Files\My Program</tt>.</li>
+      </ul>
+      <p>Если директива <tt><a href="topic_setup_usepreviousappdir.htm">UsePreviousAppDir</a></tt>
+        имеет значение <tt>yes</tt> (используется по умолчанию) и программа установки
+        обнаружит уже установленную предыдущую версию <a href="topic_sameappnotes.htm">такого
+        же приложения</a>, вместо заданного по умолчанию каталога будет установлен
+        выбранный ранее каталог.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

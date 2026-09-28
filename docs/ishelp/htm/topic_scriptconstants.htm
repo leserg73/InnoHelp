@@ -31,13 +31,13 @@
         <li><i>Param</i> — определяет строковый параметр, передаваемый функции.
           Если <i>Param</i> не указывается, будет передана пустая строка.</li>
         <li>Если необходимо заключить внутри константы запятую, вертикальную
-          черту ("|") или закрывающую фигурную скобку ("}"), следует
+          черту (<tt>|</tt>) или закрывающую фигурную скобку (<tt>}</tt>), следует
           использовать экранирование при помощи "%-кодирования". Это означает,
           что вместо символа записывается его двузначный код в шестнадцатеричном
-          формате с приставкой "%". Так символ запятой нужно заменить на
-          escape-код "%2c", вертикальную черту — "%7c", а закрывающую скобку —
-          "%7d". Если нужно заключить реальный символ "%", используйте
-          escape-код "%25".</li>
+          формате с приставкой <tt>%</tt>. Так символ запятой нужно заменить на
+          escape-код <tt>%2c</tt>, вертикальную черту — <tt>%7c</tt>, а закрывающую
+          скобку — <tt>%7d</tt>. Если нужно заключить реальный символ <tt>%</tt>,
+          используйте escape-код <tt>%25</tt>.</li>
         <li><i>Param</i> может содержать константы. Обратите внимание, что в
           этом случае <i>не</i> нужно экранировать закрывающую фигурную скобку
           константы, как описано выше, это необходимо делать при использовании
@@ -47,8 +47,8 @@
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwb">DefaultDirName</span>=<span class="hl kwc">{code:MyConst}</span>\My Program</pre>
       </div>
-      <p>Ниже представлен пример секции <tt>[Code]</tt> c
-        функцией <tt>MyConst</tt>, используемой в примере выше.</p>
+      <p>Ниже представлен пример секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>
+        c функцией <tt>MyConst</tt>, используемой в примере выше.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
 <span class="hl kwb">function</span> MyConst(Param: String): String;
 <span class="hl kwb">begin</span>
@@ -56,8 +56,9 @@
 class="hl str">'</span>);
 <span class="hl kwb">end</span>;</pre>
       <p>Если функция, указанная в константе <tt>{code:...}</tt>,
-        не включена в секцию <tt>[Code]</tt>, она должна быть одной из <a href="topic_scriptfunctions.htm">поддерживаемых
-          функций</a>. Например:</p>
+        не включена в секцию <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>,
+        она должна быть одной из <a href="topic_scriptfunctions.htm">поддерживаемых
+        функций</a>. Например:</p>
       <pre class="indent examplebox"><span class="hl kwa">[INI]</span>
 <span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyIni.ini"; <span
 class="hl kwb">Section</span>: "MySettings"; <span class="hl kwb">Key</span>: "ShortApp"; <span

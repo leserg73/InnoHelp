@@ -31,11 +31,11 @@
   AType: String;
 <span class="hl kwb">begin</span>
   AObject := CreateOleObject(<span class="hl str">'MyObject'</span>);
-  <span class="hl slc">// Устанавливаем свойство с именем 'Type'</span>
-  <span class="hl slc">// Нельзя использовать "AObject.Type := 'MyType';",</span>
-  <span class="hl slc">// т.к. Type является зарезервированным словом</span>
+  <span class="hl com">// Устанавливаем свойство с именем 'Type'</span>
+  <span class="hl com">// Нельзя использовать "AObject.Type := 'MyType';",</span>
+  <span class="hl com">// т.к. Type является зарезервированным словом</span>
   IDispatchInvoke(AObject, True, <span class="hl str">'Type'</span>, [<span class="hl str">'MyType'</span>]);
-  <span class="hl slc">// Получаем свойство или вызываем метод с именем 'Type'</span>
+  <span class="hl com">// Получаем свойство или вызываем метод с именем 'Type'</span>
   AType := IDispatchInvoke(AObject, False, <span class="hl str">'Type'</span>, [<span
 class="hl str">''</span>]);
 <span class="hl kwb">end</span>;</pre>

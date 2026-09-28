@@ -24,18 +24,18 @@
         const AllowedKeysRuntimeIDs: TStringList; const OnDownloadProgress:
         TOnDownloadProgress): Int64;</p>
       <h2 class="heading">Описание</h2>
-      <p>Функция аналогична <a
-        href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>,
+      <p>Функция аналогична <tt><a
+        href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></tt>,
         но сначала с адреса URL, указанного в параметре <tt>IssigUrl</tt>, загружает
-        файл подписи .issig, а затем использует его для проверки основного файла,
-        загруженного с адреса URL, заданного параметром <tt>Url</tt>.</p>
+        файл подписи <tt>.issig</tt>, а затем использует его для проверки основного
+        файла, загруженного с адреса URL, заданного параметром <tt>Url</tt>.</p>
       <p>Если параметр <tt>IssigUrl</tt> – пустая строка, программа установки
         автоматически дополнит строку из параметра <tt>Url</tt> окончанием
-        ".issig" (без кавычек). Полученный результат будет использоваться в
-        качестве URL-адреса для загрузки файла подписи .issig.</p>        
+        <tt>.issig</tt>. Полученный результат будет использоваться в качестве
+        URL-адреса для загрузки файла подписи <tt>.issig</tt>.</p>
       <p>Для проверки используются указанные ключи, поиск которых осуществляется
-        по параметру <tt>RuntimeID</tt> в секции <a
-        href="topic_issigkeyssection.htm">[ISSigKeys]</a>. Чтобы разрешить
+        по параметру <tt>RuntimeID</tt> в секции <tt><a
+        href="topic_issigkeyssection.htm">[ISSigKeys]</a></tt>. Чтобы разрешить
         использование любых ключей, установите для <tt>AllowedKeysRuntimeIDs</tt>
         значение <tt>nil</tt>.</p>
       <p>В случае ошибки будет вызвано исключение. Иначе функция вернёт размер
@@ -58,9 +58,11 @@
 
 </pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a><br />
-        <a href="topic_issig.htm">.issig Signatures: Introduction</a><br />
-        <a href="topic_isxfunc_issigverify.htm">ISSigVerify</a>
+      <p class="indent"><code><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></code>
+        <br />
+        <code><a href="topic_issig.htm">Подписи .issig: Введение</a></code>
+        <br />
+        <code><a href="topic_isxfunc_issigverify.htm">ISSigVerify</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

@@ -18,11 +18,14 @@
   <body>
     <h1 class="topicheading">Программирование: Функции событий</h1>
     <div class="topicbody">
-      <p>Pascal-сценарий может содержать несколько функций, которые вызываются
+      <p>Паскаль-сценарий может содержать несколько функций, которые вызываются
         при определённых событиях.</p>
+      <p>Процедуры программы установки и удаления могут вызывать некоторые функции
+        обработки событий несколько раз. Если ваша функция выполняет объёмный
+        фрагмент кода, его можно оптимизировать: выполнить код лишь однажды, а
+        результат сохранить («закешировать») в глобальной переменной.</p>
       <h2 class="heading">Функции событий программы установки</h2>
-      <p>Программа установки поддерживает следующие функции
-        событий:</p>
+      <p>Программа установки поддерживает следующие функции событий:</p>
       <dl>
         <dt class="func">function <span id="InitializeSetup">InitializeSetup</span>: Boolean;</dt>
         <dd class="paramlist1">
@@ -111,7 +114,7 @@
         <dt class="func">function <span id="CheckPassword">CheckPassword</span>(Password: String): Boolean;</dt>
         <dd class="paramlist1">
           <p>Если программа установки обнаружит в сценарии функцию <tt>CheckPassword</tt>,
-            она автоматически отобразит страницу <i>Пароль</i> и выполнит вызов
+            она автоматически отобразит страницу "<i>Пароль</i>" и выполнит вызов
             <tt>CheckPassword</tt> для проверки пароля. Возвращает значение <tt>True</tt>,
             если пароль принят, и <tt>False</tt>, если пароль отклонен.</p>
           <p>Чтобы обезопасить свой инсталлятор, не указывайте пароль для
@@ -121,14 +124,14 @@
             сравнивая его с введённым паролем посредством <tt><a href="topic_isxfunc_getsha256ofstring.htm">GetSHA256OfString</a>(Password)</tt>.
             Таким образом, фактическое значение пароля останется защищённым.</p>
           <p>Примечание: если программа установки запущена с <a href="topic_setupcmdline.htm#PASSWORD">параметром
-              командной строки</a> /PASSWORD=, функция <tt>CheckPassword</tt>
+              командной строки</a> <tt>/PASSWORD=</tt>, функция <tt>CheckPassword</tt>
             будет вызвана <i>ранее</i> других функций события, включая <tt><a
                 href="#InitializeSetup">InitializeSetup</a></tt>.</p>
           <p>Также обратите внимание: если для директивы <tt><a
             href="topic_setup_encryption.htm">Encryption</a></tt> установлено
             значение <tt>yes</tt>, а функция проверки пароля <tt>CheckPassword</tt>
             принимает пароли, которые отличаются от используемых для шифрования,
-            убедитесь, что извлекаете только незашифрованные файлы.</p>
+            убедитесь, что извлекаете только не зашифрованные файлы.</p>
         </dd>
         <dt class="func">function <span id="NeedRestart">NeedRestart</span>: Boolean;</dt>
         <dd class="paramlist1">
@@ -150,22 +153,24 @@
             Другие параметры содержат строки (могут быть пустыми), которые
             программа установки использовала бы в качестве разделов настроек.
             Параметр <tt>MemoDirInfo</tt>, к примеру, содержит строку для
-            раздела <i>Папка установки</i>.</p>
+            раздела "<i>Папка установки</i>".</p>
         </dd>
         <dt class="func">procedure <span id="RegisterPreviousData">RegisterPreviousData</span>(PreviousDataKey: Integer);</dt>
         <dd class="paramlist1">
           <p>Чтобы сохранить пользовательские параметры, введённые на
             пользовательских страницах мастера, поместите в сценарий функцию <tt>RegisterPreviousData</tt>
-            и выполните из неё вызов функции <a href="topic_isxfunc_setpreviousdata.htm">SetPreviousData(PreviousDataKey,
-              ...)</a> соответственно для каждого параметра.</p>
+            и выполните из неё вызов функции <tt><a href="topic_isxfunc_setpreviousdata.htm">SetPreviousData(PreviousDataKey,
+              ...)</a></tt> соответственно для каждого параметра.</p>
         </dd>
         <dt class="func">function <span id="CheckSerial">CheckSerial</span>(Serial: String): Boolean;</dt>
         <dd class="paramlist1">
           <p>Если программа установки обнаружит в сценарии функцию <tt>CheckSerial</tt>,
             она автоматически отобразит поле ввода серийного номера на странице
             "<i>Информация о пользователе</i>" (эта страница должна быть
-            включена с использованием директивы <tt>UserInfoPage=yes</tt> в
-            секции [Setup]!). Возвращает значение <tt>True</tt>, если серийный
+            включена с использованием директивы <tt><a 
+            href="topic_setup_userinfopage.htm">UserInfoPage</a>=yes</tt> в
+            секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>!).
+            Возвращает значение <tt>True</tt>, если серийный
             номер принят, и <tt>False</tt>, если серийный номер отклонен. При
             использовании серийных номеров важно помнить, что, поскольку
             шифрование не используется и исходный код Inno Setup находится в
@@ -178,7 +183,7 @@
         <dt class="func">function <span id="GetCustomSetupExitCode">GetCustomSetupExitCode</span>: Integer;</dt>
         <dd class="paramlist1">
           <p>Вызывается только в том случае, если программа установки успешно
-            завершила свою работу и код выхода был равен 0. Используйте
+            завершила свою работу и код выхода был равен <tt>0</tt>. Используйте
             ненулевое число, чтобы инструктировать программу установки вернуть
             пользовательский код выхода. См. также "<a href="topic_setupexitcodes.htm">Коды
               выхода программы установки</a>".</p>
@@ -197,25 +202,25 @@
             будет завершена с кодом выхода, описанными в разделе "<a href="topic_setupexitcodes.htm">Коды
               выхода программы установки</a>". Любой пользовательский код
             выхода, заданный <a href="topic_setupcmdline.htm#RESTARTEXITCODE">параметром
-              командной строки</a> /RESTARTEXITCODE=, в этом случае
+              командной строки</a> <tt>/RESTARTEXITCODE=</tt>, в этом случае
             использоваться не будет.</p>
-          <p>Если директива <a href="topic_setup_closeapplications.htm">CloseApplications</a>
+          <p>Если директива <tt><a href="topic_setup_closeapplications.htm">CloseApplications</a></tt>
             имеет значение <tt>yes</tt>, эта функция вызывается перед проверкой
             используемых файлов.</p>
-          <p>Эта функция вызывается только в том случае, если программа
-            установки ещё не определила, что она не может продолжить работу,
-            поскольку один или несколько файлов, указанных в секциях <tt>[Files]</tt>
-            и <tt>[InstallDelete]</tt>, были поставлены в очередь (какой-то
-            другой установкой) для замены или удаления при следующем
-            перезапуске.</p>
+          <p>Эта функция вызывается только в том случае, если программа установки
+            ещё не определила, что она не может продолжить работу, поскольку один
+            или несколько файлов, указанных в секциях <tt><a href="topic_filessection.htm">[Files]</a></tt>
+            и <tt><a href="topic_installdeletesection.htm">[InstallDelete]</a></tt>,
+            были поставлены в очередь (какой-то другой установкой) для замены или
+            удаления при следующем перезапуске.</p>
         </dd>
         <dt class="func">procedure <span id="RegisterExtraCloseApplicationsResources">RegisterExtraCloseApplicationsResources</span>;</dt>
         <dd class="paramlist1">
           <p>Чтобы зарегистрировать дополнительные файлы, которые программа
             установки должна проверить на предмет использования, когда для
-            параметра <a href="topic_setup_closeapplications.htm">CloseApplications</a>
+            параметра <tt><a href="topic_setup_closeapplications.htm">CloseApplications</a></tt>
             задано значение <tt>yes</tt>, поместите в сценарий функцию <tt>RegisterExtraCloseApplicationsResources</tt>
-            и выполните из неё вызов функции <a href="topic_isxfunc_registerextracloseapplicationsresource.htm">RegisterExtraCloseApplicationsResource</a>,
+            и выполните из неё вызов функции <tt><a href="topic_isxfunc_registerextracloseapplicationsresource.htm">RegisterExtraCloseApplicationsResource</a></tt>,
             соответственно для каждого файла.</p>
         </dd>
       </dl>
@@ -252,14 +257,16 @@
         функциями:</p>
       <ul>
         <li><i><span id="TSetupStep">Значения TSetupStep</span></i><br />
-          ssPreInstall, ssInstall, ssPostInstall, ssDone</li>
+          <tt>ssPreInstall</tt>, <tt>ssInstall</tt>, <tt>ssPostInstall</tt>, <tt>ssDone</tt></li>
         <li><i><span id="TUninstallStep">Значения TUninstallStep</span>s</i><br />
-          usAppMutexCheck, usUninstall, usPostUninstall, usDone</li>
-        <li><i>Значения <span id="PageID">PageID</span> для предопределённых <a href="topic_wizardpages.htm">страниц
-              мастера</a></i><br />
-          wpWelcome, wpLicense, wpPassword, wpInfoBefore, wpUserInfo,
-          wpSelectDir, wpSelectComponents, wpSelectProgramGroup, wpSelectTasks,
-          wpReady, wpPreparing, wpInstalling, wpInfoAfter, wpFinished</li>
+          <tt>usAppMutexCheck</tt>, <tt>usUninstall</tt>, <tt>usPostUninstall</tt>, <tt>usDone</tt></li>
+        <li><i>Значения <span id="PageID">PageID</span> для предопределённых
+           <a href="topic_wizardpages.htm">страниц мастера</a></i><br />
+          <tt>wpWelcome</tt>, <tt>wpLicense</tt>, <tt>wpPassword</tt>, <tt>wpInfoBefore</tt>,
+          <tt>wpUserInfo</tt>, <tt>wpSelectDir</tt>, <tt>wpSelectComponents</tt>,
+          <tt>wpSelectProgramGroup</tt>, <tt>wpSelectTasks</tt>, <tt>wpReady</tt>,
+          <tt>wpPreparing</tt>, <tt>wpInstalling</tt>, <tt>wpInfoAfter</tt>,
+          <tt>wpFinished</tt></li>
       </ul>
       <h2 class="heading"><span id="eventattributes">Атрибуты события</span></h2>
       <p>Как правило, сценарий может содержать только одну
@@ -324,9 +331,10 @@
           функций, у которых ещё нет имени функции события.</li>
         <li>Если функция события использует параметры <tt>var</tt>, то значение
           будет передаваться от одной реализации к другой.</li>
-        <li>Для вызова самой реализации с атрибутом события из секции <tt>[Code]</tt>,
-          следует использовать обычное имя функции, как если бы реализация не
-          имела атрибута события.</li>
+        <li>Для вызова самой реализации с атрибутом события из секции
+          <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>, следует
+          использовать обычное имя функции, как если бы реализация не имела
+          атрибута события.</li>
       </ul>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

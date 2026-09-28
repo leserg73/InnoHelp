@@ -36,22 +36,22 @@
         приложения. Значение этого параметра отображается на странице "<i>Приветствие</i>"
         программы установки и используется в качестве названия по умолчанию для
         приложений в апплете "<i>Удаление или изменение программы</i>" (смотрите
-        директиву <a href="topic_setup_uninstalldisplayname.htm">UninstallDisplayName</a>).
+        директиву <tt><a href="topic_setup_uninstalldisplayname.htm">UninstallDisplayName</a></tt>).
         Значение может содержать константы.</p>
-      <p>Если директиве <a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a>
+      <p>Если директиве <tt><a href="topic_setup_disablewelcomepage.htm">DisableWelcomePage</a></tt>
         задано значение <tt>yes</tt> (является значением по умолчанию), то в
         заголовках окон используется значение директивы <tt>AppVerName</tt>
-        вместо <a href="topic_setup_appname.htm">AppName</a>.</p>
-      <p>Эта директива является обязательной, если директива <a
-          href="topic_setup_appversion.htm">AppVersion</a> не используется.</p>
+        вместо <tt><a href="topic_setup_appname.htm">AppName</a></tt>.</p>
+      <p>Эта директива является обязательной, если директива <tt><a
+          href="topic_setup_appversion.htm">AppVersion</a></tt> не используется.</p>
       <div class="examplebox">
         <div class="exampleheader">Примеры:</div>
         <pre class="nomargin"><span class="hl kwb">AppVerName</span>=My Program <span
 class="hl num">1.5</span>
 <span class="hl kwb">AppVerName</span>=My Program version <span class="hl num">1.5</span>
 
-<span class="hl slc">; Следующая запись создаст локализованное название "My Program version 1.5",</span>
-<span class="hl slc">; используя <a href="topic_custommessagessection.htm">пользовательское сообщение</a> <b>NameAndVersion</b> активного языка</span>
+<span class="hl com">; Следующая запись создаст локализованное название "My Program version 1.5",</span>
+<span class="hl com">; используя <a href="topic_custommessagessection.htm">пользовательское сообщение</a> <b>NameAndVersion</b> активного языка</span>
 <span class="hl kwb">AppVerName</span>=<span class="hl kwc">{cm:NameAndVersion,My Program,1.5}</span></pre>
       </div>
       <h2 class="heading">См. также:</h2>

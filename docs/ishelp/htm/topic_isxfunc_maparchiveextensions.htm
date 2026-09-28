@@ -16,21 +16,21 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Программирование:
-      MapArchiveExtensions</h1>
+    <h1 class="topicheading">Программирование: MapArchiveExtensions</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX">procedure MapArchiveExtensions(const DestExt, SourceExt: String);</p>
       <h2 class="heading">Описание</h2>
       <p>Позволяет задать соответствие расширений файлов для распаковки: файлы
-        с целевым расширением (например, <b>.exe</b>) будут обрабатываться как
-        архивы с исходным расширением (например, <b>.7z</b>).</p>
+        с целевым расширением (например, <tt>.exe</tt>) будут обрабатываться как
+        архивы с исходным расширением (например, <tt>.7z</tt>).</p>
       <p>В случае ошибки будет вызвано исключение.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Вызовы этой функции игнорируются, если директива <a href=
-        "topic_setup_archiveextraction.htm">ArchiveExtraction</a> секции
-        <tt>[Setup]</tt> имеет значение <tt>basic</tt>. В этом случае файлы
-        всегда извлекаются как .7z, независимо от расширения.</p>
+      <p>Вызовы этой функции игнорируются, если директива <tt><a href=
+        "topic_setup_archiveextraction.htm">ArchiveExtraction</a></tt> секции
+        <tt><a href="topic_setupsection.htm">[Setup]</a></tt> имеет значение
+        <tt>basic</tt>. В этом случае файлы всегда извлекаются как <tt>.7z</tt>,
+        независимо от расширения.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "<span class="hl kwc">{src}</span>\My7ZipSFX.exe"; \
@@ -45,8 +45,9 @@
 <span class="hl kwb">end</span>;
 </pre>
     <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a><br />
-        <a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a>
+      <p class="indent"><code><a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a></code>
+        <br />
+        <code><a href="topic_isxfunc_createextractionpage.htm">CreateExtractionPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

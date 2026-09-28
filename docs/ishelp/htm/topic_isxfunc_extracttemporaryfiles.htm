@@ -19,29 +19,30 @@
     <h1 class="topicheading">Программирование: ExtractTemporaryFiles</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">function
-          ExtractTemporaryFiles(const Pattern: String): Integer;</p>
+      <p class="prototip1 notopmarginX">function ExtractTemporaryFiles(const Pattern: String): Integer;</p>
       <h2 class="heading">Описание</h2>
       <p>Извлекает файлы, согласно указанной маске <tt>Pattern</tt>, из секции
-        <tt>[Files]</tt> во временный каталог. Возвращает количество извлечённых
-        файлов. Для определения расположения временного каталога используйте <tt>ExpandConstant('{tmp}')</tt>.</p>
+        <tt><a href="topic_filessection.htm">[Files]</a></tt> во временный каталог.
+        Возвращает количество извлечённых файлов. Для определения расположения
+        временного каталога используйте <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}')</tt>.</p>
       <p>При закрытии программы установки все извлечённые файлы автоматически
         удаляются.</p>
       <p>Если файлы не извлечены, не найдены или найдены, но не были обработаны
         из-за наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
         будет вызвано исключение.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции <tt>[Files]</tt>,
-        чтобы программа установки пропустила файлы на этапе обычного копирования
-        файлов и обеспечила возможность их извлечения до ввода пароля.</p>
-      <p>Если включено непрерывное (<i>solid</i>) сжатие, обязательно
-        перечислите все временные файлы в самом начале секции <tt>[Files]</tt>.
+      <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>, чтобы программа
+        установки пропустила файлы на этапе обычного копирования файлов и обеспечила
+        возможность их извлечения до ввода пароля.</p>
+      <p>Если включено непрерывное (<i>solid</i>) сжатие, обязательно перечислите
+        все временные файлы в самом начале секции <tt><a href="topic_filessection.htm">[Files]</a></tt>.
         Причиной этого является то, что для получения доступа к произвольному
         файлу в архиве с непрерывным сжатием, программа установки должна сначала
-        распаковать все предыдущие файлы (во временный буфер в памяти). Это
-        может привести к значительной задержке в работе инсталлятора, если в
-        секции <tt>[Files]</tt> перед временно используемыми файлами находится
-        множество других файлов.</p>
+        распаковать все предыдущие файлы (во временный буфер в памяти). Это может
+        привести к значительной задержке в работе инсталлятора, если в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt> перед временно
+        используемыми файлами находится множество других файлов.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
 <span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
@@ -60,7 +61,7 @@ class="hl kwc">{app}</span>"
   S: AnsiString;
   ResultCode: Integer;
 <span class="hl kwb">begin</span>
-  <span class="hl slc">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
+  <span class="hl com">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
   ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
 
 class="hl str">\Readme.txt'</span>);
@@ -71,8 +72,8 @@ class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span c
     MsgBox(S, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;
 
-  <span class="hl slc">// Извлекаем все файлы MyProg и запускаем её.</span>
-  <span class="hl slc">// Заметьте, константа {app} не расширяется.</span>
+  <span class="hl com">// Извлекаем все файлы MyProg и запускаем её.</span>
+  <span class="hl com">// Заметьте, константа {app} не расширяется.</span>
   ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
 
 class="hl str">\MyProg.*'</span>);
@@ -88,7 +89,7 @@ class="hl str">''</span>,
   Result := True;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+      <p class="indent"><code><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

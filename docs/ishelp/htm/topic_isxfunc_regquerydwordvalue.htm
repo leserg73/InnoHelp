@@ -23,7 +23,7 @@
           RegQueryDWordValue(const RootKey: HKEY; const SubKeyName,
           ValueName: String; var ResultDWord: Cardinal): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Запрашивает в указанном разделе реестра значение с типом REG_DWORD и
+      <p>Запрашивает в указанном разделе реестра значение с типом <tt>REG_DWORD</tt> и
         возвращает данные в параметре <tt>ResultDWord</tt>. В случае успеха
         функция возвращает значение <tt>True</tt>. Если функция возвращает <tt>False</tt>,
         то данные <tt>ResultDWord</tt> остаются без изменений.</p>
@@ -35,7 +35,7 @@
 class="hl str">'Console'</span>,
      <span class="hl str">'HistoryBufferSize'</span>, HistoryBufferSize) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// Успешно получили значение</span>
+    <span class="hl com">// Успешно получили значение</span>
     MsgBox(<span class="hl str">'Размер буфера протокола консоли: '</span> + IntToStr(HistoryBufferSize),
       <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;

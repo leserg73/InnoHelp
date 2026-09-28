@@ -21,17 +21,17 @@
       <h2 class="heading prototip">Прототип</h2>
       <p class="prototip1 notopmarginX">function ExecWithNativeSysDir(const Filename, Params, WorkingDir: String; const ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Используйте эту функцию вместо <a href="topic_isxfunc_exec.htm">Exec</a>
+      <p>Используйте эту функцию вместо <tt><a href="topic_isxfunc_exec.htm">Exec</a></tt>
         для запуска исполняемого файла, расположенного в 64-разрядном системном
         каталоге, из 32-разрядного установщика.</p>
       <p>Эта функция позволяет избежать проблемы, связанной с тем, что функция
-        <tt>Exec</tt> в 32-разрядном установщике может запускать
-        такой исполняемый файл только с помощью псевдонима Sysnative, который
-        недоступен для 64-разрядных приложений. Для этого функция временно
-        отключает перенаправление файловой системы WOW64.</p>
+        <tt><a href="topic_isxfunc_exec.htm">Exec</a></tt> в 32-разрядном установщике
+        может запускать такой исполняемый файл только с помощью псевдонима
+        <tt>Sysnative</tt>, который недоступен для 64-разрядных приложений. Для
+        этого функция временно отключает перенаправление файловой системы WOW64.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>В 32-разрядной Windows или в 64-разрядном установщике эта функция
-        является просто псевдонимом для <tt>Exec</tt>.</p>
+      <p>В 32-разрядной Windows или в 64-разрядном установщике эта функция является
+        просто псевдонимом для <tt><a href="topic_isxfunc_exec.htm">Exec</a></tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   ResultCode: <span class="hl kwg">Integer</span>;
@@ -47,7 +47,7 @@
     
     <span class="hl com">{ НЕПРАВИЛЬНО: эта команда также запустила бы 64-бит версию cmd.exe в 32-разрядном установщике,</span>
 <span class="hl com">      но она использовала бы псевдоним Sysnative, по которому 64-бит версия cmd.exe недоступна. }</span> 
-    <span class="hl slc">// Exec(ApplyPathRedirRulesForCurrentProcess(True, ExpandConstant('{cmd}')), '', '', SW_SHOWNORMAL, ewNoWait, ResultCode);</span>
+    <span class="hl com">// Exec(ApplyPathRedirRulesForCurrentProcess(True, ExpandConstant('{cmd}')), '', '', SW_SHOWNORMAL, ewNoWait, ResultCode);</span>
 <span class="hl kwb">end</span>;
 </pre>
     </div>

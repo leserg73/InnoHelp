@@ -25,28 +25,29 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет создание формы. По умолчанию форма является пустой, поэтому
         вам нужно будет ещё создать собственные элементы управления и поместить
-        их на форму (установив свойство <tt>Parent</tt> в экземпляр <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>,
+        их на форму (установив свойство <tt>Parent</tt> в экземпляр
+        <tt><a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a></tt>,
         возвращаемого этой функцией).</p>
       <h2 class="heading">Комментарии</h2>
-      <p>Вместо прямого создания экземпляров <a href="topic_scriptclasses.htm#TForm">TForm</a>
-        или <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a>
+      <p>Вместо прямого создания экземпляров <tt><a href="topic_scriptclasses.htm#TForm">TForm</a></tt>
+        или <tt><a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a></tt>
         рекомендуется использовать именно эту функцию. Она автоматически
         выполнит инициализацию шрифта и других свойств созданной формы, подобно
         другим диалогам программы установки.</p>
-      <p>Секция <tt>[LangOptions]</tt>, а также директивы <tt>DialogFontName</tt>
-        и <tt>DialogFontSize</tt>, определяют шрифт, используемый формой, и, по
-        умолчанию, шрифт дочерних элементов управления, размещённых на этой
-        форме.</p>
+      <p>Секция <tt><a href="topic_langoptionssection.htm">[LangOptions]</a></tt>,
+        а также директивы <tt>DialogFontName</tt> и <tt>DialogFontSize</tt>,
+        определяют шрифт, используемый формой, и, по умолчанию, шрифт дочерних
+        элементов управления, размещённых на этой форме.</p>
       <p>Для масштабирования желаемой ширины и высоты клиентской области формы
-        до соответствующих значений следует использовать функции <a 
-        href="topic_isxfunc_scalex.htm">ScaleX</a> и <a 
-        href="topic_isxfunc_scaley.htm">ScaleY</a>. Ширина и высота клиентской
+        до соответствующих значений следует использовать функции <tt><a 
+        href="topic_isxfunc_scalex.htm">ScaleX</a></tt> и <tt><a 
+        href="topic_isxfunc_scaley.htm">ScaleY</a></tt>. Ширина и высота клиентской
         области формы — это полная ширина и высота формы за вычетом её границ.</p>
       <p>Параметры <tt>KeepSizeX</tt> и <tt>KeepSizeY</tt> позволяют определить,
         должна ли форма увеличиваться по горизонтали и вертикали при изменении
-        размера клиентской области, если используется директива <a 
-        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a>. в
-        секции <code>[Setup]</code>.</p>
+        размера клиентской области, если используется директива <tt><a 
+        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></tt>. в
+        секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.</p>
       <p>С версии 6.6.0 изменился формат функции <tt>CreateCustomForm</tt>.
         Теперь значения ширины и высоты должны быть указаны заранее (после
         создания формы эти свойства будут доступны <i>только для чтения</i>).
@@ -67,11 +68,13 @@
         доступными для записи, но теперь указываются в качестве параметров при
         вызове <tt>CreateCustomForm</tt> и доступны <i>только для чтения</i>.</p>
       <h2 class="heading">Пример</h2>
-      <p>Смотрите файл <i>CodeClasses.iss</i> из папки "Examples" в каталоге
-        установки Inno Setup.</p>
+      <p>Смотрите файл <tt>CodeClasses.iss</tt> из папки <tt>Examples</tt> в
+        каталоге установки Inno Setup.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TForm">TForm</a> <br />
-        <a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a> </p>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TForm">TForm</a></code>
+        <br />
+        <code><a href="topic_scriptclasses.htm#TSetupForm">TSetupForm</a></code>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

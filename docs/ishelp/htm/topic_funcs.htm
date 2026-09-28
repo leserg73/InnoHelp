@@ -28,40 +28,33 @@
       </p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
-        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
-<span class="hl slc">; которое вернёт функция GetVersionNumbersString() (получение версии ЕХЕ-файла).</span>
+        <pre class="hl"><span class="hl com">; Объявляем переменную с именем MyAppVer и присваиваем ей значение,</span>
+<span class="hl com">; которое вернёт функция GetVersionNumbersString() (получение версии ЕХЕ-файла).</span>
 <span class="hl kwf">#define</span> MyAppVer <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a 
 
 href="topic_addbackslash.htm">AddBackslash</a>(<a href="topic_predefinedvars.htm">SourcePath</a>) +</span> <span 
 
-class="hl str">"MyProg.exe"</span><span class="hl opt">)</span>
+class="hl str">"MyProg.exe"</span>)
 
-<span class="hl slc">; Раздел параметров инсталляции</span>
+<span class="hl com">; Раздел параметров инсталляции</span>
 <span class="hl kwa">[Setup]</span>
-<span class="hl slc">; Используем значение переменной MyAppVer в определении директивы AppVerName.</span>
-<span class="hl kwb">AppVerName</span><span class="hl opt">=</span>MyProg version <span
-
-class="hl kwc">{#MyAppVer}</span>
+<span class="hl com">; Используем значение переменной MyAppVer в определении директивы AppVerName.</span>
+<span class="hl kwb">AppVerName</span>=<span class="hl str">{#</span>MyAppVer<span class="hl str">}</span>
 </pre> </div>
       <p>Встроенные функции также можно вызывать из директивы <tt><a href="topic_emit.htm">emit</a></tt>
         напрямую.</p>
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
-        <pre class="hl"><span class="hl slc">; Объявляем переменную с именем MyAppEnterprise</span>
+        <pre class="hl"><span class="hl com">; Объявляем переменную с именем MyAppEnterprise</span>
 <span class="hl kwf">#define</span> MyAppEnterprise
 
 <span class="hl kwa">[Setup]</span>
-<span class="hl slc">; Устанавливаем имя приложения</span>
-<span class="hl kwb">AppName</span>=MyProg<span class="hl kwc">{#<a 
-
-href="topic_defined.htm">Defined</a> MyAppEnterprise?&quot; Enterprise Edition&quot;:&quot;&quot;}</span>
-<span class="hl slc">; Получаем версию приложения</span>
-<span class="hl kwb">AppVersion</span>=<span class="hl kwc">{#<a 
-
-href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a href="topic_addbackslash.htm">AddBackslash</a>(<a 
-
-href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span>
-</pre> </div>
+<span class="hl com">; Устанавливаем имя приложения</span>
+<span class="hl kwb">AppName</span>=MyProg<span class="hl str">{#</span> <a href="topic_defined.htm">Defined</a> MyAppEnterprise?<span class="hl str">" Enterprise Edition"</span>:<span class="hl str">""}</span>
+<span class="hl com">; Получаем версию приложения</span>
+<span class="hl kwb">AppVersion</span>=<span class="hl str">{#</span> <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a href="topic_addbackslash.htm">AddBackslash</a>(<a href="topic_predefinedvars.htm">SourcePath</a>) + <span class="hl str">"MyProg.exe"</span>)<span class="hl str">}</span>
+</pre>
+      </div>
       <h2 class="heading">Синтаксис прототипов функций</h2>
       <p>Прототипы функций представлены, как типом возвращаемых функцией данных,
         именем самой функции и, в круглых скобках, её формальными параметрами.</p>
@@ -74,7 +67,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
       <p>Вопросительный знак (<tt>?</tt>) в определении типов параметров функции
         обозначает, что этот параметр является необязательным.</p>
       <h2 class="heading">Доступные функции</h2>
-      <ul>
+      <ul><code>
         <li><a href="topic_addbackslash.htm">AddBackslash</a></li>
         <li><a href="topic_addquotes.htm">AddQuotes</a></li>
         <li><a href="topic_changefileext.htm">ChangeFileExt</a></li>
@@ -114,6 +107,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_findsection.htm">FindSection</a></li>
         <li><a href="topic_findsectionend.htm">FindSectionEnd</a></li>
         <li><a href="topic_forcedirectories.htm">ForceDirectories</a></li>
+        <li><a href="topic_format.htm">Format</a></li>
         <li><a href="topic_getdatetimestring.htm">GetDateTimeString</a></li>
         <li><a href="topic_getenv.htm">GetEnv</a></li>
         <li><a href="topic_getfilecompanystring.htm">GetFileCompanyString</a></li>
@@ -140,6 +134,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_insert2.htm">Insert</a></li>
         <li><a href="topic_int.htm">Int</a></li>
         <li><a href="topic_is64bitpeimage.htm">Is64BitPEImage</a></li>
+        <li><a href="topic_isdirset.htm">IsDirSet</a></li>
         <li><a href="topic_iswin64.htm">IsWin64</a></li>
         <li><a href="topic_len.htm">Len</a></li>
         <li><a href="topic_lowercase.htm">LowerCase</a></li>
@@ -167,6 +162,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_strtoversion.htm">StrToVersion</a></li>
         <li><a href="topic_trim.htm">Trim</a></li>
         <li><a href="topic_typeof.htm">TypeOf</a></li>
+        <li><a href="topic_typeof2.htm">TypeOf2</a></li>
         <li><a href="topic_unpackversioncomponents.htm">UnpackVersionComponents</a></li>
         <li><a href="topic_unpackversionnumbers.htm">UnpackVersionNumbers</a></li>
         <li><a href="topic_uppercase.htm">UpperCase</a></li>
@@ -174,7 +170,7 @@ href="topic_predefinedvars.htm">SourcePath</a>) + &quot;MyProg.exe&quot;)}</span
         <li><a href="topic_warning.htm">Warning</a></li>
         <li><a href="topic_writeini.htm">WriteIni</a></li>
         <li><a href="topic_yesno.htm">YesNo</a></li>
-      </ul>
+      </code></ul>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

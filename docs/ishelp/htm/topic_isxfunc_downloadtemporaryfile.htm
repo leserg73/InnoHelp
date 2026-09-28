@@ -25,7 +25,7 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет загрузку файла по указанному <tt>URL</tt>-адресу во
         временный каталог. Для определения расположения временного каталога
-        используйте <code>ExpandConstant('{tmp}')</code>.</p>
+        используйте <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}')</tt>.</p>
       <p>Если указано значение параметра <tt>RequiredSHA256OfFile</tt>, будет
         выполнено его сравнение с хеш-суммой SHA-256 загруженного файла и
         вызвано исключение, если они не совпадают.</p>
@@ -36,14 +36,14 @@
         сертификатов), а также HTTP. Перенаправления выполняются автоматически и
         применяются автоматические настройки прокси. Безопасно использовать для
         различных сервисов.</p>
-      <p>Для обычной аутентификации используйте <a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a>.</p>
+      <p>Для обычной аутентификации используйте <tt><a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a></tt>.</p>
       <p>Для параметра <tt>OnDownloadProgress</tt> укажите функцию, которая
         будет передавать информацию о ходе загрузки, или значение <tt>nil</tt>,
         если в этом нет необходимости.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Класс <tt>TOnDownloadProgress</tt> представлен следующей функцией:</p>
       <pre class="indent">TOnDownloadProgress = function(const Url, FileName: String; const Progress, ProgressMax: Int64): Boolean;</pre>
-      <p>Параметр <tt>ProgressMax</tt> будет равен 0, если размер файла
+      <p>Параметр <tt>ProgressMax</tt> будет равен 0 или меньше, если размер файла
         по-прежнему неизвестен. Функция возвращает значение <tt>True</tt>,
         которое позволяет продолжить загрузку, иначе — <tt>False</tt>.</p>
       <h2 class="heading">Пример</h2>
@@ -52,7 +52,7 @@
 
 class="hl kwb">const</span> Progress, ProgressMax: Int64): Boolean;   
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> ProgressMax &lt;&gt; <span class="hl num">0</span> <span
+  <span class="hl kwb">if</span> ProgressMax &gt; <span class="hl num">0</span> <span
 
 class="hl kwb">then</span>
     Log(Format(<span class="hl str">'  %d из %d байт.'</span>, [Progress, ProgressMax]))
@@ -80,18 +80,25 @@ class="hl kwb">then</span>
 <span class="hl kwb">end</span>;
 
 </pre>
-      <p>Смотрите в файле <i>CodeDownloadFiles.iss</i> другой пример с
-        использованием <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a>.</p>
-      <p>Также смотрите пример сценария <i>DownloadFiles.iss</i>, который показывает
-        возможность загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
+      <p>Смотрите в файле <tt>CodeDownloadFiles.iss</tt> другой пример с использованием
+        <tt><a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a></tt>.</p>
+      <p>Также смотрите пример сценария <tt>DownloadFiles.iss</tt>, который показывает
+        возможность загрузки файла при помощи записи в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a><br />
-        <a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a><br />
-        <a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a><br />
-        <a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a><br />
-        <a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a><br />
-        <a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a><br />
-        <a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a>
+      <p class="indent"><code><a href="topic_isxfunc_setdownloadcredentials.htm">SetDownloadCredentials</a></code>
+        <br />
+        <code><a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a></code>
+        <br />
+        <code><a href="topic_isxfunc_downloadtemporaryfilesize.htm">DownloadTemporaryFileSize</a></code>
+        <br />
+        <code><a href="topic_isxfunc_downloadtemporaryfiledate.htm">DownloadTemporaryFileDate</a></code>
+        <br />
+        <code><a href="topic_isxfunc_createdownloadpage.htm">CreateDownloadPage</a></code>
+        <br />
+        <code><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a></code>
+        <br />
+        <code><a href="topic_isxfunc_extractarchive.htm">ExtractArchive</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

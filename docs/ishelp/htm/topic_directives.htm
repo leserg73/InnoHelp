@@ -26,7 +26,8 @@
         присвоим ей значение <tt><i>"My Program"</i></tt>:</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> MyAppName <span class="hl str">"My Program"</span>
-</pre> </div>
+</pre>
+      </div>
       <p><i>Встроенный метод</i> позволяет подключить директиву, которая была
         установлена ранее. В этом случае директива записывается между начальными
         символами <tt>{#</tt>
@@ -36,14 +37,15 @@
         выше):</p>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Setup]</span>
-<span class="hl kwb">AppName</span><span class="hl opt">=</span><span class="hl kwc">{#MyAppName}</span>
-</pre> </div>
+<span class="hl kwb">AppName</span>=<span class="hl kwf">{#</span>MyAppName<span class="hl kwf">}</span>
+</pre>
+      </div>
       <p>При выполнении сценария вместо выражения <tt>{#MyAppName}</tt> будет
         подставлено значение <tt><i>"My Program"</i></tt> из переменной <tt>MyAppName</tt>.
         Таким образом, директиве IS <tt>AppName</tt>
         будет присвоено значение <tt><i>"My Program"</i></tt>.</p>
       <p>Как видно из приведенного выше примера, не обязательно указывать имя
-        директивы <code><a href="topic_emit.htm">emit</a></code>,
+        директивы <tt><a href="topic_emit.htm">emit</a></tt>,
         если она используется встроенным методом. Поэтому выражение <tt>{#MyAppName}</tt>
         является сокращенной записью <tt>{#emit MyAppName}</tt>.</p>
       <h2 class="heading">Синтаксис директив</h2>
@@ -80,21 +82,38 @@
       </table>
       <h2 class="heading">Доступные директивы</h2>
       <ul>
-        <li><a href="topic_append.htm">#append</a></li>
-        <li><a href="topic_define.htm">#define</a></li>
-        <li><a href="topic_dim.htm">#dim, #redim</a></li>
-        <li><a href="topic_emit.htm">#emit</a></li>
-        <li><a href="topic_error.htm">#error</a></li>
-        <li><a href="topic_expr.htm">#expr</a></li>
-        <li><a href="topic_file.htm">#file</a></li>
-        <li><a href="topic_for.htm">#for</a></li>
-        <li><a href="topic_if.htm">#if, #elif, #else, #endif</a></li>
-        <li><a href="topic_ifdef.htm">#ifdef, #ifndef, #ifexist, #ifnexist</a></li>
-        <li><a href="topic_include.htm">#include</a></li>
-        <li><a href="topic_insert.htm">#insert</a></li>
-        <li><a href="topic_pragma.htm">#pragma</a></li>
-        <li><a href="topic_sub.htm">#sub, #endsub</a></li>
-        <li><a href="topic_undef.htm">#undef</a></li>
+        <li><code><a href="topic_define.htm">#define</a></code>
+        </li>
+        <li><code><a href="topic_dim.htm">#dim</a></code>, <code><a href="topic_dim.htm">#redim</a></code>
+        </li>
+        <li><code><a href="topic_undef.htm">#undef</a></code>
+        </li>
+        <li><code><a href="topic_include.htm">#include</a></code>
+        </li>
+        <li><code><a href="topic_file.htm">#file</a></code>
+        </li>
+        <li><code><a href="topic_emit.htm">#emit</a></code>, <code><a href="topic_emit.htm">#echo</a></code>
+        </li>
+        <li><code><a href="topic_expr.htm">#expr</a></code>, <code><a href="topic_expr.htm">#call</a></code>
+        </li>
+        <li><code><a href="topic_env.htm">#env</a></code>
+        </li>
+        <li><code><a href="topic_insert.htm">#insert</a></code>
+        </li>
+        <li><code><a href="topic_append.htm">#append</a></code>
+        </li>
+        <li><code><a href="topic_if.htm">#if</a></code>, <code><a href="topic_if.htm">#elif</a></code>, <code><a href="topic_if.htm">#else</a></code>, <code><a href="topic_if.htm">#endif</a></code>
+        </li>
+        <li><code><a href="topic_ifdef.htm">#ifdef</a></code>, <code><a href="topic_ifdef.htm">#ifndef</a></code>, <code><a href="topic_ifdef.htm">#ifexist</a></code>, <code><a href="topic_ifdef.htm">#ifnexist</a></code>
+        </li>
+        <li><code><a href="topic_for.htm">#for</a></code>
+        </li>
+        <li><code><a href="topic_sub.htm">#sub</a></code>, <code><a href="topic_sub.htm">#endsub</a></code>
+        </li>
+        <li><code><a href="topic_pragma.htm">#pragma</a></code>
+        </li>
+        <li><code><a href="topic_error.htm">#error</a></code>
+        </li>
       </ul>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

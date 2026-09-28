@@ -22,17 +22,17 @@
       <p class="prototip1 notopmarginX">function MakePendingFileRenameOperationsChecksum: String;</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает контрольную сумму текущего значения реестра <tt>PendingFileRenameOperations</tt>.
-        Вызывающая программа может использовать эту контрольную сумму для
-        проверки изменений в <tt>PendingFileRenameOperations</tt> или файле <tt>WININIT.INI</tt>.</p>
+        Вызывающая программа может использовать эту контрольную сумму для проверки
+        изменений в <tt>PendingFileRenameOperations</tt> или файле <tt>wininit.ini</tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   ChecksumBefore, ChecksumAfter: String;
 <span class="hl kwb">begin</span>
   ChecksumBefore := MakePendingFileRenameOperationsChecksum;
-  <span class="hl slc">// ...запуск программы...</span>
+  <span class="hl com">// ...запуск программы...</span>
   ChecksumAfter := MakePendingFileRenameOperationsChecksum;
   <span class="hl kwb">if</span> ChecksumAfter &lt;&gt; ChecksumBefore <span class="hl kwb">then</span>
-    <span class="hl slc">// PendingFileRenameOperations или WININIT.INI изменился</span>
+    <span class="hl com">// PendingFileRenameOperations или wininit.ini изменился</span>
 <span class="hl kwb">end</span>;</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

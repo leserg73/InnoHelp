@@ -24,13 +24,13 @@
           ShowCmd: Integer; const Wait: TExecWait; var ResultCode: Integer;
           const OnLog: TOnLog): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Идентична функции <a href="topic_isxfunc_exec.htm">Exec</a> за
+      <p>Идентична функции <tt><a href="topic_isxfunc_exec.htm">Exec</a></tt> за
         исключением:</p>
       <p style="text-align: left;">&nbsp;&nbsp;— консольные программы всегда
         запускаются в скрытом режиме, а параметр <tt>ShowCmd</tt> влияет только
         на программы с графического интерфейсом, поэтому рекомендуется всегда
-        использовать флаг <code><span class="hl kwe">SW_SHOWNORMAL</span></code>
-        вместо <code><span class="hl kwe">SW_HIDE</span></code>;</p>
+        использовать флаг <tt><span class="hl kwe">SW_SHOWNORMAL</span></tt>
+        вместо <tt><span class="hl kwe">SW_HIDE</span></tt>;</p>
       <p style="text-align: left;">&nbsp;&nbsp;— если значение параметра <tt>OnLog</tt>
         равно <tt>nil</tt>, то выходные данные исполняемого или пакетного файла
         регистрируются в файле журнала программы установки/удаления и/или в
@@ -82,11 +82,11 @@ class="hl ppc">@ExecAndGetFirstLineLog</span>);
 <span class="hl kwb">end</span>;
 </pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_exec.htm">Exec</a>
+      <p class="indent"><code><a href="topic_isxfunc_exec.htm">Exec</a></code>
         <br />
-        <a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a>
+        <code><a href="topic_isxfunc_execandcaptureoutput.htm">ExecAndCaptureOutput</a></code>
         <br />
-        <a href="topic_isxfunc_execandlogoutputwithnativesysdir.htm">ExecAndLogOutputWithNativeSysDir</a>
+        <code><a href="topic_isxfunc_execandlogoutputwithnativesysdir.htm">ExecAndLogOutputWithNativeSysDir</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

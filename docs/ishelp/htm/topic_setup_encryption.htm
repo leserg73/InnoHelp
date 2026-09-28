@@ -41,21 +41,22 @@
       </table>
       <h2 class="heading">Описание</h2>
       <p>При установке значения <tt>yes</tt> файлы инсталлятора (указанные в
-        секции <tt>[Files]</tt>) будут зашифрованы алгоритмом <b>XChaCha20</b>.</p>
+        секции <tt><a href="topic_filessection.htm">[Files]</a></tt>) будут зашифрованы алгоритмом <b>XChaCha20</b>.</p>
       <p>Если задано значение <tt>full</tt>, программа установки шифруется
         полностью и пароль необходимо будет указать при помощи параметра командной
-        строки <a href="topic_setupcmdline.htm#PASSWORD">/PASSWORD=</a>.</p>
-      <p>Если задано значение <tt>yes</tt> или <tt>full</tt> и в секции <tt>[Code]</tt>
-        будет вызвана функция <a 
-        href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a>
+        строки <tt><a href="topic_setupcmdline.htm#PASSWORD">/PASSWORD=</a></tt>.</p>
+      <p>Если задано значение <tt>yes</tt> или <tt>full</tt> и в секции
+        <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>
+        будет вызвана функция <tt><a 
+        href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a></tt>
         то того, как пользователь введёт правильный пароль, работа этой функции
         завершится ошибкой. Чтобы избежать этого, укажите флаг <tt>noencryption</tt>
-        для соответствующего файла в секции <tt>[Files]</tt>.</p>
+        для соответствующего файла в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>.</p>
       <p>При значении <tt>yes</tt> или <tt>full</tt> 256-разрядный ключ шифрования
-        XChaCha20 формируется из значения директивы <a 
-        href="topic_setup_password.htm">Password</a>, используя функцию PBKDF2
-        c заданным количеством итераций, которая указана в директиве <a
-        href="topic_setup_encryptionkeyderivation.htm">EncryptionKeyDerivation</a></p>
+        XChaCha20 формируется из значения директивы <tt><a 
+        href="topic_setup_password.htm">Password</a></tt>, используя функцию PBKDF2
+        c заданным количеством итераций, которая указана в директиве <tt><a
+        href="topic_setup_encryptionkeyderivation.htm">EncryptionKeyDerivation</a></tt></p>
       <p>192-разрядный <i>нонс</i> шифрования XChaCha20 представляет собой
         случайный базовый нонс, к которому добавляется индекс первого файла в
         чанке для получения уникальных нонсов шифрования. <u>Примечание</u>: нонс

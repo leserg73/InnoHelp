@@ -21,24 +21,23 @@
       <h2 class="heading prototip">Прототип функции</h2>
       <p class="prototip1 notopmarginX null"><b>str</b> FileRead(<b>int</b> Handle)</p>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет чтение строк файла, открытого с помощью функции <code><a href="topic_fileopen.htm">FileOpen</a></code>.
-        Принимается только дескриптор файла, который возвращает функция <code><a
-            href="topic_fileopen.htm">FileOpen</a></code>.</p>
+      <p>Выполняет чтение строк файла, открытого с помощью функции
+        <tt><a href="topic_fileopen.htm">FileOpen</a></tt>. Принимается только
+        дескриптор файла, который возвращает функция
+        <tt><a href="topic_fileopen.htm">FileOpen</a></tt>.</p>
       <h2 class="heading">Пример</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwf">#define</span> FileHandle
 <span class="hl kwf">#define</span> FileLine
 <span class="hl kwf">#sub</span> ProcessFileLine
-  <span class="hl kwf">#define</span> FileLine <span class="hl opt">=</span> <span
-class="hl kwd">FileRead</span><span class="hl opt">(</span>FileHandle<span class="hl opt">)</span>
-  <span class="hl kwf">#pragma</span> <span class="hl kwd">message</span> FileLine
+  <span class="hl kwf">#define</span> FileLine = FileRead(FileHandle)
+  <span class="hl kwf">#pragma message</span> FileLine
 <span class="hl kwf">#endsub</span>
-<span class="hl kwf">#for</span> {FileHandle = <span class="hl kwd">FileOpen</span>(<span class="hl kwd">AddBackslash</span>(CompilerPath) + "whatsnew.htm"); \
-  FileHandle &amp;&amp; !<span class="hl kwd">FileEof</span>(FileHandle); ""} \
-      ProcessFileLine
+<span class="hl kwf">#for</span> {FileHandle = FileOpen(AddBackslash(CompilerPath) + <span class="hl str">"whatsnew.htm"</span>); \
+  FileHandle &amp;&amp; !<a href="topic_fileeof.htm">FileEof</a>(FileHandle); <span class="hl str">""</span>} \
+  ProcessFileLine
 <span class="hl kwf">#if</span> FileHandle
-  <span class="hl kwf">#expr</span> <span class="hl kwd">FileClose</span><span class="hl opt">(</span>FindHandle<span
-class="hl opt">)</span>
+  <span class="hl kwf">#expr</span> <a href="topic_fileclose.htm">FileClose</a>(FindHandle)
 <span class="hl kwf">#endif</span>
 </pre>
       </div>

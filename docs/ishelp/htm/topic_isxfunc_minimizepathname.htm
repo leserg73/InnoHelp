@@ -25,12 +25,13 @@
       <h2 class="heading">Описание</h2>
       <p>Возвращает сокращенное имя указанного файла <tt>Font</tt> в
         соответствии с указанным шрифтом <tt>Font</tt> и максимальным размером
-        отображения <tt>MaxLen</tt> в пикселях. Отброшенная часть строки будет
-        заменена знаком многоточия (...).</p>
+        отображения <tt>MaxLen</tt> в пикселях. Сокращение выполняется путём
+        замены средней части на <tt>'...'</tt> по мере необходимости.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox">MyLabel.Caption := MinimizePathName(MyPathName, MyLabel.Font, MyLabel.Width);</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TFont">TFont</a> </p>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TFont">TFont</a></code>
+      </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -21,11 +21,11 @@
       <p>Для удобства новых пользователей, которые не знают,
         какие файлы можно, а какие нельзя включать в пакет поставки программы,
         компилятор выдаст сообщение об ошибке при попытке установки так
-        называемых "небезопасных" файлов, используя секцию <a href="topic_filessection.htm">[Files]</a>.
+        называемых "небезопасных" файлов, используя секцию <tt><a href="topic_filessection.htm">[Files]</a></tt>.
         Эти файлы перечислены ниже.</p>
-      <p>(Примечание: сообщение об ошибке можно отключить,
-        используя определённый флаг в секции <tt>[Files]</tt>, но делать этого
-        крайне НЕ рекомендуется.)</p>
+      <p>(Примечание: сообщение об ошибке можно отключить, используя определённый
+        флаг в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>, но
+        делать этого крайне НЕ рекомендуется.)</p>
       <dl>
         <dt><b>Любой файл DLL из системного каталога Windows</b></dt>
         <dd>
@@ -52,16 +52,16 @@
             распространяемой, скопируйте её в исходную папку с вашим сценарием и
             используйте только оттуда.</p>
         </dd>
-        <dt><b>ADVAPI32.dll, COMDLG32.dll, GDI32.dll, KERNEL32.dll,
-            RICHED32.dll, SHELL32.dll, USER32.dll, UXTHEME.dll</b></dt>
+        <dt><b>advapi32.dll, comdlg32.dll, gdi32.dll, kernel32.dll,
+            riched32.dll, shell32.dll, user32.dll, uxtheme.dll</b></dt>
         <dd>
           <p>Все эти файлы являются основными компонентами Windows и никогда не
             должны развёртываться при помощи программы установки. Пользователи
             могут получать новые версии этих библиотек только при установке
             новой версии Windows, пакета обновления или исправления для Windows.</p>
         </dd>
-        <dt><b>COMCAT.dll, MSVBVM50.dll,
-            MSVBVM60.dll, OLEAUT32.dll, OLEPRO32.dll, STDOLE2.tlb</b>
+        <dt><b>comcat.dll, msvbvm50.dll,
+            msvbvm60.dll, oleaut32.dll, olepro32.dll, stdole2.tlb</b>
             <i>(в особых случаях)</i></dt>
         <dd>
           <p>Если значение <tt>DestDir</tt> <i>отличается</i> от <tt>{sys}</tt>
@@ -75,19 +75,19 @@
             Кроме того, если ваши копии файлов были удалены, то другие
             приложения перестанут работать.</p>
         </dd>
-        <dt><b>COMCTL32.dll</b></dt>
+        <dt><b>comctl32.dll</b></dt>
         <dd>
-          <p>Microsoft не разрешает отдельное перераспределение COMCTL32.dll (и
-            это правильно - файл между платформами отличается), поэтому никогда
-            не следует помещать COMCTL32.dll в секцию <tt>[Files]</tt>. Однако
-            можно направить пользователей <a
+          <p>Microsoft не разрешает отдельное перераспределение <tt>comctl32.dll</tt>
+            (и это правильно - файл между платформами отличается), поэтому никогда
+            не следует помещать <tt>comctl32.dll</tt> в секцию <tt><a href="topic_filessection.htm">[Files]</a></tt>.
+            Однако можно направить пользователей <a
             href="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en"
             target="_blank" title="http://www.microsoft.com/downloads/details.aspx?FamilyID=cb2cf3a2-8025-4e8f-8511-9b476a8d35d2&amp;DisplayLang=en">на
-            загрузку обновления COMCTL32 с сайта Microsoft</a><img class="extlink" src="../images/extlink.svg"
-            alt=" [внешняя ссылка]" /> или добавить обновление COMCTL32 к вашей
+            загрузку обновления <tt>COMCTL32</tt> с сайта Microsoft</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg"
+            alt=" [внешняя ссылка]" /> или добавить обновление <tt>COMCTL32</tt> к вашей
             программе.</p>
         </dd>
-        <dt><b>SHDOCVW.dll, SHLWAPI.dll, URLMON.dll, WININET.dll</b></dt>
+        <dt><b>shdocvw.dll, shlwapi.dll, urlmon.dll, wininet.dll</b></dt>
         <dd>
           <p>Эти файлы являются компонентами ядра Internet Explorer, а также
             используются проводником Windows. Их замена может помешать запуску
@@ -95,7 +95,7 @@
             их последней версии, то вашим пользователям нужно будет установить
             последнюю версию Internet Explorer, чтобы получить их.</p>
         </dd>
-        <dt><b>MSCOREE.dll</b></dt>
+        <dt><b>mscoree.dll</b></dt>
         <dd>
           <p>Этот файл является частью Microsoft .NET Framework. Невозможно
             безопасно установить или обновить .NET Framework, включив этот файл

@@ -20,59 +20,49 @@
       строке</h1>
     <div class="topicbody">
       <p><a href="topic_compilercmdline.htm">Консольная версия компилятора</a>
-        (файл <i>ISCC.exe</i>) автоматически предоставляет
-        дополнительные параметры для управления процессом предварительной
-        обработки сценариев <i>Inno Setup</i>.</p>
-      <p>Использование: <code>iscc [параметры] scriptfile.iss</code></p>
-      <p>где параметры могут быть следующие:</p>
-      <table style="margin-top: 1.0em" border="1">
-          <tr>
-            <td><code>/D&lt;name&gt;[=&lt;value&gt;]</code></td>
-            <td>Эмулирует <code><span>#define</span>
-                public &lt;name&gt; &lt;value&gt;</code></td>
-          </tr>
-          <tr class="altcolorrow">
-            <td><code>/$&lt;letter&gt;(+|-)</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                option -&lt;letter&gt;(+|-)</code></td>
-          </tr>
-          <tr>
-            <td><code>/P&lt;letter&gt;(+|-)</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                parseroption -&lt;letter&gt;(+|-)</code></td>
-          </tr>
-          <tr class="altcolorrow">
-            <td><code>/I&lt;paths&gt;</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                include -&lt;paths&gt;</code></td>
-          </tr>
-          <tr>
-            <td><code>/J&lt;filename&gt;</code></td>
-            <td>Эмулирует <code><span>#include</span>
-                -&lt;filename&gt;</code></td>
-          </tr>
-          <tr class="altcolorrow">
-            <td><code>/{#&lt;string&gt;</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                inlinestart -&lt;string&gt;</code></td>
-          </tr>
-          <tr>
-            <td><code>/}&lt;string&gt;</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                inlineend -&lt;string&gt;</code></td>
-          </tr>
-          <tr class="altcolorrow">
-            <td><code>/V&lt;number&gt;</code></td>
-            <td>Эмулирует <code><span>#pragma</span>
-                verboselevel -&lt;number&gt;</code></td>
-          </tr>
+        (файл <tt>ISCC.exe</tt>) автоматически предоставляет дополнительные
+        параметры для управления процессом предварительной обработки сценариев
+        <i>Inno Setup</i>.</p>
+      <table style="margin-top: 1.0em; margin-right: 0.7em" border="1">
+        <tr><th>Параметр</th>
+        <th>Значение</th>
+        </tr>
+        <tr><td class="nowrap"><tt>--define=<i>&lt;name&gt;</i>[=<i>&lt;value&gt;</i>]</tt>, <tt>-d<i>&lt;name&gt;</i>[=<i>&lt;value&gt;</i>]</tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_define.htm">#define</a> public <i>&lt;name&gt; &lt;value&gt;</i></tt> (variable-definition).</td>
+        </tr>
+        <tr class="altcolorrow"><td class="nowrap"><tt>-$<i>&lt;letter&gt;</i>(+|-)</tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> option -<i>&lt;letter&gt;</i>(+|-)</tt>.</td>
+        </tr>
+        <tr><td class="nowrap"><tt>-p<i>&lt;letter&gt;</i>(+|-)</tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> parseroption -<i>&lt;letter&gt;</i>(+|-)</tt>.</td>
+        </tr>
+        <tr class="altcolorrow"><td class="nowrap"><tt>--include-dirs=<i>&lt;paths&gt;</i></tt>, <tt>-i<i>&lt;paths&gt;</i></tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> include <i>&lt;paths&gt;</i></tt> (несколько путей можно разделять точкой с запятой).</td>
+        </tr>
+        <tr><td class="nowrap"><tt>--include=<i>&lt;filename&gt;</i></tt>, <tt>-j<i>&lt;filename&gt;</i></tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_include.htm">#include</a>&nbsp;<i>&lt;filename&gt;</i></tt>.</td>
+        </tr>
+        <tr class="altcolorrow"><td class="nowrap"><tt>--inline-start=<i>&lt;string&gt;</i></tt>, <tt>-{#<i>&lt;string&gt;</i></tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> inlinestart <i>&lt;string&gt;</i></tt>.</td>
+        </tr>
+        <tr><td class="nowrap"><tt>--inline-end=<i>&lt;string&gt;</i></tt>, <tt>-}<i>&lt;string&gt;</i></tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> inlineend <i>&lt;string&gt;</i></tt>.</td>
+        </tr>
+        <tr class="altcolorrow"><td class="nowrap"><tt>--verbose=<i>&lt;number&gt;</i></tt>, <tt>-v<i>&lt;number&gt;</i></tt>
+        </td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> verboselevel <i>&lt;number&gt;</i></tt>.</td>
+        </tr>
       </table>
-      <p style="text-align: left;"><br />
-        <b>Пример</b>:<br />
+      <p style="text-align: left;"><b>Пример</b>:<br />
         <br />
-        <code>iscc /$c- /Pu+
-          "/DLicenseFile=Trial License.txt" /Ic:\inc;d:\inc /Jdefines.iss
-          "c:\isetup\samples\my script.iss"</code></p>
+        <code>iscc -$c- -pu+ "--define=LicenseFile=Trial License.txt" --include-dirs=c:\inc;d:\inc --include=defines.iss "c:\isetup\samples\my script.iss"</code></p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

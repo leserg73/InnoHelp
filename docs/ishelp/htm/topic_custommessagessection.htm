@@ -18,56 +18,55 @@
   <body>
     <h1 class="topicheading">Секция [CustomMessages]</h1>
     <div class="topicbody">
-      <p>Секция <tt>[CustomMessages]</tt> используется для
-        установки пользовательских значений сообщений в константах {cm:...}. Для
-        получения дополнительной информации обратитесь к разделу <a href="topic_consts.htm#cm">Константы</a>
+      <p>Секция <tt>[CustomMessages]</tt> используется для установки пользовательских
+        значений сообщений в константах <tt>{cm:...}</tt>. Для получения дополнительной
+        информации обратитесь к разделу "<a href="topic_consts.htm#cm">Константы</a>"
         справки.</p>
-      <p>Следующий пример показывает использование константы
-        {cm:...} из секции <tt>[CustomMessages]</tt> для описания задачи:</p>
+      <p>Следующий пример показывает использование константы <tt>{cm:...}</tt> из
+        секции <tt>[CustomMessages]</tt> для описания задачи:</p>
       <pre class="indent examplebox"><span class="hl kwa">[CustomMessages]</span>
 CreateDesktopIcon=Create a &amp;desktop icon
 
 <span class="hl kwa">[Tasks]</span>
-<span class="hl kwb">Name</span>: desktopicon; <span class="hl kwb">Description</span>: "<span
-class="hl kwc">{cm:CreateDesktopIcon}</span>"</pre>
-      <p>Сообщения могут принимать аргументы от %1 до %9.
-        Порядок аргументов можно менять (например, разместить %2 перед %1), а
-        также дублировать, если это необходимо (например, "%1 ... %1 %2"). В
-        сообщениях с аргументами используйте последовательную запись двух
-        символов "%", чтобы встроить один символ "%". Аргумент вида "%n"
-        позволяет создать перенос на новую строку.</p>
-      <p>В случаях, когда в секции <tt>[Languages]</tt> имеется
-        несколько записей, использование секции <tt>[CustomMessages]</tt> с
-        пользовательскими сообщениями (в противоположность языковому файлу .isl)
-        по умолчанию переопределит значения сообщений для всех языков. Чтобы
-        применить записи секции <tt>[CustomMessages]</tt> только для одного
-        языка, добавьте через точку к имени константы префикс с внутренним
-        именем языка, с которым необходимо ассоциировать данное сообщение.
-        Например:</p>
-      <pre class="indent examplebox">nl.CreateDesktopIcon=Maak een snelkoppeling op het &amp;bureaublad
+<span class="hl kwb">Name</span>: desktopicon; <span class="hl kwb">Description</span>: "<span class="hl kwc">{cm:CreateDesktopIcon}</span>"
 </pre>
-      <p>В настоящее время все языковые файлы .isl, поставляемые
-        вместе с Inno Setup, имеют следующие пользовательские сообщения,
-        переведенные для каждого языка (показаны значения для английского
-        языка):</p>
-      <pre class="indent examplebox">NameAndVersion=%1 version %2
-AdditionalIcons=Additional shortcuts:
-CreateDesktopIcon=Create a &amp;desktop shortcuts
-CreateQuickLaunchIcon=Create a &amp;Quick Launch shortcuts
-ProgramOnTheWeb=%1 on the Web
-UninstallProgram=Uninstall %1
-LaunchProgram=Launch %1
-AssocFileExtension=&amp;Associate %1 with the %2 file extension
-AssocingFileExtension=Associating %1 with the %2 file extension...
-AutoStartProgramGroupDescription=Startup:
-AutoStartProgram=Automatically start %1
-AddonHostProgramNotFound=%1 could not be located in the folder you selected.%n%nDo you want to continue anyway?
+      <p>Сообщения могут принимать аргументы от <tt>%1</tt> до <tt>%9</tt>. Порядок
+        аргументов можно менять (например, разместить <tt>%2</tt> перед <tt>%1</tt>),
+        а также дублировать, если это необходимо (например, "<tt>%1</tt> ... <tt>%1</tt>
+        <tt>%2</tt>"). В сообщениях с аргументами используйте последовательную
+        запись двух символов <tt>%</tt>, чтобы встроить один символ <tt>%</tt>.
+        Аргумент вида <tt>%n</tt> позволяет создать перенос на новую строку.</p>
+      <p>В случаях, когда в секции <tt><a href="topic_languagessection.htm">[Languages]</a></tt>
+        имеется несколько записей, использование секции <tt>[CustomMessages]</tt> с
+        пользовательскими сообщениями (в противоположность языковому файлу
+        <tt>.isl</tt>) по умолчанию переопределит значения сообщений для всех языков.
+        Чтобы применить записи секции <tt>[CustomMessages]</tt> только для одного
+        языка, добавьте через точку к имени константы префикс с внутренним именем
+        языка, с которым необходимо ассоциировать данное сообщение. Например:</p>
+      <pre class="indent examplebox">nl.<span class="hl kwb">CreateDesktopIcon</span>=Maak een snelkoppeling op het &amp;bureaublad
 </pre>
-      <p>Эти предопределённые пользовательские сообщения можно
-        использовать в собственных сценариях. Вот, к примеру, использование <tt>UninstallProgram</tt>:</p>
+      <p>В настоящее время все языковые файлы <tt>.isl</tt>, поставляемые вместе
+        с Inno Setup, имеют следующие пользовательские сообщения, переведенные для
+        каждого языка (показаны значения для английского языка):</p>
+      <pre class="indent examplebox"><span class="hl kwb">NameAndVersion</span>=%1 version %2
+<span class="hl kwb">AdditionalIcons</span>=Additional shortcuts:
+<span class="hl kwb">CreateDesktopIcon</span>=Create a &amp;desktop shortcuts
+<span class="hl kwb">CreateQuickLaunchIcon</span>=Create a &amp;Quick Launch shortcuts
+<span class="hl kwb">ProgramOnTheWeb</span>=%1 on the Web
+<span class="hl kwb">UninstallProgram</span>=Uninstall %1
+<span class="hl kwb">LaunchProgram</span>=Launch %1
+<span class="hl kwb">AssocFileExtension</span>=&amp;Associate %1 with the %2 file extension
+<span class="hl kwb">AssocingFileExtension</span>=Associating %1 with the %2 file extension...
+<span class="hl kwb">AutoStartProgramGroupDescription</span>=Startup:
+<span class="hl kwb">AutoStartProgram</span>=Automatically start %1
+<span class="hl kwb">AddonHostProgramNotFound</span>=%1 could not be located in the folder you selected.%n%nDo you want to continue anyway?
+</pre>
+      <p>Эти предопределённые пользовательские сообщения можно использовать в
+        собственных сценариях. Вот, к примеру, использование <tt>UninstallProgram</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Icons]</span>
 <span class="hl kwb">Name</span>: "<span class="hl kwc">{group}</span>\<span class="hl kwc">{cm:UninstallProgram,My Program}</span>"; <span
-class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"</pre>
+class="hl kwb">Filename</span>: "<span class="hl kwc">{uninstallexe}</span>"
+</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

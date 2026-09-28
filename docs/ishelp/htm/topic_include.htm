@@ -36,41 +36,35 @@
       </div>
       <h2 class="heading">Описание</h2>
       <p>Выполняет подключение к данным <a href="topic_translation.htm">вывода
-          препроцессора</a> указанного файла. Если используется файл Unicode, то
+        препроцессора</a> указанного файла. Если используется файл Unicode, то
         он обязательно должен быть в кодировке UTF-8 (с или без маркера BOM).</p>
       <p>Если имя файла заключено в кавычки, то <b>ISPP</b> начинает его поиск
-        с каталога, в котором находится текущий файл сценария. Если указанный
-        файл обнаружить не удалось, то его поиск будет продолжен в каталоге
-        заданном директивой <code><a href="topic_pragma.htm">pragma</a></code>
-        с параметром INCLUDE, который устанавливает переменную пути окружения.</p>
+        с каталога, в котором находится текущий файл сценария, затем в каталоге,
+        где находится файл, включивший текущий файл, и так далее. Если указанный
+        файл обнаружить не удалось, то его поиск будет продолжен по текущему пути
+        включения, заданному с помощью директивы <tt><a href="topic_pragma.htm">pragma</a></tt>,
+        а затем по пути, указанному в переменной окружения <tt>INCLUDE</tt>.</p>
       <p>Если имя файла является выражением или указано в угловых скобках, то
         его поиск будет выполнен только в указанном месте.</p>
-      <p>С именем файла можно использовать приставку "<tt>compiler:</tt>",
-        тогда поиск файла будет осуществлён в каталоге компилятора, по месту
-        установки<i> Inno Setup</i>.</p>
-      <p>Директиву <tt><span>include</span></tt>
-        нельзя использовать <i>встроенным</i> методом.</p>
+      <p>С именем файла можно использовать приставку <tt>compiler:</tt>, тогда
+        поиск файла будет осуществлён в каталоге компилятора, по месту установки<i>
+        Inno Setup</i>.</p>
+      <p>Директиву <tt><span>include</span></tt> нельзя использовать <i>встроенным</i>
+        методом.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
-        <pre class="hl"><span class="hl slc">// Подключаем к сценарию дополнительный файл file.iss</span>
-<span class="hl kwf">#include</span> <span class="hl opt">&lt;file.iss&gt;</span>
+        <pre class="hl"><span class="hl com">// Подключаем к сценарию дополнительный файл file.iss</span>
+<span class="hl kwf">#include</span> &lt;file.iss&gt;
 
-<span class="hl slc">// Подключаем файл file.iss, который находится</span>
-<span class="hl slc">// в папке с:\dir\</span>
-<span class="hl kwf">#include</span> <span class="hl str">"c:\dirfile.iss"</span>
+<span class="hl com">// Подключаем файл file.iss, который находится в каталоге с:\dir</span>
+<span class="hl kwf">#include</span> <span class="hl str">"c:\dir\file.iss"</span>
 
-<span class="hl slc">// Подключаем файл common.iss, путь к которому определяем</span>
-<span class="hl slc">// через встроенную переменную CompilerPath.</span>
-<span class="hl slc">// К полученной строке пути при помощи функции</span>
-<span class="hl slc">// AddBackslash добавляем обратную косую черту</span>
-<span class="hl slc">// для формирования завершенной строки к папке.</span>
-<span class="hl kwf">#include</span> <a href="topic_addbackslash.htm">AddBackslash</a>(<a 
-
-href="topic_predefinedvars.htm">CompilerPath</a>) + <span class="hl str">"common.iss"</span>
-
-<span class="hl slc">// Этот пример аналогичен предыдущему.</span>
-<span class="hl slc">// Вместо переменной используется константа ISPP 'compiler:'.</span>
-<span class="hl kwf">#include</span> <span class="hl str">"</span><span class="hl kwc">compiler</span>:common.iss"
+<span class="hl com">// Подключаем файл common.iss, путь к которому определяем</span>
+<span class="hl com">// через встроенную переменную CompilerPath.</span>
+<span class="hl com">// К полученной строке пути при помощи функции</span>
+<span class="hl com">// AddBackslash добавляем обратную косую черту</span>
+<span class="hl com">// для формирования завершенной строки к папке.</span>
+<span class="hl kwf">#include</span> <a href="topic_addbackslash.htm">AddBackslash</a>(<a href="topic_predefinedvars.htm">CompilerPath</a>) + <span class="hl str">"common.iss"</span>
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>

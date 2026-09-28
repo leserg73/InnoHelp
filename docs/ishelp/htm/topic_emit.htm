@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Language" content="ru" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <meta content="Перевод на русский: Сергей Леонов (aka Leserg)" name="description" />
-    <title>Препроцессор Inno Setup: #emit</title>
+    <title>Препроцессор Inno Setup: #emit, #echo</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/shared.css" />
     <script type="text/javascript" src="../js/topic.js"></script>
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <h1 class="topicheading">Препроцессор Inno Setup: #emit</h1>
+    <h1 class="topicheading">Препроцессор Inno Setup: #emit, #echo</h1>
     <div class="topicbody">
       <h2 class="heading sintax">Синтаксис</h2>
       <div class="sintax1 notopmarginX">
@@ -24,7 +24,7 @@
           <tbody>
             <tr>
               <td class="cellleft" style="width: 140px;"><i>emit-directive:</i></td>
-              <td class="cellright">(<b>emit</b> | <b>=</b>) &lt;expr&gt;</td>
+              <td class="cellright">(<b>emit</b> | <b>echo</b> | <b>=</b>)  &lt;expr&gt;</td>
             </tr>
           </tbody>
         </table>
@@ -34,42 +34,31 @@
       <p>Если директива используется встроенным методом, то имя директивы <tt>emit</tt>
         для выражения <tt>expr</tt> можно не указывать.</p>
       <p>Это означает, что можно, например, использовать <tt>{#MyDestDir}</tt>
-        вместо <tt>{#emit MyDestDir}</tt> или <tt>{#=MyDestDir}</tt>.</p>
+        вместо <tt>{#emit&nbsp;MyDestDir}</tt>, <tt>{#echo&nbsp;MyDestDir}</tt>
+        или <tt>{#=MyDestDir}</tt>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Setup]</span>
-<span class="hl kwb">AppVersion</span>=<span class="hl kwc">{#<a 
-
-href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a 
-
-href="topic_addbackslash.htm">AddBackslash</a>(SourcePath) + &quot;MyProg.exe&quot;)}</span>
+<span class="hl kwb">AppVersion</span>=<span class="hl kwf">{#</span> <a href="topic_getversionnumbersstring.htm">GetVersionNumbersString</a>(<a href="topic_addbackslash.htm">AddBackslash</a>(SourcePath) + <span class="hl str">"MyProg.exe"</span>)<span class="hl kwf">}</span>
 
 <span class="hl kwa">[Files]</span>
-<span class="hl slc">; В указанном выражении вместо переменной MyDestDir подставляется её значение.</span>
-<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: '</span> <span
+<span class="hl com">; В указанном выражении вместо переменной MyDestDir подставляется её значение.</span>
+<span class="hl kwf">#emit</span> <span class="hl str">'Source: "file1.ext"; DestDir: '</span> + MyDestDir
 
-class="hl opt">+</span> MyDestDir
+<span class="hl com">; Для параметра DestDir выполняется подстановка значения из переменной MyDestDir</span>
+<span class="hl com">; (имя директивы emit не указано, т.к. она используется встроенным методом).</span>
+<span class="hl kwb">Source</span>: "file2.ext"<span
 
-<span class="hl slc">; Для параметра DestDir выполняется подстановка значения из переменной MyDestDir</span>
-<span class="hl slc">; (имя директивы emit не указано, т.к. она используется встроенным методом).</span>
-<span class="hl kwb">Source</span><span class="hl opt">:</span> <span class="hl str">"file2.ext"</span><span
+class="hl opt">;</span> <span class="hl kwb">DestDir</span>: <span class="hl kwf">{#</span>MyDestDir<span class="hl kwf">}</span>
 
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-
-class="hl kwc">{#MyDestDir}</span>
-
-<span class="hl slc">; Выполняется чтение текущего значения пользовательской функции</span>
+<span class="hl com">; Выполняется чтение текущего значения пользовательской функции</span>
 <span class="hl kwf">#emit</span> GenerateVisualCppFilesEntries
 
 <span class="hl kwa">[Code]</span> 
-<span class="hl kwd">const</span>
-<span class="hl slc">; Директива emit используется встроенным методом, поэтому её имя не указано.</span>
-<span class="hl slc">; Выполняется чтение значения вызываемой функции SetupSetting().</span>
-AppName <span class="hl opt">=</span> <span class="hl kwc">'{#<a 
-
-href="topic_setupsetting.htm">SetupSetting</a>("AppName")}'</span><span
-
-class="hl opt">;</span>
+<span class="hl kwb">const</span>
+<span class="hl com">; Директива emit используется встроенным методом, поэтому её имя не указано.</span>
+<span class="hl com">; Выполняется чтение значения вызываемой функции SetupSetting().</span>
+  AppName = <span class="hl str">'</span> <span class="hl kwf">{#</span> <a href="topic_setupsetting.htm">SetupSetting</a>(<span class="hl str">"AppName"</span>)<span class="hl kwf">}</span> <span class="hl str">'</span>;
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>

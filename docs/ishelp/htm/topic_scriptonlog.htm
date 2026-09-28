@@ -18,19 +18,20 @@
   <body>
     <h1 class="topicheading">Программирование: Параметр "OnLog"</h1>
     <div class="topicbody">
-      <p>В секции <tt>[Run]</tt> поддерживается один дополнительный <a
-        href="topic_params.htm">параметр</a>. Этот параметр следующий:</p>
+      <p>В секции <tt><a href="topic_runsection.htm">[Run]</a></tt> поддерживается
+        один дополнительный <a href="topic_params.htm">параметр</a>. Этот параметр
+        следующий:</p>
       <dl>
         <dt class="paramlist"><b><span id="OnLog">OnLog</span></b></dt>
         <dd class="paramlist">
         <p>В сочетании с флагом <tt>logoutput</tt> этот параметр определяет имя
           функции, которая будет вызываться для каждой строки вывода программы
           вместо непосредственного включения её в файл журнала.</p>
-        <p>Сама функция должна быть объявлена в секции <tt>[Code]</tt> и прототип
-          её следующий:<br />
+        <p>Сама функция должна быть объявлена в секции <tt><a 
+          href="topic_scriptcreating.htm">[Code]</a></tt> и прототип её следующий:<br />
           &nbsp;&nbsp;&nbsp;&nbsp;<tt>procedure MyOnLog(const S: String; const
           Error, FirstLine: Boolean);</tt>.</p>
-        <p>См. описание функции <a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a>,
+        <p>См. описание функции <tt><a href="topic_isxfunc_execandlogoutput.htm">ExecAndLogOutput</a></tt>,
           где поясняются параметры <tt>S</tt>, <tt>Error</tt> и <tt>FirstLine</tt>.</p>
         <div class="examplebox">
           <div class="exampleheader">Пример:</div>
@@ -39,10 +40,11 @@
         </div>
         </dd>
       </dl>
-      <p>Ниже показан пример секции <tt>[Code]</tt>, в котором приведена используемая
-        выше процедура. Функция <tt>Log</tt> является <a
+      <p>Ниже показан пример секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>,
+        в котором приведена используемая выше процедура. Функция <tt><a 
+        href="topic_isxfunc_log.htm">Log</a></tt> является <a
         href="topic_scriptfunctions.htm">вспомогательной</a> и не включена в эту
-        секцию [Code].</p>
+        секцию <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>.</p>
       <pre class="indent examplebox">
 <span class="hl kwa">[Code]</span>
 <span class="hl kwb">procedure</span> <span class="hl kwd">MyOnLog</span>(<span class="hl kwb">const</span> S: String; <span class="hl kwb">const</span> Error, FirstLine: Boolean);

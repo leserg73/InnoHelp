@@ -25,30 +25,29 @@
           Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Открывает указанный файл или выполняет другое действие, заданное
-        параметром <tt>Verb</tt>, используя те же учетные данные, что и
-        программа установки/удаления. Параметр <tt>Filename</tt> может
-        содержать исполняемый файл, документ, папку или ссылку с адресом URL.
-        Если параметр <tt>Verb</tt> содержит пустую строку, то по умолчанию
-        будет использовано действие, связанное с данным типом файла (как правило
-        "open"). Параметр <tt>Wait</tt> определяет работу функции: завершить
-        немедленно, ожидать завершения запущенного процесса или его простоя.
-        Функция возвращает значение <tt>True</tt>, если заданный файл был
-        успешно открыт, иначе — <tt>False</tt>. Если функция вернёт <tt>False</tt>,
-        то параметр <tt>ErrorCode</tt> будет содержать код возникшей ошибки.
-        Используйте вызов <tt>SysErrorMessage(ErrorCode)</tt>, чтобы получить
-        описание ошибки.</p>
+        параметром <tt>Verb</tt>, используя те же учетные данные, что и программа
+        установки/удаления. Параметр <tt>Filename</tt> может содержать исполняемый
+        файл, документ, папку или ссылку с адресом URL. Если параметр <tt>Verb</tt>
+        содержит пустую строку, то по умолчанию будет использовано действие,
+        связанное с данным типом файла (как правило <tt>'open'</tt>). Параметр
+        <tt>Wait</tt> определяет работу функции: завершить немедленно, ожидать
+        завершения запущенного процесса или его простоя. Функция возвращает значение
+        <tt>True</tt>, если заданный файл был успешно открыт, иначе — <tt>False</tt>.
+        Если функция вернёт <tt>False</tt>, то параметр <tt>ErrorCode</tt> будет
+        содержать код возникшей ошибки. Используйте вызов
+        <tt><a href="topic_isxfunc_syserrormessage.htm">SysErrorMessage</a>(ErrorCode)</tt>,
+        чтобы получить описание ошибки.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Класс <tt>TExecWait</tt> представлен следующими значениями:</p>
       <pre class="indent">TExecWait = (ewNoWait, ewWaitUntilTerminated, ewWaitUntilIdle);</pre>
       <p>Обратите внимание, что передача параметром <tt>Wait</tt> значения
-        отличного от <tt>ewNoWait</tt>, не будет иметь никакого эффекта, если в
+        отличного от <tt>ewNoWait</tt> не будет иметь никакого эффекта, если в
         результате выполнения функции не будет создан новый процесс (например,
         когда файл уже открыт запущенным экземпляром программы, связанной с
         данным типом файлов).</p>
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx"
-
-          target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
-          системных ошибок в библиотеке MSDN</a><img class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+        target="_blank" title="http://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx">коды
+        системных ошибок в библиотеке MSDN</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <p>Эта функция не может использоваться для запуска самой программы установки
         до тех пор, пока не начнётся процесс установки.</p>
       <h2 class="heading">Пример</h2>
@@ -62,11 +61,11 @@ class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\fi
 
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// если нужно, обработайте результат в случае ошибки</span>
+    <span class="hl com">// если нужно, обработайте результат в случае ошибки</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a>
+      <p class="indent"><code><a href="topic_isxfunc_shellexecasoriginaluser.htm">ShellExecAsOriginalUser</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

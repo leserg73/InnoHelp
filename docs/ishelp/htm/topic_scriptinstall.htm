@@ -21,15 +21,20 @@
     <div class="topicbody">
       <p>Существует два необязательных <a href="topic_params.htm">параметра</a>,
         поддерживаемые всеми секциями, записи которых представляют собой набор
-        параметров, за исключением секций <tt>[Languages]</tt>, <tt>[Types]</tt>,
-        <tt>[Components]</tt> и <tt>[Tasks]</tt>. Этими параметрами являются:</p>
+        параметров, за исключением секций 
+        <tt><a href="topic_languagessection.htm">[Languages]</a></tt>,
+        <tt><a href="topic_typessection.htm">[Types]</a></tt>,
+        <tt><a href="topic_componentssection.htm">[Components]</a></tt> и
+        <tt><a href="topic_taskssection.htm">[Tasks]</a></tt>. Этими параметрами
+        являются:</p>
       <dl>
         <dt class="paramlist"><b><span id="BeforeInstall">BeforeInstall</span></b></dt>
         <dd class="paramlist">
           <p>Определяет имя функции, которая будет вызвана непосредственно перед
             установкой записи. Эта функция должна быть либо пользовательской и
-            описана в секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
-              функций</a>.</p>
+            описана в секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>,
+            либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
+            функций</a>.</p>
           <p>Может содержать параметры, разделённые запятыми, которые программа
             установки должна передать в функцию. Допустимыми типами параметров
             являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
@@ -37,8 +42,8 @@
             содержать константы. Эти константы не будут автоматически расширены.
             Если требуется передать расширенную константу, существует одна
             специальная <a href="topic_scriptfunctions.htm">поддерживаемая
-              функция</a>, которая может быть вызвана из списка параметров: <tt>ExpandConstant</tt>.
-          </p>
+            функция</a>, которая может быть вызвана из списка параметров:
+            <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a></tt>.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Files]</span>
@@ -59,8 +64,8 @@ class="hl str">'Before MyProg.chm Install'</span>)</pre>
         <dd class="paramlist">
           <p>Определяет имя функции, которая будет вызвана сразу после установки
             записи. Эта функция должна быть либо пользовательской и описана в
-            секции <tt>[Code]</tt>, либо одной из <a href="topic_scriptfunctions.htm">поддерживаемых
-              функций</a>.</p>
+            секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>, либо
+            одной из <a href="topic_scriptfunctions.htm">поддерживаемых функций</a>.</p>
           <p>Может содержать параметры, разделённые запятыми, которые программа
             установки должна передать в функцию. Допустимыми типами параметров
             являются <tt>String</tt> (<i>строковый</i>), <tt>Integer</tt> (<i>целочисленный</i>)
@@ -68,7 +73,8 @@ class="hl str">'Before MyProg.chm Install'</span>)</pre>
             содержать константы. Эти константы не будут автоматически расширены.
             Если требуется передать расширенную константу, существует одна
             специальная <a href="topic_scriptfunctions.htm">поддерживаемая
-              функция</a>, которая может быть вызвана из списка параметров: <tt>ExpandConstant</tt>.
+            функция</a>, которая может быть вызвана из списка параметров:
+            <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a></tt>.
           </p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
@@ -87,20 +93,22 @@ class="hl str">'After MyProg.chm Install'</span>)</pre>
           </div>
         </dd>
       </dl>
-      <p>Все функции <tt>BeforeInstall</tt> и <tt>AfterInstall</tt>
-        не должны иметь возвращаемого значения.</p>
-      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
-        не будет вызвана, если программа установки уже определила, что запись не
-        должна быть обработана.</p>
-      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt>
-        в записях секции <tt>[Files]</tt> с использованием маски файлов, но без флага
-        <tt>external</tt>, вызывается один раз для каждого файла, который соответствует
-        маске, а не один раз для каждой записи. Используйте <tt>CurrentFileName</tt>,
+      <p>Все функции <tt>BeforeInstall</tt> и <tt>AfterInstall</tt> не должны иметь
+        возвращаемого значения.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt> не будет вызвана,
+        если программа установки уже определила, что запись не должна быть обработана.</p>
+      <p>Функция <tt>BeforeInstall</tt> или <tt>AfterInstall</tt> в записях секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt> с использованием маски
+        файлов, но без флага <tt>external</tt>, вызывается один раз для каждого
+        файла, который соответствует маске, а не один раз для каждой записи.
+        Используйте <tt><a href="topic_isxfunc_currentfilename.htm">CurrentFilename</a></tt>,
         чтобы проверить, для какого именно файла вызывается функция.</p>
-      <p>Ниже приведен пример секции <tt>[Code]</tt>, в котором
-        используются функции, указанные выше. Функции <tt>CurrentFileName</tt>
-        и <tt>Log</tt> являются <a href="topic_scriptfunctions.htm">поддерживаемыми
-          функциями</a>, и поэтому не включены в эту секцию <tt>[Code]</tt>.</p>
+      <p>Ниже приведен пример секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>,
+        в котором используются функции, указанные выше. Функции <tt><a 
+        href="topic_isxfunc_currentfilename.htm">CurrentFilename</a></tt> и
+        <tt><a href="topic_isxfunc_log.htm">Log</a></tt> являются
+        <a href="topic_scriptfunctions.htm">поддерживаемыми функциями</a>, и
+        поэтому не включены в эту секцию <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>.</p>
       <pre class="indent examplebox"><span class="hl kwa">[Code]</span>
 <span class="hl kwb">procedure</span> MyBeforeInstall;
 <span class="hl kwb">begin</span>

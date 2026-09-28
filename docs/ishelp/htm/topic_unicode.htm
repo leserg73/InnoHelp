@@ -31,17 +31,18 @@
         противном случае используется Unicode версия Inno Setup.</p>
       <p>Основные различия и возможности:</p>
       <ul>
-        <li>Unicode версия Inno Setup поддерживает в файлах .iss и .isl
+        <li>Unicode версия Inno Setup поддерживает в файлах <tt>.iss</tt> и <tt>.isl</tt>
           кодировку UTF-8. Начиная с Inno Setup 6.3 маркер BOM больше не является
           обязательным. Кодировка UTF-16 не поддерживается.</li>
-        <li>Все существующие языковые .isl файлы в кодировке ANSI во время
+        <li>Все существующие языковые <tt>.isl</tt> файлы в кодировке ANSI во время
           компиляции автоматически преобразуются с использованием языкового
           параметра <tt>LanguageCodePage</tt>.</li>
-        <li>Все записи <tt>[Messages]</tt> и <tt>[CustomMessages]</tt> в
-          существующих ANSI .iss сценариях должны быть вручную преобразованы в
+        <li>Все записи <tt><a href="topic_messagessection.htm">[Messages]</a></tt>
+          и <tt><a href="topic_custommessagessection.htm">[CustomMessages]</a></tt> в
+          существующих ANSI <tt>.iss</tt> сценариях должны быть вручную преобразованы в
           кодировку Unicode, если язык использует особое значение <tt>LanguageCodePage</tt>.
        </li>
-        <li>Unicode версия Inno Setup поддерживает в файлах .txt для <tt>LicenseFile</tt>,
+        <li>Unicode версия Inno Setup поддерживает в файлах <tt>.txt</tt> для <tt>LicenseFile</tt>,
           <tt>InfoBeforeFile</tt> и <tt>InfoAfterFile</tt> кодировку UTF-8 и
           UTF-16LE. Начиная с Inno Setup 6.3 маркер BOM больше не является
           обязательным.</li>
@@ -49,35 +50,44 @@
           <tt>InfoBeforeFile</tt> или <tt>InfoAfterFile</tt> во время
           компиляции автоматически преобразуется с использованием языкового
           параметра <tt>LanguageCodePage</tt>.</li>
-        <li>Директива <tt>ShowUndisplayableLanguages</tt> в секции <tt>[Setup]</tt>
+        <li>Директива <tt>ShowUndisplayableLanguages</tt> в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>
           игнорируется Unicode версией Inno Setup.</li>
         <li>Существующие установщики, собранные с помощью ANSI версии Inno Setup,
           могут быть без проблем обновлены Unicode версией и наоборот.</li>
         <li>Примечания к программированию в кодировке Unicode:
           <ul>      <br />
-            <li>Компилятор Unicode рассматривает тип "String" как строку
-              Unicode, а тип "Char" как символ Unicode. Тип "AnsiString" не
-              изменился и по прежнему является строкой ANSI. Тип "PChar" был
-              переименован в "PAnsiChar" и в настоящее время его использование
+            <li>Компилятор Unicode рассматривает тип <tt>String</tt> как строку
+              Unicode, а тип <tt>Char</tt> как символ Unicode. Тип <tt>AnsiString</tt> не
+              изменился и по прежнему является строкой ANSI. Тип <tt>PChar</tt> был
+              переименован в <tt>PAnsiChar</tt> и в настоящее время его использование
               в целом не рекомендуется.</li>
             <li>Компилятор Unicode более требовательный в отношении правильного
               использования ";". Недостающие символы ";" считаются ошибкой.</li>
             <li>Изменён прототип некоторых функций: некоторые параметры функций
-              <tt>CreateOutputMsgMemoPage</tt>, <tt>RegQueryBinaryValue</tt>,
-              <tt>RegWriteBinaryValue</tt>, <tt>OemToCharBuff</tt>, <tt>CharToOemBuff</tt>,
-              <tt>LoadStringFromfile</tt>, <tt>SaveStringToFile</tt> и <tt>GetMD5OfString</tt>
-              теперь используют тип AnsiString вместо String.</li>
-            <li>Добавлена поддержка новых функций <tt>SaveStringsToUTF8File</tt>
-              и <tt>GetMD5OfUnicodeString</tt>.</li>
-            <li>Добавлен новый тип данных "Int64", который поддерживается
-              функцией <tt>IntToStr</tt>. Также добавлены новые функции <tt>StrToInt64</tt>,
-              <tt>StrToInt64Def</tt> и <tt>GetSpaceOnDisk64</tt>.</li>
+              <tt><a href="topic_isxfunc_createoutputmsgmemopage.htm">CreateOutputMsgMemoPage</a></tt>,
+              <tt><a href="topic_isxfunc_regquerybinaryvalue.htm">RegQueryBinaryValue</a></tt>,
+              <tt><a href="topic_isxfunc_regwritebinaryvalue.htm">RegWriteBinaryValue</a></tt>,
+              <tt><a href="topic_isxfunc_oemtocharbuff.htm">OemToCharBuff</a></tt>,
+              <tt><a href="topic_isxfunc_chartooembuff.htm">CharToOemBuff</a></tt>,
+              <tt><a href="topic_isxfunc_loadstringfromfile.htm">LoadStringFromFile</a></tt>,
+              <tt><a href="topic_isxfunc_savestringtofile.htm">SaveStringToFile</a></tt> и
+              <tt><a href="topic_isxfunc_getmd5ofstring.htm">GetMD5OfString</a></tt>
+              теперь используют тип <tt>AnsiString</tt> вместо <tt>String</tt>.</li>
+            <li>Добавлена поддержка новых функций <tt><a
+              href="topic_isxfunc_savestringstoutf8file.htm">SaveStringsToUTF8File</a></tt> и
+              <tt><a href="topic_isxfunc_getmd5ofunicodestring.htm">GetMD5OfUnicodeString</a></tt>.</li>
+            <li>Добавлен новый тип данных <tt>Int64</tt>, который поддерживается
+              функцией <tt><a href="topic_isxfunc_inttostr.htm">IntToStr</a></tt>.
+              Также добавлены новые функции <tt><a
+              href="topic_isxfunc_strtoint64.htm">StrToInt64</a></tt>,
+              <tt><a href="topic_isxfunc_strtoint64def.htm">StrToInt64Def</a></tt> и
+              <tt><a href="topic_isxfunc_getspaceondisk64.htm">GetSpaceOnDisk64</a></tt>.</li>
             <li>Добавлен новый класс <tt>TStringStream</tt>.</li>
             <li>Если вы хотите скомпилировать сценарий, в котором используются
               вызовы ANSI версии функций API Windows с помощью Unicode версии
               компилятора, либо обновите вызываемые функции на Unicode версии
-              с индексом "W" и используя тип "String", либо сохраните вызовы
-              функций ANSI с индексом "A" и используйте тип "AnsiString".</li>
+              с индексом "W" и используя тип <tt>String</tt>, либо сохраните вызовы
+              функций ANSI с индексом "A" и используйте тип <tt>AnsiString</tt>.</li>
           </ul>
        </li>
       </ul>

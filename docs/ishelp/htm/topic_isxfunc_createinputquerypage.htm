@@ -41,16 +41,16 @@
 
 ...
 
-<span class="hl slc">// Создаём страницу</span>
+<span class="hl com">// Создаём страницу</span>
 Page := CreateInputQueryPage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Персональная информация'</span>, <span class="hl str">'Кто вы?'</span>,
   <span class="hl str">'Пожалуйста, укажите имя и организацию, затем нажмите "Далее".'</span>);
 
-<span class="hl slc">// Добавляем элемент (False означает, что поле ввода не для пароля)</span>
+<span class="hl com">// Добавляем элемент (False означает, что поле ввода не для пароля)</span>
 Page.Add(<span class="hl str">'Имя:'</span>, False);
 Page.Add(<span class="hl str">'Организация:'</span>, False);
 
-<span class="hl slc">// Устанавливаем начальные значения (необязательно)</span>
+<span class="hl com">// Устанавливаем начальные значения (необязательно)</span>
 Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
 
 class="hl kwc">{sysuserinfoname}</span><span class="hl str">'</span>);
@@ -60,13 +60,13 @@ class="hl kwc">{sysuserinfoorg}</span><span class="hl str">'</span>);
 
 ...
 
-<span class="hl slc">// Считываем значения в переменные</span>
+<span class="hl com">// Считываем значения в переменные</span>
 UserName := Page.Values[<span class="hl num">0</span>];
 UserCompany := Page.Values[<span class="hl num">1</span>];</pre>
-      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
-        "Examples" в каталоге установки Inno Setup.</p>
+      <p>Смотрите другой пример в файле <tt>AllPagesExample.iss</tt> из папки
+        <tt>Examples</tt> в каталоге установки Inno Setup.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TInputQueryWizardPage">TInputQueryWizardPage</a>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TInputQueryWizardPage">TInputQueryWizardPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

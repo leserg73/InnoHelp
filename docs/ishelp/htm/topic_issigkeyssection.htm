@@ -20,7 +20,7 @@
     <div class="topicbody">
     <p>Эта секция является необязательной и определяет ключи, которые компилятор
       и программа установки могут использовать для проверки файлов при включении
-      флага <tt>issigverify</tt> в секции <a href="topic_filessection.htm">[Files]</a>.</p>
+      флага <tt>issigverify</tt> в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>.</p>
     <p>Ниже приведены два примера секции <tt>[ISSigKeys]</tt>:</p>
     <pre class="indent examplebox">
 <span class="hl kwa">[ISSigKeys]</span>
@@ -37,9 +37,9 @@
 <span class="hl kwb">Name</span>: anna; <span class="hl kwb">KeyFile</span>: "anna.ispublickey"; <span class="hl kwb">Group</span>: exesigner
 <span class="hl kwb">Name</span>: ryan; <span class="hl kwb">KeyFile</span>: "ryan.ispublickey"; <span class="hl kwb">Group</span>: exesigner
 <span class="hl kwb">Name</span>: ivan; <span class="hl kwb">KeyFile</span>: "ivan.ispublickey"; <span class="hl kwb">Group</span>: docsigner
-<span class="hl slc">; "max" является доверенным для подписания как exe, так и doc</span>
+<span class="hl com">; "max" является доверенным для подписания как exe, так и doc</span>
 <span class="hl kwb">Name</span>: max; <span class="hl kwb">KeyFile</span>: "max.ispublickey"; <span class="hl kwb">Group</span>: exesigner docsigner
-<span class="hl slc">; "boss" также имеет ключ</span>
+<span class="hl com">; "boss" также имеет ключ</span>
 <span class="hl kwb">Name</span>: bosskey; <span class="hl kwb">KeyFile</span>: "boss.ispublickey"
 </pre>
     <p>Обязательно ознакомьтесь с "<i>Замечаниями</i>" в конце этого раздела.</p>
@@ -114,7 +114,7 @@
       <dt class="paramlist"><b><span id="RuntimeID">RuntimeID</span></b></dt>
       <dd class="paramlist">
         <p>Определяет идентификатор времени выполнения, используемый
-          <a href="topic_isxfunc_issigverify.htm">ISSigVerify</a>.</p>
+          <tt><a href="topic_isxfunc_issigverify.htm">ISSigVerify</a></tt>.</p>
         <p>Эти идентификаторы сохраняются в установочных файлах, поэтому <i>не</i>
           следует использовать в них личную или конфиденциальную информацию.</p>
         <div class="examplebox">

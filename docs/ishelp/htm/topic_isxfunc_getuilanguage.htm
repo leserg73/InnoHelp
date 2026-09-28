@@ -22,7 +22,7 @@
       <p class="prototip1 notopmarginX">function GetUILanguage:
           Integer;</p>
       <h2 class="heading">Описание</h2>
-      <p>Возвращает идентификатор языка (LANGID) пользовательского интерфейса
+      <p>Возвращает идентификатор языка (<tt>LANGID</tt>) пользовательского интерфейса
         для текущего пользователя. Идентификатор языка может быть либо языком
         самой ОС Windows, либо языком пакета локализации (MUI), выбранного в
         региональных настройках на панели управления Windows. В случае ошибки
@@ -30,21 +30,21 @@
       <h2 class="heading">Комментарии</h2>
       <p>Смотрите <a href="http://msdn.microsoft.com/en-us/library/dd318693.aspx"
           target="_blank" title="http://msdn.microsoft.com/en-us/library/dd318693.aspx">список
-          национальных идентификаторов и языковых групп в MSDN</a><img class="extlink" src="../images/extlink.svg"
+          национальных идентификаторов и языковых групп в MSDN</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg"
           alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   <span class="hl kwb">if</span> GetUILanguage = <span class="hl num">$0409</span> <span
 class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// Язык интерфейса  - Английский (США)</span>
+    <span class="hl com">// Язык интерфейса  - Английский (США)</span>
   <span class="hl kwb">end</span>;
 
-  <span class="hl slc">// Можно использовать "and $3FF" для получения основных идентификаторов языка</span>
+  <span class="hl com">// Можно использовать "and $3FF" для получения основных идентификаторов языка</span>
   <span class="hl kwb">if</span> GetUILanguage <span class="hl kwb">and</span> <span
 class="hl num">$3FF</span> = <span class="hl num">$09</span> <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
-    <span class="hl slc">// Соответствует любому варианту английского</span>
+    <span class="hl com">// Соответствует любому варианту английского</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
     </div>

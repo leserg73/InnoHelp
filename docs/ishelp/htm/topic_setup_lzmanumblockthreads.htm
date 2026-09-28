@@ -49,12 +49,12 @@
       <p>Объём память, необходимый для сжатия при использовании
         нескольких потоков, приблизительно равен:</p>
       <div class="indent">
-        <p>LZMANumBlockThreads * (<a href="topic_setup_compression.htm">Объём
-            памяти</a> + (<a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a>
+        <p><tt>LZMANumBlockThreads</tt> * (<a href="topic_setup_compression.htm">Объём
+            памяти</a> + (<tt><a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a></tt>
           * 2))</p>
       </div>
       <p>Поскольку LZMA2 (и LZMA) по умолчанию использует два потока для поиска
-        совпадений (см. <a href="topic_setup_compressionthreads.htm">CompressionThreads</a>),
+        совпадений (см. <tt><a href="topic_setup_compressionthreads.htm">CompressionThreads</a></tt>),
         в идеале для каждого потока должно быть доступно два ядра процессора.
         Таким образом, чтобы увидеть максимальную выгоду от значения <tt>2</tt>,
         необходимы четыре ядра.</p>
@@ -66,7 +66,7 @@
         нескольких потоков в сочетании с уровнем сжатия, использующим большой
         размер словаря (такой как <tt>ultra64</tt>), будет получена ошибка "<i>Out
         of memory</i>" (Нехватка памяти), необходимо использовать директиву
-        <a href="topic_setup_lzmauseseparateprocess.htm">LZMAUseSeparateProcess</a>.</p>
+        <tt><a href="topic_setup_lzmauseseparateprocess.htm">LZMAUseSeparateProcess</a></tt>.</p>
       <h2 class="heading">См. также:</h2>
         <p class="indent"><a href="topic_setup_lzmablocksize.htm">LZMABlockSize</a></p>
     </div>

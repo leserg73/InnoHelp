@@ -40,29 +40,30 @@
         </tbody>
       </table>
       <h2 class="heading">Описание</h2>
-      <p>При значении <tt>yes</tt> программа установки
-        отобразит страницу "<i>Информация о пользователе</i>", на которой нужно
-        указать имя пользователя, организацию и, возможно, серийный номер.
-        Введённые пользователем данные будут присвоены константам <tt>{userinfoname}</tt>,
-        <tt>{userinfoorg}</tt> и <tt>{userinfoserial}</tt>. Эти константы можно применить в
-        записях секции <tt>[Registry]</tt> или <tt>[INI]</tt>, чтобы сохранить
-        их значения для дальнейшего использования.</p>
-      <p>Чтобы поле серийного номера стало видимым, должна быть
-        объявлена функция для события <a href="topic_scriptevents.htm#CheckSerial">CheckSerial</a>.</p>
-      <p>Директивы <a href="topic_setup_defaultuserinfoname.htm">DefaultUserInfoName</a>,
-        <a href="topic_setup_defaultuserinfoorg.htm">DefaultUserInfoOrg</a> и <a
-          href="topic_setup_defaultuserinfoserial.htm">DefaultUserInfoSerial</a>
+      <p>При значении <tt>yes</tt> программа установки отобразит страницу
+        "<i>Информация о пользователе</i>", на которой нужно указать имя пользователя,
+        организацию и, возможно, серийный номер. Введённые пользователем данные
+        будут присвоены константам <tt>{userinfoname}</tt>, <tt>{userinfoorg}</tt>
+        и <tt>{userinfoserial}</tt>. Эти константы можно применить в записях секции
+        <tt><a href="topic_registrysection.htm">[Registry]</a></tt> или
+        <tt><a href="topic_inisection.htm">[INI]</a></tt>, чтобы сохранить их
+        значения для дальнейшего использования.</p>
+      <p>Чтобы поле серийного номера стало видимым, должна быть объявлена функция
+        для события <tt><a href="topic_scriptevents.htm#CheckSerial">CheckSerial</a></tt>.</p>
+      <p>Директивы <tt><a href="topic_setup_defaultuserinfoname.htm">DefaultUserInfoName</a></tt>,
+        <tt><a href="topic_setup_defaultuserinfoorg.htm">DefaultUserInfoOrg</a></tt> и <tt><a
+          href="topic_setup_defaultuserinfoserial.htm">DefaultUserInfoSerial</a></tt>
         определяют для имени пользователя, организации и серийного номера
-        значения по умолчанию. Если директива <a href="topic_setup_useprevioususerinfo.htm">UsePreviousUserInfo</a>
+        значения по умолчанию. Если директива <tt><a href="topic_setup_useprevioususerinfo.htm">UsePreviousUserInfo</a></tt>
         имеет значение <tt>yes</tt> и программа установки найдет информацию об
         установке <a href="topic_sameappnotes.htm">того же приложения</a>, она
         будет использовать имя пользователя, организацию и серийный номер из
         предыдущей установки.</p>
-      <p>При тихой установке для имени пользователя, организации
-        и серийного номера будут приняты значения по умолчанию. Программа
-        установки не будет проверять, является ли имя пользователя пустым (так
-        как у пользователя не будет возможности его исправить), однако серийный
-        номер всё равно будет проверен.</p>
+      <p>При тихой установке для имени пользователя, организации и серийного
+        номера будут приняты значения по умолчанию. Программа установки не будет
+        проверять, является ли имя пользователя пустым (так как у пользователя не
+        будет возможности его исправить), однако серийный номер всё равно будет
+        проверен.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

@@ -42,7 +42,7 @@
         с ней работу, сделайте вызов метода <tt>Hide</tt>, чтобы вернуться на
         предыдущую страницу.</p>
       <p>Всегда указывайте вызов <tt>Hide</tt> внутри раздела <tt>finally</tt>
-        конструкции <tt>try..finally</tt>, как показано в файле примера <i>CodeDownloadFiles.iss</i>.
+        конструкции <tt>try..finally</tt>, как показано в файле примера <tt>CodeDownloadFiles.iss</tt>.
         Отсутствие вызова <tt>Hide</tt> приведёт к тому, что мастер установки
         навсегда застрянет на странице выполнения.</p>
       <p>Чтобы добавить новый файл для загрузки, используйте вызов метода <tt>Add</tt>.
@@ -52,19 +52,20 @@
         количество загруженных байт.</p>
       <p>Установите для свойства <tt>ShowBaseNameInsteadOfUrl</tt> значение <tt>True</tt>,
          чтобы вместо URL-адреса отображалось исходное имя загружаемого файла.</p>
-      <p>В описании функции <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+      <p>В описании функции <tt><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></tt>
         вы найдете дополнительные сведения по классу <tt>TOnDownloadProgress</tt>.</p>
       <h2 class="heading">Пример</h2>
-      <p>Смотрите файл <i>CodeDownloadFiles.iss</i> из папки "Examples" в
-        каталоге установки Inno Setup.</p>
-      <p>Также смотрите пример сценария <i>DownloadFiles.iss</i>, который показывает
-        возможность загрузки файла при помощи записи в секции <tt>[Files]</tt>.</p>
+      <p>Смотрите другой пример в файле <tt>CodeDownloadFiles.iss</tt> из папки
+        <tt>Examples</tt> в каталоге установки Inno Setup.</p>
+      <p>Также смотрите пример сценария <tt>DownloadFiles.iss</tt>, который показывает
+        возможность загрузки файла при помощи записи в секции
+        <tt><a href="topic_filessection.htm">[Files]</a></tt>.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TDownloadWizardPage">TDownloadWizardPage</a>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TDownloadWizardPage">TDownloadWizardPage</a></code>
         <br />
-        <a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a>
+        <code><a href="topic_isxfunc_downloadtemporaryfile.htm">DownloadTemporaryFile</a></code>
         <br />
-        <a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a>
+        <code><a href="topic_isxfunc_createoutputprogresspage.htm">CreateOutputProgressPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

@@ -25,7 +25,8 @@
       <dl>
         <dt class="paramlist"><b><span id="Components">Components</span></b></dt>
         <dd class="paramlist">
-          <p>Поддерживается всеми секциями, кроме <tt>[Types]</tt> и <tt>[Components]</tt>.</p>
+          <p>Поддерживается всеми секциями, кроме <tt><a href="topic_typessection.htm">[Types]</a></tt>
+            и <tt><a href="topic_componentssection.htm">[Components]</a></tt>.</p>
           <p>Разделённый пробелами список с именами компонентов, указывающий
             программе установки, к каким компонентам относится запись. Если
             пользователь выберет компонент из этого списка, запись будет
@@ -48,7 +49,9 @@ class="hl kwc">{app}</span>"</pre>
         </dd>
         <dt class="paramlist"><b><span id="Tasks">Tasks</span></b></dt>
         <dd class="paramlist">
-          <p>Поддерживается всеми секциями, кроме <tt>[Types]</tt>, <tt>[Components]</tt> и <tt>[Tasks]</tt>.</p>
+          <p>Поддерживается всеми секциями, кроме <tt><a href="topic_typessection.htm">[Types]</a></tt>,
+            <tt><a href="topic_componentssection.htm">[Components]</a></tt> и
+            <tt><a href="topic_taskssection.htm">[Tasks]</a></tt>.</p>
           <p>Разделённый пробелами список с именами задач, указывающий программе
             установки, к какой задаче относится запись. Если пользователь
             выберет задачу из этого списка, то запись будет обработана
@@ -57,8 +60,9 @@ class="hl kwc">{app}</span>"</pre>
             другие параметры этого не отменят.</p>
           <p>Обратите внимание, что флажок "<i>Не создавать папку в меню «Пуск»</i>"
             на странице мастера "<i>Выберите папку в меню «Пуск»</i>" не влияет
-            на записи секции <tt>[Icons]</tt>, имеющих параметры <tt>Tasks</tt>,
-            поскольку они имеют свои собственные флажки.</p>
+            на записи секции <tt><a href="topic_iconssection.htm">[Icons]</a></tt>,
+            имеющих параметры <tt>Tasks</tt>, поскольку они имеют свои собственные
+            флажки.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwa">[Icons]</span>
@@ -81,10 +85,10 @@ class="hl kwb">Components</span>: main; <span class="hl kwb">Tasks</span>: deskt
           </div>
         </dd>
       </dl>
-      <p>Помимо разделённых пробелами списков, в качестве
-        параметров <tt>Components</tt> и <tt>Tasks</tt> также можно
-        использовать логические выражения, содержащих имена компонентов или задач.
-        Поддерживаются операторы <tt>not</tt>, <tt>and</tt> и <tt>or</tt>. Например:</p>
+      <p>Помимо разделённых пробелами списков, в качестве параметров <tt>Components</tt>
+        и <tt>Tasks</tt> также можно использовать логические выражения, содержащих
+        имена компонентов или задач. Поддерживаются операторы <tt>not</tt>, <tt>and</tt>
+        и <tt>or</tt>. Например:</p>
       <pre class="indent examplebox"><span class="hl kwa">[Components]</span>
 <span class="hl kwb">Name</span>: a; <span class="hl kwb">Description</span>: a
 <span class="hl kwb">Name</span>: b; <span class="hl kwb">Description</span>: b

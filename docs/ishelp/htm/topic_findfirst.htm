@@ -21,12 +21,14 @@
       <h2 class="heading prototip">Прототип функции</h2>
       <p class="prototip1 notopmarginX null"><b>int</b> FindFirst(<b>str</b> Pattern, <b>int</b> Attrs)</p>
       <h2 class="heading">Описание</h2>
-      <p>Выполняет поиск файла в указанной папке согласно заданному имени
-        (<i>первый параметр</i>) и атрибуту файла (<i>второй параметр</i>). Если файл найден,
-        то возвращает его дескриптор, который должен быть использован в
-        последующих вызовах функций <code><a href="topic_findgetfilename.htm">FindGetFileName</a></code>,
-        <code><a href="topic_findnext.htm">FindNext</a></code> и <code><a href="topic_findclose.htm">FindClose</a></code>.
-        В противном случае функция вернёт значение 0.</p>
+      <p>Выполняет поиск файла, соответствующего маске имени файла, указанного
+        <i>первым параметром</i>, и атрибутам, указанным <i>вторым параметром</i>.
+        Если файл найден, результатом является дескриптор поиска, который будет
+        использован при последующих вызовах функций
+        <tt><a href="topic_findgetfilename.htm">FindGetFileName</a></tt>,
+        <tt><a href="topic_findnext.htm">FindNext</a></tt> и
+        <tt><a href="topic_findclose.htm">FindClose</a></tt>. В противном случае
+        функция вернёт значение 0.</p>
       <p>Параметр <tt>Pattern</tt> (<b>str</b>) устанавливает маску имени
         папки/файла, включая символы подстановки. Например, строка вида <tt>'<b>.\*.*</b>'</tt>
         определяет все файлы в текущем каталоге.</p>
@@ -80,32 +82,18 @@
 <span class="hl kwf">#define</span> Mask <span class="hl str">"*.pas"</span>
 
 <span class="hl kwf">#sub</span> ProcessFoundFile
-  <span class="hl kwf">#define</span> FileName <span class="hl kwd">FindGetFileName</span><span
-class="hl opt">(</span>FindHandle<span class="hl opt">)</span>
-  <span class="hl kwf">#if</span> <span class="hl kwd">Copy</span><span
-class="hl opt">(</span>FileName<span class="hl opt">,</span> <span
-class="hl num">1</span><span class="hl opt">,</span> <span class="hl num">4</span><span
-class="hl opt">) ==</span> <span class="hl str">"ispp"</span>
-    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-class="hl kwc">{app}</span>\ispp
+  <span class="hl kwf">#define</span> FileName FindGetFileName(FindHandle)
+  <span class="hl kwf">#if</span> Copy(FileName, <span class="hl num">1</span>, <span class="hl num">4</span>) == <span class="hl str">"ispp"</span>
+    <span class="hl kwb">Source</span>: <span class="hl kwf">{#</span>FileName<span class="hl kwf">}</span>; <span class="hl kwb">DestDir</span>: <span class="hl kwc">{app}</span>\ispp
   <span class="hl kwf">#else</span>
-    FileName<span class="hl opt">:</span> <span class="hl kwc">{#FileName}</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-class="hl kwc">{app}</span>
+    <span class="hl kwb">Source</span>: <span class="hl kwf">{#</span>FileName<span class="hl kwf">}</span>; <span class="hl kwb">DestDir</span>: <span class="hl kwc">{app}</span>
   <span class="hl kwf">#endif</span>
 <span class="hl kwf">#endsub</span>
 
-<span class="hl kwf">#for</span> {FindHandle <span class="hl opt">=</span> FindResult <span
-class="hl opt">=</span> <span class="hl kwd">FindFirst</span><span class="hl opt">(</span>Mask<span
-class="hl opt">,</span> <span class="hl num">0</span><span class="hl opt">);</span> FindResult<span
-class="hl opt">;</span> \
-      FindResult <span class="hl opt">=</span> <span class="hl kwd">FindNext</span><span
-class="hl opt">(</span>FindHandle<span class="hl opt">)</span>}
+<span class="hl kwf">#for</span> {FindHandle = FindResult = FindFirst(Mask, <span class="hl num">0</span>); FindResult; FindResult = FindNext(FindHandle)}
 ProcessFoundFile
 <span class="hl kwf">#if</span> FindHandle
-  <span class="hl kwf">#expr</span> <span class="hl kwd">FindClose</span><span class="hl opt">(</span>FindHandle<span
-class="hl opt">)</span>
+  <span class="hl kwf">#expr</span> FindClose(FindHandle)
 <span class="hl kwf">#endif</span>
 </pre>
       </div>

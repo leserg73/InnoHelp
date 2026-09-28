@@ -23,12 +23,12 @@
           RegQueryMultiStringValue(const RootKey: HKEY; const SubKeyName,
           ValueName: String; var ResultStr: String): Boolean;</p>
       <h2 class="heading">Описание</h2>
-      <p>Запрашивает в указанном разделе реестра значение с типом REG_MULTI_SZ и
+      <p>Запрашивает в указанном разделе реестра значение с типом <tt>REG_MULTI_SZ</tt> и
         возвращает данные в параметре <tt>ResultStr</tt>. В случае успеха
         функция возвращает значение <tt>True</tt>. Если функция возвращает <tt>False</tt>,
         то данные <tt>ResultStr</tt> остаются без изменений.</p>
       <h2 class="heading">Комментарии</h2>
-      <p>В значении типа REG_MULTI_SZ каждая строка разделяется нулевым символом
+      <p>В значении типа <tt>REG_MULTI_SZ</tt> каждая строка разделяется нулевым символом
         (<tt>#0</tt>).</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

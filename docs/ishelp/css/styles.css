@@ -17,10 +17,10 @@ html {
 
 body {
   /* for CHM style */
-  /* font-size: 9.75pt;
-  font-family: 'Verdana', 'Tahoma', 'Helvetica', sans-serif;
-  font-weight: normal;
-  line-height: 1.5; */
+  /* font-size: 9.75pt; */
+  /* font-family: 'Verdana', 'Tahoma', 'Helvetica', sans-serif; */
+  /* font-weight: normal; */
+  /* line-height: 1.5; */
   /* for Web style */
   font: calc(14rem/16)/1.5 "Segoe UI", sans-serif;
   margin: 0;
@@ -29,12 +29,20 @@ body {
   overflow: hidden;
 }
 
-pre, tt, code {
+pre, tt {
   /* for CHM style */
-  /* font-size: 10.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* for Web style */
-  font: calc(13rem/16) Consolas, monospace;
+  font: calc(13.4rem/16)/1.5 Consolas, monospace;
+}
+
+code {
+  /* for CHM style */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
+  /* for Web style */
+  font: calc(13.5rem/16)/1.5 Consolas, monospace;
 }
 
 tt {
@@ -85,11 +93,11 @@ img.extlink {
 
 .prototip1 {
   /* for CHM style */
-  /* font-size: 11.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(13rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   background-color: #e7f9ff;
   padding-left: 0.3in;
@@ -128,17 +136,17 @@ img.extlink {
 }
 
 .func {
-  background: #d9e9f8;
-  background: linear-gradient(to right, #d9e9f8, #ffffff);
+  background: #f2f9ff;
+  background: linear-gradient(to right, #f2f9ff, #ffffff);
   /* for CHM style */
-  /* font-size: 11.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(14rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   font-weight: bold;
-  color: #00008b;
+  color: #17558c;
   padding-left: 0.15625in;
   padding-bottom: 0.0521in;
   padding-top: 0.0521in;
@@ -150,14 +158,14 @@ img.extlink {
 }
 
 .const {
-  background: #f4e9f9;
-  background: linear-gradient(to right, #f4e9f9, #ffffff);
+  background: #fbf8fd;
+  background: linear-gradient(to right, #fbf8fd, #ffffff);
   /* for CHM style */
-  /* font-size: 11.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(14rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   font-weight: bold;
   color: #410166;
@@ -173,14 +181,14 @@ img.extlink {
 }
 
 .archid {
-  background: #e9fbe3;
-  background: linear-gradient(to right, #e9fbe3, #ffffff);
+  background: #f7fff4;
+  background: linear-gradient(to right, #f7fff4, #ffffff);
   /* for CHM style */
-  /* font-size: 11.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(14rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   font-weight: bold;
   color: #084825;
@@ -197,14 +205,14 @@ img.extlink {
 }
 
 .cmdline {
-  background: #ffecd8;
-  background: linear-gradient(90deg, #ffecd8 0%, #ffffff 70%);
+  background: #fbf6f1;
+  background: linear-gradient(90deg, #fbf6f1 0%, #ffffff 70%);
   /* for CHM style */
-  /* font-size: 11.5pt;
-  font-family: 'Courier New', 'Courier', monospace; */
+  /* font-size: 10.5pt; */
+  /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(14rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   font-weight: bold;
   color: #663300;
@@ -325,11 +333,11 @@ pre.hl {
 }
 
 .hl.str {
-  color: #800000;
+  color: #c55420;
 }
 
 .hl.num {
-  color: #800000;
+  color: #c55420;
 }
 
 .hl.esc {
@@ -337,7 +345,7 @@ pre.hl {
 }
 
 .hl.sng {
-  color: #800000;
+  color: #c55420;
 }
 
 .hl.pps {
@@ -345,17 +353,17 @@ pre.hl {
 }
 
 .hl.slc {
-  color: #006600;
+  color: #2d862d;
   font-style: italic;
 }
 
 .hl.com {
-  color: #006600;
+  color: #2d862d;
   font-style: italic;
 }
 
 .hl.ppc {
-  color: #c04040;
+  color: #c55420;
 }
 
 .hl.opt {
@@ -363,7 +371,7 @@ pre.hl {
 }
 
 .hl.ipl {
-  color: #9e5dff;
+  color: #7b339c;
 }
 
 .hl.lin {
@@ -376,28 +384,28 @@ pre.hl {
 }
 
 .hl.kwb {
-  color: #0000ff;
-  font-weight: bold;
+  color: #0078d4;
+  /* font-weight: bold; */
 }
 
 .hl.kwc {
-  color: #8000cc;
-  font-weight: bold;
+  color: #7b339c;
+  /* font-weight: bold; */
 }
 
 .hl.kwd {
-  color: #000050;
-  font-weight: bold;
+  color: #0078d4;
+  /* font-weight: bold; */
 }
 
 .hl.kwe {
   color: #0060c0;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .hl.kwf {
-  color: #990000;
-  font-weight: bold;
+  color: #d24152;
+  /* font-weight: bold; */
 }
 
 .hl.kwg {
@@ -477,11 +485,11 @@ li.compact {
 
 dt.paramlist {
   /* for CHM style */
-  /* font-size: 11.5pt; */
+  /* font-size: 10.5pt; */
   /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font: calc(14rem/16) Consolas, monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   margin-bottom: 0.6em;
   color: #00008b;
@@ -509,7 +517,7 @@ dt.flaglist {
   /* font-family: 'Courier New', 'Courier', monospace; */
   /* ------------- */
   /* for Web style */
-  font-family: 'Consolas', monospace;
+  font: calc(13.5rem/16) Consolas, monospace;
   /* ------------- */
   font-weight: bold;
   color: #0157ac;
@@ -518,7 +526,7 @@ dt.flaglist {
 }
 
 dt.flaglist:before {
-  color: #0057ac;
+  color: #0157ac;
   padding: 0 0.0833in;
   content: "\2023";
 }

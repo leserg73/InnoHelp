@@ -19,8 +19,7 @@
     <h1 class="topicheading">Программирование: IsWin64</h1>
     <div class="topicbody">
       <h2 class="heading prototip">Прототип</h2>
-      <p class="prototip1 notopmarginX">function IsWin64:
-          Boolean;</p>
+      <p class="prototip1 notopmarginX">function IsWin64: Boolean;</p>
       <h2 class="heading">Описание</h2>
       <p>Возвращает значение <tt>True</tt>, если система является 64-бит
         версией Windows, которая обеспечивает поддержку всех функций API,
@@ -28,13 +27,13 @@
         Если функция вернёт <tt>False</tt>, то вы не сможете воспользоваться ни
         одной из 64-бит функций <i>Inno Setup</i>.</p>
       <p>Другое описание этой функции: возвращает <tt>True</tt>, если система
-        соответствует идентификатору архитектуры <a href="topic_archidentifiers.htm">win64</a>.</p>
+        соответствует идентификатору архитектуры <tt><a href="topic_archidentifiers.htm">win64</a></tt>.</p>
       <p>Не используйте эту функцию для определения режима <a href="topic_32vs64bitinstalls.htm">64-бит</a>.
-        Вместо неё применяйте функцию <a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>.</p>
+        Вместо неё применяйте функцию <tt><a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a></tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  <span class="hl slc">// Прежде чем использовать особенности 64-бит, вызываем IsWin64,</span>
-  <span class="hl slc">// чтобы избежать получения исключения при запуске в Windows 32-бит.</span>
+  <span class="hl com">// Прежде чем использовать особенности 64-бит, вызываем IsWin64,</span>
+  <span class="hl com">// чтобы избежать получения исключения при запуске в Windows 32-бит.</span>
   <span class="hl kwb">if</span> IsWin64 <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     MsgBox(<span class="hl str">'Путь каталога "Program Files" в системе 64-бит: '</span> +
@@ -43,9 +42,9 @@ class="hl str">'</span>), <span class="hl kwe">mbInformation</span>, <span class
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a>
+      <p class="indent"><code><a href="topic_isxfunc_is64bitinstallmode.htm">Is64BitInstallMode</a></code>
         <br />
-        <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>
+        <code><a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

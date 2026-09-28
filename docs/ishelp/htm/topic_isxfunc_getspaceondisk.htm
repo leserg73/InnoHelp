@@ -26,7 +26,7 @@
       <p>Позволяет получить размер общего <tt>Total</tt> и свободного <tt>Free</tt>
         пространства на диске в байтах или мегабайтах. Параметр <tt>Path</tt>
         определяет каталог на диске или ресурс в сети (UNC-путь). Это может быть
-        корневой каталог (например , <code>C:\</code>), или существующий
+        корневой каталог (например , <tt>C:\</tt>), или существующий
         подкаталог. Параметр <tt>InMegabytes</tt> определяет формат
         представления данных: в байтах или мегабайтах (2^20), округленных в
         меньшую сторону. В случае успеха возвращает значение <tt>True</tt>,
@@ -42,7 +42,7 @@
   Path: String;
   FreeMB, TotalMB: Cardinal;
 <span class="hl kwb">begin</span>
-  <span class="hl slc">// Получаем объём свободного места в Мб на диске с каталогом "Program Files"</span>
+  <span class="hl com">// Получаем объём свободного места в Мб на диске с каталогом "Program Files"</span>
   Path := ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{autopf}</span><span
 class="hl str">'</span>);
   <span class="hl kwb">if</span> GetSpaceOnDisk(Path, True, FreeMB, TotalMB) <span
@@ -52,11 +52,11 @@ class="hl kwb">then</span>
       Path, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>
   <span class="hl kwb">else begin</span>
-    <span class="hl slc">// ошибка выполнения функции</span>
+    <span class="hl com">// ошибка выполнения функции</span>
   <span class="hl kwb">end</span>;
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_getspaceondisk64.htm">GetSpaceOnDisk64</a>
+      <p class="indent"><code><a href="topic_isxfunc_getspaceondisk64.htm">GetSpaceOnDisk64</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

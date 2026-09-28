@@ -29,12 +29,14 @@
         Если же указано значение <tt>False</tt> — в 32-разрядном представлении
         реестра. В Inno Setup версии 7.0 и выше этот параметр должен совпадать с
         разрядностью <a href="topic_64bit.htm">программы установки/удаления</a>,
-        поэтому необходимо передавать значение <tt>IsCurrentProcess64Bit</tt>.</p>
+        поэтому необходимо передавать значение
+        <tt><a href="topic_isxfunc_iscurrentprocess64bit.htm">IsCurrentProcess64Bit</a></tt>.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
-  <span class="hl slc">// Регистрация stdole2.tlb, находящейся в каталоге System.</span>
-  <span class="hl slc">// - Если SetupArchitecture=x64, регистрация будет выполнена в 64-разрядном представлении реестра.</span>
-  <span class="hl slc">// - Если SetupArchitecture=x86, регистрация будет выполнена в 32-разрядном представлении реестра.</span>
+  <span class="hl com">// Регистрация stdole2.tlb, находящейся в каталоге System.</span>
+  <span class="hl com">// - Если SetupArchitecture=x64, регистрация будет выполнена в 64-разрядном представлении реестра.</span>
+  <span class="hl com">// - Если SetupArchitecture=x86, регистрация будет выполнена в 32-разрядном представлении реестра.</span>
+
   RegisterTypeLibrary(IsCurrentProcess64Bit, ExpandConstant(<span class="hl str">'{sys}\stdole2.tlb'</span>));
 <span class="hl kwb">end</span>;</pre>
     </div>

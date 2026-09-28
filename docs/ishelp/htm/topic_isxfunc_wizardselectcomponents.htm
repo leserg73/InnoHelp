@@ -24,9 +24,9 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет выбор указанных в списке компонентов <tt>Components</tt>,
         разделённых запятыми.</p>
-      <p>Если имя компонента начинается символом "*", также будут выбраны все
+      <p>Если имя компонента начинается символом <tt>*</tt>, также будут выбраны все
         дочерние компоненты (за исключением тех, которые имеют флаг <tt>dontinheritcheck</tt>).
-        Если же имя компонента начинается символом "<b>!</b>", то его выбор
+        Если же имя компонента начинается символом <tt>!</tt>, то его выбор
         будет отменён.</p>
       <p>Функция <tt>WizardSelectComponents</tt> не изменяет состояние
         компонентов, которых нет в списке. Также эта функция не может изменить
@@ -34,12 +34,12 @@
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">begin</span>
   WizardSelectComponents(<span class="hl str">'!helpfiles'</span>);
-  <span class="hl slc">// выбор компонента 'helpfiles' отменён</span>
+  <span class="hl com">// выбор компонента 'helpfiles' отменён</span>
 <span class="hl kwb">end</span>;</pre>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a>
+      <p class="indent"><code><a href="topic_isxfunc_wizardselectedcomponents.htm">WizardSelectedComponents</a></code>
         <br />
-        <a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a>
+        <code><a href="topic_isxfunc_wizardiscomponentselected.htm">WizardIsComponentSelected</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

@@ -23,7 +23,7 @@
       <h2 class="heading">Описание</h2>
       <p>Выполняет проверку подписи указанного файла с использованием разрешённых
         ключей, поиск которых осуществляется по параметру <tt>RuntimeID</tt> из
-        секции <a href="topic_issigkeyssection.htm">[ISSigKeys]</a>. Чтобы
+        секции <tt><a href="topic_issigkeyssection.htm">[ISSigKeys]</a></tt>. Чтобы
         разрешить использование любых ключей, установите для <tt>AllowedKeysRuntimeIDs</tt>
         значение <tt>nil</tt>. В случае ошибки будет вызвано исключение.</p>
       <p>Если для параметра <tt>VerifyFilename</tt> указано значение <tt>False</tt>,
@@ -38,14 +38,14 @@
         чего-либо ещё после выполнения проверки. В противном случае вы рискуете
         создать уязвимость <a 
         href="https://www.securityvision.ru/education/cyberwiki/t/time-of-check-to-time-of-use-toctou/">Time-Of-Check
-        to Time-Of-Use (TOCTOU)</a><img class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
+        to Time-Of-Use (TOCTOU)</a><img class="extlink" src="../images/extlink.png" srcset="../images/extlink.svg" alt=" [внешняя ссылка]" />.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   F: TFileStream;
 <span class="hl kwb">begin</span>
   F := <span class="hl kwg">ISSigVerify</span>(nil, <span class="hl kwb">Filename</span>, <span class="hl kwg">True</span>, <span class="hl kwg">True</span>);
   <span class="hl kwb">try</span>
-    <span class="hl slc">// Операции с файлом</span>
+    <span class="hl com">// Операции с файлом</span>
   <span class="hl kwb">finally</span>
     F.Free;
   <span class="hl kwb">end</span>;
@@ -53,7 +53,7 @@
 </pre>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><a href="topic_issig.htm">Подписи .issig: Введение</a><br />
-        <a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a>
+        <code><a href="topic_isxfunc_downloadtemporaryfilewithissigverify.htm">DownloadTemporaryFileWithISSigVerify</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

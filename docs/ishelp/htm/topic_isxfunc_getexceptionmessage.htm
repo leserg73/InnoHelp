@@ -27,18 +27,18 @@
         или другой функции, вызываемой из блока <tt>except</tt>.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Сообщения исключений обычно не заканчиваются точкой. Обработайте
-        результат функцией <tt>AddPeriod</tt>, чтобы добавить точку в конце
-        сообщения.</p>
+        результат функцией <tt><a href="topic_isxfunc_addperiod.htm">AddPeriod</a></tt>,
+        чтобы добавить точку в конце сообщения.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   I: Integer;
 <span class="hl kwb">begin</span>
   I := <span class="hl num">1</span>;
   <span class="hl kwb">try</span>
-    <span class="hl slc">// Следующая строка вызовет исключение "Деление на ноль"</span>
+    <span class="hl com">// Следующая строка вызовет исключение "Деление на ноль"</span>
     I := I <span class="hl kwb">div</span> <span class="hl num">0</span>;
   <span class="hl kwb">except</span>
-    <span class="hl slc">// Перехватываем исключение, обрабатываем и продолжаем работу</span>
+    <span class="hl com">// Перехватываем исключение, обрабатываем и продолжаем работу</span>
     MsgBox(<span class="hl str">'Исключение: '</span> + AddPeriod(GetExceptionMessage), <span
 class="hl kwe">mbError</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;

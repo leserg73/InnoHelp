@@ -1,6 +1,6 @@
 /*
   Inno Setup
-  Copyright (C) 1992-2025 Sergii Leonov
+  Copyright (C) 1992-2026 Sergii Leonov
 */
 
 /* Переменные для светлой темы (используется по умолчанию) */
@@ -18,13 +18,13 @@
   --prototip1-bg-color: #e7f9ff;
   --sintax-bg-color: #dfce62;
   --sintax1-bg-color: #fff9d5;
-  --func-bg: #d9e9f8;
-  --func-color: #00008b;
-  --const-bg: #f4e9f9;
+  --func-bg: #f2f9ff;
+  --func-color: #17558c;
+  --const-bg: #fbf8fd;
   --const-color: #410166;
   --archid-bg: #f7fff4;
   --archid-color: #084825;
-  --cmdline-bg: #ffecd8;
+  --cmdline-bg: #fbf6f1;
   --cmdline-color: #663300;
   --th-bg-color: #f0f0f0;
   --th-color: #ffffff;
@@ -37,23 +37,23 @@
   --prehl-color: #282828;
 
   /* Подсветка синтаксиса Inno Setup */
-  --hl-str-color: #800000;
-  --hl-num-color: #800000;
+  --hl-str-color: #c55420;
+  --hl-num-color: #c55420;
   --hl-esc-color: #000000;
-  --hl-sng-color: #800000;
+  --hl-sng-color: #c55420;
   --hl-pps-color: #000000;
-  --hl-slc-color: #006600;
-  --hl-com-color: #006600;
-  --hl-ppc-color: #c04040;
+  --hl-slc-color: #2d862d;
+  --hl-com-color: #2d862d;
+  --hl-ppc-color: #c55420;
   --hl-opt-color: #000000;
-  --hl-ipl-color: #9e5dff;
+  --hl-ipl-color: #7b339c;
   --hl-lin-color: #303030;
   --hl-kwa-color: #000000;
-  --hl-kwb-color: #0000ff;
-  --hl-kwc-color: #8000cc;
-  --hl-kwd-color: #000050;
+  --hl-kwb-color: #0078d4;
+  --hl-kwc-color: #7b339c;
+  --hl-kwd-color: #0078d4;
   --hl-kwe-color: #0060c0;
-  --hl-kwf-color: #990000;
+  --hl-kwf-color: #d24152;
   --hl-kwg-color: #000080;
 
   /* Заголовки, примеры, параметры, флаги */
@@ -175,14 +175,14 @@
   --prototip1-bg-color: #1a3a4a;
   --sintax-bg-color: #5e4f22;
   --sintax1-bg-color: #3a3200;
-  --func-bg: #202427;
-  --func-color: #60b0ec;
-  --const-bg: #242227;
-  --const-color: #c094ff;
-  --archid-bg: #202520;
-  --archid-color: #5dc35d;
-  --cmdline-bg: #23201e;
-  --cmdline-color: #e3994d;
+  --func-bg: #15181a;
+  --func-color: #7bbae7;
+  --const-bg: #211d25;
+  --const-color: #c69eff;
+  --archid-bg: #152315;
+  --archid-color: #57c157;
+  --cmdline-bg: #2b2117;
+  --cmdline-color: #df9e5d;
   --th-bg-color: #353535;
   --th-color: #ffffff;
   --th-borderleft: #403e41;
@@ -194,23 +194,23 @@
   --prehl-color: #e0e0e0;
 
   /* Подсветка синтаксиса Inno Setup */
-  --hl-str-color: #e5885e;
-  --hl-num-color: #e5885e;
+  --hl-str-color: #f09060;
+  --hl-num-color: #f09060;
   --hl-esc-color: #cccccc;
-  --hl-sng-color: #e5885e;
+  --hl-sng-color: #f09060;
   --hl-pps-color: #cccccc;
   --hl-slc-color: #339933;
   --hl-com-color: #339933;
-  --hl-ppc-color: #e5885e;
+  --hl-ppc-color: #f09060;
   --hl-opt-color: #cccccc;
-  --hl-ipl-color: #ba8aff;
+  --hl-ipl-color: #a278b5;
   --hl-lin-color: #707070;
   --hl-kwa-color: #cccccc;
-  --hl-kwb-color: #3695df;
-  --hl-kwc-color: #ba8aff;
-  --hl-kwd-color: #3695df;
-  --hl-kwe-color: #80abee;
-  --hl-kwf-color: #d65363;
+  --hl-kwb-color: #0088f0;
+  --hl-kwc-color: #a278b5;
+  --hl-kwd-color: #0088f0;
+  --hl-kwe-color: #5d9cff;
+  --hl-kwf-color: #d95e6c;
   --hl-kwg-color: #7bbae7;
 
   /* Заголовки, примеры, параметры, флаги */
@@ -220,9 +220,9 @@
   --examplebox-bg: #282828;
   --examplebox-color: #e0e0e0;
   --examplebox-border: #444444;
-  --dt-paramlist-color: #5daeff;
+  --dt-paramlist-color: #0088f0;
   --dt-paramlist-linegadient: #121212;
-  --dt-flaglist-color: #80abee;
+  --dt-flaglist-color: #5d9cff;
   --td-setuphdrr-color: #e0e0e0;
 
   /* Таблицы */

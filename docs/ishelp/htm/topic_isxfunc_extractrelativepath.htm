@@ -29,15 +29,15 @@
         пути (обратную косую черту). Параметр <tt>DestName</tt> определяет имя
         файла (включая путь) для преобразования.</p>
       <p>Функция <tt>ExtractRelativePath</tt> удаляет имена каталогов в строке
-        пути и заменяет их последовательностью '..\' для каждого уровня вложения
-        каталогов.</p>
+        пути и заменяет их последовательностью <tt>..\</tt> для каждого уровня
+        вложения каталогов.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwb">var</span>
   S: <span class="hl kwb">String</span>;
 <span class="hl kwb">begin</span>
   S := ExtractRelativePath(<span class="hl str">'c:\windows\system32\</span><span
 class="hl str">'</span>, <span class="hl str">'c:\autoexec.bat'</span>);
-  <span class="hl slc">// Результирующая строка S = ..\..\autoexec.bat</span>
+  <span class="hl com">// Результирующая строка S = ..\..\autoexec.bat</span>
 <span class="hl kwb">end</span>;</pre>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

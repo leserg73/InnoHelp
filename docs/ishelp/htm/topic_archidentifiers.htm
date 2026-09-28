@@ -19,8 +19,8 @@
     <h1 class="topicheading">Идентификаторы архитектуры</h1>
     <div class="topicbody">
       <p>Представленные ниже идентификаторы используются в
-        значениях <a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a>
-        и <a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a>.</p>
+        значениях <tt><a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></tt>
+        и <tt><a href="topic_setup_architecturesinstallin64bitmode.htm">ArchitecturesInstallIn64BitMode</a></tt>.</p>
       <dl>
         <dt class="archid">arm32compatible</dt>
         <dd>
@@ -36,11 +36,11 @@
         <dd>
           <p>Соответствует системам, работающими под управлением Windows 64-бит,
             независимо от архитектуры.</p>
-          <p>Это может быть полезно в программе установки, которая не поставляет
-            никаких двоичных файлов, специфичных для конкретной архитектуры, но
-            требует доступа к чему-то 64-разрядному, например, <tt>HKLM64</tt>
-            разделу реестра или собственному 64-разрядному каталогу "Program
-            Files".</p>
+          <p>Это может пригодиться в установщике, который не содержит никаких
+            специфичных для архитектуры бинарных файлов, но требует доступа к
+            64-разрядным элементам, например, разделу <tt>HKLM64</tt> в секции
+            <tt><a href="topic_registrysection.htm">[Registry]</a></tt> или
+            собственному 64-разрядному каталогу "Program Files".</p>
         </dd>
         <dt class="archid">x64compatible</dt>
         <dd>
@@ -51,8 +51,8 @@
             также поддерживают Arm64EC.</p>
           <p>Этот идентификатор всегда имеет истинное значение, если сама
             программа установки собрана как 64-разрядный x64-исполняемый файл;
-            подробнее см. <a
-            href="topic_setup_setuparchitecture.htm">SetupArchitecture</a>.</p>
+            подробнее см. <tt><a
+            href="topic_setup_setuparchitecture.htm">SetupArchitecture</a></tt>.</p>
         </dd>
         <dt class="archid">x64os</dt>
         <dd>
@@ -80,26 +80,27 @@
             посредством эмуляции.</p>
           <p>Этот идентификатор всегда имеет истинное значение, если сама
             программа установки собрана как 32-разрядный x86-исполняемый файл;
-            подробнее см. <a
-            href="topic_setup_setuparchitecture.htm">SetupArchitecture</a>.</p>
+            подробнее см. <tt><a
+            href="topic_setup_setuparchitecture.htm">SetupArchitecture</a></tt>.</p>
         </dd>
         <dt class="archid">x86os</dt>
         <dd>
           <p>Соответствует системам, работающими только под управлением Windows
             32-бит.</p>
           <p><tt>x86os</tt> имеет смысл использовать только при установке
-            32-разрядных драйверов устройств. При установке обычного
-            32-разрядного приложения вместо него следует использовать <tt>x86compatible</tt>
-            (или не устанавливать значение <tt>ArchitecturesAllowed</tt>).</p>
+            32-разрядных драйверов устройств. При установке обычного 32-разрядного
+            приложения вместо него следует использовать <tt>x86compatible</tt>
+            (или не устанавливать значение 
+            <tt><a href="topic_setup_architecturesallowed.htm">ArchitecturesAllowed</a></tt>).</p>
           <p>До версии Inno Setup 6.3 <tt>x86os</tt> именовался <tt>x86</tt>.
             Компилятор все ещё принимает <tt>x86</tt> в качестве псевдонима <tt>x86os</tt>,
             но при использовании будет показано предупреждение.</p>
         </dd>
       </dl>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_isarchidentifier.htm">Сопоставление идентификаторов
-          архитектуры</a> <br />
-        <a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a>
+      <p class="indent"><a href="topic_isarchidentifier.htm">Сопоставление идентификаторов архитектуры</a>
+        <br />
+        <code><a href="topic_isxfunc_processorarchitecture.htm">ProcessorArchitecture</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

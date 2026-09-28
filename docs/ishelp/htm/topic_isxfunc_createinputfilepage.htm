@@ -44,28 +44,28 @@
 
 ...
 
-<span class="hl slc">// Создаём страницу</span>
+<span class="hl com">// Создаём страницу</span>
 Page := CreateInputFilePage(<span class="hl kwe">wpWelcome</span>,
   <span class="hl str">'Выбор места Блокнота'</span>, <span class="hl str">'Где находится Блокнот?'</span>,
   <span class="hl str">'Выберите расположение Блокнота, затем нажмите "Далее".'</span>);
 
-<span class="hl slc">// Добавляем элемент</span>
-Page.Add(<span class="hl str">'Расположение файла notepad.exe:'</span>, <span class="hl slc">// заголовок</span>
-  <span class="hl str">'Исполняемые файлы|*.exe|Все файлы|*.*'</span>,  <span class="hl slc">// фильтры</span>
-  <span class="hl str">'.exe'</span>);                                  <span class="hl slc">// расширение по умолчанию</span>
+<span class="hl com">// Добавляем элемент</span>
+Page.Add(<span class="hl str">'Расположение файла notepad.exe:'</span>, <span class="hl com">// заголовок</span>
+  <span class="hl str">'Исполняемые файлы|*.exe|Все файлы|*.*'</span>,  <span class="hl com">// фильтры</span>
+  <span class="hl str">'.exe'</span>);                                  <span class="hl com">// расширение по умолчанию</span>
 
-<span class="hl slc">// Устанавливаем начальное значение (необязательно)</span>
+<span class="hl com">// Устанавливаем начальное значение (необязательно)</span>
 Page.Values[<span class="hl num">0</span>] := ExpandConstant(<span class="hl str">'</span><span
 class="hl kwc">{win}</span><span class="hl str">\notepad.exe'</span>);
 
 ...
 
-<span class="hl slc">// Считываем значение в переменную</span>
+<span class="hl com">// Считываем значение в переменную</span>
 NotepadLocation := Page.Values[<span class="hl num">0</span>];</pre>
-      <p>Смотрите другой пример в файле <i>AllPagesExample.iss</i> из папки
-        "Examples" в каталоге установки Inno Setup.</p>
+      <p>Смотрите другой пример в файле <tt>AllPagesExample.iss</tt> из папки
+        <tt>Examples</tt> в каталоге установки Inno Setup.</p>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_scriptclasses.htm#TInputFileWizardPage">TInputFileWizardPage</a>
+      <p class="indent"><code><a href="topic_scriptclasses.htm#TInputFileWizardPage">TInputFileWizardPage</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

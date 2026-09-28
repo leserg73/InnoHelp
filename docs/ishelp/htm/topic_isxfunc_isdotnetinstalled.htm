@@ -33,7 +33,7 @@
 class="hl kwd">InitializeSetup</span>: Boolean;
 <span class="hl kwb">begin</span>
   Result := IsDotNetInstalled(net462, <span class="hl num">0</span>);
-  <span class="hl slc">// Возвращает True, если установлен .NET Framework версии 4.6.2 или совместимый, такой как 4.8.1</span>
+  <span class="hl com">// Возвращает True, если установлен .NET Framework версии 4.6.2 или совместимый, такой как 4.8.1</span>
   <span class="hl kwb">if not</span> Result <span class="hl kwb">then</span>
     SuppressibleMsgBox(FmtMessage(SetupMessage(msgWinVersionTooLowError), [<span
 

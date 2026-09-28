@@ -55,53 +55,42 @@
         </table>
       </div>
       <h2 class="heading">Описание</h2>
-      <p>Директивы <tt>ifdef</tt>,
-        <tt>ifndef</tt>, <tt>ifexist</tt>
-        и <tt>ifnexist</tt> можно
-        использовать там, где необходимо применить директиву <code><a
-            href="topic_if.htm">if</a></code>, чтобы обеспечить выполнение участка
-        кода только при соблюдении определённых условий. Состояние директивы <tt
-         >ifdef</tt> является
-        истинным, если указанный идентификатор был определён (найден), и
-        наоборот – ложным, если идентификатор не определён или был удалён
-        директивой <code><a href="topic_undef.htm">undef</a></code>.
-        Все эти директивы позволяют только проверить наличие или отсутствие
-        идентификаторов, установленных директивой <code><a href="topic_define.htm">define</a></code>.</p>
-      <p>Директивы <tt>ifexist</tt>
-        и <tt>ifnexist</tt>
-        позволяют проверить <i>наличие</i> или <i>отсутствие</i> указанного
-        файла, соответственно.</p>
-      <p>По аналогии с директивой <tt>if</tt>,
-        каждый блок команд, начинающийся директивой <tt>ifdef</tt>,
-        <tt>ifndef</tt>, <tt>ifexist</tt>
-        или <tt>ifnexist</tt>,
+      <p>Директивы <tt>ifdef</tt>, <tt>ifndef</tt>, <tt>ifexist</tt> и <tt>ifnexist</tt>
+        можно использовать там, где необходимо применить директиву
+        <tt><a href="topic_if.htm">if</a></tt>, чтобы обеспечить выполнение участка
+        кода только при соблюдении определённых условий. Состояние директивы
+        <tt>ifdef</tt> является истинным, если указанный идентификатор был определён
+        (найден), и наоборот – ложным, если идентификатор не определён или был удалён
+        директивой <tt><a href="topic_undef.htm">undef</a></tt>. Все эти директивы
+        позволяют только проверить наличие или отсутствие идентификаторов, установленных
+        директивой <tt><a href="topic_define.htm">define</a></tt>.</p>
+      <p>Директивы <tt>ifexist</tt> и <tt>ifnexist</tt> позволяют проверить
+        <i>наличие</i> или <i>отсутствие</i> указанного файла, соответственно.</p>
+      <p>По аналогии с директивой <tt>if</tt>, каждый блок команд, начинающийся
+        директивой <tt>ifdef</tt>, <tt>ifndef</tt>, <tt>ifexist</tt> или <tt>ifnexist</tt>,
         должен обязательно закрываться директивой <tt>endif</tt>.</p>
       <h2 class="heading">Примеры</h2>
       <div class="examplebox">
         <pre class="hl"><span class="hl kwa">[Files]</span>
-<span class="hl slc">// Проверяем наличие файла "myfile.ext".</span>
-<span class="hl slc">// Если файл существует, то выполняем команды, определенные условием.</span>
-<span class="hl slc">// Если файл НЕ существует, то управление передается директиве endif.</span>
+<span class="hl com">// Проверяем наличие файла "myfile.ext".</span>
+<span class="hl com">// Если файл существует, то выполняем команды, определенные условием.</span>
+<span class="hl com">// Если файл НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifexist</span> <span class="hl str">"myfile.ext"</span>
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"myfile.ext"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-class="hl kwc">{app}</span>
-<span class="hl slc">// Конец условия ifexist.</span>
+  <span class="hl kwb">Filename</span>: "myfile.ext"; <span class="hl kwb">DestDir</span>: <span class="hl kwc">{app}</span>
+<span class="hl com">// Конец условия ifexist.</span>
 <span class="hl kwf">#endif</span>
 
-<span class="hl slc">// Проверяем наличие переменной "Enterpise".</span>
-<span class="hl slc">// Если переменная существует, то выполняем команды, определенные условием.</span>
-<span class="hl slc">// Если переменная НЕ существует, то управление передается директиве endif.</span>
+<span class="hl com">// Проверяем наличие переменной "Enterpise".</span>
+<span class="hl com">// Если переменная существует, то выполняем команды, определенные условием.</span>
+<span class="hl com">// Если переменная НЕ существует, то управление передается директиве endif.</span>
 <span class="hl kwf">#ifdef</span> Enterpise
-  <span class="hl kwb">Filename</span><span class="hl opt">:</span> <span class="hl str">"extra.dll"</span><span
-class="hl opt">;</span> <span class="hl kwb">DestDir</span><span class="hl opt">:</span> <span
-class="hl kwc">{app}</span>
-<span class="hl slc">// Конец условия ifdef.</span>
+  <span class="hl kwb">Filename</span>: "extra.dll"; <span class="hl kwb">DestDir</span>: <span class="hl kwc">{app}</span>
+<span class="hl com">// Конец условия ifdef.</span>
 <span class="hl kwf">#endif</span>
 </pre>
       </div>
       <h2 class="heading">См. также:</h2>
-      <p class="indent"><a href="topic_fileexists.htm">FileExists</a>
+      <p class="indent"><code><a href="topic_fileexists.htm">FileExists</a></code>
       </p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

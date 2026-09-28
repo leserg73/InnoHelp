@@ -43,7 +43,8 @@
       <p>В системах под управлением 32-разрядной версии Windows перезапись не
         происходит. "<tt>SysWOW64</tt>" не существует, а псевдоним <tt>Sysnative</tt>
         не поддерживается.</p>
-      <p>В секции <tt>[Code]</tt> функцию <tt><a href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a></tt>
+      <p>В секции <tt><a href="topic_scriptcreating.htm">[Code]</a></tt> функцию
+        <tt><a href="topic_isxfunc_applypathredirrules.htm">ApplyPathRedirRules</a></tt>
         можно использовать для программного применения правил перенаправления
         к строкам, содержащим пути.</p>
       <p>Перезапись путей выполняется по следующими правилами:</p>
@@ -83,9 +84,10 @@
             <p class="null" style="text-indent: 0;">В 32-разрядных процессах функция <a
               href="https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector" target="_blank"
               title="https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector">перенаправления
-              файловой системы WOW64</a><img class="extlink" src="../images/extlink.svg" alt=" [внешняя ссылка]" />
-              уже направляет каталог <tt>System32</tt> в <tt>SysWOW64</tt>, но некоторые
-              подкаталоги исключаются (один из примеров: <tt>System32\drivers\etc</tt>).
+              файловой системы WOW64</a><img class="extlink" src="../images/extlink.png"
+              srcset="../images/extlink.svg" alt=" [внешняя ссылка]" /> уже направляет
+              каталог <tt>System32</tt> в <tt>SysWOW64</tt>, но некоторые подкаталоги
+              исключаются (один из примеров: <tt>System32\drivers\etc</tt>).
               Явное изменение <tt>System32</tt> &rarr; <tt>SysWOW64</tt> обходит эти
               исключения, сохраняя перенаправление в соответствии с правилом
               64-разрядного целевого процесса, указанным выше.</p>

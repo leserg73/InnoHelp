@@ -18,9 +18,9 @@
   <body>
     <h1 class="topicheading">Секция [INI]</h1>
     <div class="topicbody">
-      <p>Эта секция является необязательной и определяет любые
-        записи в файле .INI, которые программа установки должна создать или
-        изменить в системе пользователя.</p>
+      <p>Эта секция является необязательной и определяет любые записи в файле
+        <tt>.ini</tt>, которые программа установки должна создать или изменить в
+        системе пользователя.</p>
       <p>Пример секции <tt>[INI]</tt>:</p>
       <pre class="indent examplebox"><span class="hl kwa">[INI]</span>
 <span class="hl kwb">Filename</span>: "MyProg.ini"; <span class="hl kwb">Section</span>: "InstallSettings"; <span
@@ -32,11 +32,11 @@ class="hl kwc">{app}</span>"</pre>
       <dl>
         <dt class="paramlist"><b><span id="Filename">Filename</span></b>&nbsp;&nbsp;<i>(обязательный)</i></dt>
         <dd class="paramlist">
-          <p>Определяет имя файла .INI, который программа установки должна
+          <p>Определяет имя файла <tt>.ini</tt>, который программа установки должна
             создать или изменить; может содержать константы. Если этот параметр
             не содержит пути, файл будет записан в каталог Windows. Если же
             значение параметра не указано (является пустым), то запись будет
-            выполнена в файл WIN.INI, который находится в каталоге Windows.</p>
+            выполнена в файл <tt>win.ini</tt>, который находится в каталоге Windows.</p>
           <div class="examplebox">
             <div class="exampleheader">Пример:</div>
             <pre class="nomargin"><span class="hl kwb">Filename</span>: "<span class="hl kwc">{app}</span>\MyProg.ini"</pre>
@@ -95,7 +95,7 @@ class="hl kwc">{app}</span>"</pre>
               <p>Предписывает программе деинсталляции при удалении программы
                 выполнить удаление всей секции. Не рекомендуется использовать
                 этот флаг для секций, которые находятся в файлах, используемых
-                Windows (например, в файле WIN.INI). Следует использовать этот
+                Windows (например, в файле <tt>win.ini</tt>). Следует использовать этот
                 флаг только для собственных секций вашего приложения.</p>
             </dd>
             <dt class="flaglist"><span id="uninsdeletesectionifempty">uninsdeletesectionifempty</span></dt>
@@ -112,8 +112,7 @@ class="hl kwc">{app}</span>"</pre>
           </div>
         </dd>
       </dl>
-      <p><b><a href="topic_componentstasksparams.htm">Параметры секций
-            [Components] и [Tasks]</a></b></p>
+      <p><b><a href="topic_componentstasksparams.htm">Параметры секций [Components] и [Tasks]</a></b></p>
       <p><b><a href="topic_commonparams.htm">Общие параметры</a></b></p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

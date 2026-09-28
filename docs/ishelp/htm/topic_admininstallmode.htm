@@ -20,9 +20,9 @@
     <div class="topicbody">
       <p>Установка может работать в одном из двух режимов:
         административном или не административном. Выбор режима определяется
-        директивами <a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a>
-        и <a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a>
-        в секции <tt>[Setup]</tt>.</p>
+        директивами <tt><a href="topic_setup_privilegesrequired.htm">PrivilegesRequired</a></tt>
+        и <tt><a href="topic_setup_privilegesrequiredoverridesallowed.htm">PrivilegesRequiredOverridesAllowed</a></tt>
+        в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.</p>
       <p>В режиме административной установки:</p>
       <ul class="null">
         <li>Папка <tt>{group}</tt> создаётся в профиле <i>Для всех
@@ -32,16 +32,16 @@
         <li>НЕ следует использовать форму "user" этих констант: файлы и настройки
           пользовательского уровня должны обрабатываться самим приложением, а не
           программой установки, работающей в административном режиме.</li>
-        <li>Корневой раздел <a href="topic_registrysection.htm">HKA</a>, ключи
+        <li>Корневой раздел <tt><a href="topic_registrysection.htm">HKA</a></tt>, ключи
           деинсталляции и ключи установки шрифта создаются в разделе
-          HKEY_LOCAL_MACHINE.</li>
+          <tt>HKEY_LOCAL_MACHINE</tt>.</li>
       </ul>
       <p>В режиме не административной установки:</p>
       <ul class="null">
         <li>Папка <tt>{group}</tt> создаётся в профиле текущего пользователя.</li>
         <li>Форма "auto" для констант каталогов и специальных папок
           сопоставляется с формой "user".</li>
-        <li>Корневой раздел <a href="topic_registrysection.htm">HKA</a>, ключи
+        <li>Корневой раздел <tt><a href="topic_registrysection.htm">HKA</a></tt>, ключи
           деинсталляции и ключи установки шрифта создаются в разделе
           HKEY_CURRENT_USER.</li>
       </ul>
@@ -52,13 +52,13 @@
         данных: файлы и настройки пользовательского уровня должны обрабатываться
         самим приложением, а не программой установки, работающей в административном
         режиме. Компилятор предупредит вас об этом, но если вы уверены в своих
-        действиях, то это сообщение может быть отключено директивой <a 
-        href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a>.</p>
+        действиях, то это сообщение может быть отключено директивой <tt><a 
+        href="topic_setup_useduserareaswarning.htm">UsedUserAreasWarning</a></tt>.</p>
       <p>Если инсталляция выполняется в режиме не
-        административной установки, но административные привилегии все равно
-        доступны, то программа установки или секция <tt>[Code]</tt> все равно
-        может использовать эти привилегии. По этой причине деинсталлятор всегда
-        будет требовать административные привилегии, как если бы инсталляция
+        административной установки, но административные привилегии все равно доступны,
+        то программа установки или секция <tt><a href="topic_scriptcreating.htm">[Code]</a></tt>
+        все равно может использовать эти привилегии. По этой причине деинсталлятор
+        всегда будет требовать административные привилегии, как если бы инсталляция
         выполнялась в режиме административной установки.</p>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
