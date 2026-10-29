@@ -11,12 +11,12 @@
 
 ### История версий Inno Setup 6
 
-- [6.0.0 - 6.7.3](https://leserg73.github.io/InnoHelp/ishistory/is6-whatsnew.htm)
+- [6.0.0 - 6.7.4](https://leserg73.github.io/InnoHelp/ishistory/is6-whatsnew.htm)
 
 
 ### История версий Inno Setup 7
 
-- [7.0.0 - 7.1.0](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
+- [7.0.0 - 7.1.1](https://leserg73.github.io/InnoHelp/ishistory/is7-whatsnew.htm)
 
 ---
 
