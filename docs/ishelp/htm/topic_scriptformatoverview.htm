@@ -31,8 +31,7 @@
 <span class="hl kwb">AppName</span>=My Program
 
 <span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
-class="hl kwc">{app}</span>"</pre>
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{app}</span>"</pre>
       <p>Обратите внимание, что в сценарии можно указать
         несколько секций с одним и тем же именем.</p>
       <p>В тексте сценария можно размещать "комментарии"
@@ -42,13 +41,13 @@ class="hl kwc">{app}</span>"</pre>
       <p>Поддерживается C-подобная директива <span id="include"><tt>#include</tt></span>,
         которая позволяет вставить в сценарий строки из указанного файла в
         позицию директивы <tt>#include</tt>. Её синтаксис следующий:</p>
-      <pre class="indent examplebox"><span class="hl kwf">#include</span> <span
-class="hl str">"filename.txt"</span></pre>
-      <p>Если имя файла не содержит полного пути, компилятор
-        будет искать указанный файл в том же каталоге, что и файл сценария,
-        который содержит директиву <tt>#include</tt>. В имени файла можно
-        указать приставку "<tt>compiler:</tt>", тогда поиск файла будет выполнен
-        в каталоге компилятора.</p>
+      <pre class="indent examplebox"><span class="hl kwf">#include</span> <span class="hl str">"filename.txt"</span></pre>
+      <p>Если имя файла не содержит полного пути, компилятор будет искать указанный
+        файл в том же каталоге, что и файл сценария, который содержит директиву
+        <tt>#include</tt>. В имени файла можно указать приставку <tt>compiler:</tt>,
+        тогда поиск файла будет выполнен в каталоге компилятора. Перед именем
+        также можно использовать приставку <tt>userdocs:</tt>, тогда поиск файла
+        будет выполняться в папке "Мои документы" текущего пользователя.</p>
       <p>Также поддерживается директива <span id="preproc"><tt>#preproc</tt></span>,
         которая должна быть размещена в первой строке файла. Она указывает,
         следует ли использовать встроенный препроцессор, поддерживающий только

@@ -24,12 +24,14 @@
       <p>Извлекает файлы, согласно указанной маске <tt>Pattern</tt>, из секции
         <tt><a href="topic_filessection.htm">[Files]</a></tt> во временный каталог.
         Возвращает количество извлечённых файлов. Для определения расположения
-        временного каталога используйте <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}')</tt>.</p>
+        временного каталога используйте
+        <tt><a href="topic_isxfunc_expandconstant.htm">ExpandConstant</a>('{tmp}')</tt>.</p>
       <p>При закрытии программы установки все извлечённые файлы автоматически
         удаляются.</p>
-      <p>Если файлы не извлечены, не найдены или найдены, но не были обработаны
-        из-за наличия параметров <i>MinVersion</i> и/или <i>OnlyBelowVersion</i>,
-        будет вызвано исключение.</p>
+      <p>Если какой-либо из найденных файлов не удастся извлечь, либо файлы вообще
+        не найдены, либо найдены, но не были обработаны из-за наличия параметров
+        <tt>MinVersion</tt> и/или <tt>OnlyBelowVersion</tt>, будет вызвано
+        исключение.</p>
       <h2 class="heading">Комментарии</h2>
       <p>Используйте <tt>Flags: dontcopy noencryption</tt> в секции
         <tt><a href="topic_filessection.htm">[Files]</a></tt>, чтобы программа
@@ -45,15 +47,9 @@
         используемыми файлами находится множество других файлов.</p>
       <h2 class="heading">Пример</h2>
       <pre class="indent examplebox"><span class="hl kwa">[Files]</span>
-<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span
-
-class="hl kwe">dontcopy noencryption</span>
-<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span
-
-class="hl kwc">{app}</span>"
-<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span
-
-class="hl kwc">{app}</span>"
+<span class="hl kwb">Source</span>: "Readme.txt"; <span class="hl kwb">Flags</span>: <span class="hl kwe">dontcopy noencryption</span>
+<span class="hl kwb">Source</span>: "MyProg.exe"; <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{app}</span>"
+<span class="hl kwb">Source</span>: "MyProg.chm"; <span class="hl kwb">DestDir</span>: "<span class="hl kwc">{app}</span>"
 
 <span class="hl kwa">[Code]</span>
 <span class="hl kwb">function</span> <span class="hl kwd">InitializeSetup</span>: Boolean;
@@ -62,32 +58,21 @@ class="hl kwc">{app}</span>"
   ResultCode: Integer;
 <span class="hl kwb">begin</span>
   <span class="hl com">// Показываем содержимое Readme.txt (не Unicode) в сообщении</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
-
-class="hl str">\Readme.txt'</span>);
-  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span
-
-class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span class="hl kwb">then</span>
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>);
+  <span class="hl kwb">if</span> LoadStringFromFile(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span class="hl str">\Readme.txt'</span>), S) <span class="hl kwb">then</span>
   <span class="hl kwb">begin</span>
     MsgBox(S, <span class="hl kwe">mbInformation</span>, <span class="hl kwe">MB_OK</span>);
   <span class="hl kwb">end</span>;
 
   <span class="hl com">// Извлекаем все файлы MyProg и запускаем её.</span>
   <span class="hl com">// Заметьте, константа {app} не расширяется.</span>
-  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span
-
-class="hl str">\MyProg.*'</span>);
-  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span
-
-class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span
-
-class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span
-
-class="hl str">''</span>,
+  ExtractTemporaryFiles(<span class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\MyProg.*'</span>);
+  ExecAsOriginalUser(ExpandConstant(<span class="hl str">'</span><span class="hl kwc">{tmp}</span><span class="hl str">\</span><span class="hl str">'</span>)+<span class="hl str">'</span><span class="hl kwc">{app}</span><span class="hl str">\MyProg.exe'</span>, <span class="hl str">''</span>, <span class="hl str">''</span>,
     <span class="hl kwe">SW_SHOWNORMAL</span>, ewWaitUntilTerminated, ResultCode);
 
   Result := True;
-<span class="hl kwb">end</span>;</pre>
+<span class="hl kwb">end</span>;
+</pre>
       <h2 class="heading">См. также:</h2>
       <p class="indent"><code><a href="topic_isxfunc_extracttemporaryfile.htm">ExtractTemporaryFile</a></code>
       </p>

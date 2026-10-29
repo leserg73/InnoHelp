@@ -32,10 +32,9 @@
         <tt>waituntilidle</tt>.</p>
       <p>Обратите внимание, что по умолчанию, если программа, выполняемая в секции
         <tt>[Run]</tt>, ставит в очередь файлы для замены при следующей перезагрузке
-        (путём вызова <tt>MoveFileEx</tt> или изменением <tt>wininit.ini</tt>),
-        программа установки обнаружит это и предложит пользователю перезагрузить
-        компьютер по окончанию установки. Если такая функциональность вам не нужна,
-        укажите для директивы 
+        (путём вызова <tt>MoveFileEx</tt>), программа установки обнаружит это и
+        предложит пользователю перезагрузить компьютер по окончанию установки.
+        Если такая функциональность вам не нужна, укажите для директивы 
         <tt><a href="topic_setup_restartifneededbyrun.htm">RestartIfNeededByRun</a></tt>
         значение <tt>no</tt>.</p>
       <p>Ниже представлен пример секции <tt>[Run]</tt>.</p>
@@ -228,14 +227,15 @@
                 имеет значение <tt>yes</tt>), возможности для отображения
                 флажка не будет, и, следовательно, эта запись никогда не будет
                 обработана.</p>
-              <p>Флаг <tt>isreadme</tt> для записей в секции
-                <tt><a href="topic_filessection.htm">[Files]</a></tt> уже является
-                устаревшим. Если компилятор обнаружит запись с флагом <tt>isreadme</tt>,
-                он убирает этот флаг из записи секции <tt>[Files]</tt> и вставляет
+              <p>Флаг <tt><a href="topic_filessection.htm#isreadme">isreadme</a></tt>
+                для записей в секции <tt><a href="topic_filessection.htm">[Files]</a></tt>
+                реализуется с использованием этого флага. Если компилятор обнаруживает
+                запись с флагом <tt>isreadme</tt>, он убирает этот флаг из записи
+                секции <tt><a href="topic_filessection.htm">[Files]</a></tt> и вставляет
                 вновь созданную запись в начало секции <tt>[Run]</tt>. Эта созданная
                 запись секции <tt>[Run]</tt> запускает файл README и содержит флаги
-                <tt>shellexec</tt>, <tt>skipifdoesntexist</tt>, <tt>postinstall</tt>
-                и <tt>skipifsilent</tt>.</p>
+                <tt>postinstall</tt>, <tt>runasoriginaluser</tt>, <tt>shellexec</tt>,
+                <tt>skipifdoesntexist</tt> и <tt>skipifsilent</tt>.</p>
             </dd>
             <dt class="flaglist"><span id="runascurrentuser">runascurrentuser</span></dt>
             <dd>

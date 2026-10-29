@@ -158,7 +158,7 @@
         &nbsp;&nbsp;function <a href="topic_isxfunc_chr.htm">Chr</a>(X: Word): Char;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_ord.htm">Ord</a>(X: Ordinal): UInt64;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_copy.htm">Copy</a>(S: AnyString; Index, Count: Integer): String;<br />
-        &nbsp;&nbsp;function <a href="topic_isxfunc_length.htm">Length</a>(S: AnyString): LongInt;<br />
+        &nbsp;&nbsp;function <a href="topic_isxfunc_length.htm">Length</a>(var X): LongInt;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_lowercase.htm">LowerCase</a>(S: AnyString): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_uppercase.htm">UpperCase</a>(S: AnyString): String;<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_ansilowercase.htm">AnsiLowerCase</a>(S: AnyString): String;<br />
@@ -229,7 +229,7 @@
         <br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_getdatetimestring.htm">GetDateTimeString</a>(const DateTimeFormat: String; const DateSeparator, TimeSeparator: Char): String;<br />
         <br />
-        &nbsp;&nbsp;procedure <a href="topic_isxfunc_setlength.htm">SetLength</a>(var S: AnyString; L: LongInt);<br />
+        &nbsp;&nbsp;procedure <a href="topic_isxfunc_setlength.htm">SetLength</a>(var X; L: LongInt);<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_chartooembuff.htm">CharToOemBuff</a>(var S: AnsiString);<br />
         &nbsp;&nbsp;procedure <a href="topic_isxfunc_oemtocharbuff.htm">OemToCharBuff</a>(var S: AnsiString);<br />
         &nbsp;&nbsp;function <a href="topic_isxfunc_utf8encode.htm">Utf8Encode</a>(const S: String): AnsiString;<br />

@@ -58,20 +58,19 @@
       <div class="examplebox">
         <div class="exampleheader">Пример:</div>
         <pre class="nomargin"><span class="hl kwa">[Setup]</span>
-<span class="hl kwb">DisableReadyPage</span>=<span class="hl kwe">yes</span>
+<span class="hl kwb">DisableReadyPage</span>=yes
 
 <span class="hl kwa">[Code]</span>
-<span class="hl kwb">procedure</span> <span class="hl kwd">CurPageChanged</span>(CurPageID: Integer);
+<span class="hl kwb">procedure</span> <span class="hl kwg">CurPageChanged</span>(CurPageID: Integer);
 <span class="hl kwb">begin</span>
-  <span class="hl kwb">if</span> CurPageID in [<span class="hl kwe">wpSelectProgramGroup</span>, <span
-     class="hl kwe">wpReady</span>] <span class="hl kwb">then</span>
+  <span class="hl kwb">if</span> CurPageID <span class="hl kwb">in</span> [wpSelectProgramGroup, wpReady] <span class="hl kwb">then</span>
     WizardForm.NextButton.Caption := SetupMessage(msgButtonInstall)
-  <span class="hl kwb">else if</span> CurPageID = <span class="hl kwe">wpFinished</span> <span
-      class="hl kwb">then</span>
+  <span class="hl kwb">else if</span> CurPageID = wpFinished <span class="hl kwb">then</span>
     WizardForm.NextButton.Caption := SetupMessage(msgButtonFinish)
   <span class="hl kwb">else</span>
     WizardForm.NextButton.Caption := SetupMessage(msgButtonNext);
-<span class="hl kwb">end</span>;</pre>
+<span class="hl kwb">end</span>;
+</pre>
       </div>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>

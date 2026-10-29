@@ -274,12 +274,12 @@
           &nbsp;&nbsp;property Cursor: <a href="#TCursor">TCursor</a>; read write;<br/>
           &nbsp;&nbsp;property StyleElements: <a href="#TStyleElements">TStyleElements</a>; read write;<br/>
           &nbsp;&nbsp;property StyleName: String; read write;<br/>
+          &nbsp;&nbsp;property Parent: <a href="#TWinControl">TWinControl</a>; read write;<br/>
           end;<br/>
           <br/>
           <span id="HWND">HWND</span> = NativeUInt;<br/>
           <br/>
           <span id="TWinControl">TWinControl</span> = class(<a href="#TControl">TControl</a>)<br/>
-          &nbsp;&nbsp;property Parent: <a href="#TWinControl">TWinControl</a>; read write;<br/>
           &nbsp;&nbsp;property ParentBackground: Boolean; read write;<br/>
           &nbsp;&nbsp;property Handle: <a href="#HWND">HWND</a>; read;<br/>
           &nbsp;&nbsp;property Showing: Boolean; read;<br/>
@@ -309,7 +309,7 @@
           <br/>
           <span id="TConstraintSize">TConstraintSize</span> = 0..MaxInt;<br/>
           <br/>
-          <span id="TSizeConstraints">TSizeConstraints</span> = class(<a href="#TPersistent">TPersistent</a>);<br/>
+          <span id="TSizeConstraints">TSizeConstraints</span> = class(<a href="#TPersistent">TPersistent</a>)<br/>
           &nbsp;&nbsp;property MaxHeight: <a href="#TConstraintSize">TConstraintSize</a>; read write;<br/>
           &nbsp;&nbsp;property MaxWidth: <a href="#TConstraintSize">TConstraintSize</a>; read write;<br/>
           &nbsp;&nbsp;property MinHeight: <a href="#TConstraintSize">TConstraintSize</a>; read write;<br/>

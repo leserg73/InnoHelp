@@ -38,30 +38,30 @@
         а также директивы <tt>DialogFontName</tt> и <tt>DialogFontSize</tt>,
         определяют шрифт, используемый формой, и, по умолчанию, шрифт дочерних
         элементов управления, размещённых на этой форме.</p>
-      <p>Для масштабирования желаемой ширины и высоты клиентской области формы
-        до соответствующих значений следует использовать функции <tt><a 
-        href="topic_isxfunc_scalex.htm">ScaleX</a></tt> и <tt><a 
-        href="topic_isxfunc_scaley.htm">ScaleY</a></tt>. Ширина и высота клиентской
-        области формы — это полная ширина и высота формы за вычетом её границ.</p>
+      <p>Не используйте функции <tt><a href="topic_isxfunc_scalex.htm">ScaleX</a></tt>
+        и <tt><a href="topic_isxfunc_scaley.htm">ScaleY</a></tt> для установки
+        ширины и высоты клиентской области: эта функция масштабирует их автоматически.
+        Ширина и высота клиентской области формы — это её полная ширина и высота
+        за вычетом границ.</p>
       <p>Параметры <tt>KeepSizeX</tt> и <tt>KeepSizeY</tt> позволяют определить,
-        должна ли форма увеличиваться по горизонтали и вертикали при изменении
-        размера клиентской области, если используется директива <tt><a 
-        href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></tt>. в
-        секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.</p>
+        сохраняет ли форма свою ширину и высоту соотвественно, вместо того чтобы
+        увеличиваться в соответствии с директивой
+        <tt><a href="topic_setup_wizardsizepercent.htm">WizardSizePercent</a></tt>,
+        указанной в секции <tt><a href="topic_setupsection.htm">[Setup]</a></tt>.</p>
       <p>С версии 6.6.0 изменился формат функции <tt>CreateCustomForm</tt>.
         Теперь значения ширины и высоты должны быть указаны заранее (после
         создания формы эти свойства будут доступны <i>только для чтения</i>).
         Раньше код создания формы выглядел примерно так:</p>
       <pre class="indent examplebox">
   Form := <span class="hl kwd">CreateCustomForm</span>;
-  Form.Caption := <span class="hl sng">&#39;TSetupForm&#39;</span>;
+  Form.Caption := <span class="hl sng">'TSetupForm'</span>;
   Form.ClientWidth := <span class="hl kwd">ScaleX</span>(<span class="hl num">256</span>);
   Form.ClientHeight := <span class="hl kwd">ScaleY</span>(<span class="hl num">128</span>);
 </pre>
       <p>Начиная с версии 6.6.0 этот код следует изменить на следующий:</p>
       <pre class="indent examplebox">
-  Form := <span class="hl kwd">CreateCustomForm</span>(<span class="hl kwd">ScaleX</span>(<span class="hl num">256</span>), <span class="hl kwd">ScaleY</span>(<span class="hl num">128</span>), <span class="hl kwg">False</span>, <span class="hl kwg">False</span>);
-  Form.Caption := <span class="hl sng">&#39;TSetupForm&#39;</span>;
+  Form := <span class="hl kwd">CreateCustomForm</span>(<span class="hl num">256</span>, <span class="hl num">128</span>, <span class="hl kwg">False</span>, <span class="hl kwg">False</span>);
+  Form.Caption := <span class="hl sng">'TSetupForm'</span>;
 </pre>
       <p>Аналогичные изменения коснулись также свойств <tt>KeepSizeX</tt> и
         <tt>KeepSizeY</tt>, которые до версии 6.6.0 были обычными <i>свойствами</i>,

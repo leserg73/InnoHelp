@@ -35,9 +35,22 @@
         вернёт функция в случае неудачного выполнения операции.</p>
       <p>Заметьте, функция может вернуть значение любого типа в зависимости от
         фактического типа данных в ключе реестра.</p>
-      <p>Если указан недопустимый корневой ключ или если в 32-разрядной версии
-        Windows запрашиваются 64-разрядные ключи реестра, будет выведена ошибка
-        компилятора.</p>
+      <p>Значения типа <tt>REG_DWORD</tt> рассматриваются как знаковые, поэтому
+        значения <tt>0x80000000</tt> и выше возвращаются как отрицртельные числа.
+        Например, <tt>0xFFFFFFFF</tt> возвращается как <tt>-1</tt>. Чтобы получить
+        беззнаковое значение, примените к результату операцию <tt>&amp; 0xFFFFFFFF</tt>
+        Поскольку оператор <tt>&amp;</tt> имеет более низкий приоритет, чем
+        <tt>==</tt>, при сравнении беззнакового значения используйте круглые
+        скобки, как показано в примере ниже.</p>
+      <p>Если указан недопустимый корневой ключ или в 32-разрядной версии Windows
+        запрашиваются 64-разрядные ключи реестра, будет выведена ошибка компилятора.</p>
+      <h2 class="heading">Пример</h2>
+      <div class="examplebox">
+        <pre class="hl"><span class="hl kwf">#if</span> (ReadReg(HKEY_CURRENT_USER, <span class="hl str">"Software\My Company\My Program"</span>, <span class="hl str">"MyValue"</span>) &amp; <span class="hl num">0xFFFFFFFF</span>) == <span class="hl num">0xFFFFFFFF</span>
+  <span class="hl kwf">#pragma message</span> <span class="hl str">"MyValue is 0xFFFFFFFF"</span>
+<span class="hl kwf">#endif</span>
+</pre>
+      </div>
     </div>
   <script type="text/javascript" src="../js/theme_selector.js"></script>
   </body>

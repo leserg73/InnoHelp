@@ -41,11 +41,11 @@
         </tr>
         <tr class="altcolorrow"><td class="nowrap"><tt>--include-dirs=<i>&lt;paths&gt;</i></tt>, <tt>-i<i>&lt;paths&gt;</i></tt>
         </td>
-        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> include <i>&lt;paths&gt;</i></tt> (несколько путей можно разделять точкой с запятой).</td>
+        <td>Эмулирует <tt><a href="topic_pragma.htm">#pragma</a> include <a href="topic_predefinedvars.htm">__INCLUDE__</a> + ";<i>&lt;paths&gt;</i>"</tt> (несколько путей можно разделять точкой с запятой).</td>
         </tr>
         <tr><td class="nowrap"><tt>--include=<i>&lt;filename&gt;</i></tt>, <tt>-j<i>&lt;filename&gt;</i></tt>
         </td>
-        <td>Эмулирует <tt><a href="topic_include.htm">#include</a>&nbsp;<i>&lt;filename&gt;</i></tt>.</td>
+        <td>Эмулирует <tt><a href="topic_include.htm">#include</a>&nbsp;<i>"&lt;filename&gt;"</i></tt>.</td>
         </tr>
         <tr class="altcolorrow"><td class="nowrap"><tt>--inline-start=<i>&lt;string&gt;</i></tt>, <tt>-{#<i>&lt;string&gt;</i></tt>
         </td>
